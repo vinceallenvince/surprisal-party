@@ -28,14 +28,14 @@ V1 deploys to **Vercel** with the GitHub repo connected. The pipeline never runs
 
 **Workflow:**
 
-1. Pipeline runs locally on the developer's machine, with the Anthropic API key in a local `.env`. It writes JSON files into `runtime/public/tales/`.
+1. Pipeline runs locally on the developer's machine, with the OpenAI API key in a local `.env`. It writes JSON files into `runtime/public/tales/`.
 2. Pipeline source changes and regenerated JSON are committed together.
 3. Push to a branch → Vercel auto-builds the runtime → preview URL appears on the PR.
 4. Merge into `main` → production deploy.
 
 **Properties this preserves:**
 
-- The Anthropic API key never leaves the developer's machine; Vercel needs zero environment variables for v1.
+- The OpenAI API key never leaves the developer's machine; Vercel needs zero environment variables for v1.
 - Every Vercel build serves bit-for-bit identical JSON, preserving the determinism committed to in *Determinism and Variability*.
 - Tale JSONs are plain static files under `public/`, served by Vercel's CDN with no serverless invocation per fetch.
 - Per-PR preview URLs make UX checks — "does the title-fade surprise still land?" — shareable with collaborators on every branch.
@@ -79,7 +79,7 @@ Build the offline pipeline that produces one JSON per tale, committed to the rep
 - **Tokenization reconciliation:** built and tested in Phase 0; downstream operates on words.
 - **Threshold-stepping scheme:** a fixed set of discrete slider positions, each backed by precomputed state in the cache.
 - **Cache schema:** one JSON per tale containing words (text, character offset, surprisal), the kernel set, span boundaries per slider position, reconstructions per gap per position, and fidelity scores. Schema is versioned.
-- **Reference model:** Claude API. The pipeline calls Claude for surprisal scoring (via token-level logprob access) and for gap reconstruction (via constrained infilling prompts). The pipeline shape is model-agnostic — if a future need calls for a local model, only `score()` and `generate_infill()` change.
+- **Reference model:** OpenAI API (`gpt-5.4-mini`). The pipeline calls OpenAI for both surprisal scoring (via the `logprobs` and `top_logprobs` parameters) and gap reconstruction (via constrained infilling prompts). The pipeline shape is model-agnostic — if a future need calls for a local model, only `score()` and `generate_infill()` change. Background: Anthropic's API does not expose per-token logprobs (see `pipeline/docs/api-notes.md`), and the abstract's *one model, both directions* principle requires a single model for both stages.
 - **Span-merging rule:** sentence-boundary-bounded greedy, with a cap of ~30–40 words that triggers a split at the nearest sub-sentence boundary (comma, semicolon, em-dash) rather than mid-phrase. Terminal punctuation stays anchored (per Phase 0) so sentence boundaries remain visible at every slider position.
 - **Starter corpus:** Little Red Riding Hood and Hansel and Gretel. The remaining 8–13 tales will be selected during or after Phase 2, once the mechanic is validated against the starter pair.
 

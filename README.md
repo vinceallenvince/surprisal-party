@@ -25,5 +25,5 @@ compression-prediction/
 
 ## Stack
 
-- **Pipeline:** Python. Calls the Claude API for surprisal scoring and gap reconstruction; writes one JSON per tale into `runtime/public/tales/`.
+- **Pipeline:** Python. Calls the OpenAI API (`gpt-5.4-mini`) for surprisal scoring and gap reconstruction; writes one JSON per tale into `runtime/public/tales/`.
 - **Runtime:** Next.js, deployed to Vercel. Serves tale JSONs as static assets and renders the slider mechanic in the browser.
