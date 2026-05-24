@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compression-prediction-pipeline"
+version = "0.0.1"
+description = "Offline build-time pipeline for the Compression-Prediction Explorer: tokenization reconciliation, surprisal scoring, and span reconstruction."
+requires-python = ">=3.11"
+authors = [{ name = "Compression-Prediction Explorer" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["cprediction*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
