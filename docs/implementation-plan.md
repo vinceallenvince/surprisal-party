@@ -4,21 +4,48 @@ A four-phase plan, beginning with a spike to derisk the core hypothesis, then bu
 
 ## Stack
 
-- **Pipeline (Phase 0 and Phase 1): Python.** Anthropic's SDK is first-class in Python; Unicode normalization, regex, sentence segmentation, and JSON output are ecosystem-native; REPL-driven iteration suits the reconciliation work; `pytest` covers the unit tests on tricky inputs. The pipeline's output is a set of static JSON files — committed to the repo or hosted as static assets.
-- **Runtime (Phase 2 and Phase 3): deferred.** Framework choice (React, Svelte, Solid, vanilla, etc.) is a Phase 2 decision once the cache shape and the animation requirements are concrete. The runtime's only job is to fetch JSON and render the slider mechanic; it never tokenizes, scores, or calls a language model.
+- **Pipeline (Phase 0 and Phase 1): Python.** Anthropic's SDK is first-class in Python; Unicode normalization, regex, sentence segmentation, and JSON output are ecosystem-native; REPL-driven iteration suits the reconciliation work; `pytest` covers the unit tests on tricky inputs. The pipeline writes JSON output directly into the runtime's `public/tales/` directory so the files are served as plain static assets.
+- **Runtime (Phase 2 and Phase 3): Next.js.** The slider mechanic ships as a Next.js app, with the cached tale JSONs served as static content from `public/`. The runtime's only job is to fetch JSON and render the slider mechanic; it never tokenizes, scores, or calls a language model.
+- **Deployment: Vercel.** Auto-detected Next.js, per-PR preview deployments, production on `main`. See *Deployment* below.
 
 ```text
 compression-prediction/
-├── docs/                      # already exists
-├── pipeline/                  # Python — Phase 0 & 1
+├── docs/                                 # design docs
+├── pipeline/                             # Python — Phase 0 & 1
 │   ├── reconciliation.py
 │   ├── score.py
 │   ├── reconstruct.py
 │   ├── tests/
 │   └── pyproject.toml
-├── runtime/                   # JS/TS — Phase 2 & 3
-└── tales/                     # static JSON output (committed)
+└── runtime/                              # Next.js — Phase 2 & 3
+    └── public/
+        └── tales/                        # static JSON output (committed)
 ```
+
+## Deployment
+
+V1 deploys to **Vercel** with the GitHub repo connected. The pipeline never runs on Vercel — only the Next.js runtime is built and served.
+
+**Workflow:**
+
+1. Pipeline runs locally on the developer's machine, with the Anthropic API key in a local `.env`. It writes JSON files into `runtime/public/tales/`.
+2. Pipeline source changes and regenerated JSON are committed together.
+3. Push to a branch → Vercel auto-builds the runtime → preview URL appears on the PR.
+4. Merge into `main` → production deploy.
+
+**Properties this preserves:**
+
+- The Anthropic API key never leaves the developer's machine; Vercel needs zero environment variables for v1.
+- Every Vercel build serves bit-for-bit identical JSON, preserving the determinism committed to in *Determinism and Variability*.
+- Tale JSONs are plain static files under `public/`, served by Vercel's CDN with no serverless invocation per fetch.
+- Per-PR preview URLs make UX checks — "does the title-fade surprise still land?" — shareable with collaborators on every branch.
+
+**Vercel project settings:**
+
+- **Root directory:** `runtime/`.
+- **Framework preset:** Next.js (auto-detected).
+- **Production branch:** `main`.
+- **Ignored Build Step:** `git diff HEAD^ HEAD --quiet -- runtime/ || exit 1` — skips builds when only `pipeline/` or `docs/` changed without regenerated tales.
 
 ## Phase 0 — Spike (a few days)
 
@@ -58,7 +85,7 @@ Build the offline pipeline that produces one JSON per tale, committed to the rep
 
 **Variability tier:** **Tier A.** One reconstruction per gap. Any sampling step is seeded; outputs are committed so the cache is bit-for-bit reproducible.
 
-**Output:** 10–15 tale JSONs, schema-validated, hand-inspectable.
+**Output:** 10–15 tale JSONs written to `runtime/public/tales/`, schema-validated, hand-inspectable, committed alongside pipeline source changes.
 
 **Exit criterion:** all caches built and pass validation; rendering any cached state by hand produces a sensible snapshot.
 

@@ -17,12 +17,13 @@ Pre-implementation. The design is settled; Phase 0 is the next step.
 ```text
 compression-prediction/
 ├── docs/                      # design docs
-├── pipeline/                  # Python — Phase 0 & 1 (offline build pipeline)
-├── runtime/                   # Phase 2 & 3 (static site that renders the mechanic)
-└── tales/                     # static JSON output, one per tale (committed)
+├── pipeline/                  # Python — offline build pipeline (Phase 0 & 1)
+└── runtime/                   # Next.js — slider runtime (Phase 2 & 3)
+    └── public/
+        └── tales/             # static JSON output, one per tale (committed)
 ```
 
 ## Stack
 
-- **Pipeline:** Python. Calls the Claude API for surprisal scoring and gap reconstruction; outputs one JSON per tale.
-- **Runtime:** static site. Framework choice deferred to Phase 2.
+- **Pipeline:** Python. Calls the Claude API for surprisal scoring and gap reconstruction; writes one JSON per tale into `runtime/public/tales/`.
+- **Runtime:** Next.js, deployed to Vercel. Serves tale JSONs as static assets and renders the slider mechanic in the browser.
