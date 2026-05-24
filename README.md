@@ -1,0 +1,28 @@
+# Compression-Prediction Explorer
+
+A text-based interactive demonstration that the equivalence between compression and prediction is not a metaphor but a measurable mechanic. Users drag a slider that fades the predictable words from a familiar fairy tale and replaces them, in place, with the predictor's reconstruction of what was removed. Information visibly moves from the page into the predictor — never destroyed, only relocated.
+
+## Status
+
+Pre-implementation. The design is settled; Phase 0 is the next step.
+
+## Docs
+
+- [`docs/abstract.md`](docs/abstract.md) — what the project is, the information-theoretic core, what the user sees, the determinism/variability tiers, scope, and design principles.
+- [`docs/user-scenarios.md`](docs/user-scenarios.md) — Gherkin-style behavior specs.
+- [`docs/implementation-plan.md`](docs/implementation-plan.md) — four-phase build plan, committed architectural decisions, and exit criteria.
+
+## Layout
+
+```text
+compression-prediction/
+├── docs/                      # design docs
+├── pipeline/                  # Python — Phase 0 & 1 (offline build pipeline)
+├── runtime/                   # Phase 2 & 3 (static site that renders the mechanic)
+└── tales/                     # static JSON output, one per tale (committed)
+```
+
+## Stack
+
+- **Pipeline:** Python. Calls the Claude API for surprisal scoring and gap reconstruction; outputs one JSON per tale.
+- **Runtime:** static site. Framework choice deferred to Phase 2.

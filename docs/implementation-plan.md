@@ -1,0 +1,91 @@
+# Implementation Plan
+
+A four-phase plan, beginning with a spike to derisk the core hypothesis, then building the data pipeline, the functional UX, and finally polish. V1 commits to **Tier A** of *Determinism and Variability* (see the abstract): a single cached reconstruction per gap, fully deterministic, static-site architecture, no runtime language-model calls.
+
+## Stack
+
+- **Pipeline (Phase 0 and Phase 1): Python.** Anthropic's SDK is first-class in Python; Unicode normalization, regex, sentence segmentation, and JSON output are ecosystem-native; REPL-driven iteration suits the reconciliation work; `pytest` covers the unit tests on tricky inputs. The pipeline's output is a set of static JSON files — committed to the repo or hosted as static assets.
+- **Runtime (Phase 2 and Phase 3): deferred.** Framework choice (React, Svelte, Solid, vanilla, etc.) is a Phase 2 decision once the cache shape and the animation requirements are concrete. The runtime's only job is to fetch JSON and render the slider mechanic; it never tokenizes, scores, or calls a language model.
+
+```text
+compression-prediction/
+├── docs/                      # already exists
+├── pipeline/                  # Python — Phase 0 & 1
+│   ├── reconciliation.py
+│   ├── score.py
+│   ├── reconstruct.py
+│   ├── tests/
+│   └── pyproject.toml
+├── runtime/                   # JS/TS — Phase 2 & 3
+└── tales/                     # static JSON output (committed)
+```
+
+## Phase 0 — Spike (a few days)
+
+**Goal:** confirm that reconstructions at deep compression are worth showing, and that the tokenization reconciliation layer behaves correctly on the trickier inputs. A cheap kill-switch before committing to the full pipeline.
+
+**Scope:**
+
+1. **Build the tokenization reconciliation layer.** This is the bridge between model tokens and user-visible words; everything downstream depends on it being correct. Includes unit tests on tricky inputs: multi-token names (e.g. *Aschenputtel*), contractions (*grandmother's*), hyphenated forms (*well-known*), sentence-initial words, punctuation-heavy passages, and Unicode-heavy source text.
+
+   **Committed rules:**
+   - **Leading whitespace** attaches to the following word (the word the space precedes). This matches BPE's natural behavior of producing tokens like `" grandmother"`.
+   - **Punctuation** folds into the trailing word's tile, so `wolf,` is one tile. **Terminal punctuation** (`.`, `!`, `?`) is additionally anchored: it remains visible even when its attached word fades, so sentence boundaries stay legible at every slider position.
+   - **Apostrophes and hyphens** do not split words: `grandmother's` and `well-known` are each a single word.
+   - **BOS/EOS tokens** are stripped before aggregating surprisal so they do not contaminate the conserved total.
+   - **Unicode** is normalized in the source text before scoring (Unicode normalization, smart-quote folding, en-dash handling) to avoid surprising tokenizations.
+
+2. **Run the pipeline end-to-end on one fairy tale.** Use the reconciliation layer to score the tale, compute reconstructions at four or five threshold settings (including the far-right kernel-only case), and emit a hand-readable intermediate file.
+
+3. **Eyeball.** Read the reconstructions and fidelity scores and decide whether they're worth showing.
+
+**Decision point:** if the kernel-only reconstruction reads beautifully and the reconciliation layer passes its tests, proceed to Phase 1. If reconstructions are weak, adjust model or prompting; if reconciliation produces nonsensical alignments, fix the rules. If neither helps after a reasonable attempt, pivot the project before more time is invested.
+
+**Exit criterion:** "I looked at the far-right reconstruction and want to show it to someone, and the reconciliation layer handled every tested edge case correctly."
+
+## Phase 1 — Data pipeline and static cache
+
+Build the offline pipeline that produces one JSON per tale, committed to the repo or hosted as static assets. The runtime in Phase 2 will simply fetch these. The runtime never calls a language model.
+
+**Committed decisions for the pipeline:**
+
+- **Tokenization reconciliation:** built and tested in Phase 0; downstream operates on words.
+- **Threshold-stepping scheme:** a fixed set of discrete slider positions, each backed by precomputed state in the cache.
+- **Cache schema:** one JSON per tale containing words (text, character offset, surprisal), the kernel set, span boundaries per slider position, reconstructions per gap per position, and fidelity scores. Schema is versioned.
+- **Reference model:** Claude API. The pipeline calls Claude for surprisal scoring (via token-level logprob access) and for gap reconstruction (via constrained infilling prompts). The pipeline shape is model-agnostic — if a future need calls for a local model, only `score()` and `generate_infill()` change.
+- **Span-merging rule:** sentence-boundary-bounded greedy, with a cap of ~30–40 words that triggers a split at the nearest sub-sentence boundary (comma, semicolon, em-dash) rather than mid-phrase. Terminal punctuation stays anchored (per Phase 0) so sentence boundaries remain visible at every slider position.
+- **Starter corpus:** Little Red Riding Hood and Hansel and Gretel. The remaining 8–13 tales will be selected during or after Phase 2, once the mechanic is validated against the starter pair.
+
+**Variability tier:** **Tier A.** One reconstruction per gap. Any sampling step is seeded; outputs are committed so the cache is bit-for-bit reproducible.
+
+**Output:** 10–15 tale JSONs, schema-validated, hand-inspectable.
+
+**Exit criterion:** all caches built and pass validation; rendering any cached state by hand produces a sensible snapshot.
+
+## Phase 2 — Functional UX
+
+A static site that fetches a tale's JSON and runs the slider mechanic. No backend. Ugly but functional.
+
+**Internal sequence (each step independently testable):**
+
+a. **Static rendering.** Render the cached state at a mid-slider position with no slider control. Confirms the cache shape and data flow.
+b. **Slider control without animation.** Wire the slider to swap between cached states. Confirms the interaction model.
+c. **Gap-closing reflow and tile migration animation.** The hardest part. FLIP technique with precomputed layouts per slider position, animated via CSS transforms.
+d. **Seam interaction.** Hover to peek (transient), click to lock open, click again to collapse.
+
+**Exit criterion:** someone can drag the slider through a tale and the title-fade surprise lands without explanation.
+
+## Phase 3 — Refine, style, and polish
+
+The work that turns a working mechanic into a shareable artifact.
+
+**Scope:**
+- Typography, color, spacing. Fixed-width tile aesthetic for the right strip.
+- Performance pass: layout caching, viewport culling, animation budget for tales with many tokens.
+- Accessibility: keyboard navigation, screen-reader treatment of seams.
+- Mobile and touch adaptation: tap to peek, long-press to lock, slider gesture.
+- Edge cases: very short and very long tales, error states, slow networks.
+
+**Optional escalation if v1 feels too predetermined in use:** generate 3–5 reconstructions per gap and pick one per session or per card-open. This is **Tier B** from the abstract — same architecture, one regeneration of the cache. **Tier C** (live generation) is deferred beyond v1 unless A and B both prove insufficient.
+
+**Exit criterion:** a stranger handed the URL can figure out the mechanic without explanation.
