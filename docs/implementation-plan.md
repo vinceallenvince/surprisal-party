@@ -4,7 +4,7 @@ A four-phase plan, beginning with a spike to derisk the core hypothesis, then bu
 
 ## Stack
 
-- **Pipeline (Phase 0 and Phase 1): Python.** Anthropic's SDK is first-class in Python; Unicode normalization, regex, sentence segmentation, and JSON output are ecosystem-native; REPL-driven iteration suits the reconciliation work; `pytest` covers the unit tests on tricky inputs. The pipeline writes JSON output directly into the runtime's `public/tales/` directory so the files are served as plain static assets.
+- **Pipeline (Phase 0 and Phase 1): Python.** Loads the reference model locally via `transformers` and `torch`; Unicode normalization, regex, sentence segmentation, and JSON output are ecosystem-native; REPL-driven iteration suits the reconciliation work; `pytest` covers the unit tests on tricky inputs. The pipeline writes JSON output directly into the runtime's `public/tales/` directory so the files are served as plain static assets.
 - **Runtime (Phase 2 and Phase 3): Next.js.** The slider mechanic ships as a Next.js app, with the cached tale JSONs served as static content from `public/`. The runtime's only job is to fetch JSON and render the slider mechanic; it never tokenizes, scores, or calls a language model.
 - **Deployment: Vercel.** Auto-detected Next.js, per-PR preview deployments, production on `main`. See *Deployment* below.
 
@@ -28,14 +28,14 @@ V1 deploys to **Vercel** with the GitHub repo connected. The pipeline never runs
 
 **Workflow:**
 
-1. Pipeline runs locally on the developer's machine, with the OpenAI API key in a local `.env`. It writes JSON files into `runtime/public/tales/`.
+1. Pipeline runs locally on the developer's machine with the `Qwen2.5-7B-Instruct` weights cached in `~/.cache/huggingface/`. No API key, no network calls during scoring or reconstruction. It writes JSON files into `runtime/public/tales/`.
 2. Pipeline source changes and regenerated JSON are committed together.
 3. Push to a branch → Vercel auto-builds the runtime → preview URL appears on the PR.
 4. Merge into `main` → production deploy.
 
 **Properties this preserves:**
 
-- The OpenAI API key never leaves the developer's machine; Vercel needs zero environment variables for v1.
+- No API keys exist anywhere in the project — the pipeline runs the model locally. Vercel needs zero environment variables for v1.
 - Every Vercel build serves bit-for-bit identical JSON, preserving the determinism committed to in *Determinism and Variability*.
 - Tale JSONs are plain static files under `public/`, served by Vercel's CDN with no serverless invocation per fetch.
 - Per-PR preview URLs make UX checks — "does the title-fade surprise still land?" — shareable with collaborators on every branch.
@@ -79,7 +79,7 @@ Build the offline pipeline that produces one JSON per tale, committed to the rep
 - **Tokenization reconciliation:** built and tested in Phase 0; downstream operates on words.
 - **Threshold-stepping scheme:** a fixed set of discrete slider positions, each backed by precomputed state in the cache.
 - **Cache schema:** one JSON per tale containing words (text, character offset, surprisal), the kernel set, span boundaries per slider position, reconstructions per gap per position, and fidelity scores. Schema is versioned.
-- **Reference model:** OpenAI API (`gpt-5.4-mini`). The pipeline calls OpenAI for both surprisal scoring (via the `logprobs` and `top_logprobs` parameters) and gap reconstruction (via constrained infilling prompts). The pipeline shape is model-agnostic — if a future need calls for a local model, only `score()` and `generate_infill()` change. Background: Anthropic's API does not expose per-token logprobs (see `pipeline/docs/api-notes.md`), and the abstract's *one model, both directions* principle requires a single model for both stages.
+- **Reference model:** `Qwen/Qwen2.5-7B-Instruct` loaded locally via `transformers`. The pipeline performs a single forward pass over the source text to extract exact per-token logprobs (no iteration, no API), and uses the same model for gap reconstruction via the chat template. *One model, both directions* is preserved bit-for-bit because the weights are literally identical between the two stages. Background: neither Anthropic nor OpenAI exposes a viable API surface for arbitrary source-text logprobs (see `pipeline/docs/api-notes.md`), and the only OpenAI workaround relied on a deprecation-prone older model. Local inference removes the vendor dependency entirely, makes the pipeline reproducible, and leaves a clean path for a future Tier C live-prediction layer (self-host the same weights behind a thin endpoint).
 - **Span-merging rule:** sentence-boundary-bounded greedy, with a cap of ~30–40 words that triggers a split at the nearest sub-sentence boundary (comma, semicolon, em-dash) rather than mid-phrase. Terminal punctuation stays anchored (per Phase 0) so sentence boundaries remain visible at every slider position.
 - **Starter corpus:** Little Red Riding Hood and Hansel and Gretel. The remaining 8–13 tales will be selected during or after Phase 2, once the mechanic is validated against the starter pair.
 

@@ -25,5 +25,5 @@ compression-prediction/
 
 ## Stack
 
-- **Pipeline:** Python. Calls the OpenAI API (`gpt-5.4-mini`) for surprisal scoring and gap reconstruction; writes one JSON per tale into `runtime/public/tales/`.
+- **Pipeline:** Python. Loads `Qwen/Qwen2.5-7B-Instruct` locally via `transformers` for both surprisal scoring (single forward pass) and gap reconstruction; writes one JSON per tale into `runtime/public/tales/`. No API keys.
 - **Runtime:** Next.js, deployed to Vercel. Serves tale JSONs as static assets and renders the slider mechanic in the browser.

@@ -116,3 +116,95 @@ share a source.
 Implementation plan and README were updated to reflect the change. A
 local model (Llama/Qwen/etc. via `transformers`) remains the natural
 escalation for Phase 1 if full offline reproducibility becomes desirable.
+
+## Endpoint and logprobs surface used by `score.py` (Phase 0)
+
+OpenAI Python SDK version: `openai==2.38.0`.
+
+`score()` uses the **chat-completions** endpoint
+(`client.chat.completions.create`) with `logprobs=True` and
+`top_logprobs=5`. Logprobs are only returned for tokens the model
+*generates*, not for tokens in the prompt — the legacy `/v1/completions`
+`echo=True` mode is unavailable for the `gpt-5.x` family.
+
+To get logprobs over the *source* text we therefore use an
+**echo strategy**: a deterministic system prompt instructs the model to
+reproduce the user message verbatim with `temperature=0.0`. The output
+token stream is then the (normalized) source text, and the per-position
+logprobs are exactly the surprisals we need. The model output is
+defensively verified to match the normalized source — a mismatch raises
+so the caller can chunk and retry. Cost is roughly 2x prompt tokens; for
+LRRH-sized inputs (≈1.4k words) this is pennies.
+
+Conversion: OpenAI logprobs are natural-log; `score()` divides by
+`ln(2)` to emit surprisal in bits.
+
+`reconstruct()` uses the same endpoint without `logprobs`. Both stages
+target `gpt-5.4-mini`.
+
+## Second resolution (2026-05-24): pivot from OpenAI to a local model
+
+When the echo strategy was run end-to-end on the full LRRH text, **all
+surprisals collapsed to ~0 bits** (range ±0.0001 bits per token). The
+diagnosis: conditioning a chat-tuned model on a system prompt
+instructing verbatim echo makes the model essentially 100% certain of
+every token of its own output. The logprobs measure the model's
+confidence in obeying the instruction, not the text's information
+content. The output was structurally garbage — kernel "survivors" at
+deep compression were random scraps (`oak-trees`, `Red-Cap` everywhere)
+where the model happened to be 99.9% sure rather than 99.99%, not the
+genuinely load-bearing tokens of the story.
+
+Workarounds attempted, all failed:
+
+1. **Iterative scoring via chat completions** (one call per source
+   token, look up actual token in `top_logprobs`). Chat models treat
+   incomplete input as a query and respond as an assistant. Given
+   `"Once upon a time there was a"` the model emits `"It sounds like
+   you're starting a lovely story!"` not `" dear"`. The "first output
+   token" is a response opener, not a continuation. Token-boundary
+   issues compound the problem (assistant-start tokens have no leading
+   space; mid-text tokens do).
+
+2. **Iterative scoring via the Responses API** (same call shape, newer
+   endpoint with `top_logprobs` up to 20). Same chat framing, same
+   distortion.
+
+3. **Single-pass "recite verbatim" via instructions.** Even with strong
+   framing ("You are reciting Grimm's fairy tale Little Red-Cap from
+   memory, verbatim"), the model paraphrases — variations appear within
+   the first sentence ("she never wanted to wear" vs. source's "she
+   would never wear"). Continuation isn't faithful enough to use as a
+   scoring signal.
+
+4. **Legacy `/v1/completions` with `gpt-3.5-turbo-instruct` +
+   `max_tokens=1, logprobs=5` (iterative).** This *worked*: real
+   surprisal signal, 22/29 top-1 matches on the LRRH opening, 2/29
+   out-of-range, total 24.2 bits for 29 tokens. But the only model that
+   gives this surface is `gpt-3.5-turbo-instruct` — an older model with
+   deprecation risk. If OpenAI sunsets it, the pipeline breaks; and any
+   future Tier C live-prediction layer would inherit that risk.
+
+## Third resolution: local model via `transformers`
+
+Reference model: **`Qwen/Qwen2.5-7B-Instruct`** (Apache 2.0). Loaded
+locally via `transformers`. Properties:
+
+- One forward pass over the source returns exact per-token logits over
+  the whole sequence; surprisal is `-log_softmax(logits)[next_token]`
+  in bits.
+- *One model, both directions* is bit-for-bit literal — the same
+  weights drive scoring and reconstruction.
+- Zero API surface dependency. The model file is owned forever.
+- Reproducible: pin the model revision + seeds → identical outputs
+  across machines.
+- Clean Tier C escalation path: self-host the same weights behind a
+  thin endpoint (Modal, Replicate, vLLM, FastAPI) when live prediction
+  becomes desirable.
+
+The `openai`, `tiktoken`, and `python-dotenv` runtime dependencies are
+removed. `transformers`, `torch`, and `accelerate` are added. The
+`OPENAI_API_KEY` and Anthropic key entries in `.env.example` can stay
+or be removed — the pipeline reads neither. First run downloads
+~14 GB of weights to `~/.cache/huggingface/`; subsequent runs load from
+disk in seconds.
