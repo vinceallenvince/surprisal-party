@@ -308,6 +308,41 @@ code change is needed. Existing `pipeline/output/*.{md,json}` files
 
 ### Comparison results
 
-TODO: side-by-side LRRH + H&G outputs vs. Qwen2.5-7B-Instruct — deferred
-until the end-to-end run completes on dev hardware (~2-4 h per tale under
-`caffeinate`). Results will be appended here once the artifacts land.
+**Outcome: Qwen3-8B is not viable on a 24 GB Apple Silicon M4. Step 1
+abandoned; reference model reverted to `Qwen/Qwen2.5-7B-Instruct`.**
+
+Empirical numbers from a partial LRRH run before abandonment:
+
+- Qwen3-8B at bf16 occupied **~20.5 GB** of resident memory (model
+  weights ~16 GB + KV cache for the 1,845-token source + PyTorch
+  forward-pass intermediates + transformers overhead).
+- With all other apps closed (Chrome, Spotify, Claude desktop, etc.),
+  the system reported 22.5/24 GB used, 3.72 GB swap in active use, and
+  the memory-pressure indicator sat in the yellow "warning" zone.
+- Per-gap reconstruction rate was **~10 minutes/gap** vs. the ~5
+  s/gap healthy target on Qwen2.5-7B. A full LRRH run extrapolated to
+  ~150 hours; not usable.
+- Diagnosis: page-thrashing. The model + activation memory pushes the
+  system into swap regardless of other apps; MPS forward passes spend
+  more time waiting on memory than computing.
+
+Total surprisal on the 18 gaps that completed was meaningfully higher
+under Qwen3-8B (LRRH total tokens-surprisal: 5,426.6 bits vs. 2,989.7
+under Qwen2.5-7B — roughly 1.8× more uncertain about Hunt's prose).
+Interesting signal but unactionable without a working inference path.
+
+**Implication for the Phase 1 escalation ladder:** the dense-8B step
+is hardware-bound on the current dev machine. The next attempt at a
+reconstruction-quality upgrade should skip directly to **step 2: MLX +
+`Qwen3-30B-A3B-4bit`**, which fits in ~15 GB at int4 and uses MLX's
+native unified-memory path. Paradoxically a larger model with a smaller
+memory footprint and lower per-token overhead is the better fit for
+this hardware. Quality improvements before that step should be sought
+through **prompt iteration** on `reconstruct.py`, which is cheap, fast
+to test, and untouched by the model question.
+
+The `enable_thinking=False` flag and `_strip_think_blocks` regex in
+`reconstruct.py` are left in place as harmless defensive code — they
+are no-ops on Qwen2.5 (the tokenizer accepts the kwarg without
+complaint) but would activate automatically if a future swap brought a
+Qwen3-family model back in via the MLX path.

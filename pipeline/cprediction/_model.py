@@ -23,7 +23,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, PreTrainedModel, PreTrainedTokenizerBase
 
 
-MODEL_ID: str = "Qwen/Qwen3-8B"
+MODEL_ID: str = "Qwen/Qwen2.5-7B-Instruct"
 """HuggingFace repo id for the reference model used by score() and reconstruct()."""
 
 
