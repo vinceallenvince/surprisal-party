@@ -14,9 +14,21 @@ pipeline/
 ├── pyproject.toml
 ├── cprediction/
 │   ├── __init__.py
-│   └── reconciliation.py        # normalize() + reconcile()
+│   ├── reconciliation.py        # normalize() + reconcile()
+│   ├── score.py                 # per-token surprisals (model)
+│   ├── thresholds.py            # discrete slider positions
+│   ├── spans.py                 # find_gaps()
+│   ├── reconstruct.py           # gap reconstruction (model)
+│   ├── fidelity.py              # fidelity()
+│   ├── cache.py                 # write_cache() — versioned JSON for runtime
+│   └── run.py                   # end-to-end pipeline driver
 └── tests/
-    └── test_reconciliation.py
+    ├── test_reconciliation.py
+    ├── test_thresholds.py
+    ├── test_spans.py
+    ├── test_fidelity.py
+    ├── test_cache.py
+    └── ...integration tests
 ```
 
 The pipeline is a proper Python package (`cprediction`) so additional Phase 1

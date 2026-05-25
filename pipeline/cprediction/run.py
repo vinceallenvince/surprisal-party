@@ -14,11 +14,13 @@ input path, output path).
 from __future__ import annotations
 
 import math
+import os
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 
 from cprediction._model import MODEL_ID
+from cprediction.cache import build_cache
 from cprediction.fidelity import fidelity
 from cprediction.reconciliation import Word, reconcile
 from cprediction.reconstruct import reconstruct
@@ -217,12 +219,58 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     title = _title_from_path(input_path)
-    output_path.write_text(
-        _render_markdown(normalized, words, positions, total_bits, title),
-        encoding="utf-8",
+    json_path = output_path.with_suffix(".json")
+
+    # Build the cache BEFORE any file write. ``build_cache`` re-asserts the
+    # per-position conservation invariant; if it raises, neither the .md nor
+    # the .json on disk is touched, so any prior successful pair survives as a
+    # stale-but-consistent snapshot.
+    cache = build_cache(
+        title=title,
+        source_file=str(input_path),
+        model_id=MODEL_ID,
+        normalized_source=normalized,
+        words=words,
+        positions=positions,
+        total_bits=total_bits,
+        token_count=len(tokens),
     )
-    print(f"[run] wrote {output_path}", file=sys.stderr)
+    markdown = _render_markdown(normalized, words, positions, total_bits, title)
+
+    # Temp-and-rename for both artifacts: ``os.replace`` is atomic on POSIX,
+    # so a torn write (disk pressure, interrupt) cannot leave a half-formed
+    # file in either location, and the .md / .json pair stays consistent.
+    try:
+        _atomic_write_text(output_path, markdown)
+        _atomic_write_text(
+            json_path, cache.model_dump_json(indent=2) + "\n"
+        )
+    except OSError as e:
+        print(
+            f"[run] write failed ({e}); prior artifacts (if any) are unchanged",
+            file=sys.stderr,
+        )
+        raise
+    print(f"[run] wrote {output_path} and {json_path}", file=sys.stderr)
     return output_path
+
+
+def _atomic_write_text(path: Path, content: str) -> None:
+    """Write ``content`` to ``path`` atomically via temp-file + ``os.replace``.
+
+    The temp file lives in the same directory so the rename is on one
+    filesystem. On failure of either step, any pre-existing file at ``path``
+    is unchanged and the temp file is cleaned up (no orphan ``.tmp`` left
+    behind for the next run to step on).
+    """
+
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    try:
+        tmp.write_text(content, encoding="utf-8")
+        os.replace(tmp, path)
+    except OSError:
+        tmp.unlink(missing_ok=True)
+        raise
 
 
 _TITLE_LOWERCASE_WORDS: frozenset[str] = frozenset(
