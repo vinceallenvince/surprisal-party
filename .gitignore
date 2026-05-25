@@ -11,6 +11,10 @@ Thumbs.db
 # Pipeline run logs (each run rewrites this; the Markdown reports are the artifact)
 pipeline/output/*.log
 
+# uv lockfile — pyproject.toml's version floors are sufficient for v1; revisit
+# if/when CI or other contributors arrive
+pipeline/uv.lock
+
 # -----------------------------------------------------------------------------
 # Environment / secrets
 # -----------------------------------------------------------------------------
