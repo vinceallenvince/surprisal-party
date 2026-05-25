@@ -83,6 +83,25 @@ Build the offline pipeline that produces one JSON per tale, committed to the rep
 - **Span-merging rule:** sentence-boundary-bounded greedy, with a cap of ~30–40 words that triggers a split at the nearest sub-sentence boundary (comma, semicolon, em-dash) rather than mid-phrase. Terminal punctuation stays anchored (per Phase 0) so sentence boundaries remain visible at every slider position.
 - **Starter corpus:** Little Red Riding Hood and Hansel and Gretel, roughly 1,500–3,000 words each (per `docs/abstract.md`). The remaining 8–13 tales will be selected during or after Phase 2, once the mechanic is validated against the starter pair.
 
+**Open evaluations during Phase 1:**
+
+- **Reconstruction-quality model upgrade.** Phase 0 used `Qwen/Qwen2.5-7B-Instruct` and validated the mechanic on LRRH and H&G. The reviewer flagged reconstruction quality on long, deeply-compressed gaps as a Phase 1 axis — greedy decoding sometimes terminates early and produces paraphrasic rather than source-faithful fills. Worth evaluating a larger model against the same two tales for side-by-side comparison before the cache is finalized for the full corpus.
+
+  Candidate ranking on a 24 GB Apple Silicon M4 (the current dev hardware):
+
+  | Model | Quality tier | Memory at 4-bit | Backend swap needed? |
+  |---|---|---|---|
+  | `Qwen/Qwen3-8B` (or similar dense 8B) | modest bump over 2.5-7B | fits at bf16 (~16 GB) | No — stays on `transformers` |
+  | `mlx-community/Qwen3-30B-A3B-4bit` | 30B-class reconstruction at ~3B-dense inference cost (MoE A3B) | ~15 GB int4 | **Yes** — `transformers` → `mlx-lm` |
+  | `mlx-community/Qwen3.6-27B-4bit` (dense) | high quality, slowest | ~14 GB int4 | Yes — MLX |
+  | `mlx-community/Gemma-4-26B-A4B-it-4bit` | comparable to Qwen3-30B-A3B | ~13 GB int4 | Yes — MLX |
+
+  Key constraint: all candidates above 8B require 4-bit quantization to fit in 24 GB unified memory. MoE total-param size dictates memory regardless of active params per token (the router needs all experts resident). On Apple Silicon, MLX is the cleanest path to running int4-quantized models, but it is a backend swap — `_model.py`, `score.py`, and `reconstruct.py` change; reconciliation, spans, thresholds, and fidelity are unchanged.
+
+  **Recommended sequence:** (1) try `Qwen3-8B` first (one-line config change) and re-run LRRH + H&G; (2) if the quality bump is enough, ship it; (3) only if it isn't, take the MLX detour to `Qwen3-30B-A3B-4bit`.
+
+  Either way, the new cache must be regenerated for the whole starter corpus and a brief comparison note added to `pipeline/docs/api-notes.md`.
+
 **Variability tier:** **Tier A.** One reconstruction per gap. Any sampling step is seeded; outputs are committed so the cache is bit-for-bit reproducible.
 
 **Output:** 10–15 tale JSONs written to `runtime/public/tales/`, schema-validated, hand-inspectable, committed alongside pipeline source changes.
