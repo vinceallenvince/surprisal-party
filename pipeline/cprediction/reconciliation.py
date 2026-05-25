@@ -154,12 +154,20 @@ def normalize(text: str) -> str:
     """Normalize source text before tokenization or reconciliation.
 
     Applies NFC normalization, folds smart quotes and en-/em-dashes to ASCII,
-    and replaces NBSP with a regular space. Exposed separately from
-    `reconcile` so it can be tested and used by other pipeline stages.
+    replaces NBSP with a regular space, and strips leading/trailing
+    whitespace. Leading/trailing whitespace carries no narrative content,
+    is not stable across corpus sources, and is reliably stripped by chat
+    models — so the echo strategy in `score()` requires the normalized
+    source to be pre-stripped for an exact-match comparison. Inter-word
+    whitespace is preserved.
+
+    Exposed separately from `reconcile` so it can be tested and used by
+    other pipeline stages.
     """
 
     nfc = unicodedata.normalize("NFC", text)
-    return "".join(_FOLD_MAP.get(ch, ch) for ch in nfc)
+    folded = "".join(_FOLD_MAP.get(ch, ch) for ch in nfc)
+    return folded.strip()
 
 
 def _is_control_token(text: str) -> bool:
@@ -309,7 +317,16 @@ def reconcile(source_text: str, tokens: list[Token]) -> list[Word]:
             # token that owns this space belongs to the NEXT word.
             if cur_core_start is not None:
                 flush()
-            cur_pending_token_idxs.append(tok_idx)
+            # A single BPE token can span both a flushed word's trailing
+            # punctuation AND the whitespace that follows (e.g. Qwen's
+            # ``.\n\n`` paragraph-break piece). Its surprisal was already
+            # accounted for by the word we just flushed, so do not also
+            # forward it as pending — that would double-count it onto the
+            # next word and violate conservation.
+            if words and tok_idx in words[-1].token_indices:
+                pass
+            else:
+                cur_pending_token_idxs.append(tok_idx)
         elif kind == "wordchar":
             if cur_trailing_start is not None:
                 # We had punctuation after a word; a new alphanumeric char

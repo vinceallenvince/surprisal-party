@@ -8,7 +8,12 @@ version = "0.0.1"
 description = "Offline build-time pipeline for the Compression-Prediction Explorer: tokenization reconciliation, surprisal scoring, and span reconstruction."
 requires-python = ">=3.11"
 authors = [{ name = "Compression-Prediction Explorer" }]
-dependencies = []
+dependencies = [
+    "transformers>=4.45",
+    "torch>=2.4",
+    "accelerate>=0.34",
+    "sentencepiece>=0.2",
+]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
@@ -20,3 +25,7 @@ exclude = ["tests*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+markers = [
+    "integration: tests that load the local reference model (Qwen2.5-7B-Instruct). Skipped by default; run with -m integration.",
+]
+addopts = "-m 'not integration'"

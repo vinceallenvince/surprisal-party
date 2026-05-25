@@ -203,8 +203,36 @@ locally via `transformers`. Properties:
   becomes desirable.
 
 The `openai`, `tiktoken`, and `python-dotenv` runtime dependencies are
-removed. `transformers`, `torch`, and `accelerate` are added. The
-`OPENAI_API_KEY` and Anthropic key entries in `.env.example` can stay
-or be removed — the pipeline reads neither. First run downloads
-~14 GB of weights to `~/.cache/huggingface/`; subsequent runs load from
-disk in seconds.
+removed. `transformers`, `torch`, `accelerate`, and `sentencepiece`
+are added. `.env.example` is reduced to a comment — the pipeline reads
+no environment variables. First run downloads ~14 GB of weights to
+`~/.cache/huggingface/`; subsequent runs load from disk in seconds.
+
+### Implementation surface in use (Phase 0)
+
+- **Model singleton:** `cprediction/_model.py` exposes `get_model()`,
+  `get_tokenizer()`, and `MODEL_ID`. Both `score` and `reconstruct` reach
+  for the same cached handles, so *one model, both directions* is
+  bit-for-bit literal. The loader picks the best single device
+  available (`cuda` > `mps` > `cpu`) and loads in `bfloat16`. On a
+  24 GB Apple Silicon machine the whole model sits on MPS — no
+  disk/CPU offloading, no per-forward-pass overhead.
+- **Scoring (`score.py`):** tokenizes the normalized source with
+  `add_special_tokens=False` (Qwen2.5 does not prepend a BOS for plain
+  text; we suppress special tokens defensively so the surprisal stream
+  aligns one-to-one with source characters). One `model(input_ids)`
+  forward pass yields logits; surprisal is
+  `-log_softmax(logits[:-1])[next_id] / ln(2)` in bits, computed with
+  `torch.nn.functional.log_softmax` for stability. The first token
+  carries surprisal `0.0` (no left context) so the
+  `"".join(t.text for t in tokens) == normalized_source` invariant
+  holds for `reconcile()`.
+- **Reconstruction (`reconstruct.py`):** uses
+  `tokenizer.apply_chat_template(..., return_dict=True)` (newer
+  transformers returns a `BatchEncoding`, not a tensor — older code that
+  passes the result directly to `model.generate` will fail with an
+  `AttributeError` on `.shape`) with a system prompt that frames the
+  task as filling a gap, plus a user turn shaped as
+  `LEFT: ... \n<<<GAP>>>\nRIGHT: ...`. Greedy decoding
+  (`do_sample=False`), `max_new_tokens` scaled to roughly twice the
+  larger of the left/right word counts with a floor of 64.

@@ -8,6 +8,9 @@ Thumbs.db
 *.swp
 *.swo
 
+# Pipeline run logs (each run rewrites this; the Markdown reports are the artifact)
+pipeline/output/*.log
+
 # -----------------------------------------------------------------------------
 # Environment / secrets
 # -----------------------------------------------------------------------------
