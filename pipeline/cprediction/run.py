@@ -216,11 +216,36 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
         )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    title = _title_from_path(input_path)
     output_path.write_text(
-        _render_markdown(normalized, words, positions, total_bits), encoding="utf-8"
+        _render_markdown(normalized, words, positions, total_bits, title),
+        encoding="utf-8",
     )
     print(f"[run] wrote {output_path}", file=sys.stderr)
     return output_path
+
+
+_TITLE_LOWERCASE_WORDS: frozenset[str] = frozenset(
+    {"a", "an", "and", "at", "but", "for", "in", "of", "on", "or", "the", "to"}
+)
+
+
+def _title_from_path(path: Path) -> str:
+    """Derive a display title from a corpus filename.
+
+    `little-red-riding-hood.txt` -> `Little Red Riding Hood`;
+    `hansel-and-gretel.txt` -> `Hansel and Gretel`. Hyphens and
+    underscores become spaces; the first word is always capitalized and
+    subsequent words are capitalized except for a small set of articles
+    and conjunctions that conventionally stay lowercase in English titles.
+    """
+
+    raw = path.stem.replace("-", " ").replace("_", " ")
+    words = raw.split()
+    return " ".join(
+        w.lower() if i > 0 and w.lower() in _TITLE_LOWERCASE_WORDS else w.capitalize()
+        for i, w in enumerate(words)
+    )
 
 
 def _render_markdown(
@@ -228,10 +253,11 @@ def _render_markdown(
     words: list[Word],
     positions: list[PositionResult],
     total_bits: float,
+    title: str,
 ) -> str:
     real_words = [w for w in words if not w.is_empty_core]
     lines: list[str] = []
-    lines.append("# Phase 0 end-to-end run: Little Red Riding Hood\n")
+    lines.append(f"# Phase 0 end-to-end run: {title}\n")
     lines.append(f"Reference model: `{MODEL_ID}`")
     lines.append("")
     lines.append(f"- Source words: **{len(real_words):,}**")
