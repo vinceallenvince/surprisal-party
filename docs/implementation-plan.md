@@ -98,9 +98,18 @@ Build the offline pipeline that produces one JSON per tale, committed to the rep
 
   Key constraint: all candidates above 8B require 4-bit quantization to fit in 24 GB unified memory. MoE total-param size dictates memory regardless of active params per token (the router needs all experts resident). On Apple Silicon, MLX is the cleanest path to running int4-quantized models, but it is a backend swap — `_model.py`, `score.py`, and `reconstruct.py` change; reconciliation, spans, thresholds, and fidelity are unchanged.
 
-  **Recommended sequence:** (1) try `Qwen3-8B` first (one-line config change) and re-run LRRH + H&G; (2) if the quality bump is enough, ship it; (3) only if it isn't, take the MLX detour to `Qwen3-30B-A3B-4bit`.
+  **Recommended sequence:** (1) try `Qwen3-8B` first (one-line config change) and re-run LRRH + H&G; (2) if the quality bump is enough, ship it; (3) only if it isn't, take the MLX detour to `Qwen3-30B-A3B-4bit`; (4) if *even that* isn't enough, escalate to a hosted model via HF Inference Providers — see below.
 
   Either way, the new cache must be regenerated for the whole starter corpus and a brief comparison note added to `pipeline/docs/api-notes.md`.
+
+  **Step-4 fallback: HF Inference Providers.** If neither the 8B nor the local 30B-A3B-4bit produces acceptable reconstruction quality, escalate to a much larger hosted model (Llama 3.1 405B, Qwen3-72B+, DeepSeek-V3, etc.) via [HuggingFace Inference Providers](https://huggingface.co/docs/inference-providers/). The pipeline stays build-time-only (Tier A determinism preserved at the artifact level), the static-site architecture is unchanged, and *one model, both directions* still holds — same hosted model for both `score()` and `reconstruct()`. Tradeoffs:
+
+  - **Per-token cost.** Builds become non-free — roughly $5–$30 for the full 10–15 tale corpus, depending on chosen model and provider.
+  - **Vendor coupling returns.** Mitigation: HF Inference Providers is itself a unifying layer over multiple providers (Together AI, Fireworks, Replicate, etc.), so we are not locked to one vendor.
+  - **Reproducibility weakens.** A hosted endpoint can silently version-shift its weights between runs; the cache becomes "Qwen3-72B as Together served it on date X" rather than a self-contained artifact. Pin model + provider + date in the cache metadata.
+  - **API surface must support echo + logprobs.** Same hard requirement that ruled out OpenAI's chat-completions endpoint applies here. **Before integrating**, write a ~30-line probe script that hits the chosen provider with a short passage, asks for echo logprobs over the prompt, and confirms the returned bits are non-trivial (not all ~0 like the OpenAI echo collapse). Together AI's `/v1/completions` endpoint on a base/instruct open-weight model is the most likely candidate; chat-only endpoints will not work for `score()`.
+
+  Adds one new runtime dependency (the HF Inference Providers SDK or a direct provider client), one new env var (`HF_TOKEN` or equivalent), and provider/model selection captured in the cache metadata for traceability.
 
 **Variability tier:** **Tier A.** One reconstruction per gap. Any sampling step is seeded; outputs are committed so the cache is bit-for-bit reproducible.
 
