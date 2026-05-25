@@ -11,9 +11,24 @@ This module shares the model singleton with ``cprediction.score`` —
 
 from __future__ import annotations
 
+import re
+
 import torch
 
 from cprediction._model import get_model, get_tokenizer
+
+
+# Qwen3 models support a "thinking mode" that emits a <think>...</think>
+# reasoning block before the actual response. We disable it via the
+# tokenizer's ``enable_thinking=False`` flag (see the Qwen3-8B model card),
+# but also strip any residual block defensively in case a future tokenizer
+# revision ignores the flag.
+_THINK_BLOCK_RE = re.compile(r"<think>.*?</think>\s*", re.DOTALL | re.IGNORECASE)
+
+
+def _strip_think_blocks(text: str) -> str:
+    """Remove any ``<think>...</think>`` reasoning traces from model output."""
+    return _THINK_BLOCK_RE.sub("", text)
 
 
 _SYSTEM_PROMPT = (
@@ -82,6 +97,12 @@ def reconstruct(
         add_generation_prompt=True,
         return_tensors="pt",
         return_dict=True,
+        # Qwen3 introduced a "thinking mode" that wraps reasoning in
+        # <think>...</think> before the actual reply. We want only the gap
+        # fill, so we disable thinking at the chat-template level. Tokenizers
+        # that don't recognize the flag silently ignore it, so this remains
+        # a safe no-op on older Qwen2.5-family tokenizers.
+        enable_thinking=False,
     )
     prompt_ids = chat_inputs["input_ids"].to(model.device)
     attention_mask = chat_inputs["attention_mask"].to(model.device)
@@ -110,4 +131,8 @@ def reconstruct(
     # Slice off the prompt so we decode only the model's reply.
     new_ids = output_ids[0, prompt_ids.shape[1]:]
     text = tokenizer.decode(new_ids, skip_special_tokens=True)
+    # Belt-and-suspenders: even with enable_thinking=False, strip any
+    # residual <think>...</think> blocks in case a future tokenizer
+    # revision disregards the flag.
+    text = _strip_think_blocks(text)
     return text.strip()

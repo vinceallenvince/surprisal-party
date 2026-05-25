@@ -26,11 +26,18 @@ assertion that ``reconcile`` relies on.)
 
 BOS handling
 ------------
-Qwen2.5's tokenizer does not prepend a BOS token by default when called as
-``tokenizer(text, add_special_tokens=False)`` and even with the default it
-typically returns no BOS for plain text (its ``bos_token`` is ``None``).
-We pass ``add_special_tokens=False`` defensively so the surprisal stream
-aligns one-to-one with the source characters.
+The Qwen family (2.5 and 3) does not prepend a BOS token for plain text
+(``bos_token`` is ``None``). We pass ``add_special_tokens=False``
+defensively so the surprisal stream aligns one-to-one with source
+characters regardless of any future tokenizer revisions.
+
+Chat template independence
+--------------------------
+``score()`` deliberately does NOT use ``apply_chat_template`` — we want
+raw next-token logprobs over the source as the model saw it during
+pretraining. That makes scoring independent of Qwen3's "thinking mode"
+(a chat-template feature); the thinking-mode handling lives in
+``reconstruct.py`` only.
 """
 
 from __future__ import annotations

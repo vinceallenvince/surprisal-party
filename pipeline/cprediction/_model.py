@@ -1,7 +1,7 @@
 """Singleton loader for the local reference model.
 
 Both ``score`` and ``reconstruct`` reach for the same weights — *one model,
-both directions* is a literal identity here, not a wish. The 7B model takes
+both directions* is a literal identity here, not a wish. The 8B model takes
 15–30 seconds to load from disk on first call, so we cache it at module
 level and hand out the cached handle on every subsequent call.
 
@@ -23,7 +23,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, PreTrainedModel, PreTrainedTokenizerBase
 
 
-MODEL_ID: str = "Qwen/Qwen2.5-7B-Instruct"
+MODEL_ID: str = "Qwen/Qwen3-8B"
 """HuggingFace repo id for the reference model used by score() and reconstruct()."""
 
 
@@ -60,7 +60,7 @@ def _pick_device() -> str:
 def get_model() -> PreTrainedModel:
     """Return the cached model, loading it on first call.
 
-    First call takes ~15-30 s and consumes ~14 GB of disk via the HF cache.
+    First call takes ~15-30 s and consumes ~16 GB of disk via the HF cache.
     Subsequent calls return the cached handle immediately.
     """
     global _MODEL

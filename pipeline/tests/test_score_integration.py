@@ -30,7 +30,7 @@ def _skip_if_model_missing() -> None:
     except (OSError, ImportError) as exc:
         pytest.skip(
             f"Reference model not available locally: {exc}. "
-            "Run `huggingface-cli download Qwen/Qwen2.5-7B-Instruct`."
+            "Run `hf download Qwen/Qwen3-8B`."
         )
 
 

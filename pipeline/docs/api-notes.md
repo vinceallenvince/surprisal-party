@@ -236,3 +236,78 @@ no environment variables. First run downloads ~14 GB of weights to
   `LEFT: ... \n<<<GAP>>>\nRIGHT: ...`. Greedy decoding
   (`do_sample=False`), `max_new_tokens` scaled to roughly twice the
   larger of the left/right word counts with a floor of 64.
+
+## Phase 1: Qwen3-8B reconstruction-quality evaluation (2026-05-25)
+
+The reference model was swapped from `Qwen/Qwen2.5-7B-Instruct` to
+**`Qwen/Qwen3-8B`** as step 1 of the Phase 1 reconstruction-quality
+evaluation sequence committed in the implementation plan. Same backend
+(`transformers` + `torch`, bf16 on Apple MPS), no new runtime
+dependencies, no quantization. ~16 GB on disk in the HF cache.
+
+### What changed in code
+
+- `cprediction/_model.py`: `MODEL_ID = "Qwen/Qwen3-8B"`. Module docstring
+  updated (7B → 8B, ~14 GB → ~16 GB).
+- `cprediction/reconstruct.py`: passes `enable_thinking=False` to
+  `tokenizer.apply_chat_template(...)` (the Qwen3 model card's documented
+  way to suppress the `<think>...</think>` reasoning block). Adds a
+  defensive `_strip_think_blocks()` post-decode pass that removes any
+  residual `<think>...</think>` content in case a future tokenizer
+  revision disregards the flag.
+- `cprediction/score.py`: no functional change. Scoring uses raw-text
+  tokenization, not the chat template, so thinking mode is structurally
+  irrelevant to the score path. The module docstring was updated to
+  generalize the BOS-handling note across the Qwen 2.5/3 family and to
+  make the chat-template independence explicit.
+- `tests/test_reconstruct_integration.py`: added assertions that the
+  output contains no `<think>` / `</think>` tags, guarding both the
+  tokenizer flag and the defensive strip.
+
+### Thinking-mode mechanism: which one we actually rely on
+
+The Qwen3-8B model card explicitly documents `enable_thinking=False` as a
+keyword argument to `tokenizer.apply_chat_template(...)`. When set, the
+chat template emits markers that suppress the `<think>...</think>` block
+entirely and the model behaves "similarly to previous Qwen2.5-Instruct
+models." This is the primary mechanism we use — no system-prompt
+directive is needed.
+
+The post-decode `_strip_think_blocks()` regex is belt-and-suspenders only.
+The integration test asserts no `<think>` leakage so a regression in
+either layer surfaces immediately.
+
+Note: a third option — `tokenizer.apply_chat_template(...,
+chat_template=<custom>)` — was considered and rejected. The shipped
+template is what HuggingFace and Qwen recommend; overriding it would
+re-create exactly the bugs the flag was added to prevent.
+
+### Tokenizer / BOS / EOS notes
+
+Qwen3-8B uses the same BPE-family tokenizer as Qwen2.5, with `bos_token`
+still `None` for plain text. `add_special_tokens=False` in `score.py`
+remains the right call — no change needed. Vocabulary size and chat-control
+tokens differ between the families (Qwen3 adds the `<think>` / `</think>`
+control tokens), but these only matter when `apply_chat_template` is in
+use; raw-text scoring is unaffected.
+
+### Side-by-side output convention
+
+To compare Qwen2.5-7B and Qwen3-8B artifacts without overwriting the
+baseline, route Qwen3-8B outputs under a model-tagged subdirectory:
+
+```bash
+caffeinate -is .venv/bin/python -m cprediction.run \
+    ./corpus/little-red-riding-hood.txt \
+    ./output/qwen3-8b/little-red-riding-hood.md
+```
+
+`run.py` already accepts the output path as a positional argument, so no
+code change is needed. Existing `pipeline/output/*.{md,json}` files
+(Qwen2.5-7B baseline) remain untouched.
+
+### Comparison results
+
+TODO: side-by-side LRRH + H&G outputs vs. Qwen2.5-7B-Instruct — deferred
+until the end-to-end run completes on dev hardware (~2-4 h per tale under
+`caffeinate`). Results will be appended here once the artifacts land.

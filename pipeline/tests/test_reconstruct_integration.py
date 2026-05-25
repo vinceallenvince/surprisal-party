@@ -23,7 +23,7 @@ def _skip_if_model_missing() -> None:
     except (OSError, ImportError) as exc:
         pytest.skip(
             f"Reference model not available locally: {exc}. "
-            "Run `huggingface-cli download Qwen/Qwen2.5-7B-Instruct`."
+            "Run `hf download Qwen/Qwen3-8B`."
         )
 
 
@@ -39,6 +39,11 @@ def test_reconstruct_returns_non_empty_for_small_gap() -> None:
     assert "<<<GAP>>>" not in out
     assert "LEFT:" not in out
     assert "RIGHT:" not in out
+    # Qwen3 thinking-mode reasoning blocks must not leak into the output.
+    # We disable thinking via enable_thinking=False in the chat template,
+    # plus strip defensively post-decode. This guards both layers.
+    assert "<think>" not in out.lower()
+    assert "</think>" not in out.lower()
     lowered = out.lower().lstrip().lstrip("\"'`")
     for opener in ("sure, here", "here is", "here's", "of course"):
         assert not lowered.startswith(opener), f"reply starts with chat opener: {out!r}"
