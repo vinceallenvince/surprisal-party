@@ -72,7 +72,15 @@ A separated panel along the right side. This is the **conservation visualization
 
 ### Slider (full width, ~64–80 px tall)
 
-A single horizontal control along the bottom. Five fixed positions marked by faint notches on the track. The thumb is generous and clearly draggable. Optionally, the track itself can show a faint gradient or label hinting at the two regimes — *lossless* on the left half, *lossy* on the right half — though words are not necessary; a hue or weight shift is enough.
+A single horizontal control along the bottom. Five fixed positions marked by faint notches on the track. The thumb is generous and clearly draggable.
+
+**Label the five positions like this**, in a single row beneath the track:
+
+```
+UNCOMPRESSED ........... 25% ........... 50% ........... 75% .......... MAX COMPRESSED
+```
+
+The two endpoint labels are the only place on the page where the word *compression* appears — they anchor what the slider does. The percentile notches in the middle describe the granularity of the steps in between. Do not stack a second tier of regime labels (LOSSLESS / LOSSY etc.) below — a single coherent line of labels is cleaner, and the regime change can be conveyed by a subtle gradient on the track (cool hue on the left, warm hue on the right) without needing words.
 
 ---
 
