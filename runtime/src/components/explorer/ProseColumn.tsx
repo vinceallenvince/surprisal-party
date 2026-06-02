@@ -39,7 +39,7 @@ export function ProseColumn({ items }: ProseColumnProps) {
                 {item.separator}
               </span>
             ) : (
-              <span key={`s${item.gapId}`}>
+              <span key={`s${item.gapIds.join('-')}`}>
                 {/* Static seam marker (node 30-15994): a thin dim vertical
                     pipe between survivors. No hover / reveal / inspector —
                     that is Step 5. */}

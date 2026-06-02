@@ -98,7 +98,36 @@ describe('renderPosition', () => {
     expect(kinds).toEqual(['word', 'seam', 'word']);
     const seams = r.proseItems.filter((i) => i.kind === 'seam');
     expect(seams).toHaveLength(1);
-    expect(seams[0].kind === 'seam' && seams[0].gapId).toBe(0);
+    expect(seams[0].kind === 'seam' && seams[0].gapIds).toEqual([0]);
+  });
+
+  it('collapses adjacent gaps (no survivor between) into one seam', () => {
+    // "A b c d" — A(0) and d(3) survive; b(1) and c(2) are removed as TWO
+    // separate adjacent gaps. With no survivor between them they must render
+    // as a single seam carrying both gap ids, not "| |".
+    const cache: TaleCache = {
+      schema_version: '0.1.0',
+      metadata: { title: 'Adj', source_file: 'x', model_id: 't', generated_at: '2026-01-01T00:00:00Z', total_bits: 100, word_count: 4, token_count: 4 },
+      source: 'A b c d',
+      words: [
+        { index: 0, core: 'A', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 0, char_end: 1, surprisal: 0.0 },
+        { index: 1, core: 'b', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 2, char_end: 3, surprisal: 3.0 },
+        { index: 2, core: 'c', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 4, char_end: 5, surprisal: 3.0 },
+        { index: 3, core: 'd', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 6, char_end: 7, surprisal: 0.5 },
+      ],
+      kernel_word_indices: [0],
+      positions: [
+        { index: 0, threshold: 1, words_remaining: 2, words_removed: 2, stored_bits: 50, predicted_bits: 50,
+          gaps: [
+            { id: 0, start_word_index: 1, end_word_index: 1, word_indices: [1], actual_text: 'b', predicted_text: 'x', fidelity: 0.5 },
+            { id: 1, start_word_index: 2, end_word_index: 2, word_indices: [2], actual_text: 'c', predicted_text: 'y', fidelity: 0.5 },
+          ] },
+      ],
+    };
+    const r = renderPosition(cache, 0);
+    expect(r.proseItems.map((i) => i.kind)).toEqual(['word', 'seam', 'word']);
+    const seam = r.proseItems.find((i) => i.kind === 'seam');
+    expect(seam?.kind === 'seam' && seam.gapIds).toEqual([0, 1]);
   });
 
   it('marks kernel words', () => {

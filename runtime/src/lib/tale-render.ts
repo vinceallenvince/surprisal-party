@@ -38,11 +38,16 @@ export type ProseWordItem = {
   isKernel: boolean;
 };
 
-/** A collapsed gap, rendered as a static thin seam between survivors. */
+/**
+ * A collapsed run, rendered as a single static thin seam between survivors.
+ * A run of removed words with no surviving word between them — whether one
+ * gap or several adjacent gaps — collapses into ONE seam, so deep compression
+ * shows a single pipe rather than `| | |`.
+ */
 export type ProseSeamItem = {
   kind: 'seam';
-  /** The gap's stable id within its position. */
-  gapId: number;
+  /** Every gap id in this collapsed run, in source order (≥ 1). */
+  gapIds: number[];
   /** Separator that follows the seam — always collapsed (never a newline). */
   separator: string;
 };
@@ -185,7 +190,6 @@ export function renderPosition(
   }
 
   const proseItems: ProseItem[] = [];
-  let lastEmittedGapId: number | null = null;
 
   for (let i = 0; i < words.length; i++) {
     const word = words[i];
@@ -198,17 +202,19 @@ export function renderPosition(
     const gapId = wordToGapId.get(word.index);
 
     if (gapId !== undefined) {
-      // Removed word: emit one seam for the run of words in this gap, the
-      // first time we encounter the gap. Subsequent words in the same gap
-      // collapse into that single seam. The seam never carries a newline.
-      if (gapId !== lastEmittedGapId) {
-        proseItems.push({
-          kind: 'seam',
-          gapId,
-          // Adjacent to a removed span → always a space (never a break).
-          separator: spaceUnlessEmpty(gapTrailingSep.get(gapId) ?? rawSep),
-        });
-        lastEmittedGapId = gapId;
+      // Removed word. Collapse a run of removed words into ONE seam — whether
+      // the same gap or several adjacent gaps with no surviving word between
+      // them — so deep compression shows a single pipe, not "| | |". The seam
+      // accumulates every gap id in the run (Step 5 reveal will use them) and
+      // its trailing separator tracks the latest gap's right boundary. It
+      // never carries a newline.
+      const sep = spaceUnlessEmpty(gapTrailingSep.get(gapId) ?? rawSep);
+      const prev = proseItems[proseItems.length - 1];
+      if (prev && prev.kind === 'seam') {
+        if (prev.gapIds[prev.gapIds.length - 1] !== gapId) prev.gapIds.push(gapId);
+        prev.separator = sep;
+      } else {
+        proseItems.push({ kind: 'seam', gapIds: [gapId], separator: sep });
       }
       continue;
     }
@@ -223,7 +229,6 @@ export function renderPosition(
       ? spaceUnlessEmpty(rawSep)
       : survivorSeparator(rawSep);
 
-    lastEmittedGapId = null;
     proseItems.push({
       kind: 'word',
       index: word.index,

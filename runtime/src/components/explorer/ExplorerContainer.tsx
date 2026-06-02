@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ExplorerShell } from './ExplorerShell';
-import { midPositionIndex, renderPosition } from '@/lib/tale-render';
+import { renderPosition } from '@/lib/tale-render';
 import {
   parseTaleCache,
   SUPPORTED_SCHEMA_VERSION,
@@ -19,6 +19,11 @@ import {
  * mid-slider position into the shell. Corpus *switching* is out of scope
  * (Step 7); the slug is hardcoded here.
  *
+ * Step 3 lifts the slider's selected position into this container: a single
+ * `selectedPositionIndex` (0–4, default 0 = UNCOMPRESSED) drives both the
+ * re-derived `renderPosition` output and the controlled slider. Position swaps
+ * are instantaneous (no animation — that is Step 4).
+ *
  * Loading / error handling is intentionally minimal — a null-guard skeleton.
  * Full loading / error / slow-network states are Phase 3.
  */
@@ -27,6 +32,12 @@ const TALE_SLUG = 'little-red-riding-hood';
 
 export function ExplorerContainer() {
   const [cache, setCache] = useState<TaleCache | null>(null);
+  // Default to UNCOMPRESSED (far left, index 0). The slider is the only writer.
+  const [selectedPositionIndex, setSelectedPositionIndex] = useState(0);
+
+  const handlePositionChange = useCallback((index: number) => {
+    setSelectedPositionIndex(index);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -64,20 +75,20 @@ export function ExplorerContainer() {
     );
   }
 
-  const positionIndex = midPositionIndex(cache);
+  // Clamp defensively in case a cache ever ships fewer positions than the
+  // slider's five stops; the derivation is re-run per selected index.
+  const positionIndex = Math.min(
+    selectedPositionIndex,
+    cache.positions.length - 1,
+  );
   const rendered = renderPosition(cache, positionIndex);
-
-  // Thumb reflects the chosen position across the slider's evenly-spaced
-  // stops: position i of N positions sits at i / (N - 1) of the track.
-  const positionCount = cache.positions.length;
-  const thumbPct =
-    positionCount > 1 ? (positionIndex / (positionCount - 1)) * 100 : 0;
 
   return (
     <ExplorerShell
       corpusTitle={cache.metadata.title}
       rendered={rendered}
-      thumbPct={thumbPct}
+      selectedIndex={positionIndex}
+      onPositionChange={handlePositionChange}
     />
   );
 }

@@ -21,21 +21,27 @@ import type { RenderedPosition } from '@/lib/tale-render';
  * pinned, the prose column is the *sole* internal scroll region (`min-h-0` +
  * `overflow-y-auto` inside ProseColumn).
  *
- * Step 2 binds one fixed cached position; the slider is non-interactive (its
- * thumb only reflects the position). Slider interactivity is Step 3.
+ * Step 3 wires the slider: the parent owns `selectedIndex` and passes the
+ * matching `rendered` position plus an `onPositionChange` callback. The slider
+ * is a controlled, mouse/pointer-only control. When the position changes the
+ * prose column resets its scroll to the top (it is a fresh state) — done by
+ * keying the prose region on the index so it remounts.
  */
 
 type ExplorerShellProps = {
   corpusTitle: string;
   rendered: RenderedPosition;
-  /** Thumb position as a percentage along the track (0–100). */
-  thumbPct: number;
+  /** Currently selected slider stop index (0–4). */
+  selectedIndex: number;
+  /** Called with the nearest stop index when the user moves the slider. */
+  onPositionChange: (index: number) => void;
 };
 
 export function ExplorerShell({
   corpusTitle,
   rendered,
-  thumbPct,
+  selectedIndex,
+  onPositionChange,
 }: ExplorerShellProps) {
   return (
     <div className="flex h-screen min-w-[1024px] flex-col overflow-hidden bg-ground">
@@ -47,10 +53,15 @@ export function ExplorerShell({
       />
       <div className="flex min-h-0 grow">
         <CorpusRail />
-        <ProseColumn items={rendered.proseItems} />
+        {/* Keyed on the position so a swap remounts the prose, resetting its
+            scroll to the top (it is a new state). */}
+        <ProseColumn key={selectedIndex} items={rendered.proseItems} />
         <PredictedStrip tiles={rendered.removedTiles} />
       </div>
-      <CompressionSlider thumbPct={thumbPct} />
+      <CompressionSlider
+        selectedIndex={selectedIndex}
+        onChange={onPositionChange}
+      />
     </div>
   );
 }
