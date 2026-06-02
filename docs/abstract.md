@@ -1,5 +1,7 @@
 # Compression-Prediction Explorer
 
+> **Candidate name: _Surprisal Party!_** — the leading working title. The pun is deliberate and the tone is ironic: a festive, low-stakes name draped over a heavy information-theoretic core. The contrast *is* the point — it keeps the project from taking itself too seriously, and the calm, contemplative interface deliberately subverts the name rather than matching it. (Possible corpora that lean into the irony: scripts from *Bob's Burgers* episodes alongside the fairy tales — familiar, dialogue-dense text the user can verify by recognition.)
+
 ## Overview
 The Compression-Prediction Explorer is a text-based interactive demonstration that the equivalence between compression and prediction is not a metaphor but a measurable mechanic. Users explore familiar fairy tales through a single interaction: a slider that fades the predictable words from the story and replaces them, in place, with the predictor's reconstruction of what was removed. The user watches information *move* from the page into the predictor — never destroyed, only relocated — and feels the duality with their own hand.
 
