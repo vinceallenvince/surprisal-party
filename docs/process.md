@@ -19,9 +19,9 @@ How this project got built, captured for a later write-up. The throughline: **de
 
    That model-selection loop *is* the feasibility story: it proved the surprisal-plus-reconstruction pipeline was viable and pinned down the model that could carry it. → pipeline output: [`../pipeline/output/`](../pipeline/output/)
 
-5. **Write the layout plan.** Only after the technique was proven, specify the UX/UI in detail — the three-region layout, the slider, seams, the conservation readout — as a self-contained brief for an AI design tool. → [`layout.md`](./layout.md)
+5. **Write the layout plan.** Only after the technique was proven, specify the UX/UI in detail — the three-region layout, the slider, seams, the conservation readout — as a self-contained brief for an AI design tool. → [`prototyping-layout.md`](./prototyping-layout.md)
 
-6. **Prototype with Figma Make, then refine back.** Use the layout brief to prompt Figma Make into a working prototype, then let the prototype drive refinements to both the layout plan and the user scenarios (e.g. dropping the floating reconstruction "cards" in favor of an inline seam reveal plus a fixed inspector, adding the corpus picker, and adding arrow-key seam navigation). → [`layout.md`](./layout.md), [`user-scenarios.md`](./user-scenarios.md)
+6. **Prototype with Figma Make, then refine back.** Use the layout brief to prompt Figma Make into a working prototype, then let the prototype drive refinements to both the layout plan and the user scenarios (e.g. dropping the floating reconstruction "cards" in favor of an inline seam reveal plus a fixed inspector, adding the corpus picker, and adding arrow-key seam navigation). → [`prototyping-layout.md`](./prototyping-layout.md), [`user-scenarios.md`](./user-scenarios.md)
 
    This step is a loop — prompt Figma Make, critique the prototype, refine the briefs, re-prompt — and it ends by distilling the prototype into a durable design reference. Two Figma artifacts are in play, and the distinction is the whole point:
 
@@ -31,10 +31,10 @@ How this project got built, captured for a later write-up. The throughline: **de
    **Definition of Done (Step 6):**
 
    1. The interactive prototype covers the full UX flow — all five compression states, the seam reveal, the keyboard walk, and the corpus picker.
-   2. A static Figma Design frame exists for each key screen/state in the `Surprisal — Web` file.
+   2. A static Figma Design frame exists for each key screen/state in the `Surprisal Party — Design` Figma Design file.
    3. Every frame maps to a named user scenario — traceable in both directions.
    4. Frames and their layers are sensibly named so the Figma MCP (`get_design_context`, `get_screenshot`) returns usable specs rather than anonymous `Text` nodes.
-   5. [`layout.md`](./layout.md) and [`user-scenarios.md`](./user-scenarios.md) are reconciled with what the frames actually show — no known drift.
+   5. [`prototyping-layout.md`](./prototyping-layout.md) and [`user-scenarios.md`](./user-scenarios.md) are reconciled with what the frames actually show — no known drift.
 
 7. **(Pending) Build the runtime in coordination with Figma Design.** Implement each user scenario in the Next.js runtime, using the static Figma frames as the coding reference rather than reinventing the UI. → [`implementation-plan.md`](./implementation-plan.md)
 

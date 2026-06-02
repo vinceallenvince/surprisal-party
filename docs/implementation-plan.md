@@ -1,6 +1,6 @@
 # Implementation Plan
 
-A four-phase plan, beginning with a spike to derisk the core hypothesis, then building the data pipeline, the functional UX, and finally polish. V1 commits to **Tier A** of *Determinism and Variability* (see the abstract): a single cached reconstruction per gap, fully deterministic, static-site architecture, no runtime language-model calls.
+A four-phase plan: a spike to derisk the core hypothesis, then the data pipeline, then the runtime built directly against the static Figma designs, and finally hardening it for release. V1 commits to **Tier A** of *Determinism and Variability* (see the abstract): a single cached reconstruction per gap, fully deterministic, static-site architecture, no runtime language-model calls.
 
 ## Stack
 
@@ -117,30 +117,43 @@ Build the offline pipeline that produces one JSON per tale, committed to the rep
 
 **Exit criterion:** all caches built and pass validation; rendering any cached state by hand produces a sensible snapshot.
 
-## Phase 2 — Functional UX
+## Phase 2 — Build the runtime against the static designs
 
-A static site that fetches a tale's JSON and runs the slider mechanic. No backend. Ugly but functional.
+A static site that fetches a corpus JSON and runs the slider mechanic. No backend.
 
-**Internal sequence (each step independently testable):**
+**Why this is no longer an "ugly but functional" interim.** The original plan called for a deliberately unstyled build with all styling deferred to Phase 3. That made sense when the visual design was still unknown and would be *discovered* by building. It no longer holds: the design is fixed — a high-fidelity Figma Make prototype and a set of static Figma Design frames, one per scenario/state (see `process.md`, Step 6). Building unstyled then restyling would be wasted motion and would invite drift from the established design. So Phase 2 builds **styled from the first commit, directly against the frames**, sequenced by **dependency and risk** rather than by fidelity. The one idea worth keeping from the old plan — isolate and derisk the hard reflow/animation before investing elsewhere — survives as a spike *within* this phase, now validated against the frames' real layouts.
 
-a. **Static rendering.** Render the cached state at a mid-slider position with no slider control. Confirms the cache shape and data flow.
-b. **Slider control without animation.** Wire the slider to swap between cached states. Confirms the interaction model.
-c. **Gap-closing reflow and tile migration animation.** The hardest part. FLIP technique with precomputed layouts per slider position, animated via CSS transforms.
-d. **Seam interaction.** Hover to peek (transient), click to lock open, click again to collapse.
+**Source of truth — scenarios first, Figma as a guide.** The user scenarios (`user-scenarios.md`) are the authority for **behaviour and interaction**; the Figma frames are the guide for **visual design and layout**. Where the two disagree, the *scenario wins* and the frame is treated as stale — note the drift so the frame can be corrected later. Some scenarios have **no frame at all** (see `figma-sources.yaml` → `unmapped_scenarios`, e.g. the two-regimes behaviour); those are built and verified against their Gherkin alone.
 
-**Exit criterion:** someone can drag the slider through a tale and the title-fade surprise lands without explanation.
+**Role of the static designs here — the visual coding reference.** Look up each scenario's frame node IDs in `figma-sources.yaml` (don't re-query the MCP just to *find* a frame); then call the Figma MCP (`get_design_context` / `get_screenshot`) only to pull the actual design context for the node you're implementing, and match its **visuals/layout** rather than reinventing the UI. Extract the design **tokens** (the warm coral-red accent, type, spacing, the near-black warm-gray ground) up front so everything built after sits on-spec. (The frames' second role — QA oracle — comes in Phase 3.)
 
-## Phase 3 — Refine, style, and polish
+**Internal sequence (each step independently testable; behaviour verified against the relevant scenario's Gherkin, visuals against its Figma frame):**
 
-The work that turns a working mechanic into a shareable artifact.
+1. **Design tokens + static shell.** Extract colors / type / spacing from the Figma file into runtime tokens. Build the static three-region shell — header (title + ⓘ info icon + readout), middle column, right strip, slider — matching the **State 1** frame. No data yet.
+2. **Data binding.** Fetch a corpus JSON and render one cached mid-slider state into the shell, matching its state frame. Confirms cache shape and data flow.
+3. **Slider state-swap (no animation).** Wire the five fixed positions to their cached states; each rendered position should match its **State 1–5** frame. Confirms the interaction model.
+4. **The mechanic spike — gap-closing reflow + tile migration.** The hardest part, isolated and derisked first among the dynamic behaviours: FLIP with precomputed per-position layouts, animated via CSS transforms, validated against the before/after layouts in the state frames.
+5. **Seam reconstruction — inline reveal + fixed inspector.** Hovering a seam expands the model's predicted text inline and fills the fixed inspector with the actual text + fidelity (**State 6**). No floating card, no click-to-pin.
+6. **Keyboard walk + audio.** Arrow-key seam stepping (Right/Left, no wrap, Esc clears), smooth auto-scroll, and the advance/back click sounds from `public/audio/` — honouring reduced-motion / sound preferences.
+7. **Onboarding + navigation surfaces.** The first-visit primer (**State 0**), the header ⓘ re-summon, the corpus-picker drawer (**State 7**), and the About modal (**State 8**).
+
+   **Primer dev-override (no design frame — implementation concern).** The primer shows once, gated by a persisted seen-flag (e.g. `localStorage`). For iteration without clearing browser storage, a development override forces it to appear regardless of the flag: an env flag (e.g. `NEXT_PUBLIC_FORCE_INTRO`) and/or an `?intro` query param. The override only changes whether the modal renders — it must **not** mutate the persisted seen record. This is a build-time/dev affordance, not a user scenario, so it lives here rather than in `user-scenarios.md` or `figma-sources.yaml`.
+
+**Exit criterion:** every happy-path user scenario is implemented and styled to its Figma frame; a person can drag the slider through a corpus, walk the seams, switch corpora, and meet the onboarding primer — and the title-fade surprise lands.
+
+## Phase 3 — Harden, QA, and ship
+
+With styling no longer deferred, this is **not** a "make it pretty" pass. It is the cross-cutting work that can't be read off a single frame: conformance QA, the non-happy paths, and the performance / accessibility / responsive envelope.
+
+**Role of the static designs here — the visual QA oracle.** Two oracles, matching the source-of-truth split: the **scenario Gherkin** is the oracle for behaviour, the **Figma frame** is the oracle for visual layout. Per `process.md` Step 7: Playwright drives the running app through each scenario, checks behaviour against the Gherkin, and compares the rendered screen against the corresponding static Figma frame (looked up in `figma-sources.yaml`, pulled via the MCP). Treat the visual half as structural/layout conformance plus spot-checks, **not** brittle pixel-diffing. Scenarios under `unmapped_scenarios` (no frame) are verified against their Gherkin only.
 
 **Scope:**
-- Typography, color, spacing. Fixed-width tile aesthetic for the right strip.
-- Performance pass: layout caching, viewport culling, animation budget for tales with many tokens.
-- Accessibility: keyboard navigation, screen-reader treatment of seams.
-- Mobile and touch adaptation: tap to peek, long-press to lock, slider gesture.
-- Edge cases: very short and very long tales, error states, slow networks.
+- **Conformance QA.** The Playwright-vs-frame gate above, run across every scenario.
+- **Performance.** Layout caching, viewport culling, animation budget for long corpora with many tokens.
+- **Accessibility.** Screen-reader treatment of seams and migrated tiles, focus order, honouring `prefers-reduced-motion` (both motion and the click sounds), and full operability of the keyboard walk. (Keyboard navigation is now a core feature, not a polish item.)
+- **Responsive envelope.** Desktop and tablet only, ≥1024 px; below that, show a static "best viewed on a desktop" message. There is **no** phone/touch build — this deliberately drops the old plan's tap-to-peek / long-press mobile adaptation, which contradicts the current responsiveness constraint.
+- **Edge cases.** Very short and very long corpora, error and loading states, slow networks, a first load with no `localStorage`.
 
-**Optional escalation if v1 feels too predetermined in use:** generate 3–5 reconstructions per gap and pick one per session or per card-open. This is **Tier B** from the abstract — same architecture, one regeneration of the cache. **Tier C** (live generation) is deferred beyond v1 unless A and B both prove insufficient.
+**Optional escalation if v1 feels too predetermined in use:** generate 3–5 reconstructions per gap and pick one per session or per seam-open. This is **Tier B** from the abstract — same architecture, one regeneration of the cache. **Tier C** (live generation) is deferred beyond v1 unless A and B both prove insufficient.
 
-**Exit criterion:** a stranger handed the URL can figure out the mechanic without explanation.
+**Exit criterion:** a stranger handed the URL figures out the mechanic without explanation, every scenario passes its conformance check, and the build holds up across the supported viewport range and edge cases.

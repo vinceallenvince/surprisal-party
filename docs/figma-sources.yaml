@@ -1,0 +1,73 @@
+# Maps each user scenario (docs/user-scenarios.md) to its Figma Design frames.
+# Cached so build/QA agents read node IDs from here instead of re-querying the
+# Figma MCP every time. This file is also the Step 6 DoD #3 traceability record
+# (every scenario <-> frame, both directions).
+#
+# Fields per scenario:
+#   scenario     - exact title from docs/user-scenarios.md
+#   description  - Figma node id of the written-scenario / spec frame
+#   ui           - Figma node id of the rendered UI mockup frame
+# Node ids use Figma's hyphen form (e.g. "28-80"); blanks are TODO.
+#
+# Scenarios that intentionally have no static frame go under `unmapped_scenarios`
+# at the bottom, each with a reason — so the map stays a complete check rather
+# than leaving genuine gaps indistinguishable from oversights.
+
+file_key: PhmORZnicz8g3er2ZspqZl
+project_name: Surprisal Party
+
+scenarios:
+
+    # Onboarding
+    - scenario: "As a first-time visitor, I am shown a one-time primer on surprisal"
+      description: "28-78"
+      ui: "28-80"
+
+    - scenario: "As a returning visitor, I am not shown the primer again"
+      description: "28-159"
+      ui: "28-163"
+
+    # Corpus Selection
+    - scenario: "As a user, I can open the corpus picker to switch corpora"
+      description: "28-232"
+      ui: "28-297"
+
+    - scenario: "As a user, selecting a corpus loads it fresh"
+      description: "28-381"
+      ui: "28-319"
+
+    - scenario: "As a user, I can read more about the project from the drawer"
+      description: "29-485"
+      ui: "29-467"
+
+    # Compression and Reconstruction
+    - scenario: "As a user, I can compress the corpus by dragging the slider rightward"
+      description: "29-495"
+      ui: "30-15994"
+
+    - scenario: "As a user, I can decompress the corpus by dragging the slider leftward"
+      description: "29-6914"
+      ui: "30-15995"
+
+    - scenario: "As a user, I can walk through the seams with the arrow keys"
+      description: "29-13845"
+      ui: "30-15997"
+
+    - scenario: "As a user, I am nudged to discover the arrow-key walk"
+      description: "30-15990"
+      ui: "30-15999"
+
+    - scenario: "As a user, I can compress the corpus to its kernel"
+      description: "30-15980"
+      ui: "30-16001"
+
+# User scenarios that intentionally have no static Figma frame, with the reason.
+# Listed here (rather than omitted) so the scenario <-> frame map stays a complete
+# check: a missing entry is an oversight, an entry here is a deliberate exception.
+unmapped_scenarios:
+    - scenario: "As a user, I see the slider's two regimes reflected in what happens on screen"
+      reason: >-
+        Inherently dynamic — it describes how behaviour differs across the
+        lossless vs lossy range, a comparison over the slider's travel, which no
+        single static frame captures. Covered in docs/user-scenarios.md and
+        docs/implementation-plan.md instead.

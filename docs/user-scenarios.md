@@ -16,7 +16,12 @@ And the modal subtext reads "predictable words carry little information, surpris
 And the explorer behind it cannot be interacted with until the modal is dismissed
 When I dismiss the modal
 Then it closes and the application records that the primer has been seen
-And I land in the explorer with the default corpus loaded, the slider at UNCOMPRESSED, and the corpus drawer collapsed
+And I land in the explorer, which shows three regions: a header, a middle column, and a right strip
+And the default corpus is loaded in the middle column with its kernel tokens highlighted
+And the slider is at UNCOMPRESSED and the corpus drawer is collapsed
+And the right strip is empty
+And the header reads "stored 100% · predicted 0% · conserved 100%"
+And a small, dim corpus-picker icon sits at the top-left of the content row
 ```
 
 ### As a returning visitor, I am not shown the primer again
@@ -34,34 +39,7 @@ Then the primer modal reappears
 And dismissing it returns me to the explorer unchanged
 ```
 
-### As a developer, I can force the primer to appear
-
-So the primer can be iterated without clearing browser storage, a development flag re-shows it regardless of the seen record.
-
-```gherkin
-Given the development override is active (env flag or "?intro" query param)
-When the application loads
-Then the primer modal appears even if it has been seen before
-And the persisted seen record is not altered by the override
-```
-
 ## Corpus Selection
-
-### As a user, I land in the explorer with a corpus already loaded
-
-Once any first-visit primer has been dealt with (see Onboarding), the application opens directly into the explorer view with a default corpus loaded — there is no separate landing list to choose from first. The one navigation affordance is a small, dim corpus-picker icon at the top-left of the content row.
-
-```gherkin
-Given the onboarding primer is not blocking the view
-When the application renders
-Then the explorer view is shown with three regions: a header, a middle column, and a right strip
-And a default corpus is already loaded in the middle column
-And the slider is positioned at the far left
-And the kernel tokens — the highest-surprisal, load-bearing words — are highlighted within the text
-And the right strip is empty
-And the header reads "stored 100% · predicted 0% · conserved 100%"
-And a small, dim corpus-picker icon sits at the top-left of the content row
-```
 
 ### As a user, I can open the corpus picker to switch corpora
 
@@ -146,24 +124,9 @@ And the middle column visibly expands
 And the header updates so that stored rises, predicted falls, and the conserved total stays at 100%
 ```
 
-### As a user, I can peek at a reconstruction by hovering a seam
-
-A seam hides the model's reconstruction of the span removed at that position. There is no floating card. Hovering a seam does two things at once: the predicted text expands inline at the seam, and a fixed reconstruction inspector at the bottom of the middle column fills with the actual source text and the fidelity score.
-
-```gherkin
-Given the middle column contains one or more seams
-When I hover a seam
-Then the seam expands in place to show the model's predicted text for the removed span, inline in dim monospace
-And the fixed reconstruction inspector at the bottom of the middle column shows the actual source text and the fidelity score
-And the inspector's reserved height means no surrounding content reflows
-When I move the cursor off the seam
-Then the inline predicted text collapses back to a seam
-And the inspector clears
-```
-
 ### As a user, I can walk through the seams with the arrow keys
 
-Hovering thin seams with the cursor is fiddly, so the primary way to step through the corpus's gaps is the arrow keys. They drive a single shared "active seam" state — the same state hover sets — moving through the seams in story order. The slider is mouse-only, so the arrow keys never conflict with it. Each step plays a short, soft click sound so stepping through the predicted words feels tactile. The clicks fire only on keyboard stepping (hover is silent), and they respect the user's reduced-motion / sound preferences.
+Hovering thin seams with the cursor is fiddly, so the primary way to step through the corpus's gaps is the arrow keys. They drive a single shared "active seam" state, moving through the seams in story order. *Hovering* a seam is the secondary way to reach that same state: there is no floating card — hovering expands the model's predicted text inline at the seam (dim monospace) and fills the fixed reconstruction inspector at the bottom of the middle column with the actual source text and fidelity score; moving the cursor off the seam clears both. The inspector's height is always reserved so nothing reflows. The slider is mouse-only, so the arrow keys never conflict with it. Each step plays a short, soft click sound so stepping through the predicted words feels tactile. The clicks fire only on keyboard stepping (hover is silent), and they respect the user's reduced-motion / sound preferences.
 
 ```gherkin
 Given the middle column contains one or more seams
