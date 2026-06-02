@@ -23,13 +23,35 @@ How this project got built, captured for a later write-up. The throughline: **de
 
 6. **Prototype with Figma Make, then refine back.** Use the layout brief to prompt Figma Make into a working prototype, then let the prototype drive refinements to both the layout plan and the user scenarios (e.g. dropping the floating reconstruction "cards" in favor of an inline seam reveal plus a fixed inspector, adding the corpus picker, and adding arrow-key seam navigation). → [`layout.md`](./layout.md), [`user-scenarios.md`](./user-scenarios.md)
 
+   This step is a loop — prompt Figma Make, critique the prototype, refine the briefs, re-prompt — and it ends by distilling the prototype into a durable design reference. Two Figma artifacts are in play, and the distinction is the whole point:
+
+   - **Figma Make prototype** — interactive and code-backed; exercises the *flow*. Good for feeling the mechanic, but it regenerates and is not a stable reference.
+   - **Figma Design flat frames** — static screens in the `Surprisal — Web` file, one per scenario/state. These are the durable, MCP-readable reference the runtime is coded against and checked against.
+
+   **Definition of Done (Step 6):**
+
+   1. The interactive prototype covers the full UX flow — all five compression states, the seam reveal, the keyboard walk, and the corpus picker.
+   2. A static Figma Design frame exists for each key screen/state in the `Surprisal — Web` file.
+   3. Every frame maps to a named user scenario — traceable in both directions.
+   4. Frames and their layers are sensibly named so the Figma MCP (`get_design_context`, `get_screenshot`) returns usable specs rather than anonymous `Text` nodes.
+   5. [`layout.md`](./layout.md) and [`user-scenarios.md`](./user-scenarios.md) are reconciled with what the frames actually show — no known drift.
+
+7. **(Pending) Build the runtime in coordination with Figma Design.** Implement each user scenario in the Next.js runtime, using the static Figma frames as the coding reference rather than reinventing the UI. → [`implementation-plan.md`](./implementation-plan.md)
+
+   - Pull per-screen design context through the Figma MCP as the coding spec for each scenario.
+   - Drive the build with the `nextjs-coding-agent` / `nextjs-code-reviewer` loop (looping until the reviewer signs off).
+   - **Visual conformance gate:** Claude Code launches Playwright to screenshot the running app per scenario and compares it against the corresponding static Figma frame (pulled via the MCP).
+
+   **Definition of Done (Step 7):** every user scenario is implemented such that its behavior matches its Gherkin *and* its rendered screen matches its Figma frame, with reviewer sign-off across the board.
+
 ## Timeline
 
 The work spanned **2026-05-24 → 2026-05-31** (commit dates):
 
 - **05-24 → 05-25** — feasibility: the offline pipeline and the reference-model churn (step 4).
 - **05-30** — the layout brief (step 5), after the pipeline was proven.
-- **05-31 onward** — prototype-driven refinements to layout and scenarios (step 6).
+- **05-31 onward** — prototype-driven refinements to layout and scenarios (step 6, in progress).
+- **Next** — distill the prototype into traced Figma Design frames (close out step 6), then the runtime build-out checked against those frames (step 7, pending).
 
 ## A note for the write-up
 
