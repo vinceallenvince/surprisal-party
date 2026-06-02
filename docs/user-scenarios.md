@@ -117,22 +117,28 @@ Then it collapses back into a seam and the inspector clears
 
 ### As a user, I can walk through the seams with the arrow keys
 
-Hovering thin seams with the cursor is fiddly, so the primary way to step through the corpus's gaps is the arrow keys. They drive a single shared "active seam" state — the same state hover sets — moving through the seams in story order. The slider is mouse-only, so the arrow keys never conflict with it.
+Hovering thin seams with the cursor is fiddly, so the primary way to step through the corpus's gaps is the arrow keys. They drive a single shared "active seam" state — the same state hover sets — moving through the seams in story order. The slider is mouse-only, so the arrow keys never conflict with it. Each step plays a short, soft click sound so stepping through the predicted words feels tactile — a distinct click for advancing versus going back. The clicks fire only on keyboard stepping (hover is silent), and they respect the user's reduced-motion / sound preferences.
 
 ```gherkin
 Given the middle column contains one or more seams
 And no seam is currently active
 When I press the Right arrow key
 Then the first seam becomes active, expanding its predicted text inline and filling the inspector with actual text and fidelity
+And a short "advance" click sound plays
 When I press the Right arrow key again
 Then the previous seam collapses and the next seam in story order becomes active
+And the "advance" click sound plays again
 When I press the Left arrow key
 Then the current seam collapses and the previous seam in story order becomes active
-And pressing Left on the first seam or Right on the last seam does nothing (no wrap-around)
+And a distinct "back" click sound plays
+And pressing Left on the first seam or Right on the last seam does nothing (no wrap-around) and plays no sound
 And when the active seam is not comfortably in view the middle column auto-scrolls smoothly to bring it into view
+And no click sound plays when there is no seam to move to, or when the user has opted out of UI sounds
 When I press Esc
 Then the active seam clears
 ```
+
+> Audio assets: the click sounds live at `runtime/public/audio/click1.mp3` (advance) and `runtime/public/audio/click2.mp3` (back), served statically and preloaded so the feedback is instant.
 
 ### As a user, I am nudged to discover the arrow-key walk
 
