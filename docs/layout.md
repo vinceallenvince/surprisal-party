@@ -34,7 +34,7 @@ The homepage is a single page. No nav, no footer, no marketing chrome. The whole
 │  are marked by a small inline "seam" affordance (a thin dot, a tiny   │ S│
 │  vertical hair). Hovering a seam expands the predicted text inline    │ T│
 │  and fills the inspector with actual text + fidelity. Kernel words —  │ R│
-│  the highest-surprisal load-bearing words — are highlighted in amber. │ I│
+│  the highest-surprisal load-bearing words — in warm coral-red.        │ I│
 │                                                                       │ P│
 │                                                                       │  │
 │  ACTUAL  was loved by everyone who      FIDELITY 0.31   <- inspector  │  │
@@ -58,7 +58,7 @@ The body of the corpus, rendered as continuous prose. Width should be comfortabl
 
 1. **Words that survive a position stay in body type**, reading naturally.
 2. **Removed words "collapse"** — the prose closes up around them and a thin **seam** marks where the gap was. A seam is *not* an inline card and shows no text by default; it's a small dim affordance (dot, short vertical hair, faint underline-of-nothing) between adjacent surviving words, inviting the user to hover. The prose physically shrinks as more spans collapse — that shrink *is* the felt sense of compression.
-3. **Kernel words are highlighted in a warm accent** (amber / soft orange / muted gold) from the very first frame. Their highlight intensifies subtly as the slider deepens, but they're visible from position 0 so the user can see the backbone of the story before they begin compressing.
+3. **Kernel words are highlighted in a warm accent** (a soft coral-red — see Color) from the very first frame. Their highlight intensifies subtly as the slider deepens, but they're visible from position 0 so the user can see the backbone of the story before they begin compressing.
 
 **Seam interaction — inline reveal + fixed inspector (no floating card):**
 
@@ -67,7 +67,7 @@ There is **no floating/inline reconstruction card** — an earlier version poppe
 - **In place:** the model's **predicted text** for that collapsed span expands inline at the seam (the prose temporarily re-opens to show the guess in dim monospace). This is the only place predicted text appears in the prose; at rest the seam shows no text.
 - **In the inspector:** a fixed **reconstruction inspector** (see below) fills in with the **actual** source text and the **fidelity** score (0.00–1.00) for that same span.
 
-Both clear when the pointer leaves the seam. (Optional: clicking a seam *pins* the inspector + inline reveal so the user can read them without holding the hover; clicking again unpins.)
+Both clear when the pointer leaves the seam. (The primary way to dwell on a reconstruction without holding the hover is the keyboard walk — see below — not a click-to-pin.)
 
 **Keyboard navigation — walk the reconstruction seam-by-seam.** Hovering thin seams with the cursor is fiddly, so the primary way to step through the story's gaps is the **arrow keys**, driving a single shared **"active seam"** state (the same state hover sets — the active seam expands its predicted text inline *and* fills the inspector with actual + fidelity).
 
@@ -94,7 +94,7 @@ The one piece of navigation on the page. Switching between corpora (fairy tales 
 
 - **Collapsed state:** a small, dim, library-ish icon (stacked lines / books / grid — *not* a hamburger, which reads as generic app nav) sits at the **top-left of the content row**, in the left margin beside the middle column. It brightens on hover. That icon is the only persistent navigation affordance on the page.
 - **Expanded state:** clicking the icon slides a panel in **from the left edge as an overlay**, with a subtle scrim that dims (but does not remove) the prose. The middle column **does not reflow** — the picker floats over it. Panel width ~280–360 px. The panel is headed by a quiet label, **CORPORA**.
-- **Panel content:** a quiet vertical list of corpora. Each row is a **title** (body font) plus one small meta line (e.g. word count, or a one-line hook). The currently-loaded corpus is marked (amber title or a small accent dot). No thumbnails — this is a text essay, not a media library.
+- **Panel content:** a quiet vertical list of corpora. Each row is a **title** (body font) plus one small meta line (e.g. word count, or a one-line hook). The currently-loaded corpus is marked (accent-colored title or a small accent dot). No thumbnails — this is a text essay, not a media library.
 - **Dismiss:** clicking a corpus, clicking the icon again, clicking the scrim, or pressing Esc all collapse the drawer.
 - **Switching resets the view.** Selecting a new corpus loads it fresh: the slider snaps back to UNCOMPRESSED, the header readout returns to `stored 100% / predicted 0% / conserved 100%`, and the right strip empties. Carrying a mid-compression state into a brand-new corpus would be incoherent.
 - **About section (bottom of the drawer).** Pinned at the bottom of the drawer, below the corpus list and separated from it by a thin divider, is a single quiet **About** link in a lighter weight than the corpus titles — clearly secondary to the list. Clicking it opens an **About modal** (the same modal pattern as the onboarding primer; **no routing**). Unlike the primer, this is opt-in, so heavier copy is fine: a short paragraph or two on what the project is and why it exists, the *Surprisal Party* framing/byline, and an **external link out to the author's personal site** for the detailed write-up. That external link opens in a **new tab** with `rel="noopener noreferrer"` and shows its destination (e.g. the bare domain) so it's honest about leaving the app. The modal dismisses via a button, scrim-click, or Esc, returning the user to the drawer.
@@ -145,7 +145,7 @@ On a visitor's **first** load, a large centered modal appears over the explorer 
 - **After dismissal:** the user lands in **State 1** — the default corpus already loaded, slider at UNCOMPRESSED, **the corpus drawer collapsed** (we do *not* auto-expand it). The modal is the only thing standing between load and reading.
 
 ### State 1 — Far left (`stored 100% / predicted 0%`)
-Slider thumb at the left end. Middle column shows the full source text, no seams, kernel words highlighted in amber. Right strip is empty (or shows a thin baseline indicating it's ready to receive tiles).
+Slider thumb at the left end. Middle column shows the full source text, no seams, kernel words highlighted in warm coral-red. Right strip is empty (or shows a thin baseline indicating it's ready to receive tiles).
 
 ### State 2 — Light compression (`stored ~97% / predicted ~3%`)
 Slider thumb 1/4 of the way across. Middle column has shrunk slightly — short seams appear between common words. Right strip has a small handful of tiles packed at the top.
@@ -167,7 +167,7 @@ A seam is active — reached either by hovering it *or* by stepping to it with t
 - **At the seam:** the model's **predicted text** for the collapsed span expands inline (dim monospace), temporarily re-opening the prose at that spot.
 - **In the fixed inspector** at the bottom of the middle column: the **actual** source text and the **fidelity** score (e.g. `0.31`) fill in on a single quiet monospace line — `ACTUAL  was loved by everyone who     FIDELITY 0.31`.
 
-Both clear when the pointer leaves the seam. The inspector's height is reserved at all times so nothing reflows. (Optional pinning: a click freezes both reveals until clicked again.)
+Both clear when the pointer leaves the seam. The inspector's height is reserved at all times so nothing reflows. To dwell on a reconstruction without holding the hover, the user steps to the seam with the arrow keys (the active seam stays open until they move off it), so there is no click-to-pin.
 
 ### State 7 — Corpus picker expanded
 A user has clicked the corpus-picker icon. The left drawer is slid in over the content, a subtle scrim dims the prose behind it, and a quiet vertical list of corpora (headed **CORPORA**) is shown — each a title plus a small meta line, with the current corpus marked. At the **bottom of the drawer**, below a thin divider, sits a single quiet **About** link in a lighter weight than the corpus titles. The slider, header, and right strip are still visible (dimmed) behind the scrim; the middle column has not reflowed. Show this over State 1 (uncompressed) for clarity.
@@ -189,7 +189,7 @@ A user has clicked the **About** link at the bottom of the drawer. A centered mo
 
 ### Color
 - **Body text:** soft cream / warm white (`#e8e3d8`-ish), not pure white.
-- **Kernel highlight:** warm amber or muted gold (`#e6a851`-ish). Not red. Not yellow. Something that suggests "load-bearing" without screaming.
+- **Kernel highlight:** a **warm coral-red** (a soft, muted red-orange — *not* a pure alarm red, and not yellow). Something that suggests "load-bearing" and carries a little heat without screaming. (This replaces the earlier amber/gold direction — the prototype's warmer red read better against the dark ground, so the red is intentional.)
 - **Seams:** dim accent — a thin punctuation-like dot in a slightly lighter shade than body, or a hairline rule. On hover the predicted-text peek appears; the seam itself shows no text by default.
 - **Right strip tiles:** body-text color but at lower opacity (faded), reinforcing "this is no longer being read."
 - **Slider track and thumb:** quiet greys with a subtle accent on the thumb so it stays findable.

@@ -161,23 +161,9 @@ Then the inline predicted text collapses back to a seam
 And the inspector clears
 ```
 
-### As a user, I can pin a reconstruction open to keep inspecting it
-
-So the user can read a reconstruction without holding the cursor in place, clicking a seam pins its reveal — the inline predicted text and the inspector contents stay in place until unpinned. Pinning is single: activating another seam (by hover, click, or arrow key) replaces what is shown rather than stacking multiple reveals.
-
-```gherkin
-Given a seam is expanded under my cursor
-When I click the seam
-Then the inline predicted text and the inspector contents stay in place after I move my cursor away
-When I activate another seam
-Then the new seam's reveal replaces the pinned one rather than stacking alongside it
-When I click the pinned seam again or press Esc
-Then it collapses back into a seam and the inspector clears
-```
-
 ### As a user, I can walk through the seams with the arrow keys
 
-Hovering thin seams with the cursor is fiddly, so the primary way to step through the corpus's gaps is the arrow keys. They drive a single shared "active seam" state — the same state hover sets — moving through the seams in story order. The slider is mouse-only, so the arrow keys never conflict with it. Each step plays a short, soft click sound so stepping through the predicted words feels tactile — a distinct click for advancing versus going back. The clicks fire only on keyboard stepping (hover is silent), and they respect the user's reduced-motion / sound preferences.
+Hovering thin seams with the cursor is fiddly, so the primary way to step through the corpus's gaps is the arrow keys. They drive a single shared "active seam" state — the same state hover sets — moving through the seams in story order. The slider is mouse-only, so the arrow keys never conflict with it. Each step plays a short, soft click sound so stepping through the predicted words feels tactile. The clicks fire only on keyboard stepping (hover is silent), and they respect the user's reduced-motion / sound preferences.
 
 ```gherkin
 Given the middle column contains one or more seams
