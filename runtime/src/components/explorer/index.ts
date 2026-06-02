@@ -1,3 +1,4 @@
+export { ExplorerContainer } from './ExplorerContainer';
 export { ExplorerShell } from './ExplorerShell';
 export { ExplorerHeader } from './ExplorerHeader';
 export { CorpusRail } from './CorpusRail';

@@ -1,5 +1,5 @@
-import { ExplorerShell } from '@/components/explorer';
+import { ExplorerContainer } from '@/components/explorer';
 
 export default function HomePage() {
-  return <ExplorerShell />;
+  return <ExplorerContainer />;
 }

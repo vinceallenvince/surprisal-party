@@ -2,9 +2,10 @@
  * Bottom compression slider — maps to frame 28-163 node 28:202 (Container).
  *
  * A gradient track (cool lossless -> warm lossy) with five evenly-spaced
- * notches, the thumb pinned at the far left (UNCOMPRESSED), and five labels
- * beneath. Static / non-interactive for Step 1 — interactivity arrives in
- * Step 3.
+ * notches, the thumb positioned at `thumbPct` (default far left,
+ * UNCOMPRESSED), and five labels beneath. Static / non-interactive — the
+ * thumb only *reflects* the rendered position visually; wiring (drag,
+ * state-swap) arrives in Step 3.
  *
  * The track is inset to align with the prose column: it is flanked by a 64px
  * spacer (matching the corpus rail) on the left and a 256px spacer (matching
@@ -26,7 +27,12 @@ function labelPositionClass(align: 'start' | 'center' | 'end'): string {
   return '';
 }
 
-export function CompressionSlider() {
+type CompressionSliderProps = {
+  /** Thumb position as a percentage along the track (0–100). */
+  thumbPct?: number;
+};
+
+export function CompressionSlider({ thumbPct = 0 }: CompressionSliderProps) {
   return (
     <div className="w-full border-t border-seam">
       <div className="flex items-start pt-[49px] pb-12">
@@ -42,9 +48,10 @@ export function CompressionSlider() {
                 style={{ left: `${pct}%` }}
               />
             ))}
-            {/* Thumb pinned at far left (UNCOMPRESSED) */}
+            {/* Thumb positioned to reflect the rendered position (static) */}
             <div
-              className="absolute top-[-10px] left-0 size-7 -translate-x-1/2 rounded-full border-2 border-notch bg-thumb shadow-lg"
+              className="absolute top-[-10px] size-7 -translate-x-1/2 rounded-full border-2 border-notch bg-thumb shadow-lg"
+              style={{ left: `${thumbPct}%` }}
               role="presentation"
             />
           </div>

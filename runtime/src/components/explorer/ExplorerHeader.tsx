@@ -26,9 +26,17 @@ function Readout({ label, value }: ReadoutProps) {
 
 type ExplorerHeaderProps = {
   corpusTitle: string;
+  storedPct: number;
+  predictedPct: number;
+  conservedPct: number;
 };
 
-export function ExplorerHeader({ corpusTitle }: ExplorerHeaderProps) {
+export function ExplorerHeader({
+  corpusTitle,
+  storedPct,
+  predictedPct,
+  conservedPct,
+}: ExplorerHeaderProps) {
   return (
     <header className="w-full border-b border-seam">
       <div className="flex items-center justify-between px-8 pt-4 pb-[17px]">
@@ -45,9 +53,9 @@ export function ExplorerHeader({ corpusTitle }: ExplorerHeaderProps) {
           </button>
         </div>
         <div className="flex items-start gap-6">
-          <Readout label="stored" value="100%" />
-          <Readout label="predicted" value="0%" />
-          <Readout label="conserved" value="100%" />
+          <Readout label="stored" value={`${storedPct}%`} />
+          <Readout label="predicted" value={`${predictedPct}%`} />
+          <Readout label="conserved" value={`${conservedPct}%`} />
         </div>
       </div>
     </header>
