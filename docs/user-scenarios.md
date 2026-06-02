@@ -1,14 +1,58 @@
 # User Scenarios
 Gherkin-style user scenarios for the Compression-Prediction Explorer.
 
+## Onboarding
+
+### As a first-time visitor, I am shown a one-time primer on surprisal
+
+On a visitor's first load, a large modal gates the explorer with the project's one sanctioned piece of explanatory copy. It is a vocabulary primer — it seeds the single concept the mechanic can't teach itself (*surprisal*) so the header readout is legible — not a tutorial; it says nothing about how to use the slider or the seams. The user must dismiss it before interacting with anything.
+
+```gherkin
+Given I am a first-time visitor with no record of having seen the primer
+When the application loads
+Then a large modal appears centered over the explorer, which is dimmed behind a scrim
+And the modal heading reads "surprisal = how much a word surprises a predictor"
+And the modal subtext reads "predictable words carry little information, surprising words carry a lot"
+And the explorer behind it cannot be interacted with until the modal is dismissed
+When I dismiss the modal
+Then it closes and the application records that the primer has been seen
+And I land in the explorer with the default corpus loaded, the slider at UNCOMPRESSED, and the corpus drawer collapsed
+```
+
+### As a returning visitor, I am not shown the primer again
+
+Once the primer has been seen it never reappears on its own. A returning visitor lands directly in the explorer, and can re-summon the primer from a small info icon to the right of the corpus title in the header if they want it.
+
+```gherkin
+Given I have previously seen and dismissed the primer
+When the application loads
+Then no modal is shown
+And I land directly in the explorer with the default corpus loaded
+And a small info icon sits to the right of the corpus title in the header
+When I click the info icon
+Then the primer modal reappears
+And dismissing it returns me to the explorer unchanged
+```
+
+### As a developer, I can force the primer to appear
+
+So the primer can be iterated without clearing browser storage, a development flag re-shows it regardless of the seen record.
+
+```gherkin
+Given the development override is active (env flag or "?intro" query param)
+When the application loads
+Then the primer modal appears even if it has been seen before
+And the persisted seen record is not altered by the override
+```
+
 ## Corpus Selection
 
 ### As a user, I land in the explorer with a corpus already loaded
 
-The application opens directly into the explorer view with a default corpus loaded — there is no separate landing list to choose from first. The one navigation affordance is a small, dim corpus-picker icon at the top-left of the content row.
+Once any first-visit primer has been dealt with (see Onboarding), the application opens directly into the explorer view with a default corpus loaded — there is no separate landing list to choose from first. The one navigation affordance is a small, dim corpus-picker icon at the top-left of the content row.
 
 ```gherkin
-Given I navigate to the application
+Given the onboarding primer is not blocking the view
 When the application renders
 Then the explorer view is shown with three regions: a header, a middle column, and a right strip
 And a default corpus is already loaded in the middle column
@@ -31,6 +75,7 @@ And a subtle scrim dims the prose behind it without removing it
 And the middle column does not reflow
 And I see a vertical list of corpora, each with a title and a small meta line
 And the currently-loaded corpus is marked
+And a quiet "About" link sits at the bottom of the drawer, below a divider and separated from the corpus list
 When I click the icon again, click the scrim, or press Esc
 Then the drawer collapses and the explorer is unobscured
 ```
@@ -49,6 +94,21 @@ And the middle column displays the full source text of the corpus
 And the kernel tokens are highlighted within the text
 And the right strip is empty
 And the header resets to "stored 100% · predicted 0% · conserved 100%"
+```
+
+### As a user, I can read more about the project from the drawer
+
+The About link at the bottom of the drawer opens a modal with a deeper, opt-in account of the project and a link out to the author's site. There is no routing — it is a modal, like the onboarding primer, but with room for more copy.
+
+```gherkin
+Given the corpus picker is open
+When I click the "About" link at the bottom of the drawer
+Then a modal opens centered over the explorer, which is dimmed behind a scrim
+And the modal describes what the project is and why it exists
+And the modal contains a link to the author's personal site for the detailed write-up
+And that link shows its destination and opens in a new browser tab
+When I dismiss the modal via its button, the scrim, or Esc
+Then the modal closes and I return to the drawer
 ```
 
 ## Compression and Reconstruction

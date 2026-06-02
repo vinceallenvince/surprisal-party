@@ -21,7 +21,7 @@ The homepage is a single page. No nav, no footer, no marketing chrome. The whole
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │  HEADER                                                                  │
-│  Corpus title (small) · stored 100% · predicted 0% · conserved 100%      │
+│  Corpus title (small) ⓘ · stored 100% · predicted 0% · conserved 100%    │
 ├──────────────────────────────────────────────────────────────────────────┤
 │ ▤                                                                     ┌──┤
 │ ↑ corpus-picker icon (top-left; click to expand a left drawer)        │  │
@@ -48,9 +48,9 @@ The homepage is a single page. No nav, no footer, no marketing chrome. The whole
 
 A horizontal strip at the top with three pieces of information, evenly weighted:
 
-- Corpus title on the far left, small and quiet (e.g. "Little Red Riding Hood").
+- Corpus title on the far left, small and quiet (e.g. "Little Red Riding Hood"), with a **small info icon (ⓘ) immediately to its right**. Clicking the info icon re-surfaces the onboarding primer (see State 0) at any time — this is the permanent affordance that lets a returning visitor, who never sees the primer automatically, summon it on demand. The icon is quiet and brightens on hover.
 - A center group showing the running readout — **`stored X%`**, **`predicted Y%`**, **`conserved 100%`**. These three numbers are the project's anti-magic guarantee: the total never changes; stored falls and predicted rises as the slider moves.
-- A small theme/info control on the far right (optional — secondary).
+- A small theme control on the far right (optional — secondary).
 
 ### Middle column (the body)
 
@@ -97,6 +97,7 @@ The one piece of navigation on the page. Switching between corpora (fairy tales 
 - **Panel content:** a quiet vertical list of corpora. Each row is a **title** (body font) plus one small meta line (e.g. word count, or a one-line hook). The currently-loaded corpus is marked (amber title or a small accent dot). No thumbnails — this is a text essay, not a media library.
 - **Dismiss:** clicking a corpus, clicking the icon again, clicking the scrim, or pressing Esc all collapse the drawer.
 - **Switching resets the view.** Selecting a new corpus loads it fresh: the slider snaps back to UNCOMPRESSED, the header readout returns to `stored 100% / predicted 0% / conserved 100%`, and the right strip empties. Carrying a mid-compression state into a brand-new corpus would be incoherent.
+- **About section (bottom of the drawer).** Pinned at the bottom of the drawer, below the corpus list and separated from it by a thin divider, is a single quiet **About** link in a lighter weight than the corpus titles — clearly secondary to the list. Clicking it opens an **About modal** (the same modal pattern as the onboarding primer; **no routing**). Unlike the primer, this is opt-in, so heavier copy is fine: a short paragraph or two on what the project is and why it exists, the *Surprisal Party* framing/byline, and an **external link out to the author's personal site** for the detailed write-up. That external link opens in a **new tab** with `rel="noopener noreferrer"` and shows its destination (e.g. the bare domain) so it's honest about leaving the app. The modal dismisses via a button, scrim-click, or Esc, returning the user to the drawer.
 
 Naming: the user-facing word is **"corpus" / "corpora"** — the app isn't limited to fairy tales (those are just the first corpus type), so the label stays neutral. Individual items may still be described as a "text" or "story" in prose where that reads naturally.
 
@@ -128,7 +129,20 @@ Two things to know:
 
 ## States to design
 
-For the prototype, generate the page at five states. The same three regions are visible in all of them; only their contents change.
+For the prototype, generate the page at five states. The same three regions are visible in all of them; only their contents change. (There is also an onboarding modal — **State 0** below — that gates the very first visit.)
+
+### State 0 — Onboarding modal (first visit only)
+
+On a visitor's **first** load, a large centered modal appears over the explorer (which is dimmed by a scrim behind it) and must be dismissed before anything else can be touched. This is the project's one sanctioned piece of explanatory copy — it exists only because *surprisal* is the single concept the mechanic can't teach itself, and the header readout is unreadable without the word. It is a **vocabulary primer, not a tutorial**: it must not explain the slider, the seams, or how to use the app — the slider is still the argument.
+
+- **Content — two lines, nothing more:**
+  - Heading: **surprisal = how much a word surprises a predictor**
+  - Subtext: *predictable words carry little information, surprising words carry a lot.*
+- **Tone:** this is the natural home for the project's ironic voice (the *Surprisal Party* wink) — a heavy idea delivered lightly. Keep it calm and confident, not cute.
+- **Dismiss:** a single dismiss action (one button, or click-scrim / Esc). No "skip" or "don't show again" control — it only ever appears once.
+- **First-visit-only:** a persisted flag (e.g. `localStorage`) records that the modal has been seen; it never appears again on subsequent visits. A small **info icon (ⓘ) to the right of the corpus title** in the header re-summons it on demand.
+- **Dev-mode override:** a development flag (env var and/or a `?intro` query param) forces the modal to appear regardless of the persisted flag, so the team can iterate on it without clearing storage. (Implementation detail for Step 7.)
+- **After dismissal:** the user lands in **State 1** — the default corpus already loaded, slider at UNCOMPRESSED, **the corpus drawer collapsed** (we do *not* auto-expand it). The modal is the only thing standing between load and reading.
 
 ### State 1 — Far left (`stored 100% / predicted 0%`)
 Slider thumb at the left end. Middle column shows the full source text, no seams, kernel words highlighted in amber. Right strip is empty (or shows a thin baseline indicating it's ready to receive tiles).
@@ -156,7 +170,10 @@ A seam is active — reached either by hovering it *or* by stepping to it with t
 Both clear when the pointer leaves the seam. The inspector's height is reserved at all times so nothing reflows. (Optional pinning: a click freezes both reveals until clicked again.)
 
 ### State 7 — Corpus picker expanded
-A user has clicked the corpus-picker icon. The left drawer is slid in over the content, a subtle scrim dims the prose behind it, and a quiet vertical list of corpora (headed **CORPORA**) is shown — each a title plus a small meta line, with the current corpus marked. The slider, header, and right strip are still visible (dimmed) behind the scrim; the middle column has not reflowed. Show this over State 1 (uncompressed) for clarity.
+A user has clicked the corpus-picker icon. The left drawer is slid in over the content, a subtle scrim dims the prose behind it, and a quiet vertical list of corpora (headed **CORPORA**) is shown — each a title plus a small meta line, with the current corpus marked. At the **bottom of the drawer**, below a thin divider, sits a single quiet **About** link in a lighter weight than the corpus titles. The slider, header, and right strip are still visible (dimmed) behind the scrim; the middle column has not reflowed. Show this over State 1 (uncompressed) for clarity.
+
+### State 8 — About modal
+A user has clicked the **About** link at the bottom of the drawer. A centered modal opens over the explorer (dimmed by a scrim), in the same modal style as the onboarding primer but with more room for copy: a short paragraph or two on what the project is and why it exists, the *Surprisal Party* framing/byline, and an external link out to the author's personal site for the detailed write-up (new tab, `rel="noopener noreferrer"`, destination shown). Dismiss via a button, scrim-click, or Esc. Show this over State 1 for clarity.
 
 ---
 
