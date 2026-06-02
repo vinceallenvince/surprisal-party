@@ -47,6 +47,11 @@ wheels/
 *.egg
 MANIFEST
 
+# The Python build-artifact ignores above (notably the unanchored `lib/`) would
+# otherwise swallow the Next.js runtime's source directory. Keep it tracked.
+!runtime/src/lib/
+!runtime/src/lib/**
+
 # Virtual environments
 .venv/
 venv/
