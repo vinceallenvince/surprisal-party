@@ -53,6 +53,42 @@
     0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg:
     0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /*
+    Explorer design tokens — extracted from the Figma "Surprisal Party" frame
+    28-163 (returning-visitor State 1) in file PhmORZnicz8g3er2ZspqZl. The frame
+    defines no Figma variables, so these are lifted from its literal values.
+    Exposed through @theme so they are usable as Tailwind utilities
+    (e.g. bg-ground, text-kernel, border-seam, text-prose).
+  */
+
+  /* Surfaces — near-black warm grays */
+  --color-ground: #0d0d0d; /* app background */
+  --color-ground-rail: #0a0a0a; /* slider footer band */
+  --color-ground-strip: #111111; /* right (predicted) strip */
+  --color-seam: #2a2a2a; /* region dividers / borders */
+  --color-notch: #1a1a1a; /* slider notches + thumb ring */
+
+  /* Text roles */
+  --color-prose: #e0e0e0; /* body prose + emphasized readout values */
+  --color-muted: #8a8a8a; /* header title + readout labels */
+  --color-faint: #6a6a6a; /* strip heading, slider labels */
+
+  /* Accent — warm coral-red kernel highlight */
+  --color-kernel: #ff6b6b;
+
+  /* Slider thumb */
+  --color-thumb: #e0e0e0;
+
+  /* Slider track gradient stops (cool lossless -> warm lossy) */
+  --slider-track-from: #2a4a5a;
+  --slider-track-mid: #3a3a3a;
+  --slider-track-to: #5a2a2a;
+
+  /* Prose measure + reading rhythm */
+  --prose-measure: 672px;
+  --prose-size: 18px;
+  --prose-leading: 29.25px;
 }
 
 /*
@@ -75,6 +111,15 @@
 
 @utility text-balance {
   text-wrap: balance;
+}
+@utility slider-track {
+  /* Cool (lossless) -> neutral -> warm (lossy) gradient, per frame 28-163 */
+  background-image: linear-gradient(
+    90deg,
+    var(--slider-track-from) 0%,
+    var(--slider-track-mid) 50%,
+    var(--slider-track-to) 100%
+  );
 }
 @utility container-padded {
   @apply w-full mx-auto px-6 md:px-6 lg:px-8;

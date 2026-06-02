@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 // Adding explicit font display strategy to avoid FOUT (Flash of Unstyled Text)
-const geistSans = Geist({
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap", // Ensures text remains visible during font loading
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${inter.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-ground text-prose`}
         style={{ fontFamily: "var(--font-sans, var(--font-sans-fallback))" }}
       >
         {children}
