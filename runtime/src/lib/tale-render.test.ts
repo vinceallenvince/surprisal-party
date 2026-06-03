@@ -4,6 +4,8 @@ import {
   pointerToStopIndex,
   positionToThumbPct,
   renderPosition,
+  seamNextIndex,
+  seamPrevIndex,
 } from './tale-render';
 import type { TaleCache } from '@/types/tale-cache';
 
@@ -361,6 +363,67 @@ describe('renderPosition', () => {
     expect(seam?.kind === 'seam' && seam.separator).toBe(' ');
   });
 
+  it('derives a single-gap seam actualText and fidelity from the gap', () => {
+    const r = renderPosition(makeCache(), 1);
+    const seam = r.proseItems.find((i) => i.kind === 'seam');
+    expect(seam?.kind === 'seam' && seam.actualText).toBe('upon a');
+    expect(seam?.kind === 'seam' && seam.fidelity).toBe(0.5);
+  });
+
+  it('joins actualText and averages fidelity across an adjacent-gap run', () => {
+    // Two adjacent gaps b(fid 0.5) and c(fid 0.9) with no survivor between them
+    // collapse into one seam: actuals join in order, fidelity is the mean (0.70).
+    const cache: TaleCache = {
+      schema_version: '0.1.0',
+      metadata: { title: 'Adj', source_file: 'x', model_id: 't', generated_at: '2026-01-01T00:00:00Z', total_bits: 100, word_count: 4, token_count: 4 },
+      source: 'A b c d',
+      words: [
+        { index: 0, core: 'A', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 0, char_end: 1, surprisal: 0.0 },
+        { index: 1, core: 'b', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 2, char_end: 3, surprisal: 3.0 },
+        { index: 2, core: 'c', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 4, char_end: 5, surprisal: 3.0 },
+        { index: 3, core: 'd', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 6, char_end: 7, surprisal: 0.5 },
+      ],
+      kernel_word_indices: [0],
+      positions: [
+        { index: 0, threshold: 1, words_remaining: 2, words_removed: 2, stored_bits: 50, predicted_bits: 50,
+          gaps: [
+            { id: 0, start_word_index: 1, end_word_index: 1, word_indices: [1], actual_text: 'b', predicted_text: 'x', fidelity: 0.5 },
+            { id: 1, start_word_index: 2, end_word_index: 2, word_indices: [2], actual_text: 'c', predicted_text: 'y', fidelity: 0.9 },
+          ] },
+      ],
+    };
+    const r = renderPosition(cache, 0);
+    const seam = r.proseItems.find((i) => i.kind === 'seam');
+    expect(seam?.kind === 'seam' && seam.actualText).toBe('b c');
+    expect(seam?.kind === 'seam' && seam.fidelity).toBe(0.7);
+  });
+
+  it('rounds an averaged fidelity to two decimals', () => {
+    // fidelities 0.333 and 0.334 -> mean 0.3335 -> rounded 0.33.
+    const cache: TaleCache = {
+      schema_version: '0.1.0',
+      metadata: { title: 'Rnd', source_file: 'x', model_id: 't', generated_at: '2026-01-01T00:00:00Z', total_bits: 100, word_count: 4, token_count: 4 },
+      source: 'A b c d',
+      words: [
+        { index: 0, core: 'A', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 0, char_end: 1, surprisal: 0.0 },
+        { index: 1, core: 'b', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 2, char_end: 3, surprisal: 3.0 },
+        { index: 2, core: 'c', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 4, char_end: 5, surprisal: 3.0 },
+        { index: 3, core: 'd', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 6, char_end: 7, surprisal: 0.5 },
+      ],
+      kernel_word_indices: [0],
+      positions: [
+        { index: 0, threshold: 1, words_remaining: 2, words_removed: 2, stored_bits: 50, predicted_bits: 50,
+          gaps: [
+            { id: 0, start_word_index: 1, end_word_index: 1, word_indices: [1], actual_text: 'b', predicted_text: 'x', fidelity: 0.333 },
+            { id: 1, start_word_index: 2, end_word_index: 2, word_indices: [2], actual_text: 'c', predicted_text: 'y', fidelity: 0.334 },
+          ] },
+      ],
+    };
+    const r = renderPosition(cache, 0);
+    const seam = r.proseItems.find((i) => i.kind === 'seam');
+    expect(seam?.kind === 'seam' && seam.fidelity).toBe(0.33);
+  });
+
   it('computes header readout from bits with conserved=100', () => {
     const r = renderPosition(makeCache(), 1);
     expect(r.readout).toEqual({
@@ -402,5 +465,43 @@ describe('pointerToStopIndex', () => {
 
   it('returns 0 for a single stop', () => {
     expect(pointerToStopIndex(0.9, 1)).toBe(0);
+  });
+});
+
+describe('seamNextIndex (Right, no wrap)', () => {
+  it('activates the first seam from cleared', () => {
+    expect(seamNextIndex(null, 3)).toBe(0);
+  });
+
+  it('advances to the next seam', () => {
+    expect(seamNextIndex(0, 3)).toBe(1);
+    expect(seamNextIndex(1, 3)).toBe(2);
+  });
+
+  it('is a no-op on the last seam (no wrap-around)', () => {
+    expect(seamNextIndex(2, 3)).toBe(2);
+  });
+
+  it('stays cleared when there are no seams', () => {
+    expect(seamNextIndex(null, 0)).toBeNull();
+  });
+});
+
+describe('seamPrevIndex (Left, no wrap)', () => {
+  it('steps back to the previous seam', () => {
+    expect(seamPrevIndex(2, 3)).toBe(1);
+    expect(seamPrevIndex(1, 3)).toBe(0);
+  });
+
+  it('is a no-op on the first seam (Left never clears or wraps)', () => {
+    expect(seamPrevIndex(0, 3)).toBe(0);
+  });
+
+  it('is a no-op from cleared', () => {
+    expect(seamPrevIndex(null, 3)).toBeNull();
+  });
+
+  it('stays cleared when there are no seams', () => {
+    expect(seamPrevIndex(null, 0)).toBeNull();
   });
 });

@@ -52,6 +52,17 @@ export type ProseSeamItem = {
   gapIds: number[];
   /** The model's predicted text for this collapsed run (gaps joined in order). */
   predictedText: string;
+  /**
+   * The actual source text this run replaced (the gaps' `actual_text` joined in
+   * order). Shown in the reconstruction inspector when the seam is active.
+   */
+  actualText: string;
+  /**
+   * Reconstruction fidelity for this run, rounded to 2 decimals. For a
+   * multi-gap run it is the unweighted average of the constituent gaps'
+   * fidelities (each gap is one model reconstruction, so they weigh equally).
+   */
+  fidelity: number;
   /** Separator that follows the seam — always collapsed (never a newline). */
   separator: string;
 };
@@ -162,6 +173,36 @@ export function pointerToStopIndex(fraction: number, stopCount: number): number 
   return Math.round(clamped * (stopCount - 1));
 }
 
+/**
+ * The "active seam" ordinal — an index into the position's seams in story
+ * order, or `null` when no seam is active. The arrow-key walk moves this value.
+ */
+export type ActiveSeam = number | null;
+
+/**
+ * Next active-seam ordinal on a Right press, given the current value and the
+ * number of seams. From cleared (`null`) the first seam (0) activates. There is
+ * **no wrap-around**: Right on the last seam is a no-op (returns the same value).
+ * With zero seams it stays `null`. Returns the unchanged input on a no-op so the
+ * caller can detect "real move vs edge" by reference/equality.
+ */
+export function seamNextIndex(current: ActiveSeam, seamCount: number): ActiveSeam {
+  if (seamCount <= 0) return null;
+  if (current === null) return 0;
+  return current < seamCount - 1 ? current + 1 : current;
+}
+
+/**
+ * Previous active-seam ordinal on a Left press. Left on the first seam (0) is a
+ * no-op (returns 0, not `null` — Left never clears). From cleared (`null`) Left
+ * is a no-op. With zero seams it stays `null`.
+ */
+export function seamPrevIndex(current: ActiveSeam, seamCount: number): ActiveSeam {
+  if (seamCount <= 0) return null;
+  if (current === null) return null;
+  return current > 0 ? current - 1 : current;
+}
+
 /** Build the render-ready view for one position of a cache. */
 export function renderPosition(
   cache: TaleCache,
@@ -196,10 +237,14 @@ export function renderPosition(
   // boundary into the next survivor), then collapsed.
   const gapTrailingSep = new Map<number, string>();
   const gapPredicted = new Map<number, string>();
+  const gapActual = new Map<number, string>();
+  const gapFidelity = new Map<number, number>();
   for (const gap of position.gaps) {
     const last = Math.max(...gap.word_indices);
     gapTrailingSep.set(gap.id, separatorAfter(source, words, last));
     gapPredicted.set(gap.id, gap.predicted_text);
+    gapActual.set(gap.id, gap.actual_text);
+    gapFidelity.set(gap.id, gap.fidelity);
   }
 
   const proseItems: ProseItem[] = [];
@@ -223,6 +268,7 @@ export function renderPosition(
       // never carries a newline.
       const sep = spaceUnlessEmpty(gapTrailingSep.get(gapId) ?? rawSep);
       const predicted = gapPredicted.get(gapId) ?? '';
+      const actual = gapActual.get(gapId) ?? '';
       const prev = proseItems[proseItems.length - 1];
       if (prev && prev.kind === 'seam') {
         if (prev.gapIds[prev.gapIds.length - 1] !== gapId) {
@@ -230,6 +276,9 @@ export function renderPosition(
           prev.predictedText = prev.predictedText
             ? `${prev.predictedText} ${predicted}`
             : predicted;
+          prev.actualText = prev.actualText
+            ? `${prev.actualText} ${actual}`
+            : actual;
         }
         prev.separator = sep;
       } else {
@@ -237,6 +286,9 @@ export function renderPosition(
           kind: 'seam',
           gapIds: [gapId],
           predictedText: predicted,
+          actualText: actual,
+          // Single-gap fidelity for now; multi-gap runs are averaged below.
+          fidelity: gapFidelity.get(gapId) ?? 0,
           separator: sep,
         });
       }
@@ -261,6 +313,18 @@ export function renderPosition(
       separator,
       isKernel: kernelSet.has(word.index),
     });
+  }
+
+  // Fidelity per seam: the unweighted mean of its gaps' fidelities, rounded to
+  // 2 decimals (the precision the inspector shows). Each gap is a separate model
+  // reconstruction, so they weigh equally regardless of span length. Done as a
+  // post-pass because a run's gap membership is only final once the loop closes.
+  for (const item of proseItems) {
+    if (item.kind !== 'seam') continue;
+    const mean =
+      item.gapIds.reduce((sum, id) => sum + (gapFidelity.get(id) ?? 0), 0) /
+      item.gapIds.length;
+    item.fidelity = Math.round(mean * 100) / 100;
   }
 
   // Removed tiles: the union of this position's gap word_indices, in source
