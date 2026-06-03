@@ -73,15 +73,14 @@ runtime/
 
 ## Phase 2 milestones (in order)
 
-These come from `../docs/implementation-plan.md`. Each is independently testable. Steps 1–4 are done; 5–7 remain.
+These come from `../docs/implementation-plan.md`. Each is independently testable. Steps 1–4 are done; 5–6 remain.
 
 1. **Design tokens + static shell** — the three-region layout styled to the Figma frame. ✅
 2. **Data binding** — fetch a corpus JSON and render one cached position. ✅
 3. **Slider state-swap** — wire the five fixed positions to their cached states (no animation). ✅
 4. **State transition** — instant reflow with light CSS touches: a white↔coral colour crossfade, a transient reveal-flash of some seams' predicted text, and paragraph-collapse at deep compression. No FLIP / layout animation. ✅
-5. **Seam reconstruction** — inline reveal of the predicted text on hover + a fixed reconstruction inspector (actual text + fidelity). No floating card, no click-lock.
-6. **Keyboard walk + audio** — arrow-key stepping through seams with the advance/back click sounds.
-7. **Onboarding + navigation** — the first-visit primer, the corpus-picker drawer, and the About modal.
+5. **Seam reconstruction reveal + keyboard walk** — arrow keys step a single "active seam" (Right/Left, no wrap, Esc) that expands its predicted text inline and fills a fixed reconstruction inspector (actual text + fidelity), with advance/back click sounds and auto-scroll. Keyboard-driven only (no hover); no floating card.
+6. **Onboarding + navigation** — the first-visit primer, the corpus-picker drawer, and the About modal.
 
 The Phase 2 exit criterion is: someone can drag the slider through a corpus and the title-fade surprise lands without explanation.
 
