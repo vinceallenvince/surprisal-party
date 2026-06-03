@@ -22,7 +22,7 @@ truth into instructions Figma Make can act on without our codebase context.
 5. Tick the prompt's checkbox here.
 
 Run **Batch 1 first** — it's small and low-risk, to calibrate how Figma Make
-responds before committing to the larger primer rebuild in the backlog.
+responds before committing to the larger primer rebuild in Batch 2.
 
 ## Conventions (state these to Figma Make as needed)
 
@@ -114,30 +114,111 @@ responds before committing to the larger primer rebuild in the backlog.
 
 ---
 
-## Backlog — flesh out after Batch 1 calibration
+## Batch 2 — the four-step primer (run after Batch 1)
 
-These are scoped but not yet written as full prompts; promote them once Batch 1
-shows the results are usable. (Ask and I'll expand any into a full prompt.)
+This replaces the current single-card primer (frame 28-80) with the runtime's
+**four-step interactive primer**. It's the largest rebuild, so it's split into
+three prompts — shell + the two static steps first, then the slider step, then
+the prediction step. Run them in order; each builds on the previous.
 
-- **4-step interactive primer (largest item).** Replaces the current single-card
-  primer (frame 28-80). Four steps, each fading in:
-  1. Definition: "surprisal = how much a word surprises a predictor" (coral
-     "surprisal") + "predictable words carry little information, surprising words
-     carry a lot".
-  2. Same sentence annotated with per-word surprisal superscripts
-     (how³ much⁵ a¹ word⁸ surprises¹² a¹ predictor²⁰; "predictor" coral) + caption
-     "the small number is each word's surprisal, its cost to a predictor".
-  3. The sentence + a small threshold slider (stops 0, 2, 4, 7, 15); raising the
-     threshold fades/contracts words below it until only "predictor" remains.
-     "Next" is disabled until the slider moves.
-  4. The lone coral "predictor" + "the higher the surprisal, the more lossy the
-     prediction" + a "predict the uncompressed text" button that reveals
-     "how often a word fools a predictor" (predicted words in white; "predictor"
-     coral) with an **Actual** = "how much a word surprises a" and **Fidelity** =
-     0.68 readout. "Done" is disabled until predict is clicked.
-  Likely worth splitting into 2–3 Figma Make prompts.
-- **Prose fade-in at UNCOMPRESSED.** When the slider returns to the far-left
-  position and the full text is restored, the middle-column text gently fades in.
-- **`figma-sources.yaml` follow-up.** Add the new scenario "As a user, I can click
-  a removed word to reveal its seam" once frame 3 above exists; until then it's an
-  unmapped/TODO entry.
+The self-referential trick to preserve: the primer teaches surprisal by
+compressing **its own definition sentence** — "how much a word surprises a
+predictor" — and then predicting it back lossily.
+
+### [ ] 4. Primer rebuild — modal shell + steps 1 & 2
+
+> Replace the current single-card onboarding primer (the modal that reads
+> "surprisal = how much a word surprises a predictor" with a "Got it" button)
+> with a **four-step** modal. Use a large centered card (wider than the old one,
+> ~840px) over the existing scrim; it stays dismissible by clicking the scrim or
+> pressing Esc. A footer holds the navigation: a primary **"Next →"** on the
+> right, and a **"← Back"** on the left from step 2 onward. Each step's content
+> **fades in** when you arrive on it. Build steps 1 and 2 now (3 and 4 follow):
+>
+> - **Step 1:** a line reading **"surprisal = how much a word surprises a
+>   predictor"** with the word **"surprisal"** in the coral accent `#ff6b6b`; below
+>   it, a dimmer line: **"predictable words carry little information, surprising
+>   words carry a lot"**. Footer: just "Next →".
+> - **Step 2:** the same sentence with a small **superscript surprisal number**
+>   after each word — **how³ much⁵ a¹ word⁸ surprises¹² a¹ predictor²⁰** — with the
+>   word **"predictor"** in coral. Below it, a dimmer caption: **"the small number
+>   is each word's surprisal, its cost to a predictor"**. Footer: "← Back" and
+>   "Next →".
+
+**Targets:** the onboarding primer (steps 1–2 of 4). **Design frame to refresh:** 28-80 (and add new frames for the extra steps).
+
+### [ ] 5. Primer rebuild — step 3 (threshold slider compresses the sentence)
+
+> Add **step 3** to the four-step primer. It shows the same annotated sentence
+> (**how³ much⁵ a¹ word⁸ surprises¹² a¹ predictor²⁰**, "predictor" in coral) with a
+> small horizontal **threshold slider** beneath it. The slider has five stops
+> labeled **0, 2, 4, 7, 15** (a "surprisal threshold").
+>
+> A word stays only if its surprisal number is **≥ the current threshold**; words
+> below the threshold **fade out and the sentence contracts** (closes up) as they
+> leave. So: at 0 the whole sentence shows; at 2 the two "a"s drop; at 4 "how"
+> also drops; at 7 "much" also drops; at 15 only **"predictor"** remains.
+>
+> Below, a dimmer caption: **"raise the threshold to compress the text. only the
+> surprising words survive"**. The **"Next →"** button is **disabled until the user
+> moves the slider** at least once. Footer: "← Back" and "Next →".
+
+**Targets:** the onboarding primer (step 3 of 4). **Design frame:** new.
+
+### [ ] 6. Primer rebuild — step 4 (predict the sentence back, lossily)
+
+> Add **step 4** (the final step) to the four-step primer. It opens showing just
+> the single word **"predictor"** in coral, left-aligned, with a dimmer line
+> beneath: **"the higher the surprisal, the more lossy the prediction"**, and a
+> button labeled **"predict the uncompressed text"**.
+>
+> When the button is clicked, **reveal a reconstruction** of the sentence: the
+> words **"how often a word fools a"** fade in (in **white**) before "predictor"
+> (which stays coral), forming **"how often a word fools a predictor"**. Also show
+> a small readout with two labeled values: **Actual** = "how much a word surprises
+> a" and **Fidelity** = "0.68" (small uppercase labels, brighter values).
+>
+> The **"Done"** button is **disabled until the predict button has been clicked**.
+> Footer: "← Back" and "Done"; "Done" closes the modal.
+>
+> (The point: step 3 compressed the sentence down to the kernel "predictor"; step
+> 4 runs it backwards — predicting the removed words from the kernel — and the
+> prediction is deliberately imperfect, which the fidelity score quantifies.)
+
+**Targets:** the onboarding primer (step 4 of 4). **Design frame:** new.
+
+---
+
+## Batch 3 — remaining polish
+
+### [ ] 7. Prose fade-in when returning to UNCOMPRESSED
+
+> In the explorer, when the slider returns to its far-left (UNCOMPRESSED) position
+> and the full text is restored in the middle column, **gently fade the whole
+> middle-column text in** (a brief opacity fade, ~240ms). It should replay each
+> time the slider comes back to the far left — not only on first load.
+
+**Targets:** the middle-column prose at UNCOMPRESSED. **Design frame:** 28-163 (behavioral; the static frame is unaffected).
+
+### [ ] 8. (Verify, then align) Arrow-key discovery hint
+
+> First check the prototype's current hint. The runtime's arrow-key discovery hint
+> is a small bubble reading **"← keys →"** centered just **above the first seam**,
+> with a small downward caret/triangle on its bottom edge pointing at the seam. It
+> appears the first time the slider moves past UNCOMPRESSED and dismisses on an
+> arrow key, Esc, or after a few seconds. If the prototype's hint differs in copy
+> or position, align it to this.
+
+**Targets:** the arrow-key nudge. **Design frame to refresh:** 30-15999.
+
+---
+
+## Doc follow-ups (not Figma Make prompts)
+
+- After prompt 3 (removed-tile interactivity) has a frame, add the new scenario
+  **"As a user, I can click a removed word to reveal its seam"** to
+  [`figma-sources.yaml`](./figma-sources.yaml) with its `description`/`ui` node
+  ids; until then it sits as an unmapped/TODO entry.
+- As each batch lands in the Design file, correct any stale node ids in
+  `figma-sources.yaml` and confirm every scenario still maps both directions
+  (Step 6 DoD #3).
