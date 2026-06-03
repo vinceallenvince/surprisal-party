@@ -15,11 +15,13 @@ import { pointerToStopIndex, positionToThumbPct } from '@/lib/tale-render';
  * the selected position). The swap is discrete: there is no free-floating
  * thumb and no tweening — the thumb jumps to the resolved stop.
  *
- * Keyboard is intentionally NOT bound here: the arrow keys are reserved for the
- * future seam-walk (Step 6) and wiring them to the slider would conflict. ARIA
- * still advertises the control as a slider (`role="slider"` + value/text) so
- * its state is legible to assistive tech; full keyboard operability of the
- * slider is deferred (Phase 3) per the design's mouse-only operation model.
+ * Keyboard is intentionally NOT bound here: the arrow keys drive the seam walk,
+ * and wiring them to the slider would conflict. The slider is therefore
+ * mouse/pointer-only and NOT keyboard-focusable (no `tabIndex`) — a focusable
+ * control that ignores the arrow keys would only show a misleading focus ring.
+ * ARIA still advertises it as a slider (`role="slider"` + value/text) so its
+ * state is legible to assistive tech; full keyboard operability is deferred
+ * (Phase 3) per the design's mouse-only operation model.
  *
  * The track is inset to align with the prose column: it is flanked by a 64px
  * spacer (matching the corpus rail) on the left and a 256px spacer (matching
@@ -113,7 +115,6 @@ export function CompressionSlider({
             ref={trackRef}
             className="slider-track relative h-2 w-full cursor-pointer touch-none rounded-full"
             role="slider"
-            tabIndex={0}
             aria-label="Compression level"
             aria-valuemin={0}
             aria-valuemax={MAX_INDEX}

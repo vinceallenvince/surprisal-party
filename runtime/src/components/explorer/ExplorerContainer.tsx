@@ -83,11 +83,19 @@ export function ExplorerContainer() {
   );
   const rendered = renderPosition(cache, positionIndex);
 
-  // Reveal-flash count falls off exponentially as compression deepens (also a
-  // perf guard, since deep positions have far more seams): 2^(maxIndex - index).
-  // e.g. 5 stops → 25%:8, 50%:4, 75%:2, MAX:1. UNCOMPRESSED has no seams, so its
-  // count is moot. The actual reveal is capped by the seams in the first half.
-  const revealCount = 2 ** (cache.positions.length - 1 - positionIndex);
+  // Reveal-flash count falls off exponentially as compression deepens, anchored
+  // at 2 for the deepest position and doubling toward shallower ones:
+  // 2^(stopCount - index). e.g. 5 stops → 25%:16, 50%:8, 75%:4, MAX:2.
+  // UNCOMPRESSED has no seams, so its count is moot. The actual reveal is capped
+  // by the seams available in the top quarter.
+  const revealCount = 2 ** (cache.positions.length - positionIndex);
+
+  // The pool the reveals are drawn from grows with compression: ~10% of the
+  // seams at the far left (long prose → keep reveals near the top, above the
+  // fold) up to 100% at MAX (short constellation → draw from anywhere).
+  const stopCount = cache.positions.length;
+  const selectFraction =
+    stopCount > 1 ? 0.1 + 0.9 * (positionIndex / (stopCount - 1)) : 1;
 
   return (
     <ExplorerShell
@@ -95,6 +103,7 @@ export function ExplorerContainer() {
       rendered={rendered}
       selectedIndex={positionIndex}
       revealCount={revealCount}
+      selectFraction={selectFraction}
       onPositionChange={handlePositionChange}
     />
   );

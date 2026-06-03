@@ -39,6 +39,8 @@ type ExplorerShellProps = {
   selectedIndex: number;
   /** How many seams flash open per swap (fewer as compression deepens). */
   revealCount: number;
+  /** Fraction (0–1) of the seams the reveal pool is drawn from. */
+  selectFraction: number;
   /** Called with the nearest stop index when the user moves the slider. */
   onPositionChange: (index: number) => void;
 };
@@ -48,6 +50,7 @@ export function ExplorerShell({
   rendered,
   selectedIndex,
   revealCount,
+  selectFraction,
   onPositionChange,
 }: ExplorerShellProps) {
   return (
@@ -67,6 +70,7 @@ export function ExplorerShell({
           items={rendered.proseItems}
           streamKey={selectedIndex}
           revealCount={revealCount}
+          selectFraction={selectFraction}
         />
         <PredictedStrip tiles={rendered.removedTiles} />
       </div>

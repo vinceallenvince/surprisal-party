@@ -50,10 +50,13 @@ type ProseColumnProps = {
   streamKey: number;
   /** How many seams flash open on this swap (fewer as compression deepens). */
   revealCount: number;
+  /** Fraction (0–1) of the seams the reveal pool is drawn from (grows with compression). */
+  selectFraction: number;
 };
 
-const FLASH_HOLD_MS = 450; // how long the opened seams stay before closing
+const FLASH_HOLD_MS = 750; // how long the opened seams stay before closing
 const REVEAL_MS = 200; // open/close transition duration
+const STAGGER_MS = 55; // per-seam delay so flashed reveals ripple, not fire at once
 const HINT_DISMISS_MS = 5000; // auto-dismiss the arrow-key hint after this long
 
 const REDUCE_QUERY = '(prefers-reduced-motion: reduce)';
@@ -78,23 +81,76 @@ function usePrefersReducedMotion(): boolean {
   );
 }
 
+/** How many candidates to sample before pruning to `count` (favouring multi-word). */
+const OVERSELECT_FACTOR = 2;
+
+function wordCount(text: string): number {
+  const t = text.trim();
+  return t === '' ? 0 : t.split(/\s+/).length;
+}
+
+function shuffleInPlace<T>(arr: T[]): void {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
 /**
- * Pick `count` random seam list-indices from `items`, restricted to the TOP
- * QUARTER of the seams — those are most likely above the fold, so the reveal is
- * visible without scrolling. Fisher–Yates over that quarter, then take `count`.
+ * Pick `count` random seam list-indices from `items`, drawn from the TOP
+ * `fraction` of the seams (0–1). The pool shrinks toward the top at shallow
+ * compression (long prose → keep reveals above the fold) and widens to the
+ * whole set at deep compression (short constellation → draw from anywhere).
+ *
+ * Multi-word reveals (predicted text with > 1 word) are the satisfying ones, so
+ * we over-select a candidate sample (`OVERSELECT_FACTOR × count`), take the
+ * multi-word candidates first, then top up to `count` with single-word ones —
+ * e.g. count 16 from 32 candidates with 12 multi-word → 12 multi + 4 single.
+ * Returns them in shuffled order, which the caller uses to stagger the reveal.
  */
-function pickRevealed(items: ProseItem[], count: number): Set<number> {
-  if (count <= 0) return new Set();
+export function pickRevealed(
+  items: ProseItem[],
+  count: number,
+  fraction: number,
+): number[] {
+  if (count <= 0) return [];
   const seamIdxs: number[] = [];
   for (let i = 0; i < items.length; i++) {
     if (items[i].kind === 'seam') seamIdxs.push(i);
   }
-  const top = seamIdxs.slice(0, Math.ceil(seamIdxs.length / 4));
-  for (let i = top.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [top[i], top[j]] = [top[j], top[i]];
+  if (seamIdxs.length === 0) return [];
+
+  const poolN = Math.max(1, Math.ceil(seamIdxs.length * fraction));
+  const pool = seamIdxs.slice(0, poolN);
+  shuffleInPlace(pool);
+
+  const candidates = pool.slice(0, Math.min(pool.length, count * OVERSELECT_FACTOR));
+  const isMulti = (i: number): boolean => {
+    const it = items[i];
+    return it.kind === 'seam' && wordCount(it.predictedText) > 1;
+  };
+  const multi = candidates.filter(isMulti);
+  const single = candidates.filter((i) => !isMulti(i));
+
+  // Multi-word first, fill the remainder with single-word.
+  const chosen = multi.concat(single).slice(0, count);
+
+  // Guarantee at least one reveal among the first three seams (document order),
+  // so there's always something near where the eye starts. If none of the
+  // chosen are in the first three, swap one in — preferring a multi-word one,
+  // and replacing a single-word slot to keep the multi-word bias.
+  const firstThree = seamIdxs.slice(0, 3);
+  if (firstThree.length > 0 && !chosen.some((i) => firstThree.includes(i))) {
+    const multiFirst = firstThree.filter(isMulti);
+    const pool2 = multiFirst.length > 0 ? multiFirst : firstThree;
+    const force = pool2[Math.floor(Math.random() * pool2.length)];
+    const slot = chosen.findIndex((i) => !isMulti(i));
+    chosen[slot === -1 ? chosen.length - 1 : slot] = force;
   }
-  return new Set(top.slice(0, count));
+
+  // Randomise the reveal order for an organic stagger.
+  shuffleInPlace(chosen);
+  return chosen;
 }
 
 /**
@@ -111,6 +167,7 @@ function SeamMark({
   predictedText,
   separator,
   open,
+  openDelayMs,
   active,
   activeRef,
   showHint,
@@ -118,6 +175,8 @@ function SeamMark({
   predictedText: string;
   separator: string;
   open: boolean;
+  /** Delay before the open/close transition starts — staggers flashed reveals. */
+  openDelayMs: number;
   active: boolean;
   activeRef: React.Ref<HTMLSpanElement>;
   /** When true (the first seam, on first compression), show the arrow-key hint above the pipe. */
@@ -183,6 +242,7 @@ function SeamMark({
           // a tall void. `normal` collapses those newlines to spaces.
           whiteSpace: 'normal',
           transitionDuration: `${REVEAL_MS}ms`,
+          transitionDelay: `${openDelayMs}ms`,
           fontSize: open ? 'var(--prose-size)' : '0px',
           marginLeft: open ? '0.25rem' : '0',
           opacity: open ? 1 : 0,
@@ -244,7 +304,12 @@ function ReconstructionInspector({
   );
 }
 
-export function ProseColumn({ items, streamKey, revealCount }: ProseColumnProps) {
+export function ProseColumn({
+  items,
+  streamKey,
+  revealCount,
+  selectFraction,
+}: ProseColumnProps) {
   const reduce = usePrefersReducedMotion();
 
   // Latest items, read inside the rAF without making the flash effect depend on
@@ -258,14 +323,18 @@ export function ProseColumn({ items, streamKey, revealCount }: ProseColumnProps)
   // then a rAF opens a random subset, then a timeout closes them. Setting state
   // inside rAF/timeout (not synchronously in the effect body) keeps this off
   // the "no setState in effect" rule.
-  const [flash, setFlash] = useState<{ key: number; idxs: Set<number> } | null>(
+  // `idxs` is in pick order; a seam's position in it becomes its stagger rank.
+  const [flash, setFlash] = useState<{ key: number; idxs: number[] } | null>(
     null,
   );
   useEffect(() => {
     if (reduce) return;
     let timer = 0;
     const raf = requestAnimationFrame(() => {
-      setFlash({ key: streamKey, idxs: pickRevealed(itemsRef.current, revealCount) });
+      setFlash({
+        key: streamKey,
+        idxs: pickRevealed(itemsRef.current, revealCount, selectFraction),
+      });
       timer = window.setTimeout(() => {
         setFlash((f) => (f && f.key === streamKey ? null : f));
       }, FLASH_HOLD_MS);
@@ -274,9 +343,14 @@ export function ProseColumn({ items, streamKey, revealCount }: ProseColumnProps)
       cancelAnimationFrame(raf);
       clearTimeout(timer);
     };
-  }, [streamKey, reduce, revealCount]);
+  }, [streamKey, reduce, revealCount, selectFraction]);
 
-  const openIdxs = flash && flash.key === streamKey ? flash.idxs : null;
+  // Map each flashed seam's list-index to its stagger rank (pick order), so the
+  // reveals ripple in over STAGGER_MS steps instead of firing simultaneously.
+  const flashRank =
+    flash && flash.key === streamKey
+      ? new Map(flash.idxs.map((id, rank) => [id, rank] as const))
+      : null;
 
   // ---- Active-seam walk (Step 5) ----------------------------------------
 
@@ -491,13 +565,18 @@ export function ProseColumn({ items, streamKey, revealCount }: ProseColumnProps)
             }
             const ordinal = seamOrdinalByListIdx.get(idx);
             const active = ordinal === activeSeam;
-            const open = (openIdxs?.has(idx) ?? false) || active;
+            const rank = flashRank?.get(idx);
+            const open = rank !== undefined || active;
+            // The active (keyboard) seam opens immediately; flashed seams stay
+            // staggered by their pick rank so the reveal ripples in.
+            const openDelayMs = active ? 0 : (rank ?? 0) * STAGGER_MS;
             return (
               <SeamMark
                 key={idx}
                 predictedText={item.predictedText}
                 separator={item.separator}
                 open={open}
+                openDelayMs={openDelayMs}
                 active={active}
                 activeRef={activeSeamRef}
                 showHint={hintVisible && ordinal === 0}

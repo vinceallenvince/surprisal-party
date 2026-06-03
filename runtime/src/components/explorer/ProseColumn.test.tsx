@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeAll, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { ProseColumn } from './ProseColumn';
+import { ProseColumn, pickRevealed } from './ProseColumn';
 import type { ProseItem } from '@/lib/tale-render';
 
 // jsdom has no Audio or scrollTo; stub them so the keyboard walk runs.
@@ -41,14 +41,14 @@ const items: ProseItem[] = [
 
 describe('ProseColumn (Step 4 render)', () => {
   it('renders each survivor word in source order', () => {
-    render(<ProseColumn items={items} streamKey={0} revealCount={2} />);
+    render(<ProseColumn items={items} streamKey={0} revealCount={2} selectFraction={1} />);
     expect(screen.getByText('Once')).toBeInTheDocument();
     expect(screen.getByText('upon')).toBeInTheDocument();
     expect(screen.getByText('wolf.')).toBeInTheDocument();
   });
 
   it('marks kernel words coral and leaves non-kernel words prose-grey', () => {
-    render(<ProseColumn items={items} streamKey={0} revealCount={2} />);
+    render(<ProseColumn items={items} streamKey={0} revealCount={2} selectFraction={1} />);
     expect(screen.getByText('Once')).toHaveClass('text-kernel');
     expect(screen.getByText('wolf.')).toHaveClass('text-kernel');
     const upon = screen.getByText('upon');
@@ -57,7 +57,7 @@ describe('ProseColumn (Step 4 render)', () => {
   });
 
   it('renders one collapsed seam marker for the gap run', () => {
-    const { container } = render(<ProseColumn items={items} streamKey={0} revealCount={2} />);
+    const { container } = render(<ProseColumn items={items} streamKey={0} revealCount={2} selectFraction={1} />);
     // One pipe per collapsed run (the predicted-text span is separate).
     const pipes = container.querySelectorAll('[data-seam-pipe]');
     expect(pipes).toHaveLength(1);
@@ -95,14 +95,14 @@ describe('ProseColumn (Step 5 keyboard walk)', () => {
   }
 
   it('shows the empty inspector hint when no seam is active', () => {
-    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} />);
+    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} selectFraction={1} />);
     expect(
       screen.getByText('Press an arrow key to walk the seams'),
     ).toBeInTheDocument();
   });
 
   it('Right activates the first seam and fills the inspector', () => {
-    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} />);
+    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} selectFraction={1} />);
     key('ArrowRight');
     expect(screen.getByText('a little')).toBeInTheDocument();
     expect(screen.getByText('0.91')).toBeInTheDocument();
@@ -111,7 +111,7 @@ describe('ProseColumn (Step 5 keyboard walk)', () => {
   });
 
   it('Right again advances to the next seam', () => {
-    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} />);
+    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} selectFraction={1} />);
     key('ArrowRight');
     key('ArrowRight');
     expect(screen.getByText('wandered')).toBeInTheDocument();
@@ -119,7 +119,7 @@ describe('ProseColumn (Step 5 keyboard walk)', () => {
   });
 
   it('Right on the last seam is a no-op (no wrap-around)', () => {
-    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} />);
+    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} selectFraction={1} />);
     key('ArrowRight');
     key('ArrowRight');
     key('ArrowRight'); // already on the last seam
@@ -128,7 +128,7 @@ describe('ProseColumn (Step 5 keyboard walk)', () => {
   });
 
   it('Left steps back to the previous seam', () => {
-    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} />);
+    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} selectFraction={1} />);
     key('ArrowRight');
     key('ArrowRight');
     key('ArrowLeft');
@@ -136,11 +136,62 @@ describe('ProseColumn (Step 5 keyboard walk)', () => {
   });
 
   it('Esc clears the active seam back to the empty inspector', () => {
-    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} />);
+    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} selectFraction={1} />);
     key('ArrowRight');
     key('Escape');
     expect(
       screen.getByText('Press an arrow key to walk the seams'),
     ).toBeInTheDocument();
+  });
+});
+
+describe('pickRevealed (multi-word preference)', () => {
+  // 4 multi-word seams + 4 single-word, interleaved with words. With fraction 1
+  // the pool is all 8 and OVERSELECT (2×4=8) covers them, so for count 4 every
+  // pick must be a multi-word seam regardless of the shuffle.
+  function seam(predictedText: string): ProseItem {
+    return { kind: 'seam', gapIds: [0], predictedText, actualText: predictedText, fidelity: 0.5, separator: ' ' };
+  }
+  const word = (text: string): ProseItem => ({ kind: 'word', index: 0, text, separator: ' ', isKernel: false });
+  const multiThenSingle: ProseItem[] = [
+    word('w'), seam('a b'), word('w'), seam('c d'), word('w'), seam('e f'),
+    word('w'), seam('g h'), word('w'), seam('p'), word('w'), seam('q'),
+    word('w'), seam('r'), word('w'), seam('s'),
+  ];
+
+  it('chooses only multi-word seams when count fits the multi-word supply', () => {
+    const chosen = pickRevealed(multiThenSingle, 4, 1);
+    expect(chosen).toHaveLength(4);
+    for (const i of chosen) {
+      const it = multiThenSingle[i];
+      expect(it.kind).toBe('seam');
+      expect(it.kind === 'seam' && it.predictedText.trim().split(/\s+/).length).toBeGreaterThan(1);
+    }
+  });
+
+  it('tops up with single-word seams when count exceeds the multi-word supply', () => {
+    const chosen = pickRevealed(multiThenSingle, 6, 1);
+    expect(chosen).toHaveLength(6);
+    const multiCount = chosen.filter((i) => {
+      const it = multiThenSingle[i];
+      return it.kind === 'seam' && it.predictedText.trim().split(/\s+/).length > 1;
+    }).length;
+    expect(multiCount).toBe(4); // all four multi-word, plus two single-word
+  });
+
+  it('always includes a seam from the first three (even when multi-word are later)', () => {
+    // First three seams (list indices 0,1,2) are single-word; the satisfying
+    // multi-word seams are all later, so the multi-word preference would skip
+    // the top — the first-three guarantee must pull one in.
+    const items: ProseItem[] = [
+      seam('x'), seam('y'), seam('z'),
+      seam('a b'), seam('c d'), seam('e f'), seam('g h'), seam('i j'),
+    ];
+    // Run several times since selection is random; the guarantee must always hold.
+    for (let n = 0; n < 30; n++) {
+      const chosen = pickRevealed(items, 2, 1);
+      expect(chosen).toHaveLength(2);
+      expect(chosen.some((i) => i <= 2)).toBe(true);
+    }
   });
 });
