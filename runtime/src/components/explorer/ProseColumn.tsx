@@ -37,7 +37,13 @@ import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
  * The column auto-scrolls to keep the active seam roughly centered. The active
  * seam resets to cleared whenever the slider position (`streamKey`) changes.
  *
- * The reveal is keyboard-only — there is intentionally no hover/rollover trigger.
+ * The middle column itself has no hover/rollover trigger. In addition to the
+ * keyboard walk, the active seam can be set externally via the `seamRequest`
+ * prop — the shell raises one when a predicted tile (right strip) is clicked.
+ * The request is consumed with the "adjust state during render" pattern (see
+ * below); the existing auto-scroll effect then brings the seam into view.
+ * `activeSeamValueRef` is re-synced to `activeSeam` every render, so a clicked
+ * seam composes with the keyboard walk (arrows continue from the clicked seam).
  *
  * Note: the reveal-flash selection uses `Math.random` (a sanctioned exception to
  * the runtime's determinism rule — it is a transient, decorative animation; the
@@ -53,6 +59,23 @@ type ProseColumnProps = {
   revealCount: number;
   /** Fraction (0–1) of the seams the reveal pool is drawn from (grows with compression). */
   selectFraction: number;
+  /**
+   * External seam-activation request raised by clicking a predicted tile. The
+   * `nonce` is a monotonically increasing counter so the SAME tile can be
+   * re-clicked (e.g. after Esc cleared the seam) and re-trigger. Consumed via
+   * the "adjust state during render" pattern (mirroring `prevStreamKey`), NOT a
+   * setState-in-effect. If the `gapId` isn't present at the current position the
+   * request is ignored.
+   */
+  seamRequest?: { gapId: number; nonce: number } | null;
+  /**
+   * Reports the active seam's gap ids (or null when none is active) so the
+   * parent can highlight the matching tiles in the removed-words strip — the
+   * reverse of `seamRequest`. Called from an effect keyed on the active seam +
+   * position (NOT this component's own setState), so it never trips the
+   * no-setState-in-an-effect rule; the parent's setter must be stable.
+   */
+  onActiveSeamChange?: (gapIds: number[] | null) => void;
 };
 
 const FLASH_HOLD_MS = 750; // how long the opened seams stay before closing
@@ -288,6 +311,8 @@ export function ProseColumn({
   streamKey,
   revealCount,
   selectFraction,
+  seamRequest,
+  onActiveSeamChange,
 }: ProseColumnProps) {
   const reduce = usePrefersReducedMotion();
 
@@ -338,9 +363,18 @@ export function ProseColumn({
   // mirrors `items`). `seamOrdinalByListIdx[listIdx]` is the seam's ordinal.
   const seamListIdxs: number[] = [];
   const seamOrdinalByListIdx = new Map<number, number>();
+  // Map every gap id to its seam's ordinal, so a clicked tile (which carries a
+  // gap id) can resolve to the seam to activate. Adjacent gaps collapse into one
+  // seam, so multiple gap ids legitimately map to the same ordinal.
+  const gapIdToSeamOrdinal = new Map<number, number>();
   for (let i = 0; i < items.length; i++) {
-    if (items[i].kind === 'seam') {
-      seamOrdinalByListIdx.set(i, seamListIdxs.length);
+    const item = items[i];
+    if (item.kind === 'seam') {
+      const ordinal = seamListIdxs.length;
+      seamOrdinalByListIdx.set(i, ordinal);
+      for (const gapId of item.gapIds) {
+        gapIdToSeamOrdinal.set(gapId, ordinal);
+      }
       seamListIdxs.push(i);
     }
   }
@@ -356,6 +390,22 @@ export function ProseColumn({
   if (prevStreamKey !== streamKey) {
     setPrevStreamKey(streamKey);
     setActiveSeam(null);
+  }
+
+  // External tile-click request → activate the matching seam. Same "adjust state
+  // during render" pattern as the streamKey reset above (NOT a setState in an
+  // effect, so it stays clear of React 19's no-setState-in-effect rule): compare
+  // the request's nonce against the previous one held in *state*; on a new nonce,
+  // record it and, if this position has the requested gap, set the active seam.
+  // An unknown gap id is ignored (no clear, no throw). A tile click happens at a
+  // fixed position, so it never races the streamKey reset above.
+  const [prevSeamNonce, setPrevSeamNonce] = useState<number | null>(null);
+  if (seamRequest && seamRequest.nonce !== prevSeamNonce) {
+    setPrevSeamNonce(seamRequest.nonce);
+    const ordinal = gapIdToSeamOrdinal.get(seamRequest.gapId);
+    if (ordinal !== undefined) {
+      setActiveSeam(ordinal);
+    }
   }
 
   // Preload the click clips once. Refs (not state) — they are imperative.
@@ -478,6 +528,35 @@ export function ProseColumn({
       behavior: reduce ? 'auto' : 'smooth',
     });
   }, [activeSeam, reduce, streamKey]);
+
+  // Report the active seam's gap ids up so the parent can highlight the matching
+  // tiles in the removed-words strip (the reverse of `seamRequest`). Keyed on the
+  // stable [activeSeam, streamKey] — NOT `items` (new identity every render) —
+  // and reads the live items from the ref. This calls a PARENT callback, not
+  // this component's own setState, so the no-setState-in-an-effect rule is moot;
+  // the parent's setter is stable (useCallback / useState setter).
+  const onActiveSeamChangeRef = useRef(onActiveSeamChange);
+  useEffect(() => {
+    onActiveSeamChangeRef.current = onActiveSeamChange;
+  });
+  useEffect(() => {
+    const report = onActiveSeamChangeRef.current;
+    if (!report) return;
+    if (activeSeam === null) {
+      report(null);
+      return;
+    }
+    let ordinal = -1;
+    for (const it of itemsRef.current) {
+      if (it.kind !== 'seam') continue;
+      ordinal += 1;
+      if (ordinal === activeSeam) {
+        report(it.gapIds);
+        return;
+      }
+    }
+    report(null);
+  }, [activeSeam, streamKey]);
 
   // ---- Discoverability hint (Step 5) ------------------------------------
 

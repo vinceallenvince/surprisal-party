@@ -161,6 +161,27 @@ describe('ProseColumn (Step 5 keyboard walk)', () => {
     ).toBeInTheDocument();
   });
 
+  it('reports the active seam gap ids up as the walk moves (and null on Esc)', () => {
+    // twoSeamItems: first seam gapIds [1], second [5]. The report drives the
+    // removed-tile highlight in the strip (the reverse of seamRequest).
+    const onActiveSeamChange = vi.fn();
+    render(
+      <ProseColumn
+        items={twoSeamItems}
+        streamKey={1}
+        revealCount={0}
+        selectFraction={1}
+        onActiveSeamChange={onActiveSeamChange}
+      />,
+    );
+    key('ArrowRight');
+    expect(onActiveSeamChange).toHaveBeenLastCalledWith([1]);
+    key('ArrowRight');
+    expect(onActiveSeamChange).toHaveBeenLastCalledWith([5]);
+    key('Escape');
+    expect(onActiveSeamChange).toHaveBeenLastCalledWith(null);
+  });
+
   it('suspends the walk while a modal dialog is open, and resumes when it closes', () => {
     // The real arrow-key isolation: ProseColumn's document-level listener bails
     // whenever an `[aria-modal="true"]` element is present (e.g. the onboarding
@@ -184,6 +205,83 @@ describe('ProseColumn (Step 5 keyboard walk)', () => {
     // Modal gone → the walk resumes on the next arrow.
     key('ArrowRight');
     expect(screen.getByText('a little')).toBeInTheDocument();
+  });
+});
+
+describe('ProseColumn (tile-click seam request)', () => {
+  it('activates the seam matching the requested gap id', () => {
+    // twoSeamItems: first seam gapIds [1], second seam gapIds [5].
+    render(
+      <ProseColumn
+        items={twoSeamItems}
+        streamKey={1}
+        revealCount={0}
+        selectFraction={1}
+        seamRequest={{ gapId: 5, nonce: 1 }}
+      />,
+    );
+    // The second seam's actual text + fidelity fill the inspector.
+    expect(screen.getByText('wandered')).toBeInTheDocument();
+    expect(screen.getByText('0.42')).toBeInTheDocument();
+    expect(screen.getByText('Actual')).toBeInTheDocument();
+  });
+
+  it('activates the first seam for its gap id', () => {
+    render(
+      <ProseColumn
+        items={twoSeamItems}
+        streamKey={1}
+        revealCount={0}
+        selectFraction={1}
+        seamRequest={{ gapId: 1, nonce: 1 }}
+      />,
+    );
+    expect(screen.getByText('a little')).toBeInTheDocument();
+    expect(screen.getByText('0.91')).toBeInTheDocument();
+  });
+
+  it('ignores a request for a gap id not present at this position', () => {
+    render(
+      <ProseColumn
+        items={twoSeamItems}
+        streamKey={1}
+        revealCount={0}
+        selectFraction={1}
+        seamRequest={{ gapId: 999, nonce: 1 }}
+      />,
+    );
+    // No seam active → the empty inspector hint remains.
+    expect(
+      screen.getByText('Press an arrow key to walk the seams'),
+    ).toBeInTheDocument();
+    expect(screen.queryByText('wandered')).not.toBeInTheDocument();
+    expect(screen.queryByText('a little')).not.toBeInTheDocument();
+  });
+
+  it('re-fires on a new nonce after Esc clears the seam', () => {
+    const { rerender } = render(
+      <ProseColumn
+        items={twoSeamItems}
+        streamKey={1}
+        revealCount={0}
+        selectFraction={1}
+        seamRequest={{ gapId: 5, nonce: 1 }}
+      />,
+    );
+    expect(screen.getByText('wandered')).toBeInTheDocument();
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(screen.queryByText('wandered')).not.toBeInTheDocument();
+    // Same gap id, bumped nonce → re-activates.
+    rerender(
+      <ProseColumn
+        items={twoSeamItems}
+        streamKey={1}
+        revealCount={0}
+        selectFraction={1}
+        seamRequest={{ gapId: 5, nonce: 2 }}
+      />,
+    );
+    expect(screen.getByText('wandered')).toBeInTheDocument();
   });
 });
 

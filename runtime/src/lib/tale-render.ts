@@ -75,6 +75,12 @@ export type RemovedTile = {
   /** `core + trailing_punct`. */
   text: string;
   surprisal: number;
+  /**
+   * The id of the gap this removed word belongs to — every removed word lives in
+   * exactly one gap. Used to map a clicked tile back to its seam in the prose
+   * column (via the seam's `gapIds`), so clicking a tile can reveal that seam.
+   */
+  gapId: number;
 };
 
 export type HeaderReadout = {
@@ -341,7 +347,13 @@ export function renderPosition(
     .sort((a, b) => a - b)
     .map((wi) => wordByIndex.get(wi))
     .filter((w): w is WordEntry => w !== undefined && !w.is_empty_core)
-    .map((w) => ({ index: w.index, text: wordText(w), surprisal: w.surprisal }));
+    .map((w) => ({
+      index: w.index,
+      text: wordText(w),
+      surprisal: w.surprisal,
+      // Each removed word belongs to exactly one gap (built above).
+      gapId: wordToGapId.get(w.index) ?? -1,
+    }));
 
   // Percentages are kept to ONE decimal: the early compression stops move only
   // a fraction of a percent (e.g. LRRH position 1 is ~0.3% predicted), which
