@@ -6,3 +6,4 @@ export { ProseColumn } from './ProseColumn';
 export { PredictedStrip } from './PredictedStrip';
 export { CompressionSlider } from './CompressionSlider';
 export { PrimerModal } from './PrimerModal';
+export { CorpusDrawer } from './CorpusDrawer';

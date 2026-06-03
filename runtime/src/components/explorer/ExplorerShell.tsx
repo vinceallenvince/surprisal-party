@@ -45,6 +45,10 @@ type ExplorerShellProps = {
   onPositionChange: (index: number) => void;
   /** Re-summons the onboarding primer (wired to the header ⓘ button). */
   onShowPrimer: () => void;
+  /** Whether the corpus-picker drawer is open (drives the rail's aria-expanded). */
+  drawerOpen: boolean;
+  /** Toggles the corpus-picker drawer (wired to the rail icon). */
+  onToggleDrawer: () => void;
 };
 
 export function ExplorerShell({
@@ -55,6 +59,8 @@ export function ExplorerShell({
   selectFraction,
   onPositionChange,
   onShowPrimer,
+  drawerOpen,
+  onToggleDrawer,
 }: ExplorerShellProps) {
   return (
     <div className="flex h-screen min-w-[1024px] flex-col overflow-hidden bg-ground">
@@ -66,7 +72,7 @@ export function ExplorerShell({
         onShowPrimer={onShowPrimer}
       />
       <div className="flex min-h-0 grow">
-        <CorpusRail />
+        <CorpusRail expanded={drawerOpen} onToggle={onToggleDrawer} />
         {/* No `key` here on purpose: remounting would reset the DOM slots and
             kill the Step 4 transition-colors crossfade. ProseColumn keeps its
             identity across position swaps. */}

@@ -1,0 +1,282 @@
+import {
+  describe,
+  it,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  vi,
+} from 'vitest';
+import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
+import taleFixture from '../../../public/tales/little-red-riding-hood.json';
+
+/**
+ * Corpus-picker drawer behaviour (Phase 2, Step 6).
+ *
+ * Only ONE real corpus exists (`public/tales/little-red-riding-hood.json`), so
+ * to exercise multi-corpus list rendering + switching we MOCK the manifest
+ * module (`@/lib/corpora`) with a two-entry list. The mocked fetch returns the
+ * single real fixture for whichever slug is requested — enough to drive the
+ * fetch → parse → render path for both slugs. The mock lives at module scope
+ * (hoisted by Vitest) so both the drawer and the container see the same list.
+ */
+
+vi.mock('@/lib/corpora', () => {
+  const CORPORA = [
+    { slug: 'little-red-riding-hood', title: 'Little Red Riding Hood', wordCount: 1378 },
+    { slug: 'second-corpus', title: 'Second Corpus', wordCount: 999 },
+  ] as const;
+  return { CORPORA, DEFAULT_CORPUS_SLUG: CORPORA[0].slug };
+});
+
+// Imported AFTER the mock so they pick up the injected manifest.
+import { CorpusDrawer } from './CorpusDrawer';
+import { ExplorerContainer } from './ExplorerContainer';
+import { PRIMER_SEEN_KEY } from '@/lib/primer';
+
+beforeAll(() => {
+  if (!window.matchMedia) {
+    window.matchMedia = vi.fn().mockImplementation((query: string) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    }));
+  }
+  vi.stubGlobal(
+    'Audio',
+    class {
+      preload = '';
+      currentTime = 0;
+      play = vi.fn().mockResolvedValue(undefined);
+    },
+  );
+  Element.prototype.scrollTo = vi.fn();
+});
+
+function stubFetchWithFixture() {
+  // Return the one real fixture regardless of slug — both manifest entries
+  // resolve to a valid cache so the container can render either.
+  vi.stubGlobal(
+    'fetch',
+    vi.fn().mockResolvedValue({
+      json: () => Promise.resolve(taleFixture),
+    }),
+  );
+}
+
+describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
+  it('is a labelled dialog headed CORPORA listing the corpora', () => {
+    render(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={vi.fn()}
+        onClose={vi.fn()}
+      />,
+    );
+    const dialog = screen.getByRole('dialog', { name: /corpora/i });
+    expect(dialog).toHaveAttribute('aria-modal', 'true');
+    expect(
+      within(dialog).getByRole('heading', { name: /corpora/i }),
+    ).toBeInTheDocument();
+    // The current corpus (LRRH) is shown but NOT a button; other corpora are
+    // selectable buttons.
+    expect(within(dialog).getByText('Little Red Riding Hood')).toBeInTheDocument();
+    expect(
+      within(dialog).queryByRole('button', { name: /little red riding hood/i }),
+    ).toBeNull();
+    expect(
+      within(dialog).getByRole('button', { name: /second corpus/i }),
+    ).toBeInTheDocument();
+  });
+
+  it('renders each corpus with its word-count meta line', () => {
+    render(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={vi.fn()}
+        onClose={vi.fn()}
+      />,
+    );
+    expect(screen.getByText(/1,378 words/i)).toBeInTheDocument();
+    expect(screen.getByText(/999 words/i)).toBeInTheDocument();
+  });
+
+  it('marks the currently-loaded corpus (non-interactive) via aria-current', () => {
+    const { container } = render(
+      <CorpusDrawer
+        currentSlug="second-corpus"
+        onSelect={vi.fn()}
+        onClose={vi.fn()}
+      />,
+    );
+    const current = container.querySelector('[aria-current="true"]');
+    expect(current).not.toBeNull();
+    expect(current).toHaveTextContent('Second Corpus');
+    // The current corpus is not a button (can't be reselected); the other is.
+    expect(screen.queryByRole('button', { name: /second corpus/i })).toBeNull();
+    expect(
+      screen.getByRole('button', { name: /little red riding hood/i }),
+    ).toBeInTheDocument();
+  });
+
+  it('moves focus to the first selectable corpus on open', () => {
+    // currentSlug = LRRH is non-interactive, so the first focusable corpus is
+    // "Second Corpus".
+    render(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={vi.fn()}
+        onClose={vi.fn()}
+      />,
+    );
+    expect(
+      screen.getByRole('button', { name: /second corpus/i }),
+    ).toHaveFocus();
+  });
+
+  it('selecting a corpus calls onSelect with its slug', () => {
+    const onSelect = vi.fn();
+    render(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={onSelect}
+        onClose={vi.fn()}
+      />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: /second corpus/i }));
+    expect(onSelect).toHaveBeenCalledWith('second-corpus');
+  });
+
+  it('closes via Esc and via scrim click', () => {
+    const onClose = vi.fn();
+    const { container, rerender } = render(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={vi.fn()}
+        onClose={onClose}
+      />,
+    );
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(onClose).toHaveBeenCalledTimes(1);
+
+    rerender(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={vi.fn()}
+        onClose={onClose}
+      />,
+    );
+    const scrim = container.querySelector('[data-corpus-scrim]');
+    expect(scrim).not.toBeNull();
+    fireEvent.click(scrim as Element);
+    expect(onClose).toHaveBeenCalledTimes(2);
+  });
+
+  it('a click inside the panel does not close (no bubble to the scrim)', () => {
+    const onClose = vi.fn();
+    render(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={vi.fn()}
+        onClose={onClose}
+      />,
+    );
+    fireEvent.click(screen.getByRole('dialog', { name: /corpora/i }));
+    expect(onClose).not.toHaveBeenCalled();
+  });
+});
+
+describe('ExplorerContainer corpus switching', () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+    // Pre-seed the primer-seen flag so the primer dialog does not appear and
+    // collide with the drawer dialog in these assertions.
+    window.localStorage.setItem(PRIMER_SEEN_KEY, 'true');
+    window.history.replaceState(null, '', '/');
+    stubFetchWithFixture();
+  });
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it('opens the drawer from the rail icon and toggles aria-expanded', async () => {
+    render(<ExplorerContainer />);
+    await waitFor(() =>
+      expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
+    );
+    const rail = screen.getByRole('button', { name: /open corpus picker/i });
+    expect(rail).toHaveAttribute('aria-expanded', 'false');
+    fireEvent.click(rail);
+    expect(
+      screen.getByRole('dialog', { name: /corpora/i }),
+    ).toBeInTheDocument();
+    expect(rail).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('closes the drawer when the rail icon is clicked again', async () => {
+    render(<ExplorerContainer />);
+    await waitFor(() =>
+      expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
+    );
+    const rail = screen.getByRole('button', { name: /open corpus picker/i });
+    fireEvent.click(rail);
+    expect(screen.getByRole('dialog', { name: /corpora/i })).toBeInTheDocument();
+    fireEvent.click(rail);
+    expect(
+      screen.queryByRole('dialog', { name: /corpora/i }),
+    ).not.toBeInTheDocument();
+  });
+
+  it('selecting a corpus closes the drawer, re-fetches the slug, and resets the readout to UNCOMPRESSED', async () => {
+    render(<ExplorerContainer />);
+    await waitFor(() =>
+      expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
+    );
+    const fetchMock = fetch as unknown as ReturnType<typeof vi.fn>;
+    fetchMock.mockClear();
+
+    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    fireEvent.click(screen.getByRole('button', { name: /second corpus/i }));
+
+    // Drawer closed.
+    expect(
+      screen.queryByRole('dialog', { name: /corpora/i }),
+    ).not.toBeInTheDocument();
+    // Re-fetched the newly-selected slug.
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith('/tales/second-corpus.json'),
+    );
+    // View reset to UNCOMPRESSED: slider value 0 and the 100/0/100 readout.
+    await waitFor(() => {
+      const slider = screen.getByRole('slider', { name: /compression level/i });
+      expect(slider).toHaveAttribute('aria-valuenow', '0');
+    });
+    // UNCOMPRESSED readout is "stored 100% · predicted 0% · conserved 100%".
+    expect(screen.getAllByText('100%')).toHaveLength(2);
+    expect(screen.getByText('0%')).toBeInTheDocument();
+  });
+
+  it('shows the loaded corpus as non-interactive, so it cannot be reselected', async () => {
+    // Regression for the same-slug strand: the loaded (current) corpus must not
+    // be a clickable button, so a user can never trigger a no-op reload that
+    // nulls the cache without re-fetching.
+    render(<ExplorerContainer />);
+    await waitFor(() =>
+      expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
+    );
+    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    const dialog = screen.getByRole('dialog', { name: /corpora/i });
+    expect(
+      within(dialog).queryByRole('button', { name: /little red riding hood/i }),
+    ).toBeNull();
+    // Selecting a different corpus still works (it is a button).
+    expect(
+      within(dialog).getByRole('button', { name: /second corpus/i }),
+    ).toBeInTheDocument();
+  });
+});

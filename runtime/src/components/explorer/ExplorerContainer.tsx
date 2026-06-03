@@ -3,8 +3,10 @@
 import { useCallback, useEffect, useState } from 'react';
 import { ExplorerShell } from './ExplorerShell';
 import { PrimerModal } from './PrimerModal';
+import { CorpusDrawer } from './CorpusDrawer';
 import { renderPosition } from '@/lib/tale-render';
 import { markPrimerSeen, resolvePrimerOnLoad } from '@/lib/primer';
+import { DEFAULT_CORPUS_SLUG } from '@/lib/corpora';
 import {
   parseTaleCache,
   SUPPORTED_SCHEMA_VERSION,
@@ -29,6 +31,17 @@ import {
  * Loading / error handling is intentionally minimal — a null-guard skeleton.
  * Full loading / error / slow-network states are Phase 3.
  *
+ * Step 6 also lifts the active corpus slug into this container as state
+ * (replacing the former hardcoded `TALE_SLUG` constant), seeded from the
+ * corpus manifest's default. The cache-fetch effect keys on `slug`, so it
+ * re-fetches whenever the slug changes. The corpus-picker drawer's open/closed
+ * state lives here too; selecting a corpus (`handleSelectCorpus`) sets the slug
+ * (→ re-fetch), resets `selectedPositionIndex` to 0 (UNCOMPRESSED — which also
+ * clears any active seam downstream), and closes the drawer. Selecting the
+ * already-current corpus still closes + resets (harmless). The brief load
+ * between corpora reuses the same null-guard skeleton: `cache` is cleared on
+ * switch so the skeleton shows until the new cache resolves.
+ *
  * Step 6 lifts the onboarding primer's open/closed state here. First-visit
  * gating must be SSR/static-export safe: the prerendered HTML cannot read
  * `localStorage`, so the modal starts closed (matching the server render → no
@@ -40,12 +53,16 @@ import {
  * `handleShowPrimer`, regardless of the flag and without touching it.
  */
 
-const TALE_SLUG = 'little-red-riding-hood';
-
 export function ExplorerContainer() {
+  // The active corpus slug, seeded from the manifest default. The cache-fetch
+  // effect keys on this; changing it re-fetches the matching tale JSON.
+  const [slug, setSlug] = useState(DEFAULT_CORPUS_SLUG);
   const [cache, setCache] = useState<TaleCache | null>(null);
   // Default to UNCOMPRESSED (far left, index 0). The slider is the only writer.
   const [selectedPositionIndex, setSelectedPositionIndex] = useState(0);
+
+  // Corpus-picker drawer visibility (collapsed by default).
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   // Primer visibility. Starts closed to match the static prerender (no
   // hydration mismatch); the real first-visit decision lands after mount.
@@ -57,6 +74,36 @@ export function ExplorerContainer() {
   const handlePositionChange = useCallback((index: number) => {
     setSelectedPositionIndex(index);
   }, []);
+
+  const handleToggleDrawer = useCallback(() => {
+    setDrawerOpen((open) => !open);
+  }, []);
+
+  const handleCloseDrawer = useCallback(() => {
+    setDrawerOpen(false);
+  }, []);
+
+  // Selecting a (different) corpus loads it fresh: switch the slug (→ re-fetch),
+  // snap the slider back to UNCOMPRESSED (which also clears any active seam
+  // downstream), and close the drawer. The fetch effect clears `cache` on a slug
+  // change so the skeleton shows until the new cache resolves.
+  //
+  // The current corpus is non-interactive in the drawer, so `next` should never
+  // equal `slug`; the guard is defensive — nulling `cache` for a same-slug pick
+  // would strand the app on the skeleton (the `[slug]` effect wouldn't re-run).
+  const handleSelectCorpus = useCallback(
+    (next: string) => {
+      setDrawerOpen(false);
+      if (next === slug) {
+        setSelectedPositionIndex(0);
+        return;
+      }
+      setSelectedPositionIndex(0);
+      setCache(null);
+      setSlug(next);
+    },
+    [slug],
+  );
 
   // First-visit gating, deferred past mount via rAF so the setState happens in
   // the frame callback rather than synchronously in the effect body.
@@ -89,7 +136,7 @@ export function ExplorerContainer() {
     let cancelled = false;
 
     async function load() {
-      const res = await fetch(`/tales/${TALE_SLUG}.json`);
+      const res = await fetch(`/tales/${slug}.json`);
       const json: unknown = await res.json();
       const parsed = parseTaleCache(json);
       if (parsed.schema_version !== SUPPORTED_SCHEMA_VERSION) {
@@ -107,7 +154,7 @@ export function ExplorerContainer() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [slug]);
 
   // Minimal null-guard skeleton until the cache resolves.
   if (!cache) {
@@ -153,7 +200,16 @@ export function ExplorerContainer() {
         selectFraction={selectFraction}
         onPositionChange={handlePositionChange}
         onShowPrimer={handleShowPrimer}
+        drawerOpen={drawerOpen}
+        onToggleDrawer={handleToggleDrawer}
       />
+      {drawerOpen ? (
+        <CorpusDrawer
+          currentSlug={slug}
+          onSelect={handleSelectCorpus}
+          onClose={handleCloseDrawer}
+        />
+      ) : null}
       {primerOpen ? <PrimerModal onDismiss={handleDismissPrimer} /> : null}
     </>
   );

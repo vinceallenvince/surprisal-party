@@ -4,17 +4,27 @@ import { LayoutGrid } from 'lucide-react';
  * Left corpus-picker rail — maps to frame 28-163 node 28:182 (Container) with
  * its 64px-wide column and the dim picker icon (node 28:183) near the top.
  *
- * Static for Step 1: the button is rendered but not wired (the drawer it opens
- * arrives in Step 7). The scenario calls for a "small, dim corpus-picker icon
- * at the top-left of the content row".
+ * The icon is the corpus-picker drawer's summon affordance (Step 6): clicking
+ * it toggles the drawer. `aria-expanded` reflects the drawer's open state and
+ * `aria-haspopup="dialog"` advertises that it opens a dialog. The parent owns
+ * the open/closed state and passes `expanded` + `onToggle`.
  */
-export function CorpusRail() {
+export function CorpusRail({
+  expanded,
+  onToggle,
+}: {
+  expanded: boolean;
+  onToggle: () => void;
+}) {
   return (
     <div className="flex h-full w-16 shrink-0 justify-center border-r border-seam pt-12">
       <button
         type="button"
         aria-label="Open corpus picker"
-        className="flex size-9 items-center justify-center p-2 text-faint"
+        aria-haspopup="dialog"
+        aria-expanded={expanded}
+        onClick={onToggle}
+        className="flex size-9 items-center justify-center p-2 text-faint hover:text-muted"
       >
         <LayoutGrid className="size-5" aria-hidden="true" />
       </button>
