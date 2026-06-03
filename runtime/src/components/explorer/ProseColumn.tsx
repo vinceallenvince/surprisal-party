@@ -407,10 +407,16 @@ export function ProseColumn({
     activeSeamValueRef.current = activeSeam;
   });
 
-  // Single document-level keydown handler. Arrows ALWAYS drive the seams (no
-  // focus scoping) — the slider is mouse-only, so there is no conflict.
+  // Single document-level keydown handler. The seam walk is otherwise unscoped
+  // (the main slider is mouse-only), so the one real conflict is a modal that
+  // wants the arrow keys for itself — the onboarding primer's threshold slider.
+  // While ANY modal dialog is open we suspend the walk entirely: React 19
+  // attaches its delegated listener to `document` (the same node as this one),
+  // so a child's `stopPropagation()` can't reliably stop us; guarding here at
+  // the source is the robust fix (and covers the About / corpus dialogs too).
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
+      if (document.querySelector('[aria-modal="true"]')) return;
       if (e.key === 'Escape') {
         onArrowEngageRef.current();
         activeSeamValueRef.current = null; // keep the mirror in sync; no sound

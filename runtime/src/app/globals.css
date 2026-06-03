@@ -140,6 +140,15 @@
     animation: slideInHorizontal 0.3s ease-out forwards;
   }
 }
+@utility primer-fade-in {
+  /* Gentle fade for the onboarding primer's step content; replays whenever the
+     step changes (the content wrapper is keyed by step, so it remounts). */
+  animation: primer-fade-in 220ms ease-out both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
 
 /* Custom component styles */
 @utility custom-btn-primary {
@@ -249,6 +258,15 @@
     }
     100% {
       transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes primer-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
       opacity: 1;
     }
   }

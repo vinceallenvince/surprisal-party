@@ -143,6 +143,31 @@ describe('ProseColumn (Step 5 keyboard walk)', () => {
       screen.getByText('Press an arrow key to walk the seams'),
     ).toBeInTheDocument();
   });
+
+  it('suspends the walk while a modal dialog is open, and resumes when it closes', () => {
+    // The real arrow-key isolation: ProseColumn's document-level listener bails
+    // whenever an `[aria-modal="true"]` element is present (e.g. the onboarding
+    // primer). This is the robust replacement for relying on a child's
+    // stopPropagation, which can't stop a co-located document listener in the
+    // App Router. (Reproduces the production topology a stopPropagation test
+    // could not: a sibling document listener that fires regardless.)
+    render(<ProseColumn items={twoSeamItems} streamKey={1} revealCount={0} selectFraction={1} />);
+    const modal = document.createElement('div');
+    modal.setAttribute('aria-modal', 'true');
+    document.body.appendChild(modal);
+
+    key('ArrowRight');
+    // Walk suppressed: no seam activates; the inspector still shows the hint.
+    expect(
+      screen.getByText('Press an arrow key to walk the seams'),
+    ).toBeInTheDocument();
+    expect(screen.queryByText('a little')).not.toBeInTheDocument();
+
+    document.body.removeChild(modal);
+    // Modal gone → the walk resumes on the next arrow.
+    key('ArrowRight');
+    expect(screen.getByText('a little')).toBeInTheDocument();
+  });
 });
 
 describe('pickRevealed (multi-word preference)', () => {

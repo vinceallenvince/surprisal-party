@@ -1,4 +1,12 @@
-import { describe, it, expect, beforeAll, beforeEach, afterEach, vi } from 'vitest';
+import {
+  describe,
+  it,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  vi,
+} from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { ExplorerContainer } from './ExplorerContainer';
 import { PrimerModal } from './PrimerModal';
@@ -6,7 +14,8 @@ import { PRIMER_SEEN_KEY } from '@/lib/primer';
 import taleFixture from '../../../public/tales/little-red-riding-hood.json';
 
 /**
- * Onboarding-primer behaviour (Phase 2, Step 6).
+ * Onboarding-primer behaviour (Phase 2, Step 6) — reworked into a three-step
+ * interactive primer.
  *
  * The container fetches the tale cache and decides primer visibility after
  * mount inside a rAF. jsdom has no `matchMedia`, `requestAnimationFrame`, or a
@@ -14,7 +23,7 @@ import taleFixture from '../../../public/tales/little-red-riding-hood.json';
  * hops before asserting.
  */
 
-const HEADING = /surprisal = how much a word surprises a predictor/i;
+const STEP1_HEADING = /surprisal = how much a word surprises a predictor/i;
 
 beforeAll(() => {
   // The prose column's reduced-motion hook + the modal's both read matchMedia.
@@ -40,6 +49,12 @@ beforeAll(() => {
     },
   );
   Element.prototype.scrollTo = vi.fn();
+  // jsdom doesn't implement pointer capture; the slider calls it on pointerdown.
+  if (!Element.prototype.setPointerCapture) {
+    Element.prototype.setPointerCapture = vi.fn();
+    Element.prototype.hasPointerCapture = vi.fn().mockReturnValue(false);
+    Element.prototype.releasePointerCapture = vi.fn();
+  }
 });
 
 function stubFetchWithFixture() {
@@ -51,31 +66,147 @@ function stubFetchWithFixture() {
   );
 }
 
-describe('PrimerModal (standalone a11y + dismissal)', () => {
-  it('is a labelled modal dialog with the two-line copy and a Got it button', () => {
+/** Advance the standalone primer from step 1 to step 3. */
+function gotoStep3() {
+  fireEvent.click(screen.getByRole('button', { name: /next/i }));
+  fireEvent.click(screen.getByRole('button', { name: /next/i }));
+}
+
+describe('PrimerModal (standalone steps + a11y + dismissal)', () => {
+  it('step 1 is a labelled modal dialog with the definition copy', () => {
     render(<PrimerModal onDismiss={vi.fn()} />);
     const dialog = screen.getByRole('dialog');
     expect(dialog).toHaveAttribute('aria-modal', 'true');
-    expect(screen.getByRole('heading', { name: HEADING })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: STEP1_HEADING }),
+    ).toBeInTheDocument();
     expect(
       screen.getByText(
         /predictable words carry little information, surprising words carry a lot/i,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /got it/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /next/i })).toBeInTheDocument();
   });
 
-  it('moves focus to the Got it button on open', () => {
+  it('moves focus to the primary advancing control on step 1', () => {
     render(<PrimerModal onDismiss={vi.fn()} />);
-    expect(screen.getByRole('button', { name: /got it/i })).toHaveFocus();
+    expect(screen.getByRole('button', { name: /next/i })).toHaveFocus();
   });
 
-  it('dismisses via the button, Esc, and scrim click', () => {
+  it('Next advances to step 2, which shows the annotated surprisal numbers', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    // The annotated sentence shows each word's surprisal superscript.
+    expect(screen.getByText('20')).toBeInTheDocument(); // predictor
+    expect(screen.getByText('12')).toBeInTheDocument(); // surprises
+    expect(
+      screen.getByText(/the small number is each word's surprisal/i),
+    ).toBeInTheDocument();
+  });
+
+  it('moves focus to "Next" on entering step 2', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    expect(screen.getByRole('button', { name: /next/i })).toHaveFocus();
+  });
+
+  it('Next from step 2 advances to step 3 (the threshold slider)', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    gotoStep3();
+    expect(
+      screen.getByRole('slider', { name: /surprisal threshold/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/only the surprising words survive/i),
+    ).toBeInTheDocument();
+  });
+
+  it('moves focus to the slider on entering step 3 (not the disabled Done)', () => {
+    // Done is disabled until the slider moves, so it cannot take focus; the
+    // slider is step 3's primary operable control and must receive focus.
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    gotoStep3();
+    expect(
+      screen.getByRole('slider', { name: /surprisal threshold/i }),
+    ).toHaveFocus();
+  });
+
+  it('Back returns to the prior step', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    // On step 2 now; Back returns to step 1's definition copy.
+    fireEvent.click(screen.getByRole('button', { name: /back/i }));
+    expect(
+      screen.getByText(/predictable words carry little information/i),
+    ).toBeInTheDocument();
+  });
+
+  it('on step 3 Done is disabled until the slider is moved', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    gotoStep3();
+    const done = screen.getByRole('button', { name: /done/i });
+    expect(done).toBeDisabled();
+
+    // An arrow keydown on the slider counts as a move and arms Done.
+    const slider = screen.getByRole('slider', { name: /surprisal threshold/i });
+    fireEvent.keyDown(slider, { key: 'ArrowRight' });
+    expect(done).toBeEnabled();
+  });
+
+  it('arrow keys step the threshold (aria-valuenow tracks the stops)', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    gotoStep3();
+    const slider = screen.getByRole('slider', { name: /surprisal threshold/i });
+    // Stops are [0, 2, 4, 7, 15]; starts at 0.
+    expect(slider).toHaveAttribute('aria-valuenow', '0');
+    fireEvent.keyDown(slider, { key: 'ArrowRight' });
+    expect(slider).toHaveAttribute('aria-valuenow', '2');
+    fireEvent.keyDown(slider, { key: 'End' });
+    expect(slider).toHaveAttribute('aria-valuenow', '15');
+    fireEvent.keyDown(slider, { key: 'Home' });
+    expect(slider).toHaveAttribute('aria-valuenow', '0');
+  });
+
+  it('sliding to the max threshold leaves only "predictor" surviving + visible', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    gotoStep3();
+    const slider = screen.getByRole('slider', { name: /surprisal threshold/i });
+    fireEvent.keyDown(slider, { key: 'End' });
+
+    const dialog = document.querySelector('[role="dialog"]')!;
+    // Exactly one word survives, and it's the kernel "predictor".
+    const surviving = Array.from(
+      dialog.querySelectorAll('[data-token][data-survives="true"]'),
+    ).map((el) => el.getAttribute('data-token'));
+    expect(surviving).toEqual(['predictor']);
+
+    // Dropped words are kept in the DOM but collapsed (zero-width + transparent
+    // + aria-hidden), not display:none — verify the contraction styling and that
+    // the survivor is NOT collapsed.
+    const droppedA = dialog.querySelector(
+      '[data-token="a"][data-survives="false"]',
+    )!;
+    expect(droppedA).not.toBeNull();
+    expect(droppedA).toHaveClass('max-w-0', 'opacity-0');
+    expect(droppedA).toHaveAttribute('aria-hidden', 'true');
+
+    const predictor = dialog.querySelector(
+      '[data-token="predictor"][data-survives="true"]',
+    )!;
+    expect(predictor).toHaveClass('opacity-100');
+    expect(predictor).not.toHaveClass('opacity-0');
+    expect(predictor).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('dismisses via Done (after a move), Esc, and scrim click', () => {
     const onDismiss = vi.fn();
     const { container, rerender } = render(
       <PrimerModal onDismiss={onDismiss} />,
     );
-    fireEvent.click(screen.getByRole('button', { name: /got it/i }));
+    gotoStep3();
+    const slider = screen.getByRole('slider', { name: /surprisal threshold/i });
+    fireEvent.keyDown(slider, { key: 'ArrowRight' });
+    fireEvent.click(screen.getByRole('button', { name: /done/i }));
     expect(onDismiss).toHaveBeenCalledTimes(1);
 
     rerender(<PrimerModal onDismiss={onDismiss} />);
@@ -97,6 +228,15 @@ describe('PrimerModal (standalone a11y + dismissal)', () => {
   });
 });
 
+/** Walk the primer to its Done button and click it (used by the gating tests). */
+function completePrimer() {
+  fireEvent.click(screen.getByRole('button', { name: /next/i }));
+  fireEvent.click(screen.getByRole('button', { name: /next/i }));
+  const slider = screen.getByRole('slider', { name: /surprisal threshold/i });
+  fireEvent.keyDown(slider, { key: 'ArrowRight' });
+  fireEvent.click(screen.getByRole('button', { name: /done/i }));
+}
+
 describe('ExplorerContainer primer gating', () => {
   beforeEach(() => {
     window.localStorage.clear();
@@ -109,13 +249,13 @@ describe('ExplorerContainer primer gating', () => {
     vi.unstubAllEnvs();
   });
 
-  it('first visit: shows the primer, and dismissing sets the seen-flag', async () => {
+  it('first visit: shows the primer, and completing it sets the seen-flag', async () => {
     render(<ExplorerContainer />);
     await waitFor(() =>
       expect(screen.getByRole('dialog')).toBeInTheDocument(),
     );
     expect(window.localStorage.getItem(PRIMER_SEEN_KEY)).toBeNull();
-    fireEvent.click(screen.getByRole('button', { name: /got it/i }));
+    completePrimer();
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     expect(window.localStorage.getItem(PRIMER_SEEN_KEY)).toBe('true');
   });
@@ -149,7 +289,7 @@ describe('ExplorerContainer primer gating', () => {
       expect(screen.getByRole('dialog')).toBeInTheDocument(),
     );
     // Dismissing the forced primer must leave the flag exactly as it was.
-    fireEvent.click(screen.getByRole('button', { name: /got it/i }));
+    completePrimer();
     expect(window.localStorage.getItem(PRIMER_SEEN_KEY)).toBe('true');
   });
 
@@ -159,7 +299,7 @@ describe('ExplorerContainer primer gating', () => {
     await waitFor(() =>
       expect(screen.getByRole('dialog')).toBeInTheDocument(),
     );
-    fireEvent.click(screen.getByRole('button', { name: /got it/i }));
+    completePrimer();
     // Forced path must not persist — the visitor is still "unseen".
     expect(window.localStorage.getItem(PRIMER_SEEN_KEY)).toBeNull();
   });
