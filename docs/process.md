@@ -1,6 +1,6 @@
 # Process
 
-How this project got built, captured for a later write-up. The throughline: **design up front, validate with code, then design the UX in detail once the technique was proven** — and let a working prototype drive the design back.
+How this project got built, captured for a later write-up. The throughline: **design up front, validate with code, then design the UX in detail once the technique was proven** — and let working software drive the design back, first a prototype and then the runtime itself.
 
 ## The sequence
 
@@ -44,6 +44,16 @@ How this project got built, captured for a later write-up. The throughline: **de
 
    **Definition of Done (Step 7):** every user scenario is implemented such that its behavior matches its Gherkin *and* its rendered screen matches its Figma frame, with reviewer sign-off across the board.
 
+8. **Bridge the runtime back to Figma Design via Figma Make.** In practice the runtime doesn't stay pinned to the frames: live, in-app iteration pushes it ahead of them (the four-step interactive primer, the "Predicted" → "Removed" relabel and one-decimal readout, the two-way seam ↔ removed-tile linking, the About rewrite, …). Rather than redrawing frames by hand, use **Figma Make as the bridge**, running the loop in reverse — runtime → prototype → frames. → [`figma-make-realignment-prompts.md`](./figma-make-realignment-prompts.md)
+
+   The mechanic that makes this work: the Figma Design frames were originally *pasted* out of the Figma Make prototype, so re-prompting the prototype to match the runtime and re-pasting keeps a single visual lineage.
+
+   - Have **Claude Code author the targeted, versioned prompts** — it already holds the runtime and scenarios in context, so it can translate each change into Figma Make's terms (exact copy, colors, behavior) that Figma Make can't pull from our codebase. Keep them in [`figma-make-realignment-prompts.md`](./figma-make-realignment-prompts.md).
+   - Run them in **small batches**: calibrate on low-risk text/label changes before committing to larger interactive rebuilds (e.g. the primer).
+   - Once a screen looks right, copy its elements into the matching Figma Design frame and keep [`figma-sources.yaml`](./figma-sources.yaml) in sync (map new scenarios, correct stale node ids).
+
+   **Definition of Done (Step 8):** the Figma Design frames reflect the shipped runtime — every diverged screen regenerated via a recorded Figma Make prompt and re-pasted, with `figma-sources.yaml` updated (new scenarios mapped, stale node ids fixed) and no known runtime ↔ frame drift.
+
 ## Timeline
 
 The work spanned **2026-05-24 → 2026-05-31** (commit dates):
@@ -52,6 +62,7 @@ The work spanned **2026-05-24 → 2026-05-31** (commit dates):
 - **05-30** — the layout brief (step 5), after the pipeline was proven.
 - **05-31 onward** — prototype-driven refinements to layout and scenarios (step 6, in progress).
 - **Next** — distill the prototype into traced Figma Design frames (close out step 6), then the runtime build-out checked against those frames (step 7, pending).
+- **Then** — as the runtime advanced ahead of the frames through live iteration, bridge it back to Figma Design with Figma Make prompts (step 8).
 
 ## A note for the write-up
 
