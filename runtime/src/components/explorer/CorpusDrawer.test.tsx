@@ -299,9 +299,9 @@ describe('ExplorerContainer corpus switching', () => {
       const slider = screen.getByRole('slider', { name: /compression level/i });
       expect(slider).toHaveAttribute('aria-valuenow', '0');
     });
-    // UNCOMPRESSED readout is "stored 100% · predicted 0% · conserved 100%".
-    expect(screen.getAllByText('100%')).toHaveLength(2);
-    expect(screen.getByText('0%')).toBeInTheDocument();
+    // UNCOMPRESSED readout is "stored 100.0% · predicted 0.0% · conserved 100.0%".
+    expect(screen.getAllByText('100.0%')).toHaveLength(2);
+    expect(screen.getByText('0.0%')).toBeInTheDocument();
   });
 
   it('clicking About in the drawer closes the drawer and opens the About modal', async () => {

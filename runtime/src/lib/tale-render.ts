@@ -343,11 +343,17 @@ export function renderPosition(
     .filter((w): w is WordEntry => w !== undefined && !w.is_empty_core)
     .map((w) => ({ index: w.index, text: wordText(w), surprisal: w.surprisal }));
 
+  // Percentages are kept to ONE decimal: the early compression stops move only
+  // a fraction of a percent (e.g. LRRH position 1 is ~0.3% predicted), which
+  // rounds to 0 at whole-number precision and makes consecutive stops look
+  // identical. Round predicted to a tenth, then derive stored as 100 − predicted
+  // so the two always sum to exactly 100.0 (the conserved invariant).
   const total = cache.metadata.total_bits;
+  const predictedPct =
+    total > 0 ? Math.round((position.predicted_bits / total) * 1000) / 10 : 0;
   const readout: HeaderReadout = {
-    storedPct: total > 0 ? Math.round((position.stored_bits / total) * 100) : 0,
-    predictedPct:
-      total > 0 ? Math.round((position.predicted_bits / total) * 100) : 0,
+    storedPct: total > 0 ? Math.round((100 - predictedPct) * 10) / 10 : 0,
+    predictedPct,
     conservedPct: 100,
   };
 

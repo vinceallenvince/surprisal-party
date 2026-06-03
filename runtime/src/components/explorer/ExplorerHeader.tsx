@@ -4,8 +4,10 @@ import { Info } from 'lucide-react';
  * Explorer header — maps to frame 28-163 node 28:165 (Container).
  *
  * Left: corpus title + a small info icon immediately to its right.
- * Right: the conserved-quantity readout "stored 100% · predicted 0% ·
- * conserved 100%" with emphasized values.
+ * Right: the conserved-quantity readout "stored 100.0% · predicted 0.0% ·
+ * conserved 100.0%" with emphasized values. Percentages are shown to one
+ * decimal so the early compression stops (which move only a fraction of a
+ * percent) are visibly distinct rather than all reading 100.0 / 0.0.
  *
  * Step 6 wires the info button: clicking it re-summons the onboarding primer
  * (via `onShowPrimer`), at any time and regardless of the seen-flag.
@@ -57,9 +59,9 @@ export function ExplorerHeader({
           </button>
         </div>
         <div className="flex items-start gap-6">
-          <Readout label="stored" value={`${storedPct}%`} />
-          <Readout label="predicted" value={`${predictedPct}%`} />
-          <Readout label="conserved" value={`${conservedPct}%`} />
+          <Readout label="stored" value={`${storedPct.toFixed(1)}%`} />
+          <Readout label="predicted" value={`${predictedPct.toFixed(1)}%`} />
+          <Readout label="conserved" value={`${conservedPct.toFixed(1)}%`} />
         </div>
       </div>
     </header>
