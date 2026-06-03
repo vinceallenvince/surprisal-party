@@ -62,6 +62,23 @@ describe('ProseColumn (Step 4 render)', () => {
     const pipes = container.querySelectorAll('[data-seam-pipe]');
     expect(pipes).toHaveLength(1);
   });
+
+  it('fades the prose in at UNCOMPRESSED (streamKey 0) but not when compressed', () => {
+    // The fade class is present only at the far-left position; it toggles off
+    // for any compressed position, so returning to 0 re-adds it and replays.
+    const { container, rerender } = render(
+      <ProseColumn items={items} streamKey={0} revealCount={2} selectFraction={1} />,
+    );
+    expect(container.querySelector('p.whitespace-pre-wrap')).toHaveClass(
+      'prose-fade-in',
+    );
+    rerender(
+      <ProseColumn items={items} streamKey={1} revealCount={2} selectFraction={1} />,
+    );
+    expect(container.querySelector('p.whitespace-pre-wrap')).not.toHaveClass(
+      'prose-fade-in',
+    );
+  });
 });
 
 /**

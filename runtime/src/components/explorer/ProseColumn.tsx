@@ -521,8 +521,14 @@ export function ProseColumn({
   return (
     <div className="flex min-h-0 min-w-0 grow flex-col">
       <div ref={scrollRef} className="relative min-h-0 grow overflow-y-auto p-12">
+        {/* `prose-fade-in` is applied only at UNCOMPRESSED (streamKey 0); since
+            it toggles off for every compressed position, returning the slider to
+            the far left re-adds it and replays the gentle fade-in over the full
+            restored text. Reduced motion disables it (utility media query). */}
         <p
-          className="max-w-(--prose-measure) whitespace-pre-wrap text-prose"
+          className={`max-w-(--prose-measure) whitespace-pre-wrap text-prose ${
+            streamKey === 0 ? 'prose-fade-in' : ''
+          }`}
           style={{
             fontSize: 'var(--prose-size)',
             lineHeight: 'var(--prose-leading)',
