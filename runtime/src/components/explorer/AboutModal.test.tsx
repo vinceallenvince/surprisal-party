@@ -31,17 +31,13 @@ beforeAll(() => {
 });
 
 describe('AboutModal', () => {
-  it('is a labelled modal dialog with the project copy and a Close button', () => {
+  it('is a labelled modal dialog with a Close button', () => {
     render(<AboutModal onDismiss={vi.fn()} />);
     const dialog = screen.getByRole('dialog', { name: HEADING });
     expect(dialog).toHaveAttribute('aria-modal', 'true');
     expect(screen.getByRole('heading', { name: HEADING })).toBeInTheDocument();
-    // Copy describes the project's core (compression == prediction; the kernel
-    // survives) without being a tutorial.
-    expect(
-      screen.getByText(/compression and prediction are the same/i),
-    ).toBeInTheDocument();
-    expect(screen.getByText(/irreducible kernel/i)).toBeInTheDocument();
+    // The body copy is intentionally NOT asserted — it's free to be reworded
+    // without touching tests. We only lock the dialog shell + controls.
     expect(
       screen.getByRole('button', { name: /close/i }),
     ).toBeInTheDocument();

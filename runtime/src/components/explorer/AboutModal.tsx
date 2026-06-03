@@ -113,14 +113,15 @@ export function AboutModal({ onDismiss }: { onDismiss: () => void }) {
           <span className="text-kernel">Surprisal Party</span>
         </h1>
         <p className="pt-6 text-[18px] leading-[29.25px] tracking-[-0.44px] text-muted">
-          Compression and prediction are the same measurable thing — not a
-          metaphor, a mechanic. Drag the slider and the words a predictor can
-          guess fade from the page and migrate to the side; what stays is the
-          irreducible kernel the model couldn&apos;t have known. Nothing is
-          thrown away. The information just moves.
+          Predictable words carry little information, surprising words carry a lot.
+          The text algorithm demonstrated here preserves words at varying levels of compression
+          based on their surprisal value. Drag the slider to max compression
+          and what stays is the irreducible kernel the model could not have known. Hidden
+          in between the compression seams are predictions of neighboring words. The higher
+          the compression, the more lossy the predictions become.
         </p>
         <p className="pt-4 text-[18px] leading-[29.25px] tracking-[-0.44px] text-muted">
-          The festive name is doing a bit. The interface is not. Read the longer
+          Read the longer
           write-up at{' '}
           <a
             href={WRITEUP_URL}
