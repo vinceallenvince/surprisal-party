@@ -5,7 +5,7 @@ Gherkin-style user scenarios for the Compression-Prediction Explorer.
 
 ### As a first-time visitor, I am shown a one-time primer on surprisal
 
-On a visitor's first load, a large modal gates the explorer with a short, three-step primer that teaches the one idea the mechanic can't teach itself — *surprisal* — by letting the visitor perform the compression in miniature on the primer's own definition sentence. The first step defines the term, the second annotates the sentence with each word's surprisal, and the third hands the visitor a small threshold slider so they raise the threshold themselves and watch the predictable words fall away until only the kernel survives. The visitor must move that slider at least once before they can finish. Each step's content fades in as they advance, and the explorer behind the scrim cannot be touched until the modal is dismissed (via "Done" on the last step, or Esc / a scrim click from any step).
+On a visitor's first load, a large modal gates the explorer with a short, four-step primer that teaches both halves of the mechanic on the primer's own definition sentence. The first step defines *surprisal*, the second annotates the sentence with each word's surprisal, and the third hands the visitor a small threshold slider so they raise the threshold themselves and watch the predictable words fall away until only the kernel survives. The fourth step runs it in reverse: from the lone surviving kernel a "predict" button reconstructs the sentence — lossily — showing the predicted words beside the actual text and a fidelity score below 1.0. The visitor must move the slider (step three) and trigger the prediction (step four) before they can finish. Each step's content fades in as they advance, and the explorer behind the scrim cannot be touched until the modal is dismissed (via "Done" on the last step, or Esc / a scrim click from any step).
 
 ```gherkin
 Given I am a first-time visitor with no record of having seen the primer
@@ -17,9 +17,14 @@ When I advance to the second step
 Then the same sentence is shown with each word's surprisal value, and the highest-surprisal word ("predictor") is marked as the kernel in coral
 When I advance to the third step
 Then a threshold slider appears beneath the sentence, marked with its threshold stops
-And the "Done" button is disabled until I move the slider
+And I cannot advance until I move the slider
 When I raise the threshold with the slider
 Then words below the threshold fade out and the sentence contracts, until at the highest threshold only the kernel word "predictor" remains
+When I advance to the fourth step
+Then the lone kernel word "predictor" is shown, with a "predict the uncompressed text" button
+And the "Done" button is disabled until I trigger the prediction
+When I click the predict button
+Then the removed words are reconstructed inline as a lossy prediction, shown beside the actual text and a fidelity score below 1.0
 And the "Done" button becomes enabled
 When I dismiss the modal
 Then it closes and the application records that the primer has been seen
@@ -27,7 +32,7 @@ And I land in the explorer, which shows three regions: a header, a middle column
 And the default corpus is loaded in the middle column with its kernel tokens highlighted
 And the slider is at UNCOMPRESSED and the corpus drawer is collapsed
 And the right strip is empty
-And the header reads "stored 100% · predicted 0% · conserved 100%"
+And the header reads "stored 100.0% · removed 0.0% · conserved 100.0%"
 And a small, dim corpus-picker icon sits at the top-left of the content row
 ```
 
@@ -78,7 +83,7 @@ And the slider snaps back to the far left (UNCOMPRESSED)
 And the middle column displays the full source text of the corpus
 And the kernel tokens are highlighted within the text
 And the right strip is empty
-And the header resets to "stored 100% · predicted 0% · conserved 100%"
+And the header resets to "stored 100.0% · removed 0.0% · conserved 100.0%"
 ```
 
 ### As a user, I can read more about the project from the drawer
@@ -100,7 +105,7 @@ Then the modal closes and I return to the drawer
 
 ### As a user, I can compress the corpus by dragging the slider rightward
 
-Dragging the slider rightward raises a surprisal threshold. Tokens below the threshold leave the middle column and migrate as word tiles to the right strip, where they pack into a growing mass. In the middle column, removed spans collapse out of view; their position is marked only by a thin seam between the surviving tokens on either side. A seam shows no text by default.
+Dragging the slider rightward raises a surprisal threshold. Tokens below the threshold leave the middle column and migrate as word tiles to the right "Removed" strip, where they pack into a growing mass. In the middle column, removed spans collapse out of view; their position is marked only by a thin seam between the surviving tokens on either side. A seam shows no text by default.
 
 ```gherkin
 Given I have a corpus loaded in the explorer view
@@ -114,7 +119,7 @@ And the middle column visibly shrinks as removed spans collapse out of view
 And each collapsed span is marked by a thin seam between the surviving tokens on either side
 And each seam shows no text by default
 And the kernel tokens remain highlighted and on the page
-And the header updates so that stored falls, predicted rises, and the conserved total stays at 100%
+And the header updates so that stored falls, removed rises, and the conserved total stays at 100%
 ```
 
 ### As a user, I can decompress the corpus by dragging the slider leftward
@@ -128,12 +133,12 @@ Then the surprisal threshold lowers
 And word tiles migrate from the right strip back into the middle column at their original positions
 And seams disappear as their underlying source tokens reappear
 And the middle column visibly expands
-And the header updates so that stored rises, predicted falls, and the conserved total stays at 100%
+And the header updates so that stored rises, removed falls, and the conserved total stays at 100%
 ```
 
 ### As a user, I can walk through the seams with the arrow keys
 
-The arrow keys are the way to step through the corpus's gaps. They drive a single shared "active seam" state, moving through the seams in story order: the active seam expands the model's predicted text inline (dimmed, in the reading type) and fills the fixed reconstruction inspector at the bottom of the middle column with the actual source text and fidelity score; advancing collapses the previous seam and opens the next. The inspector's height is always reserved so nothing reflows. **There is no hover/rollover trigger** — reveals are keyboard-driven only, so resting the cursor over the text (e.g. while using the keyboard) never inadvertently opens a seam. The slider is mouse-only, so the arrow keys never conflict with it. Each step plays a short, soft click sound so stepping through the predicted words feels tactile, respecting the user's reduced-motion / sound preferences.
+The arrow keys are the way to step through the corpus's gaps. They drive a single shared "active seam" state, moving through the seams in story order: the active seam expands the model's predicted text inline (dimmed, in the reading type) and fills the fixed reconstruction inspector at the bottom of the middle column with the actual source text and fidelity score; advancing collapses the previous seam and opens the next. The inspector's height is always reserved so nothing reflows. As the active seam moves, the removed words it covers are highlighted in the right "Removed" strip, so the connection between a gap and the words pulled from it is visible. **The middle-column prose has no hover trigger** — resting the cursor over the reading text never opens a seam; reveals there are keyboard-driven (the right strip's tiles are a separate, explicitly clickable affordance — see below). The slider is mouse-only, so the arrow keys never conflict with it. Each step plays a short, soft click sound so stepping through the predicted words feels tactile, respecting the user's reduced-motion / sound preferences.
 
 ```gherkin
 Given the middle column contains one or more seams
@@ -149,12 +154,30 @@ Then the current seam collapses and the previous seam in story order becomes act
 And a distinct "back" click sound plays
 And pressing Left on the first seam or Right on the last seam does nothing (no wrap-around) and plays no sound
 And when the active seam is not comfortably in view the middle column auto-scrolls smoothly to bring it into view
+And the removed words belonging to the active seam are highlighted in the right strip
 And no click sound plays when there is no seam to move to, or when the user has opted out of UI sounds
 When I press Esc
 Then the active seam clears
+And the right strip's highlight clears
 ```
 
 > Audio assets: the click sounds live at `runtime/public/audio/click1.mp3` (advance) and `runtime/public/audio/click2.mp3` (back), served statically and preloaded so the feedback is instant.
+
+### As a user, I can click a removed word to reveal its seam
+
+The right strip is linked to the seams the other way too: each removed-word tile is clickable, and clicking it activates the seam that word belongs to — the same shared "active seam" the arrow keys drive. The tiles are the *actual* removed words (the ground truth); the model's *prediction* for that gap is what the activated seam reveals in the middle column. Hovering a tile gives a quiet rollover (its text brightens) so it reads as interactive.
+
+```gherkin
+Given I have compressed the corpus so the right strip holds removed-word tiles
+When I hover over a tile
+Then the tile's text brightens to signal it is interactive
+When I click a tile
+Then the seam that removed word belongs to becomes the active seam
+And that seam expands its predicted text inline and fills the reconstruction inspector
+And if the seam is not comfortably in view the middle column auto-scrolls to bring it into view
+And the tiles belonging to that seam are highlighted
+And from there the arrow keys continue the walk from that seam
+```
 
 ### As a user, I am nudged to discover the arrow-key walk
 
@@ -176,12 +199,12 @@ The slider has a lossless region on the left and a lossy region on the right, co
 ```gherkin
 Given I am dragging the slider through the lossless region
 Then the middle column shrinks slightly as predictable words leave
-And the header's predicted percentage rises slowly relative to the words removed
+And the header's removed percentage rises slowly
 And when I activate a seam, the inspector shows a fidelity score close to 1.00
 
 Given I am dragging the slider through the lossy region
 Then the middle column shrinks rapidly as whole clauses leave
-And the header's predicted percentage rises steeply
+And the header's removed percentage rises steeply
 And the seams cover larger spans relative to surviving source tokens
 And when I activate a seam, the inspector shows a fidelity score below 1.00
 ```
@@ -194,7 +217,7 @@ At the slider's far-right position, only the kernel tokens — the highest-surpr
 Given I drag the slider to the far-right position
 Then only the kernel tokens remain visible in the middle column
 And the right strip contains the maximum density of migrated word tiles
-And the header shows the maximum predicted percentage and the conserved total remains at 100%
+And the header shows the maximum removed percentage and the conserved total remains at 100%
 
 When I activate a seam between kernel tokens
 Then its predicted text expands inline to show the model's reconstruction of the corpus from the kernel alone
