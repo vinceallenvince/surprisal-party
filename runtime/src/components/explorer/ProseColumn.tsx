@@ -1,8 +1,9 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ProseItem } from '@/lib/tale-render';
 import { seamNextIndex, seamPrevIndex, type ActiveSeam } from '@/lib/tale-render';
+import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 
 /**
  * Middle prose column — maps to frame 28-163 nodes 28:191..28:196, in its
@@ -58,28 +59,6 @@ const FLASH_HOLD_MS = 750; // how long the opened seams stay before closing
 const REVEAL_MS = 200; // open/close transition duration
 const STAGGER_MS = 55; // per-seam delay so flashed reveals ripple, not fire at once
 const HINT_DISMISS_MS = 5000; // auto-dismiss the arrow-key hint after this long
-
-const REDUCE_QUERY = '(prefers-reduced-motion: reduce)';
-
-function subscribeReducedMotion(onChange: () => void): () => void {
-  if (typeof window === 'undefined' || !window.matchMedia) return () => {};
-  const mq = window.matchMedia(REDUCE_QUERY);
-  mq.addEventListener('change', onChange);
-  return () => mq.removeEventListener('change', onChange);
-}
-
-function getReducedMotionSnapshot(): boolean {
-  if (typeof window === 'undefined' || !window.matchMedia) return false;
-  return window.matchMedia(REDUCE_QUERY).matches;
-}
-
-function usePrefersReducedMotion(): boolean {
-  return useSyncExternalStore(
-    subscribeReducedMotion,
-    getReducedMotionSnapshot,
-    () => false,
-  );
-}
 
 /** How many candidates to sample before pruning to `count` (favouring multi-word). */
 const OVERSELECT_FACTOR = 2;

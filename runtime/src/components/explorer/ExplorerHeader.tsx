@@ -7,8 +7,8 @@ import { Info } from 'lucide-react';
  * Right: the conserved-quantity readout "stored 100% · predicted 0% ·
  * conserved 100%" with emphasized values.
  *
- * Static for Step 1: the info button is rendered but not yet wired (the
- * primer it re-summons arrives in Step 7).
+ * Step 6 wires the info button: clicking it re-summons the onboarding primer
+ * (via `onShowPrimer`), at any time and regardless of the seen-flag.
  */
 
 type ReadoutProps = {
@@ -29,6 +29,8 @@ type ExplorerHeaderProps = {
   storedPct: number;
   predictedPct: number;
   conservedPct: number;
+  /** Re-summons the onboarding primer when the ⓘ button is clicked. */
+  onShowPrimer: () => void;
 };
 
 export function ExplorerHeader({
@@ -36,6 +38,7 @@ export function ExplorerHeader({
   storedPct,
   predictedPct,
   conservedPct,
+  onShowPrimer,
 }: ExplorerHeaderProps) {
   return (
     <header className="w-full border-b border-seam">
@@ -47,6 +50,7 @@ export function ExplorerHeader({
           <button
             type="button"
             aria-label="About surprisal"
+            onClick={onShowPrimer}
             className="flex size-4 items-center justify-center text-muted"
           >
             <Info className="size-4" aria-hidden="true" />

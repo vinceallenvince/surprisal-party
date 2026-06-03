@@ -5,3 +5,4 @@ export { CorpusRail } from './CorpusRail';
 export { ProseColumn } from './ProseColumn';
 export { PredictedStrip } from './PredictedStrip';
 export { CompressionSlider } from './CompressionSlider';
+export { PrimerModal } from './PrimerModal';

@@ -43,6 +43,8 @@ type ExplorerShellProps = {
   selectFraction: number;
   /** Called with the nearest stop index when the user moves the slider. */
   onPositionChange: (index: number) => void;
+  /** Re-summons the onboarding primer (wired to the header ⓘ button). */
+  onShowPrimer: () => void;
 };
 
 export function ExplorerShell({
@@ -52,6 +54,7 @@ export function ExplorerShell({
   revealCount,
   selectFraction,
   onPositionChange,
+  onShowPrimer,
 }: ExplorerShellProps) {
   return (
     <div className="flex h-screen min-w-[1024px] flex-col overflow-hidden bg-ground">
@@ -60,6 +63,7 @@ export function ExplorerShell({
         storedPct={rendered.readout.storedPct}
         predictedPct={rendered.readout.predictedPct}
         conservedPct={rendered.readout.conservedPct}
+        onShowPrimer={onShowPrimer}
       />
       <div className="flex min-h-0 grow">
         <CorpusRail />

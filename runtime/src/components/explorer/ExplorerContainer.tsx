@@ -2,7 +2,9 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { ExplorerShell } from './ExplorerShell';
+import { PrimerModal } from './PrimerModal';
 import { renderPosition } from '@/lib/tale-render';
+import { markPrimerSeen, resolvePrimerOnLoad } from '@/lib/primer';
 import {
   parseTaleCache,
   SUPPORTED_SCHEMA_VERSION,
@@ -26,6 +28,16 @@ import {
  *
  * Loading / error handling is intentionally minimal — a null-guard skeleton.
  * Full loading / error / slow-network states are Phase 3.
+ *
+ * Step 6 lifts the onboarding primer's open/closed state here. First-visit
+ * gating must be SSR/static-export safe: the prerendered HTML cannot read
+ * `localStorage`, so the modal starts closed (matching the server render → no
+ * hydration mismatch) and the on-load decision is made AFTER mount, inside a
+ * `requestAnimationFrame` (not synchronously in the effect body — that would
+ * trip the repo's "no setState in an effect" rule). On dismiss the seen-flag is
+ * persisted UNLESS the modal was forced open by the dev-override, which must
+ * not mutate the flag. The header ⓘ re-summons the primer at any time via
+ * `handleShowPrimer`, regardless of the flag and without touching it.
  */
 
 const TALE_SLUG = 'little-red-riding-hood';
@@ -35,8 +47,42 @@ export function ExplorerContainer() {
   // Default to UNCOMPRESSED (far left, index 0). The slider is the only writer.
   const [selectedPositionIndex, setSelectedPositionIndex] = useState(0);
 
+  // Primer visibility. Starts closed to match the static prerender (no
+  // hydration mismatch); the real first-visit decision lands after mount.
+  const [primerOpen, setPrimerOpen] = useState(false);
+  // True while the open modal was forced by the dev-override; dismissing in
+  // that state must NOT persist the seen-flag.
+  const [primerForced, setPrimerForced] = useState(false);
+
   const handlePositionChange = useCallback((index: number) => {
     setSelectedPositionIndex(index);
+  }, []);
+
+  // First-visit gating, deferred past mount via rAF so the setState happens in
+  // the frame callback rather than synchronously in the effect body.
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => {
+      const { show, forced } = resolvePrimerOnLoad();
+      setPrimerForced(forced);
+      setPrimerOpen(show);
+    });
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  const handleDismissPrimer = useCallback(() => {
+    // Persist the seen-flag only for a genuine first-visit dismissal; the
+    // dev-override path leaves the stored record untouched. (`markPrimerSeen`
+    // runs in the handler, not in a state updater, so it stays StrictMode-safe.)
+    if (!primerForced) markPrimerSeen();
+    setPrimerForced(false);
+    setPrimerOpen(false);
+  }, [primerForced]);
+
+  // Header ⓘ re-summon — opens the primer at any time, never as the override
+  // path (so dismissing it still records the flag, harmlessly idempotent).
+  const handleShowPrimer = useCallback(() => {
+    setPrimerForced(false);
+    setPrimerOpen(true);
   }, []);
 
   useEffect(() => {
@@ -98,13 +144,17 @@ export function ExplorerContainer() {
     stopCount > 1 ? 0.1 + 0.9 * (positionIndex / (stopCount - 1)) : 1;
 
   return (
-    <ExplorerShell
-      corpusTitle={cache.metadata.title}
-      rendered={rendered}
-      selectedIndex={positionIndex}
-      revealCount={revealCount}
-      selectFraction={selectFraction}
-      onPositionChange={handlePositionChange}
-    />
+    <>
+      <ExplorerShell
+        corpusTitle={cache.metadata.title}
+        rendered={rendered}
+        selectedIndex={positionIndex}
+        revealCount={revealCount}
+        selectFraction={selectFraction}
+        onPositionChange={handlePositionChange}
+        onShowPrimer={handleShowPrimer}
+      />
+      {primerOpen ? <PrimerModal onDismiss={handleDismissPrimer} /> : null}
+    </>
   );
 }

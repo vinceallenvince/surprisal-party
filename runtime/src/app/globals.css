@@ -67,6 +67,7 @@
   --color-ground-rail: #0a0a0a; /* slider footer band */
   --color-ground-strip: #111111; /* right (predicted) strip */
   --color-seam: #2a2a2a; /* region dividers / borders */
+  --color-seam-strong: #4a4a4a; /* raised borders: modal card, "Got it" button */
   --color-notch: #1a1a1a; /* slider notches + thumb ring */
 
   /* Text roles */
