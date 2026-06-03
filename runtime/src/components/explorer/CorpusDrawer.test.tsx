@@ -76,6 +76,7 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
         currentSlug="little-red-riding-hood"
         onSelect={vi.fn()}
         onClose={vi.fn()}
+        onAbout={vi.fn()}
       />,
     );
     const dialog = screen.getByRole('dialog', { name: /corpora/i });
@@ -100,6 +101,7 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
         currentSlug="little-red-riding-hood"
         onSelect={vi.fn()}
         onClose={vi.fn()}
+        onAbout={vi.fn()}
       />,
     );
     expect(screen.getByText(/1,378 words/i)).toBeInTheDocument();
@@ -112,6 +114,7 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
         currentSlug="second-corpus"
         onSelect={vi.fn()}
         onClose={vi.fn()}
+        onAbout={vi.fn()}
       />,
     );
     const current = container.querySelector('[aria-current="true"]');
@@ -132,6 +135,7 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
         currentSlug="little-red-riding-hood"
         onSelect={vi.fn()}
         onClose={vi.fn()}
+        onAbout={vi.fn()}
       />,
     );
     expect(
@@ -146,6 +150,7 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
         currentSlug="little-red-riding-hood"
         onSelect={onSelect}
         onClose={vi.fn()}
+        onAbout={vi.fn()}
       />,
     );
     fireEvent.click(screen.getByRole('button', { name: /second corpus/i }));
@@ -159,6 +164,7 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
         currentSlug="little-red-riding-hood"
         onSelect={vi.fn()}
         onClose={onClose}
+        onAbout={vi.fn()}
       />,
     );
     fireEvent.keyDown(document, { key: 'Escape' });
@@ -169,6 +175,7 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
         currentSlug="little-red-riding-hood"
         onSelect={vi.fn()}
         onClose={onClose}
+        onAbout={vi.fn()}
       />,
     );
     const scrim = container.querySelector('[data-corpus-scrim]');
@@ -184,9 +191,45 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
         currentSlug="little-red-riding-hood"
         onSelect={vi.fn()}
         onClose={onClose}
+        onAbout={vi.fn()}
       />,
     );
     fireEvent.click(screen.getByRole('dialog', { name: /corpora/i }));
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it('renders a keyboard-focusable About link at the bottom of the drawer', () => {
+    render(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={vi.fn()}
+        onClose={vi.fn()}
+        onAbout={vi.fn()}
+      />,
+    );
+    const about = screen.getByRole('button', { name: /about/i });
+    expect(about).toBeInTheDocument();
+    // Focusable (a real button, no tabindex=-1) and part of the focus trap.
+    expect(about).not.toHaveAttribute('tabindex', '-1');
+    about.focus();
+    expect(about).toHaveFocus();
+  });
+
+  it('clicking About fires onAbout (and does not close via onClose)', () => {
+    const onAbout = vi.fn();
+    const onClose = vi.fn();
+    render(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={vi.fn()}
+        onClose={onClose}
+        onAbout={onAbout}
+      />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: /about/i }));
+    expect(onAbout).toHaveBeenCalledTimes(1);
+    // The drawer→modal transition is the parent's job; the link itself must not
+    // route through the scrim/Esc onClose path.
     expect(onClose).not.toHaveBeenCalled();
   });
 });
@@ -259,6 +302,28 @@ describe('ExplorerContainer corpus switching', () => {
     // UNCOMPRESSED readout is "stored 100% · predicted 0% · conserved 100%".
     expect(screen.getAllByText('100%')).toHaveLength(2);
     expect(screen.getByText('0%')).toBeInTheDocument();
+  });
+
+  it('clicking About in the drawer closes the drawer and opens the About modal', async () => {
+    render(<ExplorerContainer />);
+    await waitFor(() =>
+      expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
+    );
+    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    expect(
+      screen.getByRole('dialog', { name: /corpora/i }),
+    ).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: /^about$/i }));
+
+    // Drawer→modal: the corpus drawer is gone and the About dialog is up. Two
+    // dialogs never stack.
+    expect(
+      screen.queryByRole('dialog', { name: /corpora/i }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('dialog', { name: /surprisal party/i }),
+    ).toBeInTheDocument();
   });
 
   it('shows the loaded corpus as non-interactive, so it cannot be reselected', async () => {

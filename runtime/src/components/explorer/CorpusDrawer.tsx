@@ -29,8 +29,13 @@ import { CORPORA, type Corpus } from '@/lib/corpora';
  * Selecting a corpus calls `onSelect(slug)`; the parent re-fetches and resets
  * the view (slider → UNCOMPRESSED). The currently-loaded corpus is shown as a
  * marked, NON-interactive row (it's already loaded — nothing to switch to), so
- * only other corpora are clickable. About link is intentionally absent here —
- * the About modal is a separate later task.
+ * only other corpora are clickable.
+ *
+ * Below the corpus list, separated by a thin divider, a single quiet "About"
+ * link sits at the bottom in a lighter weight than the corpus titles (clearly
+ * secondary to the list). It is keyboard-focusable and part of the focus trap.
+ * Clicking it calls `onAbout`, which the parent uses to close the drawer and
+ * open the About modal — the two dialogs never stack.
  */
 
 const HEADING_ID = 'corpus-drawer-heading';
@@ -42,12 +47,15 @@ type CorpusDrawerProps = {
   onSelect: (slug: string) => void;
   /** Closes the drawer without switching (scrim click / Esc). */
   onClose: () => void;
+  /** Opens the About modal; the parent closes the drawer in the same step. */
+  onAbout: () => void;
 };
 
 export function CorpusDrawer({
   currentSlug,
   onSelect,
   onClose,
+  onAbout,
 }: CorpusDrawerProps) {
   const reduce = usePrefersReducedMotion();
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -143,6 +151,17 @@ export function CorpusDrawer({
             </li>
           ))}
         </ul>
+        {/* Pushed to the bottom; a thin divider separates this quiet, lighter-
+            weight link from the corpus list above. */}
+        <div className="mt-auto border-t border-seam px-3 py-4">
+          <button
+            type="button"
+            onClick={onAbout}
+            className="rounded-[8px] px-3 py-2 text-sm font-light text-faint hover:bg-ground-strip hover:text-muted"
+          >
+            About
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ExplorerShell } from './ExplorerShell';
 import { PrimerModal } from './PrimerModal';
 import { CorpusDrawer } from './CorpusDrawer';
+import { AboutModal } from './AboutModal';
 import { renderPosition } from '@/lib/tale-render';
 import { markPrimerSeen, resolvePrimerOnLoad } from '@/lib/primer';
 import { DEFAULT_CORPUS_SLUG } from '@/lib/corpora';
@@ -51,6 +52,11 @@ import {
  * persisted UNLESS the modal was forced open by the dev-override, which must
  * not mutate the flag. The header ⓘ re-summons the primer at any time via
  * `handleShowPrimer`, regardless of the flag and without touching it.
+ *
+ * Step 6 also lifts the About modal's open/closed state here. The drawer's
+ * quiet "About" link calls `handleShowAbout`, which sets `drawerOpen=false` and
+ * `aboutOpen=true` in the same step so the two dialogs never stack (drawer →
+ * modal). Dismissing the About modal (`handleDismissAbout`) just closes it.
  */
 
 export function ExplorerContainer() {
@@ -63,6 +69,10 @@ export function ExplorerContainer() {
 
   // Corpus-picker drawer visibility (collapsed by default).
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // About modal visibility (closed by default; opened from the drawer's About
+  // link, which closes the drawer in the same step so two dialogs never stack).
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   // Primer visibility. Starts closed to match the static prerender (no
   // hydration mismatch); the real first-visit decision lands after mount.
@@ -81,6 +91,20 @@ export function ExplorerContainer() {
 
   const handleCloseDrawer = useCallback(() => {
     setDrawerOpen(false);
+  }, []);
+
+  // Opening About from the drawer transitions drawer → modal: close the drawer
+  // and open the About modal in the same step (no stacked dialogs). Focus
+  // restoration on About close targets the drawer's About link, which is gone
+  // by then; the browser falls back to <body>, matching the primer's behaviour
+  // when its opener is unmounted.
+  const handleShowAbout = useCallback(() => {
+    setDrawerOpen(false);
+    setAboutOpen(true);
+  }, []);
+
+  const handleDismissAbout = useCallback(() => {
+    setAboutOpen(false);
   }, []);
 
   // Selecting a (different) corpus loads it fresh: switch the slug (→ re-fetch),
@@ -208,8 +232,10 @@ export function ExplorerContainer() {
           currentSlug={slug}
           onSelect={handleSelectCorpus}
           onClose={handleCloseDrawer}
+          onAbout={handleShowAbout}
         />
       ) : null}
+      {aboutOpen ? <AboutModal onDismiss={handleDismissAbout} /> : null}
       {primerOpen ? <PrimerModal onDismiss={handleDismissPrimer} /> : null}
     </>
   );
