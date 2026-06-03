@@ -5,15 +5,22 @@ Gherkin-style user scenarios for the Compression-Prediction Explorer.
 
 ### As a first-time visitor, I am shown a one-time primer on surprisal
 
-On a visitor's first load, a large modal gates the explorer with the project's one sanctioned piece of explanatory copy. It is a vocabulary primer — it seeds the single concept the mechanic can't teach itself (*surprisal*) so the header readout is legible — not a tutorial; it says nothing about how to use the slider or the seams. The user must dismiss it before interacting with anything.
+On a visitor's first load, a large modal gates the explorer with a short, three-step primer that teaches the one idea the mechanic can't teach itself — *surprisal* — by letting the visitor perform the compression in miniature on the primer's own definition sentence. The first step defines the term, the second annotates the sentence with each word's surprisal, and the third hands the visitor a small threshold slider so they raise the threshold themselves and watch the predictable words fall away until only the kernel survives. The visitor must move that slider at least once before they can finish. Each step's content fades in as they advance, and the explorer behind the scrim cannot be touched until the modal is dismissed (via "Done" on the last step, or Esc / a scrim click from any step).
 
 ```gherkin
 Given I am a first-time visitor with no record of having seen the primer
 When the application loads
 Then a large modal appears centered over the explorer, which is dimmed behind a scrim
-And the modal heading reads "surprisal = how much a word surprises a predictor"
-And the modal subtext reads "predictable words carry little information, surprising words carry a lot"
 And the explorer behind it cannot be interacted with until the modal is dismissed
+And the first step defines the term: "surprisal = how much a word surprises a predictor", with the line "predictable words carry little information, surprising words carry a lot"
+When I advance to the second step
+Then the same sentence is shown with each word's surprisal value, and the highest-surprisal word ("predictor") is marked as the kernel in coral
+When I advance to the third step
+Then a threshold slider appears beneath the sentence, marked with its threshold stops
+And the "Done" button is disabled until I move the slider
+When I raise the threshold with the slider
+Then words below the threshold fade out and the sentence contracts, until at the highest threshold only the kernel word "predictor" remains
+And the "Done" button becomes enabled
 When I dismiss the modal
 Then it closes and the application records that the primer has been seen
 And I land in the explorer, which shows three regions: a header, a middle column, and a right strip
@@ -35,8 +42,8 @@ Then no modal is shown
 And I land directly in the explorer with the default corpus loaded
 And a small info icon sits to the right of the corpus title in the header
 When I click the info icon
-Then the primer modal reappears
-And dismissing it returns me to the explorer unchanged
+Then the primer modal reappears at its first step
+And working through it again, or dismissing it, returns me to the explorer unchanged
 ```
 
 ## Corpus Selection
