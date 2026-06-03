@@ -6,11 +6,9 @@ import type { RemovedTile } from '@/lib/tale-render';
  *
  * Renders the words removed at the current position as faded fixed-width
  * (mono) tiles packed into the strip as a dense mass, with the heading count
- * reflecting how many migrated. Step 2 renders these statically; the
- * tile-migration animation is Step 4.
- *
- * The tile mass scrolls within the strip if it overflows; the heading stays
- * pinned at the top.
+ * reflecting how many migrated. Tiles render statically (no entrance
+ * animation); the heading stays pinned and the tile mass scrolls if it
+ * overflows.
  */
 
 type PredictedStripProps = {

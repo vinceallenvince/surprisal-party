@@ -103,3 +103,6 @@ coverage/
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# Saved Figma Make prototype export (reference only, not tracked)
+docs/temp/

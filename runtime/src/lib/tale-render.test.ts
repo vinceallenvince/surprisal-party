@@ -285,6 +285,33 @@ describe('renderPosition', () => {
     expect(a?.kind === 'word' && a.separator).toBe(' ');
   });
 
+  it('drops paragraph breaks once more than half the words are removed', () => {
+    // "A\n\nb c d e" — A(0) b(1) survive with a '\n\n' between them; c d e
+    // (gap) are removed. words_removed (3) > words_remaining (2), so paragraph
+    // breaks are dropped and A's separator collapses to a space (no tall void).
+    const cache: TaleCache = {
+      schema_version: '0.1.0',
+      metadata: { title: 'P', source_file: 'x', model_id: 't', generated_at: '2026-01-01T00:00:00Z', total_bits: 100, word_count: 5, token_count: 5 },
+      source: 'A\n\nb c d e',
+      words: [
+        { index: 0, core: 'A', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 0, char_end: 1, surprisal: 0.0 },
+        { index: 1, core: 'b', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 3, char_end: 4, surprisal: 0.5 },
+        { index: 2, core: 'c', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 5, char_end: 6, surprisal: 3.0 },
+        { index: 3, core: 'd', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 7, char_end: 8, surprisal: 3.0 },
+        { index: 4, core: 'e', trailing_punct: '', is_terminal_punct: false, is_empty_core: false, char_start: 9, char_end: 10, surprisal: 3.0 },
+      ],
+      kernel_word_indices: [0],
+      positions: [
+        { index: 0, threshold: 1, words_remaining: 2, words_removed: 3, stored_bits: 40, predicted_bits: 60,
+          gaps: [{ id: 0, start_word_index: 2, end_word_index: 4, word_indices: [2, 3, 4], actual_text: 'c d e', predicted_text: 'x y z', fidelity: 0.5 }] },
+      ],
+    };
+    const r = renderPosition(cache, 0);
+    const a = r.proseItems.find((i) => i.kind === 'word' && i.index === 0);
+    expect(a?.kind === 'word' && a.separator).toBe(' ');
+    expect(r.proseItems.every((i) => !i.separator.includes('\n'))).toBe(true);
+  });
+
   it('takes the seam separator from a single-word gap correctly', () => {
     // makeCache gap 0 is multi-word; here verify the single-word path.
     // "A b c" with a one-word gap [1] -> seam separator is source[3..4] = ' '.

@@ -83,11 +83,18 @@ export function ExplorerContainer() {
   );
   const rendered = renderPosition(cache, positionIndex);
 
+  // Reveal-flash count falls off exponentially as compression deepens (also a
+  // perf guard, since deep positions have far more seams): 2^(maxIndex - index).
+  // e.g. 5 stops → 25%:8, 50%:4, 75%:2, MAX:1. UNCOMPRESSED has no seams, so its
+  // count is moot. The actual reveal is capped by the seams in the first half.
+  const revealCount = 2 ** (cache.positions.length - 1 - positionIndex);
+
   return (
     <ExplorerShell
       corpusTitle={cache.metadata.title}
       rendered={rendered}
       selectedIndex={positionIndex}
+      revealCount={revealCount}
       onPositionChange={handlePositionChange}
     />
   );

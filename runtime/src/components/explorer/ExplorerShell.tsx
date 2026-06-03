@@ -23,9 +23,13 @@ import type { RenderedPosition } from '@/lib/tale-render';
  *
  * Step 3 wires the slider: the parent owns `selectedIndex` and passes the
  * matching `rendered` position plus an `onPositionChange` callback. The slider
- * is a controlled, mouse/pointer-only control. When the position changes the
- * prose column resets its scroll to the top (it is a fresh state) — done by
- * keying the prose region on the index so it remounts.
+ * is a controlled, mouse/pointer-only control.
+ *
+ * Step 4 (state transition, prototype-faithful): the prose column must NOT be
+ * remounted on a position swap — the transition is a CSS `transition-colors`
+ * crossfade on index-keyed word spans, which needs the DOM slots to persist
+ * across renders. So the `key={selectedIndex}` that Step 3 used to reset scroll
+ * is removed; ProseColumn keeps its scroll across swaps. See the note there.
  */
 
 type ExplorerShellProps = {
@@ -33,6 +37,8 @@ type ExplorerShellProps = {
   rendered: RenderedPosition;
   /** Currently selected slider stop index (0–4). */
   selectedIndex: number;
+  /** How many seams flash open per swap (fewer as compression deepens). */
+  revealCount: number;
   /** Called with the nearest stop index when the user moves the slider. */
   onPositionChange: (index: number) => void;
 };
@@ -41,6 +47,7 @@ export function ExplorerShell({
   corpusTitle,
   rendered,
   selectedIndex,
+  revealCount,
   onPositionChange,
 }: ExplorerShellProps) {
   return (
@@ -53,9 +60,14 @@ export function ExplorerShell({
       />
       <div className="flex min-h-0 grow">
         <CorpusRail />
-        {/* Keyed on the position so a swap remounts the prose, resetting its
-            scroll to the top (it is a new state). */}
-        <ProseColumn key={selectedIndex} items={rendered.proseItems} />
+        {/* No `key` here on purpose: remounting would reset the DOM slots and
+            kill the Step 4 transition-colors crossfade. ProseColumn keeps its
+            identity across position swaps. */}
+        <ProseColumn
+          items={rendered.proseItems}
+          streamKey={selectedIndex}
+          revealCount={revealCount}
+        />
         <PredictedStrip tiles={rendered.removedTiles} />
       </div>
       <CompressionSlider

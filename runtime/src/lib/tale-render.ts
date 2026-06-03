@@ -12,7 +12,9 @@
  *     two surviving words renders as a break. A single newline is treated as
  *     source line-wrapping and becomes a space, and any separator touching a
  *     removed span collapses to a space — so removed spans close up without
- *     forcing a line break.
+ *     forcing a line break. Past ~50% removed, paragraph breaks are dropped too
+ *     (see `keepParagraphs`), so the sparse survivors form a continuous
+ *     constellation rather than tall vertical voids.
  *   - `removedTiles` — the words that migrated to the right strip (the union
  *     of this position's `gaps[].word_indices`), in source order.
  *   - `readout` — stored / predicted / conserved percentages for the header.
@@ -48,6 +50,8 @@ export type ProseSeamItem = {
   kind: 'seam';
   /** Every gap id in this collapsed run, in source order (≥ 1). */
   gapIds: number[];
+  /** The model's predicted text for this collapsed run (gaps joined in order). */
+  predictedText: string;
   /** Separator that follows the seam — always collapsed (never a newline). */
   separator: string;
 };
@@ -168,6 +172,13 @@ export function renderPosition(
 
   const kernelSet = new Set(kernel_word_indices);
 
+  // Paragraph breaks read as prose structure while most of the text survives,
+  // but once the page is mostly gaps each paragraph keeps only a word or two and
+  // the preserved blank lines become large, strange vertical voids. So we only
+  // honour paragraph breaks while < half the words are removed; past that the
+  // surviving words close up into a continuous "constellation".
+  const keepParagraphs = position.words_removed <= position.words_remaining;
+
   // Map every removed word index to the gap it belongs to, so we can emit a
   // single seam per gap at the gap's first surviving boundary.
   const wordToGapId = new Map<number, number>();
@@ -184,9 +195,11 @@ export function renderPosition(
   // The seam's own separator is taken from the gap's LAST word (its right
   // boundary into the next survivor), then collapsed.
   const gapTrailingSep = new Map<number, string>();
+  const gapPredicted = new Map<number, string>();
   for (const gap of position.gaps) {
     const last = Math.max(...gap.word_indices);
     gapTrailingSep.set(gap.id, separatorAfter(source, words, last));
+    gapPredicted.set(gap.id, gap.predicted_text);
   }
 
   const proseItems: ProseItem[] = [];
@@ -209,12 +222,23 @@ export function renderPosition(
       // its trailing separator tracks the latest gap's right boundary. It
       // never carries a newline.
       const sep = spaceUnlessEmpty(gapTrailingSep.get(gapId) ?? rawSep);
+      const predicted = gapPredicted.get(gapId) ?? '';
       const prev = proseItems[proseItems.length - 1];
       if (prev && prev.kind === 'seam') {
-        if (prev.gapIds[prev.gapIds.length - 1] !== gapId) prev.gapIds.push(gapId);
+        if (prev.gapIds[prev.gapIds.length - 1] !== gapId) {
+          prev.gapIds.push(gapId);
+          prev.predictedText = prev.predictedText
+            ? `${prev.predictedText} ${predicted}`
+            : predicted;
+        }
         prev.separator = sep;
       } else {
-        proseItems.push({ kind: 'seam', gapIds: [gapId], separator: sep });
+        proseItems.push({
+          kind: 'seam',
+          gapIds: [gapId],
+          predictedText: predicted,
+          separator: sep,
+        });
       }
       continue;
     }
@@ -225,9 +249,10 @@ export function renderPosition(
     const nextPos = nextRenderableIndex(words, i + 1);
     const nextRemoved =
       nextPos !== -1 && wordToGapId.has(words[nextPos].index);
-    const separator = nextRemoved
-      ? spaceUnlessEmpty(rawSep)
-      : survivorSeparator(rawSep);
+    const separator =
+      nextRemoved || !keepParagraphs
+        ? spaceUnlessEmpty(rawSep)
+        : survivorSeparator(rawSep);
 
     proseItems.push({
       kind: 'word',
