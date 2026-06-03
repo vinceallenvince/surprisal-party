@@ -41,7 +41,7 @@ runtime/
 └── src/
     ├── app/
     │   ├── layout.tsx     # root layout, <html lang="en">, Geist fonts, DaisyUI theme
-    │   ├── page.tsx       # explorer entry (currently a Phase 2 placeholder)
+    │   ├── page.tsx       # explorer entry (renders <ExplorerContainer/>)
     │   ├── error.tsx      # root error boundary
     │   ├── globals.css    # Tailwind + DaisyUI bootstrap
     │   └── providers/     # ThemeProvider, ToastProvider — available, not yet wired
@@ -73,14 +73,19 @@ runtime/
 
 ## Phase 2 milestones (in order)
 
-These come from `../docs/implementation-plan.md`. Each is independently testable:
+These come from `../docs/implementation-plan.md`. Each is independently testable. Steps 1–4 are done; 5–7 remain.
 
-1. **Static rendering** of a cached state at a mid-slider position (no slider control yet).
-2. **Slider control** that swaps between cached states (no animation yet).
-3. **Gap-closing reflow + tile-migration animation** (FLIP technique).
-4. **Seam interaction** — hover-peek + click-lock.
+1. **Design tokens + static shell** — the three-region layout styled to the Figma frame. ✅
+2. **Data binding** — fetch a corpus JSON and render one cached position. ✅
+3. **Slider state-swap** — wire the five fixed positions to their cached states (no animation). ✅
+4. **State transition** — instant reflow with light CSS touches: a white↔coral colour crossfade, a transient reveal-flash of some seams' predicted text, and paragraph-collapse at deep compression. No FLIP / layout animation. ✅
+5. **Seam reconstruction** — inline reveal of the predicted text on hover + a fixed reconstruction inspector (actual text + fidelity). No floating card, no click-lock.
+6. **Keyboard walk + audio** — arrow-key stepping through seams with the advance/back click sounds.
+7. **Onboarding + navigation** — the first-visit primer, the corpus-picker drawer, and the About modal.
 
-The Phase 2 exit criterion is: someone can drag the slider through a tale and the title-fade surprise lands without explanation.
+The Phase 2 exit criterion is: someone can drag the slider through a corpus and the title-fade surprise lands without explanation.
+
+Note: the kernel-highlight accent is a warm **coral-red**, and the user-facing term is **"corpus" / "corpora"** (the `public/tales/` path and the `TaleCache` schema keep the internal "tale" name).
 
 ## Useful skeleton bits
 
