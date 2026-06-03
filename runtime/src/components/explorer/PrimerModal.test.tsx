@@ -72,6 +72,17 @@ function gotoStep3() {
   fireEvent.click(screen.getByRole('button', { name: /next/i }));
 }
 
+/**
+ * Advance to step 4: next, next (→ step 3), move the slider (which arms step
+ * 3's Next), next (→ step 4).
+ */
+function gotoStep4() {
+  gotoStep3();
+  const slider = screen.getByRole('slider', { name: /surprisal threshold/i });
+  fireEvent.keyDown(slider, { key: 'ArrowRight' });
+  fireEvent.click(screen.getByRole('button', { name: /next/i }));
+}
+
 describe('PrimerModal (standalone steps + a11y + dismissal)', () => {
   it('step 1 is a labelled modal dialog with the definition copy', () => {
     render(<PrimerModal onDismiss={vi.fn()} />);
@@ -141,16 +152,16 @@ describe('PrimerModal (standalone steps + a11y + dismissal)', () => {
     ).toBeInTheDocument();
   });
 
-  it('on step 3 Done is disabled until the slider is moved', () => {
+  it('on step 3 Next is disabled until the slider is moved', () => {
     render(<PrimerModal onDismiss={vi.fn()} />);
     gotoStep3();
-    const done = screen.getByRole('button', { name: /done/i });
-    expect(done).toBeDisabled();
+    const next = screen.getByRole('button', { name: /next/i });
+    expect(next).toBeDisabled();
 
-    // An arrow keydown on the slider counts as a move and arms Done.
+    // An arrow keydown on the slider counts as a move and arms Next.
     const slider = screen.getByRole('slider', { name: /surprisal threshold/i });
     fireEvent.keyDown(slider, { key: 'ArrowRight' });
-    expect(done).toBeEnabled();
+    expect(next).toBeEnabled();
   });
 
   it('arrow keys step the threshold (aria-valuenow tracks the stops)', () => {
@@ -198,14 +209,70 @@ describe('PrimerModal (standalone steps + a11y + dismissal)', () => {
     expect(predictor).not.toHaveAttribute('aria-hidden');
   });
 
-  it('dismisses via Done (after a move), Esc, and scrim click', () => {
+  it('step 4 shows the kernel lead line, subtext, predict button, and a disabled Done', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    gotoStep4();
+    // The coral kernel lead line (the lone survivor from step 3).
+    const kernel = document
+      .querySelector('[role="dialog"]')!
+      .querySelector('[data-recon-token="predictor"]')!;
+    expect(kernel).toHaveClass('text-kernel');
+    expect(
+      screen.getByText(
+        /the higher the surprisal, the more lossy the prediction/i,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /predict the uncompressed text/i }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /done/i })).toBeDisabled();
+  });
+
+  it('moves focus to the predict button on entering step 4 (not the disabled Done)', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    gotoStep4();
+    expect(
+      screen.getByRole('button', { name: /predict the uncompressed text/i }),
+    ).toHaveFocus();
+  });
+
+  it('clicking predict reveals the lossy reconstruction + fidelity and enables Done', () => {
+    render(<PrimerModal onDismiss={vi.fn()} />);
+    gotoStep4();
+    // Before the click only the kernel shows; the predicted words are collapsed.
+    const dialog = document.querySelector('[role="dialog"]')!;
+    const often = dialog.querySelector('[data-recon-token="often"]')!;
+    expect(often).toHaveAttribute('data-shown', 'false');
+
+    fireEvent.click(
+      screen.getByRole('button', { name: /predict the uncompressed text/i }),
+    );
+
+    // The predicted words are now revealed, in white (text-prose) to match the
+    // actual text (the onboarding favours the connection over the app's grey).
+    expect(often).toHaveAttribute('data-shown', 'true');
+    expect(often).toHaveClass('text-prose');
+    expect(
+      dialog.querySelector('[data-recon-token="fools"]'),
+    ).toHaveAttribute('data-shown', 'true');
+    // The actual text + fidelity readout appears.
+    expect(
+      screen.getByText('how much a word surprises a'),
+    ).toBeInTheDocument();
+    expect(screen.getByText('0.68')).toBeInTheDocument();
+    // Done is now enabled.
+    expect(screen.getByRole('button', { name: /done/i })).toBeEnabled();
+  });
+
+  it('dismisses via Done (after predicting), Esc, and scrim click', () => {
     const onDismiss = vi.fn();
     const { container, rerender } = render(
       <PrimerModal onDismiss={onDismiss} />,
     );
-    gotoStep3();
-    const slider = screen.getByRole('slider', { name: /surprisal threshold/i });
-    fireEvent.keyDown(slider, { key: 'ArrowRight' });
+    gotoStep4();
+    fireEvent.click(
+      screen.getByRole('button', { name: /predict the uncompressed text/i }),
+    );
     fireEvent.click(screen.getByRole('button', { name: /done/i }));
     expect(onDismiss).toHaveBeenCalledTimes(1);
 
@@ -228,12 +295,16 @@ describe('PrimerModal (standalone steps + a11y + dismissal)', () => {
   });
 });
 
-/** Walk the primer to its Done button and click it (used by the gating tests). */
+/** Walk all four primer steps to Done and click it (used by the gating tests). */
 function completePrimer() {
   fireEvent.click(screen.getByRole('button', { name: /next/i }));
   fireEvent.click(screen.getByRole('button', { name: /next/i }));
   const slider = screen.getByRole('slider', { name: /surprisal threshold/i });
   fireEvent.keyDown(slider, { key: 'ArrowRight' });
+  fireEvent.click(screen.getByRole('button', { name: /next/i }));
+  fireEvent.click(
+    screen.getByRole('button', { name: /predict the uncompressed text/i }),
+  );
   fireEvent.click(screen.getByRole('button', { name: /done/i }));
 }
 

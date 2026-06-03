@@ -10,11 +10,11 @@ import { pointerToStopIndex, positionToThumbPct } from '@/lib/tale-render';
  * explorer behind it. The scrim intercepts pointer events, so the explorer is
  * not interactive while the primer is open.
  *
- * Reworked from a single static card into a THREE-STEP interactive primer that
+ * Reworked from a single static card into a FOUR-STEP interactive primer that
  * teaches the surprisal-threshold intuition on a tiny self-referential example
- * (the primer's own definition sentence). By the end the user has raised a
- * threshold themselves and watched predictable words drop out while the kernel
- * survives — i.e. they have *done* the compression mechanic in miniature.
+ * (the primer's own definition sentence), then closes the loop with the inverse
+ * (prediction). By the end the user has compressed the text themselves AND seen
+ * it lossily reconstructed — i.e. they have *done* both halves of the mechanic.
  *
  *   Step 1 — the vocabulary definition (the original two lines, unchanged).
  *   Step 2 — the same sentence annotated with each word's (illustrative)
@@ -22,17 +22,24 @@ import { pointerToStopIndex, positionToThumbPct } from '@/lib/tale-render';
  *   Step 3 — the annotated sentence plus a keyboard-operable threshold slider;
  *             raising the threshold fades + contracts the words below it until
  *             only the highest-surprisal word ("predictor") survives.
+ *   Step 4 — the inverse: from the lone kernel `predictor`, a "predict" button
+ *             reveals a LOSSY reconstruction of the original sentence —
+ *             predicted words fill in left-to-right (mirroring the middle
+ *             column's seam reveal), shown beside the actual text and a fidelity
+ *             score. Closes the loop.
  *
- * State (step, the slider's stop index, and whether the slider has been moved)
- * lives INSIDE this component; the container contract is unchanged — it still
- * just mounts the modal and passes `onDismiss`. "Done" (step 3) calls
- * `onDismiss`, same as the old "Got it"; the container persists the seen-flag.
+ * State (step, the slider's stop index, whether the slider has moved, and
+ * whether the user has predicted) lives INSIDE this component; the container
+ * contract is unchanged — it still just mounts the modal and passes
+ * `onDismiss`. "Done" (step 4) calls `onDismiss`, same as the old "Got it"; the
+ * container persists the seen-flag.
  *
- * Dismissal: the "Done" button (step 3), Esc, or a scrim click — from any step.
+ * Dismissal: the "Done" button (step 4), Esc, or a scrim click — from any step.
  * Accessibility: `role="dialog"` + `aria-modal`; step 1 is labelled by its
- * heading (`aria-labelledby`), steps 2–3 are headingless and fall back to a
+ * heading (`aria-labelledby`), steps 2–4 are headingless and fall back to a
  * static `aria-label`. A Tab/Shift+Tab focus trap, focus moved to the primary
- * control on each step and restored to the opener on close. Fades respect
+ * control on each step (Next on 1–2, slider on 3, the "predict" button on 4)
+ * and restored to the opener on close. Fades respect
  * `prefers-reduced-motion` (instant). Static-export safe and deterministic: the
  * surprisal values and threshold stops below are hardcoded illustrations, NOT
  * pipeline output.
@@ -80,7 +87,39 @@ const THRESHOLDS = [0, 2, 4, 7, 15] as const;
 const STOP_COUNT = THRESHOLDS.length;
 const MAX_STOP_INDEX = STOP_COUNT - 1;
 
-type Step = 1 | 2 | 3;
+/**
+ * Step 4's lossy reconstruction of the original sentence from the kept kernel.
+ * These are ILLUSTRATIVE hardcoded values (NOT pipeline output): `predicted:
+ * true` words animate in left-to-right; the lone `predicted: false` word is the
+ * kept kernel (coral, already present from step 3's end state). Predicted words
+ * render in white — the same colour as the actual text — to make the
+ * comparison to `actual` legible (the main app uses grey there; the onboarding
+ * favours the connection). The prediction is lossy ON PURPOSE — "fools"/"often"
+ * differ from `actual`, and that difference is the loss the 0.68 fidelity score
+ * quantifies; the readout shows `actual` next to the score.
+ */
+const RECONSTRUCTION = {
+  tokens: [
+    { text: 'how', predicted: true },
+    { text: 'often', predicted: true },
+    { text: 'a', predicted: true },
+    { text: 'word', predicted: true },
+    { text: 'fools', predicted: true },
+    { text: 'a', predicted: true },
+    { text: 'predictor', predicted: false },
+  ],
+  // The actual removed words the predictor had to reconstruct — NOT including
+  // the kept kernel `predictor` (it was never removed, so it isn't part of the
+  // prediction being scored).
+  actual: 'how much a word surprises a',
+  fidelity: 0.68,
+} as const;
+
+// Per-index stagger for the predicted-word reveal (matches ProseColumn's seam
+// reveal ripple). A fixed delay per index — the resting DOM stays deterministic.
+const RECONSTRUCTION_STAGGER_MS = 60;
+
+type Step = 1 | 2 | 3 | 4;
 
 /**
  * The annotated sentence. In step 2 every word shows; in step 3 words whose
@@ -273,6 +312,69 @@ function ThresholdSlider({
   );
 }
 
+/**
+ * Step 4's lossy reconstruction line. Before the user clicks "predict", only the
+ * kept kernel `predictor` shows (far left, continuous with step 3's end state).
+ * After (`revealed`), the predicted words fill in BEFORE it with a staggered
+ * left-to-right fade/expand (mirroring the middle column's seam reveal — opacity
+ * + width), reflowing `predictor` rightward into its natural sentence-final
+ * position. They render in white (`text-prose`), matching the `actual` text so
+ * the comparison reads clearly — the main app uses grey for predicted text, but
+ * the onboarding favours the visual connection.
+ *
+ * Predicted words are kept in the DOM (not display:none) and collapse to zero
+ * width when hidden so the opacity+width transition can animate the reflow. The
+ * resting DOM after the reveal is deterministic (fixed per-index stagger; no
+ * randomness). When motion is reduced both opacity and width snap instantly.
+ */
+function Reconstruction({
+  revealed,
+  reduce,
+}: {
+  revealed: boolean;
+  reduce: boolean;
+}) {
+  const transition = reduce
+    ? 'motion-reduce:transition-none'
+    : 'transition-all duration-300 ease-out';
+
+  // The stagger rank is the count of predicted words at or before this index,
+  // computed from the data (not a mutable counter — the React 19 immutability
+  // rule forbids reassigning across the render). For this fixed reconstruction
+  // the predicted words are a contiguous prefix, so this is just the index, but
+  // counting keeps it correct regardless of token order.
+  return (
+    <p className="flex flex-wrap items-baseline text-[22px] leading-[34px] text-prose">
+      {RECONSTRUCTION.tokens.map((token, i) => {
+        const isPredicted = token.predicted;
+        const predictedRank = RECONSTRUCTION.tokens
+          .slice(0, i)
+          .filter((t) => t.predicted).length;
+        // A predicted word is shown once revealed; the kernel is always shown.
+        const shown = isPredicted ? revealed : true;
+        const delayMs =
+          reduce || !isPredicted ? 0 : predictedRank * RECONSTRUCTION_STAGGER_MS;
+        return (
+          <span
+            key={i}
+            data-recon-token={token.text}
+            data-predicted={isPredicted}
+            data-shown={shown}
+            className={`inline-flex items-baseline overflow-hidden whitespace-nowrap align-baseline ${transition} ${
+              shown
+                ? 'mr-[0.4em] max-w-[12em] opacity-100'
+                : 'mr-0 max-w-0 opacity-0'
+            } ${isPredicted ? 'text-prose' : 'text-kernel'}`}
+            style={reduce ? undefined : { transitionDelay: `${delayMs}ms` }}
+          >
+            {token.text}
+          </span>
+        );
+      })}
+    </p>
+  );
+}
+
 export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
   const reduce = usePrefersReducedMotion();
   const cardRef = useRef<HTMLDivElement | null>(null);
@@ -283,12 +385,17 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
   // focus moves here on entering step 3 (NOT to "Done", which is disabled until
   // the slider moves and so cannot receive focus).
   const sliderRef = useRef<HTMLDivElement | null>(null);
+  // The step-4 "predict" button — the step's primary operable control, so focus
+  // moves here on entering step 4 (NOT to "Done", which is disabled until the
+  // prediction is revealed and so cannot receive focus).
+  const predictRef = useRef<HTMLButtonElement | null>(null);
   // The element focused before the modal opened, restored on close.
   const openerRef = useRef<Element | null>(null);
 
   const [step, setStep] = useState<Step>(1);
   const [stopIndex, setStopIndex] = useState(0);
   const [hasMovedSlider, setHasMovedSlider] = useState(false);
+  const [hasPredicted, setHasPredicted] = useState(false);
 
   // Capture the opener once, on mount; restore it on unmount.
   useEffect(() => {
@@ -300,11 +407,13 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
   }, []);
 
   // Move focus to the step's primary control whenever the step changes: the
-  // slider on step 3 (Done is disabled and unfocusable until a move), else the
-  // "Next" button. A DOM `.focus()` call in the effect's commit (allowed); not a
-  // setState-in-effect and no ref read/write during render.
+  // slider on step 3 (its Next is disabled and unfocusable until a move), the
+  // "predict" button on step 4 (Done is disabled and unfocusable until a
+  // prediction), else the "Next" button. A DOM `.focus()` call in the effect's
+  // commit (allowed); not a setState-in-effect and no ref read/write in render.
   useEffect(() => {
     if (step === 3) sliderRef.current?.focus();
+    else if (step === 4) predictRef.current?.focus();
     else advanceRef.current?.focus();
   }, [step]);
 
@@ -349,6 +458,11 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
     setStopIndex(next);
     setHasMovedSlider(true);
   }, []);
+
+  // Clicking "predict the uncompressed text" reveals the lossy reconstruction
+  // and arms Done. Setting state in the handler is fine (the React 19 rule only
+  // forbids setState synchronously inside an effect).
+  const handlePredict = useCallback(() => setHasPredicted(true), []);
 
   const transition = reduce
     ? 'motion-reduce:transition-none'
@@ -424,6 +538,48 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
               </p>
             </div>
           )}
+
+          {step === 4 && (
+            <div className="flex flex-col gap-6">
+              {/* The reconstruction line: before the click only the coral kernel
+                  `predictor` shows (far left, continuous with step 3's end
+                  state); after, the predicted words fill in before it. */}
+              <Reconstruction revealed={hasPredicted} reduce={reduce} />
+              <p className="text-[18px] leading-[29.25px] tracking-[-0.44px] text-muted">
+                the higher the surprisal, the more lossy the prediction
+              </p>
+              {hasPredicted ? (
+                // Actual + fidelity readout — mirrors ProseColumn's
+                // reconstruction inspector (small uppercase labels + values),
+                // showing the true text beside the prediction's fidelity.
+                <p className="primer-fade-in flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[13px]">
+                  <span className="flex items-center gap-2">
+                    <span className="text-[10px] tracking-[0.1em] text-faint uppercase">
+                      Actual
+                    </span>
+                    <span className="text-prose">{RECONSTRUCTION.actual}</span>
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <span className="text-[10px] tracking-[0.1em] text-faint uppercase">
+                      Fidelity
+                    </span>
+                    <span className="text-prose">
+                      {RECONSTRUCTION.fidelity.toFixed(2)}
+                    </span>
+                  </span>
+                </p>
+              ) : (
+                <button
+                  ref={predictRef}
+                  type="button"
+                  onClick={handlePredict}
+                  className="self-start rounded-[8px] border border-seam-strong bg-seam px-5 py-3 text-sm font-medium tracking-tight text-prose"
+                >
+                  predict the uncompressed text
+                </button>
+              )}
+            </div>
+          )}
           </div>
         </div>
 
@@ -441,12 +597,16 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
             <span />
           )}
 
-          {step < 3 ? (
+          {step < 4 ? (
             <button
               ref={advanceRef}
               type="button"
               onClick={() => setStep((s) => (s + 1) as Step)}
-              className="rounded-[8px] border border-seam-strong bg-seam px-5 py-3 text-sm font-medium tracking-tight text-prose"
+              // Step 3's Next preserves the must-compress requirement: it is
+              // disabled until the slider has moved (the gate that previously
+              // sat on Done). Steps 1–2 Next is always enabled.
+              disabled={step === 3 && !hasMovedSlider}
+              className="rounded-[8px] border border-seam-strong bg-seam px-5 py-3 text-sm font-medium tracking-tight text-prose disabled:cursor-not-allowed disabled:border-seam disabled:bg-ground disabled:text-faint"
             >
               Next →
             </button>
@@ -455,7 +615,10 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
               ref={advanceRef}
               type="button"
               onClick={onDismiss}
-              disabled={!hasMovedSlider}
+              // Step 4's Done is disabled until the user predicts (clicks
+              // "predict the uncompressed text"), so it cannot take focus on
+              // entry — the predict button is step 4's primary control.
+              disabled={!hasPredicted}
               className="rounded-[8px] border border-seam-strong bg-seam px-5 py-3 text-sm font-medium tracking-tight text-prose disabled:cursor-not-allowed disabled:border-seam disabled:bg-ground disabled:text-faint"
             >
               Done
