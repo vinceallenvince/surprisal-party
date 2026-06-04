@@ -19,9 +19,27 @@ const geistMono = Geist_Mono({
   fallback: ["monospace"],
 });
 
+const SITE_URL = "https://surprisal.party";
+const TITLE = "Surprisal Party";
+const DESCRIPTION =
+  "Predictable words carry little information, surprising words carry a lot. Drag the slider to compress a text down to the kernel a predictor couldn't have guessed.";
+
 export const metadata: Metadata = {
-  title: "Compression-Prediction Explorer",
-  description: "Interactive demonstration of the compression-prediction equivalence.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: TITLE,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 type RootLayoutProps = {
