@@ -1,16 +1,14 @@
-# Compression-Prediction Explorer
+# Surprisal Party
 
-A text-based interactive demonstration that the equivalence between compression and prediction is not a metaphor but a measurable mechanic. Users drag a slider that fades the predictable words from a familiar fairy tale and replaces them, in place, with the predictor's reconstruction of what was removed. Information visibly moves from the page into the predictor — never destroyed, only relocated.
-
-## Status
-
-Pre-implementation. The design is settled; Phase 0 is the next step.
+Predictable words carry little information, surprising words carry a lot. Suprisal Party demonstrates a text compression algorithm that preserves words at varying levels of compression based on their surprisal value. Drag the slider to max compression and what stays is the irreducible kernel the model could not have known. Hidden in between the compression seams are predictions of neighboring words. The higher the compression, the more lossy the predictions become.
 
 ## Docs
 
 - [`docs/abstract.md`](docs/abstract.md) — what the project is, the information-theoretic core, what the user sees, the determinism/variability tiers, scope, and design principles.
 - [`docs/user-scenarios.md`](docs/user-scenarios.md) — Gherkin-style behavior specs.
 - [`docs/implementation-plan.md`](docs/implementation-plan.md) — four-phase build plan, committed architectural decisions, and exit criteria.
+- [`runtime/README.md`](runtime/README.md) — running and developing the Next.js runtime: setup, scripts, project structure, and how it consumes the pipeline's JSON.
+- [`runtime/CLAUDE.md`](runtime/CLAUDE.md) — the runtime's architectural commitments (static export, the authoritative cache schema, determinism).
 
 ## Layout
 

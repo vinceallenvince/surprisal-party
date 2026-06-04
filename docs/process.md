@@ -36,7 +36,7 @@ How this project got built, captured for a later write-up. The throughline: **de
    4. Frames and their layers are sensibly named so the Figma MCP (`get_design_context`, `get_screenshot`) returns usable specs rather than anonymous `Text` nodes.
    5. [`prototyping-layout.md`](./prototyping-layout.md) and [`user-scenarios.md`](./user-scenarios.md) are reconciled with what the frames actually show — no known drift.
 
-7. **(Pending) Build the runtime in coordination with Figma Design.** Implement each user scenario in the Next.js runtime, using the static Figma frames as the coding reference rather than reinventing the UI. → [`implementation-plan.md`](./implementation-plan.md)
+7. **Build the runtime in coordination with Figma Design.** Implement each user scenario in the Next.js runtime, using the static Figma frames as the coding reference rather than reinventing the UI. → [`implementation-plan.md`](./implementation-plan.md)
 
    - Pull per-screen design context through the Figma MCP as the coding spec for each scenario.
    - Drive the build with the `nextjs-coding-agent` / `nextjs-code-reviewer` loop (looping until the reviewer signs off).
