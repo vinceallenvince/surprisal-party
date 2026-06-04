@@ -15,7 +15,7 @@ Pre-implementation. The design is settled; Phase 0 is the next step.
 ## Layout
 
 ```text
-compression-prediction/
+surprisal-party/
 ├── docs/                      # design docs
 ├── pipeline/                  # Python — offline build pipeline (Phase 0 & 1)
 └── runtime/                   # Next.js — slider runtime (Phase 2 & 3)

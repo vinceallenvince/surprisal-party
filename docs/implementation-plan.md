@@ -9,7 +9,7 @@ A four-phase plan: a spike to derisk the core hypothesis, then the data pipeline
 - **Deployment: Vercel.** Auto-detected Next.js, per-PR preview deployments, production on `main`. See *Deployment* below.
 
 ```text
-compression-prediction/
+surprisal-party/
 ├── docs/                                 # design docs
 ├── pipeline/                             # Python — Phase 0 & 1
 │   ├── reconciliation.py
