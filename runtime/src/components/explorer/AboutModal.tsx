@@ -26,8 +26,7 @@ import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 
 const HEADING_ID = 'about-heading';
 
-// TODO: placeholder — the detailed write-up post does not exist yet. Confirm /
-// update this URL once the author's write-up is published.
+// The author's site — where the longer write-up lives.
 const WRITEUP_URL = 'https://vinceallen.com';
 // Bare domain shown as the link text so the destination is visible (the only
 // <a> in the app). Keep in sync with WRITEUP_URL's host.
