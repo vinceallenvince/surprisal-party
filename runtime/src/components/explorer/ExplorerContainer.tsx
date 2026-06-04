@@ -5,6 +5,7 @@ import { ExplorerShell } from './ExplorerShell';
 import { PrimerModal } from './PrimerModal';
 import { CorpusDrawer } from './CorpusDrawer';
 import { AboutModal } from './AboutModal';
+import { MetricsModal } from './MetricsModal';
 import { renderPosition } from '@/lib/tale-render';
 import { markPrimerSeen, resolvePrimerOnLoad } from '@/lib/primer';
 import { DEFAULT_CORPUS_SLUG } from '@/lib/corpora';
@@ -74,6 +75,9 @@ export function ExplorerContainer() {
   // link, which closes the drawer in the same step so two dialogs never stack).
   const [aboutOpen, setAboutOpen] = useState(false);
 
+  // Metrics-explainer modal visibility (opened from the header's metrics ⓘ).
+  const [metricsOpen, setMetricsOpen] = useState(false);
+
   // Primer visibility. Starts closed to match the static prerender (no
   // hydration mismatch); the real first-visit decision lands after mount.
   const [primerOpen, setPrimerOpen] = useState(false);
@@ -105,6 +109,14 @@ export function ExplorerContainer() {
 
   const handleDismissAbout = useCallback(() => {
     setAboutOpen(false);
+  }, []);
+
+  const handleShowMetrics = useCallback(() => {
+    setMetricsOpen(true);
+  }, []);
+
+  const handleDismissMetrics = useCallback(() => {
+    setMetricsOpen(false);
   }, []);
 
   // Selecting a (different) corpus loads it fresh: switch the slug (→ re-fetch),
@@ -224,6 +236,7 @@ export function ExplorerContainer() {
         selectFraction={selectFraction}
         onPositionChange={handlePositionChange}
         onShowPrimer={handleShowPrimer}
+        onShowMetrics={handleShowMetrics}
         drawerOpen={drawerOpen}
         onToggleDrawer={handleToggleDrawer}
       />
@@ -236,6 +249,7 @@ export function ExplorerContainer() {
         />
       ) : null}
       {aboutOpen ? <AboutModal onDismiss={handleDismissAbout} /> : null}
+      {metricsOpen ? <MetricsModal onDismiss={handleDismissMetrics} /> : null}
       {primerOpen ? <PrimerModal onDismiss={handleDismissPrimer} /> : null}
     </>
   );

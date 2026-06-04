@@ -294,14 +294,15 @@ describe('ExplorerContainer corpus switching', () => {
     await waitFor(() =>
       expect(fetchMock).toHaveBeenCalledWith('/tales/second-corpus.json'),
     );
-    // View reset to UNCOMPRESSED: slider value 0 and the 100/0/100 readout.
+    // View reset to UNCOMPRESSED: slider value 0 and the reset readout.
     await waitFor(() => {
       const slider = screen.getByRole('slider', { name: /compression level/i });
       expect(slider).toHaveAttribute('aria-valuenow', '0');
     });
-    // UNCOMPRESSED readout is "stored 100.0% · predicted 0.0% · conserved 100.0%".
-    expect(screen.getAllByText('100.0%')).toHaveLength(2);
+    // UNCOMPRESSED readout is "stored 100.0% · removed 0.0% · avg fidelity —".
+    expect(screen.getByText('100.0%')).toBeInTheDocument();
     expect(screen.getByText('0.0%')).toBeInTheDocument();
+    expect(screen.getByText('—')).toBeInTheDocument();
   });
 
   it('clicking About in the drawer closes the drawer and opens the About modal', async () => {

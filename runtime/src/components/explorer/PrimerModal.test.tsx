@@ -225,7 +225,7 @@ describe('PrimerModal (standalone steps + a11y + dismissal)', () => {
     expect(
       screen.getByRole('button', { name: /predict the uncompressed text/i }),
     ).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /done/i })).toBeDisabled();
+    expect(screen.getByRole('button', { name: /got it/i })).toBeDisabled();
   });
 
   it('moves focus to the predict button on entering step 4 (not the disabled Done)', () => {
@@ -261,7 +261,7 @@ describe('PrimerModal (standalone steps + a11y + dismissal)', () => {
     ).toBeInTheDocument();
     expect(screen.getByText('0.68')).toBeInTheDocument();
     // Done is now enabled.
-    expect(screen.getByRole('button', { name: /done/i })).toBeEnabled();
+    expect(screen.getByRole('button', { name: /got it/i })).toBeEnabled();
   });
 
   it('dismisses via Done (after predicting), Esc, and scrim click', () => {
@@ -273,7 +273,7 @@ describe('PrimerModal (standalone steps + a11y + dismissal)', () => {
     fireEvent.click(
       screen.getByRole('button', { name: /predict the uncompressed text/i }),
     );
-    fireEvent.click(screen.getByRole('button', { name: /done/i }));
+    fireEvent.click(screen.getByRole('button', { name: /got it/i }));
     expect(onDismiss).toHaveBeenCalledTimes(1);
 
     rerender(<PrimerModal onDismiss={onDismiss} />);
@@ -305,7 +305,7 @@ function completePrimer() {
   fireEvent.click(
     screen.getByRole('button', { name: /predict the uncompressed text/i }),
   );
-  fireEvent.click(screen.getByRole('button', { name: /done/i }));
+  fireEvent.click(screen.getByRole('button', { name: /got it/i }));
 }
 
 describe('ExplorerContainer primer gating', () => {

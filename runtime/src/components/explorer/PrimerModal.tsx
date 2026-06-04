@@ -31,10 +31,10 @@ import { pointerToStopIndex, positionToThumbPct } from '@/lib/tale-render';
  * State (step, the slider's stop index, whether the slider has moved, and
  * whether the user has predicted) lives INSIDE this component; the container
  * contract is unchanged — it still just mounts the modal and passes
- * `onDismiss`. "Done" (step 4) calls `onDismiss`, same as the old "Got it"; the
- * container persists the seen-flag.
+ * `onDismiss`. The "Got it" button (step 4) calls `onDismiss`; the container
+ * persists the seen-flag.
  *
- * Dismissal: the "Done" button (step 4), Esc, or a scrim click — from any step.
+ * Dismissal: the "Got it" button (step 4), Esc, or a scrim click — from any step.
  * Accessibility: `role="dialog"` + `aria-modal`; step 1 is labelled by its
  * heading (`aria-labelledby`), steps 2–4 are headingless and fall back to a
  * static `aria-label`. A Tab/Shift+Tab focus trap, focus moved to the primary
@@ -621,7 +621,7 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
               disabled={!hasPredicted}
               className="rounded-[8px] border border-seam-strong bg-seam px-5 py-3 text-sm font-medium tracking-tight text-prose disabled:cursor-not-allowed disabled:border-seam disabled:bg-ground disabled:text-faint"
             >
-              Done
+              Got it
             </button>
           )}
         </div>

@@ -61,8 +61,10 @@ type ExplorerShellProps = {
   selectFraction: number;
   /** Called with the nearest stop index when the user moves the slider. */
   onPositionChange: (index: number) => void;
-  /** Re-summons the onboarding primer (wired to the header ⓘ button). */
+  /** Re-summons the onboarding primer (wired to the title ⓘ button). */
   onShowPrimer: () => void;
+  /** Opens the metrics-explainer modal (wired to the metrics ⓘ button). */
+  onShowMetrics: () => void;
   /** Whether the corpus-picker drawer is open (drives the rail's aria-expanded). */
   drawerOpen: boolean;
   /** Toggles the corpus-picker drawer (wired to the rail icon). */
@@ -77,6 +79,7 @@ export function ExplorerShell({
   selectFraction,
   onPositionChange,
   onShowPrimer,
+  onShowMetrics,
   drawerOpen,
   onToggleDrawer,
 }: ExplorerShellProps) {
@@ -103,8 +106,9 @@ export function ExplorerShell({
         corpusTitle={corpusTitle}
         storedPct={rendered.readout.storedPct}
         predictedPct={rendered.readout.predictedPct}
-        conservedPct={rendered.readout.conservedPct}
+        avgFidelity={rendered.readout.avgFidelity}
         onShowPrimer={onShowPrimer}
+        onShowMetrics={onShowMetrics}
       />
       <div className="flex min-h-0 grow">
         <CorpusRail expanded={drawerOpen} onToggle={onToggleDrawer} />

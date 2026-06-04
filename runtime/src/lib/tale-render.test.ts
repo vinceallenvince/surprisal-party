@@ -424,13 +424,19 @@ describe('renderPosition', () => {
     expect(seam?.kind === 'seam' && seam.fidelity).toBe(0.33);
   });
 
-  it('computes header readout from bits with conserved=100', () => {
+  it('computes header readout from bits, with avg fidelity over the gaps', () => {
     const r = renderPosition(makeCache(), 1);
+    // pos 1 has a single gap with fidelity 0.5 → avgFidelity 0.5.
     expect(r.readout).toEqual({
       storedPct: 75,
       predictedPct: 25,
-      conservedPct: 100,
+      avgFidelity: 0.5,
     });
+  });
+
+  it('avg fidelity is null at UNCOMPRESSED (no gaps to score)', () => {
+    const r = renderPosition(makeCache(), 0);
+    expect(r.readout.avgFidelity).toBeNull();
   });
 });
 

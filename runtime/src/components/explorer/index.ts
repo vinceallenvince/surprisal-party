@@ -8,3 +8,4 @@ export { CompressionSlider } from './CompressionSlider';
 export { PrimerModal } from './PrimerModal';
 export { CorpusDrawer } from './CorpusDrawer';
 export { AboutModal } from './AboutModal';
+export { MetricsModal } from './MetricsModal';

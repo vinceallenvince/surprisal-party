@@ -32,7 +32,7 @@ And I land in the explorer, which shows three regions: a header, a middle column
 And the default corpus is loaded in the middle column with its kernel tokens highlighted
 And the slider is at UNCOMPRESSED and the corpus drawer is collapsed
 And the right strip is empty
-And the header reads "stored 100.0% · removed 0.0% · conserved 100.0%"
+And the header reads "stored 100.0% · removed 0.0% · avg fidelity —" (no words removed yet, so there is nothing to score)
 And a small, dim corpus-picker icon sits at the top-left of the content row
 ```
 
@@ -83,7 +83,7 @@ And the slider snaps back to the far left (UNCOMPRESSED)
 And the middle column displays the full source text of the corpus
 And the kernel tokens are highlighted within the text
 And the right strip is empty
-And the header resets to "stored 100.0% · removed 0.0% · conserved 100.0%"
+And the header resets to "stored 100.0% · removed 0.0% · avg fidelity —"
 ```
 
 ### As a user, I can read more about the project from the drawer
@@ -119,7 +119,7 @@ And the middle column visibly shrinks as removed spans collapse out of view
 And each collapsed span is marked by a thin seam between the surviving tokens on either side
 And each seam shows no text by default
 And the kernel tokens remain highlighted and on the page
-And the header updates so that stored falls, removed rises, and the conserved total stays at 100%
+And the header updates so that stored falls, removed rises, and the avg-fidelity score falls (the freshly-removed words are harder to predict)
 ```
 
 ### As a user, I can decompress the corpus by dragging the slider leftward
@@ -133,7 +133,7 @@ Then the surprisal threshold lowers
 And word tiles migrate from the right strip back into the middle column at their original positions
 And seams disappear as their underlying source tokens reappear
 And the middle column visibly expands
-And the header updates so that stored rises, removed falls, and the conserved total stays at 100%
+And the header updates so that stored rises, removed falls, and the avg-fidelity score rises (only the most predictable words remain removed)
 ```
 
 ### As a user, I can walk through the seams with the arrow keys
@@ -217,7 +217,7 @@ At the slider's far-right position, only the kernel tokens — the highest-surpr
 Given I drag the slider to the far-right position
 Then only the kernel tokens remain visible in the middle column
 And the right strip contains the maximum density of migrated word tiles
-And the header shows the maximum removed percentage and the conserved total remains at 100%
+And the header shows the maximum removed percentage and the lowest avg-fidelity score (the reconstructions are at their most lossy)
 
 When I activate a seam between kernel tokens
 Then its predicted text expands inline to show the model's reconstruction of the corpus from the kernel alone

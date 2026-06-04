@@ -40,30 +40,39 @@ responds before committing to the larger primer rebuild in Batch 2.
 
 ## Batch 1 — calibration set (run these first)
 
-### [ ] 1. Relabel "Predicted" → "Removed" + one-decimal readout
+### [ ] 1. Header readout — relabel, one decimal, and "conserved" → "avg fidelity"
 
-> In the explorer prototype, rename the right-hand column and its matching header
-> metric from "Predicted" to "Removed", and show the percentages to one decimal.
+> Update the explorer's header readout and the right-hand column heading.
 >
 > 1. The right column's heading currently reads **"Predicted (N words)"**. Change
 >    it to **"Removed (N words)"**, keeping the same style and the live count.
 > 2. The header readout (top-right) currently reads
->    **"stored X% · predicted Y% · conserved Z%"**. Change the middle label from
->    **"predicted"** to **"removed"** (keep the lowercase label / brighter value
->    styling).
-> 3. Show all three percentages with **one decimal place**, e.g.
->    **"stored 29.0% · removed 71.0% · conserved 100.0%"**. Keep
->    `stored + removed = 100.0%` at every slider position, and `conserved` always
->    `100.0%`.
-> 4. Don't change layout, colors, or any other copy.
+>    **"stored X% · predicted Y% · conserved Z%"**. Make three changes:
+>    - **Rename** the middle metric's label from **"predicted"** to **"removed"**
+>      (keep the lowercase-label / brighter-value styling).
+>    - Show **stored** and **removed** with **one decimal place**, e.g.
+>      "stored 29.0% · removed 71.0%". Keep `stored + removed = 100.0%` at every
+>      slider position.
+>    - **Replace the third metric entirely.** Drop the constant **"conserved
+>      100%"** and show **"avg fidelity"** instead — the average reconstruction
+>      fidelity of the removed words at the current slider position, as a **0–1
+>      score with two decimals** (e.g. "avg fidelity 0.25"). It **decreases** as
+>      compression deepens (more, harder-to-predict words get removed). At the
+>      far-left UNCOMPRESSED position there are no removed words, so show
+>      **"avg fidelity —"** (an em dash).
+> 3. Don't change layout, colors, or any other copy.
 >
-> Context: these tiles are the actual words removed from the text; the model's
-> predictions live in the middle-column seams — which is why "Removed" is the
-> accurate label.
+> Reference values (Little Red Riding Hood) for the five slider stops: avg
+> fidelity reads **—** (uncompressed), then **0.35**, **0.25**, **0.18**, **0.14**.
+>
+> Context: the tiles are the actual words removed from the text; the model's
+> *predictions* live in the middle-column seams — which is why "Removed" is the
+> accurate label, and "avg fidelity" scores how well those seam predictions match
+> the originals.
 
 **Targets:** the right column heading + header readout on every explorer state.
 **Design frames to refresh:** 28-163, 30-15994, 30-15995, 30-15997, 30-15999, 30-16001 (and the corpus-drawer frames 28-297 / 28-319).
-**Also fix while here:** frame 30-15997 shows "conserved 8%" — a slip; conserved is always 100.0%.
+**Note:** this supersedes the old "conserved" metric entirely — including the "conserved 8%" slip on frame 30-15997, which simply goes away once the third metric becomes avg fidelity.
 
 ### [ ] 2. Rebuild the About modal copy + title
 
@@ -178,8 +187,8 @@ predictor" — and then predicting it back lossily.
 > a small readout with two labeled values: **Actual** = "how much a word surprises
 > a" and **Fidelity** = "0.68" (small uppercase labels, brighter values).
 >
-> The **"Done"** button is **disabled until the predict button has been clicked**.
-> Footer: "← Back" and "Done"; "Done" closes the modal.
+> The **"Got it"** button is **disabled until the predict button has been
+> clicked**. Footer: "← Back" and "Got it"; "Got it" closes the modal.
 >
 > (The point: step 3 compressed the sentence down to the kernel "predictor"; step
 > 4 runs it backwards — predicting the removed words from the kernel — and the
@@ -213,12 +222,44 @@ predictor" — and then predicting it back lossily.
 
 ---
 
+## Batch 4 — header metrics explainer
+
+### [ ] 9. Metrics ⓘ icon + explainer modal
+
+> Add a small **info (ⓘ) icon** in the header **immediately to the left of the
+> metrics readout** (just before "stored"). Match the existing title ⓘ: same
+> size, same muted color, and the same gap between the icon and the first metric
+> as the gap between the corpus title and its own ⓘ.
+>
+> Clicking the icon opens a small **modal** that explains the three header
+> metrics. Use the **same card/scrim/type treatment as the About and onboarding
+> modals** (centered card over a dimming scrim, same width and padding, a "Close"
+> button, dismiss via Close / scrim / Esc). The modal is **headingless** — no
+> title — it goes straight into a definition list of the three terms. Each term
+> is in the brighter text color, its explanation in the dimmer muted color:
+>
+> - **stored** — The share of the text's information still on the page, carried by
+>   the surviving high-surprisal words.
+> - **removed** — The share carried by the words taken out with text compression.
+>   They must be predicted to rebuild the text. (stored + removed always total
+>   100%)
+> - **avg fidelity** — How closely the model's predictions of the removed words
+>   match the originals (1.00 = exact). It decreases with compression, since
+>   removed words become harder to predict.
+
+**Targets:** the header (new metrics ⓘ) + a new explainer modal. **Design frames to refresh:** the explorer header frames (28-163, 30-15994, …) gain the icon; add a new frame for the modal.
+
+---
+
 ## Doc follow-ups (not Figma Make prompts)
 
 - After prompt 3 (removed-tile interactivity) has a frame, add the new scenario
   **"As a user, I can click a removed word to reveal its seam"** to
   [`figma-sources.yaml`](./figma-sources.yaml) with its `description`/`ui` node
   ids; until then it sits as an unmapped/TODO entry.
+- After prompt 9 (metrics explainer) has a frame, add a scenario for the metrics
+  ⓘ → explainer modal to [`user-scenarios.md`](./user-scenarios.md) and map it in
+  [`figma-sources.yaml`](./figma-sources.yaml).
 - As each batch lands in the Design file, correct any stale node ids in
   `figma-sources.yaml` and confirm every scenario still maps both directions
   (Step 6 DoD #3).

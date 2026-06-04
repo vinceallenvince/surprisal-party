@@ -17,7 +17,8 @@
  *     constellation rather than tall vertical voids.
  *   - `removedTiles` — the words that migrated to the right strip (the union
  *     of this position's `gaps[].word_indices`), in source order.
- *   - `readout` — stored / predicted / conserved percentages for the header.
+ *   - `readout` — stored / removed percentages plus avg reconstruction
+ *     fidelity, for the header.
  *
  * Step 2 renders one fixed position; Step 3 will call this per position.
  */
@@ -88,8 +89,13 @@ export type HeaderReadout = {
   storedPct: number;
   /** round(predicted_bits / total_bits * 100). */
   predictedPct: number;
-  /** Always 100 — bits are conserved (stored + predicted == total). */
-  conservedPct: number;
+  /**
+   * Mean reconstruction fidelity (0–1, 2 decimals) across this position's gaps —
+   * how well the removed words were predicted. Falls as compression deepens
+   * (harder, higher-surprisal words get removed). `null` at UNCOMPRESSED, where
+   * there are no gaps and so nothing to score.
+   */
+  avgFidelity: number | null;
 };
 
 export type RenderedPosition = {
@@ -363,10 +369,20 @@ export function renderPosition(
   const total = cache.metadata.total_bits;
   const predictedPct =
     total > 0 ? Math.round((position.predicted_bits / total) * 1000) / 10 : 0;
+  // Mean fidelity over this position's gaps (each gap is one reconstruction, so
+  // they weigh equally), to 2 decimals. null when there are no gaps (UNCOMPRESSED).
+  const avgFidelity =
+    position.gaps.length > 0
+      ? Math.round(
+          (position.gaps.reduce((sum, g) => sum + g.fidelity, 0) /
+            position.gaps.length) *
+            100,
+        ) / 100
+      : null;
   const readout: HeaderReadout = {
     storedPct: total > 0 ? Math.round((100 - predictedPct) * 10) / 10 : 0,
     predictedPct,
-    conservedPct: 100,
+    avgFidelity,
   };
 
   return { position, proseItems, removedTiles, readout };
