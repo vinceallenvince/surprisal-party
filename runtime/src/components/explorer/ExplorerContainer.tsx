@@ -55,9 +55,14 @@ import {
  * `handleShowPrimer`, regardless of the flag and without touching it.
  *
  * Step 6 also lifts the About modal's open/closed state here. The drawer's
- * quiet "About" link calls `handleShowAbout`, which sets `drawerOpen=false` and
- * `aboutOpen=true` in the same step so the two dialogs never stack (drawer →
- * modal). Dismissing the About modal (`handleDismissAbout`) just closes it.
+ * quiet "About" link calls `handleShowAbout`, which opens the About modal WHILE
+ * leaving the drawer open: About stacks ABOVE the drawer (matching the Figma
+ * frame, which shows the drawer open behind About). Dismissing the About modal
+ * (`handleDismissAbout`) just closes it and returns the user to the still-open
+ * drawer — matching the "the modal closes and I return to the drawer" scenario.
+ * While About is open the drawer steps aside for it: the drawer drops its own
+ * Esc/scrim handling and `aria-modal` (see `CorpusDrawer`) so About alone is the
+ * active, topmost modal.
  */
 
 export function ExplorerContainer() {
@@ -72,7 +77,7 @@ export function ExplorerContainer() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   // About modal visibility (closed by default; opened from the drawer's About
-  // link, which closes the drawer in the same step so two dialogs never stack).
+  // link. About stacks ABOVE the still-open drawer rather than replacing it).
   const [aboutOpen, setAboutOpen] = useState(false);
 
   // Metrics-explainer modal visibility (opened from the header's metrics ⓘ).
@@ -97,13 +102,13 @@ export function ExplorerContainer() {
     setDrawerOpen(false);
   }, []);
 
-  // Opening About from the drawer transitions drawer → modal: close the drawer
-  // and open the About modal in the same step (no stacked dialogs). Focus
-  // restoration on About close targets the drawer's About link, which is gone
-  // by then; the browser falls back to <body>, matching the primer's behaviour
-  // when its opener is unmounted.
+  // Opening About from the drawer stacks About ABOVE the drawer: the drawer
+  // stays open behind About's scrim, matching the Figma frame. About's higher
+  // z-index and the drawer stepping aside (dropping its Esc/scrim handling and
+  // `aria-modal` while About is open — see `CorpusDrawer`) make About the
+  // active, topmost modal. Dismissing About returns to the still-open drawer,
+  // and focus restores to the drawer's About link (still mounted).
   const handleShowAbout = useCallback(() => {
-    setDrawerOpen(false);
     setAboutOpen(true);
   }, []);
 
@@ -246,6 +251,10 @@ export function ExplorerContainer() {
           onSelect={handleSelectCorpus}
           onClose={handleCloseDrawer}
           onAbout={handleShowAbout}
+          // While About is stacked above, the drawer steps aside: it drops its
+          // Esc/scrim handling, focus trap, and `aria-modal` so About alone is
+          // the active modal.
+          inert={aboutOpen}
         />
       ) : null}
       {aboutOpen ? <AboutModal onDismiss={handleDismissAbout} /> : null}

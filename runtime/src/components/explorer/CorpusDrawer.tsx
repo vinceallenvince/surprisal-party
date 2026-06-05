@@ -34,8 +34,19 @@ import { CORPORA, type Corpus } from '@/lib/corpora';
  * Below the corpus list, separated by a thin divider, a single quiet "About"
  * link sits at the bottom in a lighter weight than the corpus titles (clearly
  * secondary to the list). It is keyboard-focusable and part of the focus trap.
- * Clicking it calls `onAbout`, which the parent uses to close the drawer and
- * open the About modal — the two dialogs never stack.
+ * Clicking it calls `onAbout`, which opens the About modal STACKED ABOVE this
+ * still-open drawer (the drawer stays mounted behind About's scrim).
+ *
+ * Stacking with About (`inert` prop): when About is open the drawer steps
+ * aside so About alone is the active modal. Two simultaneous
+ * `role="dialog" aria-modal="true"` elements confuse screen readers, and two
+ * document-level Esc/Tab handlers + two scrims would fight each other. So while
+ * `inert` is true the drawer (a) drops its `aria-modal` (it is no longer the
+ * active modal — About is) and marks itself `aria-hidden`/`inert` to drop out
+ * of the AT tree, and (b) suspends its own Esc-to-close and Tab focus-trap so
+ * About owns the keyboard. About's scrim is a separate, higher-z full-viewport
+ * overlay, so a click on it never reaches the drawer's scrim. This mirrors the
+ * `[aria-modal="true"]` keyboard guard in `ProseColumn`.
  */
 
 const HEADING_ID = 'corpus-drawer-heading';
@@ -47,8 +58,14 @@ type CorpusDrawerProps = {
   onSelect: (slug: string) => void;
   /** Closes the drawer without switching (scrim click / Esc). */
   onClose: () => void;
-  /** Opens the About modal; the parent closes the drawer in the same step. */
+  /** Opens the About modal, stacked above this still-open drawer. */
   onAbout: () => void;
+  /**
+   * True while the About modal is stacked above the drawer. The drawer steps
+   * aside: it drops `aria-modal`, hides from the AT tree, and suspends its
+   * Esc/Tab handling so About alone is the active, topmost modal.
+   */
+  inert?: boolean;
 };
 
 export function CorpusDrawer({
@@ -56,6 +73,7 @@ export function CorpusDrawer({
   onSelect,
   onClose,
   onAbout,
+  inert = false,
 }: CorpusDrawerProps) {
   const reduce = usePrefersReducedMotion();
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -82,6 +100,10 @@ export function CorpusDrawer({
   // the live DOM, so no re-subscription is needed.
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
+      // While About is stacked above, it owns the keyboard: bail so Esc/Tab
+      // dismiss/trap only About, leaving this drawer open underneath. (Belt and
+      // suspenders alongside the `inert` dep below, which re-subscribes.)
+      if (inert) return;
       if (e.key === 'Escape') {
         e.preventDefault();
         onClose();
@@ -107,10 +129,15 @@ export function CorpusDrawer({
     }
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [onClose]);
+  }, [onClose, inert]);
 
-  // Scrim click closes; clicks on the panel must not bubble up to it.
-  const onScrimClick = useCallback(() => onClose(), [onClose]);
+  // Scrim click closes; clicks on the panel must not bubble up to it. While
+  // About is stacked above, its own higher-z scrim covers this one, so this
+  // handler is also short-circuited as a safety net.
+  const onScrimClick = useCallback(() => {
+    if (inert) return;
+    onClose();
+  }, [onClose, inert]);
 
   const scrimTransition = reduce
     ? 'motion-reduce:transition-none'
@@ -128,7 +155,13 @@ export function CorpusDrawer({
       <div
         ref={panelRef}
         role="dialog"
-        aria-modal="true"
+        // While About is stacked above, the drawer is no longer the active
+        // modal — drop `aria-modal` and remove it from the AT tree (`inert` +
+        // `aria-hidden`) so only About is announced as the modal. `inert` also
+        // blocks pointer/focus into the drawer underneath About's scrim.
+        aria-modal={inert ? undefined : 'true'}
+        aria-hidden={inert ? 'true' : undefined}
+        inert={inert || undefined}
         aria-labelledby={HEADING_ID}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
