@@ -23,6 +23,13 @@ const SITE_URL = "https://surprisal.party";
 const TITLE = "Surprisal Party";
 const DESCRIPTION =
   "Predictable words carry little information, surprising words carry a lot. Drag the slider to compress a text down to the kernel a predictor couldn't have guessed.";
+// 1200×630 preview card at public/og.png → served at /og.png (resolved via metadataBase).
+const OG_IMAGE = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  alt: TITLE,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -34,11 +41,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: TITLE,
     type: "website",
+    images: [OG_IMAGE],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
 };
 
