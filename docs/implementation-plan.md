@@ -117,9 +117,11 @@ Build the offline pipeline that produces one JSON per tale, committed to the rep
 
 **Exit criterion:** all caches built and pass validation; rendering any cached state by hand produces a sensible snapshot.
 
-## Phase 2 — Build the runtime against the static designs
+## Phase 2 — Build the runtime against the static designs ✅
 
 A static site that fetches a corpus JSON and runs the slider mechanic. No backend.
+
+**Status — ✅ complete.** All six internal steps are built and styled to their Figma frames, and the runtime is deployed to production (surprisal.party). Behaviour is covered by unit tests (vitest) and per-epic Playwright e2e suites (Onboarding, Corpus Selection, Compression ⟷ Prediction), run in CI on every push/PR. The exit criterion below is met: a person can drag the slider through a corpus, walk the seams, switch corpora, and meet the onboarding primer, and the title-fade surprise lands.
 
 **Why this is no longer an "ugly but functional" interim.** The original plan called for a deliberately unstyled build with all styling deferred to Phase 3. That made sense when the visual design was still unknown and would be *discovered* by building. It no longer holds: the design is fixed — a high-fidelity Figma Make prototype and a set of static Figma Design frames, one per scenario/state (see `process.md`, Step 6). Building unstyled then restyling would be wasted motion and would invite drift from the established design. So Phase 2 builds **styled from the first commit, directly against the frames**, sequenced by **dependency and risk** rather than by fidelity. (The position-to-position transition is the trickiest piece and is isolated in Step 4: an instant reflow with a few light CSS touches — no FLIP or layout animation.)
 
