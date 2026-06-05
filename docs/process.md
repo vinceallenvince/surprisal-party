@@ -63,6 +63,8 @@ How this project got built, captured for a later write-up. The throughline: **de
 
    **Definition of Done (Step 9):** every epic has a Layer-1 spec whose assertions encode its scenarios (green in CI) and a Layer-2 alignment report; any frame ↔ runtime drift the review surfaces is routed to Step 8.
 
+   **Status — ✅ done.** All three epics — Onboarding, Corpus Selection, and Compression ⟷ Prediction — have Layer-1 Playwright specs (green in CI) and a Layer-2 alignment review. The reviews show the runtime generally matches the frames; the differences found are stale-frame drift (routed to Step 8) rather than broken UI.
+
 ## Timeline
 
 The work spanned **2026-05-24 → 2026-05-31** (commit dates):
