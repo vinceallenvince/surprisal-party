@@ -8,8 +8,12 @@
 #          ├─ "ui: …"                     → ui[0]  } reading order
 #          └─ "ui: …"                     → ui[1]  } (top→bottom, left→right)
 #
-# Node ids are Figma's hyphen form and change when frames are rebuilt — re-run
-# the sync (read each page via the Figma desktop MCP) to regenerate this file.
+# Each `ui` entry is { node, shot }: the Figma node id (hyphen form) and the stem
+# of the Playwright screenshot — runtime/e2e/__screens__/<epic_dir>/<shot>.png —
+# that captures the same state. That pair is what the visual-alignment skill
+# (.claude/skills/figma-alignment) compares. `shot: null` means no app screenshot
+# (e.g. a design-ahead frame with no runtime equivalent yet). Node ids change
+# when frames are rebuilt — re-run the sync to regenerate.
 
 file_key: PhmORZnicz8g3er2ZspqZl
 project_name: Surprisal Party
@@ -18,79 +22,90 @@ epics:
 
   - epic: "Onboarding"
     page: "65-3639"
+    epic_dir: "onboarding"
     stories:
       - story: "As a first-time visitor, I am shown a one-time primer on surprisal"
         scenario: "65-4453"
         ui:
-          - "65-4457"   # ui: surprisal definition
-          - "65-4536"   # ui: surprisal values
-          - "65-4617"   # ui: onboarding slider uncompressed
-          - "65-4744"   # ui: onboarding max compression
-          - "65-4844"   # ui: onboarding predict button
-          - "65-4928"   # ui: onboarding prediction results
+          - { node: "65-4457", shot: "surprisal-definition" }            # surprisal definition
+          - { node: "65-4536", shot: "surprisal-values" }                # surprisal values
+          - { node: "65-4617", shot: "onboarding-slider-uncompressed" }  # slider uncompressed
+          - { node: "65-4744", shot: "onboarding-max-compression" }      # max compression
+          - { node: "65-4844", shot: "onboarding-predict-button" }       # predict button
+          - { node: "65-4928", shot: "onboarding-prediction-results" }   # prediction results
 
       - story: "As a returning visitor, I am not shown the primer again"
         scenario: "65-5031"
-        ui: "65-5606"    # ui: onboarding modal removed
+        ui:
+          - { node: "65-5606", shot: "onboarding-modal-removed" }        # onboarding modal removed
 
       - story: "As a user, I can learn what the header metrics mean"
         scenario: "65-5672"
         ui:
-          - "65-4376"   # ui: metrics info icon
-          - "65-4288"   # ui: metrics modal
+          - { node: "65-4376", shot: "metrics-info-icon" }               # metrics info icon
+          - { node: "65-4288", shot: "metrics-modal" }                   # metrics modal
 
   - epic: "Corpus Selection"
     page: "65-5747"
+    epic_dir: "corpus-selection"
     stories:
       - story: "As a user, I can open the corpus picker to switch corpora"
         scenario: "65-5749"
-        ui: "65-6492"    # ui: open corpora menu
+        ui:
+          - { node: "65-6492", shot: "open-corpora-menu" }               # open corpora menu
 
       - story: "As a user, selecting a corpus loads it fresh"
         scenario: "65-6329"
-        ui: "65-6577"    # ui: load new corpora
+        ui:
+          # Design-ahead frame (shows Hansel & Gretel). The runtime ships a single
+          # corpus, so the E2E story is test.fixme and no screenshot is captured.
+          - { node: "65-6577", shot: null }                              # load new corpora
 
       - story: "As a user, I can read more about the project from the drawer"
         scenario: "65-6411"
-        ui: "65-6641"    # ui: about modal
+        ui:
+          - { node: "65-6641", shot: "about-modal" }                     # about modal
 
   - epic: "Compression <> Prediction"
     page: "65-6742"
+    epic_dir: "compression-prediction"
     stories:
       - story: "As a user, I can compress the corpus by dragging the slider rightward"
         scenario: "65-6744"
         ui:
-          - "65-7001"   # ui: slider at light compression
-          - "65-7279"   # ui: slider increases compression
+          - { node: "65-7001", shot: "compress-light" }                  # slider at light compression
+          - { node: "65-7279", shot: "compress-heavy" }                  # slider increases compression
 
       - story: "As a user, I can decompress the corpus by dragging the slider leftward"
         scenario: "65-6832"
         ui:
-          - "65-7140"   # ui: slider at light compression
-          - "65-7436"   # ui: slider decreases compression
+          - { node: "65-7140", shot: "decompress-before" }               # slider at light compression
+          - { node: "65-7436", shot: "decompress-after" }                # slider decreases compression
 
       - story: "As a user, I can walk through the seams with the arrow keys"
         scenario: "65-6899"
         ui:
-          - "65-7500"   # ui: reveal first predicted words
-          - "65-7668"   # ui: reveal next predicted words
+          - { node: "65-7500", shot: "walk-first-seam" }                 # reveal first predicted words
+          - { node: "65-7668", shot: "walk-next-seam" }                  # reveal next predicted words
 
       - story: "As a user, I can click a removed word to reveal its seam"
         scenario: "65-8827"
         ui:
-          - "65-8004"   # ui: hover over removed word
-          - "65-7836"   # ui: click removed word
+          - { node: "65-8004", shot: "removed-hover" }                   # hover over removed word
+          - { node: "65-7836", shot: "removed-click-revealed" }          # click removed word
 
       - story: "As a user, I am nudged to discover the arrow-key walk"
         scenario: "65-8930"
-        ui: "65-8162"    # ui: keyboard hint
+        ui:
+          - { node: "65-8162", shot: "keyboard-hint" }                   # keyboard hint
 
       - story: "As a user, I can see prediction fidelity fall as I compress"
         scenario: "65-9033"
         ui:
-          - "65-8323"   # ui: prediction fidelity at light compression
-          - "65-8473"   # ui: prediction fidelity at heavy compression
+          - { node: "65-8323", shot: "fidelity-light" }                  # fidelity at light compression
+          - { node: "65-8473", shot: "fidelity-heavy" }                  # fidelity at heavy compression
 
       - story: "As a user, I can compress the corpus to its kernel"
         scenario: "65-9136"
-        ui: "65-8649"    # ui: max compression kernel
+        ui:
+          - { node: "65-8649", shot: "kernel" }                          # max compression kernel
