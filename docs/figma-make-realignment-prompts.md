@@ -257,9 +257,9 @@ predictor" — and then predicting it back lossily.
   **"As a user, I can click a removed word to reveal its seam"** to
   [`figma-sources.yaml`](./figma-sources.yaml) with its `description`/`ui` node
   ids; until then it sits as an unmapped/TODO entry.
-- After prompt 9 (metrics explainer) has a frame, add a scenario for the metrics
-  ⓘ → explainer modal to [`user-scenarios.md`](./user-scenarios.md) and map it in
-  [`figma-sources.yaml`](./figma-sources.yaml).
+- The metrics ⓘ → explainer scenario ("As a user, I can learn what the header
+  metrics mean") is written in [`user-scenarios.md`](./user-scenarios.md); once
+  prompt 9 produces a frame, map it in [`figma-sources.yaml`](./figma-sources.yaml).
 - As each batch lands in the Design file, correct any stale node ids in
   `figma-sources.yaml` and confirm every scenario still maps both directions
   (Step 6 DoD #3).

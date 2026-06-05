@@ -1,5 +1,5 @@
 # User Scenarios
-Gherkin-style user scenarios for the Compression-Prediction Explorer.
+Gherkin-style user scenarios for Surprisal Party.
 
 ## Onboarding
 
@@ -51,6 +51,19 @@ Then the primer modal reappears at its first step
 And working through it again, or dismissing it, returns me to the explorer unchanged
 ```
 
+### As a user, I can learn what the header metrics mean
+
+The header readout — stored / removed / avg fidelity — has a small info icon immediately to its left. Clicking it opens a brief explainer modal, styled like the onboarding primer, that defines each of the three metrics for anyone who wants to know exactly what the numbers mean.
+
+```gherkin
+Given I am in the explorer view
+When I click the info icon immediately to the left of the header metrics
+Then a modal opens centered over the explorer, which is dimmed behind a scrim
+And it lists the three metrics — stored, removed, and avg fidelity — each with a concise definition
+When I dismiss the modal via its "Close" button, the scrim, or Esc
+Then the modal closes and I return to the explorer unchanged
+```
+
 ## Corpus Selection
 
 ### As a user, I can open the corpus picker to switch corpora
@@ -72,7 +85,7 @@ Then the drawer collapses and the explorer is unobscured
 
 ### As a user, selecting a corpus loads it fresh
 
-Choosing a corpus fetches its precomputed static cache — surprisal scores, span boundaries, reconstructions, and fidelity scores generated offline at build time — and resets the explorer view. The runtime makes no language-model calls.
+Choosing a corpus fetches its precomputed static cache — surprisal scores, span boundaries, reconstructions, and fidelity scores generated offline at build time — and resets the explorer view. Everything on screen is rendered from that cache.
 
 ```gherkin
 Given the corpus picker is open
@@ -88,7 +101,7 @@ And the header resets to "stored 100.0% · removed 0.0% · avg fidelity —"
 
 ### As a user, I can read more about the project from the drawer
 
-The About link at the bottom of the drawer opens a modal with a deeper, opt-in account of the project and a link out to the author's site. There is no routing — it is a modal, like the onboarding primer, but with room for more copy.
+The About link at the bottom of the drawer opens a modal with a deeper, opt-in account of the project and a link out to the author's site. It is a modal, like the onboarding primer, but with room for more copy.
 
 ```gherkin
 Given the corpus picker is open
@@ -138,7 +151,7 @@ And the header updates so that stored rises, removed falls, and the avg-fidelity
 
 ### As a user, I can walk through the seams with the arrow keys
 
-The arrow keys are the way to step through the corpus's gaps. They drive a single shared "active seam" state, moving through the seams in story order: the active seam expands the model's predicted text inline (dimmed, in the reading type) and fills the fixed reconstruction inspector at the bottom of the middle column with the actual source text and fidelity score; advancing collapses the previous seam and opens the next. The inspector's height is always reserved so nothing reflows. As the active seam moves, the removed words it covers are highlighted in the right "Removed" strip, so the connection between a gap and the words pulled from it is visible. **The middle-column prose has no hover trigger** — resting the cursor over the reading text never opens a seam; reveals there are keyboard-driven (the right strip's tiles are a separate, explicitly clickable affordance — see below). The slider is mouse-only, so the arrow keys never conflict with it. Each step plays a short, soft click sound so stepping through the predicted words feels tactile, respecting the user's reduced-motion / sound preferences.
+The arrow keys are the way to step through the corpus's gaps. They drive a single shared "active seam" state, moving through the seams in story order: the active seam expands the model's predicted text inline (dimmed, in the reading type) and fills the fixed reconstruction inspector at the bottom of the middle column with the actual source text and fidelity score; advancing collapses the previous seam and opens the next. The inspector's height is always reserved so nothing reflows. As the active seam moves, the removed words it covers are highlighted in the right "Removed" strip, so the connection between a gap and the words pulled from it is visible. Reveals in the middle column are keyboard-driven; the right strip's tiles are a separate, explicitly clickable affordance (see below). The slider is mouse-only. Each step plays a short, soft click sound so stepping through the predicted words feels tactile, respecting the user's reduced-motion / sound preferences.
 
 ```gherkin
 Given the middle column contains one or more seams
@@ -192,21 +205,23 @@ Then the hint dismisses
 And the hint does not reappear once I have stepped through a seam this session
 ```
 
-### As a user, I see the slider's two regimes reflected in what happens on screen
+### As a user, I can see prediction fidelity fall as I compress
 
-The slider has a lossless region on the left and a lossy region on the right, conveyed by a subtle track gradient rather than explicit regime labels. In the lossless region, words leave the page but reconstructions are verbatim and information barely moves. In the lossy region, whole clauses fade, reconstructions become paraphrases, and information migrates in bulk.
+As the slider moves rightward the removed words get harder to rebuild: near the left their reconstructions are essentially verbatim, and toward the right they become looser paraphrases. The header's avg-fidelity readout tracks this continuously, and activating any seam replaces the inspector's placeholder prompt with that gap's actual source words and its fidelity score.
 
 ```gherkin
-Given I am dragging the slider through the lossless region
-Then the middle column shrinks slightly as predictable words leave
-And the header's removed percentage rises slowly
-And when I activate a seam, the inspector shows a fidelity score close to 1.00
+Given the slider is near the left
+Then the header's avg fidelity stays high (near 1.00)
+When I activate a seam
+Then the inspector's placeholder prompt is replaced by the gap's actual words and a fidelity score close to 1.00
+And the seam's predicted text reads as near-verbatim
 
-Given I am dragging the slider through the lossy region
-Then the middle column shrinks rapidly as whole clauses leave
-And the header's removed percentage rises steeply
-And the seams cover larger spans relative to surviving source tokens
-And when I activate a seam, the inspector shows a fidelity score below 1.00
+Given the slider is dragged well toward the right
+Then the header's avg fidelity drops well below 1.00
+And the seams cover larger spans relative to the surviving tokens
+When I activate a seam
+Then the inspector's placeholder prompt is replaced by the gap's actual words and a fidelity score below 1.00
+And the seam's predicted text reads as a paraphrase
 ```
 
 ### As a user, I can compress the corpus to its kernel
