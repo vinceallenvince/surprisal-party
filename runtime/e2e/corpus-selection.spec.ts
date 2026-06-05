@@ -133,23 +133,35 @@ test.describe('Corpus Selection — Story 3: read more about the project from th
     await expect(drawer).toBeVisible();
     await drawer.getByRole('button', { name: /^about$/i }).click();
 
-    // Drawer → modal: the two dialogs never stack. The About modal is up.
-    await expect(page.getByRole('dialog', { name: /corpora/i })).toHaveCount(0);
+    // About stacks ABOVE the still-open drawer (Figma shows the drawer behind
+    // About). The drawer steps aside (drops aria-modal / goes aria-hidden) so
+    // About alone is the active modal, but stays mounted underneath.
     const about = page.getByRole('dialog', { name: /surprisal party/i });
     await expect(about).toBeVisible();
     await expect(
       about.getByRole('heading', { name: /surprisal party/i }),
     ).toBeVisible();
+    // The drawer is still in the DOM behind About, just hidden from AT.
+    await expect(
+      page.locator('[aria-labelledby="corpus-drawer-heading"]'),
+    ).toHaveAttribute('aria-hidden', 'true');
 
     // The write-up link shows its destination and opens in a new tab.
     const writeup = about.getByRole('link', { name: /vinceallen\.com/i });
     await expect(writeup).toBeVisible();
     await expect(writeup).toHaveAttribute('href', 'https://vinceallen.com');
     await expect(writeup).toHaveAttribute('target', '_blank');
+    // This screenshot now intentionally shows the drawer behind the About modal.
     await shot(page, 'about-modal');
 
-    // Dismiss via the Close button and confirm it closes.
+    // Dismiss via the Close button: About closes and I return to the open
+    // drawer (NOT the bare explorer). The drawer is the active modal again.
     await about.getByRole('button', { name: /close/i }).click();
-    await expect(page.getByRole('dialog', { name: /surprisal party/i })).toHaveCount(0);
+    await expect(
+      page.getByRole('dialog', { name: /surprisal party/i }),
+    ).toHaveCount(0);
+    const reopenedDrawer = page.getByRole('dialog', { name: /corpora/i });
+    await expect(reopenedDrawer).toBeVisible();
+    await expect(reopenedDrawer).toHaveAttribute('aria-modal', 'true');
   });
 });

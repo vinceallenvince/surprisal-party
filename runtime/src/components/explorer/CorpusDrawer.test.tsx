@@ -228,8 +228,31 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
     );
     fireEvent.click(screen.getByRole('button', { name: /about/i }));
     expect(onAbout).toHaveBeenCalledTimes(1);
-    // The drawer→modal transition is the parent's job; the link itself must not
-    // route through the scrim/Esc onClose path.
+    // About stacks above the still-open drawer (the parent's job); the link
+    // itself must not route through the scrim/Esc onClose path.
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it('steps aside while inert: drops aria-modal, suspends Esc/scrim close', () => {
+    const onClose = vi.fn();
+    const { container } = render(
+      <CorpusDrawer
+        currentSlug="little-red-riding-hood"
+        onSelect={vi.fn()}
+        onClose={onClose}
+        onAbout={vi.fn()}
+        inert
+      />,
+    );
+    // No longer the active modal: aria-modal is dropped and it's hidden from AT.
+    const panel = container.querySelector('[role="dialog"]');
+    expect(panel).not.toBeNull();
+    expect(panel).not.toHaveAttribute('aria-modal');
+    expect(panel).toHaveAttribute('aria-hidden', 'true');
+    // Esc and scrim click are suspended — About (stacked above) owns dismissal.
+    fireEvent.keyDown(document, { key: 'Escape' });
+    const scrim = container.querySelector('[data-corpus-scrim]');
+    fireEvent.click(scrim as Element);
     expect(onClose).not.toHaveBeenCalled();
   });
 });
@@ -305,7 +328,7 @@ describe('ExplorerContainer corpus switching', () => {
     expect(screen.getByText('—')).toBeInTheDocument();
   });
 
-  it('clicking About in the drawer closes the drawer and opens the About modal', async () => {
+  it('clicking About stacks the About modal ABOVE the still-open drawer', async () => {
     render(<ExplorerContainer />);
     await waitFor(() =>
       expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
@@ -317,14 +340,73 @@ describe('ExplorerContainer corpus switching', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /^about$/i }));
 
-    // Drawer→modal: the corpus drawer is gone and the About dialog is up. Two
-    // dialogs never stack.
-    expect(
-      screen.queryByRole('dialog', { name: /corpora/i }),
-    ).not.toBeInTheDocument();
+    // About is up AND the drawer stays mounted behind it. The drawer steps
+    // aside (drops aria-modal / aria-hidden) so About alone is the active
+    // modal, but it remains in the DOM — `getByRole('dialog', {hidden})` finds
+    // it. (`queryByRole` without `hidden` would skip the aria-hidden drawer.)
     expect(
       screen.getByRole('dialog', { name: /surprisal party/i }),
     ).toBeInTheDocument();
+    const drawerPanel = document.querySelector(
+      '[aria-labelledby="corpus-drawer-heading"]',
+    );
+    expect(drawerPanel).not.toBeNull();
+    expect(drawerPanel).not.toHaveAttribute('aria-modal');
+    expect(drawerPanel).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('Esc and scrim close only About, leaving the drawer open underneath', async () => {
+    render(<ExplorerContainer />);
+    await waitFor(() =>
+      expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
+    );
+    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    fireEvent.click(screen.getByRole('button', { name: /^about$/i }));
+    expect(
+      screen.getByRole('dialog', { name: /surprisal party/i }),
+    ).toBeInTheDocument();
+
+    // Esc dismisses About only; the drawer is restored as the active modal.
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(
+      screen.queryByRole('dialog', { name: /surprisal party/i }),
+    ).not.toBeInTheDocument();
+    const drawer = screen.getByRole('dialog', { name: /corpora/i });
+    expect(drawer).toHaveAttribute('aria-modal', 'true');
+
+    // Re-open About, then dismiss via its scrim — again only About closes.
+    fireEvent.click(screen.getByRole('button', { name: /^about$/i }));
+    expect(
+      screen.getByRole('dialog', { name: /surprisal party/i }),
+    ).toBeInTheDocument();
+    fireEvent.click(document.querySelector('[data-about-scrim]') as Element);
+    expect(
+      screen.queryByRole('dialog', { name: /surprisal party/i }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('dialog', { name: /corpora/i }),
+    ).toHaveAttribute('aria-modal', 'true');
+  });
+
+  it('returns focus to the drawer About link after dismissing About', async () => {
+    render(<ExplorerContainer />);
+    await waitFor(() =>
+      expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
+    );
+    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    const aboutLink = screen.getByRole('button', { name: /^about$/i });
+    aboutLink.focus();
+    fireEvent.click(aboutLink);
+    expect(
+      screen.getByRole('dialog', { name: /surprisal party/i }),
+    ).toBeInTheDocument();
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    // The About link is still mounted (drawer stayed open), so focus restores
+    // to it — no fall-through to <body>.
+    expect(
+      screen.getByRole('button', { name: /^about$/i }),
+    ).toHaveFocus();
   });
 
   it('shows the loaded corpus as non-interactive, so it cannot be reselected', async () => {

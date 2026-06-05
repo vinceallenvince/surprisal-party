@@ -6,14 +6,22 @@ import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 /**
  * About modal — the opt-in "read more about the project" surface (Phase 2,
  * Step 6; Figma node 29-467). Reached from the quiet "About" link at the bottom
- * of the corpus drawer (`CorpusDrawer`), which closes the drawer and opens this
- * so two dialogs never stack.
+ * of the corpus drawer (`CorpusDrawer`), which opens this modal STACKED ABOVE
+ * the still-open drawer (the Figma frame shows the drawer open behind About).
+ *
+ * Stacking: this modal's scrim + card sit at a HIGHER z-index than the drawer
+ * (`z-[60]` vs the drawer's `z-50`), so About's scrim dims the drawer too and
+ * the card renders clearly on top. The drawer steps aside while About is open
+ * (drops its `aria-modal`, goes `inert`, suspends its Esc/Tab handling — see
+ * `CorpusDrawer`), so About alone is the active modal and Esc / scrim-click
+ * dismiss ONLY About, returning the user to the still-open drawer.
  *
  * Mirrors `PrimerModal`'s pattern and a11y bar exactly: a centered card over a
- * scrim that dims (does not remove) the explorer, `role="dialog"` + `aria-modal`
- * + `aria-labelledby`, focus moved to the Close button on open and restored to
- * the opener (the About link) on close, a Tab focus-trap, and Esc / scrim /
- * "Close" dismissal. Fade respects `prefers-reduced-motion` (instant).
+ * scrim that dims (does not remove) what is behind it, `role="dialog"` +
+ * `aria-modal` + `aria-labelledby`, focus moved to the Close button on open and
+ * restored to the opener (the drawer's About link, still mounted) on close, a
+ * Tab focus-trap, and Esc / scrim / "Close" dismissal. Fade respects
+ * `prefers-reduced-motion` (instant).
  *
  * Unlike the primer (the one sanctioned line of mechanic-teaching copy) this is
  * opt-in, so a little more copy is fine: a short heading and one/two short
@@ -95,7 +103,7 @@ export function AboutModal({ onDismiss }: { onDismiss: () => void }) {
     <div
       data-about-scrim=""
       onClick={onScrimClick}
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-8 ${transition}`}
+      className={`fixed inset-0 z-[60] flex items-center justify-center bg-black/60 px-8 ${transition}`}
     >
       <div
         ref={cardRef}
