@@ -15,6 +15,10 @@
 /playwright-report/
 /blob-report/
 /test-results/
+# Playwright screenshots + advisory Figma-alignment reports — regenerable
+# artifacts of the visual-alignment layer, not committed.
+/e2e/__screens__/
+/e2e/*-alignment.md
 
 # logs
 logs

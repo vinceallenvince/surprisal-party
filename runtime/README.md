@@ -86,9 +86,26 @@ cached data — same JSON in, same UI out.
 
 ## Testing
 
-[Vitest](https://vitest.dev/) for unit/component tests (co-located as
-`*.test.ts(x)`), [Playwright](https://playwright.dev/) for E2E (in `e2e/`, none
-yet). Run `pnpm test` / `pnpm test:e2e`.
+[Vitest](https://vitest.dev/) — unit/component tests, co-located as `*.test.ts(x)`:
+
+```bash
+pnpm test          # run once
+pnpm test:watch
+```
+
+[Playwright](https://playwright.dev/) — end-to-end tests in `e2e/`, built per epic
+(Onboarding so far). Each test asserts the behavior from
+[`../docs/user-scenarios.md`](../docs/user-scenarios.md) and captures a screenshot
+at each state for an advisory Figma visual-alignment check (the screenshots and
+alignment reports are gitignored artifacts). Chromium-only, headless,
+reduced-motion for stable shots.
+
+```bash
+pnpm test:e2e                                  # headless (chromium); auto-starts the dev server
+PWDEMO=1 npx playwright test                    # watch it: headed, slowed (slowMo), animations on
+PWDEMO=1 npx playwright test -g "first-time"    # just the 4-step onboarding primer
+npx playwright test --ui                        # interactive UI mode (timeline + step screenshots)
+```
 
 ## Deployment
 
