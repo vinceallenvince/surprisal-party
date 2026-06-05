@@ -30,7 +30,10 @@ export default defineConfig({
     // Chromium-only to start; add firefox/webkit later if we want cross-browser.
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      // Re-apply the viewport AFTER the device spread: `devices["Desktop Chrome"]`
+      // bundles its own 1280×720, which would otherwise override the top-level
+      // 1184×789 we set to match the Figma UI frames for the alignment layer.
+      use: { ...devices["Desktop Chrome"], viewport: { width: 1184, height: 789 } },
     },
   ],
   webServer: {
