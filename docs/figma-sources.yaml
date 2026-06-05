@@ -1,73 +1,96 @@
-# Maps each user scenario (docs/user-scenarios.md) to its Figma Design frames.
-# Cached so build/QA agents read node IDs from here instead of re-querying the
-# Figma MCP every time. This file is also the Step 6 DoD #3 traceability record
-# (every scenario <-> frame, both directions).
+# Maps the user stories in docs/user-scenarios.md to their Figma Design frames,
+# following the taxonomy Epic -> Story -> Scenario -> UI. Figma authoring
+# convention (keeps this file regenerable with no manual node entry):
 #
-# Fields per scenario:
-#   scenario     - exact title from docs/user-scenarios.md
-#   description  - Figma node id of the written-scenario / spec frame
-#   ui           - Figma node id of the rendered UI mockup frame
-# Node ids use Figma's hyphen form (e.g. "28-80"); blanks are TODO.
+#   Page:  "<Epic>"                       (pages prefixed "_" are ignored)
+#     └─ Section: "<exact story title>"   → story  (the mapping key)
+#          ├─ "scenario"                  → scenario
+#          ├─ "ui: …"                     → ui[0]  } reading order
+#          └─ "ui: …"                     → ui[1]  } (top→bottom, left→right)
 #
-# Scenarios that intentionally have no static frame go under `unmapped_scenarios`
-# at the bottom, each with a reason — so the map stays a complete check rather
-# than leaving genuine gaps indistinguishable from oversights.
+# Node ids are Figma's hyphen form and change when frames are rebuilt — re-run
+# the sync (read each page via the Figma desktop MCP) to regenerate this file.
 
 file_key: PhmORZnicz8g3er2ZspqZl
 project_name: Surprisal Party
 
-scenarios:
+epics:
 
-    # Onboarding
-    - scenario: "As a first-time visitor, I am shown a one-time primer on surprisal"
-      description: "28-78"
-      ui: "28-80"
+  - epic: "Onboarding"
+    page: "65-3639"
+    stories:
+      - story: "As a first-time visitor, I am shown a one-time primer on surprisal"
+        scenario: "65-4453"
+        ui:
+          - "65-4457"   # ui: surprisal definition
+          - "65-4536"   # ui: surprisal values
+          - "65-4617"   # ui: onboarding slider uncompressed
+          - "65-4744"   # ui: onboarding max compression
+          - "65-4844"   # ui: onboarding predict button
+          - "65-4928"   # ui: onboarding prediction results
 
-    - scenario: "As a returning visitor, I am not shown the primer again"
-      description: "28-159"
-      ui: "28-163"
+      - story: "As a returning visitor, I am not shown the primer again"
+        scenario: "65-5031"
+        ui: "65-5606"    # ui: onboarding modal removed
 
-    # Corpus Selection
-    - scenario: "As a user, I can open the corpus picker to switch corpora"
-      description: "28-232"
-      ui: "28-297"
+      - story: "As a user, I can learn what the header metrics mean"
+        scenario: "65-5672"
+        ui:
+          - "65-4376"   # ui: metrics info icon
+          - "65-4288"   # ui: metrics modal
 
-    - scenario: "As a user, selecting a corpus loads it fresh"
-      description: "28-381"
-      ui: "28-319"
+  - epic: "Corpus Selection"
+    page: "65-5747"
+    stories:
+      - story: "As a user, I can open the corpus picker to switch corpora"
+        scenario: "65-5749"
+        ui: "65-6492"    # ui: open corpora menu
 
-    - scenario: "As a user, I can read more about the project from the drawer"
-      description: "29-485"
-      ui: "29-467"
+      - story: "As a user, selecting a corpus loads it fresh"
+        scenario: "65-6329"
+        ui: "65-6577"    # ui: load new corpora
 
-    # Compression and Reconstruction
-    - scenario: "As a user, I can compress the corpus by dragging the slider rightward"
-      description: "29-495"
-      ui: "30-15994"
+      - story: "As a user, I can read more about the project from the drawer"
+        scenario: "65-6411"
+        ui: "65-6641"    # ui: about modal
 
-    - scenario: "As a user, I can decompress the corpus by dragging the slider leftward"
-      description: "29-6914"
-      ui: "30-15995"
+  - epic: "Compression <> Prediction"
+    page: "65-6742"
+    stories:
+      - story: "As a user, I can compress the corpus by dragging the slider rightward"
+        scenario: "65-6744"
+        ui:
+          - "65-7001"   # ui: slider at light compression
+          - "65-7279"   # ui: slider increases compression
 
-    - scenario: "As a user, I can walk through the seams with the arrow keys"
-      description: "29-13845"
-      ui: "30-15997"
+      - story: "As a user, I can decompress the corpus by dragging the slider leftward"
+        scenario: "65-6832"
+        ui:
+          - "65-7140"   # ui: slider at light compression
+          - "65-7436"   # ui: slider decreases compression
 
-    - scenario: "As a user, I am nudged to discover the arrow-key walk"
-      description: "30-15990"
-      ui: "30-15999"
+      - story: "As a user, I can walk through the seams with the arrow keys"
+        scenario: "65-6899"
+        ui:
+          - "65-7500"   # ui: reveal first predicted words
+          - "65-7668"   # ui: reveal next predicted words
 
-    - scenario: "As a user, I can compress the corpus to its kernel"
-      description: "30-15980"
-      ui: "30-16001"
+      - story: "As a user, I can click a removed word to reveal its seam"
+        scenario: "65-8827"
+        ui:
+          - "65-8004"   # ui: hover over removed word
+          - "65-7836"   # ui: click removed word
 
-# User scenarios that intentionally have no static Figma frame, with the reason.
-# Listed here (rather than omitted) so the scenario <-> frame map stays a complete
-# check: a missing entry is an oversight, an entry here is a deliberate exception.
-unmapped_scenarios:
-    - scenario: "As a user, I see the slider's two regimes reflected in what happens on screen"
-      reason: >-
-        Inherently dynamic — it describes how behaviour differs across the
-        lossless vs lossy range, a comparison over the slider's travel, which no
-        single static frame captures. Covered in docs/user-scenarios.md and
-        docs/implementation-plan.md instead.
+      - story: "As a user, I am nudged to discover the arrow-key walk"
+        scenario: "65-8930"
+        ui: "65-8162"    # ui: keyboard hint
+
+      - story: "As a user, I can see prediction fidelity fall as I compress"
+        scenario: "65-9033"
+        ui:
+          - "65-8323"   # ui: prediction fidelity at light compression
+          - "65-8473"   # ui: prediction fidelity at heavy compression
+
+      - story: "As a user, I can compress the corpus to its kernel"
+        scenario: "65-9136"
+        ui: "65-8649"    # ui: max compression kernel
