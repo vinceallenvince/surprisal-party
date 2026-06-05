@@ -54,6 +54,15 @@ How this project got built, captured for a later write-up. The throughline: **de
 
    **Definition of Done (Step 8):** the Figma Design frames reflect the shipped runtime — every diverged screen regenerated via a recorded Figma Make prompt and re-pasted, with `figma-sources.yaml` updated (new scenarios mapped, stale node ids fixed) and no known runtime ↔ frame drift.
 
+9. **Test each epic end-to-end: behavior with Playwright, visuals against the Figma frames.** Build the E2E coverage incrementally, one epic at a time, in two complementary layers:
+
+   - **Layer 1 — behavioral (deterministic, CI).** Playwright specs in `runtime/e2e/<epic>.spec.ts` drive each user story and assert its Gherkin Given/When/Then through accessible selectors (the user scenarios are the eval criteria). They run headless (chromium) on every push/PR via GitHub Actions. Each spec *also* captures a viewport screenshot at every state that maps to a Figma UI frame.
+   - **Layer 2 — visual alignment (advisory, on demand).** Pair each captured screenshot with its Figma Design frame (pulled via the Figma MCP) and have an agent judge **general** alignment — *not* a pixel diff, since a live render never matches a mockup exactly — writing a per-epic report. It runs locally (it needs the Figma MCP), not in CI, and doubles as runtime ↔ Figma **drift detection** that feeds back into Step 8.
+
+   The screenshot ↔ frame pairing is explicit in [`figma-sources.yaml`](./figma-sources.yaml): each story's `ui` entry is `{ node, shot }` — the Figma node id and the Playwright screenshot stem. Layer 2 is packaged as a reusable skill, [`.claude/skills/figma-alignment`](../.claude/skills/figma-alignment/SKILL.md), so a review is one invocation per epic. Both spec authoring and the alignment review run through the `nextjs-coding-agent` / `nextjs-code-reviewer` loop. Screenshots and reports are regenerable artifacts (gitignored).
+
+   **Definition of Done (Step 9):** every epic has a Layer-1 spec whose assertions encode its scenarios (green in CI) and a Layer-2 alignment report; any frame ↔ runtime drift the review surfaces is routed to Step 8.
+
 ## Timeline
 
 The work spanned **2026-05-24 → 2026-05-31** (commit dates):
@@ -63,6 +72,7 @@ The work spanned **2026-05-24 → 2026-05-31** (commit dates):
 - **05-31 onward** — prototype-driven refinements to layout and scenarios (step 6, in progress).
 - **Next** — distill the prototype into traced Figma Design frames (close out step 6), then the runtime build-out checked against those frames (step 7, pending).
 - **Then** — as the runtime advanced ahead of the frames through live iteration, bridge it back to Figma Design with Figma Make prompts (step 8).
+- **And** — close the loop with a per-epic end-to-end test layer: Playwright behavioral specs plus a Figma visual-alignment skill that compares the app screenshots to the design frames (step 9).
 
 ## A note for the write-up
 
