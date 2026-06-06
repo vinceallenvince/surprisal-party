@@ -57,9 +57,7 @@ epics:
       - story: "As a user, selecting a corpus loads it fresh"
         scenario: "65-6329"
         ui:
-          # Design-ahead frame (shows Hansel & Gretel). The runtime ships a single
-          # corpus, so the E2E story is test.fixme and no screenshot is captured.
-          - { node: "65-6577", shot: null }                              # load new corpora
+          - { node: "65-6577", shot: "load-new-corpora" }                # load new corpora (Hansel & Gretel)
 
       - story: "As a user, I can read more about the project from the drawer"
         scenario: "65-6411"

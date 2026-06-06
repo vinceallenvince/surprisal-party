@@ -102,19 +102,36 @@ test.describe('Corpus Selection — Story 1: open the corpus picker to switch co
 });
 
 test.describe('Corpus Selection — Story 2: selecting a corpus loads it fresh', () => {
-  // The shipped manifest (`src/lib/corpora.ts` CORPORA) has a single entry
-  // (Little Red Riding Hood), rendered as a marked, NON-interactive row. There
-  // is no second corpus to select, so this behaviour cannot be exercised
-  // end-to-end against the real runtime yet. The unit test
-  // (CorpusDrawer.test.tsx) covers the select→re-fetch→reset path with a mocked
-  // two-entry manifest; this E2E remains fixme until a second corpus ships.
-  test.fixme(
-    true,
-    'Runtime ships a single corpus (LRRH); no second corpus to switch to yet — the "load new corpora" Figma frame is design-ahead drift.',
-  );
+  test('selecting a different corpus re-fetches its cache and resets the view', async ({
+    page,
+    context,
+  }) => {
+    await seedPrimerSeen(context);
+    await page.goto('/');
+    await waitForExplorer(page); // default corpus (LRRH) loaded
 
-  test('selecting a different corpus re-fetches its cache and resets the view', async () => {
-    // Intentionally empty: see test.fixme above.
+    // Open the picker and select the OTHER corpus (Hansel and Gretel) — the
+    // current corpus is a non-interactive row, so the other is the only button.
+    await page.getByRole('button', { name: /open corpus picker/i }).click();
+    const drawer = page.getByRole('dialog', { name: /corpora/i });
+    await expect(drawer).toBeVisible();
+    const otherCorpus = drawer.getByRole('button', {
+      name: /hansel and gretel/i,
+    });
+    await expect(otherCorpus).toBeVisible();
+    await otherCorpus.click();
+
+    // The drawer collapses and the explorer reloads fresh with the new corpus.
+    await expect(page.getByRole('dialog', { name: /corpora/i })).toHaveCount(0);
+    await expect(
+      page.getByRole('heading', { name: /hansel and gretel/i }),
+    ).toBeVisible();
+    // The view resets: slider snaps back to UNCOMPRESSED (stop 0).
+    await expect(
+      page.getByRole('slider', { name: /compression level/i }),
+    ).toHaveAttribute('aria-valuenow', '0');
+
+    await shot(page, 'load-new-corpora');
   });
 });
 
