@@ -48,7 +48,7 @@ test.describe('Corpus Selection — Story 1: open the corpus picker to switch co
     context,
   }) => {
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
     await expect(page.getByRole('dialog')).toHaveCount(0);
 
@@ -107,7 +107,7 @@ test.describe('Corpus Selection — Story 2: selecting a corpus loads it fresh',
     context,
   }) => {
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page); // default corpus (LRRH) loaded
 
     // Open the picker and select the OTHER corpus (Hansel and Gretel) — the
@@ -141,7 +141,7 @@ test.describe('Corpus Selection — Story 3: read more about the project from th
     context,
   }) => {
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
 
     // Open the drawer, then click the quiet "About" link at its bottom.

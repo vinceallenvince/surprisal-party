@@ -20,6 +20,22 @@ project_name: Surprisal Party
 
 epics:
 
+  - epic: "Loading"
+    page: "84-4"
+    epic_dir: "loading"
+    stories:
+      - story: "As a visitor, the loading screen compresses a welcome phrase to its kernel"
+        scenario: "84-6"
+        ui:
+          - { node: "84-833", shot: "loading-full" }            # full annotated phrase (pre-load)
+          - { node: "84-861", shot: "loading-collapse" }        # mid-collapse: threw surprisal party
+          - { node: "84-877", shot: "loading-kernel-clean" }    # clean coral "surprisal party"
+
+      - story: "As a returning visitor, the loading screen is brief"
+        scenario: "84-581"
+        ui:
+          - { node: "84-885", shot: "loading-abbreviated" }     # abbreviated end state (clean kernel)
+
   - epic: "Onboarding"
     page: "65-3639"
     epic_dir: "onboarding"

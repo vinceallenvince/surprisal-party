@@ -114,7 +114,7 @@ test.describe('Compression — Story 1: compress by dragging the slider rightwar
     context,
   }) => {
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
 
     // Start at UNCOMPRESSED: no removed words, no seams, fidelity unscored.
@@ -156,7 +156,7 @@ test.describe('Compression — Story 2: decompress by dragging the slider leftwa
     context,
   }) => {
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
 
     // Start compressed (MAX).
@@ -191,7 +191,7 @@ test.describe('Compression — Story 3: walk through the seams with the arrow ke
     context,
   }) => {
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
 
     // A mid stop gives us several seams to walk.
@@ -240,7 +240,7 @@ test.describe('Compression — Story 4: click a removed word to reveal its seam'
     context,
   }) => {
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
 
     await setCompression(page, 0.5);
@@ -276,7 +276,7 @@ test.describe('Compression — Story 5: nudged to discover the arrow-key walk', 
   }) => {
     // Fresh context (session-scoped hint state is clean) — preseed primer only.
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
 
     // No hint at UNCOMPRESSED.
@@ -305,7 +305,7 @@ test.describe('Compression — Story 6: see prediction fidelity fall as I compre
     context,
   }) => {
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
 
     // --- Low stop: activate a seam, assert inspector format + capture avg ----
@@ -349,7 +349,7 @@ test.describe('Compression — Story 7: compress to its kernel', () => {
     context,
   }) => {
     await seedPrimerSeen(context);
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
 
     // Capture a mid-stop reference so we can assert MAX is the extreme.
