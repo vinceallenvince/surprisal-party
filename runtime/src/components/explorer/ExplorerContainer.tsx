@@ -171,14 +171,21 @@ export function ExplorerContainer() {
     setPrimerOpen(show);
   }, []);
 
-  // The loader's exit: reveal the explorer, then run the first-visit primer
-  // decision (first visit → open primer; returning → reveal only). Moving the
-  // primer trigger here (off mount) is what makes returning visitors get no
-  // primer while first-time visitors still meet it after the ceremony.
-  const handleBootComplete = useCallback(() => {
-    setBooted(true);
+  // The loader's exit fade BEGINS: run the first-visit primer decision now, so
+  // the primer mounts UNDERNEATH the still-fading loader and the loader
+  // cross-fades into an already-present modal (no blank beat, no late pop-in).
+  // First visit → open primer; returning → no-op (reveal only). The loader
+  // (z-70) sits above the primer (z-50), so the primer's own entrance is masked
+  // until the loader has faded away.
+  const handleBootExitStart = useCallback(() => {
     resolvePrimer();
   }, [resolvePrimer]);
+
+  // The loader's exit fade COMPLETES: unmount it. The explorer was already
+  // warming underneath and (for a first visit) the primer is already open.
+  const handleBootComplete = useCallback(() => {
+    setBooted(true);
+  }, []);
 
   // Boot decision, deferred past mount via rAF so the setState happens in the
   // frame callback rather than synchronously in the effect body (the repo's
@@ -263,6 +270,7 @@ export function ExplorerContainer() {
     <LoadingScreen
       loaded={cache !== null}
       abbreviated={abbreviated}
+      onExitStart={handleBootExitStart}
       onComplete={handleBootComplete}
     />
   ) : null;

@@ -159,6 +159,18 @@
     animation: none;
   }
 }
+@utility modal-fade-in {
+  /* Entrance fade for modal overlays (the primer, About, and metrics modals).
+     A keyframe animation rather than a CSS transition, so it plays on MOUNT —
+     a transition-opacity on a freshly-mounted element never animates because
+     there is no value change to drive it (which is why About/metrics had no
+     fade). Longer + softer than the per-step primer-fade-in. */
+  animation: fade-in 400ms ease-out both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
 
 /* Custom component styles */
 @utility custom-btn-primary {

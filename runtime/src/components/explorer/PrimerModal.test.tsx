@@ -132,14 +132,17 @@ describe('PrimerModal (standalone steps + a11y + dismissal)', () => {
     ).toBeInTheDocument();
   });
 
-  it('moves focus to the slider on entering step 3 (not the disabled Done)', () => {
-    // Done is disabled until the slider moves, so it cannot take focus; the
-    // slider is step 3's primary operable control and must receive focus.
+  it('moves focus to the dialog card, not the slider, on entering step 3', () => {
+    // Auto-focusing the slider showed its focus-visible ring on arrival — a
+    // stray highlight before the user has done anything. Step 3 focuses the
+    // dialog card instead, so focus stays inside the modal (Esc + trap work)
+    // with nothing visibly highlighted.
     render(<PrimerModal onDismiss={vi.fn()} />);
     gotoStep3();
+    expect(screen.getByRole('dialog')).toHaveFocus();
     expect(
       screen.getByRole('slider', { name: /surprisal threshold/i }),
-    ).toHaveFocus();
+    ).not.toHaveFocus();
   });
 
   it('Back returns to the prior step', () => {

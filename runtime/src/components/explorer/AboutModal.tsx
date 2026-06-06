@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useRef } from 'react';
-import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 
 /**
  * About modal — the opt-in "read more about the project" surface (Phase 2,
@@ -41,7 +40,6 @@ const WRITEUP_URL = 'https://vinceallen.com';
 const WRITEUP_LABEL = 'vinceallen.com';
 
 export function AboutModal({ onDismiss }: { onDismiss: () => void }) {
-  const reduce = usePrefersReducedMotion();
   const cardRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   // The element focused before the modal opened (the drawer's About link),
@@ -95,15 +93,11 @@ export function AboutModal({ onDismiss }: { onDismiss: () => void }) {
   // Scrim click dismisses; clicks on the card must not bubble up to it.
   const onScrimClick = useCallback(() => onDismiss(), [onDismiss]);
 
-  const transition = reduce
-    ? 'motion-reduce:transition-none'
-    : 'transition-opacity duration-200 ease-out';
-
   return (
     <div
       data-about-scrim=""
       onClick={onScrimClick}
-      className={`fixed inset-0 z-[60] flex items-center justify-center bg-black/60 px-8 ${transition}`}
+      className="modal-fade-in fixed inset-0 z-[60] flex items-center justify-center bg-black/60 px-8"
     >
       <div
         ref={cardRef}

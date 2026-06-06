@@ -17,8 +17,12 @@ import { resolveBootMode, type BootMode } from '@/lib/boot';
  * load gate). Props:
  *   loaded       — `cache !== null` in the container; gates the exit.
  *   abbreviated  — `hasSeenPrimer()`; a returning visitor gets the faster timeline.
- *   onComplete   — fired after the exit fade; the container reveals the explorer
- *                  (and, for a first visit, opens the primer) on this call.
+ *   onExitStart  — fired as the exit fade BEGINS (loader still mounted, fading on
+ *                  top). The container opens the primer here so it is already
+ *                  present underneath and the loader cross-fades INTO it — no
+ *                  beat of blank screen, no late modal pop-in.
+ *   onComplete   — fired after the exit fade completes; the container unmounts
+ *                  the loader (`setBooted(true)`) on this call.
  *
  * State machine (timer-driven; all timers tracked in a ref and cleared on
  * unmount — StrictMode-safe; NO setState synchronously inside an effect — state
@@ -115,10 +119,12 @@ type Phase =
 export function LoadingScreen({
   loaded,
   abbreviated,
+  onExitStart,
   onComplete,
 }: {
   loaded: boolean;
   abbreviated: boolean;
+  onExitStart?: () => void;
   onComplete: () => void;
 }) {
   const reduce = usePrefersReducedMotion();
@@ -157,11 +163,13 @@ export function LoadingScreen({
   // `?boot=stall` pins it false so the screen rests on the kernel forever.
   const loadedRef = useRef(loaded);
   const onCompleteRef = useRef(onComplete);
+  const onExitStartRef = useRef(onExitStart);
   // Sync the live props/mode into the refs from an effect (the repo forbids ref
   // writes during render). The timer callbacks read `.current` when they fire.
   useEffect(() => {
     loadedRef.current = bootMode === 'stall' ? false : loaded;
     onCompleteRef.current = onComplete;
+    onExitStartRef.current = onExitStart;
   });
 
   // --- The timeline steps, shared by the timed and manual drivers. ---------
@@ -177,6 +185,10 @@ export function LoadingScreen({
   const startExit = useCallback(
     (timed: boolean) => {
       setPhase('exit');
+      // Reveal the primer NOW (loader still fading on top) so the loader
+      // cross-fades into an already-present modal rather than popping it in
+      // after the fade. Fired in both timed and manual modes (shared step).
+      onExitStartRef.current?.();
       if (timed) schedule(finishExit, timings.exit);
     },
     [finishExit, schedule, timings.exit],

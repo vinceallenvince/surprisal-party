@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useRef } from 'react';
-import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 
 /**
  * Metrics-explainer modal — a small reference for the header readout
@@ -38,7 +37,6 @@ const METRICS: readonly Metric[] = [
 ];
 
 export function MetricsModal({ onDismiss }: { onDismiss: () => void }) {
-  const reduce = usePrefersReducedMotion();
   const cardRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   // The element focused before the modal opened (the header ⓘ), restored on
@@ -88,15 +86,11 @@ export function MetricsModal({ onDismiss }: { onDismiss: () => void }) {
   // Scrim click dismisses; clicks on the card must not bubble up to it.
   const onScrimClick = useCallback(() => onDismiss(), [onDismiss]);
 
-  const transition = reduce
-    ? 'motion-reduce:transition-none'
-    : 'transition-opacity duration-200 ease-out';
-
   return (
     <div
       data-metrics-scrim=""
       onClick={onScrimClick}
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-8 ${transition}`}
+      className="modal-fade-in fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-8"
     >
       <div
         ref={cardRef}

@@ -407,12 +407,17 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
   }, []);
 
   // Move focus to the step's primary control whenever the step changes: the
-  // slider on step 3 (its Next is disabled and unfocusable until a move), the
   // "predict" button on step 4 (Done is disabled and unfocusable until a
-  // prediction), else the "Next" button. A DOM `.focus()` call in the effect's
-  // commit (allowed); not a setState-in-effect and no ref read/write in render.
+  // prediction), else the "Next" button. STEP 3 is the exception — it focuses
+  // the dialog card itself (tabIndex=-1), NOT the slider: auto-focusing the
+  // slider showed its focus-visible ring on arrival (a stray highlight before
+  // the user has done anything). Focusing the card keeps focus inside the modal
+  // (Esc + the Tab focus-trap still work) with nothing visibly highlighted; Tab
+  // from the card lands on the slider (the first focusable child) on demand.
+  // A DOM `.focus()` call in the effect's commit (allowed); not a
+  // setState-in-effect and no ref read/write in render.
   useEffect(() => {
-    if (step === 3) sliderRef.current?.focus();
+    if (step === 3) cardRef.current?.focus();
     else if (step === 4) predictRef.current?.focus();
     else advanceRef.current?.focus();
   }, [step]);
@@ -464,10 +469,6 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
   // forbids setState synchronously inside an effect).
   const handlePredict = useCallback(() => setHasPredicted(true), []);
 
-  const transition = reduce
-    ? 'motion-reduce:transition-none'
-    : 'transition-opacity duration-200 ease-out';
-
   const threshold = THRESHOLDS[stopIndex];
 
   // Only step 1 carries a visible heading (the vocabulary definition). Steps 2
@@ -478,7 +479,7 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
     <div
       data-primer-scrim=""
       onClick={onScrimClick}
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-8 ${transition}`}
+      className="modal-fade-in fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-8"
     >
       <div
         ref={cardRef}
@@ -486,8 +487,11 @@ export function PrimerModal({ onDismiss }: { onDismiss: () => void }) {
         aria-modal="true"
         aria-label="Surprisal primer"
         aria-labelledby={step === 1 ? HEADING_ID : undefined}
+        // tabIndex=-1 so step 3 can move focus here (not the slider) without it
+        // becoming a Tab stop; -1 also keeps it out of the focus-trap's query.
+        tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="flex w-full max-w-[840px] flex-col rounded-[10px] border border-seam-strong bg-ground p-[49px] shadow-[0_25px_25px_rgba(0,0,0,0.25)]"
+        className="flex w-full max-w-[840px] flex-col rounded-[10px] border border-seam-strong bg-ground p-[49px] shadow-[0_25px_25px_rgba(0,0,0,0.25)] outline-none"
       >
         {/* Content region — a fixed min-height so the footer doesn't bounce as
             step content changes. Steps 1 and 2 share the same two-line layout
