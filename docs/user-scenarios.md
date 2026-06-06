@@ -1,6 +1,44 @@
 # User Scenarios
 Gherkin-style user scenarios for Surprisal Party.
 
+## Loading
+
+### As a visitor, the loading screen compresses a welcome phrase to its kernel
+
+While the corpus cache loads, the app does not show a spinner — it performs its own mechanic. A welcome phrase, "we threw you a surprisal party", is centered on the dark ground with each word's surprisal value set as a small superscript, and the two highest-surprisal words — "surprisal" and "party" — already in the coral kernel highlight. The loading progress acts as a rising surprisal threshold: as it climbs, the predictable words fall away in ascending order of surprisal, hard-cut from the line so the survivors close up, until only the kernel "surprisal party" remains — the irreducible phrase the loader was always heading toward. Timing is floored so the mechanic always reads even on a fast connection: the full phrase holds briefly before the collapse begins, and the kernel holds briefly after the cache has loaded before the screen fades away. The collapse never throttles the actual fetch; if the cache is still loading when the words run out, the screen simply rests on the kernel until it arrives. The progress is never shown as a number or a bar — the collapsing phrase is the only indicator.
+
+```gherkin
+Given I am a first-time visitor and the corpus cache has not finished loading
+When the application starts to load
+Then the explorer is not yet shown
+And a welcome phrase "we threw you a surprisal party" is centered on the dark ground
+And each word carries its surprisal value as a small superscript: we² threw⁷ you³ a¹ surprisal²⁰ party¹⁸
+And the highest-surprisal words, "surprisal" and "party", are shown in the coral kernel highlight
+And no spinner, percentage, or progress bar is shown
+And the full phrase holds for a short minimum time before anything collapses
+When loading progresses
+Then the surprisal threshold rises and the words below it are hard-cut from the line in ascending order of surprisal — first "a", then "we", then "you", then "threw"
+And the surviving words close up and re-center after each removal
+And if the cache is still loading when only the kernel remains, the phrase rests on "surprisal party" until it finishes
+When the cache has finished loading
+Then the superscript values fade away, leaving a clean coral "surprisal party"
+And the kernel holds for a short minimum time
+And the loading screen then fades out and the onboarding primer is shown over the explorer
+```
+
+### As a returning visitor, the loading screen is brief
+
+A visitor who has already seen the primer does not need the full ceremony. The same phrase-to-kernel compression plays, but abbreviated — a shorter opening hold, quicker removals, and a shorter kernel hold — and on completion the screen fades straight into the explorer rather than the primer. The same localStorage record that suppresses the primer for a returning visitor selects this abbreviated loader. A reduced-motion preference replaces the staged collapse with a simple crossfade to the kernel.
+
+```gherkin
+Given I have previously seen and dismissed the primer
+When the application loads
+Then the same welcome phrase compresses to its "surprisal party" kernel, but with a shorter collapse and shorter holds
+And when loading finishes the screen fades directly into the explorer with the default corpus loaded
+And the onboarding primer is not shown
+And if I have requested reduced motion, the staged collapse is replaced by a simple crossfade to the coral "surprisal party" kernel
+```
+
 ## Onboarding
 
 ### As a first-time visitor, I am shown a one-time primer on surprisal

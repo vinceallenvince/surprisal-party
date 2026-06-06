@@ -7,7 +7,7 @@ import {
   afterEach,
   vi,
 } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import { ExplorerContainer } from './ExplorerContainer';
 import { PrimerModal } from './PrimerModal';
 import { PRIMER_SEEN_KEY } from '@/lib/primer';
@@ -311,7 +311,10 @@ function completePrimer() {
 describe('ExplorerContainer primer gating', () => {
   beforeEach(() => {
     window.localStorage.clear();
-    window.history.replaceState(null, '', '/');
+    // The loading ceremony now sits in front of everything; `?boot=skip`
+    // bypasses it so these primer-gating tests resolve the primer on mount
+    // (the loader's onComplete sequencing is covered separately below).
+    window.history.replaceState(null, '', '/?boot=skip');
     vi.unstubAllEnvs();
     stubFetchWithFixture();
   });
@@ -354,7 +357,7 @@ describe('ExplorerContainer primer gating', () => {
 
   it('dev-override (?intro) shows the primer without mutating the seen-flag', async () => {
     window.localStorage.setItem(PRIMER_SEEN_KEY, 'true');
-    window.history.replaceState(null, '', '/?intro');
+    window.history.replaceState(null, '', '/?boot=skip&intro');
     render(<ExplorerContainer />);
     await waitFor(() =>
       expect(screen.getByRole('dialog')).toBeInTheDocument(),
@@ -365,7 +368,7 @@ describe('ExplorerContainer primer gating', () => {
   });
 
   it('dev-override (?intro) on a first visit does not write the flag on dismiss', async () => {
-    window.history.replaceState(null, '', '/?intro');
+    window.history.replaceState(null, '', '/?boot=skip&intro');
     render(<ExplorerContainer />);
     await waitFor(() =>
       expect(screen.getByRole('dialog')).toBeInTheDocument(),
@@ -373,5 +376,94 @@ describe('ExplorerContainer primer gating', () => {
     completePrimer();
     // Forced path must not persist — the visitor is still "unseen".
     expect(window.localStorage.getItem(PRIMER_SEEN_KEY)).toBeNull();
+  });
+});
+
+/**
+ * The loading ceremony's integration with the container: the loader gates first
+ * paint, the primer opens on the loader's `onComplete` (not on mount), and a
+ * Shift+Cmd/Ctrl+L replay re-runs the ceremony. Uses `?boot=manual` to step the
+ * loader deterministically (no real timers), driving it via `window.__boot`.
+ */
+describe('ExplorerContainer — loading ceremony integration', () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+    window.history.replaceState(null, '', '/');
+    vi.unstubAllEnvs();
+    stubFetchWithFixture();
+  });
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.unstubAllEnvs();
+  });
+
+  /** Drive the manual-boot loader to its `onComplete` via the window hook. */
+  async function runLoaderToComplete() {
+    // The loader attaches `window.__boot` in its own post-mount rAF; wait for it.
+    await waitFor(() => expect(window.__boot).toBeTruthy());
+    // Step through every named state to reach `done` (which fires onComplete).
+    // Full timeline: 4 drops + rest + settle(fade) + settle(collapse) +
+    // kernelHold + exit + done = 10.
+    for (let i = 0; i < 10; i++) {
+      const hook = window.__boot;
+      if (!hook) break;
+      act(() => hook.next());
+    }
+  }
+
+  it('shows the loader first (not the primer), then opens the primer on its onComplete (first visit)', async () => {
+    window.history.replaceState(null, '', '/?boot=manual');
+    render(<ExplorerContainer />);
+
+    // The loader is mounted; the primer is NOT open yet (it opens on complete).
+    await waitFor(() =>
+      expect(document.querySelector('[data-loading-screen]')).toBeTruthy(),
+    );
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    // Drive the loader to completion → reveal + open the first-visit primer.
+    await runLoaderToComplete();
+    await waitFor(() =>
+      expect(screen.getByRole('dialog')).toBeInTheDocument(),
+    );
+    expect(
+      screen.getByRole('heading', { name: STEP1_HEADING }),
+    ).toBeInTheDocument();
+  });
+
+  it('returning visitor: the loader completes and reveals the explorer with NO primer', async () => {
+    window.localStorage.setItem(PRIMER_SEEN_KEY, 'true');
+    window.history.replaceState(null, '', '/?boot=manual');
+    render(<ExplorerContainer />);
+
+    await waitFor(() =>
+      expect(document.querySelector('[data-loading-screen]')).toBeTruthy(),
+    );
+    await runLoaderToComplete();
+    // Explorer revealed (header title), no primer dialog.
+    await waitFor(() =>
+      expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
+    );
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('Shift+Cmd+L replays the full ceremony (remounts the loader)', async () => {
+    window.localStorage.setItem(PRIMER_SEEN_KEY, 'true');
+    window.history.replaceState(null, '', '/?boot=skip'); // start without the loader
+    render(<ExplorerContainer />);
+
+    // No loader on a skip boot.
+    await waitFor(() =>
+      expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
+    );
+    expect(document.querySelector('[data-loading-screen]')).toBeNull();
+
+    // The replay shortcut re-runs the ceremony, available in production.
+    act(() => {
+      fireEvent.keyDown(document, { key: 'L', shiftKey: true, metaKey: true });
+    });
+    await waitFor(() =>
+      expect(document.querySelector('[data-loading-screen]')).toBeTruthy(),
+    );
   });
 });

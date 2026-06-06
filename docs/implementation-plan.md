@@ -162,3 +162,62 @@ With styling no longer deferred, this is **not** a "make it pretty" pass. It is 
 **Optional escalation if v1 feels too predetermined in use:** generate 3–5 reconstructions per gap and pick one per session or per seam-open. This is **Tier B** from the abstract — same architecture, one regeneration of the cache. **Tier C** (live generation) is deferred beyond v1 unless A and B both prove insufficient.
 
 **Exit criterion:** a stranger handed the URL figures out the mechanic without explanation, every scenario passes its conformance check, and the build holds up across the supported viewport range and edge cases.
+
+## Loading screen — boot experience
+
+The default corpus JSON is large (Hansel & Gretel is ~1.3 MB) and the corpus set will grow, so on a slow connection first paint can stall. Rather than a spinner, the boot wait **performs the app's own mechanic**: the phrase *"we threw you a surprisal party"* is shown with each word's surprisal as a superscript and compresses to its coral kernel `surprisal party` as the cache loads. This replaces the bare null-guard skeleton in `runtime/src/components/explorer/ExplorerContainer.tsx`. Behaviour authority is the `## Loading` section of `user-scenarios.md`; the visual guide is the Figma **Loading** page (`84:4`); Figma Make prompts that produced it live in `figma-make-prompts.md`.
+
+**Source of truth — design frames.** Figma Loading page `84:4`, file `PhmORZnicz8g3er2ZspqZl`:
+
+| State | Node | Phrase |
+|---|---|---|
+| Pre-load (full phrase) | `84:834` | `we² threw⁷ you³ a¹ surprisal²⁰ party¹⁸` |
+| Loading in process | `84:862` | `threw⁷ surprisal²⁰ party¹⁸` (after `a, we, you` drop) |
+| Loading complete | `84:878` | clean `surprisal party` (superscripts gone) |
+| Abbreviated (returning) | `84:886` | clean `surprisal party` |
+
+The frame's literal styles are already the runtime tokens: ground `#0d0d0d` (`bg-ground`), word `#e0e0e0` 32px (`text-prose`), superscript `#6a6a6a` 16px (`text-faint`), kernel `#ff6b6b` (`text-kernel`). The font becomes the app's `font-sans` (Geist), **not** the Figma-exported Inter.
+
+**Scope.** Initial app boot only. The loader gates **only the default corpus** fetch — the manifest's first entry (`DEFAULT_CORPUS_SLUG`); the others load on demand when picked in the drawer (per the Corpus Selection scenarios) and keep the existing lightweight per-switch skeleton. Gating the ceremony on *all* corpora would make it wait for every 1 MB+ file, defeating its purpose. If on-demand switches should feel instant later, warm the remaining corpora with a **non-blocking background prefetch after boot** (idle time; never blocks the loader) — an optional follow-on, not part of this path.
+
+**Architecture.** A new presentational/animation component `LoadingScreen` (in `src/components/explorer/`), orchestrated by `ExplorerContainer`, which owns the fetch and the boot decision.
+
+- **The collapse is decoupled from bytes.** `fetch().json()` exposes no progress, and gzip makes a byte-percentage unreliable (the `Content-Length` is the compressed size while the stream yields decompressed bytes). So the collapse is a fixed, timed sequence; the real fetch only gates the *exit*. `LoadingScreen` props: `{ loaded: boolean; abbreviated: boolean; onComplete: () => void }`, with `loaded` derived in the container as `cache !== null`.
+- **Internal state machine** (timer-driven, all timers tracked in a ref and cleared on unmount — StrictMode-safe, no setState-in-effect): `intro → hold → collapse(a→we→you→threw) → rest → settle → kernelHold → exit → onComplete()`.
+  - **Word drops are hard cuts:** surviving tokens are simply rendered (conditional), so flexbox re-centres instantly — no per-word fade or width transition.
+  - **`settle`** is the only animated step: the superscripts fade (~300 ms), then the two kernel words slide together to reclaim the superscript space, leaving a clean centred `surprisal party`.
+  - **`rest → settle` is the load gate:** on entering `rest` the timeline holds on the kernel until `loaded` is true (matching the scenario's "rests on the kernel until it finishes"), then proceeds.
+- **Phrase data** is authored, not pipeline output (mirroring `PrimerModal`'s illustrative constants): `we² threw⁷ you³ a¹ surprisal²⁰ party¹⁸`; kernel = `surprisal`, `party`; drop order ascending by surprisal (`a, we, you, threw`).
+
+**Timings (full / abbreviated):** hold 2000 / 500 ms · per-word drop interval 450 / 200 ms · settle 300 / 250 ms · kernelHold 2000 / 700 ms · exit fade 400 / 400 ms. Kept in one constants block for tuning.
+
+**Reduced motion.** Via the existing `usePrefersReducedMotion()` hook: skip the staged collapse and crossfade directly from full phrase to clean kernel; the holds still apply (shortened) so the message stays legible.
+
+**Boot integration (`ExplorerContainer`).** Add a `booted` flag. While `!booted`, render `LoadingScreen` as a fixed overlay over the (warming) explorer; reveal on its `onComplete`. `abbreviated = hasSeenPrimer()` (reuse `lib/primer`, read after mount — SSR-safe, the same deferral the primer gating already uses). The first-visit primer now opens **on `onComplete`** rather than on mount (returning visitors get no primer); the `?intro` / `NEXT_PUBLIC_FORCE_INTRO` override still forces it, after the loader. Corpus switching is unchanged and leaves `booted` true.
+
+**Replay shortcut (implementation concern, no design frame).** A document-level keydown for **Shift+Cmd+L** (Shift+Ctrl+L on Windows) resets `booted=false` to replay the full ceremony — **available in production**, not dev-gated. It must `preventDefault()` (Cmd+L focuses the browser address bar). On replay the cache is already loaded, so `loaded` is immediately true and the timeline runs straight through to the exit.
+
+**SSR / determinism.** The server render is the full phrase (`hold` state), identical on the client (no hydration mismatch); the abbreviated/reduced decisions change only timing, not the initial DOM. A `data-phase` attribute on the root exposes the phase, and a `data-dropped` attribute lists the words removed so far, for deterministic e2e capture.
+
+**Boot-control query params (test + dev affordance, no design frame — like the `?intro` primer override).** Because the loader sits in front of everything, it must be steerable deterministically:
+- `?boot=skip` — skip the loader entirely (mount the explorer immediately). **Every non-loading e2e spec (onboarding, corpus-selection, compression) must navigate with `?boot=skip`** so the ceremony does not block their assertions; this is the only change required to the existing suites.
+- `?boot=manual` — mount the loader but suspend the timers; the machine advances one named state per call to a `window.__boot.next()` hook (attached only in this mode). This lets the loading spec capture each keyframe with **no timing race** (the mid-collapse snapshot in particular is otherwise a ~450 ms window).
+- `?boot=stall` — run the full timeline but hold `loaded=false` forever, so the screen rests on the kernel (used to verify the rest-until-loaded behaviour).
+
+These are deterministic, persisted-flag-free overrides; they never mutate `localStorage` and are inert without the param.
+
+### Testing & Definition of Done
+
+The DoD is **both layers of the e2e suite passing** for the Loading epic, the same two-oracle split the rest of the app uses (`process.md` Step 7):
+
+- **Unit** (`LoadingScreen.test.tsx`, fake timers): full phrase + superscripts + coral kernel render; hard-cut drop order (`a → we → you → threw`); rests-on-kernel until `loaded` flips; abbreviated timeline is faster; reduced-motion path crossfades (no intermediate drops); `onComplete` fires after the exit fade. Plus an `ExplorerContainer` test for the replay shortcut and the primer-opens-on-`onComplete` sequencing.
+- **Layer 1 — Playwright** (`e2e/loading.spec.ts`): behaviour against the two `## Loading` Gherkin stories, capturing viewport screenshots into `e2e/__screens__/loading/` via the `?boot=manual` step hook at the states that map to Figma frames:
+  - `loading-full` → node `84-833` (full annotated phrase)
+  - `loading-collapse` → node `84-861` (mid-collapse: `threw⁷ surprisal²⁰ party¹⁸`)
+  - `loading-kernel-clean` → node `84-877` (clean coral `surprisal party`, superscripts gone)
+  - `loading-abbreviated` → node `84-885` (returning-visitor end state)
+
+  (The kernel-with-superscripts *rest* state has no design frame, so it is asserted behaviourally only — not captured for Layer 2.) The new spec runs in CI alongside the existing suites.
+- **Layer 2 — figma-alignment** (advisory skill, run locally with the Figma MCP): pairs each captured shot above with its frame and writes `e2e/loading-alignment.md`. **DoD requires every pair to read `Aligned` or `Minor differences` — no `Notable differences`** (any genuine drift either fixed in the runtime or, if the frame is stale, noted for frame correction).
+
+**Traceability.** A `Loading` epic is added to `figma-sources.yaml` (`page: "84-4"`, `epic_dir: "loading"`) mapping the two stories and the four ui nodes above, with real `shot` names (the screenshots exist once Layer 1 runs).

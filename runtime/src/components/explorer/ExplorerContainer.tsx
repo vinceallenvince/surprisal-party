@@ -6,8 +6,14 @@ import { PrimerModal } from './PrimerModal';
 import { CorpusDrawer } from './CorpusDrawer';
 import { AboutModal } from './AboutModal';
 import { MetricsModal } from './MetricsModal';
+import { LoadingScreen } from './LoadingScreen';
 import { renderPosition } from '@/lib/tale-render';
-import { markPrimerSeen, resolvePrimerOnLoad } from '@/lib/primer';
+import {
+  hasSeenPrimer,
+  markPrimerSeen,
+  resolvePrimerOnLoad,
+} from '@/lib/primer';
+import { resolveBootMode } from '@/lib/boot';
 import { DEFAULT_CORPUS_SLUG } from '@/lib/corpora';
 import {
   parseTaleCache,
@@ -90,6 +96,17 @@ export function ExplorerContainer() {
   // that state must NOT persist the seen-flag.
   const [primerForced, setPrimerForced] = useState(false);
 
+  // Boot gating. While `!booted` the LoadingScreen ceremony plays as a fixed
+  // overlay over the (warming) explorer; it reveals on its `onComplete`. Starts
+  // `true` to match the static prerender (no overlay on the server); the real
+  // boot decision lands after mount, where `?boot=skip` can bypass the loader.
+  const [booted, setBooted] = useState(true);
+  // `abbreviated` (the returning-visitor faster timeline) and the loader's
+  // first-visit-vs-returning behaviour are read after mount — SSR-safe, the same
+  // deferral the primer gating uses. `abbreviated` is only meaningful while the
+  // loader is shown.
+  const [abbreviated, setAbbreviated] = useState(false);
+
   const handlePositionChange = useCallback((index: number) => {
     setSelectedPositionIndex(index);
   }, []);
@@ -146,15 +163,55 @@ export function ExplorerContainer() {
     [slug],
   );
 
-  // First-visit gating, deferred past mount via rAF so the setState happens in
-  // the frame callback rather than synchronously in the effect body.
+  // Open the primer per the first-visit decision (forced override OR not-seen).
+  // Shared by the loader's `onComplete` and the `?boot=skip` on-mount path.
+  const resolvePrimer = useCallback(() => {
+    const { show, forced } = resolvePrimerOnLoad();
+    setPrimerForced(forced);
+    setPrimerOpen(show);
+  }, []);
+
+  // The loader's exit: reveal the explorer, then run the first-visit primer
+  // decision (first visit → open primer; returning → reveal only). Moving the
+  // primer trigger here (off mount) is what makes returning visitors get no
+  // primer while first-time visitors still meet it after the ceremony.
+  const handleBootComplete = useCallback(() => {
+    setBooted(true);
+    resolvePrimer();
+  }, [resolvePrimer]);
+
+  // Boot decision, deferred past mount via rAF so the setState happens in the
+  // frame callback rather than synchronously in the effect body (the repo's
+  // "no setState in an effect" rule). `?boot=skip` bypasses the loader entirely
+  // and goes straight to the existing on-mount primer resolution; every other
+  // mode shows the loader, which runs the primer decision on its `onComplete`.
   useEffect(() => {
     const raf = requestAnimationFrame(() => {
-      const { show, forced } = resolvePrimerOnLoad();
-      setPrimerForced(forced);
-      setPrimerOpen(show);
+      if (resolveBootMode() === 'skip') {
+        resolvePrimer();
+        return;
+      }
+      setAbbreviated(hasSeenPrimer());
+      setBooted(false);
     });
     return () => cancelAnimationFrame(raf);
+  }, [resolvePrimer]);
+
+  // Replay shortcut: Shift+Cmd+L (mac) / Shift+Ctrl+L (win) replays the full
+  // ceremony by resetting `booted` to false. Available in production (NOT
+  // dev-gated). `preventDefault` is required — Cmd+L focuses the address bar.
+  // The cache is already loaded on replay, so the loader's `loaded` prop is
+  // immediately true and the timeline runs straight through to the exit.
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.shiftKey && (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'l') {
+        e.preventDefault();
+        setAbbreviated(hasSeenPrimer());
+        setBooted(false);
+      }
+    }
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, []);
 
   const handleDismissPrimer = useCallback(() => {
@@ -197,15 +254,33 @@ export function ExplorerContainer() {
     };
   }, [slug]);
 
-  // Minimal null-guard skeleton until the cache resolves.
+  // The boot loader sits in front of everything while `!booted`, gating ONLY
+  // the default corpus's first paint. It overlays the (warming) explorer and
+  // reveals on its `onComplete` (`loaded = cache !== null` gates its exit). The
+  // replay shortcut re-enters this with the cache already loaded. Rendered as a
+  // fixed overlay so it covers whatever is (or isn't yet) underneath.
+  const loader = !booted ? (
+    <LoadingScreen
+      loaded={cache !== null}
+      abbreviated={abbreviated}
+      onComplete={handleBootComplete}
+    />
+  ) : null;
+
+  // Null-guard until the cache resolves. The "Loading corpus…" skeleton still
+  // covers corpus SWITCHING (where `booted` stays true and `cache` is cleared);
+  // during boot the LoadingScreen overlay sits on top of it, so it's never seen.
   if (!cache) {
     return (
-      <div
-        className="flex h-screen min-w-[1024px] items-center justify-center bg-ground text-faint"
-        aria-busy="true"
-      >
-        <span className="text-sm">Loading corpus…</span>
-      </div>
+      <>
+        <div
+          className="flex h-screen min-w-[1024px] items-center justify-center bg-ground text-faint"
+          aria-busy="true"
+        >
+          <span className="text-sm">Loading corpus…</span>
+        </div>
+        {loader}
+      </>
     );
   }
 
@@ -245,6 +320,7 @@ export function ExplorerContainer() {
         drawerOpen={drawerOpen}
         onToggleDrawer={handleToggleDrawer}
       />
+      {loader}
       {drawerOpen ? (
         <CorpusDrawer
           currentSlug={slug}

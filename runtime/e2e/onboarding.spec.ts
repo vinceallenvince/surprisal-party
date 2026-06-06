@@ -10,6 +10,10 @@ import { test, expect, type Page } from '@playwright/test';
  * `e2e/__screens__/onboarding/<label>.png` at each state that maps to a Figma
  * UI frame. The filenames (labels) are fixed so the separate "visual alignment"
  * layer can pair each shot with its design frame. No Figma work happens here.
+ *
+ * Every navigation uses `?boot=skip` so the loading ceremony (which now sits in
+ * front of the whole app) does not block these assertions — the loader has its
+ * own spec (`loading.spec.ts`).
  */
 
 const PRIMER_SEEN_KEY = 'surprisalParty.primerSeen';
@@ -34,7 +38,7 @@ async function waitForExplorer(page: Page) {
 test.describe('Onboarding — Story 1: first-time visitor sees the 4-step primer', () => {
   test('walks the full primer and persists the seen-flag', async ({ page }) => {
     // First visit = empty storage; nothing to seed.
-    await page.goto('/');
+    await page.goto('/?boot=skip');
 
     const dialog = page.getByRole('dialog');
     await expect(dialog).toBeVisible();
@@ -136,7 +140,7 @@ test.describe('Onboarding — Story 2: returning visitor skips the primer', () =
       window.localStorage.setItem(key, 'true');
     }, PRIMER_SEEN_KEY);
 
-    await page.goto('/');
+    await page.goto('/?boot=skip');
 
     // No primer; the explorer is shown.
     await waitForExplorer(page);
@@ -166,7 +170,7 @@ test.describe('Onboarding — Story 3: metrics explainer', () => {
       window.localStorage.setItem(key, 'true');
     }, PRIMER_SEEN_KEY);
 
-    await page.goto('/');
+    await page.goto('/?boot=skip');
     await waitForExplorer(page);
     await expect(page.getByRole('dialog')).toHaveCount(0);
 
