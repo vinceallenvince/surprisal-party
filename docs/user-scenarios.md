@@ -160,7 +160,7 @@ And the middle column does not reflow
 And I see a vertical list of corpora, each with a title and a small meta line
 And the currently-loaded corpus is marked
 And a quiet "About" link sits at the bottom of the drawer, below a divider and separated from the corpus list
-When I click the scrim or press Esc
+When I click the scrim, press Esc, or tap the currently-loaded corpus
 Then the drawer collapses and the explorer is unobscured
 ```
 

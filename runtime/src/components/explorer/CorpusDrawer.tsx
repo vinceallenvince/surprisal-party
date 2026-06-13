@@ -18,8 +18,9 @@ import { CORPORA, type Corpus } from '@/lib/corpora';
  *   - Headed "CORPORA"; a quiet vertical list of corpora, each a title + one
  *     small meta line (word count). The currently-loaded corpus is marked with
  *     a coral title and an accent dot. No thumbnails.
- *   - Dismiss: click a corpus, click the scrim, or press Esc. (The rail icon
- *     toggling closed is handled by the parent, which stops rendering this.)
+ *   - Dismiss: click any corpus (including the current one), click the scrim,
+ *     or press Esc. (The rail icon toggling closed is handled by the parent,
+ *     which stops rendering this.)
  *
  * a11y mirrors PrimerModal: `role="dialog"` + `aria-modal`, labelled by the
  * "CORPORA" heading, focus moved into the panel on open and restored to the
@@ -27,9 +28,9 @@ import { CORPORA, type Corpus } from '@/lib/corpora';
  * the panel. The slide respects `prefers-reduced-motion` (instant).
  *
  * Selecting a corpus calls `onSelect(slug)`; the parent re-fetches and resets
- * the view (slider → UNCOMPRESSED). The currently-loaded corpus is shown as a
- * marked, NON-interactive row (it's already loaded — nothing to switch to), so
- * only other corpora are clickable.
+ * the view (slider → UNCOMPRESSED). The currently-loaded corpus is marked with
+ * a coral title and accent dot but is still clickable — tapping it closes the
+ * drawer (the parent handles the same-slug case).
  *
  * Below the corpus list, separated by a thin divider, a single quiet "About"
  * link sits at the bottom in a lighter weight than the corpus titles (clearly
@@ -226,23 +227,10 @@ function CorpusListItem({ corpus, current, onSelect }: CorpusListItemProps) {
     </>
   );
 
-  // The current corpus is shown but NOT clickable — it's already loaded, so
-  // there is nothing to switch to. Rendering it as a marked, non-interactive
-  // row (rather than a button) avoids inviting a no-op reselect.
-  if (current) {
-    return (
-      <div
-        aria-current="true"
-        className="flex w-full flex-col items-start gap-0.5 rounded-[8px] px-3 py-2.5 text-left"
-      >
-        {body}
-      </div>
-    );
-  }
-
   return (
     <button
       type="button"
+      aria-current={current ? 'true' : undefined}
       onClick={() => onSelect(corpus.slug)}
       className="flex w-full flex-col items-start gap-0.5 rounded-[8px] px-3 py-2.5 text-left hover:bg-ground-strip"
     >

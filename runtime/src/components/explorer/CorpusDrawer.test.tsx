@@ -84,12 +84,11 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
     expect(
       within(dialog).getByRole('heading', { name: /corpora/i }),
     ).toBeInTheDocument();
-    // The current corpus (LRRH) is shown but NOT a button; other corpora are
-    // selectable buttons.
-    expect(within(dialog).getByText('Little Red Riding Hood')).toBeInTheDocument();
+    // All corpora are clickable buttons (including the current one, which
+    // closes the drawer when tapped).
     expect(
-      within(dialog).queryByRole('button', { name: /little red riding hood/i }),
-    ).toBeNull();
+      within(dialog).getByRole('button', { name: /little red riding hood/i }),
+    ).toBeInTheDocument();
     expect(
       within(dialog).getByRole('button', { name: /second corpus/i }),
     ).toBeInTheDocument();
@@ -108,8 +107,8 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
     expect(screen.getByText(/999 words/i)).toBeInTheDocument();
   });
 
-  it('marks the currently-loaded corpus (non-interactive) via aria-current', () => {
-    const { container } = render(
+  it('marks the currently-loaded corpus via aria-current', () => {
+    render(
       <CorpusDrawer
         currentSlug="second-corpus"
         onSelect={vi.fn()}
@@ -117,19 +116,14 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
         onAbout={vi.fn()}
       />,
     );
-    const current = container.querySelector('[aria-current="true"]');
-    expect(current).not.toBeNull();
-    expect(current).toHaveTextContent('Second Corpus');
-    // The current corpus is not a button (can't be reselected); the other is.
-    expect(screen.queryByRole('button', { name: /second corpus/i })).toBeNull();
+    const current = screen.getByRole('button', { name: /second corpus/i });
+    expect(current).toHaveAttribute('aria-current', 'true');
     expect(
       screen.getByRole('button', { name: /little red riding hood/i }),
-    ).toBeInTheDocument();
+    ).not.toHaveAttribute('aria-current');
   });
 
-  it('moves focus to the first selectable corpus on open', () => {
-    // currentSlug = LRRH is non-interactive, so the first focusable corpus is
-    // "Second Corpus".
+  it('moves focus to the first corpus button on open', () => {
     render(
       <CorpusDrawer
         currentSlug="little-red-riding-hood"
@@ -139,7 +133,7 @@ describe('CorpusDrawer (standalone: list, marking, a11y, dismissal)', () => {
       />,
     );
     expect(
-      screen.getByRole('button', { name: /second corpus/i }),
+      screen.getByRole('button', { name: /little red riding hood/i }),
     ).toHaveFocus();
   });
 
@@ -409,22 +403,16 @@ describe('ExplorerContainer corpus switching', () => {
     ).toHaveFocus();
   });
 
-  it('shows the loaded corpus as non-interactive, so it cannot be reselected', async () => {
-    // Regression for the same-slug strand: the loaded (current) corpus must not
-    // be a clickable button, so a user can never trigger a no-op reload that
-    // nulls the cache without re-fetching.
+  it('clicking the current corpus closes the drawer without reloading', async () => {
     render(<ExplorerContainer />);
     await waitFor(() =>
       expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
     );
     fireEvent.click(screen.getAllByRole('button', { name: /open corpus picker/i })[0]);
     const dialog = screen.getByRole('dialog', { name: /corpora/i });
-    expect(
-      within(dialog).queryByRole('button', { name: /little red riding hood/i }),
-    ).toBeNull();
-    // Selecting a different corpus still works (it is a button).
-    expect(
-      within(dialog).getByRole('button', { name: /second corpus/i }),
-    ).toBeInTheDocument();
+    const currentBtn = within(dialog).getByRole('button', { name: /little red riding hood/i });
+    expect(currentBtn).toHaveAttribute('aria-current', 'true');
+    fireEvent.click(currentBtn);
+    expect(screen.queryByRole('dialog', { name: /corpora/i })).toBeNull();
   });
 });
