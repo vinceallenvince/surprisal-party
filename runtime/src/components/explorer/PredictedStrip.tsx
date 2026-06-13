@@ -41,7 +41,7 @@ export function PredictedStrip({
   const count = tiles.length;
   const activeSet = activeGapIds ? new Set(activeGapIds) : null;
   return (
-    <aside className="flex h-full w-64 shrink-0 flex-col overflow-hidden border-l border-seam bg-ground-strip pt-12 pr-6 pl-[25px]">
+    <aside className="hidden h-full w-64 shrink-0 flex-col overflow-hidden border-l border-seam bg-ground-strip pt-12 pr-6 pl-[25px] md:flex">
       <p className="shrink-0 text-[10px] tracking-[0.1em] whitespace-nowrap text-faint uppercase">
         Removed ({count} {count === 1 ? 'word' : 'words'})
       </p>

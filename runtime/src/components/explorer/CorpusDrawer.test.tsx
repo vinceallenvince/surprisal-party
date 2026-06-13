@@ -275,7 +275,7 @@ describe('ExplorerContainer corpus switching', () => {
     await waitFor(() =>
       expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
     );
-    const rail = screen.getByRole('button', { name: /open corpus picker/i });
+    const rail = screen.getAllByRole('button', { name: /open corpus picker/i })[0];
     expect(rail).toHaveAttribute('aria-expanded', 'false');
     fireEvent.click(rail);
     expect(
@@ -289,7 +289,7 @@ describe('ExplorerContainer corpus switching', () => {
     await waitFor(() =>
       expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
     );
-    const rail = screen.getByRole('button', { name: /open corpus picker/i });
+    const rail = screen.getAllByRole('button', { name: /open corpus picker/i })[0];
     fireEvent.click(rail);
     expect(screen.getByRole('dialog', { name: /corpora/i })).toBeInTheDocument();
     fireEvent.click(rail);
@@ -306,7 +306,7 @@ describe('ExplorerContainer corpus switching', () => {
     const fetchMock = fetch as unknown as ReturnType<typeof vi.fn>;
     fetchMock.mockClear();
 
-    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    fireEvent.click(screen.getAllByRole('button', { name: /open corpus picker/i })[0]);
     fireEvent.click(screen.getByRole('button', { name: /second corpus/i }));
 
     // Drawer closed.
@@ -333,7 +333,7 @@ describe('ExplorerContainer corpus switching', () => {
     await waitFor(() =>
       expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
     );
-    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    fireEvent.click(screen.getAllByRole('button', { name: /open corpus picker/i })[0]);
     expect(
       screen.getByRole('dialog', { name: /corpora/i }),
     ).toBeInTheDocument();
@@ -360,7 +360,7 @@ describe('ExplorerContainer corpus switching', () => {
     await waitFor(() =>
       expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
     );
-    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    fireEvent.click(screen.getAllByRole('button', { name: /open corpus picker/i })[0]);
     fireEvent.click(screen.getByRole('button', { name: /^about$/i }));
     expect(
       screen.getByRole('dialog', { name: /surprisal party/i }),
@@ -393,7 +393,7 @@ describe('ExplorerContainer corpus switching', () => {
     await waitFor(() =>
       expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
     );
-    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    fireEvent.click(screen.getAllByRole('button', { name: /open corpus picker/i })[0]);
     const aboutLink = screen.getByRole('button', { name: /^about$/i });
     aboutLink.focus();
     fireEvent.click(aboutLink);
@@ -417,7 +417,7 @@ describe('ExplorerContainer corpus switching', () => {
     await waitFor(() =>
       expect(screen.getByText('Little Red Riding Hood')).toBeInTheDocument(),
     );
-    fireEvent.click(screen.getByRole('button', { name: /open corpus picker/i }));
+    fireEvent.click(screen.getAllByRole('button', { name: /open corpus picker/i })[0]);
     const dialog = screen.getByRole('dialog', { name: /corpora/i });
     expect(
       within(dialog).queryByRole('button', { name: /little red riding hood/i }),

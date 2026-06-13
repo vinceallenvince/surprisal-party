@@ -282,7 +282,7 @@ export function ExplorerContainer() {
     return (
       <>
         <div
-          className="flex h-screen min-w-[1024px] items-center justify-center bg-ground text-faint"
+          className="flex h-screen items-center justify-center bg-ground text-faint md:min-w-[1024px]"
           aria-busy="true"
         >
           <span className="text-sm">Loading corpus…</span>

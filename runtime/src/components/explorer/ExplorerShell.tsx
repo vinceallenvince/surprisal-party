@@ -101,7 +101,7 @@ export function ExplorerShell({
   );
 
   return (
-    <div className="flex h-screen min-w-[1024px] flex-col overflow-hidden bg-ground">
+    <div className="flex h-screen flex-col overflow-hidden bg-ground md:min-w-[1024px]">
       <ExplorerHeader
         corpusTitle={corpusTitle}
         storedPct={rendered.readout.storedPct}
@@ -109,6 +109,8 @@ export function ExplorerShell({
         avgFidelity={rendered.readout.avgFidelity}
         onShowPrimer={onShowPrimer}
         onShowMetrics={onShowMetrics}
+        drawerOpen={drawerOpen}
+        onToggleDrawer={onToggleDrawer}
       />
       <div className="flex min-h-0 grow">
         <CorpusRail expanded={drawerOpen} onToggle={onToggleDrawer} />

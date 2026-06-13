@@ -17,7 +17,7 @@ export function CorpusRail({
   onToggle: () => void;
 }) {
   return (
-    <div className="flex h-full w-16 shrink-0 justify-center border-r border-seam pt-12">
+    <div className="hidden h-full w-16 shrink-0 justify-center border-r border-seam pt-12 md:flex">
       <button
         type="button"
         aria-label="Open corpus picker"

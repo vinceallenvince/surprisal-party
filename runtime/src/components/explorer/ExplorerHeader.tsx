@@ -1,4 +1,4 @@
-import { Info } from 'lucide-react';
+import { Info, LayoutGrid } from 'lucide-react';
 
 /**
  * Explorer header — maps to frame 28-163 node 28:165 (Container).
@@ -48,6 +48,10 @@ type ExplorerHeaderProps = {
   onShowPrimer: () => void;
   /** Opens the metrics-explainer modal when the metrics ⓘ button is clicked. */
   onShowMetrics: () => void;
+  /** Whether the corpus-picker drawer is open (mobile header shows the picker icon). */
+  drawerOpen?: boolean;
+  /** Toggles the corpus-picker drawer (mobile header picker icon). */
+  onToggleDrawer?: () => void;
 };
 
 export function ExplorerHeader({
@@ -57,11 +61,25 @@ export function ExplorerHeader({
   avgFidelity,
   onShowPrimer,
   onShowMetrics,
+  drawerOpen,
+  onToggleDrawer,
 }: ExplorerHeaderProps) {
   return (
     <header className="w-full border-b border-seam">
-      <div className="flex items-center justify-between px-8 pt-4 pb-[17px]">
+      <div className="flex items-center justify-between px-4 pt-4 pb-[17px] md:px-8">
         <div className="flex items-center gap-4">
+          {onToggleDrawer ? (
+            <button
+              type="button"
+              aria-label="Open corpus picker"
+              aria-haspopup="dialog"
+              aria-expanded={drawerOpen}
+              onClick={onToggleDrawer}
+              className="flex size-9 items-center justify-center p-2 text-faint hover:text-muted md:hidden"
+            >
+              <LayoutGrid className="size-5" aria-hidden="true" />
+            </button>
+          ) : null}
           <h1 className="text-sm tracking-tight whitespace-nowrap text-muted">
             {corpusTitle}
           </h1>
@@ -74,9 +92,8 @@ export function ExplorerHeader({
             <Info className="size-4" aria-hidden="true" />
           </button>
         </div>
-        {/* Icon → first metric uses gap-4 to match the title → its-ⓘ gap above;
-            the metrics themselves keep their own gap-6 rhythm in an inner group. */}
-        <div className="flex items-center gap-4">
+        {/* Desktop only: metrics ⓘ + readout. Hidden on mobile (no metrics row). */}
+        <div className="hidden items-center gap-4 md:flex">
           <button
             type="button"
             aria-label="What the metrics mean"

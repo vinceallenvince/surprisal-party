@@ -417,7 +417,7 @@ export function LoadingScreen({
           vertical-align, dropping it to the baseline. */}
       <p
         aria-hidden="true"
-        className="max-w-[90vw] text-center text-[32px] leading-[1.4] text-prose"
+        className="max-w-[90vw] text-center text-[20px] leading-[1.4] text-prose md:text-[32px]"
       >
         {PHRASE.map((token, i) => {
           if (droppedSet.has(token.text)) return null; // hard cut
@@ -444,7 +444,7 @@ export function LoadingScreen({
                   a purely visual element. */}
               <sup
                 data-sup=""
-                className="ml-[1px] align-super text-[16px] leading-none font-normal text-faint"
+                className="ml-[1px] align-super text-[11px] leading-none font-normal text-faint md:text-[16px]"
               >
                 <span
                   className={`inline-block overflow-hidden align-baseline leading-none ${supTransition} ${
