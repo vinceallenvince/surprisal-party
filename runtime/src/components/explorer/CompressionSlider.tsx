@@ -29,11 +29,11 @@ import { pointerToStopIndex, positionToThumbPct } from '@/lib/tale-render';
  */
 
 const STOPS = [
-  { label: 'UNCOMPRESSED', align: 'start' as const },
-  { label: '25%', align: 'center' as const },
-  { label: '50%', align: 'center' as const },
-  { label: '75%', align: 'center' as const },
-  { label: 'MAX COMPRESSED', align: 'end' as const },
+  { label: 'UNCOMPRESSED', mobileLabel: 'UNCOMPRESSED', align: 'start' as const },
+  { label: '25%', mobileLabel: null, align: 'center' as const },
+  { label: '50%', mobileLabel: null, align: 'center' as const },
+  { label: '75%', mobileLabel: null, align: 'center' as const },
+  { label: 'MAX COMPRESSED', mobileLabel: 'MAX', align: 'end' as const },
 ];
 
 const STOP_COUNT = STOPS.length;
@@ -106,9 +106,9 @@ export function CompressionSlider({
 
   return (
     <div className="w-full border-t border-seam">
-      <div className="flex items-start pt-[49px] pb-12">
-        <div className="h-12 w-16 shrink-0" />
-        <div className="min-w-0 grow px-4">
+      <div className="flex items-start pt-6 pb-8 md:pt-[49px] md:pb-12">
+        <div className="hidden h-12 w-16 shrink-0 md:block" />
+        <div className="min-w-0 grow px-8 md:px-4">
           {/* Track — the pointer interaction surface. Padded hit-area via the
               wrapper below so thin track is easy to grab. */}
           <div
@@ -145,19 +145,26 @@ export function CompressionSlider({
             {STOPS.map((stop, i) => (
               <p
                 key={stop.label}
-                className={`absolute top-0 text-xs whitespace-nowrap text-faint ${labelPositionClass(stop.align)}`}
+                className={`absolute top-0 text-xs whitespace-nowrap text-faint ${labelPositionClass(stop.align)} ${stop.mobileLabel === null ? 'hidden md:block' : ''}`}
                 style={
                   stop.align === 'center'
                     ? { left: `${i * 25}%`, transform: 'translateX(-50%)' }
                     : undefined
                 }
               >
-                {stop.label}
+                {stop.mobileLabel !== null ? (
+                  <>
+                    <span className="md:hidden">{stop.mobileLabel}</span>
+                    <span className="hidden md:inline">{stop.label}</span>
+                  </>
+                ) : (
+                  stop.label
+                )}
               </p>
             ))}
           </div>
         </div>
-        <div className="h-12 w-64 shrink-0" />
+        <div className="hidden h-12 w-64 shrink-0 md:block" />
       </div>
     </div>
   );

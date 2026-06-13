@@ -13,7 +13,7 @@ import { AboutModal } from './AboutModal';
  */
 
 const HEADING = /surprisal party/i;
-const WRITEUP_URL = 'https://vinceallen.com';
+const WRITEUP_URL = 'https://www.vinceallen.com/#/surprisal-party/';
 
 beforeAll(() => {
   if (!window.matchMedia) {

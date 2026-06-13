@@ -14,6 +14,14 @@
 # (.claude/skills/figma-alignment) compares. `shot: null` means no app screenshot
 # (e.g. a design-ahead frame with no runtime equivalent yet). Node ids change
 # when frames are rebuilt — re-run the sync to regenerate.
+#
+# Mobile: a story whose mobile (@mobile) behaviour diverges from desktop carries a
+# parallel `ui_mobile:` list of the same { node, shot } shape, captured at the
+# mobile viewport. Mobile screenshots live under a `mobile/` subdir —
+# runtime/e2e/__screens__/<epic_dir>/mobile/<shot>.png — so a mobile entry may
+# reuse a desktop shot stem. Desktop-only stories simply omit `ui_mobile`. Mobile
+# Figma frames are authored after the desktop ones, so `node: null` marks a mobile
+# entry whose frame does not exist yet (its `shot` stem is still reserved).
 
 file_key: PhmORZnicz8g3er2ZspqZl
 project_name: Surprisal Party
@@ -30,6 +38,10 @@ epics:
           - { node: "84-833", shot: "loading-full" }            # full annotated phrase (pre-load)
           - { node: "84-861", shot: "loading-collapse" }        # mid-collapse: threw surprisal party
           - { node: "84-877", shot: "loading-kernel-clean" }    # clean coral "surprisal party"
+        ui_mobile:
+          - { node: "101-32", shot: "loading-full" }            # wrapped full phrase at mobile width
+          - { node: "101-2", shot: "loading-collapse" }         # mid-collapse: threw surprisal party
+          - { node: "101-18", shot: "loading-kernel-clean" }    # clean coral "surprisal party"
 
       - story: "As a returning visitor, the loading screen is brief"
         scenario: "84-581"
@@ -49,6 +61,15 @@ epics:
           - { node: "65-4744", shot: "onboarding-max-compression" }      # max compression
           - { node: "65-4844", shot: "onboarding-predict-button" }       # predict button
           - { node: "65-4928", shot: "onboarding-prediction-results" }   # prediction results
+        ui_mobile:
+          # The primer is unchanged on mobile but reflows to the narrow width, so it
+          # has its own mobile frames — one per step, same shot stems as desktop.
+          - { node: "101-64", shot: "surprisal-definition" }             # surprisal definition
+          - { node: "101-114", shot: "surprisal-values" }                # surprisal values
+          - { node: "101-166", shot: "onboarding-slider-uncompressed" }  # slider uncompressed
+          - { node: "101-268", shot: "onboarding-max-compression" }      # max compression
+          - { node: "101-340", shot: "onboarding-predict-button" }       # predict button
+          - { node: "101-396", shot: "onboarding-prediction-results" }   # prediction results
 
       - story: "As a returning visitor, I am not shown the primer again"
         scenario: "65-5031"
@@ -69,16 +90,22 @@ epics:
         scenario: "65-5749"
         ui:
           - { node: "65-6492", shot: "open-corpora-menu" }               # open corpora menu
+        ui_mobile:
+          - { node: "105-2", shot: "open-corpora-menu" }                 # full-width CORPORA sheet
 
       - story: "As a user, selecting a corpus loads it fresh"
         scenario: "65-6329"
         ui:
           - { node: "65-6577", shot: "load-new-corpora" }                # load new corpora (Hansel & Gretel)
+        ui_mobile:
+          - { node: "105-60", shot: "load-new-corpora" }                 # mobile: single column, no metrics reset
 
       - story: "As a user, I can read more about the project from the drawer"
         scenario: "65-6411"
         ui:
           - { node: "65-6641", shot: "about-modal" }                     # about modal
+        ui_mobile:
+          - { node: "105-97", shot: "about-modal" }                      # near-full-width modal
 
   - epic: "Compression <> Prediction"
     page: "65-6742"
@@ -89,12 +116,18 @@ epics:
         ui:
           - { node: "65-7001", shot: "compress-light" }                  # slider at light compression
           - { node: "65-7279", shot: "compress-heavy" }                  # slider increases compression
+        ui_mobile:
+          - { node: "113-6", shot: "compress-light" }                    # mobile: collapse in place, no right strip
+          - { node: "113-63", shot: "compress-heavy" }                   # mobile: deeper compression, single column
 
       - story: "As a user, I can decompress the corpus by dragging the slider leftward"
         scenario: "65-6832"
         ui:
           - { node: "65-7140", shot: "decompress-before" }               # slider at light compression
           - { node: "65-7436", shot: "decompress-after" }                # slider decreases compression
+        ui_mobile:
+          - { node: "113-113", shot: "decompress-before" }               # mobile: single column, no right strip
+          - { node: "113-169", shot: "decompress-after" }                # mobile: seams reopen to source text
 
       - story: "As a user, I can walk through the seams with the arrow keys"
         scenario: "65-6899"
@@ -123,3 +156,5 @@ epics:
         scenario: "65-9136"
         ui:
           - { node: "65-8649", shot: "kernel" }                          # max compression kernel
+        ui_mobile:
+          - { node: "113-206", shot: "kernel" }                          # mobile: kernel-only, seams show no text

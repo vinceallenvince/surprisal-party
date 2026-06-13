@@ -34,7 +34,7 @@ import { useCallback, useEffect, useRef } from 'react';
 const HEADING_ID = 'about-heading';
 
 // The author's site — where the longer write-up lives.
-const WRITEUP_URL = 'https://vinceallen.com';
+const WRITEUP_URL = 'https://www.vinceallen.com/#/surprisal-party/';
 // Bare domain shown as the link text so the destination is visible (the only
 // <a> in the app). Keep in sync with WRITEUP_URL's host.
 const WRITEUP_LABEL = 'vinceallen.com';
@@ -116,8 +116,7 @@ export function AboutModal({ onDismiss }: { onDismiss: () => void }) {
         <p className="pt-6 text-[18px] leading-[29.25px] tracking-[-0.44px] text-muted">
           Predictable words carry little information, surprising words carry a lot.
           The text algorithm demonstrated here preserves words at varying levels of compression
-          based on their surprisal value. Drag the slider to max compression
-          and what stays is the irreducible kernel the model could not have known. Hidden
+          based on their surprisal value. Hidden
           in between the compression seams are predictions of neighboring words. The higher
           the compression, the more lossy the predictions become.
         </p>

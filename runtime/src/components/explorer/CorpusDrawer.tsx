@@ -165,7 +165,7 @@ export function CorpusDrawer({
         aria-labelledby={HEADING_ID}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className={`fixed inset-y-0 left-0 flex w-[320px] flex-col border-r border-seam-strong bg-ground shadow-[0_0_40px_rgba(0,0,0,0.4)] outline-none ${panelTransition}`}
+        className={`fixed inset-y-0 left-0 flex w-full flex-col border-r border-seam-strong bg-ground shadow-[0_0_40px_rgba(0,0,0,0.4)] outline-none md:w-[320px] ${panelTransition}`}
       >
         <h2
           id={HEADING_ID}

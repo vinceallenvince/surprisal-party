@@ -23,11 +23,20 @@ runs locally/on demand.
 
 ## Where things live (read from `docs/figma-sources.yaml`)
 - **Mapping:** `docs/figma-sources.yaml` — `epics[].stories[].ui[] = { node, shot }`
-  plus `file_key` and each epic's `epic_dir`.
-- **App screenshots:** `runtime/e2e/__screens__/<epic_dir>/<shot>.png` (gitignored;
+  (desktop) plus an optional parallel `ui_mobile[]` for stories whose `@mobile`
+  behaviour diverges, plus `file_key` and each epic's `epic_dir`.
+- **App screenshots:** desktop at `runtime/e2e/__screens__/<epic_dir>/<shot>.png`,
+  mobile at `runtime/e2e/__screens__/<epic_dir>/mobile/<shot>.png` (both gitignored;
   produced by Layer 1).
 - **Report output:** `runtime/e2e/<epic_dir>-alignment.md` (gitignored).
 - **Figma frames:** fetched via the Figma MCP by `file_key` + `node`.
+
+Each pair from `list_pairs.py` carries a `viewport` field (`"desktop"` or
+`"mobile"`) and its `screenshot` path already points at the right directory, so
+treat desktop and mobile pairs the same way — only the source frame and the
+screenshot location differ. Mobile Figma frames may not exist yet (`node: null`),
+in which case list them under "Drift to reconcile" like any other `shot: null`
+pair.
 
 ## Workflow
 
@@ -36,7 +45,7 @@ runs locally/on demand.
    python3 .claude/skills/figma-alignment/scripts/list_pairs.py <epic|all>
    ```
    Prints JSON per epic: `file_key`, `report_path`, and `pairs[]` of
-   `{ story, node, shot, screenshot, screenshot_exists }`.
+   `{ story, viewport, node, shot, screenshot, screenshot_exists }`.
 
 2. **Ensure screenshots exist.** If any `screenshot_exists` is `false` (and `shot`
    is not null), capture them first, then re-run the helper:

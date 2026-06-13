@@ -201,7 +201,7 @@ function SeamMark({
           <span
             role="status"
             aria-label="Use arrow keys to walk the seams"
-            className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 rounded-md border border-seam bg-ground-strip px-3 py-1.5 text-xs whitespace-nowrap text-muted shadow-md"
+            className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 rounded-md border border-seam bg-ground-strip px-3 py-1.5 text-xs whitespace-nowrap text-muted shadow-md hidden md:block"
           >
             <span aria-hidden="true">← keys →</span>
             {/* Downward caret on the bottom edge: outer triangle is the border
@@ -279,7 +279,7 @@ function ReconstructionInspector({
   // UNCOMPRESSED (no seams) the band fades to empty rather than blinking off.
   const visible = active || hasSeams;
   return (
-    <div className="h-[54px] min-h-[54px] w-full shrink-0 border-t border-seam bg-ground-rail px-12 font-mono text-[13px]">
+    <div className="hidden h-[54px] min-h-[54px] w-full shrink-0 border-t border-seam bg-ground-rail px-12 font-mono text-[13px] md:block">
       <div
         className={`flex h-full w-full items-center gap-3 transition-opacity duration-300 ease-out motion-reduce:transition-none ${
           visible ? 'opacity-100' : 'opacity-0'
@@ -599,7 +599,7 @@ export function ProseColumn({
 
   return (
     <div className="flex min-h-0 min-w-0 grow flex-col">
-      <div ref={scrollRef} className="relative min-h-0 grow overflow-y-auto p-12">
+      <div ref={scrollRef} className="relative min-h-0 grow overflow-y-auto p-4 md:p-12">
         {/* `prose-fade-in` is applied only at UNCOMPRESSED (streamKey 0); since
             it toggles off for every compressed position, returning the slider to
             the far left re-adds it and replays the gentle fade-in over the full

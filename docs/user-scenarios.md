@@ -1,6 +1,30 @@
 # User Scenarios
 Gherkin-style user scenarios for Surprisal Party.
 
+## Viewport convention — desktop vs mobile
+
+Most scenarios are shared across viewports. Where behaviour diverges, the viewport
+is established up front with a `Given I am on a desktop viewport` / `Given I am on
+a mobile viewport` step — never an inline "if device" clause — so each scenario
+stays a single executable path mapping to one Figma frame and one screenshot.
+
+The tags are viewport filters:
+
+- **`@desktop`** — the scenario runs on the desktop viewport only.
+- **`@mobile`** — the scenario runs on the mobile viewport only.
+- **Untagged** — the scenario is shared and runs on both viewports.
+
+A story whose behaviour diverges has a `@desktop` scenario and a `@mobile`
+scenario side by side. A story with no mobile equivalent at all simply has only
+`@desktop` scenarios.
+
+The **mobile build is a view-only compression experience**: it keeps the
+slider → compress → kernel mechanic and shows seams as plain gap marks, and drops
+the right "Removed" strip and migrated word-tiles, the seam reveal (predicted text),
+the reconstruction inspector, the header metrics readout (`stored / removed /
+avg fidelity`) and its explainer, and the arrow-key walk / click-a-removed-word
+affordances. The onboarding primer is unchanged on mobile.
+
 ## Loading
 
 ### As a visitor, the loading screen compresses a welcome phrase to its kernel
@@ -66,12 +90,28 @@ Then the removed words are reconstructed inline as a lossy prediction, shown bes
 And the "Done" button becomes enabled
 When I dismiss the modal
 Then it closes and the application records that the primer has been seen
-And I land in the explorer, which shows three regions: a header, a middle column, and a right strip
 And the default corpus is loaded in the middle column with its kernel tokens highlighted
 And the slider is at UNCOMPRESSED and the corpus drawer is collapsed
+And a small, dim corpus-picker icon sits at the top-left of the content row
+```
+
+The post-dismiss landing differs by viewport: desktop lands in the three-region
+explorer with the header metrics readout and an empty right strip; mobile lands in
+a header-plus-single-column explorer with no metrics readout and no right strip.
+
+```gherkin
+@desktop
+Given I have just dismissed the primer on a desktop viewport
+Then I land in the explorer, which shows three regions: a header, a middle column, and a right strip
 And the right strip is empty
 And the header reads "stored 100.0% · removed 0.0% · avg fidelity —" (no words removed yet, so there is nothing to score)
-And a small, dim corpus-picker icon sits at the top-left of the content row
+```
+
+```gherkin
+@mobile
+Given I have just dismissed the primer on a mobile viewport
+Then I land in the explorer, which shows a header and a single content column
+And there is no right strip and no header metrics readout
 ```
 
 ### As a returning visitor, I am not shown the primer again
@@ -91,9 +131,12 @@ And working through it again, or dismissing it, returns me to the explorer uncha
 
 ### As a user, I can learn what the header metrics mean
 
+> **`@desktop` only** — the header metrics readout does not exist on mobile, so neither does this story.
+
 The header readout — stored / removed / avg fidelity — has a small info icon immediately to its left. Clicking it opens a brief explainer modal, styled like the onboarding primer, that defines each of the three metrics for anyone who wants to know exactly what the numbers mean.
 
 ```gherkin
+@desktop
 Given I am in the explorer view
 When I click the info icon immediately to the left of the header metrics
 Then a modal opens centered over the explorer, which is dimmed behind a scrim
@@ -126,7 +169,8 @@ Then the drawer collapses and the explorer is unobscured
 Choosing a corpus fetches its precomputed static cache — surprisal scores, span boundaries, reconstructions, and fidelity scores generated offline at build time — and resets the explorer view. Everything on screen is rendered from that cache.
 
 ```gherkin
-Given the corpus picker is open
+@desktop
+Given the corpus picker is open on a desktop viewport
 When I select a corpus from the list
 Then the application fetches the precomputed static cache for that corpus
 And the drawer collapses
@@ -135,6 +179,17 @@ And the middle column displays the full source text of the corpus
 And the kernel tokens are highlighted within the text
 And the right strip is empty
 And the header resets to "stored 100.0% · removed 0.0% · avg fidelity —"
+```
+
+```gherkin
+@mobile
+Given the corpus picker is open on a mobile viewport
+When I select a corpus from the list
+Then the application fetches the precomputed static cache for that corpus
+And the drawer collapses
+And the slider snaps back to the far left (UNCOMPRESSED)
+And the single content column displays the full source text of the corpus
+And the kernel tokens are highlighted within the text
 ```
 
 ### As a user, I can read more about the project from the drawer
@@ -159,7 +214,8 @@ Then the modal closes and I return to the drawer
 Dragging the slider rightward raises a surprisal threshold. Tokens below the threshold leave the middle column and migrate as word tiles to the right "Removed" strip, where they pack into a growing mass. In the middle column, removed spans collapse out of view; their position is marked only by a thin seam between the surviving tokens on either side. A seam shows no text by default.
 
 ```gherkin
-Given I have a corpus loaded in the explorer view
+@desktop
+Given I have a corpus loaded in the explorer view on a desktop viewport
 And the slider is at the far left
 When I drag the slider rightward
 Then the surprisal threshold rises
@@ -173,12 +229,27 @@ And the kernel tokens remain highlighted and on the page
 And the header updates so that stored falls, removed rises, and the avg-fidelity score falls (the freshly-removed words are harder to predict)
 ```
 
+```gherkin
+@mobile
+Given I have a corpus loaded in the explorer view on a mobile viewport
+And the slider is at the far left
+When I drag the slider rightward
+Then the surprisal threshold rises
+And tokens below the threshold leave the content column
+And the content column visibly shrinks as removed spans collapse out of view
+And each collapsed span is marked by a thin seam between the surviving tokens on either side
+And each seam shows no text
+And the kernel tokens remain highlighted and on the page
+And there is no right strip and no header metrics readout
+```
+
 ### As a user, I can decompress the corpus by dragging the slider leftward
 
 Dragging the slider leftward lowers the surprisal threshold. Word tiles return from the right strip to their original positions in the middle column, and seams disappear as their underlying source text reappears between the surrounding survivors.
 
 ```gherkin
-Given the slider is at some position other than the far left
+@desktop
+Given the slider is at some position other than the far left on a desktop viewport
 When I drag the slider leftward
 Then the surprisal threshold lowers
 And word tiles migrate from the right strip back into the middle column at their original positions
@@ -187,11 +258,24 @@ And the middle column visibly expands
 And the header updates so that stored rises, removed falls, and the avg-fidelity score rises (only the most predictable words remain removed)
 ```
 
+```gherkin
+@mobile
+Given the slider is at some position other than the far left on a mobile viewport
+When I drag the slider leftward
+Then the surprisal threshold lowers
+And seams disappear as their underlying source tokens reappear in the content column
+And the content column visibly expands
+And there is no right strip and no header metrics readout
+```
+
 ### As a user, I can walk through the seams with the arrow keys
+
+> **`@desktop` only** — mobile is view-only: it has no keyboard walk and no seam reveal.
 
 The arrow keys are the way to step through the corpus's gaps. They drive a single shared "active seam" state, moving through the seams in story order: the active seam expands the model's predicted text inline (dimmed, in the reading type) and fills the fixed reconstruction inspector at the bottom of the middle column with the actual source text and fidelity score; advancing collapses the previous seam and opens the next. The inspector's height is always reserved so nothing reflows. As the active seam moves, the removed words it covers are highlighted in the right "Removed" strip, so the connection between a gap and the words pulled from it is visible. Reveals in the middle column are keyboard-driven; the right strip's tiles are a separate, explicitly clickable affordance (see below). The slider is mouse-only. Each step plays a short, soft click sound so stepping through the predicted words feels tactile, respecting the user's reduced-motion / sound preferences.
 
 ```gherkin
+@desktop
 Given the middle column contains one or more seams
 And no seam is currently active
 When I press the Right arrow key
@@ -216,9 +300,12 @@ And the right strip's highlight clears
 
 ### As a user, I can click a removed word to reveal its seam
 
+> **`@desktop` only** — mobile has no right strip of removed-word tiles and no seam reveal.
+
 The right strip is linked to the seams the other way too: each removed-word tile is clickable, and clicking it activates the seam that word belongs to — the same shared "active seam" the arrow keys drive. The tiles are the *actual* removed words (the ground truth); the model's *prediction* for that gap is what the activated seam reveals in the middle column. Hovering a tile gives a quiet rollover (its text brightens) so it reads as interactive.
 
 ```gherkin
+@desktop
 Given I have compressed the corpus so the right strip holds removed-word tiles
 When I hover over a tile
 Then the tile's text brightens to signal it is interactive
@@ -232,9 +319,12 @@ And from there the arrow keys continue the walk from that seam
 
 ### As a user, I am nudged to discover the arrow-key walk
 
+> **`@desktop` only** — the arrow-key walk does not exist on mobile, so there is no nudge.
+
 The arrow-key affordance is not obvious, so the first time the slider moves past UNCOMPRESSED a small, quiet hint appears above the first seam. It is a nudge, not a tutorial, and it gets out of the way as soon as the user engages.
 
 ```gherkin
+@desktop
 Given the slider is at the far left (UNCOMPRESSED)
 When I move the slider to any position past UNCOMPRESSED for the first time this session
 Then a small hint bubble appears hovering just above the first seam with concise copy like "Use arrow keys"
@@ -245,9 +335,12 @@ And the hint does not reappear once I have stepped through a seam this session
 
 ### As a user, I can see prediction fidelity fall as I compress
 
+> **`@desktop` only** — mobile has no fidelity readout and no seam reveal/inspector.
+
 As the slider moves rightward the removed words get harder to rebuild: near the left their reconstructions are essentially verbatim, and toward the right they become looser paraphrases. The header's avg-fidelity readout tracks this continuously, and activating any seam replaces the inspector's placeholder prompt with that gap's actual source words and its fidelity score.
 
 ```gherkin
+@desktop
 Given the slider is near the left
 Then the header's avg fidelity stays high (near 1.00)
 When I activate a seam
@@ -267,7 +360,9 @@ And the seam's predicted text reads as a paraphrase
 At the slider's far-right position, only the kernel tokens — the highest-surprisal, load-bearing words — remain in the middle column. The seams between them hide the model's retelling of the whole corpus, generated from the kernel alone. The user activates a seam to reveal it.
 
 ```gherkin
-Given I drag the slider to the far-right position
+@desktop
+Given I am on a desktop viewport
+When I drag the slider to the far-right position
 Then only the kernel tokens remain visible in the middle column
 And the right strip contains the maximum density of migrated word tiles
 And the header shows the maximum removed percentage and the lowest avg-fidelity score (the reconstructions are at their most lossy)
@@ -275,4 +370,13 @@ And the header shows the maximum removed percentage and the lowest avg-fidelity 
 When I activate a seam between kernel tokens
 Then its predicted text expands inline to show the model's reconstruction of the corpus from the kernel alone
 And the inspector shows the actual source text and the fidelity score
+```
+
+```gherkin
+@mobile
+Given I am on a mobile viewport
+When I drag the slider to the far-right position
+Then only the kernel tokens remain visible in the content column
+And the surviving kernel tokens are separated by thin seams that show no text
+And there is no right strip, no header metrics readout, and no seam reveal
 ```
