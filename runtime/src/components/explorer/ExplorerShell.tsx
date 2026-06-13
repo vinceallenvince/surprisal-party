@@ -101,7 +101,7 @@ export function ExplorerShell({
   );
 
   return (
-    <div className="flex h-screen flex-col overflow-hidden bg-ground md:min-w-[1024px]">
+    <div className="flex h-dvh flex-col overflow-hidden bg-ground md:min-w-[1024px]">
       <ExplorerHeader
         corpusTitle={corpusTitle}
         storedPct={rendered.readout.storedPct}
