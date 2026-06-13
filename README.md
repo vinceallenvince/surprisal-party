@@ -6,7 +6,7 @@ Predictable words carry little information, surprising words carry a lot. Supris
 
 !["screenshot"](docs/images/app-screenshot.webp)
 
-Learn more about the project at [surprisal.party](https://www.vinceallen.com/#/surprisal-party/)
+Learn more about the project at [vinceallen.com/surprisal-party/](https://www.vinceallen.com/#/surprisal-party/)
 
 ## Docs
 
