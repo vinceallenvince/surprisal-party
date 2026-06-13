@@ -43,6 +43,11 @@ export const CORPORA: readonly Corpus[] = [
     title: 'Hansel and Gretel',
     wordCount: 2931,
   },
+  {
+    slug: 'cinderella',
+    title: 'Cinderella',
+    wordCount: 2452,
+  },
 ];
 
 /** The slug the explorer loads on first paint (first manifest entry). */
