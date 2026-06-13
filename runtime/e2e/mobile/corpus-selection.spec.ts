@@ -13,7 +13,6 @@ import { test, expect, type Page } from '@playwright/test';
  */
 
 const PRIMER_SEEN_KEY = 'surprisalParty.primerSeen';
-const CORPUS_TITLE = 'Little Red Riding Hood';
 const SCREENS_DIR = 'e2e/__screens__/corpus-selection/mobile';
 
 function shot(page: Page, label: string) {
@@ -22,7 +21,7 @@ function shot(page: Page, label: string) {
 
 async function waitForExplorer(page: Page) {
   await expect(
-    page.getByRole('heading', { name: CORPUS_TITLE }),
+    page.getByRole('slider', { name: /compression level/i }),
   ).toBeVisible();
 }
 

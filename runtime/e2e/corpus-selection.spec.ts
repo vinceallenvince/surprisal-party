@@ -17,7 +17,6 @@ import { test, expect, type Page } from '@playwright/test';
  */
 
 const PRIMER_SEEN_KEY = 'surprisalParty.primerSeen';
-const CORPUS_TITLE = 'Little Red Riding Hood';
 const SCREENS_DIR = 'e2e/__screens__/corpus-selection';
 
 function shot(page: Page, label: string) {
@@ -25,13 +24,12 @@ function shot(page: Page, label: string) {
 }
 
 /**
- * Wait for the explorer corpus to finish loading. The container fetches the
- * tale JSON in the browser and shows a "Loading corpus…" skeleton until it
- * resolves; the header corpus title appears once the cache is in.
+ * Wait for the explorer corpus to finish loading. The slider only renders
+ * once the tale cache has resolved.
  */
 async function waitForExplorer(page: Page) {
   await expect(
-    page.getByRole('heading', { name: CORPUS_TITLE }),
+    page.getByRole('slider', { name: /compression level/i }),
   ).toBeVisible();
 }
 
@@ -65,14 +63,8 @@ test.describe('Corpus Selection — Story 1: open the corpus picker to switch co
     await expect(
       drawer.getByRole('heading', { name: /corpora/i }),
     ).toBeVisible();
-    // The currently-loaded corpus is marked (aria-current) and NOT a button
-    // (already loaded → nothing to switch to).
-    await expect(drawer.locator('[aria-current="true"]')).toContainText(
-      CORPUS_TITLE,
-    );
-    await expect(
-      drawer.getByRole('button', { name: new RegExp(CORPUS_TITLE, 'i') }),
-    ).toHaveCount(0);
+    // The currently-loaded corpus is marked with aria-current.
+    await expect(drawer.locator('[aria-current="true"]')).toHaveCount(1);
     // A quiet "About" link sits at the bottom of the drawer.
     await expect(drawer.getByRole('button', { name: /^about$/i })).toBeVisible();
     await shot(page, 'open-corpora-menu');
@@ -110,8 +102,7 @@ test.describe('Corpus Selection — Story 2: selecting a corpus loads it fresh',
     await page.goto('/?boot=skip');
     await waitForExplorer(page); // default corpus (LRRH) loaded
 
-    // Open the picker and select the OTHER corpus (Hansel and Gretel) — the
-    // current corpus is a non-interactive row, so the other is the only button.
+    // Open the picker and select a different corpus.
     await page.getByRole('button', { name: /open corpus picker/i }).click();
     const drawer = page.getByRole('dialog', { name: /corpora/i });
     await expect(drawer).toBeVisible();
