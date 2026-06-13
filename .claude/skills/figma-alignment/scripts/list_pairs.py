@@ -7,9 +7,12 @@ Run from the repo root:
 
 `epic` matches an epic by name or epic_dir (case-insensitive substring); omit or
 pass `all` for every epic. Prints JSON to stdout: per epic, the file_key,
-report_path, and the list of pairs {story, node, shot, screenshot,
-screenshot_exists}. Pairs with shot: null (design-ahead frames with no app
-screenshot) are included with screenshot=null so they can be noted in the report.
+report_path, and the list of pairs {story, viewport, node, shot, screenshot,
+screenshot_exists}. Desktop pairs come from each story's `ui` list (screenshots
+under __screens__/<epic_dir>/); mobile pairs come from the parallel `ui_mobile`
+list (screenshots under __screens__/<epic_dir>/mobile/). Pairs with shot: null
+(design-ahead frames with no app screenshot) are included with screenshot=null so
+they can be noted in the report.
 """
 import argparse
 import json
@@ -61,20 +64,27 @@ def main() -> None:
 
         pairs = []
         for story in epic.get("stories", []):
-            for ui in story.get("ui", []):
-                node, shot = ui.get("node"), ui.get("shot")
-                if shot:
-                    rel = os.path.join(SCREENS_BASE, edir, f"{shot}.png")
-                    exists = os.path.isfile(os.path.join(root, rel))
-                else:
-                    rel, exists = None, False
-                pairs.append({
-                    "story": story.get("story"),
-                    "node": node,
-                    "shot": shot,
-                    "screenshot": rel,
-                    "screenshot_exists": exists,
-                })
+            # Desktop pairs live under __screens__/<edir>/; mobile pairs (from the
+            # parallel ui_mobile list) under __screens__/<edir>/mobile/.
+            for key, viewport, subdir in (
+                ("ui", "desktop", edir),
+                ("ui_mobile", "mobile", os.path.join(edir, "mobile")),
+            ):
+                for ui in story.get(key, []):
+                    node, shot = ui.get("node"), ui.get("shot")
+                    if shot:
+                        rel = os.path.join(SCREENS_BASE, subdir, f"{shot}.png")
+                        exists = os.path.isfile(os.path.join(root, rel))
+                    else:
+                        rel, exists = None, False
+                    pairs.append({
+                        "story": story.get("story"),
+                        "viewport": viewport,
+                        "node": node,
+                        "shot": shot,
+                        "screenshot": rel,
+                        "screenshot_exists": exists,
+                    })
         out_epics.append({
             "epic": name,
             "epic_dir": edir,
