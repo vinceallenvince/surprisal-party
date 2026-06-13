@@ -6,6 +6,8 @@ Predictable words carry little information, surprising words carry a lot. Supris
 
 !["screenshot"](docs/images/app-screenshot.webp)
 
+Learn more about the project at [surprisal.party](https://www.vinceallen.com/#/surprisal-party/)
+
 ## Docs
 
 - [`docs/abstract.md`](docs/abstract.md) — what the project is, the information-theoretic core, what the user sees, the determinism/variability tiers, scope, and design principles.
