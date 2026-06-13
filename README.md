@@ -1,6 +1,10 @@
 # Surprisal Party
 
+!["we threw you a surprisal party"](docs/images/title.png)
+
 Predictable words carry little information, surprising words carry a lot. Suprisal Party demonstrates a text compression algorithm that preserves words at varying levels of compression based on their surprisal value. Drag the slider to max compression and what stays is the irreducible kernel the model could not have known. Hidden in between the compression seams are predictions of neighboring words. The higher the compression, the more lossy the predictions become.
+
+!["screenshot"](docs/images/app-screenshot.webp)
 
 ## Docs
 
