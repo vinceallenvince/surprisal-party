@@ -166,7 +166,7 @@ test.describe('Corpus Selection — Story 3: read more about the project from th
     // The write-up link shows its destination and opens in a new tab.
     const writeup = about.getByRole('link', { name: /vinceallen\.com/i });
     await expect(writeup).toBeVisible();
-    await expect(writeup).toHaveAttribute('href', 'https://vinceallen.com');
+    await expect(writeup).toHaveAttribute('href', 'https://www.vinceallen.com/#/surprisal-party/');
     await expect(writeup).toHaveAttribute('target', '_blank');
     // This screenshot now intentionally shows the drawer behind the About modal.
     await shot(page, 'about-modal');
