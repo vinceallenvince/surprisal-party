@@ -108,7 +108,7 @@ export function CompressionSlider({
     <div className="w-full border-t border-seam">
       <div className="flex items-start pt-6 pb-8 md:pt-[49px] md:pb-12">
         <div className="hidden h-12 w-16 shrink-0 md:block" />
-        <div className="min-w-0 grow px-4">
+        <div className="min-w-0 grow px-8 md:px-4">
           {/* Track — the pointer interaction surface. Padded hit-area via the
               wrapper below so thin track is easy to grab. */}
           <div
