@@ -23,7 +23,7 @@ from cprediction._model import MODEL_ID
 from cprediction.cache import build_cache
 from cprediction.fidelity import fidelity
 from cprediction.reconciliation import Word, reconcile
-from cprediction.reconstruct import reconstruct
+from cprediction.reconstruct import reconstruct, reconstruct_forward
 from cprediction.score import score
 from cprediction.spans import Gap, find_gaps
 from cprediction.thresholds import select_thresholds
@@ -33,6 +33,15 @@ _DEFAULT_INPUT = Path(__file__).resolve().parent.parent / "corpus" / "little-red
 _DEFAULT_OUTPUT = Path(__file__).resolve().parent.parent / "output" / "little-red-riding-hood.md"
 
 _CONTEXT_CHARS = 200  # how much surviving text to send as left/right context to reconstruct()
+
+# Reconstruction strategy, selected by the CPRED_RECON_MODE env var:
+#   "baseline"         (default) — gap-fill: a fixed-width window of the ORIGINAL
+#                       text on BOTH sides of the gap (current shipped behavior).
+#   "surviving-causal" — prototype: the full SURVIVING (compressed) text up to
+#                       the gap, LEFT-only, predicting forward. Mirrors how
+#                       surprisal is scored and the "rebuild from what's stored"
+#                       framing. See reconstruct_forward().
+_RECON_MODE = os.environ.get("CPRED_RECON_MODE", "baseline").strip().lower()
 
 
 @dataclass
@@ -118,6 +127,29 @@ def _left_right_context(
     return left, right
 
 
+def _surviving_left_context(
+    words: list[Word],
+    removed_indices: set[int],
+    gap: Gap,
+) -> str:
+    """The full SURVIVING text before this gap (prototype, left-only mode).
+
+    Joins every surviving word (not empty-core, not removed at this threshold)
+    with an index before the gap start — i.e. exactly what is still "stored" on
+    the page leading up to the gap. Removed words are simply absent, so the
+    string reads as the compressed history the reader sees. This is the context
+    passed to :func:`reconstruct_forward`; it conditions only on true survivors,
+    never on earlier predictions, so each gap is rebuilt "from the kernel alone".
+    """
+
+    parts = [
+        words[i].core + words[i].trailing_punct
+        for i in range(gap.start_index)
+        if not words[i].is_empty_core and i not in removed_indices
+    ]
+    return " ".join(parts)
+
+
 def _percent(numerator: float, denominator: float) -> str:
     if denominator <= 0:
         return "0.0%"
@@ -132,6 +164,7 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
 
     raw = input_path.read_text(encoding="utf-8")
     print(f"[run] read {len(raw):,} chars from {input_path}", file=sys.stderr)
+    print(f"[run] reconstruction mode = {_RECON_MODE!r}", file=sys.stderr)
 
     print(f"[run] loading {MODEL_ID}...", file=sys.stderr)
     print(f"[run] scoring with {MODEL_ID}...", file=sys.stderr)
@@ -189,10 +222,19 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
         gap_results: list[GapResult] = []
         for g_idx, gap in enumerate(gaps):
             actual = _gap_text(words, gap, normalized)
-            left, right = _left_right_context(normalized, words, gap)
-            predicted = reconstruct(
-                left, right, expected_words=len(gap.word_indices)
-            )
+            if _RECON_MODE == "surviving-causal":
+                # Prototype: full surviving (compressed) text up to the gap,
+                # left-only, predicting forward.
+                left = _surviving_left_context(words, gap_word_ids, gap)
+                predicted = reconstruct_forward(
+                    left, expected_words=len(gap.word_indices)
+                )
+            else:
+                # Baseline: fixed-width original-text window on both sides.
+                left, right = _left_right_context(normalized, words, gap)
+                predicted = reconstruct(
+                    left, right, expected_words=len(gap.word_indices)
+                )
             f = fidelity(predicted, actual)
             gap_results.append(
                 GapResult(

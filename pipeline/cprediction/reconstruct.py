@@ -50,6 +50,32 @@ _SYSTEM_PROMPT = (
 )
 
 
+# Forward (left-only / "causal") reconstruction prompt — the prototype variant.
+# Mirrors the directionality of surprisal scoring (-log2 p(token | PRECEDING
+# context)): the model sees only the text leading up to the gap and predicts
+# what was removed next, with no right context to anchor against. The preceding
+# text it receives is itself the *surviving* (compressed) text at this
+# threshold, so this is "rebuild the removed words from what is still stored".
+# Deliberately GENERAL — no fairy-tale / Grimm / Andersen framing — so it
+# applies to any future corpus.
+_SYSTEM_PROMPT_FORWARD = (
+    "You are reconstructing a removed passage of a text. The user gives you "
+    "the text that comes immediately before a gap. Note that this preceding "
+    "text may itself be abridged — some of its own words may already have been "
+    "removed — so read it as the compressed record of what came before. From "
+    "that preceding text alone, predict the words that were removed at the "
+    "gap: the words that come next.\n\n"
+    "Rules:\n"
+    "- Output ONLY the predicted text for the gap. No preamble, no "
+    "explanation, no quotation marks around your answer, no surrounding "
+    "context.\n"
+    "- If the preceding text ends with a space, do not add a leading space.\n"
+    "- Match the voice, register, and style of the preceding text.\n"
+    "- Predict only the missing passage — roughly its expected length — not a "
+    "continuation of the whole text."
+)
+
+
 def _gap_word_count(left: str, right: str) -> int:
     """A coarse estimate of how big the gap is, in words.
 
@@ -84,12 +110,53 @@ def reconstruct(
         answer for some gaps).
     """
 
+    user_msg = f"LEFT: {left_context}\n<<<GAP>>>\nRIGHT: {right_context}"
+    # Cap based on the known or estimated gap size. When the caller knows the
+    # actual word count (``expected_words``), use a generous budget scaled to
+    # it; otherwise fall back to the older context-based heuristic so direct
+    # callers without a known gap size still get a reasonable budget.
+    if expected_words is not None:
+        max_new = max(64, int(expected_words * 2.5))
+    else:
+        max_new = max(64, _gap_word_count(left_context, right_context) * 2)
+    return _generate_reply(_SYSTEM_PROMPT, user_msg, max_new)
+
+
+def reconstruct_forward(
+    left_context: str,
+    expected_words: int | None = None,
+) -> str:
+    """Left-only ("causal") reconstruction — the prototype variant.
+
+    Predicts the removed span from the PRECEDING text alone (no right context),
+    mirroring the directionality of surprisal scoring. ``left_context`` is the
+    *surviving* (compressed) text up to the gap, so this is "rebuild the removed
+    words from what is still stored". Greedy/deterministic, same as
+    :func:`reconstruct`.
+    """
+
+    if expected_words is not None:
+        max_new = max(64, int(expected_words * 2.5))
+    else:
+        max_new = max(64, len(left_context.split()) * 2)
+    # The preceding text IS the user turn; the system prompt frames the task as
+    # "predict what comes next". No gap marker / right context.
+    return _generate_reply(_SYSTEM_PROMPT_FORWARD, left_context, max_new)
+
+
+def _generate_reply(system_prompt: str, user_msg: str, max_new: int) -> str:
+    """Run one deterministic chat completion and return the cleaned reply.
+
+    Shared by :func:`reconstruct` (gap-fill, bidirectional) and
+    :func:`reconstruct_forward` (left-only). Greedy decoding; thinking mode
+    disabled; residual ``<think>`` blocks stripped defensively.
+    """
+
     tokenizer = get_tokenizer()
     model = get_model()
 
-    user_msg = f"LEFT: {left_context}\n<<<GAP>>>\nRIGHT: {right_context}"
     messages = [
-        {"role": "system", "content": _SYSTEM_PROMPT},
+        {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_msg},
     ]
     chat_inputs = tokenizer.apply_chat_template(
@@ -98,24 +165,14 @@ def reconstruct(
         return_tensors="pt",
         return_dict=True,
         # Qwen3 introduced a "thinking mode" that wraps reasoning in
-        # <think>...</think> before the actual reply. We want only the gap
-        # fill, so we disable thinking at the chat-template level. Tokenizers
-        # that don't recognize the flag silently ignore it, so this remains
-        # a safe no-op on older Qwen2.5-family tokenizers.
+        # <think>...</think> before the actual reply. We want only the reply,
+        # so we disable thinking at the chat-template level. Tokenizers that
+        # don't recognize the flag silently ignore it, so this remains a safe
+        # no-op on older Qwen2.5-family tokenizers.
         enable_thinking=False,
     )
     prompt_ids = chat_inputs["input_ids"].to(model.device)
     attention_mask = chat_inputs["attention_mask"].to(model.device)
-
-    # Cap based on the known or estimated gap size. Deterministic greedy
-    # decoding. When the caller knows the actual word count (``expected_words``),
-    # use a generous budget scaled to it; otherwise fall back to the older
-    # context-based heuristic so direct callers without a known gap size
-    # still get a reasonable budget.
-    if expected_words is not None:
-        max_new = max(64, int(expected_words * 2.5))
-    else:
-        max_new = max(64, _gap_word_count(left_context, right_context) * 2)
 
     with torch.no_grad():
         output_ids = model.generate(
