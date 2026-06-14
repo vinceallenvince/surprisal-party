@@ -23,7 +23,11 @@ from cprediction._model import MODEL_ID
 from cprediction.cache import build_cache
 from cprediction.fidelity import fidelity
 from cprediction.reconciliation import Word, reconcile
-from cprediction.reconstruct import reconstruct, reconstruct_forward
+from cprediction.reconstruct import (
+    reconstruct,
+    reconstruct_forward,
+    reconstruct_gap,
+)
 from cprediction.score import score
 from cprediction.spans import Gap, find_gaps
 from cprediction.thresholds import select_thresholds
@@ -35,13 +39,21 @@ _DEFAULT_OUTPUT = Path(__file__).resolve().parent.parent / "output" / "little-re
 _CONTEXT_CHARS = 200  # how much surviving text to send as left/right context to reconstruct()
 
 # Reconstruction strategy, selected by the CPRED_RECON_MODE env var:
-#   "baseline"         (default) — gap-fill: a fixed-width window of the ORIGINAL
-#                       text on BOTH sides of the gap (current shipped behavior).
-#   "surviving-causal" — prototype: the full SURVIVING (compressed) text up to
-#                       the gap, LEFT-only, predicting forward. Mirrors how
-#                       surprisal is scored and the "rebuild from what's stored"
-#                       framing. See reconstruct_forward().
+#   "baseline"               (default) — gap-fill: a fixed-width window of the
+#                             ORIGINAL text on BOTH sides of the gap (shipped).
+#   "surviving-causal"       — prototype: the full SURVIVING (compressed) text up
+#                             to the gap, LEFT-only, predicting forward. Mirrors
+#                             how surprisal is scored. See reconstruct_forward().
+#   "surviving-bidirectional" — prototype: full SURVIVING left + a MINIMAL
+#                             surviving right anchor (width = CPRED_RIGHT_ANCHOR_WORDS,
+#                             default 2). Survivors only on both sides — no
+#                             removed neighbors leak in. See reconstruct_gap().
 _RECON_MODE = os.environ.get("CPRED_RECON_MODE", "baseline").strip().lower()
+
+# Right-anchor width (in surviving words) for "surviving-bidirectional". Small by
+# design: the right side is a landmark the fill must connect into, not a
+# symmetric mirror of the left.
+_RIGHT_ANCHOR_WORDS = int(os.environ.get("CPRED_RIGHT_ANCHOR_WORDS", "2"))
 
 
 @dataclass
@@ -150,6 +162,31 @@ def _surviving_left_context(
     return " ".join(parts)
 
 
+def _surviving_right_context(
+    words: list[Word],
+    removed_indices: set[int],
+    gap: Gap,
+    max_words: int,
+) -> str:
+    """A MINIMAL surviving anchor after the gap (prototype, bidirectional mode).
+
+    The next ``max_words`` surviving words after the gap — the landmark the fill
+    must connect into. Drawn from survivors only (removed words skipped), so no
+    removed neighbor leaks in. Deliberately small and asymmetric with the full
+    surviving left context: the right side bounds the target, it does not carry
+    the conditioning.
+    """
+
+    parts: list[str] = []
+    for i in range(gap.end_index + 1, len(words)):
+        if words[i].is_empty_core or i in removed_indices:
+            continue
+        parts.append(words[i].core + words[i].trailing_punct)
+        if len(parts) >= max_words:
+            break
+    return " ".join(parts)
+
+
 def _percent(numerator: float, denominator: float) -> str:
     if denominator <= 0:
         return "0.0%"
@@ -164,7 +201,15 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
 
     raw = input_path.read_text(encoding="utf-8")
     print(f"[run] read {len(raw):,} chars from {input_path}", file=sys.stderr)
-    print(f"[run] reconstruction mode = {_RECON_MODE!r}", file=sys.stderr)
+    _mode_note = (
+        f" (right_anchor_words={_RIGHT_ANCHOR_WORDS})"
+        if _RECON_MODE == "surviving-bidirectional"
+        else ""
+    )
+    print(
+        f"[run] reconstruction mode = {_RECON_MODE!r}{_mode_note}",
+        file=sys.stderr,
+    )
 
     print(f"[run] loading {MODEL_ID}...", file=sys.stderr)
     print(f"[run] scoring with {MODEL_ID}...", file=sys.stderr)
@@ -228,6 +273,16 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
                 left = _surviving_left_context(words, gap_word_ids, gap)
                 predicted = reconstruct_forward(
                     left, expected_words=len(gap.word_indices)
+                )
+            elif _RECON_MODE == "surviving-bidirectional":
+                # Prototype: full surviving left + a minimal surviving right
+                # anchor. Survivors only on both sides (no removed-neighbor leak).
+                left = _surviving_left_context(words, gap_word_ids, gap)
+                right = _surviving_right_context(
+                    words, gap_word_ids, gap, _RIGHT_ANCHOR_WORDS
+                )
+                predicted = reconstruct_gap(
+                    left, right, expected_words=len(gap.word_indices)
                 )
             else:
                 # Baseline: fixed-width original-text window on both sides.

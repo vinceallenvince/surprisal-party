@@ -76,6 +76,30 @@ _SYSTEM_PROMPT_FORWARD = (
 )
 
 
+# Bidirectional gap-fill prompt for the "surviving-bidirectional" prototype:
+# full surviving (compressed) text on the left, a MINIMAL surviving anchor on
+# the right. The right side only tells the model what the fill must connect
+# into — it is not symmetric with the left. Generalized (no fairy-tale / Grimm /
+# Andersen framing) so it applies to any corpus.
+_SYSTEM_PROMPT_GAP = (
+    "You are reconstructing a removed passage of a text. The user gives you "
+    "the text immediately BEFORE a gap and a short bit of text immediately "
+    "AFTER it. Note that the BEFORE text may itself be abridged — some of its "
+    "own words already removed — so read it as the compressed record of what "
+    "came before. Fill the gap with the words that were removed, so the text "
+    "reads continuously from BEFORE into AFTER.\n\n"
+    "Rules:\n"
+    "- Output ONLY the replacement text for the gap. No preamble, no "
+    "explanation, no quotation marks around your answer, no BEFORE/AFTER "
+    "labels, no surrounding context.\n"
+    "- Match the spacing implied by the context: if BEFORE ends with a space, "
+    "do not add a leading space.\n"
+    "- Match the voice, register, and style of the surrounding text.\n"
+    "- Keep the length proportional to the missing passage; it must lead "
+    "naturally into the AFTER text."
+)
+
+
 def _gap_word_count(left: str, right: str) -> int:
     """A coarse estimate of how big the gap is, in words.
 
@@ -142,6 +166,29 @@ def reconstruct_forward(
     # The preceding text IS the user turn; the system prompt frames the task as
     # "predict what comes next". No gap marker / right context.
     return _generate_reply(_SYSTEM_PROMPT_FORWARD, left_context, max_new)
+
+
+def reconstruct_gap(
+    left_context: str,
+    right_context: str,
+    expected_words: int | None = None,
+) -> str:
+    """Asymmetric bidirectional reconstruction — the "surviving-bidirectional"
+    prototype.
+
+    ``left_context`` is the full SURVIVING (compressed) prefix; ``right_context``
+    is a MINIMAL surviving anchor (1–2 words) after the gap. Unlike
+    :func:`reconstruct` (baseline), both sides are drawn from survivors only —
+    no removed neighbors leak in — and the right side is a small landmark, not a
+    symmetric window. Greedy/deterministic.
+    """
+
+    if expected_words is not None:
+        max_new = max(64, int(expected_words * 2.5))
+    else:
+        max_new = max(64, _gap_word_count(left_context, right_context) * 2)
+    user_msg = f"BEFORE: {left_context}\n<<<GAP>>>\nAFTER: {right_context}"
+    return _generate_reply(_SYSTEM_PROMPT_GAP, user_msg, max_new)
 
 
 def _generate_reply(system_prompt: str, user_msg: str, max_new: int) -> str:
