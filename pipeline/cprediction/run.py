@@ -39,9 +39,18 @@ _DEFAULT_OUTPUT = Path(__file__).resolve().parent.parent / "output" / "little-re
 
 _CONTEXT_CHARS = 200  # how much surviving text to send as left/right context to reconstruct()
 
-# Reconstruction strategy, selected by the CPRED_RECON_MODE env var:
-#   "baseline"               (default) — gap-fill: a fixed-width window of the
-#                             ORIGINAL text on BOTH sides of the gap (shipped).
+# Reconstruction strategy, selected by the CPRED_RECON_MODE env var.
+#
+# ADOPTED DEFAULT: "surviving-placeholder". Reconstructs each gap from the
+# surrounding SURVIVING text only (removed neighbors never leak in), which reads
+# as a cleaner, honestly-lossy retelling than the old original-text window. The
+# trade-off — measured, accepted — is lower token-fidelity across the board
+# (even at light compression reconstructions are paraphrases, not verbatim); see
+# docs/abstract.md "Two Regimes". The other modes below are kept for comparison.
+#
+#   "baseline"               — gap-fill: a fixed-width window of the ORIGINAL
+#                             text on BOTH sides of the gap (the prior shipped
+#                             behavior; copies removed neighbors verbatim).
 #   "surviving-causal"       — prototype: the full SURVIVING (compressed) text up
 #                             to the gap, LEFT-only, predicting forward. Mirrors
 #                             how surprisal is scored. See reconstruct_forward().
@@ -59,7 +68,9 @@ _CONTEXT_CHARS = 200  # how much surviving text to send as left/right context to
 #                             "[...]" and the target as "<<<FILL>>>". Preserves
 #                             structure (no recite/regenerate) while revealing
 #                             only survivors. See reconstruct_placeholder().
-_RECON_MODE = os.environ.get("CPRED_RECON_MODE", "baseline").strip().lower()
+_RECON_MODE = os.environ.get(
+    "CPRED_RECON_MODE", "surviving-placeholder"
+).strip().lower()
 
 # Markers for "surviving-placeholder": other removed spans vs the target span.
 _GAP_MARKER = "[...]"
