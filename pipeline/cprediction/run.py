@@ -27,6 +27,7 @@ from cprediction.reconstruct import (
     reconstruct,
     reconstruct_forward,
     reconstruct_gap,
+    reconstruct_placeholder,
 )
 from cprediction.score import score
 from cprediction.spans import Gap, find_gaps
@@ -53,7 +54,16 @@ _CONTEXT_CHARS = 200  # how much surviving text to send as left/right context to
 #                             words inside it deleted. Holds context width at the
 #                             baseline's and changes only the source (original ->
 #                             survivors), isolating the leakage effect alone.
+#   "surviving-placeholder"  — prototype: contiguous surviving text in the
+#                             baseline window, other removed spans shown as
+#                             "[...]" and the target as "<<<FILL>>>". Preserves
+#                             structure (no recite/regenerate) while revealing
+#                             only survivors. See reconstruct_placeholder().
 _RECON_MODE = os.environ.get("CPRED_RECON_MODE", "baseline").strip().lower()
+
+# Markers for "surviving-placeholder": other removed spans vs the target span.
+_GAP_MARKER = "[...]"
+_FILL_MARKER = "<<<FILL>>>"
 
 # Right-anchor width (in surviving words) for "surviving-bidirectional". Small by
 # design: the right side is a landmark the fill must connect into, not a
@@ -231,6 +241,51 @@ def _surviving_window_context(
     return " ".join(left_parts), " ".join(right_parts)
 
 
+def _placeholder_window_context(
+    source: str,
+    words: list[Word],
+    removed_indices: set[int],
+    target: Gap,
+    radius: int = _CONTEXT_CHARS,
+) -> str:
+    """Contiguous surviving text around the target gap, with markers for holes.
+
+    Within the baseline window span (``radius`` chars each side of ``target``),
+    emit surviving words verbatim, collapse OTHER removed spans to ``[...]``, and
+    mark the target span with ``<<<FILL>>>``. Preserving the contiguous
+    structure (rather than concatenating bare survivors) is what stops the model
+    reciting; the explicit marker makes it a precise fill. Only survivors are
+    revealed — removed content stays behind markers.
+    """
+
+    lo = max(0, words[target.start_index].char_start - radius)
+    hi = words[target.end_index].char_end + radius
+    target_ids = set(target.word_indices)
+
+    tokens: list[str] = []
+
+    def push(tok: str) -> None:
+        # Collapse consecutive identical markers so a multi-word hole reads as a
+        # single [...] (or one <<<FILL>>>), not a repeated marker per word.
+        if tok in (_GAP_MARKER, _FILL_MARKER) and tokens and tokens[-1] == tok:
+            return
+        tokens.append(tok)
+
+    for idx, w in enumerate(words):
+        if w.is_empty_core:
+            continue
+        if w.char_end <= lo or w.char_start >= hi:
+            continue
+        if idx in target_ids:
+            push(_FILL_MARKER)
+        elif idx in removed_indices:
+            push(_GAP_MARKER)
+        else:
+            push(w.core + w.trailing_punct)
+
+    return " ".join(tokens)
+
+
 def _percent(numerator: float, denominator: float) -> str:
     if denominator <= 0:
         return "0.0%"
@@ -335,6 +390,15 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
                 )
                 predicted = reconstruct_gap(
                     left, right, expected_words=len(gap.word_indices)
+                )
+            elif _RECON_MODE == "surviving-placeholder":
+                # Prototype: contiguous surviving window with [...] for other
+                # holes and <<<FILL>>> for the target.
+                ctx = _placeholder_window_context(
+                    normalized, words, gap_word_ids, gap
+                )
+                predicted = reconstruct_placeholder(
+                    ctx, expected_words=len(gap.word_indices)
                 )
             else:
                 # Baseline: fixed-width original-text window on both sides.

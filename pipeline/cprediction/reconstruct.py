@@ -100,6 +100,29 @@ _SYSTEM_PROMPT_GAP = (
 )
 
 
+# Placeholder prompt for the "surviving-placeholder" prototype. The context is
+# CONTIGUOUS surviving text with removed spans shown as markers — other removed
+# spans as "[...]" and the ONE target span as "<<<FILL>>>". Preserving the
+# structure (rather than deleting words and concatenating survivors) stops the
+# model reciting/regenerating, and the explicit target marker makes it a precise
+# fill. Only survivors are ever revealed. Generalized — no corpus-specific
+# framing.
+_SYSTEM_PROMPT_PLACEHOLDER = (
+    "You are reconstructing the words removed at one point in an abridged "
+    "text. The user gives you a passage in which removed spans are shown as "
+    "[...] markers, and the ONE span you must reconstruct is marked <<<FILL>>>. "
+    "Using the surrounding words, predict the words that were removed at the "
+    "<<<FILL>>> marker.\n\n"
+    "Rules:\n"
+    "- Output ONLY the words that belong at <<<FILL>>>. No preamble, no "
+    "explanation, no quotation marks, no markers, no other text.\n"
+    "- Reconstruct ONLY the <<<FILL>>> span. Leave every [...] marker alone — "
+    "do not fill or mention them.\n"
+    "- Match the voice, register, and style of the surrounding text.\n"
+    "- Keep the length proportional to the missing span."
+)
+
+
 def _gap_word_count(left: str, right: str) -> int:
     """A coarse estimate of how big the gap is, in words.
 
@@ -189,6 +212,26 @@ def reconstruct_gap(
         max_new = max(64, _gap_word_count(left_context, right_context) * 2)
     user_msg = f"BEFORE: {left_context}\n<<<GAP>>>\nAFTER: {right_context}"
     return _generate_reply(_SYSTEM_PROMPT_GAP, user_msg, max_new)
+
+
+def reconstruct_placeholder(
+    context: str,
+    expected_words: int | None = None,
+) -> str:
+    """Placeholder-based reconstruction — the "surviving-placeholder" prototype.
+
+    ``context`` is contiguous surviving text in which removed spans appear as
+    ``[...]`` markers and the single target span as ``<<<FILL>>>``. The model
+    fills only the target marker. Preserving the structure (vs deleting words)
+    is what stops the recite/regenerate behavior the concatenation variants hit.
+    Greedy/deterministic.
+    """
+
+    if expected_words is not None:
+        max_new = max(64, int(expected_words * 2.5))
+    else:
+        max_new = max(64, len(context.split()) * 2)
+    return _generate_reply(_SYSTEM_PROMPT_PLACEHOLDER, context, max_new)
 
 
 def _generate_reply(system_prompt: str, user_msg: str, max_new: int) -> str:
