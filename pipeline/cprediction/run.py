@@ -48,6 +48,11 @@ _CONTEXT_CHARS = 200  # how much surviving text to send as left/right context to
 #                             surviving right anchor (width = CPRED_RIGHT_ANCHOR_WORDS,
 #                             default 2). Survivors only on both sides — no
 #                             removed neighbors leak in. See reconstruct_gap().
+#   "surviving-wide"         — prototype: the baseline's window SPAN
+#                             (_CONTEXT_CHARS each side) but with the removed
+#                             words inside it deleted. Holds context width at the
+#                             baseline's and changes only the source (original ->
+#                             survivors), isolating the leakage effect alone.
 _RECON_MODE = os.environ.get("CPRED_RECON_MODE", "baseline").strip().lower()
 
 # Right-anchor width (in surviving words) for "surviving-bidirectional". Small by
@@ -187,6 +192,45 @@ def _surviving_right_context(
     return " ".join(parts)
 
 
+def _surviving_window_context(
+    source: str,
+    words: list[Word],
+    removed_indices: set[int],
+    gap: Gap,
+    radius: int = _CONTEXT_CHARS,
+) -> tuple[str, str]:
+    """Surviving-wide context: the baseline's window SPAN, minus removed words.
+
+    Same story span as :func:`_left_right_context` (``radius`` chars each side of
+    the gap), but built from surviving words only — removed words that fall in
+    the span are dropped. Holding the span at the baseline's and changing only
+    whether removed words are present isolates the leakage effect: any fidelity
+    delta vs baseline is attributable to source (original vs survivors) alone,
+    not to seeing more or less of the story. Survivors overlapping the span
+    boundary are kept (matching the baseline's raw char slice as closely as a
+    word-granular build allows).
+    """
+
+    left_lo = max(0, words[gap.start_index].char_start - radius)
+    right_hi = words[gap.end_index].char_end + radius
+
+    left_parts = [
+        words[i].core + words[i].trailing_punct
+        for i in range(gap.start_index)
+        if not words[i].is_empty_core
+        and i not in removed_indices
+        and words[i].char_end > left_lo
+    ]
+    right_parts = [
+        words[i].core + words[i].trailing_punct
+        for i in range(gap.end_index + 1, len(words))
+        if not words[i].is_empty_core
+        and i not in removed_indices
+        and words[i].char_start < right_hi
+    ]
+    return " ".join(left_parts), " ".join(right_parts)
+
+
 def _percent(numerator: float, denominator: float) -> str:
     if denominator <= 0:
         return "0.0%"
@@ -280,6 +324,14 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
                 left = _surviving_left_context(words, gap_word_ids, gap)
                 right = _surviving_right_context(
                     words, gap_word_ids, gap, _RIGHT_ANCHOR_WORDS
+                )
+                predicted = reconstruct_gap(
+                    left, right, expected_words=len(gap.word_indices)
+                )
+            elif _RECON_MODE == "surviving-wide":
+                # Prototype: baseline window span, minus the removed words.
+                left, right = _surviving_window_context(
+                    normalized, words, gap_word_ids, gap
                 )
                 predicted = reconstruct_gap(
                     left, right, expected_words=len(gap.word_indices)
