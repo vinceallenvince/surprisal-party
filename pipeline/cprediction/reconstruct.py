@@ -31,6 +31,26 @@ def _strip_think_blocks(text: str) -> str:
     return _THINK_BLOCK_RE.sub("", text)
 
 
+# Markers the placeholder mode puts in the prompt; the model is told never to
+# echo them, but we also strip any that leak (it tends to render "[...]" as
+# "(...)"). Matches <<<FILL>>> and a bracketed/parenthesized ASCII or Unicode
+# ellipsis.
+_MARKER_RE = re.compile(r"<<<\s*FILL\s*>>>|[\[(]\s*(?:\.\.\.|…)\s*[\])]")
+
+
+def _strip_markers(text: str) -> str:
+    """Remove any residual prompt markers from a placeholder-mode reply.
+
+    Defensive cleanup for ``reconstruct_placeholder``: drop leaked markers, pull
+    spaces back off punctuation they orphaned, and collapse the resulting
+    whitespace.
+    """
+    text = _MARKER_RE.sub(" ", text)
+    text = re.sub(r"\s+([,.;:!?])", r"\1", text)
+    text = re.sub(r"\s{2,}", " ", text)
+    return text.strip()
+
+
 _SYSTEM_PROMPT = (
     "You are completing a missing passage of a classic fairy tale. The user "
     "will give you the text immediately before and after a gap. Write the "
@@ -114,12 +134,15 @@ _SYSTEM_PROMPT_PLACEHOLDER = (
     "Using the surrounding words, predict the words that were removed at the "
     "<<<FILL>>> marker.\n\n"
     "Rules:\n"
-    "- Output ONLY the words that belong at <<<FILL>>>. No preamble, no "
-    "explanation, no quotation marks, no markers, no other text.\n"
-    "- Reconstruct ONLY the <<<FILL>>> span. Leave every [...] marker alone — "
-    "do not fill or mention them.\n"
+    "- Output ONLY the words that belong at <<<FILL>>> — nothing else. No "
+    "preamble, no explanation, no quotation marks.\n"
+    "- NEVER output a marker. Do not write <<<FILL>>>, [...], (...), or any "
+    "ellipsis in brackets or parentheses anywhere in your answer.\n"
+    "- Do NOT copy, continue, or rewrite the surrounding text or the other "
+    "[...] spans. Reconstruct only the single <<<FILL>>> span.\n"
     "- Match the voice, register, and style of the surrounding text.\n"
-    "- Keep the length proportional to the missing span."
+    "- Keep the length proportional to the missing span (usually only a few "
+    "words)."
 )
 
 
@@ -231,7 +254,7 @@ def reconstruct_placeholder(
         max_new = max(64, int(expected_words * 2.5))
     else:
         max_new = max(64, len(context.split()) * 2)
-    return _generate_reply(_SYSTEM_PROMPT_PLACEHOLDER, context, max_new)
+    return _strip_markers(_generate_reply(_SYSTEM_PROMPT_PLACEHOLDER, context, max_new))
 
 
 def _generate_reply(system_prompt: str, user_msg: str, max_new: int) -> str:
