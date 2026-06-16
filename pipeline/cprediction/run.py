@@ -170,8 +170,17 @@ def _percent(numerator: float, denominator: float) -> str:
     return f"{(numerator / denominator) * 100:.1f}%"
 
 
-def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) -> Path:
+def run(
+    input_path: Path = _DEFAULT_INPUT,
+    output_path: Path = _DEFAULT_OUTPUT,
+    title_override: str | None = None,
+) -> Path:
     """Execute the full Phase 0 pipeline and write the Markdown artifact.
+
+    ``title_override`` sets the cache's display title verbatim; when ``None`` the
+    title is derived from the input filename (``_title_from_path``). Use the
+    override for titles the slug can't express — leading articles, apostrophes,
+    punctuation (e.g. "The Emperor's New Clothes").
 
     Returns the output path.
     """
@@ -268,7 +277,7 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
         )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    title = _title_from_path(input_path)
+    title = title_override or _title_from_path(input_path)
     json_path = output_path.with_suffix(".json")
 
     # Build the cache BEFORE any file write. ``build_cache`` re-asserts the
@@ -416,9 +425,16 @@ def _render_markdown(
 
 def main(argv: list[str] | None = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
+    # Optional `--title "..."` override, pulled out wherever it sits so the
+    # positional input/output args keep their places.
+    title: str | None = None
+    if "--title" in argv:
+        i = argv.index("--title")
+        title = argv[i + 1] if i + 1 < len(argv) else None
+        del argv[i : i + 2]
     in_path = Path(argv[0]) if len(argv) >= 1 else _DEFAULT_INPUT
     out_path = Path(argv[1]) if len(argv) >= 2 else _DEFAULT_OUTPUT
-    run(in_path, out_path)
+    run(in_path, out_path, title_override=title)
     return 0
 
 
