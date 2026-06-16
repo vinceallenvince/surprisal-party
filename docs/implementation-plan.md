@@ -252,7 +252,7 @@ The removed words ("the", "who was", "by") are NEVER shown to the model,
 so the gap is rebuilt from stored information alone — no leakage.
 ```
 
-**Pipeline wiring.** `CPRED_RECON_MODE` (in `cprediction/run.py`) selects the strategy and defaults to `surviving-placeholder`. The context is assembled by `_placeholder_window_context()`; `reconstruct_placeholder()` runs the model against `_SYSTEM_PROMPT_PLACEHOLDER` (generalized — no corpus-specific framing — and forbidding the model from emitting markers or rewriting the surroundings) and `_strip_markers()` scrubs any leaked markers from the reply. The earlier exploratory modes (`baseline`, `surviving-causal`, `surviving-bidirectional`, `surviving-wide`) are retained behind the same env var for A/B comparison via `scripts/compare_reconstructions.py` and `scripts/render_reading.py`.
+**Pipeline wiring.** `cprediction/run.py` reconstructs every gap with `surviving-placeholder` (the single strategy). The context is assembled by `_placeholder_window_context()`; `reconstruct_placeholder()` runs the model against `_SYSTEM_PROMPT_PLACEHOLDER` (generalized — no corpus-specific framing — and forbidding the model from emitting markers or rewriting the surroundings) and `_strip_markers()` scrubs any leaked markers from the reply. The exploratory modes (`baseline`, `surviving-causal`, `surviving-bidirectional`, `surviving-wide`) were removed once this strategy was adopted; the comparison tooling (`scripts/compare_reconstructions.py`, `scripts/render_reading.py`) remains, and the modes are recoverable from git history if a future A/B (e.g. the gap-granularity follow-up) needs them.
 
 **How it was chosen (A/B on Little Red Riding Hood, overall mean fidelity).**
 
