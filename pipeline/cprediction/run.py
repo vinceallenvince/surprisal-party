@@ -23,7 +23,12 @@ from cprediction._model import MODEL_ID
 from cprediction.cache import build_cache
 from cprediction.fidelity import fidelity
 from cprediction.reconciliation import Word, reconcile
-from cprediction.reconstruct import reconstruct
+from cprediction.reconstruct import (
+    reconstruct,
+    reconstruct_forward,
+    reconstruct_gap,
+    reconstruct_placeholder,
+)
 from cprediction.score import score
 from cprediction.spans import Gap, find_gaps
 from cprediction.thresholds import select_thresholds
@@ -33,6 +38,48 @@ _DEFAULT_INPUT = Path(__file__).resolve().parent.parent / "corpus" / "little-red
 _DEFAULT_OUTPUT = Path(__file__).resolve().parent.parent / "output" / "little-red-riding-hood.md"
 
 _CONTEXT_CHARS = 200  # how much surviving text to send as left/right context to reconstruct()
+
+# Reconstruction strategy, selected by the CPRED_RECON_MODE env var.
+#
+# ADOPTED DEFAULT: "surviving-placeholder". Reconstructs each gap from the
+# surrounding SURVIVING text only (removed neighbors never leak in), which reads
+# as a cleaner, honestly-lossy retelling than the old original-text window. The
+# trade-off — measured, accepted — is lower token-fidelity across the board
+# (even at light compression reconstructions are paraphrases, not verbatim); see
+# docs/abstract.md "Two Regimes". The other modes below are kept for comparison.
+#
+#   "baseline"               — gap-fill: a fixed-width window of the ORIGINAL
+#                             text on BOTH sides of the gap (the prior shipped
+#                             behavior; copies removed neighbors verbatim).
+#   "surviving-causal"       — prototype: the full SURVIVING (compressed) text up
+#                             to the gap, LEFT-only, predicting forward. Mirrors
+#                             how surprisal is scored. See reconstruct_forward().
+#   "surviving-bidirectional" — prototype: full SURVIVING left + a MINIMAL
+#                             surviving right anchor (width = CPRED_RIGHT_ANCHOR_WORDS,
+#                             default 2). Survivors only on both sides — no
+#                             removed neighbors leak in. See reconstruct_gap().
+#   "surviving-wide"         — prototype: the baseline's window SPAN
+#                             (_CONTEXT_CHARS each side) but with the removed
+#                             words inside it deleted. Holds context width at the
+#                             baseline's and changes only the source (original ->
+#                             survivors), isolating the leakage effect alone.
+#   "surviving-placeholder"  — prototype: contiguous surviving text in the
+#                             baseline window, other removed spans shown as
+#                             "[...]" and the target as "<<<FILL>>>". Preserves
+#                             structure (no recite/regenerate) while revealing
+#                             only survivors. See reconstruct_placeholder().
+_RECON_MODE = os.environ.get(
+    "CPRED_RECON_MODE", "surviving-placeholder"
+).strip().lower()
+
+# Markers for "surviving-placeholder": other removed spans vs the target span.
+_GAP_MARKER = "[...]"
+_FILL_MARKER = "<<<FILL>>>"
+
+# Right-anchor width (in surviving words) for "surviving-bidirectional". Small by
+# design: the right side is a landmark the fill must connect into, not a
+# symmetric mirror of the left.
+_RIGHT_ANCHOR_WORDS = int(os.environ.get("CPRED_RIGHT_ANCHOR_WORDS", "2"))
 
 
 @dataclass
@@ -118,6 +165,138 @@ def _left_right_context(
     return left, right
 
 
+def _surviving_left_context(
+    words: list[Word],
+    removed_indices: set[int],
+    gap: Gap,
+) -> str:
+    """The full SURVIVING text before this gap (prototype, left-only mode).
+
+    Joins every surviving word (not empty-core, not removed at this threshold)
+    with an index before the gap start — i.e. exactly what is still "stored" on
+    the page leading up to the gap. Removed words are simply absent, so the
+    string reads as the compressed history the reader sees. This is the context
+    passed to :func:`reconstruct_forward`; it conditions only on true survivors,
+    never on earlier predictions, so each gap is rebuilt "from the kernel alone".
+    """
+
+    parts = [
+        words[i].core + words[i].trailing_punct
+        for i in range(gap.start_index)
+        if not words[i].is_empty_core and i not in removed_indices
+    ]
+    return " ".join(parts)
+
+
+def _surviving_right_context(
+    words: list[Word],
+    removed_indices: set[int],
+    gap: Gap,
+    max_words: int,
+) -> str:
+    """A MINIMAL surviving anchor after the gap (prototype, bidirectional mode).
+
+    The next ``max_words`` surviving words after the gap — the landmark the fill
+    must connect into. Drawn from survivors only (removed words skipped), so no
+    removed neighbor leaks in. Deliberately small and asymmetric with the full
+    surviving left context: the right side bounds the target, it does not carry
+    the conditioning.
+    """
+
+    parts: list[str] = []
+    for i in range(gap.end_index + 1, len(words)):
+        if words[i].is_empty_core or i in removed_indices:
+            continue
+        parts.append(words[i].core + words[i].trailing_punct)
+        if len(parts) >= max_words:
+            break
+    return " ".join(parts)
+
+
+def _surviving_window_context(
+    source: str,
+    words: list[Word],
+    removed_indices: set[int],
+    gap: Gap,
+    radius: int = _CONTEXT_CHARS,
+) -> tuple[str, str]:
+    """Surviving-wide context: the baseline's window SPAN, minus removed words.
+
+    Same story span as :func:`_left_right_context` (``radius`` chars each side of
+    the gap), but built from surviving words only — removed words that fall in
+    the span are dropped. Holding the span at the baseline's and changing only
+    whether removed words are present isolates the leakage effect: any fidelity
+    delta vs baseline is attributable to source (original vs survivors) alone,
+    not to seeing more or less of the story. Survivors overlapping the span
+    boundary are kept (matching the baseline's raw char slice as closely as a
+    word-granular build allows).
+    """
+
+    left_lo = max(0, words[gap.start_index].char_start - radius)
+    right_hi = words[gap.end_index].char_end + radius
+
+    left_parts = [
+        words[i].core + words[i].trailing_punct
+        for i in range(gap.start_index)
+        if not words[i].is_empty_core
+        and i not in removed_indices
+        and words[i].char_end > left_lo
+    ]
+    right_parts = [
+        words[i].core + words[i].trailing_punct
+        for i in range(gap.end_index + 1, len(words))
+        if not words[i].is_empty_core
+        and i not in removed_indices
+        and words[i].char_start < right_hi
+    ]
+    return " ".join(left_parts), " ".join(right_parts)
+
+
+def _placeholder_window_context(
+    source: str,
+    words: list[Word],
+    removed_indices: set[int],
+    target: Gap,
+    radius: int = _CONTEXT_CHARS,
+) -> str:
+    """Contiguous surviving text around the target gap, with markers for holes.
+
+    Within the baseline window span (``radius`` chars each side of ``target``),
+    emit surviving words verbatim, collapse OTHER removed spans to ``[...]``, and
+    mark the target span with ``<<<FILL>>>``. Preserving the contiguous
+    structure (rather than concatenating bare survivors) is what stops the model
+    reciting; the explicit marker makes it a precise fill. Only survivors are
+    revealed — removed content stays behind markers.
+    """
+
+    lo = max(0, words[target.start_index].char_start - radius)
+    hi = words[target.end_index].char_end + radius
+    target_ids = set(target.word_indices)
+
+    tokens: list[str] = []
+
+    def push(tok: str) -> None:
+        # Collapse consecutive identical markers so a multi-word hole reads as a
+        # single [...] (or one <<<FILL>>>), not a repeated marker per word.
+        if tok in (_GAP_MARKER, _FILL_MARKER) and tokens and tokens[-1] == tok:
+            return
+        tokens.append(tok)
+
+    for idx, w in enumerate(words):
+        if w.is_empty_core:
+            continue
+        if w.char_end <= lo or w.char_start >= hi:
+            continue
+        if idx in target_ids:
+            push(_FILL_MARKER)
+        elif idx in removed_indices:
+            push(_GAP_MARKER)
+        else:
+            push(w.core + w.trailing_punct)
+
+    return " ".join(tokens)
+
+
 def _percent(numerator: float, denominator: float) -> str:
     if denominator <= 0:
         return "0.0%"
@@ -132,6 +311,15 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
 
     raw = input_path.read_text(encoding="utf-8")
     print(f"[run] read {len(raw):,} chars from {input_path}", file=sys.stderr)
+    _mode_note = (
+        f" (right_anchor_words={_RIGHT_ANCHOR_WORDS})"
+        if _RECON_MODE == "surviving-bidirectional"
+        else ""
+    )
+    print(
+        f"[run] reconstruction mode = {_RECON_MODE!r}{_mode_note}",
+        file=sys.stderr,
+    )
 
     print(f"[run] loading {MODEL_ID}...", file=sys.stderr)
     print(f"[run] scoring with {MODEL_ID}...", file=sys.stderr)
@@ -189,10 +377,46 @@ def run(input_path: Path = _DEFAULT_INPUT, output_path: Path = _DEFAULT_OUTPUT) 
         gap_results: list[GapResult] = []
         for g_idx, gap in enumerate(gaps):
             actual = _gap_text(words, gap, normalized)
-            left, right = _left_right_context(normalized, words, gap)
-            predicted = reconstruct(
-                left, right, expected_words=len(gap.word_indices)
-            )
+            if _RECON_MODE == "surviving-causal":
+                # Prototype: full surviving (compressed) text up to the gap,
+                # left-only, predicting forward.
+                left = _surviving_left_context(words, gap_word_ids, gap)
+                predicted = reconstruct_forward(
+                    left, expected_words=len(gap.word_indices)
+                )
+            elif _RECON_MODE == "surviving-bidirectional":
+                # Prototype: full surviving left + a minimal surviving right
+                # anchor. Survivors only on both sides (no removed-neighbor leak).
+                left = _surviving_left_context(words, gap_word_ids, gap)
+                right = _surviving_right_context(
+                    words, gap_word_ids, gap, _RIGHT_ANCHOR_WORDS
+                )
+                predicted = reconstruct_gap(
+                    left, right, expected_words=len(gap.word_indices)
+                )
+            elif _RECON_MODE == "surviving-wide":
+                # Prototype: baseline window span, minus the removed words.
+                left, right = _surviving_window_context(
+                    normalized, words, gap_word_ids, gap
+                )
+                predicted = reconstruct_gap(
+                    left, right, expected_words=len(gap.word_indices)
+                )
+            elif _RECON_MODE == "surviving-placeholder":
+                # Prototype: contiguous surviving window with [...] for other
+                # holes and <<<FILL>>> for the target.
+                ctx = _placeholder_window_context(
+                    normalized, words, gap_word_ids, gap
+                )
+                predicted = reconstruct_placeholder(
+                    ctx, expected_words=len(gap.word_indices)
+                )
+            else:
+                # Baseline: fixed-width original-text window on both sides.
+                left, right = _left_right_context(normalized, words, gap)
+                predicted = reconstruct(
+                    left, right, expected_words=len(gap.word_indices)
+                )
             f = fidelity(predicted, actual)
             gap_results.append(
                 GapResult(

@@ -24,10 +24,12 @@ Fairy tales are the chosen substrate because the user already knows them end to 
 - **Right strip** — the conservation visualization. Faded word tiles physically migrate from the middle column into a fixed-width packed mass on the right. The strip is not meant to be read word-by-word; it is meant to be seen as bulk. Total tiles never change; only their location does.
 
 ## Two Regimes of the Slider
-- **Lossless region (left).** Predictable function words and locked-in phrases fade. The middle column reads as the story, lightly tightened. Reconstruction cards are verbatim, fidelity ≈ 1.00. Words leave the page but information barely moves — the user is watching redundancy compress losslessly.
-- **Lossy region (right).** Whole clauses and episodes fade. Reconstruction cards become paraphrases or condensations; fidelity drops to roughly 0.6–0.8 but remains checkable against the source. The predictor is now doing real inferential work, and the conservation readout shows information migrating in bulk.
+- **Lighter region (left).** Predictable function words and short phrases fade. The middle column reads as the story, lightly tightened. Reconstructions are *close paraphrases* rather than verbatim — the model recovers each gap from the surviving context alone, so even here it usually differs from the original by a word or two and fidelity sits well below 1.00. Words leave the page but little information moves: the user is watching redundancy compress.
+- **Lossy region (right).** Whole clauses and episodes fade. Reconstructions become looser paraphrases and condensations, the gaps cover larger spans, and fidelity falls further — but the retelling stays recognizable against the source. The predictor is now doing real inferential work, and the conservation readout shows information migrating in bulk.
 
-The handoff between regions is visible in the header numbers and can be marked on the slider track itself.
+The handoff between regions is a gradient, visible in the header's avg-fidelity number as it falls, and can be marked on the slider track itself.
+
+> **A note on fidelity expectations.** An earlier draft of this section expected near-verbatim reconstructions (fidelity ≈ 1.00) on the left. Measurement showed otherwise: because reconstruction is done from the *surviving* text only (never peeking at the removed words) and the removed words at low thresholds are tiny function words, the model paraphrases rather than reproduces, so fidelity is well under 1.00 across the whole slider and is highest — not perfect — at the left. This is the honest behavior of the compression↔prediction mechanic, and the number is presented as a measure of loss, not a target to maximize.
 
 ## Determinism and Variability
 V1 is fully deterministic: every reconstruction the user sees was generated once at build time and is loaded from a static cache at runtime. The runtime makes no language-model calls. Dragging the slider produces identical behavior across users, sessions, and reloads — because the mechanic *is* the argument, and the mechanic must be stable.

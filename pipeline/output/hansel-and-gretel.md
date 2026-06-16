@@ -541,25 +541,25 @@ catches it, may make himself a big fur cap out <gap 528> it.
 - Actual: `Hard`
 - Predicted: `lived`
 
-**Gap 2** (1 words, fidelity 0.00)
+**Gap 2** (1 words, fidelity 1.00)
 
 - Actual: `his`
-- Predicted: `wife and`
+- Predicted: `his`
 
 **Gap 3** (1 words, fidelity 0.50)
 
 - Actual: `the`
 - Predicted: `the girl Gretel.`
 
-**Gap 4** (1 words, fidelity 0.50)
+**Gap 4** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `and had nothing`
+- Predicted: `and eat`
 
-**Gap 5** (1 words, fidelity 0.67)
+**Gap 5** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `the country`
+- Predicted: `the`
 
 **Gap 6** (2 words, fidelity 0.50)
 
@@ -569,63 +569,62 @@ catches it, may make himself a big fur cap out <gap 528> it.
 **Gap 7** (1 words, fidelity 0.00)
 
 - Actual: `night`
-- Predicted: `over`
+- Predicted: `he`
 
-**Gap 8** (2 words, fidelity 0.67)
+**Gap 8** (2 words, fidelity 0.00)
 
 - Actual: `his bed,`
-- Predicted: `bed`
+- Predicted: `called`
 
-**Gap 9** (1 words, fidelity 0.12)
+**Gap 9** (1 words, fidelity 1.00)
 
 - Actual: `he`
-- Predicted: `he resolved to go into the forest and cut wood, hoping thereby to earn
-some money.`
+- Predicted: `he`
 
-**Gap 10** (3 words, fidelity 0.50)
+**Gap 10** (3 words, fidelity 0.00)
 
 - Actual: `said to his`
-- Predicted: `to`
+- Predicted: `alas`
 
 **Gap 11** (3 words, fidelity 0.00)
 
 - Actual: `to become of`
-- Predicted: `becomes`
+- Predicted: `befell`
 
-**Gap 12** (1 words, fidelity 0.00)
+**Gap 12** (1 words, fidelity 0.67)
 
 - Actual: `we`
-- Predicted: `become`
+- Predicted: `shall we`
 
-**Gap 13** (1 words, fidelity 1.00)
+**Gap 13** (1 words, fidelity 0.00)
 
 - Actual: `our`
-- Predicted: `our`
+- Predicted: `little`
 
 **Gap 14** (1 words, fidelity 0.00)
 
 - Actual: `when`
-- Predicted: `are we to put them to death`
+- Predicted: `shall we gather berries and mushrooms`
 
 **Gap 15** (2 words, fidelity 0.00)
 
 - Actual: `longer have`
-- Predicted: `how shall`
+- Predicted: `shall we find`
 
 **Gap 16** (2 words, fidelity 0.00)
 
 - Actual: `tell you`
-- Predicted: `can`
+- Predicted: `shall we`
 
 **Gap 17** (1 words, fidelity 0.00)
 
 - Actual: `morning`
-- Predicted: `as soon as`
+- Predicted: `shall`
 
 **Gap 18** (1 words, fidelity 0.00)
 
 - Actual: `children`
-- Predicted: `child`
+- Predicted: `will bring`
 
 **Gap 19** (1 words, fidelity 1.00)
 
@@ -635,235 +634,242 @@ some money.`
 **Gap 20** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `in the thickest; there we will light a fire for them, and give each`
+- Predicted: `find`
 
-**Gap 21** (1 words, fidelity 0.15)
+**Gap 21** (1 words, fidelity 0.50)
 
 - Actual: `we`
-- Predicted: `we will cut off their heads and
-put them under our arms.`
+- Predicted: `we will make`
 
-**Gap 22** (2 words, fidelity 1.00)
+**Gap 22** (2 words, fidelity 0.00)
 
 - Actual: `a fire`
-- Predicted: `a fire`
+- Predicted: `we`
 
 **Gap 23** (1 words, fidelity 1.00)
 
 - Actual: `give`
 - Predicted: `give`
 
-**Gap 24** (1 words, fidelity 0.29)
+**Gap 24** (1 words, fidelity 0.00)
 
 - Actual: `them`
-- Predicted: `of them, and we will give`
+- Predicted: `give`
 
-**Gap 25** (1 words, fidelity 0.50)
+**Gap 25** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of cake, and`
+- Predicted: `bake`
 
-**Gap 26** (2 words, fidelity 0.00)
+**Gap 26** (2 words, fidelity 0.40)
 
 - Actual: `then we`
-- Predicted: `will give`
+- Predicted: `we will bring`
 
 **Gap 27** (1 words, fidelity 0.00)
 
 - Actual: `go`
-- Predicted: `send them`
+- Predicted: `give`
 
 **Gap 28** (1 words, fidelity 0.00)
 
 - Actual: `work`
-- Predicted: `cottage`
+- Predicted: `cabin`
 
 **Gap 29** (1 words, fidelity 1.00)
 
 - Actual: `them`
 - Predicted: `them`
 
-**Gap 30** (1 words, fidelity 0.25)
+**Gap 30** (1 words, fidelity 0.00)
 
 - Actual: `way`
-- Predicted: `way home again, and we shall be`
+- Predicted: `shelter`
 
-**Gap 31** (1 words, fidelity 1.00)
+**Gap 31** (1 words, fidelity 0.67)
 
 - Actual: `of`
-- Predicted: `of`
+- Predicted: `of caring`
 
 **Gap 32** (1 words, fidelity 0.00)
 
 - Actual: `man,`
-- Predicted: `LEFT: output: husband`
+- Predicted: `will not`
 
-**Gap 33** (2 words, fidelity 0.00)
+**Gap 33** (2 words, fidelity 1.00)
 
 - Actual: `not do`
-- Predicted: `will`
+- Predicted: `do not`
 
-**Gap 34** (1 words, fidelity 0.67)
+**Gap 34** (1 words, fidelity 1.00)
 
 - Actual: `to`
-- Predicted: `to bear`
+- Predicted: `to`
 
 **Gap 35** (1 words, fidelity 0.00)
 
 - Actual: `my`
-- Predicted: `the`
+- Predicted: `our`
 
-**Gap 36** (1 words, fidelity 0.33)
+**Gap 36** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `forest?--the wild animals would`
+- Predicted: `the`
 
 **Gap 37** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `to`
+- Predicted: `tear`
 
 **Gap 38** (2 words, fidelity 0.67)
 
 - Actual: `them to`
-- Predicted: `them`
+- Predicted: `to`
 
 **Gap 39** (1 words, fidelity 0.00)
 
 - Actual: `all`
-- Predicted: `starve`
+- Predicted: `must plane the planks for our coffins`
 
-**Gap 40** (1 words, fidelity 1.00)
+**Gap 40** (1 words, fidelity 0.00)
 
 - Actual: `well`
-- Predicted: `well`
+- Predicted: `plane`
 
 **Gap 41** (1 words, fidelity 0.00)
 
 - Actual: `him`
-- Predicted: `she returned`
+- Predicted: `remain`
 
 **Gap 42** (1 words, fidelity 0.00)
 
 - Actual: `peace`
-- Predicted: `longer to persuade him`
+- Predicted: `wait`
 
-**Gap 43** (1 words, fidelity 0.67)
+**Gap 43** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he finally`
+- Predicted: `give`
 
 **Gap 44** (2 words, fidelity 0.67)
 
 - Actual: `for the`
 - Predicted: `for`
 
-**Gap 45** (1 words, fidelity 1.00)
+**Gap 45** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `kindly`
 
-**Gap 46** (2 words, fidelity 0.00)
+**Gap 46** (2 words, fidelity 0.40)
 
 - Actual: `able to`
-- Predicted: `happy`
+- Predicted: `to go without`
 
 **Gap 47** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `through`
+- Predicted: `without`
 
-**Gap 48** (3 words, fidelity 0.86)
+**Gap 48** (3 words, fidelity 0.00)
 
 - Actual: `had said to`
-- Predicted: `RIGHT:  had said to`
+- Predicted: `overheard`
 
 **Gap 49** (2 words, fidelity 0.00)
 
 - Actual: `said to`
-- Predicted: `Gretel wept bitterly, and`
+- Predicted: `Hansel: Now all hope is over with us.`
 
 **Gap 50** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `over`
+- Predicted: `was`
 
-**Gap 51** (1 words, fidelity 1.00)
+**Gap 51** (1 words, fidelity 0.00)
 
 - Actual: `not`
-- Predicted: `not`
+- Predicted: `distress`
 
 **Gap 52** (2 words, fidelity 0.67)
 
 - Actual: `find a`
 - Predicted: `find`
 
-**Gap 53** (2 words, fidelity 0.31)
+**Gap 53** (2 words, fidelity 0.00)
 
 - Actual: `fallen asleep,`
-- Predicted: `had fallen asleep, the children crept quietly out of the bed.`
+- Predicted: `when they`
 
-**Gap 54** (1 words, fidelity 0.67)
+**Gap 54** (1 words, fidelity 0.50)
 
 - Actual: `his`
-- Predicted: `on his`
+- Predicted: `pulled on his`
 
 **Gap 55** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `off`
+- Predicted: `pulled`
 
 **Gap 56** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `out`
+- Predicted: `crept outside.`
 
-**Gap 57** (1 words, fidelity 0.20)
+**Gap 57** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and looked about for something to take with him.`
+- Predicted: `lit up`
 
-**Gap 58** (2 words, fidelity 0.67)
+**Gap 58** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `of`
+- Predicted: `his`
 
-**Gap 59** (1 words, fidelity 1.00)
+**Gap 59** (1 words, fidelity 0.00)
 
 - Actual: `like`
-- Predicted: `like`
+- Predicted: `were
+his
+the
+and
+and
+of
+there
+they
+many
+much
+she`
 
 **Gap 60** (1 words, fidelity 0.00)
 
 - Actual: `silver`
-- Predicted: `pennies.`
+- Predicted: `shining`
 
 **Gap 61** (1 words, fidelity 1.00)
 
 - Actual: `his`
 - Predicted: `his`
 
-**Gap 62** (1 words, fidelity 0.00)
+**Gap 62** (1 words, fidelity 1.00)
 
 - Actual: `many`
-- Predicted: `much`
+- Predicted: `many`
 
-**Gap 63** (2 words, fidelity 0.67)
+**Gap 63** (2 words, fidelity 0.00)
 
 - Actual: `he could`
-- Predicted: `many as he could`
+- Predicted: `so many`
 
 **Gap 64** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `Hansel then took Gretel by the hand`
+- Predicted: `and`
 
-**Gap 65** (1 words, fidelity 0.05)
+**Gap 65** (1 words, fidelity 1.00)
 
 - Actual: `and`
-- Predicted: `and said to Gretel: 'Be comforted, dear little sister, for I have
-heard it said that if we go far enough, there is to be found a house of
-bread, and a table laid with good things to eat.'`
+- Predicted: `and`
 
 **Gap 66** (1 words, fidelity 1.00)
 
@@ -873,53 +879,53 @@ bread, and a table laid with good things to eat.'`
 **Gap 67** (2 words, fidelity 0.00)
 
 - Actual: `risen, the`
-- Predicted: `shone`
+- Predicted: `rise`
 
-**Gap 68** (1 words, fidelity 1.00)
+**Gap 68** (1 words, fidelity 0.00)
 
 - Actual: `up,`
-- Predicted: `up`
+- Predicted: `arise`
 
-**Gap 69** (5 words, fidelity 0.00)
+**Gap 69** (5 words, fidelity 0.29)
 
 - Actual: `going into the
 forest to`
-- Predicted: `fetch wood.`
+- Predicted: `to fetch`
 
-**Gap 70** (1 words, fidelity 1.00)
+**Gap 70** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of`
+- Predicted: `some`
 
-**Gap 71** (3 words, fidelity 0.40)
+**Gap 71** (3 words, fidelity 0.00)
 
 - Actual: `is something for`
-- Predicted: `there is`
+- Predicted: `out`
 
 **Gap 72** (5 words, fidelity 0.00)
 
 - Actual: `not eat it up before`
-- Predicted: `that`
+- Predicted: `must`
 
 **Gap 73** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `g: 'get up, you lazy bones!'`
+- Predicted: `must`
 
-**Gap 74** (1 words, fidelity 1.00)
+**Gap 74** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `beneath`
 
 **Gap 75** (1 words, fidelity 0.00)
 
 - Actual: `had`
 - Predicted: `put`
 
-**Gap 76** (1 words, fidelity 1.00)
+**Gap 76** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `his`
+- Predicted: `put`
 
 **Gap 77** (1 words, fidelity 0.00)
 
@@ -936,145 +942,145 @@ forest to`
 - Actual: `they had walked`
 - Predicted: `after`
 
-**Gap 80** (1 words, fidelity 0.12)
+**Gap 80** (1 words, fidelity 1.00)
 
 - Actual: `Hansel`
-- Predicted: `Hansel stood still and peeped back at the house, and did so again and again.`
+- Predicted: `Hansel`
 
-**Gap 81** (2 words, fidelity 0.67)
+**Gap 81** (2 words, fidelity 0.00)
 
 - Actual: `still and`
-- Predicted: `and`
+- Predicted: `Hansel`
 
-**Gap 82** (1 words, fidelity 1.00)
+**Gap 82** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `little`
 
 **Gap 83** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so`
+- Predicted: `did`
 
 **Gap 84** (2 words, fidelity 0.00)
 
 - Actual: `are you`
 - Predicted: `were`
 
-**Gap 85** (1 words, fidelity 1.00)
+**Gap 85** (1 words, fidelity 0.00)
 
 - Actual: `at`
-- Predicted: `at`
+- Predicted: `what`
 
-**Gap 86** (1 words, fidelity 0.67)
+**Gap 86** (1 words, fidelity 0.00)
 
 - Actual: `your`
-- Predicted: `your own`
+- Predicted: `use`
 
-**Gap 87** (1 words, fidelity 1.00)
+**Gap 87** (1 words, fidelity 0.00)
 
 - Actual: `said`
-- Predicted: `said`
+- Predicted: `were`
 
 **Gap 88** (2 words, fidelity 0.00)
 
 - Actual: `am looking`
-- Predicted: `saw`
+- Predicted: `was`
 
-**Gap 89** (3 words, fidelity 0.33)
+**Gap 89** (3 words, fidelity 0.00)
 
 - Actual: `my little white`
-- Predicted: `at a little`
+- Predicted: `stared`
 
 **Gap 90** (2 words, fidelity 0.00)
 
 - Actual: `on the`
-- Predicted: `perched`
+- Predicted: `up`
 
-**Gap 91** (1 words, fidelity 0.67)
+**Gap 91** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and staying`
+- Predicted: `wants to climb down`
 
-**Gap 92** (1 words, fidelity 1.00)
+**Gap 92** (1 words, fidelity 0.29)
 
 - Actual: `to`
-- Predicted: `to`
+- Predicted: `wants to say goodbye to me.`
 
 **Gap 93** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `at`
+- Predicted: `wants`
 
 **Gap 94** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `wasn't`
+- Predicted: `could`
 
 **Gap 95** (1 words, fidelity 0.00)
 
 - Actual: `your`
-- Predicted: `not my`
+- Predicted: `was`
 
-**Gap 96** (1 words, fidelity 0.18)
+**Gap 96** (1 words, fidelity 0.67)
 
 - Actual: `is`
-- Predicted: `was merely the gleam of the morning sun which is`
+- Predicted: `is like`
 
 **Gap 97** (1 words, fidelity 0.00)
 
 - Actual: `morning`
-- Predicted: `sun`
+- Predicted: `shines`
 
-**Gap 98** (1 words, fidelity 0.00)
+**Gap 98** (1 words, fidelity 1.00)
 
 - Actual: `is`
-- Predicted: `does not shine on cats`
+- Predicted: `is`
 
-**Gap 99** (2 words, fidelity 0.25)
+**Gap 99** (2 words, fidelity 0.00)
 
 - Actual: `on the`
-- Predicted: `through the glass into the house.`
+- Predicted: `atop, wants, to, wants, to, to, is, is, is, is, is, is, atop`
 
-**Gap 100** (1 words, fidelity 0.25)
+**Gap 100** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `out of his pocket on the road.`
+- Predicted: `had been`
 
-**Gap 101** (2 words, fidelity 1.00)
+**Gap 101** (2 words, fidelity 0.00)
 
 - Actual: `his pocket`
-- Predicted: `his pocket`
+- Predicted: `carefully`
 
-**Gap 102** (2 words, fidelity 0.15)
+**Gap 102** (2 words, fidelity 0.67)
 
 - Actual: `of the`
-- Predicted: `of the forest, the father said: 'Now, children, pile up some wood, and I will light a fire that you may not be cold.'`
+- Predicted: `of`
 
-**Gap 103** (1 words, fidelity 0.09)
+**Gap 103** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the father said: 'Now, children, pile up some wood, and I will light a fire that you may not be cold.'`
+- Predicted: `his`
 
-**Gap 104** (1 words, fidelity 0.00)
+**Gap 104** (1 words, fidelity 0.50)
 
 - Actual: `some`
-- Predicted: `up`
+- Predicted: `pile up some`
 
-**Gap 105** (3 words, fidelity 0.25)
+**Gap 105** (3 words, fidelity 0.40)
 
 - Actual: `and I will`
-- Predicted: `and make a fire here,`
+- Predicted: `we will`
 
 **Gap 106** (2 words, fidelity 1.00)
 
 - Actual: `a fire`
-- Predicted: `a fire,`
+- Predicted: `a fire`
 
 **Gap 107** (2 words, fidelity 0.00)
 
 - Actual: `you may`
-- Predicted: `we`
+- Predicted: `must`
 
 **Gap 108** (2 words, fidelity 0.00)
 
@@ -1086,351 +1092,351 @@ forest to`
 - Actual: `as`
 - Predicted: `as`
 
-**Gap 110** (1 words, fidelity 0.18)
+**Gap 110** (1 words, fidelity 0.00)
 
 - Actual: `The`
-- Predicted: `when the brushwood was lighted, and the flames were burning`
+- Predicted: `Hansel and Gretel gathered`
 
-**Gap 111** (1 words, fidelity 0.33)
+**Gap 111** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `and when it burned brightly`
+- Predicted: `and it`
 
 **Gap 112** (1 words, fidelity 0.00)
 
 - Actual: `were`
-- Predicted: `was`
+- Predicted: `began to`
 
-**Gap 113** (1 words, fidelity 0.09)
+**Gap 113** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `the fire and ate some of the bread; but they did not lay themselves down, for they were afraid of the witch.`
+- Predicted: `the`
 
-**Gap 114** (1 words, fidelity 0.00)
+**Gap 114** (1 words, fidelity 1.00)
 
 - Actual: `said:`
-- Predicted: `will`
+- Predicted: `said`
 
-**Gap 115** (2 words, fidelity 0.33)
+**Gap 115** (2 words, fidelity 0.80)
 
 - Actual: `the
 fire`
-- Predicted: `the fire, and when noon came, each ate a little`
+- Predicted: `by the fire`
 
-**Gap 116** (3 words, fidelity 0.00)
+**Gap 116** (3 words, fidelity 0.33)
 
 - Actual: `into the forest`
-- Predicted: `and cut some wood.`
+- Predicted: `up the mountain`
 
 **Gap 117** (1 words, fidelity 0.00)
 
 - Actual: `we`
-- Predicted: `have finished,`
-
-**Gap 118** (4 words, fidelity 0.75)
-
-- Actual: `we will come back`
-- Predicted: `we will be back`
-
-**Gap 119** (1 words, fidelity 1.00)
-
-- Actual: `you`
 - Predicted: `you`
 
-**Gap 120** (2 words, fidelity 0.00)
+**Gap 118** (4 words, fidelity 0.00)
+
+- Actual: `we will come back`
+- Predicted: `when the flames began to`
+
+**Gap 119** (1 words, fidelity 0.00)
+
+- Actual: `you`
+- Predicted: `home`
+
+**Gap 120** (2 words, fidelity 0.04)
 
 - Actual: `and Gretel`
-- Predicted: `sat`
+- Predicted: `Hansel sat by the fire, and when noon came, each child took a little piece of bread, and as they heard the strokes of the wood-axe they believed that their parents were near. It was not the axe, however, but a branch of the tree which had been hit by the wind.`
 
-**Gap 121** (1 words, fidelity 0.05)
+**Gap 121** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `fire, and when noon came, each ate a little piece of bread, and as they heard the strokes of the wood-axe they believed that their father was near. It was not the axe, however, but a branch which he`
+- Predicted: `before`
 
-**Gap 122** (1 words, fidelity 0.15)
+**Gap 122** (1 words, fidelity 0.00)
 
 - Actual: `came,`
-- Predicted: `and when noon came, they also ate a little piece of bread,`
+- Predicted: `midday, each child a little piece of bread, and as they heard the strokes of the wood-axe they believed that their brothers were near.`
 
-**Gap 123** (1 words, fidelity 1.00)
+**Gap 123** (1 words, fidelity 0.00)
 
 - Actual: `ate`
-- Predicted: `ate`
+- Predicted: `each took a little piece of bread, and as they heard the strokes of the wood-axe they believed that their brothers were near.`
 
-**Gap 124** (1 words, fidelity 1.00)
+**Gap 124** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of`
+- Predicted: `ate`
 
-**Gap 125** (2 words, fidelity 0.25)
+**Gap 125** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `of chopping with his axe they`
+- Predicted: `had`
 
-**Gap 126** (2 words, fidelity 1.00)
+**Gap 126** (2 words, fidelity 0.67)
 
 - Actual: `father was`
-- Predicted: `father was`
+- Predicted: `was`
 
-**Gap 127** (1 words, fidelity 0.12)
+**Gap 127** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `but the sound of a rat running over the floor made them jump up again,`
+- Predicted: `was not the wind`
 
-**Gap 128** (1 words, fidelity 0.00)
+**Gap 128** (1 words, fidelity 1.00)
 
 - Actual: `which`
-- Predicted: `that`
+- Predicted: `which`
 
-**Gap 129** (1 words, fidelity 0.00)
+**Gap 129** (1 words, fidelity 0.67)
 
 - Actual: `had`
-- Predicted: `cut`
+- Predicted: `had tied`
 
-**Gap 130** (2 words, fidelity 0.67)
+**Gap 130** (2 words, fidelity 0.00)
 
 - Actual: `to a`
-- Predicted: `to`
+- Predicted: `that`
 
-**Gap 131** (1 words, fidelity 0.00)
+**Gap 131** (1 words, fidelity 1.00)
 
 - Actual: `wind`
-- Predicted: `which`
+- Predicted: `wind`
 
 **Gap 132** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `swayed`
+- Predicted: `swaying`
 
-**Gap 133** (1 words, fidelity 1.00)
+**Gap 133** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `a`
+- Predicted: `while`
 
-**Gap 134** (3 words, fidelity 0.11)
+**Gap 134** (3 words, fidelity 0.80)
 
 - Actual: `and they fell`
-- Predicted: `the moon rises, and then we shall see where we are and find our way home.`
+- Predicted: `they fell`
 
-**Gap 135** (2 words, fidelity 1.00)
+**Gap 135** (2 words, fidelity 0.33)
 
 - Actual: `it was`
-- Predicted: `it was`
+- Predicted: `was already dark night.`
 
 **Gap 136** (3 words, fidelity 0.00)
 
 - Actual: `began to cry`
-- Predicted: `said`
+- Predicted: `whispered`
 
 **Gap 137** (2 words, fidelity 0.00)
 
 - Actual: `are we`
-- Predicted: `to get`
+- Predicted: `wondered`
 
-**Gap 138** (5 words, fidelity 0.00)
+**Gap 138** (5 words, fidelity 0.20)
 
 - Actual: `get out of the forest`
-- Predicted: `to`
+- Predicted: `How can we get home?`
 
-**Gap 139** (1 words, fidelity 1.00)
+**Gap 139** (1 words, fidelity 0.00)
 
 - Actual: `Hansel`
-- Predicted: `Hansel`
+- Predicted: `the sky was`
 
 **Gap 140** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `she`
+- Predicted: `they were`
 
-**Gap 141** (1 words, fidelity 0.10)
+**Gap 141** (1 words, fidelity 0.00)
 
 - Actual: `said:`
-- Predicted: `said: 'Just wait a little, until the moon has risen, and then we will soon find the way.'`
+- Predicted: `Just`
 
 **Gap 142** (2 words, fidelity 0.00)
 
 - Actual: `wait a`
-- Predicted: `little, until the moon has risen, and then we`
+- Predicted: `waited`
 
-**Gap 143** (1 words, fidelity 1.00)
+**Gap 143** (1 words, fidelity 0.00)
 
 - Actual: `moon`
-- Predicted: `Moon`
+- Predicted: `sun`
 
-**Gap 144** (2 words, fidelity 0.67)
+**Gap 144** (2 words, fidelity 0.00)
 
 - Actual: `and then`
-- Predicted: `then`
+- Predicted: `we will soon find`
 
-**Gap 145** (1 words, fidelity 0.00)
+**Gap 145** (1 words, fidelity 1.00)
 
 - Actual: `find`
-- Predicted: `out`
+- Predicted: `find`
 
 **Gap 146** (2 words, fidelity 0.67)
 
 - Actual: `when the`
 - Predicted: `when`
 
-**Gap 147** (1 words, fidelity 1.00)
+**Gap 147** (1 words, fidelity 0.00)
 
 - Actual: `moon`
-- Predicted: `moon`
+- Predicted: `and`
 
 **Gap 148** (1 words, fidelity 0.00)
 
 - Actual: `Hansel`
-- Predicted: `the father`
+- Predicted: `he`
 
 **Gap 149** (3 words, fidelity 0.00)
 
 - Actual: `sister by the`
-- Predicted: `fellow`
+- Predicted: `took his little friend's`
 
 **Gap 150** (1 words, fidelity 0.67)
 
 - Actual: `and`
 - Predicted: `and led`
 
-**Gap 151** (1 words, fidelity 1.00)
+**Gap 151** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `and led`
 
 **Gap 152** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `the pebbles showed them the way.`
+- Predicted: `led`
 
-**Gap 153** (1 words, fidelity 1.00)
+**Gap 153** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `led`
 
-**Gap 154** (1 words, fidelity 0.13)
+**Gap 154** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and when the sun was well up they again found the trail of pebbles`
+- Predicted: `until`
 
 **Gap 155** (2 words, fidelity 0.00)
 
 - Actual: `of day`
 - Predicted: `dawn`
 
-**Gap 156** (1 words, fidelity 1.00)
+**Gap 156** (1 words, fidelity 0.00)
 
 - Actual: `house.`
-- Predicted: `house.`
+- Predicted: `cottage`
 
-**Gap 157** (3 words, fidelity 0.86)
+**Gap 157** (3 words, fidelity 0.50)
 
 - Actual: `knocked at the`
-- Predicted: `and knocked at the`
+- Predicted: `knocked`
 
-**Gap 158** (2 words, fidelity 0.14)
+**Gap 158** (2 words, fidelity 0.00)
 
 - Actual: `and when`
-- Predicted: `and said: "Open the door, my children, here we are at last!"`
+- Predicted: `knocked`
 
-**Gap 159** (1 words, fidelity 0.18)
+**Gap 159** (1 words, fidelity 0.00)
 
 - Actual: `it`
-- Predicted: `and saw that it was Hansel and Gretel, she said:`
+- Predicted: `and led`
 
 **Gap 160** (1 words, fidelity 0.00)
 
 - Actual: `saw`
-- Predicted: `she recognized`
+- Predicted: `found`
 
 **Gap 161** (2 words, fidelity 0.00)
 
 - Actual: `it was`
-- Predicted: `they had lost their way again`
+- Predicted: `led`
 
 **Gap 162** (2 words, fidelity 0.00)
 
 - Actual: `Gretel, she`
-- Predicted: `owed them the way.`
+- Predicted: `said: You naughty children, why have you slept so long in the forest?-- we thought you were never coming back at all!'`
 
 **Gap 163** (1 words, fidelity 0.00)
 
 - Actual: `why`
-- Predicted: `had they`
+- Predicted: `had ye`
 
-**Gap 164** (1 words, fidelity 1.00)
+**Gap 164** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `you`
-
-**Gap 165** (4 words, fidelity 0.29)
-
-- Actual: `so long in the`
-- Predicted: `so late in the evening, and they had not collected enough provisions to last through the night.`
-
-**Gap 166** (1 words, fidelity 0.00)
-
-- Actual: `thought`
 - Predicted: `had`
 
-**Gap 167** (1 words, fidelity 0.08)
+**Gap 165** (4 words, fidelity 0.00)
+
+- Actual: `so long in the`
+- Predicted: `had wandered into`
+
+**Gap 166** (1 words, fidelity 0.67)
+
+- Actual: `thought`
+- Predicted: `had thought`
+
+**Gap 167** (1 words, fidelity 0.00)
 
 - Actual: `back`
-- Predicted: `she said: 'You naughty children, why have you slept so long in the forest?--we thought you were never coming back at all!'`
+- Predicted: `after`
 
 **Gap 168** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `when`
+- Predicted: `grew`
 
 **Gap 169** (3 words, fidelity 0.00)
 
 - Actual: `to the heart`
-- Predicted: `it`
+- Predicted: `grieved`
 
-**Gap 170** (2 words, fidelity 0.13)
+**Gap 170** (2 words, fidelity 0.00)
 
 - Actual: `leave them`
-- Predicted: `to send the children into the forest and let them seek their fortune.`
+- Predicted: `to think`
 
-**Gap 171** (1 words, fidelity 0.40)
+**Gap 171** (1 words, fidelity 1.00)
 
 - Actual: `was`
-- Predicted: `afterwards, there was another`
+- Predicted: `was`
 
 **Gap 172** (1 words, fidelity 0.00)
 
 - Actual: `dearth`
-- Predicted: `distress`
+- Predicted: `alarm`
 
-**Gap 173** (2 words, fidelity 0.67)
+**Gap 173** (2 words, fidelity 0.00)
 
 - Actual: `and the`
-- Predicted: `and`
+- Predicted: `were thinking`
 
 **Gap 174** (2 words, fidelity 0.00)
 
 - Actual: `heard their`
-- Predicted: `begged`
+- Predicted: `pleased`
 
-**Gap 175** (1 words, fidelity 0.22)
+**Gap 175** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `she wept bitterly, and said to her husband`
+- Predicted: `told`
 
 **Gap 176** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `had been`
+- Predicted: `was`
 
 **Gap 177** (1 words, fidelity 0.00)
 
 - Actual: `loaf`
-- Predicted: `was broken, but he said nothing.`
+- Predicted: `was`
 
-**Gap 178** (2 words, fidelity 0.08)
+**Gap 178** (2 words, fidelity 0.00)
 
 - Actual: `is the`
-- Predicted: `afterwards, there was once more great dearth throughout the land, and the children heard their mother saying at night to their father: 'Everything is eaten again, we have one half loaf left, and that will soon be gone too; then we shall have nothing more to give you.'`
+- Predicted: `will be`
 
 **Gap 179** (2 words, fidelity 0.67)
 
@@ -1440,47 +1446,47 @@ fire`
 **Gap 180** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `must`
+- Predicted: `shall`
 
 **Gap 181** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `forrest`
+- Predicted: `dark`
 
-**Gap 182** (1 words, fidelity 1.00)
+**Gap 182** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `that`
+- Predicted: `will lead them back`
 
-**Gap 183** (2 words, fidelity 1.00)
+**Gap 183** (2 words, fidelity 0.00)
 
 - Actual: `not find`
-- Predicted: `not find`
+- Predicted: `escape`
 
 **Gap 184** (1 words, fidelity 0.00)
 
 - Actual: `way`
-- Predicted: `forest out`
+- Predicted: `disappear`
 
 **Gap 185** (1 words, fidelity 0.00)
 
 - Actual: `other`
-- Predicted: `hope`
+- Predicted: `no`
 
 **Gap 186** (1 words, fidelity 0.00)
 
 - Actual: `heart`
-- Predicted: `wife's`
+- Predicted: `voice`
 
-**Gap 187** (1 words, fidelity 0.40)
+**Gap 187** (1 words, fidelity 0.00)
 
 - Actual: `better`
-- Predicted: `it would be better`
+- Predicted: `worse`
 
 **Gap 188** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `your`
+- Predicted: `it would be better`
 
 **Gap 189** (1 words, fidelity 0.00)
 
@@ -1490,42 +1496,42 @@ fire`
 **Gap 190** (2 words, fidelity 0.00)
 
 - Actual: `to nothing`
-- Predicted: `not`
+- Predicted: `if`
 
 **Gap 191** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `she`
+- Predicted: `not`
 
-**Gap 192** (1 words, fidelity 0.67)
+**Gap 192** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to hear`
+- Predicted: `not`
 
 **Gap 193** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `her husband`
+- Predicted: `resented`
 
-**Gap 194** (1 words, fidelity 0.67)
+**Gap 194** (1 words, fidelity 1.00)
 
 - Actual: `say`
-- Predicted: `say B,`
+- Predicted: `say`
 
-**Gap 195** (1 words, fidelity 0.18)
+**Gap 195** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he who says A must say B, likewise, and as`
+- Predicted: `had`
 
 **Gap 196** (1 words, fidelity 0.00)
 
 - Actual: `first`
-- Predicted: `twice`
+- Predicted: `also`
 
-**Gap 197** (1 words, fidelity 0.67)
+**Gap 197** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he also`
+- Predicted: `also`
 
 **Gap 198** (1 words, fidelity 1.00)
 
@@ -1535,42 +1541,42 @@ fire`
 **Gap 199** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `out to gather more.`
+- Predicted: `again`
 
 **Gap 200** (2 words, fidelity 0.00)
 
 - Actual: `up pebbles`
-- Predicted: `some berries`
+- Predicted: `to pick berries`
 
-**Gap 201** (2 words, fidelity 0.25)
+**Gap 201** (2 words, fidelity 0.00)
 
 - Actual: `had done`
-- Predicted: `before, but the woman had locked`
+- Predicted: `to do`
 
-**Gap 202** (1 words, fidelity 0.33)
+**Gap 202** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `but the woman had locked`
+- Predicted: `out, pick, as, the, woman, locked, could, his, Do, Sister, go, will, will`
 
 **Gap 203** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `locked`
+- Predicted: `locked her, and Hansel could not get out. Nevertheless he took his little sister, and said: Do not cry, my dear sister, go to sleep quietly, the good God will help us.' Early`
 
-**Gap 204** (1 words, fidelity 1.00)
+**Gap 204** (1 words, fidelity 0.14)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `to, pick, as, and, had, the, to, still, do, and, and, will, and,`
 
 **Gap 205** (1 words, fidelity 0.00)
 
 - Actual: `not`
-- Predicted: `out`
+- Predicted: `out, pick berries, as he before, the woman had locked the door, and Hansel could easily get out.`
 
 **Gap 206** (1 words, fidelity 0.00)
 
 - Actual: `comforted`
-- Predicted: `thought`
+- Predicted: `think`
 
 **Gap 207** (1 words, fidelity 1.00)
 
@@ -1580,12 +1586,12 @@ fire`
 **Gap 208** (1 words, fidelity 0.00)
 
 - Actual: `Gretel,`
-- Predicted: `Hansel`
+- Predicted: `we`
 
 **Gap 209** (2 words, fidelity 0.00)
 
 - Actual: `to sleep`
-- Predicted: `quietly, the`
+- Predicted: `not`
 
 **Gap 210** (2 words, fidelity 0.67)
 
@@ -1597,58 +1603,56 @@ fire`
 - Actual: `in the morning`
 - Predicted: `morning`
 
-**Gap 212** (1 words, fidelity 0.22)
+**Gap 212** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `woman, and took the children out of their`
+- Predicted: `took`
 
 **Gap 213** (2 words, fidelity 0.00)
 
 - Actual: `children out`
-- Predicted: `away`
+- Predicted: `emptied`
 
-**Gap 214** (5 words, fidelity 0.11)
+**Gap 214** (5 words, fidelity 0.00)
 
 - Actual: `of bread was given to`
-- Predicted: `of bread, which she had brought with her for their journey. But the children
-had also a small piece in their pockets, and as they went through the wood
-LEFT:`
+- Predicted: `comfort`
 
 **Gap 215** (2 words, fidelity 0.00)
 
 - Actual: `it was`
-- Predicted: `smaller`
+- Predicted: `remembered`
 
 **Gap 216** (2 words, fidelity 0.00)
 
 - Actual: `smaller
 than`
-- Predicted: `so small`
+- Predicted: `seemed`
 
 **Gap 217** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `forest`
+- Predicted: `deep`
 
 **Gap 218** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `pocket, and often stood still and threw a morsel on the ground. 'Hansel, why do you stop and look round?' said the father, 'go on.' 'I`
+- Predicted: `pocket`
 
-**Gap 219** (1 words, fidelity 0.00)
+**Gap 219** (1 words, fidelity 0.18)
 
 - Actual: `and`
-- Predicted: `he boy`
+- Predicted: `often stood by the road side and threw each morsel`
 
-**Gap 220** (2 words, fidelity 0.67)
+**Gap 220** (2 words, fidelity 0.00)
 
 - Actual: `still and`
-- Predicted: `and often stood still,`
+- Predicted: `dropped`
 
 **Gap 221** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `morsel`
+- Predicted: `dropped`
 
 **Gap 222** (1 words, fidelity 1.00)
 
@@ -1658,327 +1662,327 @@ than`
 **Gap 223** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `why`
+- Predicted: `did we`
 
 **Gap 224** (2 words, fidelity 0.00)
 
 - Actual: `am looking`
-- Predicted: `peeking through the branches and shining on the roof.`
+- Predicted: `looked`
 
 **Gap 225** (2 words, fidelity 0.00)
 
 - Actual: `my little`
-- Predicted: `at`
+- Predicted: `I saw a white pigeon perched on the roof, and wants to say goodbye to me,`
 
-**Gap 226** (4 words, fidelity 0.00)
+**Gap 226** (4 words, fidelity 0.33)
 
 - Actual: `is sitting on the`
-- Predicted: `at`
+- Predicted: `perched on`
 
-**Gap 227** (2 words, fidelity 0.00)
+**Gap 227** (2 words, fidelity 0.80)
 
 - Actual: `to say`
-- Predicted: `at`
+- Predicted: `wants to say`
 
-**Gap 228** (1 words, fidelity 0.00)
+**Gap 228** (1 words, fidelity 1.00)
 
 - Actual: `to`
-- Predicted: `at`
+- Predicted: `to`
 
-**Gap 229** (2 words, fidelity 0.80)
+**Gap 229** (2 words, fidelity 0.00)
 
 - Actual: `said the`
-- Predicted: `said the mother,`
+- Predicted: `mother`
 
 **Gap 230** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `isn't`
+- Predicted: `wasn't`
 
-**Gap 231** (1 words, fidelity 0.12)
+**Gap 231** (1 words, fidelity 0.00)
 
 - Actual: `your`
-- Predicted: `that is not your little pigeon, but a wicked witch who is waiting to catch you.`
+- Predicted: `saw`
 
-**Gap 232** (2 words, fidelity 0.20)
+**Gap 232** (2 words, fidelity 0.00)
 
 - Actual: `is the`
-- Predicted: `was the cat sitting, and washing her face.`
+- Predicted: `morning's`
 
 **Gap 233** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `shining`
+- Predicted: `was`
 
-**Gap 234** (1 words, fidelity 0.00)
+**Gap 234** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `chimney.`
+- Predicted: `the`
 
 **Gap 235** (1 words, fidelity 0.00)
 
 - Actual: `however`
-- Predicted: `then`
+- Predicted: `slowly`
 
-**Gap 236** (1 words, fidelity 0.00)
+**Gap 236** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `down`
+- Predicted: `the`
 
-**Gap 237** (2 words, fidelity 0.00)
+**Gap 237** (2 words, fidelity 0.10)
 
 - Actual: `the children`
-- Predicted: `her led them`
+- Predicted: `The woman led them still deeper into the woods where they had never in their lives been before.`
 
-**Gap 238** (3 words, fidelity 0.60)
+**Gap 238** (3 words, fidelity 1.00)
 
 - Actual: `into the forest,`
-- Predicted: `into the forest to fetch something.'`
+- Predicted: `into the forest`
 
-**Gap 239** (1 words, fidelity 0.00)
+**Gap 239** (1 words, fidelity 1.00)
 
 - Actual: `their`
-- Predicted: `before`
+- Predicted: `their`
 
-**Gap 240** (1 words, fidelity 0.00)
+**Gap 240** (1 words, fidelity 1.00)
 
 - Actual: `was`
-- Predicted: `up`
+- Predicted: `was`
 
-**Gap 241** (1 words, fidelity 0.25)
-
-- Actual: `and`
-- Predicted: `and when the fire was burning brightly,`
-
-**Gap 242** (1 words, fidelity 0.00)
+**Gap 241** (1 words, fidelity 1.00)
 
 - Actual: `and`
-- Predicted: `before`
+- Predicted: `and`
+
+**Gap 242** (1 words, fidelity 0.67)
+
+- Actual: `and`
+- Predicted: `and told`
 
 **Gap 243** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `are tired`
+- Predicted: `when`
 
 **Gap 244** (1 words, fidelity 0.00)
 
 - Actual: `may`
-- Predicted: `and`
+- Predicted: `when`
 
-**Gap 245** (1 words, fidelity 0.33)
+**Gap 245** (1 words, fidelity 0.00)
 
 - Actual: `we`
-- Predicted: `said: 'Now we are going`
+- Predicted: `you`
 
 **Gap 246** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `forest`
+- Predicted: `deep`
 
-**Gap 247** (1 words, fidelity 0.22)
+**Gap 247** (1 words, fidelity 0.50)
 
 - Actual: `to`
-- Predicted: `and went to work cutting wood, and in`
+- Predicted: `went out to`
 
 **Gap 248** (1 words, fidelity 0.00)
 
 - Actual: `evening`
-- Predicted: `forest`
+- Predicted: `when`
 
-**Gap 249** (1 words, fidelity 0.17)
-
-- Actual: `we`
-- Predicted: `are done, we will come and fetch you away.' When`
-
-**Gap 250** (1 words, fidelity 0.25)
+**Gap 249** (1 words, fidelity 0.67)
 
 - Actual: `we`
-- Predicted: `we will come and fetch you away.`
+- Predicted: `when we`
 
-**Gap 251** (1 words, fidelity 1.00)
+**Gap 250** (1 words, fidelity 0.00)
+
+- Actual: `we`
+- Predicted: `I will come`
+
+**Gap 251** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `you`
+- Predicted: `home`
 
-**Gap 252** (1 words, fidelity 0.05)
+**Gap 252** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `noon, Gretel shared her piece of bread with Hansel, who had scattered his by the way. Then they fell asleep and evening passed, but no one came to the poor children. They did not awake until it was dark.`
+- Predicted: `when it is noon, Gretel shared a piece`
 
-**Gap 253** (1 words, fidelity 0.67)
+**Gap 253** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `out her`
+- Predicted: `shared a small`
 
-**Gap 254** (3 words, fidelity 0.36)
+**Gap 254** (3 words, fidelity 0.50)
 
 - Actual: `of bread with`
-- Predicted: `of bread, which she had carefully saved up.`
+- Predicted: `with`
 
 **Gap 255** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `ate`
+- Predicted: `began to`
 
 **Gap 256** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `pebbles`
+- Predicted: `collected berries`
 
-**Gap 257** (1 words, fidelity 0.11)
+**Gap 257** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `they went into the forest together, and there they found a little house made of bread and cakes.`
+- Predicted: `the children`
 
-**Gap 258** (1 words, fidelity 0.40)
+**Gap 258** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `and morning came, but`
+- Predicted: `there came`
 
-**Gap 259** (4 words, fidelity 0.40)
+**Gap 259** (4 words, fidelity 0.33)
 
 - Actual: `one came to the`
-- Predicted: `came`
+- Predicted: `the sun`
 
-**Gap 260** (1 words, fidelity 1.00)
+**Gap 260** (1 words, fidelity 0.00)
 
 - Actual: `not`
-- Predicted: `not`
+- Predicted: `did`
 
 **Gap 261** (2 words, fidelity 0.00)
 
 - Actual: `it was`
-- Predicted: `dark`
+- Predicted: `until the`
 
-**Gap 262** (1 words, fidelity 1.00)
+**Gap 262** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `and`
+- Predicted: `and told`
 
 **Gap 263** (2 words, fidelity 0.00)
 
 - Actual: `comforted his`
-- Predicted: `gave`
+- Predicted: `stirred`
 
-**Gap 264** (1 words, fidelity 0.33)
+**Gap 264** (1 words, fidelity 0.00)
 
 - Actual: `sister`
-- Predicted: `sister, and said: 'Just wait,`
+- Predicted: `thirsty`
 
 **Gap 265** (1 words, fidelity 0.00)
 
 - Actual: `said:`
-- Predicted: `'just wait,`
+- Predicted: `were`
 
 **Gap 266** (1 words, fidelity 0.00)
 
 - Actual: `Gretel,`
 - Predicted: `until`
 
-**Gap 267** (1 words, fidelity 0.67)
+**Gap 267** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `until the`
+- Predicted: `when`
 
-**Gap 268** (2 words, fidelity 0.50)
+**Gap 268** (2 words, fidelity 0.67)
 
 - Actual: `then we`
-- Predicted: `then will`
+- Predicted: `we`
 
 **Gap 269** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `had strewn about, they will show us our way home again.' When`
-
-**Gap 270** (1 words, fidelity 0.00)
-
-- Actual: `will`
 - Predicted: `we`
 
-**Gap 271** (1 words, fidelity 0.00)
+**Gap 270** (1 words, fidelity 1.00)
+
+- Actual: `will`
+- Predicted: `will`
+
+**Gap 271** (1 words, fidelity 1.00)
 
 - Actual: `us`
-- Predicted: `where`
+- Predicted: `us`
 
 **Gap 272** (1 words, fidelity 1.00)
 
 - Actual: `way`
 - Predicted: `way`
 
-**Gap 273** (1 words, fidelity 0.33)
+**Gap 273** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the sun had already set,`
+- Predicted: `when`
 
-**Gap 274** (2 words, fidelity 0.67)
+**Gap 274** (2 words, fidelity 0.00)
 
 - Actual: `for the`
-- Predicted: `for`
+- Predicted: `many thousands of`
 
-**Gap 275** (1 words, fidelity 1.00)
+**Gap 275** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of`
+- Predicted: `had`
 
 **Gap 276** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `had eaten`
+- Predicted: `did not`
 
 **Gap 277** (1 words, fidelity 0.00)
 
 - Actual: `about`
-- Predicted: `in`
+- Predicted: `had already`
 
 **Gap 278** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `woods and fields had picked up.`
+- Predicted: `deep`
 
-**Gap 279** (2 words, fidelity 0.00)
+**Gap 279** (2 words, fidelity 0.50)
 
 - Actual: `fields had`
-- Predicted: `picked`
+- Predicted: `had already`
 
-**Gap 280** (1 words, fidelity 1.00)
+**Gap 280** (1 words, fidelity 0.00)
 
 - Actual: `up.`
-- Predicted: `up.`
+- Predicted: `had already`
 
 **Gap 281** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `Hansel said gloomily, "Then we shall never find our way again."`
+- Predicted: `Gretel:`
 
-**Gap 282** (1 words, fidelity 0.00)
+**Gap 282** (1 words, fidelity 1.00)
 
 - Actual: `We`
-- Predicted: `"Never mind," said`
+- Predicted: `we`
 
-**Gap 283** (3 words, fidelity 1.00)
+**Gap 283** (3 words, fidelity 0.40)
 
 - Actual: `did not find`
-- Predicted: `did not find`
+- Predicted: `could not`
 
-**Gap 284** (1 words, fidelity 1.00)
+**Gap 284** (1 words, fidelity 0.00)
 
 - Actual: `whole`
-- Predicted: `whole`
+- Predicted: `all`
 
 **Gap 285** (1 words, fidelity 0.00)
 
 - Actual: `next`
-- Predicted: `day`
+- Predicted: `the whole`
 
 **Gap 286** (1 words, fidelity 0.00)
 
 - Actual: `morning`
-- Predicted: `till evening,`
+- Predicted: `until`
 
 **Gap 287** (5 words, fidelity 0.00)
 
 - Actual: `evening, but they did not`
-- Predicted: `day`
+- Predicted: `to get out of`
 
 **Gap 288** (3 words, fidelity 0.80)
 
@@ -1988,17 +1992,17 @@ than`
 **Gap 289** (1 words, fidelity 0.00)
 
 - Actual: `very`
-- Predicted: `hungry, for they had nothing to eat but two or three`
+- Predicted: `said to Gretel: we shall soon find the way,' but they did not believe it. They walked the whole night and all the next day too from morning till evening to get out of the forest, and were so hungry, that they had nothing but two or three berries, that grew on the ground. And as`
 
 **Gap 290** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `so dark that`
+- Predicted: `did not`
 
-**Gap 291** (2 words, fidelity 1.00)
+**Gap 291** (2 words, fidelity 0.00)
 
 - Actual: `to eat`
-- Predicted: `to eat`
+- Predicted: `ate`
 
 **Gap 292** (1 words, fidelity 1.00)
 
@@ -2008,72 +2012,72 @@ than`
 **Gap 293** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `and all that they could find were some wild mushrooms`
+- Predicted: `strawberries`
 
-**Gap 294** (2 words, fidelity 1.00)
+**Gap 294** (2 words, fidelity 0.67)
 
 - Actual: `on the`
-- Predicted: `on the`
+- Predicted: `on`
 
-**Gap 295** (2 words, fidelity 0.00)
+**Gap 295** (2 words, fidelity 0.67)
 
 - Actual: `they were`
-- Predicted: `so`
+- Predicted: `were`
 
 **Gap 296** (6 words, fidelity 0.29)
 
 - Actual: `them no longer, they lay down`
 - Predicted: `they`
 
-**Gap 297** (1 words, fidelity 1.00)
+**Gap 297** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `a`
+- Predicted: `underneath`
 
-**Gap 298** (4 words, fidelity 0.00)
+**Gap 298** (4 words, fidelity 0.40)
 
 - Actual: `since they had left`
-- Predicted: `after,`
+- Predicted: `since`
 
 **Gap 299** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `forest, and if`
+- Predicted: `darkening`
 
-**Gap 300** (1 words, fidelity 0.00)
+**Gap 300** (1 words, fidelity 0.14)
 
 - Actual: `and`
-- Predicted: `if`
+- Predicted: `if help did not come soon, they must die of hunger and weariness`
 
-**Gap 301** (2 words, fidelity 0.00)
+**Gap 301** (2 words, fidelity 0.50)
 
 - Actual: `not come`
-- Predicted: `soon, they must die of hunger and thirst.`
+- Predicted: `would come`
 
-**Gap 302** (1 words, fidelity 1.00)
+**Gap 302** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `they`
+- Predicted: `if help did not`
 
 **Gap 303** (1 words, fidelity 0.00)
 
 - Actual: `hunger`
-- Predicted: `starvation.`
+- Predicted: `thirst`
 
-**Gap 304** (1 words, fidelity 0.00)
+**Gap 304** (1 words, fidelity 1.00)
 
 - Actual: `a`
-- Predicted: `branch`
+- Predicted: `a`
 
 **Gap 305** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `and watched`
+- Predicted: `admired`
 
-**Gap 306** (1 words, fidelity 0.67)
+**Gap 306** (1 words, fidelity 1.00)
 
 - Actual: `was`
-- Predicted: `was over,`
+- Predicted: `was`
 
 **Gap 307** (1 words, fidelity 1.00)
 
@@ -2090,111 +2094,110 @@ than`
 - Actual: `followed it`
 - Predicted: `followed`
 
-**Gap 310** (2 words, fidelity 0.67)
+**Gap 310** (2 words, fidelity 0.00)
 
 - Actual: `a little`
-- Predicted: `a`
+- Predicted: `the`
 
 **Gap 311** (1 words, fidelity 0.00)
 
 - Actual: `roof`
-- Predicted: `outside`
+- Predicted: `bough`
 
-**Gap 312** (1 words, fidelity 1.00)
+**Gap 312** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `which`
+- Predicted: `in the green meadow`
 
-**Gap 313** (1 words, fidelity 1.00)
+**Gap 313** (1 words, fidelity 0.00)
 
 - Actual: `house`
-- Predicted: `house,`
+- Predicted: `cottage`
 
-**Gap 314** (1 words, fidelity 0.00)
+**Gap 314** (1 words, fidelity 1.00)
 
 - Actual: `was`
-- Predicted: `built`
+- Predicted: `was`
 
-**Gap 315** (1 words, fidelity 0.18)
+**Gap 315** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of gingerbread and covered with cakes, but that the windows`
+- Predicted: `was not made`
 
-**Gap 316** (1 words, fidelity 0.12)
+**Gap 316** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `sat down and gnawed at the bread-house as if it were a crust of
-bread.`
+- Predicted: `had`
 
-**Gap 317** (1 words, fidelity 0.67)
+**Gap 317** (1 words, fidelity 1.00)
 
 - Actual: `were`
-- Predicted: `were glazed`
+- Predicted: `were`
 
 **Gap 318** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `we must first find out whether it belongs to somebody or not.`
+- Predicted: `We immediately set to work on that,' said Hansel, and have a good meal. I'll eat a bit of the roof, said you Gretel, can eat some of the window, it tastes sweet.'`
 
 **Gap 319** (1 words, fidelity 1.00)
 
 - Actual: `said`
 - Predicted: `said`
 
-**Gap 320** (1 words, fidelity 1.00)
+**Gap 320** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `will`
+- Predicted: `thought`
 
-**Gap 321** (1 words, fidelity 1.00)
+**Gap 321** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `bit of`
 
-**Gap 322** (1 words, fidelity 0.50)
+**Gap 322** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and said to`
+- Predicted: `can't`
 
-**Gap 323** (2 words, fidelity 1.00)
+**Gap 323** (2 words, fidelity 0.67)
 
 - Actual: `of the`
-- Predicted: `of the`
+- Predicted: `the`
 
 **Gap 324** (2 words, fidelity 0.00)
 
 - Actual: `it will`
-- Predicted: `so`
+- Predicted: `didn't`
 
-**Gap 325** (1 words, fidelity 0.33)
+**Gap 325** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and pulled down a piece`
+- Predicted: `broke off a small piece of the`
 
-**Gap 326** (1 words, fidelity 0.40)
+**Gap 326** (1 words, fidelity 0.50)
 
 - Actual: `a`
-- Predicted: `off a small piece`
+- Predicted: `a piece of`
 
-**Gap 327** (2 words, fidelity 0.80)
+**Gap 327** (2 words, fidelity 0.67)
 
 - Actual: `the roof`
-- Predicted: `of the roof,`
+- Predicted: `roof,`
 
-**Gap 328** (2 words, fidelity 0.67)
+**Gap 328** (2 words, fidelity 0.00)
 
 - Actual: `how it`
-- Predicted: `it`
+- Predicted: `bit of`
 
-**Gap 329** (2 words, fidelity 0.57)
+**Gap 329** (2 words, fidelity 0.00)
 
 - Actual: `and Gretel`
-- Predicted: `and Gretel did the same.`
+- Predicted: `Hansel`
 
-**Gap 330** (2 words, fidelity 0.80)
+**Gap 330** (2 words, fidelity 0.29)
 
 - Actual: `the window`
-- Predicted: `against the window.`
+- Predicted: `and leaned against the door`
 
 **Gap 331** (1 words, fidelity 0.00)
 
@@ -2204,92 +2207,92 @@ bread.`
 **Gap 332** (1 words, fidelity 0.00)
 
 - Actual: `nibble,`
-- Predicted: `gnaw,`
+- Predicted: `broke off a little of the sugar-plums to try if they tasted, leaned against the door-post and nibbled at the panes.`
 
-**Gap 333** (2 words, fidelity 0.00)
+**Gap 333** (2 words, fidelity 0.20)
 
 - Actual: `nibbling at`
-- Predicted: `hunger-born`
+- Predicted: `Nibble, gnaw, Who is nibbling my little house?`
 
 **Gap 334** (1 words, fidelity 0.00)
 
 - Actual: `children`
-- Predicted: `old woman`
+- Predicted: `cried, nibble, leaned, on, at, is, a, on, the, a, and`
 
-**Gap 335** (1 words, fidelity 1.00)
+**Gap 335** (1 words, fidelity 0.00)
 
 - Actual: `on`
-- Predicted: `on`
+- Predicted: `contentedly`
 
-**Gap 336** (1 words, fidelity 0.00)
+**Gap 336** (1 words, fidelity 0.04)
 
 - Actual: `the`
-- Predicted: `taste of`
+- Predicted: `Who is gnawing, my little house?' The wind, the wind, The heaven-born wind,' and went on eating without disturbing themselves. Hansel, who liked the taste of the roof, tore down a great piece of it, while Gretel pushed out the whole of one round window-pane, sat down,`
 
-**Gap 337** (1 words, fidelity 0.00)
+**Gap 337** (1 words, fidelity 0.67)
 
 - Actual: `a`
-- Predicted: `off`
+- Predicted: `a staff`
 
-**Gap 338** (1 words, fidelity 0.29)
-
-- Actual: `and`
-- Predicted: `and threw it into his mouth.`
-
-**Gap 339** (1 words, fidelity 0.20)
+**Gap 338** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `and Gretel were so terribly frightened that they let`
+- Predicted: `and began`
 
-**Gap 340** (2 words, fidelity 1.00)
+**Gap 339** (1 words, fidelity 0.00)
+
+- Actual: `and`
+- Predicted: `gretel`
+
+**Gap 340** (2 words, fidelity 0.67)
 
 - Actual: `the door`
-- Predicted: `the door`
+- Predicted: `the`
 
-**Gap 341** (1 words, fidelity 0.25)
+**Gap 341** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and out stepped a little old woman`
+- Predicted: `appeared,`
 
-**Gap 342** (1 words, fidelity 1.00)
+**Gap 342** (1 words, fidelity 0.00)
 
 - Actual: `herself`
-- Predicted: `herself`
+- Predicted: `she`
 
-**Gap 343** (2 words, fidelity 0.00)
+**Gap 343** (2 words, fidelity 0.50)
 
 - Actual: `and Gretel`
-- Predicted: `up`
+- Predicted: `Hansel and`
 
-**Gap 344** (2 words, fidelity 0.00)
+**Gap 344** (2 words, fidelity 0.67)
 
 - Actual: `they let`
-- Predicted: `scared`
+- Predicted: `they`
 
-**Gap 345** (2 words, fidelity 0.67)
+**Gap 345** (2 words, fidelity 0.00)
 
 - Actual: `what they`
-- Predicted: `what`
+- Predicted: `by`
 
-**Gap 346** (2 words, fidelity 0.00)
+**Gap 346** (2 words, fidelity 0.67)
 
 - Actual: `in their`
-- Predicted: `LEFT: with`
+- Predicted: `their`
 
 **Gap 347** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `smiling`
+- Predicted: `opened, limped, who, they, to, she, then, took`
 
-**Gap 348** (1 words, fidelity 0.40)
+**Gap 348** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and winked her eye`
+- Predicted: `hobbled`
 
 **Gap 349** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `with sugar`
+- Predicted: `into`
 
 **Gap 350** (1 words, fidelity 1.00)
 
@@ -2301,10 +2304,10 @@ bread.`
 - Actual: `to`
 - Predicted: `to`
 
-**Gap 352** (2 words, fidelity 0.67)
+**Gap 352** (2 words, fidelity 0.27)
 
 - Actual: `by the`
-- Predicted: `by`
+- Predicted: `took them both by the hand, and led them into her little house.`
 
 **Gap 353** (1 words, fidelity 0.00)
 
@@ -2314,283 +2317,282 @@ bread.`
 **Gap 354** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `and cakes,`
+- Predicted: `and plums`
 
 **Gap 355** (1 words, fidelity 0.00)
 
 - Actual: `little`
-- Predicted: `beds were covered with clean white linen, and Hansel and Gretel lay down`
+- Predicted: `fairy`
 
 **Gap 356** (1 words, fidelity 1.00)
 
 - Actual: `with`
 - Predicted: `with`
 
-**Gap 357** (2 words, fidelity 0.67)
+**Gap 357** (2 words, fidelity 0.50)
 
 - Actual: `and Gretel`
-- Predicted: `and`
+- Predicted: `and made`
 
-**Gap 358** (2 words, fidelity 0.25)
+**Gap 358** (2 words, fidelity 0.00)
 
 - Actual: `old woman`
-- Predicted: `The old woman had only pretended to be so kind; she was in reality`
+- Predicted: `had only pretended so kind; she was in reality a wicked witch, who lay children, and`
 
-**Gap 359** (2 words, fidelity 0.40)
+**Gap 359** (2 words, fidelity 0.31)
 
 - Actual: `to be`
-- Predicted: `to be so kind; she was in reality`
+- Predicted: `had only pretended to be so kind; she was in reality`
 
 **Gap 360** (3 words, fidelity 0.00)
 
 - Actual: `in wait for`
-- Predicted: `to sleep`
+- Predicted: `to lure`
 
 **Gap 361** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `to catch`
+- Predicted: `lay`
 
 **Gap 362** (1 words, fidelity 0.00)
 
 - Actual: `built`
-- Predicted: `to lure them into her power`
+- Predicted: `to eat`
 
-**Gap 363** (2 words, fidelity 1.00)
+**Gap 363** (2 words, fidelity 0.29)
 
 - Actual: `order to`
-- Predicted: `order to`
+- Predicted: `to entice them to come`
 
-**Gap 364** (1 words, fidelity 0.00)
+**Gap 364** (1 words, fidelity 0.50)
 
 - Actual: `them`
-- Predicted: `her`
+- Predicted: `to lure them`
 
-**Gap 365** (1 words, fidelity 0.00)
+**Gap 365** (1 words, fidelity 0.67)
 
 - Actual: `her`
-- Predicted: `victim`
+- Predicted: `into her`
 
-**Gap 366** (1 words, fidelity 0.20)
+**Gap 366** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `pretended to be so kind; she was in reality`
+- Predicted: `devoured`
 
 **Gap 367** (1 words, fidelity 0.00)
 
 - Actual: `cooked`
-- Predicted: `so that she might lure them into her power,`
+- Predicted: `ate`
 
 **Gap 368** (1 words, fidelity 0.00)
 
 - Actual: `ate`
-- Predicted: `and fried it`
+- Predicted: `roast`
 
-**Gap 369** (1 words, fidelity 0.33)
+**Gap 369** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and then gnawed its bones,`
+- Predicted: `would invite him`
 
 **Gap 370** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `in order to`
+- Predicted: `would lure`
 
 **Gap 371** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `and`
+- Predicted: `for`
 
 **Gap 372** (2 words, fidelity 0.00)
 
 - Actual: `and Gretel`
 - Predicted: `when`
 
-**Gap 373** (1 words, fidelity 0.00)
+**Gap 373** (1 words, fidelity 1.00)
 
 - Actual: `not`
-- Predicted: `escape me`
+- Predicted: `not`
 
 **Gap 374** (1 words, fidelity 0.00)
 
 - Actual: `me`
-- Predicted: `her`
+- Predicted: `not`
 
-**Gap 375** (2 words, fidelity 0.67)
+**Gap 375** (2 words, fidelity 0.00)
 
 - Actual: `the morning`
-- Predicted: `morning`
+- Predicted: `early`
 
-**Gap 376** (1 words, fidelity 0.00)
+**Gap 376** (1 words, fidelity 0.50)
 
 - Actual: `children`
-- Predicted: `morning`
+- Predicted: `when the children`
 
-**Gap 377** (1 words, fidelity 1.00)
+**Gap 377** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `she`
+- Predicted: `early`
 
 **Gap 378** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `when`
+- Predicted: `into her cage`
 
-**Gap 379** (1 words, fidelity 1.00)
+**Gap 379** (1 words, fidelity 0.00)
 
 - Actual: `them`
-- Predicted: `them`
+- Predicted: `into the cage`
 
-**Gap 380** (1 words, fidelity 0.13)
+**Gap 380** (1 words, fidelity 0.00)
 
 - Actual: `so`
-- Predicted: `so peaceful and contented that she could not resist kissing them on
-their foreheads.`
+- Predicted: `cute`
 
 **Gap 381** (1 words, fidelity 0.00)
 
 - Actual: `their`
-- Predicted: `plump and rosy cheeks she muttered to herself: 'That`
+- Predicted: `the children's`
 
-**Gap 382** (1 words, fidelity 1.00)
+**Gap 382** (1 words, fidelity 0.00)
 
 - Actual: `cheeks`
-- Predicted: `cheeks,`
+- Predicted: `she`
 
-**Gap 383** (1 words, fidelity 0.67)
+**Gap 383** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `she seized`
+- Predicted: `the witch`
 
-**Gap 384** (1 words, fidelity 0.00)
+**Gap 384** (1 words, fidelity 0.33)
 
 - Actual: `her`
-- Predicted: `and pulled`
+- Predicted: `with her sleepy head up`
 
 **Gap 385** (2 words, fidelity 0.00)
 
 - Actual: `him into`
-- Predicted: `her`
+- Predicted: `she`
 
 **Gap 386** (2 words, fidelity 0.00)
 
 - Actual: `as he`
-- Predicted: `she might`
+- Predicted: `would`
 
 **Gap 387** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `the old woman`
+- Predicted: `the witch`
 
-**Gap 388** (1 words, fidelity 1.00)
+**Gap 388** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `up`
 
-**Gap 389** (1 words, fidelity 0.00)
+**Gap 389** (1 words, fidelity 1.00)
 
 - Actual: `up,`
-- Predicted: `lazy thing, fetch`
+- Predicted: `up`
 
 **Gap 390** (1 words, fidelity 1.00)
 
 - Actual: `for`
 - Predicted: `for`
 
-**Gap 391** (1 words, fidelity 0.00)
+**Gap 391** (1 words, fidelity 1.00)
 
 - Actual: `brother,`
-- Predicted: `father`
+- Predicted: `brother`
 
 **Gap 392** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `had`
+- Predicted: `did`
 
 **Gap 393** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `stable outside, and is to be made fat. When he is fat, I will eat him.'`
+- Predicted: `door. Scream might, it would not help him. Then he went to Gretel, shook her till she awoke, and cried: Get this lazy thing, fetch some water, and cook something good for your father he stood in stable outside, where is to be made fat. When he`
 
 **Gap 394** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `that`
+- Predicted: `would it`
 
-**Gap 395** (1 words, fidelity 0.22)
+**Gap 395** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `would not help him. Then she went to`
+- Predicted: `the stable`
 
 **Gap 396** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `when he`
+- Predicted: `when`
 
-**Gap 397** (2 words, fidelity 0.00)
+**Gap 397** (2 words, fidelity 0.67)
 
 - Actual: `began to`
-- Predicted: `sprang up in terror`
+- Predicted: `began`
 
-**Gap 398** (3 words, fidelity 0.15)
+**Gap 398** (3 words, fidelity 0.00)
 
 - Actual: `but it was`
-- Predicted: `Gretel began to weep bitterly, but she had to obey.`
+- Predicted: `cried`
 
-**Gap 399** (1 words, fidelity 1.00)
+**Gap 399** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to`
+- Predicted: `had no choice but`
 
 **Gap 400** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `as`
+- Predicted: `had to服从原规则，仅提供缺失的部分，并且保持简短和符合上下文的风格。因此，答案如下： had to`
 
 **Gap 401** (1 words, fidelity 0.00)
 
 - Actual: `now`
-- Predicted: `And`
+- Predicted: `the witch`
 
-**Gap 402** (1 words, fidelity 0.50)
+**Gap 402** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `for the child`
+- Predicted: `was`
 
-**Gap 403** (1 words, fidelity 0.00)
+**Gap 403** (1 words, fidelity 0.22)
 
 - Actual: `the`
-- Predicted: `into`
+- Predicted: `into the stable, felt of it and said`
 
 **Gap 404** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `or she was`
+- Predicted: `she`
 
 **Gap 405** (1 words, fidelity 0.00)
 
 - Actual: `Hansel,`
-- Predicted: `stretch out your finger that I may feel if you will soon`
+- Predicted: `out伸出手让我摸摸看是否很快会长胖。`
 
 **Gap 406** (2 words, fidelity 0.00)
 
 - Actual: `I may`
-- Predicted: `feel if you will soon be fat.' Hansel, however, stretched out a little bone to her, and`
+- Predicted: `feel if it will soon fatten.'`
 
 **Gap 407** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `will soon`
+- Predicted: `not`
 
-**Gap 408** (1 words, fidelity 0.00)
+**Gap 408** (1 words, fidelity 0.67)
 
 - Actual: `be`
-- Predicted: `fat.`
+- Predicted: `to be`
 
-**Gap 409** (1 words, fidelity 1.00)
+**Gap 409** (1 words, fidelity 0.40)
 
 - Actual: `out`
-- Predicted: `out`
+- Predicted: `out through the window`
 
 **Gap 410** (1 words, fidelity 0.00)
 
@@ -2605,42 +2607,42 @@ their foreheads.`
 **Gap 412** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so`
+- Predicted: `mistook`
 
-**Gap 413** (1 words, fidelity 0.14)
+**Gap 413** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `was his finger, and was astonished that there was no way of fattening`
+- Predicted: `she thought it belonged to`
 
-**Gap 414** (1 words, fidelity 0.12)
+**Gap 414** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and said, "If you will soon be fat, I will give you something to eat."`
+- Predicted: `she`
 
-**Gap 415** (2 words, fidelity 0.00)
+**Gap 415** (2 words, fidelity 0.50)
 
 - Actual: `weeks had`
-- Predicted: `days`
+- Predicted: `four weeks`
 
 **Gap 416** (2 words, fidelity 0.00)
 
 - Actual: `and Hansel`
-- Predicted: `she took`
+- Predicted: `she`
 
 **Gap 417** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `by`
+- Predicted: `seized by`
 
 **Gap 418** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `Gretel,`
+- Predicted: `little`
 
-**Gap 419** (1 words, fidelity 0.14)
+**Gap 419** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `will, they may eat me up, but they must not touch Hansel.'`
+- Predicted: `would only eat me and leave Hansel alone!`
 
 **Gap 420** (1 words, fidelity 0.00)
 
@@ -2650,68 +2652,67 @@ their foreheads.`
 **Gap 421** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `fetch the water,`
+- Predicted: `had`
 
 **Gap 422** (2 words, fidelity 0.00)
 
 - Actual: `did flow`
 - Predicted: `flowed`
 
-**Gap 423** (3 words, fidelity 0.05)
+**Gap 423** (3 words, fidelity 0.00)
 
 - Actual: `in the forest`
-- Predicted: `if the wild beasts had but devoured us, we should at any rate have died together.' 'Just keep your noise to yourself,'
-said the old woman, 'it won't help you at all.'`
+- Predicted: `had but devoured us`
 
 **Gap 424** (3 words, fidelity 0.00)
 
 - Actual: `rate have died`
-- Predicted: `moment`
+- Predicted: `ever been`
 
-**Gap 425** (1 words, fidelity 0.04)
+**Gap 425** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `LEFT: did flow down her cheeks! 'Dear God, do help us,' she cried. 'If the wild beasts in the forest had but devoured us, we should at any rate have died together.' 'Just keep your noise to yourself,' said the old woman.`
+- Predicted: `the`
 
-**Gap 426** (1 words, fidelity 1.00)
+**Gap 426** (1 words, fidelity 0.00)
 
 - Actual: `help`
-- Predicted: `help`
+- Predicted: `benefit`
 
-**Gap 427** (1 words, fidelity 0.00)
+**Gap 427** (1 words, fidelity 0.20)
 
 - Actual: `the`
-- Predicted: `morning,`
+- Predicted: `dawn, she, do, help, I, the, the, the, said`
 
-**Gap 428** (1 words, fidelity 0.12)
+**Gap 428** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `Early in the morning, Gretel had to go out and hang up the cauldron with`
+- Predicted: `had but devoured us, we should at any time together.'`
 
-**Gap 429** (1 words, fidelity 0.25)
-
-- Actual: `the`
-- Predicted: `out the pot to fetch some water`
-
-**Gap 430** (1 words, fidelity 0.18)
+**Gap 429** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `fire. 'We will bake first,' said the old woman,`
+- Predicted: `the`
 
-**Gap 431** (2 words, fidelity 0.80)
+**Gap 430** (1 words, fidelity 0.00)
+
+- Actual: `the`
+- Predicted: `lighted`
+
+**Gap 431** (2 words, fidelity 0.24)
 
 - Actual: `said the`
-- Predicted: `said the little`
+- Predicted: `said the old woman, I have already heated the oven, and kneaded the dough.'`
 
 **Gap 432** (2 words, fidelity 0.00)
 
 - Actual: `have already`
-- Predicted: `said the old woman, 'I will heat the oven, and you shall creep in and see if it is properly heated, so that`
+- Predicted: `did I`
 
-**Gap 433** (1 words, fidelity 0.18)
+**Gap 433** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `the oven, and kneaded the dough.' She pushed poor`
+- Predicted: `the`
 
 **Gap 434** (1 words, fidelity 1.00)
 
@@ -2723,140 +2724,140 @@ said the old woman, 'it won't help you at all.'`
 - Actual: `Gretel`
 - Predicted: `poor`
 
-**Gap 436** (1 words, fidelity 1.00)
+**Gap 436** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `which`
+- Predicted: `the red`
 
 **Gap 437** (1 words, fidelity 0.00)
 
 - Actual: `fire`
-- Predicted: `flames`
+- Predicted: `from the`
 
-**Gap 438** (1 words, fidelity 1.00)
+**Gap 438** (1 words, fidelity 0.67)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `said the`
 
 **Gap 439** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `said the old woman,`
+- Predicted: `did you come here`
 
-**Gap 440** (1 words, fidelity 1.00)
+**Gap 440** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `is`
+- Predicted: `check if it`
 
-**Gap 441** (1 words, fidelity 0.29)
+**Gap 441** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `that it is hot enough.'`
+- Predicted: `check`
 
-**Gap 442** (1 words, fidelity 0.33)
+**Gap 442** (1 words, fidelity 0.67)
 
 - Actual: `to`
-- Predicted: `to push me out again?`
+- Predicted: `to shut`
 
-**Gap 443** (1 words, fidelity 0.13)
+**Gap 443** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `shut the door behind me, and let me bake in it, like the bread.`
+- Predicted: `shut`
 
 **Gap 444** (1 words, fidelity 0.00)
 
 - Actual: `in`
-- Predicted: `it is so hot that`
+- Predicted: `had`
 
 **Gap 445** (1 words, fidelity 0.00)
 
 - Actual: `said:`
-- Predicted: `she quickly took a large pin and pricked the old woman's eye.`
+- Predicted: `But Gretel saw what she had in mind, and I do not I am to do it; how do I get in?`
 
-**Gap 446** (3 words, fidelity 0.00)
+**Gap 446** (3 words, fidelity 0.40)
 
 - Actual: `not know how`
-- Predicted: `will`
+- Predicted: `do not`
 
-**Gap 447** (1 words, fidelity 0.50)
+**Gap 447** (1 words, fidelity 0.00)
 
 - Actual: `get`
-- Predicted: `to get out`
+- Predicted: `can't`
 
-**Gap 448** (1 words, fidelity 0.50)
+**Gap 448** (1 words, fidelity 0.05)
 
 - Actual: `the`
-- Predicted: `the old woman.`
+- Predicted: `said the old woman. The door was big enough; just look, I can get myself!' and she crept up and thrust her head into the oven. The push that drove her far into it, the iron door,`
 
-**Gap 449** (1 words, fidelity 1.00)
+**Gap 449** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `is`
+- Predicted: `wasn't`
 
 **Gap 450** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `that you`
+- Predicted: `can get myself!`
 
 **Gap 451** (1 words, fidelity 0.00)
 
 - Actual: `in`
-- Predicted: `my`
+- Predicted: `to`
 
-**Gap 452** (1 words, fidelity 0.00)
+**Gap 452** (1 words, fidelity 1.00)
 
 - Actual: `head`
-- Predicted: `body`
+- Predicted: `head`
 
 **Gap 453** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `into`
+- Predicted: `climb`
 
 **Gap 454** (5 words, fidelity 0.00)
 
 - Actual: `Then Gretel gave her a`
-- Predicted: `she pushed the red-hot poker`
+- Predicted: `can't`
 
-**Gap 455** (1 words, fidelity 1.00)
+**Gap 455** (1 words, fidelity 0.00)
 
 - Actual: `into`
-- Predicted: `into`
+- Predicted: `through`
 
-**Gap 456** (3 words, fidelity 0.55)
+**Gap 456** (3 words, fidelity 0.12)
 
 - Actual: `and shut the`
-- Predicted: `and shut the little girl in with her.`
+- Predicted: `she pushed that drove her far into the iron door, quickly fastened the bolt.`
 
-**Gap 457** (1 words, fidelity 0.67)
+**Gap 457** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and quickly`
+- Predicted: `quickly`
 
 **Gap 458** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `it`
+- Predicted: `pulled`
 
 **Gap 459** (1 words, fidelity 0.67)
 
 - Actual: `to`
-- Predicted: `to scream`
+- Predicted: `began to`
 
 **Gap 460** (1 words, fidelity 0.00)
 
 - Actual: `are`
 - Predicted: `were`
 
-**Gap 461** (1 words, fidelity 0.00)
+**Gap 461** (1 words, fidelity 0.04)
 
 - Actual: `is`
-- Predicted: `was`
+- Predicted: `cried: Hansel, we are saved! The old witch is dead!' Then Hansel sprang like a deer from its cage when the door is opened. How happy did rejoice and embrace each other, then danced about and kissed each other! And as they had no longer any need to fear`
 
 **Gap 462** (2 words, fidelity 0.00)
 
 - Actual: `a bird`
-- Predicted: `out`
+- Predicted: `sprang`
 
 **Gap 463** (1 words, fidelity 1.00)
 
@@ -2866,17 +2867,17 @@ said the old woman, 'it won't help you at all.'`
 **Gap 464** (2 words, fidelity 0.00)
 
 - Actual: `the door`
-- Predicted: `it`
+- Predicted: `out jumped`
 
-**Gap 465** (1 words, fidelity 1.00)
+**Gap 465** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `they`
+- Predicted: `were`
 
-**Gap 466** (1 words, fidelity 0.29)
+**Gap 466** (1 words, fidelity 0.17)
 
 - Actual: `and`
-- Predicted: `Hansel and Gretel jumped for joy!`
+- Predicted: `clapped their hands, hugged, and danced about and kissed each other!`
 
 **Gap 467** (1 words, fidelity 0.00)
 
@@ -2886,87 +2887,87 @@ said the old woman, 'it won't help you at all.'`
 **Gap 468** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `soon`
+- Predicted: `we were`
 
 **Gap 469** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `now`
+- Predicted: `no longer`
 
-**Gap 470** (1 words, fidelity 0.29)
+**Gap 470** (1 words, fidelity 1.00)
 
 - Actual: `they`
-- Predicted: `so they now felt quite secure.`
+- Predicted: `they`
 
 **Gap 471** (1 words, fidelity 1.00)
 
 - Actual: `the`
 - Predicted: `the`
 
-**Gap 472** (1 words, fidelity 1.00)
+**Gap 472** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of`
+- Predicted: `filled with`
 
-**Gap 473** (1 words, fidelity 0.00)
+**Gap 473** (1 words, fidelity 0.33)
 
 - Actual: `and`
-- Predicted: `of`
+- Predicted: `and filled the chests full`
 
-**Gap 474** (1 words, fidelity 0.50)
+**Gap 474** (1 words, fidelity 1.00)
 
 - Actual: `than`
-- Predicted: `than the little`
+- Predicted: `than`
 
 **Gap 475** (2 words, fidelity 0.67)
 
 - Actual: `Hansel, and`
 - Predicted: `Hansel`
 
-**Gap 476** (1 words, fidelity 1.00)
+**Gap 476** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `his`
+- Predicted: `pockets`
 
 **Gap 477** (1 words, fidelity 0.00)
 
 - Actual: `be`
-- Predicted: `fit into his pockets.`
+- Predicted: `could`
 
 **Gap 478** (1 words, fidelity 0.00)
 
 - Actual: `and`
 - Predicted: `so`
 
-**Gap 479** (2 words, fidelity 0.67)
+**Gap 479** (2 words, fidelity 0.00)
 
 - Actual: `too, will`
-- Predicted: `will`
+- Predicted: `I, Gretel, take something home with me,'`
 
 **Gap 480** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `so`
+- Predicted: `for`
 
-**Gap 481** (1 words, fidelity 0.12)
+**Gap 481** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so I will take a few pretty shells, " said Gretel, and filled her pinafore full.`
+- Predicted: `filled`
 
 **Gap 482** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `up`
+- Predicted: `pinafore`
 
 **Gap 483** (1 words, fidelity 0.00)
 
 - Actual: `now`
-- Predicted: `But where are we to spend the night?`
+- Predicted: `we cannot see it.`
 
-**Gap 484** (1 words, fidelity 0.50)
+**Gap 484** (1 words, fidelity 0.67)
 
 - Actual: `said`
-- Predicted: `said Gretel to`
+- Predicted: `said Cinderella`
 
 **Gap 485** (1 words, fidelity 0.00)
 
@@ -2976,12 +2977,12 @@ said the old woman, 'it won't help you at all.'`
 **Gap 486** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `into`
+- Predicted: `must leave`
 
-**Gap 487** (1 words, fidelity 0.13)
+**Gap 487** (1 words, fidelity 0.67)
 
 - Actual: `of`
-- Predicted: `of swamp, which was so deep and miry that they could not cross it.`
+- Predicted: `of marshy`
 
 **Gap 488** (1 words, fidelity 1.00)
 
@@ -2991,17 +2992,17 @@ said the old woman, 'it won't help you at all.'`
 **Gap 489** (1 words, fidelity 0.00)
 
 - Actual: `no`
-- Predicted: `foot-bridge,`
+- Predicted: `a bridge`
 
 **Gap 490** (1 words, fidelity 0.00)
 
 - Actual: `no`
-- Predicted: `ferry,`
+- Predicted: `there is`
 
 **Gap 491** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `said`
+- Predicted: `a white duck is swimming there: if I ask her, she will help us over.'`
 
 **Gap 492** (1 words, fidelity 0.00)
 
@@ -3011,182 +3012,182 @@ said the old woman, 'it won't help you at all.'`
 **Gap 493** (2 words, fidelity 0.00)
 
 - Actual: `she will`
-- Predicted: `help us over.`
+- Predicted: `can you give`
 
 **Gap 494** (1 words, fidelity 0.00)
 
 - Actual: `us`
-- Predicted: `over.`
+- Predicted: `carry`
 
 **Gap 495** (2 words, fidelity 0.00)
 
 - Actual: `and Gretel`
-- Predicted: `ITTLE duck, little duck, take us across,`
+- Predicted: `are waiting`
 
 **Gap 496** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `Gretel`
+- Predicted: `are sitting`
 
 **Gap 497** (1 words, fidelity 0.00)
 
 - Actual: `sight,`
-- Predicted: `river`
+- Predicted: `Take me across on thy back, so white.'`
 
 **Gap 498** (1 words, fidelity 0.00)
 
 - Actual: `us`
-- Predicted: `you`
+- Predicted: `will`
 
-**Gap 499** (1 words, fidelity 1.00)
+**Gap 499** (1 words, fidelity 0.20)
 
 - Actual: `back`
-- Predicted: `back`
+- Predicted: `Take me across on thy back so white.'`
 
-**Gap 500** (1 words, fidelity 0.40)
+**Gap 500** (1 words, fidelity 0.06)
 
 - Actual: `duck`
-- Predicted: `duck, come to us!`
+- Predicted: `Little duck, little duck, dost thou see, Hansel and Gretel are waiting for thee? There's never a plank, or bridge in the stream, Take me across on thy back, so white.'`
 
-**Gap 501** (1 words, fidelity 0.13)
+**Gap 501** (1 words, fidelity 0.04)
 
 - Actual: `and`
-- Predicted: `did not dare to refuse such a kind request, and got into the water.`
+- Predicted: `cried: Little duck, little duck, dost thou see, Hansel and Gretel are waiting for thee? There's never a plank, or bridge in the stream, take them across on thy back so white.' The duck came to them, and Hansel seated himself on its back, and told his sister not`
 
-**Gap 502** (1 words, fidelity 0.00)
+**Gap 502** (1 words, fidelity 0.05)
 
 - Actual: `himself`
-- Predicted: `herself`
+- Predicted: `Hansel seated himself on its back, gently told his sister by her side, No, replied Gretel, will be too heavy for the little duck; she shall take you across, first after the other.' The good little duck did so,`
 
-**Gap 503** (1 words, fidelity 0.67)
+**Gap 503** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and bid`
+- Predicted: `spoke`
 
-**Gap 504** (2 words, fidelity 0.00)
+**Gap 504** (2 words, fidelity 0.50)
 
 - Actual: `to sit`
-- Predicted: `himself`
+- Predicted: `to carry`
 
 **Gap 505** (1 words, fidelity 0.00)
 
 - Actual: `him.`
-- Predicted: `her`
+- Predicted: `not`
 
 **Gap 506** (2 words, fidelity 0.00)
 
 - Actual: `Gretel, 'that`
-- Predicted: `her`
+- Predicted: `she`
 
-**Gap 507** (2 words, fidelity 0.50)
+**Gap 507** (2 words, fidelity 0.00)
 
 - Actual: `be too`
-- Predicted: `would be`
+- Predicted: `Take it across on thy back, so white.'`
 
 **Gap 508** (1 words, fidelity 0.00)
 
 - Actual: `little`
-- Predicted: `duck; she shall take us across, one after the other.' The`
+- Predicted: `light`
 
 **Gap 509** (1 words, fidelity 0.00)
 
 - Actual: `us`
-- Predicted: `her across, one after the other.'`
+- Predicted: `she`
 
 **Gap 510** (1 words, fidelity 0.00)
 
 - Actual: `one`
-- Predicted: `so, we will go this way.`
+- Predicted: `and led`
 
-**Gap 511** (1 words, fidelity 0.00)
+**Gap 511** (1 words, fidelity 1.00)
 
 - Actual: `and`
-- Predicted: `she took her brother first`
+- Predicted: `and`
 
 **Gap 512** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `when`
+- Predicted: `the girls`
 
-**Gap 513** (1 words, fidelity 0.00)
+**Gap 513** (1 words, fidelity 0.05)
 
 - Actual: `more`
-- Predicted: `familiar`
+- Predicted: `more familiar to them, and at length they saw from afar the house. Then they began to run, rushed into the parlour, and threw themselves round their father's neck. The man had not known one happy`
 
 **Gap 514** (2 words, fidelity 0.00)
 
 - Actual: `their father's`
-- Predicted: `a`
+- Predicted: `a poor`
 
-**Gap 515** (1 words, fidelity 1.00)
+**Gap 515** (1 words, fidelity 0.04)
 
 - Actual: `to`
-- Predicted: `to`
+- Predicted: `so, when were once safely across and had walked for a short time, the forest seemed to be more and familiar to them, and at length they saw from afar house. Then they began to run, rushed into the parlour, and threw themselves round their mother's neck. The man had not`
 
-**Gap 516** (1 words, fidelity 1.00)
+**Gap 516** (1 words, fidelity 0.00)
 
 - Actual: `themselves`
-- Predicted: `themselves`
+- Predicted: `embraced`
 
-**Gap 517** (1 words, fidelity 1.00)
+**Gap 517** (1 words, fidelity 0.00)
 
 - Actual: `father's`
-- Predicted: `father's`
+- Predicted: `embraced`
 
-**Gap 518** (1 words, fidelity 0.29)
+**Gap 518** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `forest; the woman, however, was dead.`
+- Predicted: `the`
 
-**Gap 519** (2 words, fidelity 0.22)
+**Gap 519** (2 words, fidelity 0.00)
 
 - Actual: `her pinafore`
-- Predicted: `her purse until it was quite empty`
+- Predicted: `out`
 
 **Gap 520** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `out until`
+- Predicted: `sparkled`
 
 **Gap 521** (1 words, fidelity 0.00)
 
 - Actual: `stones`
-- Predicted: `LEFT: contained such dazzling gems that they sparkled on the floor`
+- Predicted: `sparkled`
 
-**Gap 522** (1 words, fidelity 0.13)
+**Gap 522** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `the house, and Hansel threw one handful after another out of his pocket to`
+- Predicted: `the`
 
 **Gap 523** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `Hansel threw one handful after another out of his pocket to add to them.`
+- Predicted: `carelessly`
 
 **Gap 524** (1 words, fidelity 0.00)
 
 - Actual: `after`
-- Predicted: `out of his pocket to`
+- Predicted: `and`
 
 **Gap 525** (2 words, fidelity 0.00)
 
 - Actual: `of his`
-- Predicted: `into her`
+- Predicted: `from`
 
 **Gap 526** (1 words, fidelity 1.00)
 
 - Actual: `to`
 - Predicted: `to`
 
-**Gap 527** (1 words, fidelity 0.67)
+**Gap 527** (1 words, fidelity 0.00)
 
 - Actual: `an`
-- Predicted: `an end,`
+- Predicted: `anxiety's`
 
-**Gap 528** (1 words, fidelity 0.00)
+**Gap 528** (1 words, fidelity 1.00)
 
 - Actual: `of`
-- Predicted: `from`
+- Predicted: `of`
 
 ## Position 2 — threshold 0.324 bits
 
@@ -3438,53 +3439,51 @@ catches it, may make himself a big fur cap out <gap 711> it.
 - Actual: `Hard`
 - Predicted: `lived`
 
-**Gap 2** (1 words, fidelity 0.67)
+**Gap 2** (1 words, fidelity 1.00)
 
 - Actual: `a`
-- Predicted: `a stepmother.`
+- Predicted: `a`
 
 **Gap 3** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `wife and`
+- Predicted: `a`
 
-**Gap 4** (2 words, fidelity 0.11)
+**Gap 4** (2 words, fidelity 0.67)
 
 - Actual: `and his`
-- Predicted: `and his wife had nothing in the house but corn in the pot, and no
-money in the money-box, and no wood in the woodshed, and the
-meat from the table was gone,`
+- Predicted: `and`
 
-**Gap 5** (4 words, fidelity 0.55)
+**Gap 5** (4 words, fidelity 0.50)
 
 - Actual: `and the girl Gretel.`
-- Predicted: `and his little girl was named Gretel`
+- Predicted: `and his sister Gretel`
 
 **Gap 6** (2 words, fidelity 0.67)
 
 - Actual: `and to`
-- Predicted: `and little to break,`
+- Predicted: `and`
 
-**Gap 7** (1 words, fidelity 0.00)
+**Gap 7** (1 words, fidelity 1.00)
 
 - Actual: `and`
-- Predicted: `one day it came to pass that`
+- Predicted: `and`
 
 **Gap 8** (1 words, fidelity 0.00)
 
 - Actual: `fell`
-- Predicted: `was`
+- Predicted: `had come`
 
-**Gap 9** (4 words, fidelity 0.67)
+**Gap 9** (4 words, fidelity 0.00)
 
 - Actual: `the
 land, he could`
-- Predicted: `the land`
+- Predicted: `weakened`
 
 **Gap 10** (1 words, fidelity 0.00)
 
 - Actual: `longer`
-- Predicted: `LEFT: RIGHT:  procure even daily bread. Now when he thought over this by night in his bed, and tossed about in his anxiety, he groaned and said to his wife: 'What is to become of us? How are we to feed our poor ch`
+- Predicted: `could not`
 
 **Gap 11** (1 words, fidelity 1.00)
 
@@ -3494,39 +3493,37 @@ land, he could`
 **Gap 12** (1 words, fidelity 0.00)
 
 - Actual: `Now`
-- Predicted: `one piece of bread left!`
+- Predicted: `food`
 
 **Gap 13** (1 words, fidelity 0.00)
 
 - Actual: `night`
-- Predicted: `over`
+- Predicted: `often`
 
 **Gap 14** (3 words, fidelity 0.00)
 
 - Actual: `his bed, and`
-- Predicted: `long`
+- Predicted: `called Gretel`
 
-**Gap 15** (1 words, fidelity 0.12)
+**Gap 15** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he resolved to go into the forest and cut wood, hoping thereby to earn
-some money.`
+- Predicted: `Alas`
 
-**Gap 16** (4 words, fidelity 0.21)
+**Gap 16** (4 words, fidelity 0.00)
 
 - Actual: `and said to his`
-- Predicted: `and to let out his hair, which was very long, and pull out a few
-strands, and sell them for a loaf of bread.`
+- Predicted: `alas`
 
 **Gap 17** (4 words, fidelity 0.00)
 
 - Actual: `is to become of`
-- Predicted: `can`
+- Predicted: `befell`
 
 **Gap 18** (1 words, fidelity 0.00)
 
 - Actual: `we`
-- Predicted: `become`
+- Predicted: `will provide`
 
 **Gap 19** (2 words, fidelity 0.00)
 
@@ -3536,823 +3533,838 @@ strands, and sell them for a loaf of bread.`
 **Gap 20** (2 words, fidelity 0.00)
 
 - Actual: `when we`
-- Predicted: `are`
+- Predicted: `affliction`
 
 **Gap 21** (2 words, fidelity 0.00)
 
 - Actual: `longer have`
-- Predicted: `how shall`
+- Predicted: `will provide`
 
 **Gap 22** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `can`
+- Predicted: `can we trust`
 
 **Gap 23** (2 words, fidelity 0.00)
 
 - Actual: `tell you`
-- Predicted: `can`
+- Predicted: `shall we`
 
-**Gap 24** (2 words, fidelity 0.33)
+**Gap 24** (2 words, fidelity 0.00)
 
 - Actual: `answered the`
-- Predicted: `said the woman, 'early`
+- Predicted: `could we`
 
-**Gap 25** (3 words, fidelity 0.00)
+**Gap 25** (3 words, fidelity 0.50)
 
 - Actual: `morning we will`
-- Predicted: `tomorrow, take the children out into the forest to where`
+- Predicted: `will`
 
-**Gap 26** (5 words, fidelity 0.60)
+**Gap 26** (5 words, fidelity 0.00)
 
 - Actual: `the children out into the`
-- Predicted: `the little girls into the`
+- Predicted: `will we go`
 
 **Gap 27** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `in the thickest; there we will light a fire for them, and give each`
+- Predicted: `find`
 
-**Gap 28** (3 words, fidelity 0.43)
+**Gap 28** (3 words, fidelity 0.33)
 
 - Actual: `there we will`
-- Predicted: `we will dress them in rags and make them go there.`
+- Predicted: `shall we shine`
 
-**Gap 29** (2 words, fidelity 1.00)
+**Gap 29** (2 words, fidelity 0.00)
 
 - Actual: `a fire`
-- Predicted: `a fire`
+- Predicted: `shine`
 
-**Gap 30** (2 words, fidelity 0.40)
+**Gap 30** (2 words, fidelity 0.00)
 
 - Actual: `and give`
-- Predicted: `we will give`
+- Predicted: `shall we`
 
-**Gap 31** (2 words, fidelity 0.20)
+**Gap 31** (2 words, fidelity 0.00)
 
 - Actual: `of them`
-- Predicted: `we can, and let them come back safely.`
+- Predicted: `carry`
 
-**Gap 32** (2 words, fidelity 0.80)
+**Gap 32** (2 words, fidelity 0.00)
 
 - Actual: `of bread,`
-- Predicted: `of bread, and`
+- Predicted: `carry`
 
 **Gap 33** (4 words, fidelity 0.00)
 
 - Actual: `then we will go`
-- Predicted: `give them each a knife also, and bid them, if they are tired, to cut
-themselves some seats out of the trees, and rest themselves a little.`
+- Predicted: `lead`
 
 **Gap 34** (1 words, fidelity 0.00)
 
 - Actual: `work`
-- Predicted: `cottage`
+- Predicted: `camp`
 
 **Gap 35** (3 words, fidelity 0.00)
 
 - Actual: `leave them alone.`
-- Predicted: `we will come back towards evening.`
+- Predicted: `carry`
 
-**Gap 36** (2 words, fidelity 0.29)
+**Gap 36** (2 words, fidelity 0.00)
 
 - Actual: `They will`
-- Predicted: `we will wait until they are asleep and then quietly return home.`
+- Predicted: `find`
 
 **Gap 37** (1 words, fidelity 0.00)
 
 - Actual: `find`
-- Predicted: `get`
+- Predicted: `see us`
 
-**Gap 38** (2 words, fidelity 1.00)
+**Gap 38** (2 words, fidelity 0.00)
 
 - Actual: `way home`
-- Predicted: `way home`
+- Predicted: `see us`
 
-**Gap 39** (1 words, fidelity 0.00)
+**Gap 39** (1 words, fidelity 1.00)
 
 - Actual: `shall`
-- Predicted: `we will keep`
+- Predicted: `shall`
 
-**Gap 40** (1 words, fidelity 1.00)
+**Gap 40** (1 words, fidelity 0.67)
 
 - Actual: `of`
-- Predicted: `of`
+- Predicted: `rid of`
 
-**Gap 41** (3 words, fidelity 0.40)
+**Gap 41** (3 words, fidelity 0.08)
 
 - Actual: `said the man,`
-- Predicted: `said he`
+- Predicted: `I will not that; how can I bear to leave you alone in the forest?-- the animals would soon make off with you.`
 
-**Gap 42** (2 words, fidelity 0.00)
+**Gap 42** (2 words, fidelity 0.67)
 
 - Actual: `not do`
-- Predicted: `will`
+- Predicted: `do`
 
-**Gap 43** (1 words, fidelity 0.67)
+**Gap 43** (1 words, fidelity 0.50)
 
 - Actual: `to`
-- Predicted: `to bear`
+- Predicted: `to leave her`
 
 **Gap 44** (2 words, fidelity 0.00)
 
 - Actual: `my children`
-- Predicted: `to let`
+- Predicted: `let`
 
-**Gap 45** (1 words, fidelity 0.33)
+**Gap 45** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `forest?--the wild animals would`
+- Predicted: `lonely`
 
 **Gap 46** (1 words, fidelity 0.00)
 
 - Actual: `wild`
-- Predicted: `poor`
+- Predicted: `kill`
 
-**Gap 47** (6 words, fidelity 0.22)
+**Gap 47** (6 words, fidelity 0.00)
 
 - Actual: `come and tear them to pieces.'`
-- Predicted: `eat them.`
+- Predicted: `devour`
 
 **Gap 48** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `fool!`
+- Predicted: `were`
 
 **Gap 49** (4 words, fidelity 0.00)
 
 - Actual: `we
 must all four`
-- Predicted: `shall`
+- Predicted: `you`
 
-**Gap 50** (1 words, fidelity 1.00)
+**Gap 50** (1 words, fidelity 0.20)
 
 - Actual: `well`
-- Predicted: `well`
+- Predicted: `might as well plane the planks for our coffins'`
 
 **Gap 51** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `to make`
+- Predicted: `to cover`
 
-**Gap 52** (2 words, fidelity 0.00)
+**Gap 52** (2 words, fidelity 0.67)
 
 - Actual: `and she`
-- Predicted: `RIGHT: left him no peace until he consented. 'But I feel very
-sorry for the poor children, all the same,' said the man.`
+- Predicted: `she`
 
 **Gap 53** (5 words, fidelity 0.00)
 
 - Actual: `him no peace until he`
-- Predicted: `she returned`
+- Predicted: `she would`
 
 **Gap 54** (1 words, fidelity 0.00)
 
 - Actual: `But`
-- Predicted: `He felt very`
+- Predicted: `would soon starve to death, you may as well plane the planks for our coffins,' and left without waiting for her consent. I feel very sorry for my poor children, all alone,' said the woman. The two girls had also not complained of hunger, and had only obeyed.`
 
-**Gap 55** (3 words, fidelity 0.67)
+**Gap 55** (3 words, fidelity 0.50)
 
 - Actual: `for the poor`
-- Predicted: `for poor little`
+- Predicted: `for`
 
 **Gap 56** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `sad, my dear brother.`
+- Predicted: `were`
 
-**Gap 57** (2 words, fidelity 0.00)
+**Gap 57** (2 words, fidelity 1.00)
 
 - Actual: `said the`
-- Predicted: `he`
+- Predicted: `said the`
 
-**Gap 58** (1 words, fidelity 1.00)
+**Gap 58** (1 words, fidelity 0.00)
 
 - Actual: `children`
-- Predicted: `children`
+- Predicted: `had also not suffered`
 
-**Gap 59** (5 words, fidelity 0.00)
+**Gap 59** (5 words, fidelity 0.25)
 
 - Actual: `been able to sleep for`
-- Predicted: `suffer`
+- Predicted: `to go without`
 
-**Gap 60** (2 words, fidelity 0.00)
+**Gap 60** (2 words, fidelity 0.33)
 
 - Actual: `and had`
-- Predicted: `to`
+- Predicted: `had also not been`
 
 **Gap 61** (1 words, fidelity 0.00)
 
 - Actual: `what`
-- Predicted: `their stepmother had said to their father. Gretel wept`
+- Predicted: `for`
 
-**Gap 62** (5 words, fidelity 0.60)
+**Gap 62** (5 words, fidelity 0.00)
 
 - Actual: `had said to their father.`
-- Predicted: `had said to them both,`
+- Predicted: `for`
 
 **Gap 63** (1 words, fidelity 0.00)
 
 - Actual: `Gretel`
-- Predicted: `soaked`
+- Predicted: `I feel very sorry for the children, all the same,' the man. The two boys had also not known they were being led into the forest until they heard their stepmother weep bitter tears, 'we shall be able to eat them,' Hansel: Now all is lost.' Be quiet, do not distress yourself`
 
 **Gap 64** (1 words, fidelity 0.00)
 
 - Actual: `bitter`
-- Predicted: `so`
+- Predicted: `cried`
 
-**Gap 65** (3 words, fidelity 0.40)
+**Gap 65** (3 words, fidelity 0.00)
 
 - Actual: `and said to`
-- Predicted: `and thought`
+- Predicted: `cried the`
 
 **Gap 66** (3 words, fidelity 0.00)
 
 - Actual: `is over with`
-- Predicted: `happened`
+- Predicted: `should bother`
 
 **Gap 67** (5 words, fidelity 0.00)
 
 - Actual: `Gretel,' said Hansel, 'do not`
-- Predicted: `calm`
+- Predicted: `distress`
 
-**Gap 68** (5 words, fidelity 0.00)
+**Gap 68** (5 words, fidelity 0.04)
 
 - Actual: `I will soon find a`
-- Predicted: `and took me`
+- Predicted: `Hansel: Now all our troubles will be over. Be quiet, do not distress yourself, for our way will be much easier when the old folks are asleep, for we shall creep outside on the door below, where the moonlight shines on the pebbles which lie in front.`
 
-**Gap 69** (1 words, fidelity 0.20)
+**Gap 69** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `Hansel, 'listen to me closely, and we will soon`
+- Predicted: `was shed by`
 
 **Gap 70** (2 words, fidelity 0.00)
 
 - Actual: `us.' And`
-- Predicted: `out of`
+- Predicted: `will be found`
 
-**Gap 71** (5 words, fidelity 0.22)
+**Gap 71** (5 words, fidelity 0.00)
 
 - Actual: `had fallen asleep, he got`
-- Predicted: `had gone to bed`
+- Predicted: `disappear`
 
 **Gap 72** (1 words, fidelity 0.00)
 
 - Actual: `put`
-- Predicted: `out of`
+- Predicted: `knocked at`
 
-**Gap 73** (5 words, fidelity 0.00)
+**Gap 73** (5 words, fidelity 0.25)
 
 - Actual: `his little coat, opened the`
-- Predicted: `on`
+- Predicted: `knocked at the`
 
 **Gap 74** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `out`
+- Predicted: `slipped`
 
-**Gap 75** (3 words, fidelity 0.36)
+**Gap 75** (3 words, fidelity 0.00)
 
 - Actual: `shone brightly, and`
-- Predicted: `by her window shone brightly into the room.`
+- Predicted: `lit`
 
 **Gap 76** (1 words, fidelity 0.00)
 
 - Actual: `white`
-- Predicted: `pebbles`
+- Predicted: `shone`
 
-**Gap 77** (1 words, fidelity 1.00)
+**Gap 77** (1 words, fidelity 0.00)
 
 - Actual: `lay`
-- Predicted: `lay`
+- Predicted: `fell`
 
-**Gap 78** (2 words, fidelity 0.67)
+**Gap 78** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `of`
+- Predicted: `before`
 
-**Gap 79** (1 words, fidelity 1.00)
+**Gap 79** (1 words, fidelity 0.00)
 
 - Actual: `like`
-- Predicted: `like`
+- Predicted: `shook, knocked, stood, lay, illuminated, scattered, lay, of, their, looked, quickly, into, her, she, whispered, sister, my`
 
 **Gap 80** (1 words, fidelity 0.00)
 
 - Actual: `silver`
-- Predicted: `pennies.`
+- Predicted: `shone upon the smooth`
 
 **Gap 81** (2 words, fidelity 0.00)
 
 - Actual: `Hansel stooped`
-- Predicted: `out`
+- Predicted: `stole`
 
 **Gap 82** (2 words, fidelity 0.00)
 
 - Actual: `of his`
-- Predicted: `into`
+- Predicted: `pocket`
 
 **Gap 83** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `in`
+- Predicted: `stole`
 
 **Gap 84** (1 words, fidelity 0.00)
 
 - Actual: `many`
-- Predicted: `much`
+- Predicted: `quickly`
 
-**Gap 85** (2 words, fidelity 0.67)
+**Gap 85** (2 words, fidelity 0.00)
 
 - Actual: `he could`
-- Predicted: `many as he could`
+- Predicted: `quickly`
 
-**Gap 86** (2 words, fidelity 0.00)
+**Gap 86** (2 words, fidelity 0.50)
 
 - Actual: `Then he`
-- Predicted: `soon`
+- Predicted: `he took`
 
 **Gap 87** (1 words, fidelity 0.00)
 
 - Actual: `back`
-- Predicted: `forth`
+- Predicted: `into`
 
-**Gap 88** (2 words, fidelity 0.29)
+**Gap 88** (2 words, fidelity 0.00)
 
 - Actual: `said to`
-- Predicted: `back and beckoned to Gretel`
+- Predicted: `he quickly took the pocket`
 
 **Gap 89** (2 words, fidelity 0.00)
 
 - Actual: `sister, and`
-- Predicted: `Gretel,`
+- Predicted: `girl`
 
 **Gap 90** (2 words, fidelity 0.00)
 
 - Actual: `not forsake`
-- Predicted: `us,' and he lay down again in his bed.`
+- Predicted: `protect`
 
-**Gap 91** (1 words, fidelity 0.29)
+**Gap 91** (1 words, fidelity 0.40)
 
 - Actual: `and`
-- Predicted: `and filled his pockets so full`
+- Predicted: `and quickly climbed into`
 
-**Gap 92** (1 words, fidelity 1.00)
+**Gap 92** (1 words, fidelity 0.15)
 
 - Actual: `down`
-- Predicted: `down`
+- Predicted: `down
+into
+they
+quickly
+Then
+lay
+down
+his
+dear
+little
+protect
+then`
 
 **Gap 93** (1 words, fidelity 0.00)
 
 - Actual: `in`
-- Predicted: `he put`
+- Predicted: `into`
 
-**Gap 94** (2 words, fidelity 0.17)
+**Gap 94** (2 words, fidelity 0.15)
 
 - Actual: `before the`
-- Predicted: `the sun had risen, the woman came and awoke the`
+- Predicted: `the
+the
+Hansel:
+the
+the
+girl
+the
+protect
+and
+then
+into`
 
-**Gap 95** (3 words, fidelity 0.00)
+**Gap 95** (3 words, fidelity 0.33)
 
 - Actual: `had risen, the`
-- Predicted: `breakfast`
+- Predicted: `shone, the lazy`
 
-**Gap 96** (2 words, fidelity 0.00)
+**Gap 96** (2 words, fidelity 0.50)
 
 - Actual: `came and`
-- Predicted: `awoke`
+- Predicted: `and comforted`
 
-**Gap 97** (1 words, fidelity 0.67)
+**Gap 97** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the boys`
+- Predicted: `awoke early, saying:`
 
 **Gap 98** (1 words, fidelity 0.00)
 
 - Actual: `children,`
-- Predicted: `sisters, and said:`
+- Predicted: `slept, provide for, then, down, in, did, the, the, did, they, shall, is, shall, they, shall, shall, shall`
 
 **Gap 99** (3 words, fidelity 0.00)
 
 - Actual: `Get up, you`
-- Predicted: `lazy`
+- Predicted: `arise`
 
 **Gap 100** (6 words, fidelity 0.00)
 
 - Actual: `are going into the
 forest to`
-- Predicted: `fetch wood.`
+- Predicted: `shall`
 
-**Gap 101** (1 words, fidelity 0.00)
+**Gap 101** (1 words, fidelity 0.07)
 
 - Actual: `wood.'`
-- Predicted: `firewood.`
+- Predicted: `She gave each child a little piece of bread, and said: There is your dinner, eat it up now, for then you will have nothing else.'`
 
 **Gap 102** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `each`
+- Predicted: `gave`
 
-**Gap 103** (2 words, fidelity 0.00)
+**Gap 103** (2 words, fidelity 0.50)
 
 - Actual: `piece of`
-- Predicted: `loaf`
+- Predicted: `pieces of`
 
-**Gap 104** (4 words, fidelity 0.40)
+**Gap 104** (4 words, fidelity 0.67)
 
 - Actual: `is something for your`
-- Predicted: `there is no fire today for`
+- Predicted: `is your`
 
 **Gap 105** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `go`
+- Predicted: `you`
 
 **Gap 106** (5 words, fidelity 0.00)
 
 - Actual: `not eat it up before`
-- Predicted: `that`
+- Predicted: `should`
 
 **Gap 107** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `RIGHT:  RIGHT:  take care, or we shall soon be there.'`
+- Predicted: `go`
 
-**Gap 108** (2 words, fidelity 0.06)
+**Gap 108** (2 words, fidelity 0.00)
 
 - Actual: `will get`
-- Predicted: `g: 'get up early in the morning, and while your mother is busy at home, we will go into the forest to gather some wood.' She said, 'there will be no`
+- Predicted: `have`
 
-**Gap 109** (1 words, fidelity 1.00)
+**Gap 109** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `Hansel`
 
-**Gap 110** (1 words, fidelity 1.00)
+**Gap 110** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `she`
 
 **Gap 111** (1 words, fidelity 0.00)
 
 - Actual: `had`
 - Predicted: `put`
 
-**Gap 112** (2 words, fidelity 1.00)
+**Gap 112** (2 words, fidelity 0.00)
 
 - Actual: `his pocket.`
-- Predicted: `his pocket.`
+- Predicted: `Then he threw some more pebbles on the path behind them.`
 
-**Gap 113** (1 words, fidelity 0.50)
+**Gap 113** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `and they both`
+- Predicted: `Hansel took`
 
 **Gap 114** (1 words, fidelity 0.00)
 
 - Actual: `out`
-- Predicted: `off`
+- Predicted: `sat`
 
 **Gap 115** (1 words, fidelity 0.00)
 
 - Actual: `on`
-- Predicted: `off`
+- Predicted: `follow`
 
 **Gap 116** (3 words, fidelity 0.00)
 
 - Actual: `to the forest.`
-- Predicted: `on`
+- Predicted: `Hansel`
 
 **Gap 117** (3 words, fidelity 0.00)
 
 - Actual: `they had walked`
-- Predicted: `after`
+- Predicted: `Hansel`
 
 **Gap 118** (1 words, fidelity 0.00)
 
 - Actual: `short`
-- Predicted: `long`
+- Predicted: `little`
 
-**Gap 119** (1 words, fidelity 0.12)
+**Gap 119** (1 words, fidelity 1.00)
 
 - Actual: `Hansel`
-- Predicted: `Hansel stood still and peeped back at the house, and did so again and again.`
+- Predicted: `Hansel`
 
-**Gap 120** (2 words, fidelity 0.67)
+**Gap 120** (2 words, fidelity 0.00)
 
 - Actual: `still and`
-- Predicted: `and`
+- Predicted: `Hansel`
 
 **Gap 121** (1 words, fidelity 0.00)
 
 - Actual: `back`
-- Predicted: `around`
+- Predicted: `in`
 
-**Gap 122** (2 words, fidelity 1.00)
+**Gap 122** (2 words, fidelity 0.04)
 
 - Actual: `the house,`
-- Predicted: `the house`
+- Predicted: `she took the bread under her apron, as Hansel had the pebbles in his pocket. Then she all set off together and the way. When a little time, they stood and peeped at the children and did it again. Her looking there and staying for what? Pay attention, he do not`
 
 **Gap 123** (3 words, fidelity 0.00)
 
 - Actual: `so again and`
-- Predicted: `not`
+- Predicted: `did this`
 
-**Gap 124** (6 words, fidelity 0.40)
+**Gap 124** (6 words, fidelity 0.00)
 
 - Actual: `father said: 'Hansel, what are you`
-- Predicted: `brother, why are you`
+- Predicted: `was...were...were...were...were...one...a...when...he...would...at...again.`
 
-**Gap 125** (1 words, fidelity 1.00)
+**Gap 125** (1 words, fidelity 0.00)
 
 - Actual: `at`
-- Predicted: `at`
+- Predicted: `curiously`
 
 **Gap 126** (1 words, fidelity 0.00)
 
 - Actual: `behind`
-- Predicted: `back`
+- Predicted: `did nothing`
 
 **Gap 127** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so`
+- Predicted: `what`
 
 **Gap 128** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `so carefully`
+- Predicted: `did not know how`
 
-**Gap 129** (1 words, fidelity 0.67)
+**Gap 129** (1 words, fidelity 0.00)
 
 - Actual: `your`
-- Predicted: `your own`
+- Predicted: `used his`
 
-**Gap 130** (3 words, fidelity 0.07)
+**Gap 130** (3 words, fidelity 0.00)
 
 - Actual: `father,' said Hansel,`
-- Predicted: `RIGHT:  'I am looking at my little white cat, which is  
-RIGHT:  sitting up on the roof, and wants to say goodbye to me.'`
+- Predicted: `was he doing`
 
 **Gap 131** (6 words, fidelity 0.00)
 
 - Actual: `am looking at my little white`
-- Predicted: `saw`
+- Predicted: `did something`
 
 **Gap 132** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `climbed`
+- Predicted: `was`
 
-**Gap 133** (6 words, fidelity 0.00)
+**Gap 133** (6 words, fidelity 0.22)
 
 - Actual: `on the roof, and wants to`
-- Predicted: `there,`
+- Predicted: `was going to`
 
-**Gap 134** (1 words, fidelity 0.00)
+**Gap 134** (1 words, fidelity 1.00)
 
 - Actual: `to`
-- Predicted: `at`
+- Predicted: `to`
 
 **Gap 135** (1 words, fidelity 0.00)
 
 - Actual: `said:`
-- Predicted: `scolded`
+- Predicted: `for`
 
-**Gap 136** (3 words, fidelity 0.17)
+**Gap 136** (3 words, fidelity 0.00)
 
 - Actual: `is not your`
-- Predicted: `little cat, that is the morning sun which is`
+- Predicted: `that`
 
-**Gap 137** (1 words, fidelity 0.50)
+**Gap 137** (1 words, fidelity 0.00)
 
 - Actual: `cat,`
-- Predicted: `cat, that is`
+- Predicted: `mischievous`
 
-**Gap 138** (1 words, fidelity 0.18)
+**Gap 138** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `was merely the gleam of the morning sun which is`
+- Predicted: `was`
 
-**Gap 139** (2 words, fidelity 0.67)
+**Gap 139** (2 words, fidelity 0.00)
 
 - Actual: `morning sun`
-- Predicted: `sun`
+- Predicted: `legs.' Ah, I cat, which sitting up say goodbye me.' The wife Fool, that little that the cat which led them there.' Hansel, had not back at the cat, been constantly throwing one of white pebble-stones out`
 
 **Gap 140** (4 words, fidelity 0.00)
 
 - Actual: `is
 shining on the`
-- Predicted: `shines`
+- Predicted: `climbed through`
 
 **Gap 141** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `said, "I wonder how our little cat is getting along at home, whether
-she has stayed in the kitchen or run out into the garden."`
+- Predicted: `had not`
 
 **Gap 142** (2 words, fidelity 0.00)
 
 - Actual: `been looking`
-- Predicted: `looked`
+- Predicted: `had not looked`
 
-**Gap 143** (2 words, fidelity 0.67)
+**Gap 143** (2 words, fidelity 0.50)
 
 - Actual: `but had`
-- Predicted: `but`
+- Predicted: `had always`
 
-**Gap 144** (1 words, fidelity 0.25)
+**Gap 144** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `out of his pocket on the road.`
+- Predicted: `had not`
 
 **Gap 145** (3 words, fidelity 0.00)
 
 - Actual: `of his pocket`
-- Predicted: `at`
+- Predicted: `carelessly`
 
 **Gap 146** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `when`
+- Predicted: `had reached`
 
-**Gap 147** (7 words, fidelity 0.44)
+**Gap 147** (7 words, fidelity 0.00)
 
 - Actual: `the middle of the forest, the father`
-- Predicted: `the forest,`
+- Predicted: `they`
 
-**Gap 148** (5 words, fidelity 0.50)
+**Gap 148** (5 words, fidelity 0.00)
 
 - Actual: `some wood, and I will`
-- Predicted: `up some wood`
+- Predicted: `we have`
 
-**Gap 149** (6 words, fidelity 0.48)
+**Gap 149** (6 words, fidelity 0.00)
 
 - Actual: `a fire that you may not`
-- Predicted: `a fire, so that it may not get dark without our having a light.'`
+- Predicted: `up`
 
 **Gap 150** (1 words, fidelity 0.00)
 
 - Actual: `cold.'`
-- Predicted: `chill`
+- Predicted: `should`
 
 **Gap 151** (3 words, fidelity 0.00)
 
 - Actual: `and Gretel gathered`
-- Predicted: `gather`
+- Predicted: `should`
 
 **Gap 152** (1 words, fidelity 1.00)
 
 - Actual: `as`
 - Predicted: `as`
 
-**Gap 153** (1 words, fidelity 0.18)
+**Gap 153** (1 words, fidelity 0.00)
 
 - Actual: `The`
-- Predicted: `when the brushwood was lighted, and the flames were burning`
+- Predicted: `gathered`
 
-**Gap 154** (1 words, fidelity 1.00)
+**Gap 154** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `was`
+- Predicted: `we will then light`
 
-**Gap 155** (3 words, fidelity 0.50)
+**Gap 155** (3 words, fidelity 0.00)
 
 - Actual: `and when the`
-- Predicted: `and when it burned brightly`
+- Predicted: `we will sit`
 
 **Gap 156** (1 words, fidelity 0.00)
 
 - Actual: `were`
-- Predicted: `was`
+- Predicted: `glowed`
 
-**Gap 157** (3 words, fidelity 0.17)
+**Gap 157** (3 words, fidelity 0.00)
 
 - Actual: `the woman said:`
-- Predicted: `the flames danced merrily, and they felt quite warm.`
+- Predicted: `and let us sit`
 
-**Gap 158** (1 words, fidelity 0.00)
+**Gap 158** (1 words, fidelity 0.50)
 
 - Actual: `children,`
-- Predicted: `Gretel and I will hide ourselves in the
-forest, and let the witch come in and steal us, and then we will kill her.`
+- Predicted: `you two children`
 
 **Gap 159** (3 words, fidelity 0.00)
 
 - Actual: `by the
 fire`
-- Predicted: `down here, and when evening comes`
+- Predicted: `and sleep there`
 
 **Gap 160** (1 words, fidelity 0.00)
 
 - Actual: `rest,`
-- Predicted: `now, children, be quiet and think of nothing.`
+- Predicted: `Now, let yourselves down carefully and sit by the`
 
-**Gap 161** (8 words, fidelity 0.11)
+**Gap 161** (8 words, fidelity 0.17)
 
 - Actual: `will go into the forest and cut some`
-- Predicted: `hered brushwood together, as high as a little hill. The brushwood was lighted, and when the flames were burning very high, the woman said: 'Now, children, lay yourselves down by the fire and rest, we will stay here until we have finished cutting the wood. When we have done,`
+- Predicted: `shall pass through the`
 
-**Gap 162** (2 words, fidelity 0.29)
+**Gap 162** (2 words, fidelity 0.00)
 
 - Actual: `When we`
-- Predicted: `When you have chopped enough,`
+- Predicted: `Now, let us`
 
 **Gap 163** (7 words, fidelity 0.00)
 
 - Actual: `we will come back and fetch you`
-- Predicted: `away.`
+- Predicted: `fall asleep`
 
-**Gap 164** (3 words, fidelity 0.50)
+**Gap 164** (3 words, fidelity 0.40)
 
 - Actual: `and Gretel sat`
-- Predicted: `sat`
+- Predicted: `sat beside`
 
-**Gap 165** (1 words, fidelity 0.05)
+**Gap 165** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `fire, and when noon came, each ate a little piece of bread, and as they heard the strokes of the wood-axe they believed that their father was near. It was not the axe, however, but a branch which he`
+- Predicted: `took`
 
-**Gap 166** (4 words, fidelity 0.14)
+**Gap 166** (4 words, fidelity 0.00)
 
 - Actual: `and when noon came,`
-- Predicted: `and Gretel sat by the fire,  
-each ate a little`
+- Predicted: `took`
 
-**Gap 167** (1 words, fidelity 1.00)
+**Gap 167** (1 words, fidelity 0.00)
 
 - Actual: `ate`
-- Predicted: `ate`
+- Predicted: `pulled`
 
-**Gap 168** (1 words, fidelity 1.00)
+**Gap 168** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of`
+- Predicted: `gave`
 
-**Gap 169** (1 words, fidelity 0.40)
+**Gap 169** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and greedily devoured it.`
+- Predicted: `had cut down`
 
-**Gap 170** (2 words, fidelity 0.25)
+**Gap 170** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `of chopping with his axe they`
+- Predicted: `had cut`
 
-**Gap 171** (1 words, fidelity 1.00)
+**Gap 171** (1 words, fidelity 0.05)
 
 - Actual: `that`
-- Predicted: `that`
+- Predicted: `had gone, cut up, the oven, and placed, every, into, and when, they heard, the sound, that the witch, was coming, had tied, to a, strong, old, vine, and as, the wind, was blowing, towards, them, so`
 
-**Gap 172** (2 words, fidelity 1.00)
+**Gap 172** (2 words, fidelity 0.00)
 
 - Actual: `father was`
-- Predicted: `father was`
+- Predicted: `cabin`
 
-**Gap 173** (3 words, fidelity 0.75)
+**Gap 173** (3 words, fidelity 0.00)
 
 - Actual: `was not the`
-- Predicted: `was not the wood-cutter's`
+- Predicted: `believed it to be their father's`
 
-**Gap 174** (1 words, fidelity 0.12)
+**Gap 174** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `but the sound of a rat running over the floor made them jump up again,`
+- Predicted: `was`
 
 **Gap 175** (3 words, fidelity 0.00)
 
 - Actual: `which he had`
-- Predicted: `of`
+- Predicted: `was tied`
 
-**Gap 176** (2 words, fidelity 0.67)
+**Gap 176** (2 words, fidelity 0.00)
 
 - Actual: `to a`
-- Predicted: `to`
+- Predicted: `tied`
 
 **Gap 177** (1 words, fidelity 0.00)
 
 - Actual: `tree`
-- Predicted: `bush, which the wind was`
+- Predicted: `dead`
 
 **Gap 178** (1 words, fidelity 0.00)
 
 - Actual: `wind`
-- Predicted: `which`
+- Predicted: `and`
 
-**Gap 179** (2 words, fidelity 0.00)
+**Gap 179** (2 words, fidelity 0.40)
 
 - Actual: `and forwards.`
-- Predicted: `swung violently against the tree.`
+- Predicted: `and it sounded`
 
 **Gap 180** (1 words, fidelity 0.00)
 
 - Actual: `sitting`
-- Predicted: `so`
+- Predicted: `carried`
 
-**Gap 181** (3 words, fidelity 0.50)
+**Gap 181** (3 words, fidelity 0.00)
 
 - Actual: `a long
 time,`
-- Predicted: `long`
+- Predicted: `firmly`
 
 **Gap 182** (1 words, fidelity 1.00)
 
@@ -4362,78 +4374,78 @@ time,`
 **Gap 183** (6 words, fidelity 0.00)
 
 - Actual: `fatigue, and they fell fast asleep.`
-- Predicted: `long`
+- Predicted: `kissed`
 
 **Gap 184** (2 words, fidelity 0.00)
 
 - Actual: `last they`
-- Predicted: `awoke,`
+- Predicted: `sleep`
 
-**Gap 185** (4 words, fidelity 0.86)
+**Gap 185** (4 words, fidelity 0.00)
 
 - Actual: `it was already dark`
-- Predicted: `it was already`
+- Predicted: `dawn`
 
 **Gap 186** (3 words, fidelity 0.00)
 
 - Actual: `began to cry`
-- Predicted: `said`
+- Predicted: `asked`
 
-**Gap 187** (3 words, fidelity 0.40)
+**Gap 187** (3 words, fidelity 0.00)
 
 - Actual: `How are we`
-- Predicted: `shall we`
+- Predicted: `"sleeping"`
 
 **Gap 188** (5 words, fidelity 0.00)
 
 - Actual: `get out of the forest`
-- Predicted: `to`
+- Predicted: `ready`
 
 **Gap 189** (6 words, fidelity 0.00)
 
 - Actual: `But Hansel comforted
 her and said:`
-- Predicted: `after`
+- Predicted: `had been asleep for so long?`
 
-**Gap 190** (3 words, fidelity 0.40)
+**Gap 190** (3 words, fidelity 0.00)
 
 - Actual: `wait a little,`
-- Predicted: `shall wait`
+- Predicted: `had she`
 
-**Gap 191** (2 words, fidelity 0.50)
+**Gap 191** (2 words, fidelity 0.00)
 
 - Actual: `the moon`
-- Predicted: `the sun`
+- Predicted: `dawn`
 
 **Gap 192** (3 words, fidelity 0.00)
 
 - Actual: `risen, and then`
-- Predicted: `come`
+- Predicted: `dawn`
 
 **Gap 193** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `waited`
+- Predicted: `fell asleep`
 
-**Gap 194** (2 words, fidelity 0.00)
+**Gap 194** (2 words, fidelity 0.67)
 
 - Actual: `find the`
-- Predicted: `out`
+- Predicted: `find`
 
-**Gap 195** (8 words, fidelity 0.00)
+**Gap 195** (8 words, fidelity 0.10)
 
 - Actual: `when the full moon had risen, Hansel took`
-- Predicted: `they went`
+- Predicted: `Gretel called out to Hansel now? Just wait until morning has come, we will soon find our way.' And Gretel took his hand followed closely by the pebbles that shone like newly-coined silver pieces, which showed them the way. They walked all night long, by break of day came`
 
 **Gap 196** (6 words, fidelity 0.00)
 
 - Actual: `little sister by the hand, and`
-- Predicted: `pebble`
+- Predicted: `wondered`
 
-**Gap 197** (1 words, fidelity 1.00)
+**Gap 197** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `wandered`
 
 **Gap 198** (1 words, fidelity 0.00)
 
@@ -4443,32 +4455,32 @@ her and said:`
 **Gap 199** (1 words, fidelity 0.00)
 
 - Actual: `like`
-- Predicted: `and saw who it was, she thrust them both out into the street.`
+- Predicted: `glittered`
 
 **Gap 200** (1 words, fidelity 0.00)
 
 - Actual: `silver`
-- Predicted: `pieces, and showed them the way.`
+- Predicted: `coins`
 
 **Gap 201** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `the pebbles showed them the way.`
+- Predicted: `lit up the dark`
 
-**Gap 202** (1 words, fidelity 1.00)
+**Gap 202** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `lit`
 
-**Gap 203** (3 words, fidelity 0.40)
+**Gap 203** (3 words, fidelity 0.00)
 
 - Actual: `walked the whole`
-- Predicted: `walked all`
+- Predicted: `traveled through`
 
-**Gap 204** (1 words, fidelity 0.13)
+**Gap 204** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and when the sun was well up they again found the trail of pebbles`
+- Predicted: `by break of dawn came once more to their cave said:`
 
 **Gap 205** (2 words, fidelity 0.00)
 
@@ -4478,184 +4490,201 @@ her and said:`
 **Gap 206** (1 words, fidelity 0.00)
 
 - Actual: `more`
-- Predicted: `into`
+- Predicted: `they had wandered`
 
-**Gap 207** (2 words, fidelity 0.67)
+**Gap 207** (2 words, fidelity 0.00)
 
 - Actual: `father's house.`
-- Predicted: `house`
+- Predicted: `safe`
 
-**Gap 208** (20 words, fidelity 0.32)
+**Gap 208** (20 words, fidelity 0.00)
 
 - Actual: `They knocked at the door, and when the woman
 opened it and saw that it was Hansel and Gretel, she`
-- Predicted: `and found the door locked, and the key in his pocket.`
+- Predicted: `led them through`
 
 **Gap 209** (1 words, fidelity 0.00)
 
 - Actual: `You`
-- Predicted: `wicked`
+- Predicted: `sat vigilantly until dawn approached, then whispered to their children`
 
 **Gap 210** (2 words, fidelity 0.00)
 
 - Actual: `children, why`
-- Predicted: `had`
+- Predicted: `had been`
 
-**Gap 211** (6 words, fidelity 0.36)
+**Gap 211** (6 words, fidelity 0.20)
 
 - Actual: `you slept so long in the`
-- Predicted: `you had wandered into the`
+- Predicted: `had been in this`
 
-**Gap 212** (3 words, fidelity 0.00)
+**Gap 212** (3 words, fidelity 0.33)
 
 - Actual: `we thought you`
-- Predicted: `more`
+- Predicted: `had you been`
 
 **Gap 213** (2 words, fidelity 0.00)
 
 - Actual: `coming back`
-- Predicted: `more`
+- Predicted: `had been`
 
 **Gap 214** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `when`
+- Predicted: `with his son`
 
 **Gap 215** (7 words, fidelity 0.00)
 
 - Actual: `him to the heart to leave them`
-- Predicted: `it off`
+- Predicted: `had`
 
-**Gap 216** (1 words, fidelity 0.67)
+**Gap 216** (1 words, fidelity 0.00)
 
 - Actual: `long`
-- Predicted: `Not long`
+- Predicted: `did they`
 
-**Gap 217** (2 words, fidelity 0.33)
+**Gap 217** (2 words, fidelity 0.00)
 
 - Actual: `there was`
-- Predicted: `Not long afterwards, there`
+- Predicted: `had never been in`
 
 **Gap 218** (1 words, fidelity 0.00)
 
 - Actual: `dearth`
-- Predicted: `distress`
+- Predicted: `forests`
 
-**Gap 219** (1 words, fidelity 0.67)
+**Gap 219** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the land,`
+- Predicted: `farther`
 
 **Gap 220** (5 words, fidelity 0.00)
 
 - Actual: `and the children heard their`
-- Predicted: `were`
+- Predicted: `were never`
 
 **Gap 221** (1 words, fidelity 0.00)
 
 - Actual: `saying`
-- Predicted: `begged`
+- Predicted: `cried`
 
 **Gap 222** (3 words, fidelity 0.00)
 
 - Actual: `to their
 father:`
-- Predicted: `"Everything is eaten again, we have one half loaf left, and that`
+- Predicted: `had it all`
 
 **Gap 223** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `had been`
+- Predicted: `was`
 
 **Gap 224** (1 words, fidelity 0.00)
 
 - Actual: `we`
-- Predicted: `have not even`
+- Predicted: `were`
 
 **Gap 225** (1 words, fidelity 0.00)
 
 - Actual: `loaf`
-- Predicted: `was broken, but he said nothing.`
+- Predicted: `was`
 
-**Gap 226** (1 words, fidelity 1.00)
+**Gap 226** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and`
+- Predicted: `we must`
 
-**Gap 227** (3 words, fidelity 0.11)
+**Gap 227** (3 words, fidelity 0.40)
 
 - Actual: `is the end.`
-- Predicted: `afterwards, there was once more great dearth throughout the land, and the children heard their mother saying at night to their father: 'Everything is eaten again, we have one half loaf left, and that`
+- Predicted: `The witches`
 
-**Gap 228** (2 words, fidelity 0.67)
+**Gap 228** (2 words, fidelity 0.00)
 
 - Actual: `children must`
-- Predicted: `children`
+- Predicted: `fairies`
 
 **Gap 229** (2 words, fidelity 0.00)
 
 - Actual: `we will`
-- Predicted: `send`
+- Predicted: `wouldn't`
 
 **Gap 230** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `forrest`
+- Predicted: `deep`
 
-**Gap 231** (2 words, fidelity 0.67)
+**Gap 231** (2 words, fidelity 0.00)
 
 - Actual: `so that`
-- Predicted: `so`
+- Predicted: `would return`
 
-**Gap 232** (2 words, fidelity 1.00)
+**Gap 232** (2 words, fidelity 0.67)
 
 - Actual: `not find`
-- Predicted: `not find`
+- Predicted: `find`
 
 **Gap 233** (1 words, fidelity 0.00)
 
 - Actual: `way`
-- Predicted: `forest out`
+- Predicted: `stomachs`
 
 **Gap 234** (1 words, fidelity 0.00)
 
 - Actual: `there`
-- Predicted: `is no other`
+- Predicted: `is
+this
+for
+us
+that
+the
+animals
+if
+the
+get
+lost
+it
+would
+be
+hard
+to
+feed
+both`
 
 **Gap 235** (2 words, fidelity 0.00)
 
 - Actual: `no other`
-- Predicted: `it`
+- Predicted: `is this not the time`
 
-**Gap 236** (2 words, fidelity 0.67)
+**Gap 236** (2 words, fidelity 0.00)
 
 - Actual: `of saving`
-- Predicted: `of`
+- Predicted: `starve`
 
 **Gap 237** (1 words, fidelity 0.00)
 
 - Actual: `heart`
-- Predicted: `wife's`
+- Predicted: `sigh`
 
 **Gap 238** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `RIGHT:  thought:`
+- Predicted: `It would not`
 
 **Gap 239** (2 words, fidelity 0.00)
 
 - Actual: `be better`
-- Predicted: `for`
+- Predicted: `would`
 
 **Gap 240** (2 words, fidelity 0.00)
 
 - Actual: `the last`
-- Predicted: `their fate together`
+- Predicted: `it would not`
 
 **Gap 241** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `to share`
+- Predicted: `would`
 
 **Gap 242** (1 words, fidelity 0.00)
 
@@ -4665,1007 +4694,1035 @@ father:`
 **Gap 243** (2 words, fidelity 0.00)
 
 - Actual: `to nothing`
-- Predicted: `not`
+- Predicted: `would not listen`
 
 **Gap 244** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `she`
+- Predicted: `would not`
 
-**Gap 245** (1 words, fidelity 0.67)
+**Gap 245** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to hear`
+- Predicted: `would not listen if I`
 
 **Gap 246** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `and instead grew angry with him,`
+- Predicted: `silently`
 
 **Gap 247** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `her husband`
+- Predicted: `reproached`
 
 **Gap 248** (1 words, fidelity 0.00)
 
 - Actual: `who`
-- Predicted: `said`
+- Predicted: `also`
 
 **Gap 249** (3 words, fidelity 0.00)
 
 - Actual: `must say B,`
-- Predicted: `that`
+- Predicted: `was`
 
-**Gap 250** (3 words, fidelity 0.08)
+**Gap 250** (3 words, fidelity 0.00)
 
 - Actual: `and as he`
-- Predicted: `who says A must say B, likewise, had yielded the first time, he had to do so a second time also.`
+- Predicted: `had yielded`
 
-**Gap 251** (4 words, fidelity 0.33)
+**Gap 251** (4 words, fidelity 0.00)
 
 - Actual: `the first time, he`
-- Predicted: `he also`
+- Predicted: `also`
 
 **Gap 252** (5 words, fidelity 0.00)
 
 - Actual: `to do so a second`
-- Predicted: `again`
+- Predicted: `had also`
 
 **Gap 253** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `were so angry with their father`
+- Predicted: `were still quiet and enjoyed`
 
 **Gap 254** (1 words, fidelity 0.00)
 
 - Actual: `awake`
-- Predicted: `quietly`
+- Predicted: `quietly listened`
 
 **Gap 255** (3 words, fidelity 0.00)
 
 - Actual: `had heard the`
-- Predicted: `listen to`
+- Predicted: `interrupted`
 
 **Gap 256** (2 words, fidelity 0.00)
 
 - Actual: `When the`
-- Predicted: `so`
+- Predicted: `insisted`
 
 **Gap 257** (2 words, fidelity 0.00)
 
 - Actual: `asleep, Hansel`
-- Predicted: `as`
+- Predicted: `were beginning`
 
 **Gap 258** (1 words, fidelity 0.00)
 
 - Actual: `up,`
-- Predicted: `out`
+- Predicted: `had also taken`
 
-**Gap 259** (2 words, fidelity 0.22)
+**Gap 259** (2 words, fidelity 0.00)
 
 - Actual: `out and`
-- Predicted: `out of the house into the wood.`
+- Predicted: `to go outside`
 
 **Gap 260** (2 words, fidelity 0.00)
 
 - Actual: `up pebbles`
-- Predicted: `some berries`
+- Predicted: `picking berries`
 
 **Gap 261** (3 words, fidelity 0.00)
 
 - Actual: `he had done`
-- Predicted: `before`
+- Predicted: `were silent and listened to`
 
-**Gap 262** (1 words, fidelity 0.33)
+**Gap 262** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `but the woman had locked`
+- Predicted: `were still quiet and listened to conversation.`
 
 **Gap 263** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `locked`
+- Predicted: `reminded`
 
-**Gap 264** (1 words, fidelity 1.00)
+**Gap 264** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `into`
 
-**Gap 265** (1 words, fidelity 0.00)
+**Gap 265** (1 words, fidelity 0.50)
 
 - Actual: `and`
-- Predicted: `so`
+- Predicted: `quietly and sat`
 
 **Gap 266** (4 words, fidelity 0.00)
 
 - Actual: `could not get out.`
-- Predicted: `so`
+- Predicted: `led`
 
 **Gap 267** (1 words, fidelity 0.00)
 
 - Actual: `comforted`
-- Predicted: `thought`
+- Predicted: `took`
 
-**Gap 268** (4 words, fidelity 0.40)
+**Gap 268** (4 words, fidelity 0.06)
 
 - Actual: `and said: 'Do not`
-- Predicted: `said`
+- Predicted: `begged, to, into, berries, with, when, who, and, the, and, and, to, his, little, sister, to, softly, and, to, the, and, and, and, and, and, and, and, and, and, and, and, and`
 
 **Gap 269** (1 words, fidelity 0.00)
 
 - Actual: `Gretel,`
-- Predicted: `Hansel`
+- Predicted: `and lead`
 
-**Gap 270** (2 words, fidelity 0.00)
+**Gap 270** (2 words, fidelity 0.11)
 
 - Actual: `to sleep`
-- Predicted: `quietly, the`
+- Predicted: `to take, the forest, by himself, when, who, and, and, and, but, with, and, so, that`
 
-**Gap 271** (3 words, fidelity 0.50)
+**Gap 271** (3 words, fidelity 0.00)
 
 - Actual: `God will help`
-- Predicted: `will`
+- Predicted: `wished`
 
 **Gap 272** (3 words, fidelity 0.50)
 
 - Actual: `in the morning`
 - Predicted: `morning`
 
-**Gap 273** (1 words, fidelity 0.22)
+**Gap 273** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `woman, and took the children out of their`
+- Predicted: `kindly`
 
-**Gap 274** (1 words, fidelity 0.06)
+**Gap 274** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and said to her husband: 'Now we need take no further trouble about
-them, they will soon be out of our way in the woods, and we shall have
-our peace and quiet.'`
+- Predicted: `took the covers off`
 
 **Gap 275** (2 words, fidelity 0.00)
 
 - Actual: `children out`
-- Predicted: `away`
+- Predicted: `emptied`
 
-**Gap 276** (9 words, fidelity 0.36)
+**Gap 276** (9 words, fidelity 0.00)
 
 - Actual: `of bread was given to them, but it was`
-- Predicted: `of bread`
+- Predicted: `remained`
 
 **Gap 277** (2 words, fidelity 0.00)
 
 - Actual: `smaller
 than`
-- Predicted: `so small`
+- Predicted: `remained`
 
 **Gap 278** (1 words, fidelity 0.00)
 
 - Actual: `On`
-- Predicted: `so sad that she could not give them more.`
+- Predicted: `fed`
 
 **Gap 279** (5 words, fidelity 0.00)
 
 - Actual: `way into the forest Hansel`
-- Predicted: `morning crumbled his`
+- Predicted: `crumbs`
 
 **Gap 280** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `it`
+- Predicted: `into dust`
 
 **Gap 281** (3 words, fidelity 0.00)
 
 - Actual: `his pocket, and`
-- Predicted: `it`
+- Predicted: `sometimes`
 
 **Gap 282** (4 words, fidelity 0.00)
 
 - Actual: `still and threw a`
-- Predicted: `so`
+- Predicted: `meager`
 
-**Gap 283** (2 words, fidelity 0.67)
+**Gap 283** (2 words, fidelity 0.00)
 
 - Actual: `on the`
-- Predicted: `on`
+- Predicted: `had`
 
 **Gap 284** (3 words, fidelity 0.00)
 
 - Actual: `why do you`
-- Predicted: `Hansel,`
+- Predicted: `should`
 
 **Gap 285** (3 words, fidelity 0.00)
 
 - Actual: `I
 am looking`
-- Predicted: `time before. On the way into the forest Hansel crumbled his  
-pebbles`
+- Predicted: `Hansel, why don't you`
 
-**Gap 286** (3 words, fidelity 0.00)
+**Gap 286** (3 words, fidelity 0.29)
 
 - Actual: `at my little`
-- Predicted: `so`
+- Predicted: `and looked up at`
 
-**Gap 287** (4 words, fidelity 0.00)
+**Gap 287** (4 words, fidelity 0.33)
 
 - Actual: `is sitting on the`
-- Predicted: `at`
+- Predicted: `perched on`
 
-**Gap 288** (1 words, fidelity 0.17)
+**Gap 288** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and often stood still and threw a morsel on the ground.`
+- Predicted: `the pigeon which perched on`
 
 **Gap 289** (5 words, fidelity 0.00)
 
 - Actual: `to say goodbye to me,'`
-- Predicted: `, said Hansel.`
+- Predicted: `what`
 
-**Gap 290** (2 words, fidelity 0.80)
+**Gap 290** (2 words, fidelity 0.57)
 
 - Actual: `said the`
-- Predicted: `said the mother,`
+- Predicted: `said the mother, that it`
 
 **Gap 291** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `isn't`
+- Predicted: `the pigeon which perched on the roof, seems to want someone to answer Hansel. Fool!`
 
 **Gap 292** (3 words, fidelity 0.00)
 
 - Actual: `your little pigeon,`
-- Predicted: `that`
+- Predicted: `was`
 
-**Gap 293** (4 words, fidelity 0.29)
+**Gap 293** (4 words, fidelity 0.00)
 
 - Actual: `is the morning sun`
-- Predicted: `that is shining`
+- Predicted: `into`
 
-**Gap 294** (4 words, fidelity 0.25)
+**Gap 294** (4 words, fidelity 0.00)
 
 - Actual: `is shining
 on the`
-- Predicted: `shines through the clouds`
+- Predicted: `into`
 
 **Gap 295** (1 words, fidelity 0.00)
 
 - Actual: `however`
-- Predicted: `then`
+- Predicted: `slowly`
 
-**Gap 296** (1 words, fidelity 0.00)
+**Gap 296** (1 words, fidelity 0.04)
 
 - Actual: `the`
-- Predicted: `heaped`
+- Predicted: `wants known Hansel. Fool!' the woman, that these not those that those that those that chimney.' Hansel, little by little, threw all the known crumbs on the path. the woman led them still deeper where had they in it a great maze again made, and the mother just`
 
-**Gap 297** (2 words, fidelity 0.00)
+**Gap 297** (2 words, fidelity 0.40)
 
 - Actual: `on the`
-- Predicted: `onto`
+- Predicted: `carefully along the`
 
-**Gap 298** (1 words, fidelity 0.00)
+**Gap 298** (1 words, fidelity 0.67)
 
 - Actual: `The`
-- Predicted: `so`
+- Predicted: `said the`
 
-**Gap 299** (2 words, fidelity 0.00)
+**Gap 299** (2 words, fidelity 0.40)
 
 - Actual: `the children`
-- Predicted: `her led them`
+- Predicted: `into the forest`
 
 **Gap 300** (5 words, fidelity 0.75)
 
 - Actual: `into the forest, where they`
 - Predicted: `into the forest`
 
-**Gap 301** (1 words, fidelity 1.00)
+**Gap 301** (1 words, fidelity 0.00)
 
 - Actual: `never`
-- Predicted: `never`
+- Predicted: `into the forest`
 
 **Gap 302** (4 words, fidelity 0.00)
 
 - Actual: `their lives been before.`
-- Predicted: `never in the world have seen such a beautiful place.`
+- Predicted: `into the forest`
 
 **Gap 303** (1 words, fidelity 0.00)
 
 - Actual: `Then`
-- Predicted: `farther on`
+- Predicted: `into the forest`
 
 **Gap 304** (2 words, fidelity 0.00)
 
 - Actual: `fire was`
-- Predicted: `house`
+- Predicted: `cabin`
 
-**Gap 305** (1 words, fidelity 0.25)
+**Gap 305** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and when the fire was burning brightly,`
+- Predicted: `into`
 
 **Gap 306** (1 words, fidelity 0.00)
 
 - Actual: `said:`
-- Predicted: `she seated them by the fire`
+- Predicted: `begged`
 
 **Gap 307** (2 words, fidelity 0.00)
 
 - Actual: `sit there,`
-- Predicted: `that`
+- Predicted: `Just fill up the basket with wood you children, when you are going to bed a little; we are going to bed when you are done, come and kiss the children.' When it`
 
 **Gap 308** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `before`
+- Predicted: `us know`
 
 **Gap 309** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `are tired`
+- Predicted: `when we go to bed are`
 
 **Gap 310** (1 words, fidelity 0.00)
 
 - Actual: `tired`
-- Predicted: `so`
+- Predicted: `off led them still deeper into had promised in it a great fire again made, the mother just said you children when you are going to bed a little; are going to bed in it when you are done, come and kiss away.' When it was`
 
 **Gap 311** (1 words, fidelity 0.00)
 
 - Actual: `may`
-- Predicted: `and`
+- Predicted: `go to bed`
 
-**Gap 312** (1 words, fidelity 0.33)
+**Gap 312** (1 words, fidelity 0.00)
 
 - Actual: `we`
-- Predicted: `said: 'Now we are going`
+- Predicted: `are going to bed`
 
 **Gap 313** (7 words, fidelity 0.00)
 
 - Actual: `into the forest to cut wood, and`
-- Predicted: `away.`
+- Predicted: `bed`
 
-**Gap 314** (2 words, fidelity 0.50)
+**Gap 314** (2 words, fidelity 0.00)
 
 - Actual: `the evening`
-- Predicted: `the forest`
+- Predicted: `bed`
 
-**Gap 315** (1 words, fidelity 0.17)
+**Gap 315** (1 words, fidelity 0.00)
 
 - Actual: `we`
-- Predicted: `are done, we will come and fetch you away.' When`
+- Predicted: `when you finish`
 
-**Gap 316** (2 words, fidelity 0.44)
+**Gap 316** (2 words, fidelity 0.00)
 
 - Actual: `we will`
-- Predicted: `we will come and fetch you away.`
+- Predicted: `and when`
 
 **Gap 317** (2 words, fidelity 0.00)
 
 - Actual: `fetch you`
-- Predicted: `take`
+- Predicted: `come and join me away.`
 
-**Gap 318** (2 words, fidelity 0.18)
+**Gap 318** (2 words, fidelity 0.00)
 
 - Actual: `was noon,`
-- Predicted: `it was dark and the two children were frightened.`
+- Predicted: `When it grew late and dark,`
 
-**Gap 319** (1 words, fidelity 0.67)
+**Gap 319** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `out her`
+- Predicted: `shared a small`
 
-**Gap 320** (4 words, fidelity 0.27)
+**Gap 320** (4 words, fidelity 0.25)
 
 - Actual: `of bread with Hansel,`
-- Predicted: `of bread, which she had carefully saved from her own portion.`
+- Predicted: `Gretel shared a piece of bread who had scattered by the way.`
 
 **Gap 321** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `ate`
+- Predicted: `Gretel shared a piece of bread who Hansel scattered by the way.`
 
 **Gap 322** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `pebbles`
+- Predicted: `gathered together their findings`
 
-**Gap 323** (1 words, fidelity 0.00)
+**Gap 323** (1 words, fidelity 0.67)
 
 - Actual: `the`
-- Predicted: `on his journey`
+- Predicted: `by the`
 
-**Gap 324** (2 words, fidelity 0.15)
+**Gap 324** (2 words, fidelity 0.00)
 
 - Actual: `Then they`
-- Predicted: `they went deep into the forest to cut wood, and in`
+- Predicted: `Hansel`
 
-**Gap 325** (1 words, fidelity 0.40)
+**Gap 325** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `and morning came, but`
+- Predicted: `when they are done, come and take away.' When it came time,`
 
-**Gap 326** (4 words, fidelity 0.40)
+**Gap 326** (4 words, fidelity 0.10)
 
 - Actual: `one came to the`
-- Predicted: `came`
+- Predicted: `They did not awake until morning rises, and we shall see the crumbs of bread which`
 
 **Gap 327** (1 words, fidelity 0.00)
 
 - Actual: `children.`
-- Predicted: `child`
+- Predicted: `They did not`
 
-**Gap 328** (1 words, fidelity 1.00)
+**Gap 328** (1 words, fidelity 0.67)
 
 - Actual: `not`
-- Predicted: `not`
+- Predicted: `did not`
 
 **Gap 329** (3 words, fidelity 0.00)
 
 - Actual: `until it was`
-- Predicted: `by`
+- Predicted: `in the midst of`
 
-**Gap 330** (1 words, fidelity 1.00)
+**Gap 330** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and`
+- Predicted: `a`
 
 **Gap 331** (4 words, fidelity 0.00)
 
 - Actual: `comforted his little sister`
-- Predicted: `and said: 'Wait,`
+- Predicted: `and Gretel`
 
 **Gap 332** (1 words, fidelity 0.00)
 
 - Actual: `said:`
-- Predicted: `'just wait,`
+- Predicted: `Gretel`
 
 **Gap 333** (1 words, fidelity 0.00)
 
 - Actual: `Gretel,`
 - Predicted: `until`
 
-**Gap 334** (2 words, fidelity 0.40)
+**Gap 334** (2 words, fidelity 0.00)
 
 - Actual: `the moon`
-- Predicted: `until the sun`
+- Predicted: `dawn`
 
-**Gap 335** (2 words, fidelity 0.50)
+**Gap 335** (2 words, fidelity 0.40)
 
 - Actual: `then we`
-- Predicted: `then will`
+- Predicted: `we will see`
 
-**Gap 336** (1 words, fidelity 0.25)
+**Gap 336** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `that I have scattered in the snow`
+- Predicted: `they will find`
 
 **Gap 337** (2 words, fidelity 0.00)
 
 - Actual: `I have`
-- Predicted: `fallen from the table.`
+- Predicted: `were`
 
-**Gap 338** (1 words, fidelity 0.00)
+**Gap 338** (1 words, fidelity 1.00)
 
 - Actual: `will`
-- Predicted: `we`
+- Predicted: `will`
 
 **Gap 339** (1 words, fidelity 0.00)
 
 - Actual: `us`
-- Predicted: `where`
+- Predicted: `the way`
 
-**Gap 340** (2 words, fidelity 0.67)
+**Gap 340** (2 words, fidelity 0.00)
 
 - Actual: `way home`
-- Predicted: `way`
+- Predicted: `path`
 
-**Gap 341** (1 words, fidelity 0.33)
+**Gap 341** (1 words, fidelity 0.07)
 
 - Actual: `the`
-- Predicted: `the sun had already set,`
+- Predicted: `when the moon came up they set out breadcrumbs, so many thousands that they flew all over the woods and were picked up again by the birds.`
 
-**Gap 342** (5 words, fidelity 0.33)
+**Gap 342** (5 words, fidelity 0.29)
 
 - Actual: `out, but they found no`
-- Predicted: `out`
+- Predicted: `they laid`
 
 **Gap 343** (2 words, fidelity 0.67)
 
 - Actual: `for the`
-- Predicted: `for`
+- Predicted: `the`
 
-**Gap 344** (3 words, fidelity 0.40)
+**Gap 344** (3 words, fidelity 0.00)
 
 - Actual: `of birds which`
-- Predicted: `of butterflies`
+- Predicted: `flocked`
 
 **Gap 345** (1 words, fidelity 0.00)
 
 - Actual: `about`
-- Predicted: `in`
+- Predicted: `flew`
 
-**Gap 346** (1 words, fidelity 0.00)
+**Gap 346** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `woods and fields had picked up.`
+- Predicted: `the`
 
 **Gap 347** (3 words, fidelity 0.00)
 
 - Actual: `and fields had`
-- Predicted: `picked`
+- Predicted: `were`
 
-**Gap 348** (3 words, fidelity 0.57)
+**Gap 348** (3 words, fidelity 0.50)
 
 - Actual: `them all up.`
-- Predicted: `up all the crumbs.`
+- Predicted: `up`
 
-**Gap 349** (2 words, fidelity 0.67)
+**Gap 349** (2 words, fidelity 0.00)
 
 - Actual: `said to`
-- Predicted: `said`
+- Predicted: `led`
 
 **Gap 350** (2 words, fidelity 0.00)
 
 - Actual: `We shall`
-- Predicted: `"Never mind," said`
+- Predicted: `they spread`
 
 **Gap 351** (2 words, fidelity 0.00)
 
 - Actual: `find the`
-- Predicted: `have`
+- Predicted: `lost`
 
 **Gap 352** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `so said Gretel.`
+- Predicted: `and so`
 
-**Gap 353** (4 words, fidelity 0.36)
+**Gap 353** (4 words, fidelity 0.00)
 
 - Actual: `did not find it.`
-- Predicted: `did not know which path to take.`
+- Predicted: `left so`
 
-**Gap 354** (1 words, fidelity 0.18)
+**Gap 354** (1 words, fidelity 0.00)
 
 - Actual: `They`
-- Predicted: `so they decided to wait until evening and try again`
+- Predicted: `hastily`
 
 **Gap 355** (3 words, fidelity 0.00)
 
 - Actual: `the whole night`
-- Predicted: `for some time`
+- Predicted: `they`
 
-**Gap 356** (3 words, fidelity 0.50)
+**Gap 356** (3 words, fidelity 0.00)
 
 - Actual: `the next day`
-- Predicted: `day`
+- Predicted: `too tired`
 
-**Gap 357** (11 words, fidelity 0.00)
+**Gap 357** (11 words, fidelity 0.15)
 
 - Actual: `morning till evening, but they did not get out of the`
-- Predicted: `forest,`
+- Predicted: `they lost`
 
 **Gap 358** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so`
+- Predicted: `felt`
 
 **Gap 359** (1 words, fidelity 0.00)
 
 - Actual: `very`
-- Predicted: `hungry, for they had nothing to eat but two or three`
+- Predicted: `felt`
 
 **Gap 360** (3 words, fidelity 0.00)
 
 - Actual: `for they had`
-- Predicted: `: 'and we must be getting hungry,' said Little Thumb, 'but we have not found any food.'`
+- Predicted: `found`
 
-**Gap 361** (3 words, fidelity 0.80)
+**Gap 361** (3 words, fidelity 0.00)
 
 - Actual: `to eat but`
-- Predicted: `to eat,`
+- Predicted: `had found`
 
-**Gap 362** (1 words, fidelity 1.00)
+**Gap 362** (1 words, fidelity 0.00)
 
 - Actual: `three`
-- Predicted: `three`
+- Predicted: `bare`
 
 **Gap 363** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `and all that they could find were some wild mushrooms`
+- Predicted: `sprang from`
 
-**Gap 364** (2 words, fidelity 1.00)
+**Gap 364** (2 words, fidelity 0.40)
 
 - Actual: `on the`
-- Predicted: `on the`
+- Predicted: `from the fertile`
 
-**Gap 365** (2 words, fidelity 0.00)
+**Gap 365** (2 words, fidelity 0.04)
 
 - Actual: `they were`
-- Predicted: `so`
+- Predicted: `and all too from that forest, being very, nothing but two or three berries, grew on the ground. And as they so weary and their feet beneath that tree fell asleep. It was now three mornings since their house. They began to walk again, but they`
 
-**Gap 366** (1 words, fidelity 1.00)
+**Gap 366** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `that`
+- Predicted: `they were`
 
-**Gap 367** (9 words, fidelity 0.00)
+**Gap 367** (9 words, fidelity 0.36)
 
 - Actual: `legs would carry them no longer, they lay down`
-- Predicted: `tired`
+- Predicted: `lay down`
 
-**Gap 368** (1 words, fidelity 1.00)
+**Gap 368** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `a`
+- Predicted: `underneath`
 
-**Gap 369** (1 words, fidelity 1.00)
+**Gap 369** (1 words, fidelity 0.50)
 
 - Actual: `and`
-- Predicted: `and`
+- Predicted: `and as they`
 
-**Gap 370** (1 words, fidelity 0.14)
+**Gap 370** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `It was now three mornings since they had left their father's house. They`
+- Predicted: `had passed`
 
 **Gap 371** (4 words, fidelity 0.00)
 
 - Actual: `since they had left`
-- Predicted: `after,`
+- Predicted: `passed`
 
 **Gap 372** (1 words, fidelity 0.00)
 
 - Actual: `father's`
-- Predicted: `own`
+- Predicted: `did`
 
-**Gap 373** (3 words, fidelity 0.00)
+**Gap 373** (3 words, fidelity 0.80)
 
 - Actual: `the forest, and`
-- Predicted: `forests`
+- Predicted: `the forest`
 
 **Gap 374** (3 words, fidelity 0.00)
 
 - Actual: `did not come`
-- Predicted: `soon, they must perish`
+- Predicted: `would`
 
-**Gap 375** (1 words, fidelity 1.00)
+**Gap 375** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `they`
+- Predicted: `would`
 
 **Gap 376** (3 words, fidelity 0.00)
 
 - Actual: `of hunger and`
-- Predicted: `in`
+- Predicted: `stricken by`
 
-**Gap 377** (2 words, fidelity 0.00)
+**Gap 377** (2 words, fidelity 0.67)
 
 - Actual: `saw a`
-- Predicted: `were very hungry and weary`
+- Predicted: `saw`
 
 **Gap 378** (1 words, fidelity 0.00)
 
 - Actual: `sitting`
-- Predicted: `perched`
+- Predicted: `saw perch sang so flew followed till`
 
-**Gap 379** (1 words, fidelity 0.00)
+**Gap 379** (1 words, fidelity 1.00)
 
 - Actual: `a`
-- Predicted: `branch`
+- Predicted: `a`
 
-**Gap 380** (2 words, fidelity 0.80)
+**Gap 380** (2 words, fidelity 0.67)
 
 - Actual: `sang so`
-- Predicted: `sang so sweetly`
+- Predicted: `sang`
 
-**Gap 381** (7 words, fidelity 0.25)
+**Gap 381** (7 words, fidelity 0.00)
 
 - Actual: `that they stood still and listened to`
-- Predicted: `that`
+- Predicted: `sang`
 
 **Gap 382** (1 words, fidelity 0.00)
 
 - Actual: `when`
-- Predicted: `as soon as`
+- Predicted: `saw`
 
-**Gap 383** (3 words, fidelity 0.40)
+**Gap 383** (3 words, fidelity 0.00)
 
 - Actual: `song was over,`
-- Predicted: `song ended`
+- Predicted: `sang`
 
 **Gap 384** (5 words, fidelity 0.33)
 
 - Actual: `spread its wings and flew`
 - Predicted: `flew`
 
-**Gap 385** (1 words, fidelity 0.05)
+**Gap 385** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `the bird flew into the little house, and they heard a little girl inside crying and saying, "Oh, what shall I do? There are so many guests coming, but I have no food to give them."`
+- Predicted: `flew`
 
-**Gap 386** (2 words, fidelity 0.67)
+**Gap 386** (2 words, fidelity 0.00)
 
 - Actual: `followed it`
-- Predicted: `followed`
+- Predicted: `flew`
 
-**Gap 387** (3 words, fidelity 0.67)
+**Gap 387** (3 words, fidelity 0.00)
 
 - Actual: `a little house,`
-- Predicted: `a small house`
+- Predicted: `the tree`
 
-**Gap 388** (4 words, fidelity 0.40)
+**Gap 388** (4 words, fidelity 0.12)
 
 - Actual: `the roof of
 which`
-- Predicted: `which`
+- Predicted: `which delightedly it. And as its shadow it it away before them, as they went until they reached the cottage on the hill it alighted; when they approached the little cottage they saw that the windows were of clear sugar. We had set to work on that,'`
 
-**Gap 389** (1 words, fidelity 0.12)
+**Gap 389** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and then they heard a little voice cry from inside, "Is everyting ready out here?"`
+- Predicted: `suddenly`
 
-**Gap 390** (1 words, fidelity 0.33)
+**Gap 390** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `it had flown away, they`
+- Predicted: `when the fairy approached the little cottage`
 
 **Gap 391** (1 words, fidelity 1.00)
 
 - Actual: `house`
-- Predicted: `house,`
+- Predicted: `house`
 
 **Gap 392** (8 words, fidelity 0.00)
 
 - Actual: `it was built of bread and covered with`
-- Predicted: `that there were nothing but mice-traps inside`
+- Predicted: `were not gingerbread`
 
 **Gap 393** (2 words, fidelity 0.00)
 
 - Actual: `that the`
-- Predicted: `were`
+- Predicted: `they had climbed up through`
 
-**Gap 394** (1 words, fidelity 0.67)
+**Gap 394** (1 words, fidelity 1.00)
 
 - Actual: `were`
-- Predicted: `were glazed`
+- Predicted: `were`
 
 **Gap 395** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `we must first find out whether it belongs to somebody or not.`
+- Predicted: `reached for the window, and broke`
 
 **Gap 396** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `it`
+- Predicted: `We immediately set`
 
-**Gap 397** (2 words, fidelity 0.67)
+**Gap 397** (2 words, fidelity 0.00)
 
 - Actual: `said Hansel,`
-- Predicted: `said`
+- Predicted: `We decided`
 
-**Gap 398** (2 words, fidelity 0.00)
+**Gap 398** (2 words, fidelity 0.40)
 
 - Actual: `have a`
-- Predicted: `said`
+- Predicted: `a good meal.`
 
 **Gap 399** (3 words, fidelity 0.00)
 
 - Actual: `I will eat`
-- Predicted: `and said to his sister`
+- Predicted: `Hansel reached up, broke off a piece of the window, tried to leant`
 
-**Gap 400** (2 words, fidelity 0.50)
+**Gap 400** (2 words, fidelity 0.24)
 
 - Actual: `of the`
-- Predicted: `the top of the door-post`
+- Predicted: `a bit of the roof, Gretel, can eat some of the window, it tastes sweet.`
 
-**Gap 401** (1 words, fidelity 0.50)
+**Gap 401** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and said to`
+- Predicted: `Hansel`
 
-**Gap 402** (2 words, fidelity 1.00)
+**Gap 402** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `of the`
+- Predicted: `cookies`
 
 **Gap 403** (2 words, fidelity 0.00)
 
 - Actual: `it will`
-- Predicted: `so`
+- Predicted: `they tasted sweet.`
 
 **Gap 404** (1 words, fidelity 0.00)
 
 - Actual: `up`
 - Predicted: `upstairs`
 
-**Gap 405** (1 words, fidelity 0.33)
+**Gap 405** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and pulled down a piece`
+- Predicted: `pulled`
 
-**Gap 406** (3 words, fidelity 0.50)
+**Gap 406** (3 words, fidelity 0.40)
 
 - Actual: `off a little`
-- Predicted: `off`
+- Predicted: `off the`
 
-**Gap 407** (3 words, fidelity 0.57)
+**Gap 407** (3 words, fidelity 0.15)
 
 - Actual: `the roof to`
-- Predicted: `of the roof, and`
+- Predicted: `broke off a piece to try if it tasted sweet.`
 
-**Gap 408** (5 words, fidelity 0.00)
+**Gap 408** (5 words, fidelity 0.20)
 
 - Actual: `how it tasted, and Gretel`
-- Predicted: `off`
+- Predicted: `and took a piece from`
 
-**Gap 409** (4 words, fidelity 0.00)
+**Gap 409** (4 words, fidelity 0.25)
 
 - Actual: `against the window and`
-- Predicted: `up`
+- Predicted: `up, the, and, a, and, to, into, and, off, to, and, and`
 
 **Gap 410** (1 words, fidelity 0.00)
 
 - Actual: `at`
-- Predicted: `off`
+- Predicted: `off
+those
+and
+up
+into
+off
+a
+to
+see
+and
+on`
 
-**Gap 411** (1 words, fidelity 0.00)
+**Gap 411** (1 words, fidelity 0.18)
 
 - Actual: `a`
-- Predicted: `the`
+- Predicted: `a
+a
+into
+and
+off
+a
+to
+and
+and
+at`
 
-**Gap 412** (1 words, fidelity 0.00)
+**Gap 412** (1 words, fidelity 0.12)
 
 - Actual: `the`
-- Predicted: `PARLOUR:`
+- Predicted: `the
+the
+up
+off
+a
+to
+over
+slowly
+at
+in
+a
+spoke
+the
+who
+knocked`
 
-**Gap 413** (1 words, fidelity 0.00)
+**Gap 413** (1 words, fidelity 0.40)
 
 - Actual: `nibble,`
-- Predicted: `gnaw,`
+- Predicted: `nibble, gnaw, Who builds,`
 
 **Gap 414** (5 words, fidelity 0.00)
 
 - Actual: `is nibbling at my little`
-- Predicted: `gnaw,  
-  who敲除不必要的英文字母后为：
-gnaw,`
+- Predicted: `did it to enter`
 
 **Gap 415** (1 words, fidelity 0.00)
 
 - Actual: `children`
-- Predicted: `old woman`
+- Predicted: `The answered: The wind, The heaven-born wind,`
 
-**Gap 416** (3 words, fidelity 0.00)
+**Gap 416** (3 words, fidelity 0.50)
 
 - Actual: `The wind, the`
-- Predicted: `Nibble, nibble, gnaw,`
+- Predicted: `The`
 
 **Gap 417** (4 words, fidelity 0.00)
 
 - Actual: `and went on eating`
-- Predicted: `The old woman listened carefully without disturbing themselves.`
+- Predicted: `unperturbed`
 
-**Gap 418** (2 words, fidelity 0.67)
+**Gap 418** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `of`
-
-**Gap 419** (1 words, fidelity 0.00)
-
-- Actual: `a`
 - Predicted: `off`
 
-**Gap 420** (2 words, fidelity 0.80)
+**Gap 419** (1 words, fidelity 0.67)
+
+- Actual: `a`
+- Predicted: `a stick`
+
+**Gap 420** (2 words, fidelity 0.00)
 
 - Actual: `piece of`
-- Predicted: `piece of it,`
+- Predicted: `chewed the`
 
-**Gap 421** (2 words, fidelity 0.33)
+**Gap 421** (2 words, fidelity 0.00)
 
 - Actual: `and Gretel`
-- Predicted: `and greedily devoured it`
+- Predicted: `pulled`
 
 **Gap 422** (2 words, fidelity 0.00)
 
 - Actual: `the whole`
 - Predicted: `out`
 
-**Gap 423** (4 words, fidelity 0.40)
+**Gap 423** (4 words, fidelity 0.00)
 
 - Actual: `down, and enjoyed herself`
-- Predicted: `down`
+- Predicted: `ate`
 
-**Gap 424** (2 words, fidelity 1.00)
+**Gap 424** (2 words, fidelity 0.67)
 
 - Actual: `the door`
-- Predicted: `the door`
+- Predicted: `the`
 
-**Gap 425** (1 words, fidelity 0.25)
+**Gap 425** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and out stepped a little old woman`
+- Predicted: `out of`
 
 **Gap 426** (2 words, fidelity 0.50)
 
 - Actual: `as the`
-- Predicted: `as old as the mountains, who`
+- Predicted: `from the`
 
-**Gap 427** (1 words, fidelity 1.00)
+**Gap 427** (1 words, fidelity 0.00)
 
 - Actual: `herself`
-- Predicted: `herself`
+- Predicted: `into`
 
 **Gap 428** (3 words, fidelity 0.00)
 
 - Actual: `and Gretel were`
-- Predicted: `out`
+- Predicted: `shrank`
 
 **Gap 429** (10 words, fidelity 0.00)
 
 - Actual: `frightened that they let fall what they had in their`
-- Predicted: `afraid`
+- Predicted: `shook`
 
 **Gap 430** (1 words, fidelity 0.00)
 
 - Actual: `old`
-- Predicted: `woman, however, nodded her head, and said: 'Oh, you dear`
+- Predicted: `granny`
 
 **Gap 431** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `smiling`
+- Predicted: `gently`
 
 **Gap 432** (2 words, fidelity 0.00)
 
 - Actual: `and said:`
-- Predicted: `"oh, you dear`
+- Predicted: `spoke`
 
-**Gap 433** (1 words, fidelity 0.00)
+**Gap 433** (1 words, fidelity 0.04)
 
 - Actual: `you`
-- Predicted: `poor`
+- Predicted: `supported limping, came creeping out. Hansel walked so terribly slowly, holding hands. The old woman, smiling, nodded her head, Oh, dear children, who has dared to come in, frightening me. No harm shall happen to you.' She opened both doors and stepped into her little house. Then good food`
 
 **Gap 434** (3 words, fidelity 0.00)
 
 - Actual: `brought you here?`
-- Predicted: `had been stealing from the forest berries`
+- Predicted: `had come`
 
 **Gap 435** (1 words, fidelity 0.00)
 
 - Actual: `come`
-- Predicted: `in, and stay with me.`
+- Predicted: `had`
 
-**Gap 436** (3 words, fidelity 0.40)
+**Gap 436** (3 words, fidelity 0.00)
 
 - Actual: `and stay with`
-- Predicted: `and welcomed`
+- Predicted: `come`
 
 **Gap 437** (1 words, fidelity 0.00)
 
 - Actual: `harm`
-- Predicted: `poorly`
+- Predicted: `terribly ill`
 
-**Gap 438** (1 words, fidelity 1.00)
+**Gap 438** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to`
+- Predicted: `harm`
 
-**Gap 439** (2 words, fidelity 0.50)
+**Gap 439** (2 words, fidelity 0.00)
 
 - Actual: `took them`
-- Predicted: `she took`
+- Predicted: `opened`
 
 **Gap 440** (3 words, fidelity 0.00)
 
 - Actual: `by the hand,`
-- Predicted: `in`
+- Predicted: `opened`
 
-**Gap 441** (3 words, fidelity 0.40)
+**Gap 441** (3 words, fidelity 0.00)
 
 - Actual: `led them
 into`
-- Predicted: `she led`
+- Predicted: `entered`
 
 **Gap 442** (1 words, fidelity 1.00)
 
@@ -5675,262 +5732,257 @@ into`
 **Gap 443** (2 words, fidelity 0.00)
 
 - Actual: `before them,`
-- Predicted: `up`
+- Predicted: `prepared`
 
-**Gap 444** (1 words, fidelity 0.67)
+**Gap 444** (1 words, fidelity 0.50)
 
 - Actual: `and`
-- Predicted: `and cakes,`
+- Predicted: `and plenty of`
 
 **Gap 445** (2 words, fidelity 0.00)
 
 - Actual: `pretty little`
-- Predicted: `beds were covered with clean white linen, and Hansel and Gretel lay down`
+- Predicted: `two tidy beds`
 
-**Gap 446** (1 words, fidelity 0.00)
+**Gap 446** (1 words, fidelity 1.00)
 
 - Actual: `were`
-- Predicted: `covered`
+- Predicted: `were`
 
-**Gap 447** (1 words, fidelity 1.00)
+**Gap 447** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `with`
+- Predicted: `were laid`
 
 **Gap 448** (1 words, fidelity 0.00)
 
 - Actual: `white`
-- Predicted: `linen, and Hansel and Gretel lay down`
+- Predicted: `of`
 
-**Gap 449** (4 words, fidelity 0.29)
+**Gap 449** (4 words, fidelity 0.00)
 
 - Actual: `and Hansel and Gretel`
-- Predicted: `and the children`
+- Predicted: `both`
 
-**Gap 450** (2 words, fidelity 0.67)
+**Gap 450** (2 words, fidelity 0.00)
 
 - Actual: `them, and`
-- Predicted: `them`
+- Predicted: `thought they were in`
 
-**Gap 451** (2 words, fidelity 0.00)
+**Gap 451** (2 words, fidelity 0.29)
 
 - Actual: `were in`
-- Predicted: `so happy`
+- Predicted: `believed themselves to be in`
 
-**Gap 452** (2 words, fidelity 0.25)
+**Gap 452** (2 words, fidelity 0.00)
 
 - Actual: `old woman`
-- Predicted: `The old woman had only pretended to be so kind; she was in reality`
+- Predicted: `two empty beds freshly covered with clean white linen`
 
-**Gap 453** (2 words, fidelity 0.40)
+**Gap 453** (2 words, fidelity 0.00)
 
 - Actual: `to be`
-- Predicted: `to be so kind; she was in reality`
+- Predicted: `two straw beds neatly covered with clean linen,`
 
-**Gap 454** (4 words, fidelity 0.11)
+**Gap 454** (4 words, fidelity 0.00)
 
 - Actual: `she was in reality`
-- Predicted: `The old woman had only pretended to be so kind; but when the children had fallen asleep, she got up, opened the door of their little bed-chamber, and peeped in.`
+- Predicted: `were`
 
-**Gap 455** (1 words, fidelity 1.00)
+**Gap 455** (1 words, fidelity 0.00)
 
 - Actual: `wicked`
-- Predicted: `wicked`
+- Predicted: `evil`
 
 **Gap 456** (1 words, fidelity 0.00)
 
 - Actual: `who`
-- Predicted: `for she had a great craving for little children.`
+- Predicted: `they believed`
 
 **Gap 457** (4 words, fidelity 0.00)
 
 - Actual: `in wait for children,`
-- Predicted: `asleep`
+- Predicted: `herself`
 
 **Gap 458** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `to catch`
+- Predicted: `did not`
 
 **Gap 459** (1 words, fidelity 0.00)
 
 - Actual: `built`
-- Predicted: `to lure them into her power`
+- Predicted: `to believe they were`
 
-**Gap 460** (2 words, fidelity 1.00)
+**Gap 460** (2 words, fidelity 0.40)
 
 - Actual: `order to`
-- Predicted: `order to`
+- Predicted: `to go into`
 
 **Gap 461** (1 words, fidelity 0.00)
 
 - Actual: `them`
-- Predicted: `her`
+- Predicted: `they sought heaven. The villagers had only pretended to be so kind; for a wicked witch, they lay in wait and only sought to entice her there. For a moment, she hesitated, but then she realized that a feast day with the Witches has a way of not being able to have a keen scent`
 
 **Gap 462** (1 words, fidelity 0.00)
 
 - Actual: `When`
-- Predicted: `if`
+- Predicted: `had only pretended to be so kind; but in reality, she was a cunning witch, who lay in wait and could only entice them to her little house of bread in order to fall upon them, and that a feast day with the Witches has always required such a keen scent like the beasts, for they are`
 
-**Gap 463** (1 words, fidelity 1.00)
+**Gap 463** (1 words, fidelity 0.00)
 
 - Actual: `child`
-- Predicted: `child`
+- Predicted: `nose`
 
-**Gap 464** (5 words, fidelity 0.14)
+**Gap 464** (5 words, fidelity 0.00)
 
 - Actual: `into her power, she killed`
-- Predicted: `into her power, she shut him up in a little cage, and let him just eat his
-bread and milk, so that he should not die of hunger or cold. She was
-always busy making gingerbread houses and sweetmeats, and when she
-had finished one, she would eat it up, bone`
+- Predicted: `had only pretended to be so kind; for a wicked`
 
 **Gap 465** (1 words, fidelity 0.00)
 
 - Actual: `cooked`
-- Predicted: `so that she might lure them into her power,`
+- Predicted: `smelled`
 
 **Gap 466** (3 words, fidelity 0.00)
 
 - Actual: `ate it, and`
-- Predicted: `in`
+- Predicted: `smelled`
 
 **Gap 467** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `in order to`
+- Predicted: `she knew`
 
-**Gap 468** (1 words, fidelity 0.00)
+**Gap 468** (1 words, fidelity 0.05)
 
 - Actual: `her.`
-- Predicted: `Witches have red eyes, and cannot see far, but they have`
+- Predicted: `lay still and let the little house of bread in entice there. a fell it, and that a feast day with the Witches has cannot have keen scent like the beasts, are aware human draw near. When came into her neighbourhood,`
 
 **Gap 469** (3 words, fidelity 0.00)
 
 - Actual: `red eyes, and`
-- Predicted: `not very good eyesight`
+- Predicted: `could`
 
 **Gap 470** (4 words, fidelity 0.00)
 
 - Actual: `see far, but they`
-- Predicted: `have`
+- Predicted: `cannot`
 
 **Gap 471** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `sharp`
+- Predicted: `possess`
 
 **Gap 472** (1 words, fidelity 0.00)
 
 - Actual: `and`
 - Predicted: `they`
 
-**Gap 473** (1 words, fidelity 0.33)
+**Gap 473** (1 words, fidelity 0.00)
 
 - Actual: `when`
-- Predicted: `when human beings draw near.`
+- Predicted: `drawn`
 
 **Gap 474** (1 words, fidelity 0.00)
 
 - Actual: `beings`
-- Predicted: `when`
+- Predicted: `drawn near. When she came into her neighbourhood, they laughed with malice, mocking: "Follow them, they shall rue it!" Early in the morning before they were`
 
 **Gap 475** (3 words, fidelity 0.00)
 
 - Actual: `Hansel and Gretel`
-- Predicted: `when the old woman came into her neighbourhood, she laughed with`
+- Predicted: `they smelled`
 
-**Gap 476** (1 words, fidelity 1.00)
+**Gap 476** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `she`
+- Predicted: `spied`
 
 **Gap 477** (2 words, fidelity 0.00)
 
 - Actual: `and said`
-- Predicted: `have long arms`
+- Predicted: `speak to, to, as, who, that, presence, she, the, it, whispered, at, they, it, the, they, had, it, they, with`
 
 **Gap 478** (2 words, fidelity 0.00)
 
 - Actual: `I have`
-- Predicted: `catch`
+- Predicted: `smell`
 
 **Gap 479** (3 words, fidelity 0.00)
 
 - Actual: `not escape me`
-- Predicted: `fall into my hands`
+- Predicted: `return`
 
-**Gap 480** (3 words, fidelity 0.50)
+**Gap 480** (3 words, fidelity 0.00)
 
 - Actual: `in the morning`
-- Predicted: `morning`
+- Predicted: `before`
 
-**Gap 481** (2 words, fidelity 0.00)
+**Gap 481** (2 words, fidelity 0.29)
 
 - Actual: `the children`
-- Predicted: `they`
+- Predicted: `the cat and the mouse`
 
-**Gap 482** (2 words, fidelity 0.67)
+**Gap 482** (2 words, fidelity 0.00)
 
 - Actual: `awake, she`
-- Predicted: `awake`
+- Predicted: `sirishes`
 
-**Gap 483** (1 words, fidelity 0.07)
+**Gap 483** (1 words, fidelity 0.00)
 
 - Actual: `up,`
-- Predicted: `up and went into the kitchen and fetched a large basket, in which she
-put bread and milk, and a knife and fork for each of them.`
+- Predicted: `they shall return`
 
-**Gap 484** (1 words, fidelity 0.00)
+**Gap 484** (1 words, fidelity 0.04)
 
 - Actual: `she`
-- Predicted: `when`
+- Predicted: `came into her neighbourhood, cackled with malice, jeeringly: despise them, they shall rue it again!' Early morning before dawn were already dim and when she saw both girls sleeping and looking so pretty, so plump and fair she muttered under her breath That plump morsel!' seizing with`
 
-**Gap 485** (2 words, fidelity 0.00)
+**Gap 485** (2 words, fidelity 0.04)
 
 - Actual: `of them`
-- Predicted: `the children`
+- Predicted: `neighbourhood, cackled with malice, jeeringly: despise them, they shall rue it again!' Early morning before dawn were shadows already lengthening and when twilight saw both neighbours sleeping and looking contented, plump and satisfied she muttered under her breath That delectable mouthful!' seizing with`
 
-**Gap 486** (1 words, fidelity 0.13)
+**Gap 486** (1 words, fidelity 0.14)
 
 - Actual: `so`
-- Predicted: `so peaceful and contented that she could not resist kissing them on
-their foreheads.`
+- Predicted: `asleep, so, awake, dawn, the, they, had, long, then, the, them, and, thought`
 
-**Gap 487** (2 words, fidelity 1.00)
+**Gap 487** (2 words, fidelity 0.00)
 
 - Actual: `with their`
-- Predicted: `with their`
+- Predicted: `they shall rise`
 
 **Gap 488** (2 words, fidelity 0.00)
 
 - Actual: `rosy cheeks`
-- Predicted: `delicious`
+- Predicted: `as`
 
 **Gap 489** (2 words, fidelity 0.00)
 
 - Actual: `to herself:`
-- Predicted: `"Take`
+- Predicted: `Oh how`
 
 **Gap 490** (3 words, fidelity 0.00)
 
 - Actual: `will be a`
-- Predicted: `greedy`
+- Predicted: `That dainty mouthful!`
 
-**Gap 491** (4 words, fidelity 0.00)
+**Gap 491** (4 words, fidelity 0.10)
 
 - Actual: `Then she seized Hansel`
-- Predicted: `with her withered`
+- Predicted: `with a withered hand, carried it to the stable, and locked him in behind the grated door Scream though thou mightest, thou wouldst not help him Then she shook him till he awoke, and cried:`
 
 **Gap 492** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `and pulled`
+- Predicted: `with trembling`
 
 **Gap 493** (4 words, fidelity 0.00)
 
 - Actual: `him into a little`
-- Predicted: `her`
+- Predicted: `off`
 
 **Gap 494** (1 words, fidelity 0.00)
 
@@ -5942,156 +5994,156 @@ their foreheads.`
 - Actual: `a`
 - Predicted: `the`
 
-**Gap 496** (1 words, fidelity 1.00)
+**Gap 496** (1 words, fidelity 0.00)
 
 - Actual: `door.`
-- Predicted: `door.`
+- Predicted: `iron doorbars Scream so loud, though would not help her Then to herself shook herself till she awoke, herself cried: yourself lazy thing, fetch some water, yourself something for yourself he went out`
 
 **Gap 497** (2 words, fidelity 0.00)
 
 - Actual: `as he`
-- Predicted: `she might`
+- Predicted: `echoed`
 
 **Gap 498** (1 words, fidelity 0.00)
 
 - Actual: `it`
-- Predicted: `he would not hear him.`
+- Predicted: `would not come`
 
-**Gap 499** (1 words, fidelity 1.00)
+**Gap 499** (1 words, fidelity 0.00)
 
 - Actual: `him.`
-- Predicted: `him`
+- Predicted: `Then desperate measures, she`
 
-**Gap 500** (2 words, fidelity 0.67)
+**Gap 500** (2 words, fidelity 0.00)
 
 - Actual: `she went`
-- Predicted: `she`
+- Predicted: `Then fiercely to the boy shook him till he awoke,`
 
 **Gap 501** (1 words, fidelity 0.00)
 
 - Actual: `Gretel,`
-- Predicted: `she went to`
+- Predicted: `gently`
 
-**Gap 502** (1 words, fidelity 1.00)
+**Gap 502** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `him`
 
-**Gap 503** (1 words, fidelity 0.33)
+**Gap 503** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `she was awake, and cried:`
+- Predicted: `he`
 
-**Gap 504** (1 words, fidelity 0.67)
+**Gap 504** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and whispered`
+- Predicted: `Then with a shuddering cry,`
 
 **Gap 505** (2 words, fidelity 0.00)
 
 - Actual: `Get up,`
-- Predicted: `lazy thing, fetch`
+- Predicted: `"lazy thing, fetch some water, bring something hot for your master he is made fat. When he is fat, I will eat him."`
 
-**Gap 506** (2 words, fidelity 0.29)
+**Gap 506** (2 words, fidelity 0.50)
 
 - Actual: `and cook`
-- Predicted: `and bring me some bread`
+- Predicted: `and bring`
 
-**Gap 507** (2 words, fidelity 0.67)
+**Gap 507** (2 words, fidelity 0.00)
 
 - Actual: `good for`
-- Predicted: `for`
+- Predicted: `Fetch some hay,`
 
 **Gap 508** (1 words, fidelity 0.00)
 
 - Actual: `brother,`
-- Predicted: `father`
+- Predicted: `lazy thing, fetch some water,`
 
 **Gap 509** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `had`
+- Predicted: `he rushed out`
 
 **Gap 510** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `stable outside, and is to be made fat. When he is fat, I will eat him.'`
+- Predicted: `lazy thing, fetch some water,`
 
 **Gap 511** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `that`
+- Predicted: `the horse`
 
 **Gap 512** (2 words, fidelity 0.00)
 
 - Actual: `to be`
-- Predicted: `fattened up`
+- Predicted: `the horse`
 
-**Gap 513** (1 words, fidelity 0.00)
+**Gap 513** (1 words, fidelity 0.22)
 
 - Actual: `is`
-- Predicted: `when he`
+- Predicted: `When he is fat, I will eat him.`
 
 **Gap 514** (3 words, fidelity 0.00)
 
 - Actual: `Gretel began to`
-- Predicted: `she woke up early and obeyed the witch's commands,`
+- Predicted: `cried`
 
 **Gap 515** (5 words, fidelity 0.00)
 
 - Actual: `but it was all in`
-- Predicted: `so`
+- Predicted: `useless`
 
 **Gap 516** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `so`
+- Predicted: `she had`
 
-**Gap 517** (1 words, fidelity 0.00)
+**Gap 517** (1 words, fidelity 0.67)
 
 - Actual: `was`
-- Predicted: `forced`
+- Predicted: `she was`
 
-**Gap 518** (1 words, fidelity 1.00)
+**Gap 518** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to`
+- Predicted: `could not`
 
 **Gap 519** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `as`
+- Predicted: `she had no choice but`
 
 **Gap 520** (1 words, fidelity 0.00)
 
 - Actual: `witch`
-- Predicted: `wicked stepmother`
+- Predicted: `she`
 
-**Gap 521** (2 words, fidelity 0.29)
+**Gap 521** (2 words, fidelity 0.67)
 
 - Actual: `now the`
-- Predicted: `And the wicked witch treated`
+- Predicted: `the`
 
-**Gap 522** (1 words, fidelity 0.67)
+**Gap 522** (1 words, fidelity 1.00)
 
 - Actual: `was`
-- Predicted: `was prepared`
+- Predicted: `was`
 
-**Gap 523** (1 words, fidelity 0.50)
+**Gap 523** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `for the child`
+- Predicted: `the`
 
-**Gap 524** (2 words, fidelity 0.67)
+**Gap 524** (2 words, fidelity 0.00)
 
 - Actual: `nothing
 but`
-- Predicted: `nothing.`
+- Predicted: `only`
 
 **Gap 525** (1 words, fidelity 0.00)
 
 - Actual: `morning`
-- Predicted: `day`
+- Predicted: `night`
 
 **Gap 526** (1 words, fidelity 0.00)
 
@@ -6101,37 +6153,37 @@ but`
 **Gap 527** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `or she was`
+- Predicted: `she had`
 
 **Gap 528** (1 words, fidelity 0.00)
 
 - Actual: `Hansel,`
-- Predicted: `stretch out your finger that I may feel if you will soon`
+- Predicted: `outstretch her finger that will soon fatt'`
 
-**Gap 529** (2 words, fidelity 0.31)
+**Gap 529** (2 words, fidelity 0.00)
 
 - Actual: `out your`
-- Predicted: `out your finger that I may feel if you will soon`
+- Predicted: `outstretched`
 
 **Gap 530** (5 words, fidelity 0.00)
 
 - Actual: `I may feel if you`
-- Predicted: `will soon`
+- Predicted: `will soon be gnawed off`
 
 **Gap 531** (1 words, fidelity 0.00)
 
 - Actual: `be`
-- Predicted: `fat.`
+- Predicted: `will soon make you fat.'`
 
-**Gap 532** (4 words, fidelity 0.25)
+**Gap 532** (4 words, fidelity 0.00)
 
 - Actual: `however, stretched out a`
-- Predicted: `stole a little bread`
+- Predicted: `gave`
 
 **Gap 533** (1 words, fidelity 0.00)
 
 - Actual: `old`
-- Predicted: `woman,`
+- Predicted: `grinning`
 
 **Gap 534** (2 words, fidelity 0.00)
 
@@ -6141,32 +6193,32 @@ but`
 **Gap 535** (8 words, fidelity 0.00)
 
 - Actual: `could not see it, and thought it was`
-- Predicted: `saw`
+- Predicted: `watched`
 
-**Gap 536** (1 words, fidelity 0.12)
+**Gap 536** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and said, "If you will soon be fat, I will give you something to eat."`
+- Predicted: `gazing`
 
 **Gap 537** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `it was quite thin, and she was vexed.`
+- Predicted: `believed`
 
-**Gap 538** (1 words, fidelity 1.00)
+**Gap 538** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of`
+- Predicted: `to`
 
-**Gap 539** (2 words, fidelity 0.00)
+**Gap 539** (2 words, fidelity 0.50)
 
 - Actual: `weeks had`
-- Predicted: `days`
+- Predicted: `four weeks`
 
 **Gap 540** (2 words, fidelity 0.00)
 
 - Actual: `and Hansel`
-- Predicted: `she took`
+- Predicted: `still remained thin,`
 
 **Gap 541** (1 words, fidelity 1.00)
 
@@ -6176,12 +6228,12 @@ but`
 **Gap 542** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `by`
+- Predicted: `gripped`
 
-**Gap 543** (1 words, fidelity 0.00)
+**Gap 543** (1 words, fidelity 1.00)
 
 - Actual: `wait`
-- Predicted: `any longer.`
+- Predicted: `wait`
 
 **Gap 544** (1 words, fidelity 0.00)
 
@@ -6191,356 +6243,352 @@ but`
 **Gap 545** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `up, bring some water.`
+- Predicted: `Gretel, bring some water.`
 
-**Gap 546** (3 words, fidelity 0.00)
+**Gap 546** (3 words, fidelity 0.40)
 
 - Actual: `I will kill`
-- Predicted: `feed`
+- Predicted: `will roast`
 
 **Gap 547** (1 words, fidelity 0.00)
 
 - Actual: `how`
-- Predicted: `Gretel knew well that her stepmother meant what she said`
+- Predicted: `would`
 
 **Gap 548** (2 words, fidelity 0.00)
 
 - Actual: `little sister`
-- Predicted: `poor child`
+- Predicted: `child`
 
 **Gap 549** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `when`
+- Predicted: `Gretel, quickly, let`
 
 **Gap 550** (2 words, fidelity 0.00)
 
 - Actual: `to fetch`
-- Predicted: `fill up the cup`
+- Predicted: `wait for`
 
-**Gap 551** (5 words, fidelity 0.25)
+**Gap 551** (5 words, fidelity 0.00)
 
 - Actual: `how her tears did flow`
-- Predicted: `down her cheeks!`
+- Predicted: `fallen`
 
-**Gap 552** (2 words, fidelity 0.33)
+**Gap 552** (2 words, fidelity 0.00)
 
 - Actual: `her cheeks!`
-- Predicted: `and filled her pitcher.`
+- Predicted: `beg for`
 
 **Gap 553** (1 words, fidelity 0.00)
 
 - Actual: `God,`
-- Predicted: `dear sister,`
+- Predicted: `would not`
 
-**Gap 554** (1 words, fidelity 1.00)
+**Gap 554** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `she`
+- Predicted: `cried`
 
-**Gap 555** (1 words, fidelity 0.00)
+**Gap 555** (1 words, fidelity 1.00)
 
 - Actual: `If`
-- Predicted: `said`
+- Predicted: `if`
 
-**Gap 556** (3 words, fidelity 0.05)
+**Gap 556** (3 words, fidelity 0.00)
 
 - Actual: `in the forest`
-- Predicted: `if the wild beasts had but devoured us, we should at any rate have died together.' 'Just keep your noise to yourself,'
-said the old woman, 'it won't help you at all.'`
+- Predicted: `had boiled`
 
 **Gap 557** (1 words, fidelity 0.00)
 
 - Actual: `should`
-- Predicted: `RIGHT: 
-at any rate have died together.' 'Just keep your noise to yourself,'
-said the old woman, 'it won't help you at all.'`
+- Predicted: `would rather starve`
 
 **Gap 558** (3 words, fidelity 0.00)
 
 - Actual: `rate have died`
-- Predicted: `moment`
+- Predicted: `die`
 
-**Gap 559** (3 words, fidelity 0.33)
+**Gap 559** (3 words, fidelity 0.00)
 
 - Actual: `the old woman,`
-- Predicted: `the girl's mother`
+- Predicted: `keep your noise`
 
-**Gap 560** (2 words, fidelity 0.67)
+**Gap 560** (2 words, fidelity 0.00)
 
 - Actual: `help you`
-- Predicted: `help`
+- Predicted: `bother`
 
 **Gap 561** (2 words, fidelity 0.00)
 
 - Actual: `in the`
-- Predicted: `d early`
+- Predicted: `dawn`
 
-**Gap 562** (4 words, fidelity 0.18)
+**Gap 562** (4 words, fidelity 0.00)
 
 - Actual: `had to go out`
-- Predicted: `got up and went to the oven`
+- Predicted: `began`
 
-**Gap 563** (1 words, fidelity 0.25)
+**Gap 563** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `out the pot to fetch some water`
+- Predicted: `stir`
 
 **Gap 564** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `fetch`
+- Predicted: `boil`
 
-**Gap 565** (1 words, fidelity 0.33)
+**Gap 565** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and fetch some wood to`
+- Predicted: `light the fire`
 
-**Gap 566** (2 words, fidelity 0.40)
+**Gap 566** (2 words, fidelity 0.00)
 
 - Actual: `the fire.`
-- Predicted: `up the chimney.`
+- Predicted: `weakened`
 
 **Gap 567** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `we must bake first,`
+- Predicted: `we`
 
-**Gap 568** (2 words, fidelity 0.80)
+**Gap 568** (2 words, fidelity 0.25)
 
 - Actual: `said the`
-- Predicted: `said the little`
+- Predicted: `said the old woman, I have heated the oven, and kneaded the dough.'`
 
 **Gap 569** (2 words, fidelity 0.00)
 
 - Actual: `have already`
-- Predicted: `said the old woman, 'I will heat the oven, and you shall creep in and see if it is properly heated, so that`
+- Predicted: `did I`
 
-**Gap 570** (1 words, fidelity 0.18)
+**Gap 570** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the oven, and kneaded the dough.' She pushed poor`
+- Predicted: `preheat`
 
-**Gap 571** (1 words, fidelity 0.50)
+**Gap 571** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and now let`
+- Predicted: `kneaded the dough.'`
 
-**Gap 572** (1 words, fidelity 1.00)
+**Gap 572** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `we rolled`
 
-**Gap 573** (1 words, fidelity 1.00)
+**Gap 573** (1 words, fidelity 0.00)
 
 - Actual: `She`
-- Predicted: `she`
+- Predicted: `pushed`
 
-**Gap 574** (1 words, fidelity 0.00)
+**Gap 574** (1 words, fidelity 1.00)
 
 - Actual: `Gretel`
-- Predicted: `poor`
+- Predicted: `Gretel`
 
 **Gap 575** (1 words, fidelity 0.00)
 
 - Actual: `to`
 - Predicted: `into`
 
-**Gap 576** (1 words, fidelity 1.00)
+**Gap 576** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `which`
+- Predicted: `leaping`
 
 **Gap 577** (1 words, fidelity 0.00)
 
 - Actual: `fire`
-- Predicted: `flames`
+- Predicted: `embers`
 
 **Gap 578** (1 words, fidelity 0.00)
 
 - Actual: `Creep`
-- Predicted: `in,`
+- Predicted: `must be`
 
-**Gap 579** (2 words, fidelity 0.50)
+**Gap 579** (2 words, fidelity 0.00)
 
 - Actual: `said the`
-- Predicted: `'Creep in,' said the wicked`
+- Predicted: `'we`
 
-**Gap 580** (5 words, fidelity 0.00)
+**Gap 580** (5 words, fidelity 0.22)
 
 - Actual: `and see if it is`
-- Predicted: `wait until the oven`
+- Predicted: `you see the oven`
 
-**Gap 581** (1 words, fidelity 0.29)
+**Gap 581** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `that it is hot enough.'`
+- Predicted: `And once Gretel stepped in, the witch, properly heated, so we can put the bread inside.`
 
 **Gap 582** (1 words, fidelity 0.00)
 
 - Actual: `in.'`
-- Predicted: `out.`
+- Predicted: `into the pan`
 
 **Gap 583** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `she`
+- Predicted: `Gretel`
 
 **Gap 584** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `the witch intended to`
+- Predicted: `the`
 
-**Gap 585** (1 words, fidelity 0.33)
+**Gap 585** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to push me out again?`
+- Predicted: `shut`
 
-**Gap 586** (1 words, fidelity 0.13)
+**Gap 586** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `shut the door behind me, and let me bake in it, like the bread.`
+- Predicted: `shut`
 
 **Gap 587** (1 words, fidelity 0.00)
 
 - Actual: `let`
-- Predicted: `to`
+- Predicted: `open`
 
 **Gap 588** (2 words, fidelity 0.00)
 
 - Actual: `it, and`
-- Predicted: `her`
+- Predicted: `must we`
 
 **Gap 589** (1 words, fidelity 0.00)
 
 - Actual: `would`
-- Predicted: `eat her, too.`
+- Predicted: `will`
 
-**Gap 590** (2 words, fidelity 0.50)
+**Gap 590** (2 words, fidelity 0.67)
 
 - Actual: `But Gretel`
-- Predicted: `said Gretel`
+- Predicted: `Gretel`
 
 **Gap 591** (1 words, fidelity 0.00)
 
 - Actual: `in`
-- Predicted: `it is so hot that`
+- Predicted: `did`
 
-**Gap 592** (3 words, fidelity 0.17)
+**Gap 592** (3 words, fidelity 0.00)
 
 - Actual: `and said: 'I`
-- Predicted: `she said to Gretel, "Now listen, you ugly brat,`
+- Predicted: `do you think`
 
 **Gap 593** (3 words, fidelity 0.00)
 
 - Actual: `not know how`
-- Predicted: `will`
+- Predicted: `push`
 
 **Gap 594** (1 words, fidelity 0.00)
 
 - Actual: `do`
-- Predicted: `to`
+- Predicted: `open`
 
 **Gap 595** (2 words, fidelity 0.00)
 
 - Actual: `I get`
-- Predicted: `in? 'Silly goose,' said the old woman.`
+- Predicted: `could`
 
 **Gap 596** (4 words, fidelity 0.00)
 
 - Actual: `goose,' said the old`
 - Predicted: `foolish`
 
-**Gap 597** (1 words, fidelity 0.11)
+**Gap 597** (1 words, fidelity 0.00)
 
 - Actual: `The`
-- Predicted: `the door is big enough; just look, I can get in myself!' and she crept up and`
+- Predicted: `wasn't`
 
-**Gap 598** (1 words, fidelity 1.00)
+**Gap 598** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `is`
+- Predicted: `wasn't`
 
 **Gap 599** (1 words, fidelity 0.00)
 
 - Actual: `just`
-- Predicted: `said the old woman, 'you must come and help me pull the meat out of the
-oven!'`
+- Predicted: `could`
 
 **Gap 600** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `that you`
+- Predicted: `could`
 
 **Gap 601** (1 words, fidelity 0.00)
 
 - Actual: `in`
-- Predicted: `my`
+- Predicted: `to do`
 
-**Gap 602** (1 words, fidelity 0.67)
+**Gap 602** (1 words, fidelity 1.00)
 
 - Actual: `she`
-- Predicted: `she went`
+- Predicted: `she`
 
-**Gap 603** (2 words, fidelity 0.00)
+**Gap 603** (2 words, fidelity 0.04)
 
 - Actual: `her head`
-- Predicted: `in`
+- Predicted: `she had a shrinking mind, no do I am to do it; how do you in?' Silly little woman. the door was big enough; oh, can get myself!' and she crept up and thrust her hand into the push that drove her far back, the iron door, the bolt. Oh! then`
 
-**Gap 604** (2 words, fidelity 0.22)
+**Gap 604** (2 words, fidelity 0.33)
 
 - Actual: `the oven.`
-- Predicted: `the little door, and squeezed herself through.`
+- Predicted: `through the small hole`
 
 **Gap 605** (5 words, fidelity 0.00)
 
 - Actual: `Then Gretel gave her a`
-- Predicted: `she pushed the red-hot poker`
+- Predicted: `creep through that`
 
-**Gap 606** (1 words, fidelity 1.00)
+**Gap 606** (1 words, fidelity 0.00)
 
 - Actual: `into`
-- Predicted: `into`
+- Predicted: `through`
 
-**Gap 607** (3 words, fidelity 0.55)
+**Gap 607** (3 words, fidelity 0.33)
 
 - Actual: `and shut the`
-- Predicted: `and shut the little girl in with her.`
+- Predicted: `through the small`
 
-**Gap 608** (3 words, fidelity 0.33)
+**Gap 608** (3 words, fidelity 0.00)
 
 - Actual: `and fastened the`
-- Predicted: `and bolted it.`
+- Predicted: `thrust`
 
-**Gap 609** (1 words, fidelity 0.67)
+**Gap 609** (1 words, fidelity 1.00)
 
 - Actual: `to`
-- Predicted: `to scream`
+- Predicted: `to`
 
 **Gap 610** (4 words, fidelity 0.00)
 
 - Actual: `but Gretel ran away`
-- Predicted: `and the flames blazed high and roared so terribly.`
+- Predicted: `cried out`
 
 **Gap 611** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `left`
+- Predicted: `cried out`
 
-**Gap 612** (1 words, fidelity 0.00)
-
-- Actual: `to`
-- Predicted: `into`
-
-**Gap 613** (1 words, fidelity 0.00)
+**Gap 612** (1 words, fidelity 0.50)
 
 - Actual: `to`
-- Predicted: `into the wood, and called loudly for her brother`
+- Predicted: `to her cruel`
 
-**Gap 614** (1 words, fidelity 0.00)
+**Gap 613** (1 words, fidelity 0.67)
+
+- Actual: `to`
+- Predicted: `to find`
+
+**Gap 614** (1 words, fidelity 0.33)
 
 - Actual: `Hansel,`
-- Predicted: `there`
+- Predicted: `cried: "Hansel, we are saved!"`
 
 **Gap 615** (1 words, fidelity 0.00)
 
@@ -6550,112 +6598,112 @@ oven!'`
 **Gap 616** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `was`
+- Predicted: `cried: 'At last`
 
 **Gap 617** (2 words, fidelity 0.00)
 
 - Actual: `a bird`
-- Predicted: `out`
+- Predicted: `out of`
 
-**Gap 618** (1 words, fidelity 1.00)
+**Gap 618** (1 words, fidelity 0.00)
 
 - Actual: `cage`
-- Predicted: `cage`
+- Predicted: `the moment the door`
 
-**Gap 619** (2 words, fidelity 0.00)
+**Gap 619** (2 words, fidelity 1.00)
 
 - Actual: `the door`
-- Predicted: `it`
+- Predicted: `the door`
 
-**Gap 620** (1 words, fidelity 1.00)
+**Gap 620** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `they`
+- Predicted: `both`
 
-**Gap 621** (1 words, fidelity 0.29)
+**Gap 621** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `Hansel and Gretel jumped for joy!`
+- Predicted: `they`
 
 **Gap 622** (1 words, fidelity 0.00)
 
 - Actual: `about`
-- Predicted: `and kiss each other!`
+- Predicted: `frantically`
 
 **Gap 623** (2 words, fidelity 0.00)
 
 - Actual: `kiss each`
-- Predicted: `leaped`
+- Predicted: `and sang`
 
 **Gap 624** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `soon`
+- Predicted: `we`
 
 **Gap 625** (1 words, fidelity 0.00)
 
 - Actual: `any`
-- Predicted: `need`
+- Predicted: `now`
 
 **Gap 626** (2 words, fidelity 0.00)
 
 - Actual: `to fear`
-- Predicted: `their provisions were now at an end,`
+- Predicted: `did they`
 
-**Gap 627** (1 words, fidelity 0.29)
+**Gap 627** (1 words, fidelity 1.00)
 
 - Actual: `they`
-- Predicted: `so they now felt quite secure.`
+- Predicted: `they`
 
-**Gap 628** (1 words, fidelity 1.00)
+**Gap 628** (1 words, fidelity 0.67)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `the princess`
 
-**Gap 629** (1 words, fidelity 0.29)
+**Gap 629** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `and found everything quite changed inside;`
+- Predicted: `and found`
 
 **Gap 630** (2 words, fidelity 0.00)
 
 - Actual: `full of`
-- Predicted: `filled her pockets with as many trinkets`
+- Predicted: `filled`
 
 **Gap 631** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `of`
+- Predicted: `filled with`
 
 **Gap 632** (1 words, fidelity 0.00)
 
 - Actual: `are`
 - Predicted: `were`
 
-**Gap 633** (1 words, fidelity 0.50)
+**Gap 633** (1 words, fidelity 0.67)
 
 - Actual: `than`
-- Predicted: `than the little`
+- Predicted: `were than`
 
 **Gap 634** (3 words, fidelity 0.00)
 
 - Actual: `said Hansel, and`
-- Predicted: `so they began to stuff themselves`
+- Predicted: `thrust her hands into her pockets wherever they could go in,`
 
-**Gap 635** (2 words, fidelity 0.67)
+**Gap 635** (2 words, fidelity 0.00)
 
 - Actual: `into his`
-- Predicted: `his`
+- Predicted: `poked her small`
 
 **Gap 636** (1 words, fidelity 0.00)
 
 - Actual: `be`
-- Predicted: `fit into his pockets.`
+- Predicted: `could`
 
-**Gap 637** (1 words, fidelity 0.00)
+**Gap 637** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `so`
+- Predicted: `and found`
 
 **Gap 638** (3 words, fidelity 0.00)
 
@@ -6665,88 +6713,87 @@ oven!'`
 **Gap 639** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `so`
+- Predicted: `for`
 
-**Gap 640** (1 words, fidelity 0.12)
+**Gap 640** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so I will take a few pretty shells, " said Gretel, and filled her pinafore full.`
+- Predicted: `filled her`
 
 **Gap 641** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `up`
+- Predicted: `pinafore`
 
 **Gap 642** (2 words, fidelity 0.00)
 
 - Actual: `But now`
-- Predicted: `So
-we must`
+- Predicted: `we must be off,' Gretel said that we must out the witch's forest.' When they walked for two hours, they came to a great stretch of water. We must cross,' said Cinderella, that we must out the witch's forest.'`
 
-**Gap 643** (2 words, fidelity 0.14)
+**Gap 643** (2 words, fidelity 0.00)
 
 - Actual: `said Hansel,`
-- Predicted: `said Gretel, 'wait a little, I will soon find a way.'`
+- Predicted: `had filled`
 
 **Gap 644** (2 words, fidelity 0.00)
 
 - Actual: `may get`
-- Predicted: `must`
+- Predicted: `had better wait`
 
 **Gap 645** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `into`
+- Predicted: `through`
 
-**Gap 646** (2 words, fidelity 0.44)
+**Gap 646** (2 words, fidelity 0.00)
 
 - Actual: `they had`
-- Predicted: `When they had walked for two hours,`
+- Predicted: `she`
 
 **Gap 647** (2 words, fidelity 0.00)
 
 - Actual: `to a`
-- Predicted: `into`
+- Predicted: `across`
 
-**Gap 648** (1 words, fidelity 0.13)
+**Gap 648** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of swamp, which was so deep and miry that they could not cross it.`
+- Predicted: `was a`
 
 **Gap 649** (2 words, fidelity 0.00)
 
 - Actual: `We cannot`
-- Predicted: `they saw no way`
+- Predicted: `"Can't"`
 
 **Gap 650** (5 words, fidelity 0.00)
 
 - Actual: `said Hansel, 'I see no`
-- Predicted: `they`
+- Predicted: `must`
 
 **Gap 651** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `no`
+- Predicted: `there was`
 
-**Gap 652** (2 words, fidelity 0.00)
+**Gap 652** (2 words, fidelity 0.50)
 
 - Actual: `there is`
-- Predicted: `also`
+- Predicted: `there was`
 
 **Gap 653** (1 words, fidelity 0.00)
 
 - Actual: `no`
-- Predicted: `ferry,`
+- Predicted: `was there a`
 
 **Gap 654** (2 words, fidelity 0.00)
 
 - Actual: `Gretel, 'but`
-- Predicted: `the`
+- Predicted: `said`
 
 **Gap 655** (2 words, fidelity 0.00)
 
 - Actual: `is swimming`
-- Predicted: `there: if I ask her, she will help us over.'`
+- Predicted: `said`
 
 **Gap 656** (1 words, fidelity 0.00)
 
@@ -6756,17 +6803,17 @@ we must`
 **Gap 657** (1 words, fidelity 0.00)
 
 - Actual: `ask`
-- Predicted: `call`
+- Predicted: `will carry`
 
 **Gap 658** (2 words, fidelity 0.00)
 
 - Actual: `she will`
-- Predicted: `help us over.`
+- Predicted: `can't`
 
 **Gap 659** (1 words, fidelity 0.00)
 
 - Actual: `us`
-- Predicted: `over.`
+- Predicted: `will you`
 
 **Gap 660** (1 words, fidelity 0.00)
 
@@ -6776,115 +6823,114 @@ we must`
 **Gap 661** (1 words, fidelity 0.00)
 
 - Actual: `duck,`
-- Predicted: `little`
+- Predicted: `Gretel`
 
-**Gap 662** (1 words, fidelity 0.67)
+**Gap 662** (1 words, fidelity 0.00)
 
 - Actual: `duck,`
-- Predicted: `duck, little`
+- Predicted: `Gretel`
 
 **Gap 663** (1 words, fidelity 0.00)
 
 - Actual: `thou`
-- Predicted: `see,`
+- Predicted: `do`
 
 **Gap 664** (2 words, fidelity 0.00)
 
 - Actual: `and Gretel`
-- Predicted: `ITTLE duck, little duck, take us across,`
+- Predicted: `have`
 
 **Gap 665** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `Gretel`
+- Predicted: `are you`
 
 **Gap 666** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `can't`
+- Predicted: `cross`
 
 **Gap 667** (4 words, fidelity 0.00)
 
 - Actual: `sight,
   Take us across`
-- Predicted: `the river`
+- Predicted: `river`
 
-**Gap 668** (1 words, fidelity 1.00)
+**Gap 668** (1 words, fidelity 0.00)
 
 - Actual: `back`
-- Predicted: `back`
+- Predicted: `river`
 
-**Gap 669** (4 words, fidelity 0.33)
+**Gap 669** (4 words, fidelity 0.00)
 
 - Actual: `The duck came to`
-- Predicted: `duck heard`
+- Predicted: `warned`
 
-**Gap 670** (1 words, fidelity 0.13)
+**Gap 670** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `did not dare to refuse such a kind request, and got into the water.`
+- Predicted: `could not`
 
-**Gap 671** (2 words, fidelity 0.00)
+**Gap 671** (2 words, fidelity 0.15)
 
 - Actual: `himself on`
-- Predicted: `herself`
+- Predicted: `Hansel seated himself beside it, and told his sister how no,`
 
-**Gap 672** (2 words, fidelity 0.67)
+**Gap 672** (2 words, fidelity 0.00)
 
 - Actual: `back, and`
-- Predicted: `back`
+- Predicted: `you`
 
 **Gap 673** (3 words, fidelity 0.00)
 
 - Actual: `sister to sit`
-- Predicted: `brother`
+- Predicted: `are you`
 
 **Gap 674** (1 words, fidelity 0.00)
 
 - Actual: `him.`
-- Predicted: `her`
+- Predicted: `will`
 
 **Gap 675** (9 words, fidelity 0.00)
 
 - Actual: `Gretel, 'that will be too heavy
 for the little`
-- Predicted: `her`
+- Predicted: `she`
 
 **Gap 676** (1 words, fidelity 0.00)
 
 - Actual: `shall`
-- Predicted: `would be easier if you sat by me.`
+- Predicted: `would not`
 
 **Gap 677** (1 words, fidelity 0.00)
 
 - Actual: `us`
-- Predicted: `her across, one after the other.'`
+- Predicted: `her`
 
-**Gap 678** (3 words, fidelity 0.00)
+**Gap 678** (3 words, fidelity 0.40)
 
 - Actual: `one after the`
-- Predicted: `so  I  will  carry  us  both  across.`
+- Predicted: `the other.`
 
 **Gap 679** (1 words, fidelity 0.00)
 
 - Actual: `The`
-- Predicted: `so said Gretel, and then they both began to undress, for they were
-quite naked under their clothes.`
+- Predicted: `said`
 
-**Gap 680** (4 words, fidelity 0.33)
+**Gap 680** (4 words, fidelity 0.00)
 
 - Actual: `duck did so, and`
-- Predicted: `duck when`
+- Predicted: `girl`
 
-**Gap 681** (1 words, fidelity 0.00)
+**Gap 681** (1 words, fidelity 1.00)
 
 - Actual: `they`
-- Predicted: `when`
+- Predicted: `they`
 
 **Gap 682** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `then`
+- Predicted: `and welcomed`
 
 **Gap 683** (1 words, fidelity 1.00)
 
@@ -6894,143 +6940,143 @@ quite naked under their clothes.`
 **Gap 684** (1 words, fidelity 0.00)
 
 - Actual: `time,`
-- Predicted: `distance,`
+- Predicted: `briefly`
 
 **Gap 685** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `more and more familiar`
+- Predicted: `seemed`
 
 **Gap 686** (1 words, fidelity 0.00)
 
 - Actual: `more`
-- Predicted: `familiar`
+- Predicted: `moment`
 
 **Gap 687** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `and now it seemed as if the whole forest knew`
+- Predicted: `welcomed`
 
-**Gap 688** (1 words, fidelity 0.29)
+**Gap 688** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `and now they were back again.`
+- Predicted: `and welcomed`
 
 **Gap 689** (1 words, fidelity 0.00)
 
 - Actual: `length`
-- Predicted: `which point`
+- Predicted: `then`
 
-**Gap 690** (1 words, fidelity 1.00)
+**Gap 690** (1 words, fidelity 0.00)
 
 - Actual: `saw`
-- Predicted: `saw`
+- Predicted: `emerged`
 
 **Gap 691** (3 words, fidelity 0.00)
 
 - Actual: `afar their father's`
-- Predicted: `a distance they saw a`
+- Predicted: `from the strange`
 
-**Gap 692** (4 words, fidelity 0.40)
+**Gap 692** (4 words, fidelity 0.00)
 
 - Actual: `they began to run,`
-- Predicted: `they`
+- Predicted: `suddenly`
 
-**Gap 693** (2 words, fidelity 1.00)
+**Gap 693** (2 words, fidelity 0.14)
 
 - Actual: `into the`
-- Predicted: `into the`
+- Predicted: `rushed into the familiar parlour, and ran round their necks. The women had not known one happy hour since the forest; the woman, who was dead.`
 
 **Gap 694** (2 words, fidelity 0.00)
 
 - Actual: `threw themselves`
-- Predicted: `round`
+- Predicted: `kissed`
 
-**Gap 695** (1 words, fidelity 1.00)
+**Gap 695** (1 words, fidelity 0.00)
 
 - Actual: `father's`
-- Predicted: `father's`
+- Predicted: `around their necks`
 
 **Gap 696** (1 words, fidelity 0.00)
 
 - Actual: `man`
-- Predicted: `father`
+- Predicted: `seemed to be more and to them, for they had not known one happy hour in the dark; the woman, who was dead.`
 
-**Gap 697** (4 words, fidelity 0.24)
+**Gap 697** (4 words, fidelity 0.40)
 
 - Actual: `since he had
 left`
-- Predicted: `since he had not known one happy hour since the children were taken into the forest; the woman, however, was dead.`
+- Predicted: `since`
 
-**Gap 698** (3 words, fidelity 0.22)
+**Gap 698** (3 words, fidelity 0.11)
 
 - Actual: `children in the`
-- Predicted: `forest; the woman, however, was dead.`
+- Predicted: `since they fled from that house. Then they rushed into the parlour, and sat round their fire. The children had not known one happy hour since the forest; the woman, who was dead.`
 
 **Gap 699** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `was sick`
+- Predicted: `the woman, she, died.`
 
-**Gap 700** (2 words, fidelity 0.22)
+**Gap 700** (2 words, fidelity 0.00)
 
 - Actual: `her pinafore`
-- Predicted: `her purse until it was quite empty`
+- Predicted: `rushed into the parlour, and poured round their necks. The women had not known one happy hour in the forest; the woman, who was dead. Gretel emptied pearls until they were precious jewels that ran down the room, one after another to add to them. Then all anxiety vanished at which they lived`
 
 **Gap 701** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `out until`
+- Predicted: `sparkled`
 
 **Gap 702** (1 words, fidelity 0.00)
 
 - Actual: `stones`
-- Predicted: `LEFT: contained such dazzling gems that they sparkled on the floor`
+- Predicted: `sparkled`
 
-**Gap 703** (2 words, fidelity 0.17)
+**Gap 703** (2 words, fidelity 0.00)
 
 - Actual: `about the`
-- Predicted: `their pockets until the room sparkled with the precious treasure.`
+- Predicted: `sparkled`
 
 **Gap 704** (3 words, fidelity 0.00)
 
 - Actual: `and Hansel threw`
-- Predicted: `so she filled many a small box with them, taking one handful after another out of his pocket to`
+- Predicted: `jewels`
 
 **Gap 705** (2 words, fidelity 0.00)
 
 - Actual: `handful after`
-- Predicted: `out of his pocket to`
+- Predicted: `glass`
 
-**Gap 706** (4 words, fidelity 0.40)
+**Gap 706** (4 words, fidelity 0.00)
 
 - Actual: `out of his pocket`
-- Predicted: `out`
+- Predicted: `daintily`
 
-**Gap 707** (1 words, fidelity 1.00)
+**Gap 707** (1 words, fidelity 0.67)
 
 - Actual: `to`
-- Predicted: `to`
+- Predicted: `to increase`
 
-**Gap 708** (1 words, fidelity 1.00)
+**Gap 708** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `was`
+- Predicted: `disappeared`
 
-**Gap 709** (3 words, fidelity 0.80)
+**Gap 709** (3 words, fidelity 0.40)
 
 - Actual: `an end, and`
-- Predicted: `an end,`
+- Predicted: `and disappeared`
 
 **Gap 710** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `and when the bread was`
+- Predicted: `ended`
 
-**Gap 711** (1 words, fidelity 0.00)
+**Gap 711** (1 words, fidelity 1.00)
 
 - Actual: `of`
-- Predicted: `from`
+- Predicted: `of`
 
 ## Position 3 — threshold 1.656 bits
 
@@ -7217,392 +7263,387 @@ in perfect <gap 573>. My tale <gap 574> done, there runs <gap 575> mouse; whosoe
 **Gap 1** (1 words, fidelity 0.00)
 
 - Actual: `Hard`
-- Predicted: `lived`
+- Predicted: `Lived`
 
-**Gap 2** (2 words, fidelity 1.00)
+**Gap 2** (2 words, fidelity 0.67)
 
 - Actual: `a poor`
-- Predicted: `a poor`
+- Predicted: `a`
 
-**Gap 3** (4 words, fidelity 0.40)
+**Gap 3** (4 words, fidelity 0.00)
 
 - Actual: `his wife and his`
-- Predicted: `his`
+- Predicted: `a`
 
-**Gap 4** (1 words, fidelity 0.20)
+**Gap 4** (1 words, fidelity 0.67)
 
 - Actual: `The`
-- Predicted: `The woodcutter's children were two in number; the son`
+- Predicted: `The youngest`
 
-**Gap 5** (7 words, fidelity 0.36)
+**Gap 5** (7 words, fidelity 0.25)
 
 - Actual: `was called Hansel and the girl Gretel.`
-- Predicted: `was sickly and pale,`
+- Predicted: `was`
 
 **Gap 6** (1 words, fidelity 0.00)
 
 - Actual: `little`
-- Predicted: `had`
+- Predicted: `had no bread`
 
-**Gap 7** (6 words, fidelity 0.40)
+**Gap 7** (6 words, fidelity 0.00)
 
 - Actual: `and to break, and once when`
-- Predicted: `and little to eat.`
+- Predicted: `of`
 
 **Gap 8** (9 words, fidelity 0.00)
 
 - Actual: `fell on the
 land, he could no longer procure`
-- Predicted: `Hard by a great forest dwelt a poor wood-cutter with his wife and his`
+- Predicted: `there was`
 
 **Gap 9** (2 words, fidelity 0.00)
 
 - Actual: `daily bread.`
-- Predicted: `little to eat and to drink.`
+- Predicted: `food`
 
 **Gap 10** (2 words, fidelity 0.00)
 
 - Actual: `Now when`
-- Predicted: `one day`
+- Predicted: `could find`
 
 **Gap 11** (1 words, fidelity 0.00)
 
 - Actual: `this`
-- Predicted: `over it long and late`
+- Predicted: `had no choice`
 
 **Gap 12** (1 words, fidelity 0.00)
 
 - Actual: `night`
-- Predicted: `over`
+- Predicted: `pondered`
 
 **Gap 13** (3 words, fidelity 0.00)
 
 - Actual: `his bed, and`
-- Predicted: `long`
+- Predicted: `considered`
 
 **Gap 14** (1 words, fidelity 0.00)
 
 - Actual: `about`
-- Predicted: `restlessly`
+- Predicted: `considered`
 
 **Gap 15** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `restlessness,`
+- Predicted: `struggled`
 
-**Gap 16** (1 words, fidelity 0.12)
+**Gap 16** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he resolved to go into the forest and cut wood, hoping thereby to earn
-some money.`
+- Predicted: `"Alas,"`
 
-**Gap 17** (4 words, fidelity 0.21)
+**Gap 17** (4 words, fidelity 0.00)
 
 - Actual: `and said to his`
-- Predicted: `and to let out his hair, which was very long, and pull out a few
-strands, and sell them for a loaf of bread.`
+- Predicted: `Oh`
 
-**Gap 18** (5 words, fidelity 0.18)
+**Gap 18** (5 words, fidelity 0.15)
 
 - Actual: `What is to become of`
-- Predicted: `what shall we do for bread?`
+- Predicted: `What shall we do? How are we to provide for our poor children, when we have nothing even for ourselves?'`
 
 **Gap 19** (1 words, fidelity 0.00)
 
 - Actual: `we`
-- Predicted: `become`
+- Predicted: `support`
 
 **Gap 20** (2 words, fidelity 0.00)
 
 - Actual: `feed our`
 - Predicted: `support`
 
-**Gap 21** (2 words, fidelity 0.00)
+**Gap 21** (2 words, fidelity 0.40)
 
 - Actual: `when we`
-- Predicted: `are`
+- Predicted: `could we feed`
 
 **Gap 22** (2 words, fidelity 0.00)
 
 - Actual: `longer have`
-- Predicted: `how shall`
+- Predicted: `could`
 
 **Gap 23** (1 words, fidelity 0.00)
 
 - Actual: `for`
-- Predicted: `can`
+- Predicted: `could we feed`
 
 **Gap 24** (2 words, fidelity 0.00)
 
 - Actual: `tell you`
-- Predicted: `can`
+- Predicted: `shall we go`
 
 **Gap 25** (3 words, fidelity 0.00)
 
 - Actual: `husband,' answered the`
-- Predicted: `I'll tell you what, my`
+- Predicted: `could we feed`
 
 **Gap 26** (1 words, fidelity 0.00)
 
 - Actual: `early`
-- Predicted: `shall kill them and get rid of them.`
+- Predicted: `can we help`
 
-**Gap 27** (10 words, fidelity 0.18)
+**Gap 27** (10 words, fidelity 0.17)
 
 - Actual: `morning we will take the children out into the forest`
-- Predicted: `out`
+- Predicted: `will go`
 
 **Gap 28** (2 words, fidelity 0.00)
 
 - Actual: `it is`
-- Predicted: `the darkest place`
+- Predicted: `would go`
 
-**Gap 29** (6 words, fidelity 0.31)
+**Gap 29** (6 words, fidelity 0.29)
 
 - Actual: `there we will light a fire`
-- Predicted: `we will cut off their little shoes`
+- Predicted: `will`
 
-**Gap 30** (6 words, fidelity 0.14)
+**Gap 30** (6 words, fidelity 0.00)
 
 - Actual: `them, and give each
 of them`
-- Predicted: `we can sit by the fire and eat`
+- Predicted: `shall`
 
-**Gap 31** (8 words, fidelity 0.50)
+**Gap 31** (8 words, fidelity 0.22)
 
 - Actual: `of bread, and then we will go to`
-- Predicted: `of bread, and then we will come and fetch them when they have eaten it up.`
+- Predicted: `and`
 
 **Gap 32** (5 words, fidelity 0.00)
 
 - Actual: `work and
 leave them alone.`
-- Predicted: `forest.`
+- Predicted: `we'll`
 
-**Gap 33** (4 words, fidelity 0.08)
+**Gap 33** (4 words, fidelity 0.00)
 
 - Actual: `They will not find`
-- Predicted: `we will sit by the fire and watch over them, and when it grows dark, we will bring them home safely`
+- Predicted: `and`
 
 **Gap 34** (6 words, fidelity 0.29)
 
 - Actual: `way home again, and we shall`
-- Predicted: `way`
+- Predicted: `we`
 
 **Gap 35** (1 words, fidelity 1.00)
 
 - Actual: `of`
 - Predicted: `of`
 
-**Gap 36** (10 words, fidelity 0.10)
+**Gap 36** (10 words, fidelity 0.00)
 
 - Actual: `No, wife,' said the man, 'I will not do that;`
-- Predicted: `will light a fire for them, and give each`
+- Predicted: `could`
 
-**Gap 37** (1 words, fidelity 1.00)
+**Gap 37** (1 words, fidelity 0.67)
 
 - Actual: `can`
-- Predicted: `can`
+- Predicted: `can I`
 
 **Gap 38** (2 words, fidelity 0.00)
 
 - Actual: `bear to`
-- Predicted: `how can I`
+- Predicted: `can`
 
 **Gap 39** (2 words, fidelity 0.00)
 
 - Actual: `my children`
-- Predicted: `to let`
+- Predicted: `could`
 
-**Gap 40** (2 words, fidelity 0.11)
+**Gap 40** (2 words, fidelity 0.33)
 
 - Actual: `in the`
-- Predicted: `to go into the forest?--the wild animals would soon come and tear them to pieces.`
+- Predicted: `could I live in`
 
-**Gap 41** (4 words, fidelity 0.17)
+**Gap 41** (4 words, fidelity 0.00)
 
 - Actual: `the wild animals would`
-- Predicted: `the wolf will soon come and devour them.`
+- Predicted: `must`
 
-**Gap 42** (6 words, fidelity 0.22)
+**Gap 42** (6 words, fidelity 0.00)
 
 - Actual: `come and tear them to pieces.'`
-- Predicted: `eat them.`
+- Predicted: `must I`
 
 **Gap 43** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `fool!`
+- Predicted: `wretched`
 
-**Gap 44** (1 words, fidelity 1.00)
+**Gap 44** (1 words, fidelity 0.00)
 
 - Actual: `said`
-- Predicted: `said`
+- Predicted: `how`
 
-**Gap 45** (7 words, fidelity 0.15)
+**Gap 45** (7 words, fidelity 0.00)
 
 - Actual: `then we
 must all four die of`
-- Predicted: `must go with you and suffer`
+- Predicted: `How`
 
 **Gap 46** (2 words, fidelity 0.00)
 
 - Actual: `as well`
-- Predicted: `grind the planks into splinters,`
+- Predicted: `feed`
 
 **Gap 47** (4 words, fidelity 0.00)
 
 - Actual: `the planks for our`
-- Predicted: `out`
+- Predicted: `could`
 
 **Gap 48** (2 words, fidelity 0.00)
 
 - Actual: `and she`
-- Predicted: `RIGHT: left him no peace until he consented. 'But I feel very
-sorry for the poor children, all the same,' said the man.`
+- Predicted: `had`
 
 **Gap 49** (5 words, fidelity 0.00)
 
 - Actual: `him no peace until he`
-- Predicted: `she returned`
+- Predicted: `had`
 
 **Gap 50** (2 words, fidelity 0.00)
 
 - Actual: `But I`
-- Predicted: `she`
+- Predicted: `were forced to`
 
-**Gap 51** (4 words, fidelity 0.00)
+**Gap 51** (4 words, fidelity 0.33)
 
 - Actual: `sorry for the poor`
-- Predicted: `so uneasy`
+- Predicted: `pity for`
 
 **Gap 52** (4 words, fidelity 0.00)
 
 - Actual: `the same,' said the`
-- Predicted: `sadly`
+- Predicted: `like`
 
-**Gap 53** (3 words, fidelity 0.50)
+**Gap 53** (3 words, fidelity 0.00)
 
 - Actual: `children had also`
-- Predicted: `children`
+- Predicted: `The two strangers not knowing each other,`
 
-**Gap 54** (17 words, fidelity 0.21)
+**Gap 54** (17 words, fidelity 0.10)
 
 - Actual: `been able to sleep for hunger, and had
 heard what their stepmother had said to their father.`
-- Predicted: `been allowed to go out into the forest to gather food.`
+- Predicted: `were moved to`
 
 **Gap 55** (3 words, fidelity 0.00)
 
 - Actual: `Gretel wept
 bitter`
-- Predicted: `so up from his bed, took down his little pocket-knife, and cut away the
-slats from the window.`
+- Predicted: `sensitive towards`
 
 **Gap 56** (4 words, fidelity 0.00)
 
 - Actual: `and said to Hansel:`
-- Predicted: `"now we are lost,"`
+- Predicted: `wept`
 
 **Gap 57** (12 words, fidelity 0.00)
 
 - Actual: `all is over with us.' 'Be quiet,
 Gretel,' said Hansel, 'do not`
-- Predicted: `now let`
+- Predicted: `seemed`
 
-**Gap 58** (13 words, fidelity 0.35)
+**Gap 58** (13 words, fidelity 0.00)
 
 - Actual: `yourself, I will soon find a way
 to help us.' And when the`
-- Predicted: `Hansel, 'Be quiet, Gretel,' said Hansel, 'do not distress yourselves, we
-will find some way to help ourselves.'`
+- Predicted: `fell`
 
-**Gap 59** (7 words, fidelity 0.12)
+**Gap 59** (7 words, fidelity 0.00)
 
 - Actual: `had fallen asleep, he got up, put`
-- Predicted: `on their way home had already turned into stone.`
+- Predicted: `shouted`
 
 **Gap 60** (5 words, fidelity 0.00)
 
 - Actual: `his little coat, opened the`
-- Predicted: `on`
+- Predicted: `knocked`
 
 **Gap 61** (2 words, fidelity 0.00)
 
 - Actual: `and crept`
-- Predicted: `out`
+- Predicted: `hung`
 
 **Gap 62** (7 words, fidelity 0.00)
 
 - Actual: `moon
 shone brightly, and the white pebbles`
-- Predicted: `moonbeam`
+- Predicted: `shiny`
 
 **Gap 63** (6 words, fidelity 0.00)
 
 - Actual: `lay in front of the house`
-- Predicted: `gleamed`
+- Predicted: `shone`
 
-**Gap 64** (1 words, fidelity 1.00)
+**Gap 64** (1 words, fidelity 0.00)
 
 - Actual: `like`
-- Predicted: `like`
+- Predicted: `shone`
 
 **Gap 65** (1 words, fidelity 0.00)
 
 - Actual: `silver`
-- Predicted: `pennies.`
+- Predicted: `shone`
 
 **Gap 66** (2 words, fidelity 0.00)
 
 - Actual: `Hansel stooped`
-- Predicted: `out`
+- Predicted: `shone`
 
 **Gap 67** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `his`
+- Predicted: `pockets`
 
-**Gap 68** (7 words, fidelity 0.36)
+**Gap 68** (7 words, fidelity 0.00)
 
 - Actual: `pocket of his coat with as many`
-- Predicted: `pebbles into his pocket.`
+- Predicted: `pockets`
 
-**Gap 69** (2 words, fidelity 0.67)
+**Gap 69** (2 words, fidelity 0.00)
 
 - Actual: `he could`
-- Predicted: `many as he could`
+- Predicted: `they filled`
 
-**Gap 70** (1 words, fidelity 1.00)
+**Gap 70** (1 words, fidelity 0.00)
 
 - Actual: `in.`
-- Predicted: `in`
+- Predicted: `shone`
 
-**Gap 71** (8 words, fidelity 0.15)
+**Gap 71** (8 words, fidelity 0.12)
 
 - Actual: `Then he went
 back and said to Gretel:`
-- Predicted: `"Let us be off," said`
+- Predicted: `and stuffed his little pocket with real pennies.`
 
 **Gap 72** (2 words, fidelity 0.00)
 
 - Actual: `comforted, dear`
-- Predicted: `quiet little sister, and sleep in`
+- Predicted: `and stuffed little pockets as to get Be filled little pockets in God's lay them again in bed.`
 
-**Gap 73** (3 words, fidelity 0.00)
+**Gap 73** (3 words, fidelity 0.40)
 
 - Actual: `sister, and sleep`
-- Predicted: `Gretel`
+- Predicted: `and fell`
 
 **Gap 74** (1 words, fidelity 0.00)
 
 - Actual: `peace,`
-- Predicted: `Gretel: 'peace, my dear child,' said`
+- Predicted: `faithful`
 
-**Gap 75** (6 words, fidelity 0.40)
+**Gap 75** (6 words, fidelity 0.22)
 
 - Actual: `will not forsake us,' and he`
-- Predicted: `will protect us.`
+- Predicted: `and fell`
 
 **Gap 76** (1 words, fidelity 1.00)
 
@@ -7612,1392 +7653,1383 @@ back and said to Gretel:`
 **Gap 77** (2 words, fidelity 0.33)
 
 - Actual: `in his`
-- Predicted: `he filled up his`
+- Predicted: `lay again in bed.`
 
 **Gap 78** (1 words, fidelity 0.00)
 
 - Actual: `When`
-- Predicted: `and said to them: 'Take this loaf, but be sure to bring back a full basket
-of firewood. If you don't, you'll get a beating.'`
+- Predicted: `And on the following`
 
-**Gap 79** (9 words, fidelity 0.07)
+**Gap 79** (9 words, fidelity 0.00)
 
 - Actual: `before the sun had risen, the woman came and`
-- Predicted: `many as he could get in. Then he went back and said to Gretel: 'Be comforted, dear little sister, and sleep in peace, God will not forsake us,' and he lay down again in his bed. When day dawned, but the children were still fast asleep,`
+- Predicted: `She slowly`
 
-**Gap 80** (7 words, fidelity 0.18)
+**Gap 80** (7 words, fidelity 0.00)
 
 - Actual: `the
 two children, saying: 'Get up, you`
-- Predicted: `the girls and said`
+- Predicted: `lazy`
 
 **Gap 81** (9 words, fidelity 0.00)
 
 - Actual: `we are going into the
 forest to fetch wood.'`
-- Predicted: `She gave them both a piece of bread, and said:`
+- Predicted: `She arose with a heavy heart,`
 
-**Gap 82** (3 words, fidelity 0.50)
+**Gap 82** (3 words, fidelity 0.00)
 
 - Actual: `gave each a`
-- Predicted: `gave them each a piece of bread, and said:`
+- Predicted: `stirred`
 
 **Gap 83** (2 words, fidelity 0.00)
 
 - Actual: `piece of`
-- Predicted: `loaf`
+- Predicted: `ate`
 
 **Gap 84** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `she gave each a little piece of bread,`
+- Predicted: `she`
 
-**Gap 85** (4 words, fidelity 0.40)
+**Gap 85** (4 words, fidelity 0.33)
 
 - Actual: `is something for your`
-- Predicted: `there is no fire today for`
+- Predicted: `here is`
 
 **Gap 86** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `go`
+- Predicted: `must`
 
-**Gap 87** (5 words, fidelity 0.00)
+**Gap 87** (5 words, fidelity 0.29)
 
 - Actual: `not eat it up before`
-- Predicted: `that`
+- Predicted: `get up`
 
-**Gap 88** (6 words, fidelity 0.00)
+**Gap 88** (6 words, fidelity 0.25)
 
 - Actual: `for you will get nothing else.'`
-- Predicted: `RIGHT:  Gretel took the bread under her apron,`
+- Predicted: `will`
 
 **Gap 89** (3 words, fidelity 0.00)
 
 - Actual: `took the bread`
-- Predicted: `put`
+- Predicted: `peeked`
 
-**Gap 90** (1 words, fidelity 1.00)
+**Gap 90** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `beneath`
 
 **Gap 91** (6 words, fidelity 0.00)
 
 - Actual: `had the pebbles in his pocket.`
-- Predicted: `did you leave behind there? Do you see those pretty candies? Those are for us!'`
+- Predicted: `pulled`
 
 **Gap 92** (12 words, fidelity 0.00)
 
 - Actual: `Then they all set out together
 on the way to the forest.`
-- Predicted: `and said: 'We are now far enough from home, that wicked witch
-will not find us again.'`
+- Predicted: `bake`
 
-**Gap 93** (8 words, fidelity 0.09)
+**Gap 93** (8 words, fidelity 0.00)
 
 - Actual: `When they had walked a short time, Hansel`
-- Predicted: `Hansel stood still and peeped back at the house, and did so again and again.`
+- Predicted: `began`
 
-**Gap 94** (4 words, fidelity 0.10)
+**Gap 94** (4 words, fidelity 0.00)
 
 - Actual: `still and peeped back`
-- Predicted: `gazing into the distance, and pointed towards the sun, which was now
-setting behind the forest.`
+- Predicted: `watched`
 
-**Gap 95** (2 words, fidelity 1.00)
+**Gap 95** (2 words, fidelity 0.00)
 
 - Actual: `the house,`
-- Predicted: `the house`
+- Predicted: `gazed`
 
 **Gap 96** (4 words, fidelity 0.00)
 
 - Actual: `so again and again.`
-- Predicted: `not`
+- Predicted: `watched`
 
-**Gap 97** (8 words, fidelity 0.35)
+**Gap 97** (8 words, fidelity 0.00)
 
 - Actual: `father said: 'Hansel, what are you looking at`
-- Predicted: `brother, why are you standing still and looking back?`
+- Predicted: `waited`
 
 **Gap 98** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `behind`
+- Predicted: `upheld`
 
 **Gap 99** (2 words, fidelity 0.00)
 
 - Actual: `behind for?`
-- Predicted: `so`
+- Predicted: `upheld his promise there by staying faithfully`
 
-**Gap 100** (5 words, fidelity 0.33)
+**Gap 100** (5 words, fidelity 0.00)
 
 - Actual: `attention, and do not forget`
-- Predicted: `attention`
+- Predicted: `considered`
 
 **Gap 101** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `so carefully`
+- Predicted: `lived`
 
-**Gap 102** (2 words, fidelity 0.40)
+**Gap 102** (2 words, fidelity 0.00)
 
 - Actual: `your legs.'`
-- Predicted: `your knife`
+- Predicted: `upheld his promise there by staying true`
 
-**Gap 103** (11 words, fidelity 0.07)
+**Gap 103** (11 words, fidelity 0.00)
 
 - Actual: `father,' said Hansel, 'I am looking at my little white cat,`
-- Predicted: `RIGHT:  which is
-sitting up on the roof, and wants to say goodbye to me.'`
+- Predicted: `began`
 
 **Gap 104** (2 words, fidelity 0.00)
 
 - Actual: `is
 sitting`
-- Predicted: `climbed`
+- Predicted: `Pay attention how to use`
 
-**Gap 105** (11 words, fidelity 0.22)
+**Gap 105** (11 words, fidelity 0.00)
 
 - Actual: `on the roof, and wants to say goodbye to me.' The`
-- Predicted: `there, and shining into the house.`
+- Predicted: `feed`
 
-**Gap 106** (8 words, fidelity 0.00)
+**Gap 106** (8 words, fidelity 0.10)
 
 - Actual: `said:
 'Fool, that is not your little cat,`
-- Predicted: `scolded`
+- Predicted: `Pay attention how to use the pebbles up to call your wife.'`
 
-**Gap 107** (1 words, fidelity 0.18)
+**Gap 107** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `was merely the gleam of the morning sun which is`
+- Predicted: `climbed`
 
 **Gap 108** (7 words, fidelity 0.00)
 
 - Actual: `morning sun which is
 shining on the`
-- Predicted: `chimneys.'`
+- Predicted: `climbed`
 
 **Gap 109** (5 words, fidelity 0.00)
 
 - Actual: `however, had not been looking`
-- Predicted: `glanced`
+- Predicted: `threw`
 
-**Gap 110** (2 words, fidelity 0.67)
+**Gap 110** (2 words, fidelity 0.00)
 
 - Actual: `at
 the`
-- Predicted: `at`
+- Predicted: `called`
 
-**Gap 111** (3 words, fidelity 0.55)
+**Gap 111** (3 words, fidelity 0.00)
 
 - Actual: `but had been`
-- Predicted: `but had been watching the path behind them,`
+- Predicted: `picked up`
 
 **Gap 112** (1 words, fidelity 0.00)
 
 - Actual: `throwing`
-- Predicted: `watching`
+- Predicted: `carefully`
 
 **Gap 113** (3 words, fidelity 0.00)
 
 - Actual: `of the white`
-- Predicted: `pebble-stones`
+- Predicted: `carefully`
 
-**Gap 114** (6 words, fidelity 0.00)
+**Gap 114** (6 words, fidelity 0.50)
 
 - Actual: `out of his pocket on the`
-- Predicted: `carefully into their pockets.`
+- Predicted: `carefully laid out on the path`
 
-**Gap 115** (2 words, fidelity 0.20)
+**Gap 115** (2 words, fidelity 0.00)
 
 - Actual: `When they`
-- Predicted: `when they had walked for many hours and the way seemed to lead them deeper into the woods,`
+- Predicted: `had collected`
 
 **Gap 116** (11 words, fidelity 0.00)
 
 - Actual: `reached the middle of the forest, the father said: 'Now,
 children,`
-- Predicted: `traveled a long way home.`
+- Predicted: `had built a small`
 
-**Gap 117** (6 words, fidelity 0.43)
+**Gap 117** (6 words, fidelity 0.00)
 
 - Actual: `up some wood, and I will`
-- Predicted: `up the sticks and sit down by the fire, and I will go home and fetch some`
+- Predicted: `shone like`
 
-**Gap 118** (14 words, fidelity 0.12)
+**Gap 118** (14 words, fidelity 0.00)
 
 - Actual: `a fire that you may not
 be cold.' Hansel and Gretel gathered brushwood together,`
-- Predicted: `a`
+- Predicted: `glowed`
 
-**Gap 119** (3 words, fidelity 0.29)
+**Gap 119** (3 words, fidelity 0.50)
 
 - Actual: `high as a`
-- Predicted: `quickly as they could`
+- Predicted: `a`
 
-**Gap 120** (1 words, fidelity 0.18)
+**Gap 120** (1 words, fidelity 0.00)
 
 - Actual: `The`
-- Predicted: `when the brushwood was lighted, and the flames were burning`
+- Predicted: `A small`
 
-**Gap 121** (1 words, fidelity 1.00)
+**Gap 121** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `was`
+- Predicted: `fired`
 
-**Gap 122** (5 words, fidelity 0.29)
+**Gap 122** (5 words, fidelity 0.00)
 
 - Actual: `and when the flames were`
-- Predicted: `and it`
+- Predicted: `blazed`
 
-**Gap 123** (3 words, fidelity 0.17)
+**Gap 123** (3 words, fidelity 0.29)
 
 - Actual: `the woman said:`
-- Predicted: `the flames danced merrily, and they felt quite warm.`
+- Predicted: `Now, the firelight flickered`
 
 **Gap 124** (1 words, fidelity 0.00)
 
 - Actual: `children,`
-- Predicted: `Gretel and I will hide ourselves in the
-forest, and let the witch come in and steal us, and then we will kill her.`
+- Predicted: `Hansel and Gretel`
 
 **Gap 125** (7 words, fidelity 0.00)
 
 - Actual: `yourselves down by the
 fire and rest,`
-- Predicted: `they may not`
+- Predicted: `we`
 
-**Gap 126** (8 words, fidelity 0.11)
+**Gap 126** (8 words, fidelity 0.13)
 
 - Actual: `will go into the forest and cut some`
-- Predicted: `hered brushwood together, as high as a little hill. The brushwood was lighted, and when the flames were burning very high, the woman said: 'Now, children, lay yourselves down by the fire and rest, we will stay here until we have finished cutting the wood. When we have done,`
+- Predicted: `we lay in the shadow of the`
 
 **Gap 127** (11 words, fidelity 0.00)
 
 - Actual: `When we
 have done, we will come back and fetch you`
-- Predicted: `so`
+- Predicted: `gently`
 
-**Gap 128** (10 words, fidelity 0.36)
+**Gap 128** (10 words, fidelity 0.00)
 
 - Actual: `and Gretel sat by the fire, and when noon came,`
-- Predicted: `hesel and Gretel did not dare to leave the room, but remained sitting
-by the fire until evening.`
+- Predicted: `carefully`
 
-**Gap 129** (2 words, fidelity 0.67)
+**Gap 129** (2 words, fidelity 0.00)
 
 - Actual: `ate a`
-- Predicted: `ate`
+- Predicted: `cut`
 
-**Gap 130** (4 words, fidelity 0.15)
+**Gap 130** (4 words, fidelity 0.00)
 
 - Actual: `piece of bread, and`
-- Predicted: `biscuit, and then they both lay down to sleep.`
+- Predicted: `chopped`
 
-**Gap 131** (1 words, fidelity 0.22)
+**Gap 131** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `they heard the strokes of the wood-axe`
+- Predicted: `gave`
 
-**Gap 132** (2 words, fidelity 0.25)
+**Gap 132** (2 words, fidelity 0.50)
 
 - Actual: `of the`
-- Predicted: `of chopping with his axe they`
+- Predicted: `with every swing of the woodcutter's`
 
-**Gap 133** (5 words, fidelity 0.27)
+**Gap 133** (5 words, fidelity 0.22)
 
 - Actual: `that their father was near.`
-- Predicted: `that it was not yet time to go to bed.`
+- Predicted: `It was the witch's`
 
-**Gap 134** (3 words, fidelity 0.75)
+**Gap 134** (3 words, fidelity 0.57)
 
 - Actual: `was not the`
-- Predicted: `was not the wood-cutter's`
+- Predicted: `was not their own`
 
-**Gap 135** (1 words, fidelity 0.12)
+**Gap 135** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `but the sound of a rat running over the floor made them jump up again,`
+- Predicted: `was`
 
 **Gap 136** (4 words, fidelity 0.00)
 
 - Actual: `branch which he had`
-- Predicted: `scythe`
+- Predicted: `was`
 
 **Gap 137** (2 words, fidelity 0.67)
 
 - Actual: `to a`
 - Predicted: `to`
 
-**Gap 138** (6 words, fidelity 0.29)
+**Gap 138** (6 words, fidelity 0.00)
 
 - Actual: `tree which the wind was
 blowing`
-- Predicted: `tree`
+- Predicted: `old`
 
-**Gap 139** (2 words, fidelity 0.00)
+**Gap 139** (2 words, fidelity 0.25)
 
 - Actual: `and forwards.`
-- Predicted: `swung violently against the tree.`
+- Predicted: `And it was an old, weathered`
 
 **Gap 140** (1 words, fidelity 0.00)
 
 - Actual: `as`
-- Predicted: `and`
+- Predicted: `they had been sharpening their axes with great care and precision`
 
 **Gap 141** (5 words, fidelity 0.00)
 
 - Actual: `sitting such a long
 time,`
-- Predicted: `so tired`
+- Predicted: `had been sharpened`
 
 **Gap 142** (2 words, fidelity 0.00)
 
 - Actual: `eyes closed`
-- Predicted: `tired`
+- Predicted: `handles`
 
 **Gap 143** (6 words, fidelity 0.00)
 
 - Actual: `fatigue, and they fell fast asleep.`
-- Predicted: `long`
+- Predicted: `hanging`
 
 **Gap 144** (1 words, fidelity 0.00)
 
 - Actual: `When`
-- Predicted: `and they had eaten all the bread, so`
+- Predicted: `twisted`
 
 **Gap 145** (8 words, fidelity 0.00)
 
 - Actual: `last they awoke, it was already dark night.`
-- Predicted: `all`
+- Predicted: `tied together`
 
 **Gap 146** (4 words, fidelity 0.00)
 
 - Actual: `Gretel began to cry`
-- Predicted: `they were`
+- Predicted: `gone`
 
-**Gap 147** (10 words, fidelity 0.16)
+**Gap 147** (10 words, fidelity 0.00)
 
 - Actual: `said: 'How are we to get out of the forest`
-- Predicted: `"where are we?" but Gretel answered: 'Do not cry, brother, and do not be sad`
+- Predicted: `were`
 
 **Gap 148** (6 words, fidelity 0.00)
 
 - Actual: `But Hansel comforted
 her and said:`
-- Predicted: `after`
+- Predicted: `could we finish`
 
-**Gap 149** (3 words, fidelity 0.40)
+**Gap 149** (3 words, fidelity 0.00)
 
 - Actual: `wait a little,`
-- Predicted: `shall wait`
+- Predicted: `waited`
 
 **Gap 150** (11 words, fidelity 0.00)
 
 - Actual: `the moon has risen, and then we
 will soon find the`
-- Predicted: `dark`
+- Predicted: `glittering`
 
-**Gap 151** (20 words, fidelity 0.18)
+**Gap 151** (20 words, fidelity 0.00)
 
 - Actual: `And when the full moon had risen, Hansel took
 his little sister by the hand, and followed the pebbles which`
-- Predicted: `the moon`
+- Predicted: `glimmered`
 
 **Gap 152** (1 words, fidelity 0.00)
 
 - Actual: `like`
-- Predicted: `and saw who it was, she thrust them both out into the street.`
+- Predicted: `gleamed`
 
 **Gap 153** (3 words, fidelity 0.00)
 
 - Actual: `silver pieces, and`
-- Predicted: `coins showed them the way.`
+- Predicted: `brilliantly`
 
-**Gap 154** (3 words, fidelity 0.67)
+**Gap 154** (3 words, fidelity 0.40)
 
 - Actual: `them the way.`
-- Predicted: `the way home.`
+- Predicted: `the brightest`
 
 **Gap 155** (5 words, fidelity 0.00)
 
 - Actual: `They walked the whole night`
-- Predicted: `far`
+- Predicted: `aileen's`
 
-**Gap 156** (1 words, fidelity 0.13)
+**Gap 156** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and when the sun was well up they again found the trail of pebbles`
+- Predicted: `gleamed`
 
 **Gap 157** (4 words, fidelity 0.00)
 
 - Actual: `break of day came`
-- Predicted: `morning`
+- Predicted: `gleamed`
 
 **Gap 158** (1 words, fidelity 0.00)
 
 - Actual: `more`
-- Predicted: `into`
+- Predicted: `gleamed`
 
 **Gap 159** (3 words, fidelity 0.00)
 
 - Actual: `their father's house.`
-- Predicted: `the cottage.`
+- Predicted: `gleamed`
 
-**Gap 160** (22 words, fidelity 0.32)
+**Gap 160** (22 words, fidelity 0.00)
 
 - Actual: `They knocked at the door, and when the woman
 opened it and saw that it was Hansel and Gretel, she said: 'You`
-- Predicted: `When they entered the room, the mother said to`
+- Predicted: `gleamed`
 
 **Gap 161** (2 words, fidelity 0.00)
 
 - Actual: `children, why`
-- Predicted: `had`
+- Predicted: `had been`
 
-**Gap 162** (6 words, fidelity 0.36)
+**Gap 162** (6 words, fidelity 0.17)
 
 - Actual: `you slept so long in the`
-- Predicted: `you had wandered into the`
+- Predicted: `had been forbidden to enter the`
 
-**Gap 163** (3 words, fidelity 0.00)
+**Gap 163** (3 words, fidelity 0.29)
 
 - Actual: `we thought you`
-- Predicted: `more`
+- Predicted: `had we ever been`
 
 **Gap 164** (2 words, fidelity 0.00)
 
 - Actual: `coming back`
-- Predicted: `more`
+- Predicted: `seen us there`
 
 **Gap 165** (2 words, fidelity 0.00)
 
 - Actual: `father, however,`
-- Predicted: `woman`
+- Predicted: `had they ever been`
 
-**Gap 166** (1 words, fidelity 0.33)
+**Gap 166** (1 words, fidelity 1.00)
 
 - Actual: `for`
-- Predicted: `for he had often bitterly`
+- Predicted: `for`
 
 **Gap 167** (9 words, fidelity 0.00)
 
 - Actual: `him to the heart to leave them behind alone.`
-- Predicted: `that he had come through with his children.`
+- Predicted: `anything`
 
-**Gap 168** (1 words, fidelity 0.67)
+**Gap 168** (1 words, fidelity 0.00)
 
 - Actual: `long`
-- Predicted: `Not long`
+- Predicted: `had they ever been in`
 
-**Gap 169** (3 words, fidelity 0.09)
+**Gap 169** (3 words, fidelity 0.04)
 
 - Actual: `there was once`
-- Predicted: `Not long afterwards, there was another great famine throughout the land, and the children heard their mother saying at night to their father: 'Everything is eaten again, we have one half loaf left, and that is the end. The children m`
+- Predicted: `had never been in such a forest?--Such forests were never seen at all!' The children rejoiced, for it had cut them down Not long afterwards, more trees more plentifully throughout their mother's garden, Everything was eaten again, and we have one half less left, and The`
 
 **Gap 170** (2 words, fidelity 0.00)
 
 - Actual: `great dearth`
-- Predicted: `there was once more famine`
+- Predicted: `had been`
 
-**Gap 171** (7 words, fidelity 0.22)
+**Gap 171** (7 words, fidelity 0.00)
 
 - Actual: `the
 land, and the children heard their`
-- Predicted: `the kingdom,`
+- Predicted: `were fed`
 
 **Gap 172** (6 words, fidelity 0.00)
 
 - Actual: `saying at night to their
 father:`
-- Predicted: `sighing as she broke off the crust from the bread.`
+- Predicted: `and found`
 
 **Gap 173** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `had been`
+- Predicted: `was`
 
 **Gap 174** (1 words, fidelity 0.00)
 
 - Actual: `we`
-- Predicted: `have not even`
+- Predicted: `were`
 
 **Gap 175** (1 words, fidelity 0.00)
 
 - Actual: `loaf`
-- Predicted: `was broken, but he said nothing.`
+- Predicted: `was`
 
-**Gap 176** (5 words, fidelity 0.36)
+**Gap 176** (5 words, fidelity 0.00)
 
 - Actual: `and that
 is the end.`
-- Predicted: `and the children must fast again`
+- Predicted: `were`
 
-**Gap 177** (2 words, fidelity 0.67)
+**Gap 177** (2 words, fidelity 0.00)
 
 - Actual: `children must`
-- Predicted: `children`
+- Predicted: `devour`
 
-**Gap 178** (2 words, fidelity 0.00)
+**Gap 178** (2 words, fidelity 0.67)
 
 - Actual: `we will`
-- Predicted: `send`
+- Predicted: `we`
 
-**Gap 179** (3 words, fidelity 0.16)
+**Gap 179** (3 words, fidelity 0.57)
 
 - Actual: `farther into the`
-- Predicted: `into the forest, and cut down a tree, so that they will not find their way out again; there is no other`
+- Predicted: `carry them into the`
 
-**Gap 180** (2 words, fidelity 0.67)
+**Gap 180** (2 words, fidelity 0.00)
 
 - Actual: `so that`
-- Predicted: `so`
+- Predicted: `Let us`
 
 **Gap 181** (5 words, fidelity 0.00)
 
 - Actual: `will not find their way`
-- Predicted: `die`
+- Predicted: `devour`
 
 **Gap 182** (5 words, fidelity 0.00)
 
 - Actual: `again; there is no other`
-- Predicted: `so`
+- Predicted: `burn`
 
-**Gap 183** (2 words, fidelity 0.67)
+**Gap 183** (2 words, fidelity 0.00)
 
 - Actual: `of saving`
-- Predicted: `of`
+- Predicted: `starve`
 
-**Gap 184** (6 words, fidelity 0.00)
+**Gap 184** (6 words, fidelity 0.11)
 
 - Actual: `heart was heavy, and he thought:`
-- Predicted: `wife's`
+- Predicted: `It would not matter if it were the last mouthful in your mouth; The crowd listened intently and had not reproached him. He did not say A single word in response.`
 
-**Gap 185** (3 words, fidelity 0.33)
+**Gap 185** (3 words, fidelity 0.00)
 
 - Actual: `be better for`
-- Predicted: `would be unseemly`
+- Predicted: `would frighten`
 
-**Gap 186** (4 words, fidelity 0.22)
+**Gap 186** (4 words, fidelity 0.00)
 
 - Actual: `to share the last`
-- Predicted: `to give up your children`
+- Predicted: `swallow`
 
 **Gap 187** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `to share`
+- Predicted: `would freeze`
 
-**Gap 188** (1 words, fidelity 0.67)
+**Gap 188** (1 words, fidelity 0.00)
 
 - Actual: `children.'`
-- Predicted: `children!`
+- Predicted: `digest`
 
-**Gap 189** (3 words, fidelity 0.10)
+**Gap 189** (3 words, fidelity 0.00)
 
 - Actual: `woman, however, would`
-- Predicted: `man thought: 'It would be better for you to share the last mouthful with your children.' The`
+- Predicted: `out of silence means let`
 
 **Gap 190** (4 words, fidelity 0.00)
 
 - Actual: `to nothing that he`
-- Predicted: `not`
+- Predicted: `measured`
 
 **Gap 191** (5 words, fidelity 0.00)
 
 - Actual: `to
 say, but scolded and`
-- Predicted: `notheed`
+- Predicted: `had severely`
 
 **Gap 192** (1 words, fidelity 0.00)
 
 - Actual: `who`
-- Predicted: `said`
+- Predicted: `replied`
 
 **Gap 193** (3 words, fidelity 0.00)
 
 - Actual: `must say B,`
-- Predicted: `that`
+- Predicted: `It would tickle you to swallow your pride The old folks were listening again`
 
 **Gap 194** (4 words, fidelity 0.00)
 
 - Actual: `and as he had`
-- Predicted: `who says yes must also say no,`
+- Predicted: `did`
 
 **Gap 195** (10 words, fidelity 0.00)
 
 - Actual: `the first time, he had to do so a second`
-- Predicted: `in`
+- Predicted: `patiently`
 
 **Gap 196** (3 words, fidelity 0.00)
 
 - Actual: `children, however, were`
-- Predicted: `The`
+- Predicted: `paused`
 
 **Gap 197** (1 words, fidelity 0.00)
 
 - Actual: `awake`
-- Predicted: `quietly`
+- Predicted: `carried on`
 
 **Gap 198** (3 words, fidelity 0.00)
 
 - Actual: `had heard the`
-- Predicted: `listen to`
+- Predicted: `interrupted`
 
-**Gap 199** (2 words, fidelity 0.00)
+**Gap 199** (2 words, fidelity 0.10)
 
 - Actual: `When the`
-- Predicted: `so`
+- Predicted: `reproached him. He gently says A kindly likewise, patiently yielded willingly time also. The quietly still and warmly conversation.`
 
 **Gap 200** (2 words, fidelity 0.00)
 
 - Actual: `asleep, Hansel`
-- Predicted: `as`
+- Predicted: `sat chatting`
 
 **Gap 201** (2 words, fidelity 0.00)
 
 - Actual: `got up,`
-- Predicted: `slipped out of the bed`
+- Predicted: `chatting`
 
-**Gap 202** (2 words, fidelity 0.00)
+**Gap 202** (2 words, fidelity 0.50)
 
 - Actual: `wanted to`
-- Predicted: `up`
+- Predicted: `decided to`
 
-**Gap 203** (2 words, fidelity 0.22)
+**Gap 203** (2 words, fidelity 0.00)
 
 - Actual: `out and`
-- Predicted: `out of the house into the wood.`
+- Predicted: `to go`
 
-**Gap 204** (13 words, fidelity 0.11)
+**Gap 204** (13 words, fidelity 0.00)
 
 - Actual: `up pebbles as he had done before, but the woman had locked
 the`
-- Predicted: `some berries from the garden.`
+- Predicted: `knock on`
 
 **Gap 205** (6 words, fidelity 0.00)
 
 - Actual: `and Hansel could not get out.`
-- Predicted: `so`
+- Predicted: `sat down`
 
-**Gap 206** (3 words, fidelity 0.14)
+**Gap 206** (3 words, fidelity 0.00)
 
 - Actual: `he comforted his`
-- Predicted: `he crept into the kitchen and took a pocketful of pebbles.`
+- Predicted: `were talking`
 
-**Gap 207** (16 words, fidelity 0.00)
+**Gap 207** (16 words, fidelity 0.23)
 
 - Actual: `sister, and said: 'Do not cry, Gretel, go to sleep quietly, the
 good God will help`
-- Predicted: `brother`
+- Predicted: `were together again and decide go pick the right door,`
 
 **Gap 208** (3 words, fidelity 0.50)
 
 - Actual: `in the morning`
 - Predicted: `morning`
 
-**Gap 209** (1 words, fidelity 0.22)
+**Gap 209** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `woman, and took the children out of their`
+- Predicted: `knocked`
 
-**Gap 210** (2 words, fidelity 0.40)
+**Gap 210** (2 words, fidelity 0.00)
 
 - Actual: `and took`
-- Predicted: `and led them`
+- Predicted: `spoke`
 
 **Gap 211** (2 words, fidelity 0.00)
 
 - Actual: `children out`
-- Predicted: `away`
+- Predicted: `surprise`
 
 **Gap 212** (1 words, fidelity 0.00)
 
 - Actual: `beds.`
-- Predicted: `bed, and said to her:`
+- Predicted: `surprised`
 
 **Gap 213** (1 words, fidelity 0.00)
 
 - Actual: `Their`
-- Predicted: `Nevertheless, she said to Hansel: "Hansel, my boy, since the good God has
-taken our mother from us, He will surely provide us with food."`
+- Predicted: `surprised`
 
-**Gap 214** (9 words, fidelity 0.36)
+**Gap 214** (9 words, fidelity 0.00)
 
 - Actual: `of bread was given to them, but it was`
-- Predicted: `of bread`
+- Predicted: `had baked`
 
 **Gap 215** (3 words, fidelity 0.00)
 
 - Actual: `smaller
 than the`
-- Predicted: `so small`
+- Predicted: `had not`
 
-**Gap 216** (1 words, fidelity 0.40)
+**Gap 216** (1 words, fidelity 0.00)
 
 - Actual: `before.`
-- Predicted: `than the time before.`
+- Predicted: `baked`
 
 **Gap 217** (7 words, fidelity 0.00)
 
 - Actual: `On the way into the forest Hansel`
-- Predicted: `so`
+- Predicted: `gave`
 
 **Gap 218** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `it`
+- Predicted: `into`
 
 **Gap 219** (3 words, fidelity 0.00)
 
 - Actual: `his pocket, and`
-- Predicted: `it`
+- Predicted: `before`
 
 **Gap 220** (5 words, fidelity 0.00)
 
 - Actual: `stood still and threw a`
-- Predicted: `so`
+- Predicted: `paltry`
 
 **Gap 221** (3 words, fidelity 0.00)
 
 - Actual: `on the ground.`
-- Predicted: `so`
+- Predicted: `had`
 
 **Gap 222** (6 words, fidelity 0.00)
 
 - Actual: `why do you stop and look`
-- Predicted: `little`
+- Predicted: `"how big"`
 
 **Gap 223** (1 words, fidelity 0.00)
 
 - Actual: `said`
-- Predicted: `Hansel, why do you stand there and look up?`
+- Predicted: `"Is there any more"`
 
 **Gap 224** (2 words, fidelity 0.00)
 
 - Actual: `father, 'go`
-- Predicted: `mother`
+- Predicted: `'Why didn't you save more`
 
 **Gap 225** (3 words, fidelity 0.00)
 
 - Actual: `I
 am looking`
-- Predicted: `time before. On the way into the forest Hansel crumbled his  
-pebbles`
+- Predicted: `hadn't`
 
 **Gap 226** (3 words, fidelity 0.00)
 
 - Actual: `at my little`
-- Predicted: `so`
+- Predicted: `hadn't`
 
 **Gap 227** (5 words, fidelity 0.00)
 
 - Actual: `which is sitting on the`
-- Predicted: `at`
+- Predicted: `hadn't`
 
-**Gap 228** (7 words, fidelity 0.12)
+**Gap 228** (7 words, fidelity 0.00)
 
 - Actual: `and
 wants to say goodbye to me,'`
-- Predicted: `'because she is my own little pigeon.'`
+- Predicted: `said the greedy child`
 
-**Gap 229** (3 words, fidelity 0.67)
+**Gap 229** (3 words, fidelity 0.50)
 
 - Actual: `said the woman,`
-- Predicted: `said the mother`
+- Predicted: `said`
 
 **Gap 230** (5 words, fidelity 0.00)
 
 - Actual: `is not your little pigeon,`
-- Predicted: `she`
+- Predicted: `had you thrown`
 
-**Gap 231** (4 words, fidelity 0.29)
+**Gap 231** (4 words, fidelity 0.00)
 
 - Actual: `is the morning sun`
-- Predicted: `that is shining`
+- Predicted: `had thrown`
 
-**Gap 232** (5 words, fidelity 0.20)
+**Gap 232** (5 words, fidelity 0.00)
 
 - Actual: `is shining
 on the chimney.'`
-- Predicted: `shines through the clouds`
+- Predicted: `had thrown`
 
 **Gap 233** (1 words, fidelity 0.00)
 
 - Actual: `however`
-- Predicted: `then`
+- Predicted: `had thrown`
 
 **Gap 234** (5 words, fidelity 0.00)
 
 - Actual: `by little, threw all the`
-- Predicted: `he knew better than to listen to her.`
+- Predicted: `greedy`
 
-**Gap 235** (3 words, fidelity 0.33)
+**Gap 235** (3 words, fidelity 0.00)
 
 - Actual: `on the path.`
-- Predicted: `down the window,`
+- Predicted: `left`
 
 **Gap 236** (5 words, fidelity 0.00)
 
 - Actual: `The woman led the children`
-- Predicted: `so`
+- Predicted: `left`
 
-**Gap 237** (6 words, fidelity 0.40)
+**Gap 237** (6 words, fidelity 0.00)
 
 - Actual: `deeper into the forest, where they`
-- Predicted: `farther into the woods.`
+- Predicted: `left`
 
 **Gap 238** (6 words, fidelity 0.00)
 
 - Actual: `never in their lives been before.`
-- Predicted: `Then a great fire was again made, and`
+- Predicted: `left`
 
 **Gap 239** (1 words, fidelity 0.00)
 
 - Actual: `Then`
-- Predicted: `farther on`
+- Predicted: `left`
 
 **Gap 240** (2 words, fidelity 0.00)
 
 - Actual: `fire was`
-- Predicted: `house`
+- Predicted: `sweet`
 
 **Gap 241** (2 words, fidelity 0.00)
 
 - Actual: `made, and`
-- Predicted: `kindled`
+- Predicted: `baked`
 
 **Gap 242** (1 words, fidelity 0.00)
 
 - Actual: `said:`
-- Predicted: `she seated them by the fire`
+- Predicted: `warned`
 
 **Gap 243** (2 words, fidelity 0.00)
 
 - Actual: `sit there,`
-- Predicted: `that`
+- Predicted: `had a great deal of fear`
 
 **Gap 244** (2 words, fidelity 0.00)
 
 - Actual: `children, and`
-- Predicted: `when you are tired`
+- Predicted: `needed`
 
-**Gap 245** (9 words, fidelity 0.11)
+**Gap 245** (9 words, fidelity 0.15)
 
 - Actual: `you are tired
 you may sleep a little; we`
-- Predicted: `are going into the forest to cut wood, and in`
+- Predicted: `when you least expect`
 
 **Gap 246** (8 words, fidelity 0.00)
 
 - Actual: `going into the forest to cut wood, and`
-- Predicted: `in`
+- Predicted: `hadn't`
 
-**Gap 247** (2 words, fidelity 0.50)
+**Gap 247** (2 words, fidelity 0.00)
 
 - Actual: `the evening`
-- Predicted: `the forest`
+- Predicted: `dark`
 
 **Gap 248** (6 words, fidelity 0.00)
 
 - Actual: `we are done, we will come`
-- Predicted: `and fetch you away.' When`
+- Predicted: `darkness fell`
 
-**Gap 249** (4 words, fidelity 0.25)
+**Gap 249** (4 words, fidelity 0.00)
 
 - Actual: `fetch you away.' When`
-- Predicted: `take you home,`
+- Predicted: `the father`
 
-**Gap 250** (2 words, fidelity 0.18)
+**Gap 250** (2 words, fidelity 0.00)
 
 - Actual: `was noon,`
-- Predicted: `it was dark and the two children were frightened.`
+- Predicted: `did`
 
-**Gap 251** (6 words, fidelity 0.18)
+**Gap 251** (6 words, fidelity 0.00)
 
 - Actual: `her piece of bread with Hansel,`
-- Predicted: `out her bread and said, "Eat, dear sister, for it is good and will sustain us."`
+- Predicted: `kindred spirits`
 
 **Gap 252** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `ate`
+- Predicted: `were singing`
 
 **Gap 253** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `pebbles`
+- Predicted: `were hidden from sight by dense fog`
 
-**Gap 254** (2 words, fidelity 0.33)
+**Gap 254** (2 words, fidelity 0.00)
 
 - Actual: `the way.`
-- Predicted: `out in the woods.`
+- Predicted: `began`
 
-**Gap 255** (2 words, fidelity 0.15)
+**Gap 255** (2 words, fidelity 0.00)
 
 - Actual: `Then they`
-- Predicted: `they went deep into the forest to cut wood, and in`
+- Predicted: `began to snow`
 
-**Gap 256** (1 words, fidelity 1.00)
+**Gap 256** (1 words, fidelity 0.00)
 
 - Actual: `asleep`
-- Predicted: `asleep`
+- Predicted: `began to snow`
 
-**Gap 257** (1 words, fidelity 0.40)
+**Gap 257** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `and morning came, but`
+- Predicted: `there were`
 
-**Gap 258** (4 words, fidelity 0.40)
+**Gap 258** (4 words, fidelity 0.05)
 
 - Actual: `one came to the`
-- Predicted: `came`
+- Predicted: `when they and if it permitted Gretel shared her who had scattered them by the hearth and evening passed, but no sign of the poor children They waited through the dark night, until morning shall see`
 
-**Gap 259** (1 words, fidelity 0.00)
+**Gap 259** (1 words, fidelity 0.67)
 
 - Actual: `children.`
-- Predicted: `child`
+- Predicted: `hungry children`
 
 **Gap 260** (6 words, fidelity 0.00)
 
 - Actual: `did not awake until it was`
-- Predicted: `dark`
+- Predicted: `spent in`
 
 **Gap 261** (11 words, fidelity 0.00)
 
 - Actual: `and Hansel comforted his little sister and said: 'Just wait,
 Gretel,`
-- Predicted: `so`
+- Predicted: `sat down`
 
-**Gap 262** (6 words, fidelity 0.17)
+**Gap 262** (6 words, fidelity 0.00)
 
 - Actual: `the moon rises, and then we`
-- Predicted: `shall see the crumbs of bread`
+- Predicted: `until morning shall see`
 
-**Gap 263** (1 words, fidelity 0.25)
+**Gap 263** (1 words, fidelity 0.09)
 
 - Actual: `the`
-- Predicted: `that I have scattered in the snow`
+- Predicted: `passed, through no poor land they dark night, till until shall see the crumbs of civilization again.' then came they`
 
-**Gap 264** (14 words, fidelity 0.00)
+**Gap 264** (14 words, fidelity 0.22)
 
 - Actual: `of bread
 which I have strewn about, they will show us our way home`
-- Predicted: `fall from the path.`
+- Predicted: `they will not taste`
 
-**Gap 265** (3 words, fidelity 0.00)
+**Gap 265** (3 words, fidelity 0.20)
 
 - Actual: `When
 the moon`
-- Predicted: `so late at night it was almost impossible to see anything.`
+- Predicted: `until they shall see the crumbs again.`
 
-**Gap 266** (26 words, fidelity 0.00)
+**Gap 266** (26 words, fidelity 0.07)
 
 - Actual: `set out, but they found no crumbs, for the many
 thousands of birds which fly about in the woods and fields had picked
 them all up.`
-- Predicted: `saw`
+- Predicted: `until they shall see`
 
-**Gap 267** (9 words, fidelity 0.21)
+**Gap 267** (9 words, fidelity 0.00)
 
 - Actual: `Hansel said to Gretel: 'We shall soon find the`
-- Predicted: `so they said to each other, 'If we only had the little crumb-catcher
-with us, it would catch so many crumbs that we should soon be full.'`
+- Predicted: `and so`
 
-**Gap 268** (6 words, fidelity 0.00)
+**Gap 268** (6 words, fidelity 0.22)
 
 - Actual: `but
 they did not find it.`
-- Predicted: `Gretel said, "We must wait until evening and see where the house stands."`
+- Predicted: `and so they`
 
-**Gap 269** (1 words, fidelity 0.18)
+**Gap 269** (1 words, fidelity 0.00)
 
 - Actual: `They`
-- Predicted: `so they decided to wait until evening and try again`
+- Predicted: `she`
 
-**Gap 270** (4 words, fidelity 0.25)
+**Gap 270** (4 words, fidelity 0.00)
 
 - Actual: `the whole night and`
-- Predicted: `all the next day`
+- Predicted: `she`
 
-**Gap 271** (3 words, fidelity 0.50)
+**Gap 271** (3 words, fidelity 0.00)
 
 - Actual: `the next day`
-- Predicted: `day`
+- Predicted: `she walked through`
 
-**Gap 272** (12 words, fidelity 0.13)
+**Gap 272** (12 words, fidelity 0.00)
 
 - Actual: `from morning till evening, but they did not get out of the`
-- Predicted: `through the forest,`
+- Predicted: `farther`
 
-**Gap 273** (7 words, fidelity 0.11)
+**Gap 273** (7 words, fidelity 0.22)
 
 - Actual: `and were very hungry, for they had`
-- Predicted: `all day long, and nothing to eat but a few crumbs,`
+- Predicted: `there were`
 
-**Gap 274** (3 words, fidelity 0.80)
+**Gap 274** (3 words, fidelity 0.00)
 
 - Actual: `to eat but`
-- Predicted: `to eat,`
+- Predicted: `were`
 
 **Gap 275** (2 words, fidelity 0.00)
 
 - Actual: `or three`
-- Predicted: `peaches, which grew on the ground.`
+- Predicted: `barely`
 
 **Gap 276** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `and all that they could find were some wild mushrooms`
+- Predicted: `mushrooms`
 
-**Gap 277** (2 words, fidelity 1.00)
+**Gap 277** (2 words, fidelity 0.67)
 
 - Actual: `on the`
-- Predicted: `on the`
+- Predicted: `on`
 
 **Gap 278** (3 words, fidelity 0.00)
 
 - Actual: `as they were`
-- Predicted: `so`
+- Predicted: `there grew on`
 
-**Gap 279** (2 words, fidelity 0.67)
+**Gap 279** (2 words, fidelity 0.00)
 
 - Actual: `weary that`
-- Predicted: `weary`
+- Predicted: `did not`
 
 **Gap 280** (9 words, fidelity 0.00)
 
 - Actual: `legs would carry them no longer, they lay down`
-- Predicted: `tired`
+- Predicted: `nothing grew on`
 
-**Gap 281** (3 words, fidelity 0.40)
+**Gap 281** (3 words, fidelity 0.00)
 
 - Actual: `a tree and`
-- Predicted: `the tree`
+- Predicted: `nothing grew on`
 
-**Gap 282** (1 words, fidelity 1.00)
+**Gap 282** (1 words, fidelity 0.00)
 
 - Actual: `asleep.`
-- Predicted: `asleep`
+- Predicted: `into the forest`
 
 **Gap 283** (2 words, fidelity 0.00)
 
 - Actual: `It was`
-- Predicted: `after they had wandered`
+- Predicted: `into`
 
-**Gap 284** (5 words, fidelity 0.00)
+**Gap 284** (5 words, fidelity 0.05)
 
 - Actual: `mornings since they had left`
-- Predicted: `o'clock in the afternoon when`
+- Predicted: `grew on the ground. And so their beneath fell now three berries their house. They began to walk but always came deeper until if help soon, When it was mid-day, they saw a beautiful`
 
 **Gap 285** (1 words, fidelity 0.00)
 
 - Actual: `father's`
-- Predicted: `own`
+- Predicted: `mushrooms grew on the ground. And as so their mushrooms beneath the fell now three little their tiny house. They began to walk deeper always came deeper into if help was soon, when it was mid-day, they found beautiful`
 
 **Gap 286** (3 words, fidelity 0.00)
 
 - Actual: `again, but they`
-- Predicted: `further`
+- Predicted: `into the forest`
 
-**Gap 287** (4 words, fidelity 0.86)
+**Gap 287** (4 words, fidelity 0.33)
 
 - Actual: `into the forest, and`
-- Predicted: `into the forest.`
+- Predicted: `into darkness`
 
 **Gap 288** (3 words, fidelity 0.00)
 
 - Actual: `did not come`
-- Predicted: `soon, they must perish`
+- Predicted: `if help came`
 
-**Gap 289** (7 words, fidelity 0.17)
+**Gap 289** (7 words, fidelity 0.10)
 
 - Actual: `they must die of hunger and weariness.`
-- Predicted: `they would starve to death.`
+- Predicted: `When it grew near noon, they found themselves in a darkened glade, overshadowed by a massive bough, where the light filtered through delightfully, and they paused, their spirits lifted by the unexpected beauty.`
 
 **Gap 290** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `LEFT: mornings since they had left their father's house. They began to walk again, but they always came deeper into the forest, and if help did not come soon, they must die of hunger and weariness. When it`
+- Predicted: `when reached`
 
 **Gap 291** (2 words, fidelity 0.00)
 
 - Actual: `saw a`
-- Predicted: `were very hungry and weary`
+- Predicted: `discovered`
 
 **Gap 292** (5 words, fidelity 0.00)
 
 - Actual: `snow-white bird sitting on a`
-- Predicted: `apple-tree`
+- Predicted: `shaded`
 
-**Gap 293** (3 words, fidelity 0.57)
+**Gap 293** (3 words, fidelity 0.00)
 
 - Actual: `which sang so`
-- Predicted: `so sweetly it sang`
+- Predicted: `if help came soon,`
 
-**Gap 294** (8 words, fidelity 0.22)
+**Gap 294** (8 words, fidelity 0.00)
 
 - Actual: `that they stood still and listened to it.`
-- Predicted: `that`
+- Predicted: `rested`
 
 **Gap 295** (1 words, fidelity 0.00)
 
 - Actual: `when`
-- Predicted: `as soon as`
+- Predicted: `sat`
 
-**Gap 296** (10 words, fidelity 0.19)
+**Gap 296** (10 words, fidelity 0.00)
 
 - Actual: `song was over, it spread its wings and flew away`
-- Predicted: `song went so sweetly that it charmed all who heard it`
+- Predicted: `slept in`
 
 **Gap 297** (2 words, fidelity 0.00)
 
 - Actual: `them,
 and`
-- Predicted: `it had disappeared`
+- Predicted: `sang`
 
-**Gap 298** (2 words, fidelity 0.67)
+**Gap 298** (2 words, fidelity 0.00)
 
 - Actual: `followed it`
-- Predicted: `followed`
+- Predicted: `sang`
 
 **Gap 299** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `it had led them into a dense forest.`
+- Predicted: `and then`
 
-**Gap 300** (3 words, fidelity 0.67)
+**Gap 300** (3 words, fidelity 0.00)
 
 - Actual: `a little house,`
-- Predicted: `a small house`
+- Predicted: `perched`
 
-**Gap 301** (4 words, fidelity 0.40)
+**Gap 301** (4 words, fidelity 0.00)
 
 - Actual: `the roof of
 which`
-- Predicted: `which`
+- Predicted: `it gently`
 
-**Gap 302** (3 words, fidelity 0.50)
+**Gap 302** (3 words, fidelity 0.00)
 
 - Actual: `and when they`
-- Predicted: `when`
+- Predicted: `A hungry bird`
 
-**Gap 303** (2 words, fidelity 1.00)
+**Gap 303** (2 words, fidelity 0.00)
 
 - Actual: `little house`
-- Predicted: `little house,`
+- Predicted: `tavern`
 
-**Gap 304** (11 words, fidelity 0.27)
+**Gap 304** (11 words, fidelity 0.00)
 
 - Actual: `saw
 that it was built of bread and covered with cakes,`
-- Predicted: `saw that the windows`
+- Predicted: `did approach the house`
 
 **Gap 305** (4 words, fidelity 0.00)
 
 - Actual: `that the windows
 were`
-- Predicted: `of currants`
+- Predicted: `they ate`
 
-**Gap 306** (2 words, fidelity 0.40)
+**Gap 306** (2 words, fidelity 0.00)
 
 - Actual: `clear sugar.`
-- Predicted: `sugar-loaf candy`
+- Predicted: `until it reached the top on the roof; Hansel approached the chimney but could not see inside, set on that,' a good meal. A bit of you Gretel, can you reach up,`
 
 **Gap 307** (2 words, fidelity 0.00)
 
 - Actual: `We will`
-- Predicted: `cherry`
+- Predicted: `a tree; seeing`
 
 **Gap 308** (2 words, fidelity 0.00)
 
 - Actual: `to work`
-- Predicted: `itelves`
+- Predicted: `pounced`
 
-**Gap 309** (5 words, fidelity 0.33)
+**Gap 309** (5 words, fidelity 0.00)
 
 - Actual: `said Hansel, 'and
 have a`
-- Predicted: `said`
+- Predicted: `and after`
 
-**Gap 310** (4 words, fidelity 0.00)
+**Gap 310** (4 words, fidelity 0.20)
 
 - Actual: `I will eat a`
-- Predicted: `so Hansel climbed up to the roof`
+- Predicted: `a
+small
+piece
+for
+the
+little`
 
 **Gap 311** (4 words, fidelity 0.00)
 
 - Actual: `of the roof, and`
-- Predicted: `that`
+- Predicted: `a`
 
 **Gap 312** (8 words, fidelity 0.00)
 
 - Actual: `eat
 some of the window, it will taste`
-- Predicted: `LEFT: to help yourself, little children, for I am your grandmother.'`
+- Predicted: `just a tiny piece.`
 
 **Gap 313** (1 words, fidelity 0.00)
 
 - Actual: `up`
-- Predicted: `upstairs`
+- Predicted: `into`
 
-**Gap 314** (5 words, fidelity 0.40)
+**Gap 314** (5 words, fidelity 0.00)
 
 - Actual: `and
 broke off a little`
-- Predicted: `and pulled down a piece`
+- Predicted: `up`
 
-**Gap 315** (3 words, fidelity 0.57)
+**Gap 315** (3 words, fidelity 0.00)
 
 - Actual: `the roof to`
-- Predicted: `of the roof, and`
+- Predicted: `into`
 
 **Gap 316** (5 words, fidelity 0.00)
 
 - Actual: `how it tasted, and Gretel`
-- Predicted: `off`
+- Predicted: `up`
 
 **Gap 317** (6 words, fidelity 0.00)
 
 - Actual: `against the window and nibbled at`
-- Predicted: `up`
+- Predicted: `gave`
 
-**Gap 318** (2 words, fidelity 0.00)
+**Gap 318** (2 words, fidelity 0.10)
 
 - Actual: `Then a`
-- Predicted: `etel, can eat`
+- Predicted: `Gretel, can we steal some sweet.' Hansel reached up, high of mind to try and leant against the panes. Gretel, soft as a whisper parlour: Nibble, gently gnaw, Who shall build our house?' Then the heaven-born wind,`
 
-**Gap 319** (4 words, fidelity 0.00)
+**Gap 319** (4 words, fidelity 0.14)
 
 - Actual: `voice cried
 from the`
-- Predicted: `parlour:`
+- Predicted: `chimney's, into, to, to, and, into, the, crumbs, into, the`
 
 **Gap 320** (1 words, fidelity 0.00)
 
 - Actual: `nibble,`
-- Predicted: `gnaw,`
+- Predicted: `sir,`
 
 **Gap 321** (5 words, fidelity 0.00)
 
 - Actual: `is nibbling at my little`
-- Predicted: `gnaw,  
-  who敲除不必要的英文字母后为：
-gnaw,`
+- Predicted: `shouldn't enter this eerie`
 
 **Gap 322** (7 words, fidelity 0.00)
 
 - Actual: `The children answered:
 
  'The wind, the wind,`
-- Predicted: `"Little girl, little girl,"`
+- Predicted: `whispered`
 
-**Gap 323** (5 words, fidelity 0.05)
+**Gap 323** (5 words, fidelity 0.00)
 
 - Actual: `and went on eating without`
-- Predicted: `RIGHT:  disturbing themselves. Hansel, who liked the
-taste of the roof, tore down a great piece of it, and Gretel pushed out
-the whole of one round window-pane, sat down, and enjoyed herself with
-it. Suddenly`
+- Predicted: `whispered`
 
 **Gap 324** (1 words, fidelity 0.00)
 
 - Actual: `themselves.`
-- Predicted: `Hansel,`
+- Predicted: `disturbing Hansel, who liked the taste down the great height it, pushed through of one small window-pane, sat by with`
 
 **Gap 325** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `much`
+- Predicted: `sweet`
 
 **Gap 326** (4 words, fidelity 0.00)
 
 - Actual: `of the roof, tore`
-- Predicted: `off`
+- Predicted: `with`
 
 **Gap 327** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `off`
+- Predicted: `gazing`
 
-**Gap 328** (2 words, fidelity 0.80)
+**Gap 328** (2 words, fidelity 0.00)
 
 - Actual: `piece of`
-- Predicted: `piece of it,`
+- Predicted: `gazing`
 
-**Gap 329** (2 words, fidelity 0.33)
+**Gap 329** (2 words, fidelity 0.00)
 
 - Actual: `and Gretel`
-- Predicted: `and greedily devoured it`
+- Predicted: `gently`
 
 **Gap 330** (3 words, fidelity 0.00)
 
 - Actual: `out
 the whole`
-- Predicted: `down another piece`
+- Predicted: `past`
 
 **Gap 331** (1 words, fidelity 0.00)
 
 - Actual: `round`
-- Predicted: `window-pane, sat down, and enjoyed herself with`
+- Predicted: `gazing`
 
-**Gap 332** (4 words, fidelity 0.40)
+**Gap 332** (4 words, fidelity 0.00)
 
 - Actual: `down, and enjoyed herself`
-- Predicted: `down`
+- Predicted: `gazed`
 
-**Gap 333** (1 words, fidelity 1.00)
+**Gap 333** (1 words, fidelity 0.00)
 
 - Actual: `it.`
-- Predicted: `it`
+- Predicted: `eagerly`
 
-**Gap 334** (5 words, fidelity 0.37)
+**Gap 334** (5 words, fidelity 0.00)
 
 - Actual: `the door opened, and a`
-- Predicted: `there arose from the forest a sound of weeping and sobbing.`
+- Predicted: `appeared`
 
 **Gap 335** (3 words, fidelity 0.00)
 
 - Actual: `old as the`
-- Predicted: `hills, who`
+- Predicted: `gazing over`
 
-**Gap 336** (2 words, fidelity 0.67)
+**Gap 336** (2 words, fidelity 0.00)
 
 - Actual: `herself on`
-- Predicted: `on`
+- Predicted: `leaning`
 
 **Gap 337** (1 words, fidelity 0.00)
 
 - Actual: `came`
-- Predicted: `stepped in, and said: 'Children, how late you are! Come in quickly, and I will warm you with a hot drink.'`
+- Predicted: `bent`
 
 **Gap 338** (1 words, fidelity 0.00)
 
 - Actual: `out.`
-- Predicted: `in`
+- Predicted: `towards`
 
 **Gap 339** (4 words, fidelity 0.00)
 
 - Actual: `and Gretel were
 so`
-- Predicted: `looked`
+- Predicted: `gazed`
 
 **Gap 340** (10 words, fidelity 0.00)
 
 - Actual: `frightened that they let fall what they had in their`
-- Predicted: `afraid`
+- Predicted: `shaking`
 
-**Gap 341** (2 words, fidelity 0.67)
+**Gap 341** (2 words, fidelity 0.80)
 
 - Actual: `The old`
-- Predicted: `the`
+- Predicted: `cried the old`
 
 **Gap 342** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `smiling`
+- Predicted: `kindly`
 
 **Gap 343** (6 words, fidelity 0.00)
 
@@ -9007,1221 +9039,1226 @@ so`
 **Gap 344** (6 words, fidelity 0.00)
 
 - Actual: `children, who has brought you here?`
-- Predicted: `dears`
+- Predicted: `kindly`
 
 **Gap 345** (1 words, fidelity 0.00)
 
 - Actual: `come`
-- Predicted: `in, and stay with me.`
+- Predicted: `told`
 
-**Gap 346** (3 words, fidelity 0.40)
+**Gap 346** (3 words, fidelity 0.00)
 
 - Actual: `and stay with`
-- Predicted: `and welcomed`
+- Predicted: `told`
 
-**Gap 347** (18 words, fidelity 0.14)
+**Gap 347** (18 words, fidelity 0.10)
 
 - Actual: `No
 harm shall happen to you.' She took them both by the hand, and led them
 into her`
-- Predicted: `terribly frightened that they let fall what they had in their hands. The old woman, however, nodded her head, and said: 'Oh, you dear children, who has brought you here? do come in, and stay with me.`
+- Predicted: `she`
 
 **Gap 348** (1 words, fidelity 0.00)
 
 - Actual: `house.`
-- Predicted: `cottage,`
+- Predicted: `made`
 
 **Gap 349** (1 words, fidelity 0.00)
 
 - Actual: `Then`
-- Predicted: `RIGHT:  good food was set before them, milk and pancakes, with sugar, apples, and nuts. Afterwards two pretty little beds were covered with clean white linen, and Hansel and Gretel lay down in them, and thou`
+- Predicted: `sweet`
 
-**Gap 350** (7 words, fidelity 0.15)
+**Gap 350** (7 words, fidelity 0.00)
 
 - Actual: `food was set before them, milk and`
-- Predicted: `pancakes, with sugar, apples, and nuts.`
+- Predicted: `sweet`
 
-**Gap 351** (1 words, fidelity 0.40)
+**Gap 351** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `and cakes, sweetened with`
+- Predicted: `and a pinch of salt`
 
-**Gap 352** (3 words, fidelity 0.40)
+**Gap 352** (3 words, fidelity 0.00)
 
 - Actual: `apples, and nuts.`
-- Predicted: `and sweetmeats,`
+- Predicted: `with love`
 
-**Gap 353** (4 words, fidelity 0.40)
+**Gap 353** (4 words, fidelity 0.00)
 
 - Actual: `pretty little
 beds were`
-- Predicted: `beds`
+- Predicted: `greedy`
 
-**Gap 354** (1 words, fidelity 1.00)
+**Gap 354** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `with`
+- Predicted: `dishes`
 
 **Gap 355** (11 words, fidelity 0.00)
 
 - Actual: `white linen, and Hansel and Gretel lay down
 in them, and`
-- Predicted: `sheets`
+- Predicted: `plates`
 
-**Gap 356** (4 words, fidelity 0.44)
+**Gap 356** (4 words, fidelity 0.40)
 
 - Actual: `they were in heaven.`
-- Predicted: `they were quite tired out.`
+- Predicted: `were`
 
-**Gap 357** (4 words, fidelity 0.43)
+**Gap 357** (4 words, fidelity 0.00)
 
 - Actual: `The old woman had`
-- Predicted: `the old woman seemed to be very kind and friendly,`
+- Predicted: `were`
 
 **Gap 358** (4 words, fidelity 0.00)
 
 - Actual: `pretended to be so`
-- Predicted: `kind; she was in reality`
+- Predicted: `were`
 
-**Gap 359** (4 words, fidelity 0.11)
+**Gap 359** (4 words, fidelity 0.00)
 
 - Actual: `she was in reality`
-- Predicted: `The old woman had only pretended to be so kind; but when the children had fallen asleep, she got up, opened the door of their little bed-chamber, and peeped in.`
+- Predicted: `lay`
 
-**Gap 360** (3 words, fidelity 0.40)
+**Gap 360** (3 words, fidelity 0.00)
 
 - Actual: `wicked witch, who`
-- Predicted: `cruel witch`
+- Predicted: `meager`
 
 **Gap 361** (6 words, fidelity 0.00)
 
 - Actual: `in wait for children, and had`
-- Predicted: `to sleep`
+- Predicted: `lay`
 
 **Gap 362** (4 words, fidelity 0.00)
 
 - Actual: `built the
 little house`
-- Predicted: `baked some fine white`
+- Predicted: `a store`
 
 **Gap 363** (4 words, fidelity 0.00)
 
 - Actual: `order to entice them`
-- Predicted: `the forest`
+- Predicted: `was`
 
-**Gap 364** (11 words, fidelity 0.40)
+**Gap 364** (11 words, fidelity 0.00)
 
 - Actual: `When a child fell
 into her power, she killed it, cooked`
-- Predicted: `that she might lure them into her power, and when the children came
-RIGHT:`
+- Predicted: `could they`
 
 **Gap 365** (3 words, fidelity 0.00)
 
 - Actual: `ate it, and`
-- Predicted: `in`
+- Predicted: `there was`
 
-**Gap 366** (1 words, fidelity 0.00)
+**Gap 366** (1 words, fidelity 0.50)
 
 - Actual: `was`
-- Predicted: `in order to`
+- Predicted: `there was no`
 
 **Gap 367** (1 words, fidelity 0.00)
 
 - Actual: `her.`
-- Predicted: `Witches have red eyes, and cannot see far, but they have`
+- Predicted: `not kept`
 
 **Gap 368** (3 words, fidelity 0.00)
 
 - Actual: `red eyes, and`
-- Predicted: `not very good eyesight`
+- Predicted: `could not be attended`
 
-**Gap 369** (9 words, fidelity 0.20)
+**Gap 369** (9 words, fidelity 0.00)
 
 - Actual: `see far, but they have
 a keen scent like`
-- Predicted: `see`
+- Predicted: `celebrate`
 
-**Gap 370** (2 words, fidelity 0.33)
+**Gap 370** (2 words, fidelity 0.00)
 
 - Actual: `beasts, and`
-- Predicted: `when wolfs and hares.`
+- Predicted: `are aware`
 
-**Gap 371** (1 words, fidelity 0.33)
+**Gap 371** (1 words, fidelity 0.00)
 
 - Actual: `when`
-- Predicted: `when human beings draw near.`
+- Predicted: `and dared`
 
 **Gap 372** (1 words, fidelity 0.00)
 
 - Actual: `beings`
-- Predicted: `when`
+- Predicted: `do not`
 
-**Gap 373** (1 words, fidelity 0.22)
+**Gap 373** (1 words, fidelity 0.00)
 
 - Actual: `near.`
-- Predicted: `near their fire, and the smell of food.`
+- Predicted: `When they saw, they shrieked!`
 
 **Gap 374** (5 words, fidelity 0.00)
 
 - Actual: `Hansel and Gretel came into`
-- Predicted: `when she saw`
+- Predicted: `approached`
 
-**Gap 375** (1 words, fidelity 1.00)
+**Gap 375** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `she`
+- Predicted: `mocked`
 
-**Gap 376** (1 words, fidelity 0.00)
+**Gap 376** (1 words, fidelity 0.10)
 
 - Actual: `with`
-- Predicted: `nasty`
+- Predicted: `at, with, resist, those, of, from, and, when, in, with, her, at, with, mocked, for, they, did, it, she, and`
 
 **Gap 377** (2 words, fidelity 0.00)
 
 - Actual: `and said`
-- Predicted: `have long arms`
+- Predicted: `sneered`
 
 **Gap 378** (2 words, fidelity 0.00)
 
 - Actual: `I have`
-- Predicted: `catch`
+- Predicted: `sneered at`
 
 **Gap 379** (4 words, fidelity 0.00)
 
 - Actual: `shall not escape me`
-- Predicted: `they are`
+- Predicted: `told`
 
-**Gap 380** (3 words, fidelity 0.50)
+**Gap 380** (3 words, fidelity 0.00)
 
 - Actual: `in the morning`
-- Predicted: `morning`
+- Predicted: `had`
 
 **Gap 381** (2 words, fidelity 0.00)
 
 - Actual: `the children`
 - Predicted: `they`
 
-**Gap 382** (2 words, fidelity 0.67)
+**Gap 382** (2 words, fidelity 0.00)
 
 - Actual: `awake, she`
-- Predicted: `awake`
+- Predicted: `drawn`
 
-**Gap 383** (5 words, fidelity 0.40)
+**Gap 383** (5 words, fidelity 0.18)
 
 - Actual: `already up, and when she`
-- Predicted: `she got up and crept quietly towards the children's bed.`
+- Predicted: `saw both Miss Bates and Mr. Martin pretty, though plump and rather she muttered to herself!'`
 
-**Gap 384** (3 words, fidelity 0.00)
+**Gap 384** (3 words, fidelity 0.05)
 
 - Actual: `of them sleeping`
-- Predicted: `the children were fast asleep`
+- Predicted: `neighbourhood, everyone laughed with malice, mocking them, they called her again!' Early morning before dawn were they saw both Miss Havisham and her pretty, plump and faded she muttered over a mouthful!'`
 
-**Gap 385** (2 words, fidelity 0.18)
+**Gap 385** (2 words, fidelity 0.00)
 
 - Actual: `looking so`
-- Predicted: `she saw that they were so plump and bonny,`
+- Predicted: `with`
 
-**Gap 386** (2 words, fidelity 1.00)
+**Gap 386** (2 words, fidelity 0.00)
 
 - Actual: `with their`
-- Predicted: `with their`
+- Predicted: `fat`
 
 **Gap 387** (2 words, fidelity 0.00)
 
 - Actual: `rosy cheeks`
-- Predicted: `delicious`
+- Predicted: `adorably`
 
-**Gap 388** (7 words, fidelity 0.13)
+**Gap 388** (7 words, fidelity 0.17)
 
 - Actual: `to herself: 'That
 will be a dainty`
-- Predicted: `she said to herself, "At last I am avenged. The children have now
-eaten enough of my flesh and blood." So she seized a knife, cut her
-finger, and let three or four drops of blood fall on the floor.`
+- Predicted: `she muttered a bitter mouthful!`
 
-**Gap 389** (6 words, fidelity 0.31)
+**Gap 389** (6 words, fidelity 0.00)
 
 - Actual: `Then she seized Hansel with her`
-- Predicted: `she took the little boy by her`
+- Predicted: `old`
 
 **Gap 390** (6 words, fidelity 0.00)
 
 - Actual: `hand, carried him into a little`
-- Predicted: `claw`
+- Predicted: `haggard, pale, and withered`
 
-**Gap 391** (2 words, fidelity 1.00)
+**Gap 391** (2 words, fidelity 0.00)
 
 - Actual: `and locked`
-- Predicted: `and locked`
+- Predicted: `she swallowed`
 
 **Gap 392** (1 words, fidelity 0.00)
 
 - Actual: `in`
-- Predicted: `away`
+- Predicted: `followed`
 
 **Gap 393** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `the`
+- Predicted: `she swallowed`
 
-**Gap 394** (1 words, fidelity 1.00)
+**Gap 394** (1 words, fidelity 0.00)
 
 - Actual: `door.`
-- Predicted: `door.`
+- Predicted: `grated floorboards screamed would shake him till some`
 
 **Gap 395** (4 words, fidelity 0.00)
 
 - Actual: `as he might, it`
-- Predicted: `would not help him.`
+- Predicted: `echo`
 
 **Gap 396** (3 words, fidelity 0.00)
 
 - Actual: `not help him.`
-- Predicted: `do nothing`
+- Predicted: `echo`
 
-**Gap 397** (3 words, fidelity 0.40)
+**Gap 397** (3 words, fidelity 0.00)
 
 - Actual: `Then she went`
-- Predicted: `she whispered`
+- Predicted: `wouldn't`
 
 **Gap 398** (1 words, fidelity 0.00)
 
 - Actual: `Gretel,`
-- Predicted: `she went to`
+- Predicted: `stop`
 
-**Gap 399** (1 words, fidelity 1.00)
+**Gap 399** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `till`
 
 **Gap 400** (9 words, fidelity 0.00)
 
 - Actual: `she awoke, and cried: 'Get up, lazy thing, fetch`
-- Predicted: `shook her till`
+- Predicted: `until`
 
 **Gap 401** (15 words, fidelity 0.00)
 
 - Actual: `water, and cook something good for your brother, he is in the
 stable outside, and`
-- Predicted: `bread`
+- Predicted: `fatigue`
 
-**Gap 402** (4 words, fidelity 0.17)
+**Gap 402** (4 words, fidelity 0.10)
 
 - Actual: `to be made fat.`
-- Predicted: `would not help him. Then she went to`
+- Predicted: `would tremble to tremble shook till some drop is and she forced wicked And the best but`
 
-**Gap 403** (3 words, fidelity 0.00)
+**Gap 403** (3 words, fidelity 0.13)
 
 - Actual: `When he is`
-- Predicted: `and fetched water greedily`
+- Predicted: `to tremble shook everyone till not a single atom is left fat,`
 
-**Gap 404** (16 words, fidelity 0.11)
+**Gap 404** (16 words, fidelity 0.08)
 
 - Actual: `I will eat him.'
 Gretel began to weep bitterly, but it was all in vain, for`
-- Predicted: `and when he is fat, 
+- Predicted: `to her core until even the fattest`
 
-and every day she put him on the scales to see whether he had grown.`
-
-**Gap 405** (1 words, fidelity 0.00)
+**Gap 405** (1 words, fidelity 1.00)
 
 - Actual: `was`
-- Predicted: `forced`
+- Predicted: `was`
 
-**Gap 406** (4 words, fidelity 0.00)
+**Gap 406** (4 words, fidelity 0.40)
 
 - Actual: `to do what the`
-- Predicted: `as`
+- Predicted: `to`
 
 **Gap 407** (2 words, fidelity 0.00)
 
 - Actual: `witch commanded.`
-- Predicted: `old woman`
+- Predicted: `was`
 
-**Gap 408** (2 words, fidelity 0.29)
+**Gap 408** (2 words, fidelity 0.00)
 
 - Actual: `now the`
-- Predicted: `And the wicked witch treated`
+- Predicted: `And she forced her wicked best friend but`
 
-**Gap 409** (6 words, fidelity 0.20)
+**Gap 409** (6 words, fidelity 0.00)
 
 - Actual: `food was cooked for poor Hansel,`
-- Predicted: `and the best food`
+- Predicted: `and`
 
 **Gap 410** (4 words, fidelity 0.00)
 
 - Actual: `Gretel got nothing
 but`
-- Predicted: `and instead of bread she gave him rye-crusts.`
+- Predicted: `And greedily devoured`
 
 **Gap 411** (1 words, fidelity 0.00)
 
 - Actual: `morning`
-- Predicted: `day`
+- Predicted: `crab-shells`
 
-**Gap 412** (3 words, fidelity 0.40)
+**Gap 412** (3 words, fidelity 0.00)
 
 - Actual: `to the little`
-- Predicted: `into the`
+- Predicted: `into`
 
-**Gap 413** (1 words, fidelity 0.00)
+**Gap 413** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `or she was`
+- Predicted: `And loudly`
 
 **Gap 414** (5 words, fidelity 0.00)
 
 - Actual: `Hansel, stretch out your finger`
-- Predicted: `that I may feel if you will soon be fat.'`
+- Predicted: `"Help!"`
 
 **Gap 415** (5 words, fidelity 0.00)
 
 - Actual: `I may feel if you`
-- Predicted: `will soon`
+- Predicted: `the cat and the dog`
 
 **Gap 416** (3 words, fidelity 0.00)
 
 - Actual: `soon
 be fat.'`
-- Predicted: `Hansel, however, stretched out a little bone to her, and`
+- Predicted: `not leave`
 
-**Gap 417** (6 words, fidelity 0.18)
+**Gap 417** (6 words, fidelity 0.00)
 
 - Actual: `however, stretched out a little bone`
-- Predicted: `stuck out his thin finger`
+- Predicted: `and led`
 
-**Gap 418** (2 words, fidelity 0.67)
+**Gap 418** (2 words, fidelity 0.00)
 
 - Actual: `her, and`
-- Predicted: `her`
+- Predicted: `lead`
 
-**Gap 419** (4 words, fidelity 0.40)
+**Gap 419** (4 words, fidelity 0.00)
 
 - Actual: `old woman, who had`
-- Predicted: `old`
+- Predicted: `into`
 
 **Gap 420** (9 words, fidelity 0.00)
 
 - Actual: `eyes, could not see it, and thought it was`
-- Predicted: `sight`
+- Predicted: `into`
 
-**Gap 421** (2 words, fidelity 0.67)
+**Gap 421** (2 words, fidelity 0.00)
 
 - Actual: `finger, and`
-- Predicted: `finger.`
+- Predicted: `sudden`
 
 **Gap 422** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `it was quite thin, and she was vexed.`
+- Predicted: `and found`
 
-**Gap 423** (2 words, fidelity 0.67)
+**Gap 423** (2 words, fidelity 0.40)
 
 - Actual: `was no`
-- Predicted: `was`
+- Predicted: `was blocked by`
 
-**Gap 424** (3 words, fidelity 0.00)
+**Gap 424** (3 words, fidelity 0.33)
 
 - Actual: `of fattening
 him.`
-- Predicted: `was`
+- Predicted: `led him by`
 
-**Gap 425** (13 words, fidelity 0.00)
+**Gap 425** (13 words, fidelity 0.18)
 
 - Actual: `When four weeks had gone by, and Hansel still remained thin, she
 was`
-- Predicted: `so`
+- Predicted: `led
+to
+find
+such
+Hansel's
+was
+astonished
+that
+the
+way
+Hansel
+seized
+his
+impatience
+and
+would
+cry
+out
+now
+then`
 
 **Gap 426** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `by`
+- Predicted: `diminished`
 
 **Gap 427** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `she grew so angry`
+- Predicted: `grew`
 
 **Gap 428** (4 words, fidelity 0.00)
 
 - Actual: `not wait any longer.`
-- Predicted: `upon`
+- Predicted: `disappear`
 
-**Gap 429** (2 words, fidelity 0.50)
+**Gap 429** (2 words, fidelity 0.00)
 
 - Actual: `Gretel,' she`
-- Predicted: `she`
+- Predicted: `"stir yourself, come quickly,"`
 
 **Gap 430** (2 words, fidelity 0.00)
 
 - Actual: `the girl,`
-- Predicted: `Gretel,`
+- Predicted: `"stir yourself,=\""`
 
 **Gap 431** (3 words, fidelity 0.00)
 
 - Actual: `and bring some`
-- Predicted: `fill his`
+- Predicted: `bitterly`
 
 **Gap 432** (3 words, fidelity 0.00)
 
 - Actual: `Hansel be fat`
-- Predicted: `or lean, tomorrow I will kill him, and cook him.'`
+- Predicted: `us, let us go, or next day`
 
-**Gap 433** (1 words, fidelity 0.29)
+**Gap 433** (1 words, fidelity 0.00)
 
 - Actual: `lean,`
-- Predicted: `Gretel, and let Hansel be lean,`
+- Predicted: `Let us go`
 
-**Gap 434** (7 words, fidelity 0.16)
+**Gap 434** (7 words, fidelity 0.00)
 
 - Actual: `I will kill him, and cook him.'`
-- Predicted: `till remained thin, she was seized with impatience and would not wait any longer. 'Now, then, Gretel,' she cried to the girl, 'stir yourself, and bring some water. Let Hansel be fat or lean, tomorrow morning I shall have him.'`
+- Predicted: `must you`
 
-**Gap 435** (5 words, fidelity 0.09)
+**Gap 435** (5 words, fidelity 0.00)
 
 - Actual: `how the poor little sister`
-- Predicted: `Gretel did lament when she had to fetch the water, and how her tears did flow down her cheeks! 'Dear God, do help us,' she cried. 'If the wild beasts in the forest had but devoured us, we should`
+- Predicted: `would you`
 
 **Gap 436** (5 words, fidelity 0.00)
 
 - Actual: `she had to fetch the`
-- Predicted: `poor`
+- Predicted: `Let it run`
 
-**Gap 437** (6 words, fidelity 0.12)
+**Gap 437** (6 words, fidelity 0.00)
 
 - Actual: `and how her tears did flow`
-- Predicted: `down her cheeks! 'Dear God, do help us,' she`
+- Predicted: `pour`
 
-**Gap 438** (2 words, fidelity 0.33)
+**Gap 438** (2 words, fidelity 0.00)
 
 - Actual: `her cheeks!`
-- Predicted: `and filled her pitcher.`
+- Predicted: `dry`
 
 **Gap 439** (4 words, fidelity 0.00)
 
 - Actual: `Dear God, do help`
-- Predicted: `"Ah, little sister,"`
+- Predicted: `drown`
 
-**Gap 440** (2 words, fidelity 0.29)
+**Gap 440** (2 words, fidelity 0.00)
 
 - Actual: `she
 cried.`
-- Predicted: `cried the poor little sister`
+- Predicted: `or rather`
 
 **Gap 441** (1 words, fidelity 0.00)
 
 - Actual: `If`
-- Predicted: `said`
+- Predicted: `warn`
 
 **Gap 442** (5 words, fidelity 0.00)
 
 - Actual: `wild beasts in the forest`
-- Predicted: `had`
+- Predicted: `drowned`
 
-**Gap 443** (5 words, fidelity 0.12)
+**Gap 443** (5 words, fidelity 0.00)
 
 - Actual: `but devoured us, we should`
-- Predicted: `upon me, and I should be glad to get rid of them.`
+- Predicted: `warned`
 
-**Gap 444** (6 words, fidelity 0.08)
+**Gap 444** (6 words, fidelity 0.00)
 
 - Actual: `any rate have died together.' 'Just`
-- Predicted: `not
-
-keep your noise to yourself,'
-said the old woman, 'it won't help you at all.'`
+- Predicted: `warn`
 
 **Gap 445** (3 words, fidelity 0.00)
 
 - Actual: `your noise to`
-- Predicted: `calmly`
+- Predicted: `warn`
 
-**Gap 446** (4 words, fidelity 0.47)
+**Gap 446** (4 words, fidelity 0.00)
 
 - Actual: `said the old woman,`
-- Predicted: `said the old woman, 'we will eat first, I have already heated t`
+- Predicted: `if`
 
 **Gap 447** (8 words, fidelity 0.00)
 
 - Actual: `help you at all.'
 
 Early in the morning,`
-- Predicted: `happen anything worse than we are suffering now.`
+- Predicted: `hurt`
 
-**Gap 448** (5 words, fidelity 0.33)
+**Gap 448** (5 words, fidelity 0.00)
 
 - Actual: `had to go out and`
-- Predicted: `got up and went to the stove`
+- Predicted: `must`
 
-**Gap 449** (2 words, fidelity 0.22)
+**Gap 449** (2 words, fidelity 0.67)
 
 - Actual: `up the`
-- Predicted: `out the pot to fetch some water`
+- Predicted: `the`
 
 **Gap 450** (3 words, fidelity 0.00)
 
 - Actual: `the water, and`
-- Predicted: `out`
+- Predicted: `a`
 
-**Gap 451** (2 words, fidelity 0.40)
+**Gap 451** (2 words, fidelity 0.00)
 
 - Actual: `the fire.`
-- Predicted: `up the chimney.`
+- Predicted: `up`
 
-**Gap 452** (1 words, fidelity 0.00)
+**Gap 452** (1 words, fidelity 0.33)
 
 - Actual: `will`
-- Predicted: `we must bake first,`
+- Predicted: `We will bake her, I`
 
 **Gap 453** (4 words, fidelity 0.00)
 
 - Actual: `first,' said the old`
-- Predicted: `we will bake some pancakes,`
+- Predicted: `uprise`
 
 **Gap 454** (2 words, fidelity 0.00)
 
 - Actual: `have already`
-- Predicted: `said the old woman, 'I will heat the oven, and you shall creep in and see if it is properly heated, so that`
+- Predicted: `must`
 
-**Gap 455** (5 words, fidelity 0.57)
+**Gap 455** (5 words, fidelity 0.00)
 
 - Actual: `the oven, and kneaded the`
-- Predicted: `the oven`
+- Predicted: `stirred`
 
 **Gap 456** (2 words, fidelity 0.00)
 
 - Actual: `She pushed`
-- Predicted: `so`
+- Predicted: `hastily`
 
 **Gap 457** (1 words, fidelity 0.00)
 
 - Actual: `Gretel`
-- Predicted: `poor`
+- Predicted: `scared`
 
-**Gap 458** (3 words, fidelity 0.67)
+**Gap 458** (3 words, fidelity 0.00)
 
 - Actual: `to the oven,`
-- Predicted: `into the oven`
+- Predicted: `extracted`
 
-**Gap 459** (1 words, fidelity 1.00)
+**Gap 459** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `which`
+- Predicted: `weakened`
 
-**Gap 460** (3 words, fidelity 0.50)
+**Gap 460** (3 words, fidelity 0.00)
 
 - Actual: `of fire were`
-- Predicted: `were`
+- Predicted: `flames`
 
-**Gap 461** (10 words, fidelity 0.11)
+**Gap 461** (10 words, fidelity 0.00)
 
 - Actual: `Creep in,' said the witch, 'and see if it is`
-- Predicted: `she waited until the oven had heated`
+- Predicted: `lightly`
 
-**Gap 462** (1 words, fidelity 1.00)
+**Gap 462** (1 words, fidelity 0.00)
 
 - Actual: `heated,`
-- Predicted: `heated`
+- Predicted: `had`
 
-**Gap 463** (1 words, fidelity 0.29)
+**Gap 463** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `that it is hot enough.'`
+- Predicted: `had`
 
-**Gap 464** (5 words, fidelity 0.12)
+**Gap 464** (5 words, fidelity 0.00)
 
 - Actual: `can put the bread in.'`
-- Predicted: `that I may tell you when it is ready.'`
+- Predicted: `pulled`
 
 **Gap 465** (3 words, fidelity 0.00)
 
 - Actual: `was inside, she`
 - Predicted: `had`
 
-**Gap 466** (1 words, fidelity 0.33)
+**Gap 466** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to push me out again?`
+- Predicted: `had`
 
-**Gap 467** (1 words, fidelity 0.13)
+**Gap 467** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `shut the door behind me, and let me bake in it, like the bread.`
+- Predicted: `to`
 
 **Gap 468** (3 words, fidelity 0.00)
 
 - Actual: `and let her`
-- Predicted: `so`
+- Predicted: `did`
 
 **Gap 469** (4 words, fidelity 0.00)
 
 - Actual: `in it, and then`
-- Predicted: `her`
+- Predicted: `to`
 
-**Gap 470** (2 words, fidelity 0.50)
+**Gap 470** (2 words, fidelity 0.00)
 
 - Actual: `would eat`
-- Predicted: `would kill`
+- Predicted: `tried`
 
 **Gap 471** (7 words, fidelity 0.00)
 
 - Actual: `But Gretel saw what she had in`
-- Predicted: `did not take any heed`
+- Predicted: `mind, never mind,`
 
-**Gap 472** (3 words, fidelity 0.17)
+**Gap 472** (3 words, fidelity 0.00)
 
 - Actual: `and said: 'I`
-- Predicted: `she said to Gretel, "Now listen, you ugly brat,`
+- Predicted: `mind, let's do it; how do you think we will?`
 
-**Gap 473** (7 words, fidelity 0.00)
+**Gap 473** (7 words, fidelity 0.38)
 
 - Actual: `not know how I am
 to do`
-- Predicted: `could`
+- Predicted: `mind, do it; how do you think I can?`
 
 **Gap 474** (2 words, fidelity 0.00)
 
 - Actual: `I get`
-- Predicted: `in? 'Silly goose,' said the old woman.`
+- Predicted: `could`
 
 **Gap 475** (4 words, fidelity 0.00)
 
 - Actual: `goose,' said the old`
 - Predicted: `foolish`
 
-**Gap 476** (1 words, fidelity 0.11)
+**Gap 476** (1 words, fidelity 0.00)
 
 - Actual: `The`
-- Predicted: `the door is big enough; just look, I can get in myself!' and she crept up and`
+- Predicted: `Mindlessly`
 
 **Gap 477** (2 words, fidelity 0.00)
 
 - Actual: `is big`
-- Predicted: `wide`
+- Predicted: `was`
 
 **Gap 478** (4 words, fidelity 0.00)
 
 - Actual: `just look, I can`
-- Predicted: `that you`
+- Predicted: `could`
 
 **Gap 479** (1 words, fidelity 0.00)
 
 - Actual: `in`
-- Predicted: `my`
+- Predicted: `to`
 
-**Gap 480** (4 words, fidelity 0.29)
+**Gap 480** (4 words, fidelity 0.40)
 
 - Actual: `she crept up and`
-- Predicted: `she stepped aside`
+- Predicted: `she`
 
 **Gap 481** (2 words, fidelity 0.00)
 
 - Actual: `her head`
-- Predicted: `in`
+- Predicted: `she`
 
-**Gap 482** (2 words, fidelity 0.22)
+**Gap 482** (2 words, fidelity 0.05)
 
 - Actual: `the oven.`
-- Predicted: `the little door, and squeezed herself through.`
+- Predicted: `mind, do try; how do manage' Silly old woman. door was high; that get myself!' and quickly thrust herself into the corner that drove the iron bolt. Oh! then everything began to quite horribly, and the witch was miserably`
 
-**Gap 483** (6 words, fidelity 0.29)
+**Gap 483** (6 words, fidelity 0.00)
 
 - Actual: `Then Gretel gave her a push`
-- Predicted: `Gretel,`
+- Predicted: `thrust it through`
 
-**Gap 484** (7 words, fidelity 0.29)
+**Gap 484** (7 words, fidelity 0.00)
 
 - Actual: `her far into it, and shut the`
-- Predicted: `her sister pushed the old woman in.`
+- Predicted: `pushed`
 
 **Gap 485** (4 words, fidelity 0.00)
 
 - Actual: `door, and fastened the`
-- Predicted: `bolt.`
+- Predicted: `shoved`
 
 **Gap 486** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `the old woman began to bang and scream`
+- Predicted: `happened`
 
-**Gap 487** (2 words, fidelity 0.50)
+**Gap 487** (2 words, fidelity 0.00)
 
 - Actual: `to howl`
-- Predicted: `to scream`
+- Predicted: `frightened`
 
 **Gap 488** (4 words, fidelity 0.00)
 
 - Actual: `but Gretel ran away`
-- Predicted: `and the flames blazed high and roared so terribly.`
+- Predicted: `and the witch's greedily`
 
-**Gap 489** (2 words, fidelity 0.14)
+**Gap 489** (2 words, fidelity 0.06)
 
 - Actual: `the godless`
-- Predicted: `and came to Gretel, and both children went together to the door.`
+- Predicted: `into the oven that drove the iron bolt. Oh! then the horror began quite horribly, and the witch, miserably burnt, however, like Hansel, his stable, cried: we sprang like`
 
 **Gap 490** (3 words, fidelity 0.00)
 
 - Actual: `burnt to death.`
-- Predicted: `dead!`
+- Predicted: `tormented`
 
-**Gap 491** (1 words, fidelity 1.00)
+**Gap 491** (1 words, fidelity 0.00)
 
 - Actual: `ran`
-- Predicted: `ran`
+- Predicted: `cried`
 
 **Gap 492** (2 words, fidelity 0.00)
 
 - Actual: `lightning to`
-- Predicted: `away like a bird from the cage when the door is opened.`
+- Predicted: `cried: come my`
 
-**Gap 493** (1 words, fidelity 0.50)
+**Gap 493** (1 words, fidelity 0.00)
 
 - Actual: `opened`
-- Predicted: `she opened the`
+- Predicted: `led`
 
 **Gap 494** (1 words, fidelity 0.00)
 
 - Actual: `little`
-- Predicted: `cage,`
+- Predicted: `captive`
 
-**Gap 495** (1 words, fidelity 0.40)
+**Gap 495** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and opened the door`
+- Predicted: `cried: Come little`
 
 **Gap 496** (1 words, fidelity 0.00)
 
 - Actual: `Hansel,`
-- Predicted: `there`
+- Predicted: `we sprang like birds from a cage`
 
 **Gap 497** (2 words, fidelity 0.00)
 
 - Actual: `are saved!`
-- Predicted: `said`
+- Predicted: `began terribly, whereas the wicked`
 
-**Gap 498** (7 words, fidelity 0.29)
+**Gap 498** (7 words, fidelity 0.00)
 
 - Actual: `The old witch is dead!' Then Hansel`
-- Predicted: `Hansel sprang like a bird from its cage when the door is opened.`
+- Predicted: `leaped`
 
-**Gap 499** (3 words, fidelity 0.00)
+**Gap 499** (3 words, fidelity 0.40)
 
 - Actual: `a bird from`
-- Predicted: `out of`
+- Predicted: `we sprang like kittens from a sack`
 
-**Gap 500** (1 words, fidelity 1.00)
+**Gap 500** (1 words, fidelity 0.00)
 
 - Actual: `cage`
-- Predicted: `cage`
+- Predicted: `weakened`
 
 **Gap 501** (2 words, fidelity 0.00)
 
 - Actual: `the door`
-- Predicted: `it`
+- Predicted: `weakened`
 
 **Gap 502** (1 words, fidelity 0.00)
 
 - Actual: `opened.`
-- Predicted: `open, How they did`
+- Predicted: `sprang like lambs`
 
-**Gap 503** (2 words, fidelity 0.67)
+**Gap 503** (2 words, fidelity 0.00)
 
 - Actual: `they did`
-- Predicted: `did`
+- Predicted: `rejoice and embrace each other! As if her heart had need of it, the witch's every glance and gesture there seemed to fill the air with magic!`
 
-**Gap 504** (3 words, fidelity 0.29)
+**Gap 504** (3 words, fidelity 0.00)
 
 - Actual: `each other, and`
-- Predicted: `jumped up and down`
+- Predicted: `we`
 
 **Gap 505** (4 words, fidelity 0.00)
 
 - Actual: `about and kiss each`
-- Predicted: `they`
+- Predicted: `like`
 
 **Gap 506** (1 words, fidelity 0.00)
 
 - Actual: `And`
-- Predicted: `when`
+- Predicted: `we`
 
 **Gap 507** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `soon`
+- Predicted: `we`
 
-**Gap 508** (3 words, fidelity 0.80)
+**Gap 508** (3 words, fidelity 0.00)
 
 - Actual: `no longer any`
-- Predicted: `no longer`
+- Predicted: `she`
 
 **Gap 509** (2 words, fidelity 0.00)
 
 - Actual: `to fear`
-- Predicted: `their provisions were now at an end,`
+- Predicted: `she`
 
-**Gap 510** (4 words, fidelity 0.14)
+**Gap 510** (4 words, fidelity 0.00)
 
 - Actual: `they went into the`
-- Predicted: `so they now began to live in peace and happiness.`
+- Predicted: `she`
 
-**Gap 511** (3 words, fidelity 0.32)
+**Gap 511** (3 words, fidelity 0.00)
 
 - Actual: `house, and in`
-- Predicted: `house, into the kitchen; and there, in a corner, stood a large cauldron
-smoking and bubbling.`
+- Predicted: `when she has`
 
 **Gap 512** (1 words, fidelity 0.00)
 
 - Actual: `corner`
-- Predicted: `room`
+- Predicted: `when joy is kindled How freely rejoice and embrace happiness dance with each other! As she had need of her, the witch's every treasure there lay in her chests These far-off pebbles!' she thrust whatever could fit in, said: I,`
 
 **Gap 513** (1 words, fidelity 0.00)
 
 - Actual: `stood`
-- Predicted: `were cabinets and drawers`
+- Predicted: `to`
 
 **Gap 514** (5 words, fidelity 0.00)
 
 - Actual: `full of pearls and jewels.`
-- Predicted: `did`
+- Predicted: `gather`
 
 **Gap 515** (1 words, fidelity 0.00)
 
 - Actual: `are`
-- Predicted: `were`
+- Predicted: `danced`
 
-**Gap 516** (2 words, fidelity 0.67)
+**Gap 516** (2 words, fidelity 0.00)
 
 - Actual: `better than`
-- Predicted: `better than these little`
+- Predicted: `farther`
 
 **Gap 517** (3 words, fidelity 0.00)
 
 - Actual: `said Hansel, and`
-- Predicted: `so they began to stuff themselves`
+- Predicted: `thrust`
 
 **Gap 518** (3 words, fidelity 0.17)
 
 - Actual: `into his
 pockets`
-- Predicted: `his little hand into one of the chests and began to put the prettiest
-pearls and jewels into his pocket,`
+- Predicted: `thrust whatever could instantly into, said: I, pinafore full.`
 
 **Gap 519** (2 words, fidelity 0.00)
 
 - Actual: `be got`
-- Predicted: `fitly`
+- Predicted: `stuffed`
 
-**Gap 520** (2 words, fidelity 0.33)
+**Gap 520** (2 words, fidelity 0.00)
 
 - Actual: `and Gretel`
-- Predicted: `and filled her pockets`
+- Predicted: `thrust all`
 
 **Gap 521** (10 words, fidelity 0.00)
 
 - Actual: `too, will take
 something home with me,' and filled her`
-- Predicted: `so my pinafore is full.`
+- Predicted: `pulled`
 
 **Gap 522** (4 words, fidelity 0.00)
 
 - Actual: `But now we must`
-- Predicted: `so`
+- Predicted: `I will`
 
 **Gap 523** (3 words, fidelity 0.00)
 
 - Actual: `off,' said Hansel,`
-- Predicted: `better`
+- Predicted: `fill the pinafore`
 
 **Gap 524** (3 words, fidelity 0.00)
 
 - Actual: `we may get`
-- Predicted: `must`
+- Predicted: `pushed`
 
 **Gap 525** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `into`
+- Predicted: `thrust anything in, said: I, pinafore full. be that out witch's forest.`
 
 **Gap 526** (10 words, fidelity 0.00)
 
 - Actual: `they had walked for two hours, they came to a`
-- Predicted: `when`
+- Predicted: `there`
 
-**Gap 527** (1 words, fidelity 0.13)
+**Gap 527** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of swamp, which was so deep and miry that they could not cross it.`
+- Predicted: `lay a`
 
 **Gap 528** (2 words, fidelity 0.00)
 
 - Actual: `We cannot`
-- Predicted: `they saw no way`
+- Predicted: `said`
 
 **Gap 529** (5 words, fidelity 0.00)
 
 - Actual: `said Hansel, 'I see no`
-- Predicted: `they`
+- Predicted: `lay`
 
 **Gap 530** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `no`
+- Predicted: `there`
 
-**Gap 531** (3 words, fidelity 0.33)
+**Gap 531** (3 words, fidelity 0.00)
 
 - Actual: `And there is`
-- Predicted: `there for thee?`
+- Predicted: `said`
 
 **Gap 532** (1 words, fidelity 0.00)
 
 - Actual: `no`
-- Predicted: `ferry,`
+- Predicted: `also needed`
 
-**Gap 533** (8 words, fidelity 0.08)
+**Gap 533** (8 words, fidelity 0.00)
 
 - Actual: `answered Gretel, 'but a white
 duck is swimming`
-- Predicted: `LEFT: of the witch's forest.'
-
-When they had walked for two hours, they came to a great stretch of
-water. 'We cannot cross,' said Hansel, 'I see no foot-plank, and no
-bridge.' 'And there is also no ferry,' **the girl**`
+- Predicted: `was`
 
 **Gap 534** (9 words, fidelity 0.00)
 
 - Actual: `if I ask her, she will help us over.'`
-- Predicted: `said`
+- Predicted: `Then came the witch`
 
 **Gap 535** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `said`
+- Predicted: `Then the witch cried: Then dost thou see, Hansel my little one, waiting for thee there: There's never a cross, nor a ferry, nor a bridge.`
 
 **Gap 536** (4 words, fidelity 0.00)
 
 - Actual: `Little duck, little duck,`
-- Predicted: `kindly`
+- Predicted: `"Can`
 
-**Gap 537** (1 words, fidelity 0.00)
+**Gap 537** (1 words, fidelity 0.50)
 
 - Actual: `thou`
-- Predicted: `see,`
+- Predicted: `dost thou see`
 
-**Gap 538** (3 words, fidelity 0.00)
+**Gap 538** (3 words, fidelity 0.50)
 
 - Actual: `and Gretel are`
-- Predicted: `does`
+- Predicted: `are`
 
 **Gap 539** (2 words, fidelity 0.00)
 
 - Actual: `for thee?`
-- Predicted: `Gretel,`
+- Predicted: `little`
 
 **Gap 540** (2 words, fidelity 0.00)
 
 - Actual: `a plank,`
-- Predicted: `far`
+- Predicted: `any`
 
 **Gap 541** (6 words, fidelity 0.00)
 
 - Actual: `bridge in sight,
   Take us across`
-- Predicted: `how`
+- Predicted: `famine`
 
 **Gap 542** (3 words, fidelity 0.00)
 
 - Actual: `thy back so`
-- Predicted: `thou white.`
+- Predicted: `the cottage`
 
 **Gap 543** (7 words, fidelity 0.00)
 
 - Actual: `The duck came to them, and Hansel`
-- Predicted: `sat`
+- Predicted: `sitting`
 
 **Gap 544** (5 words, fidelity 0.00)
 
 - Actual: `himself on its back, and`
-- Predicted: `herself`
+- Predicted: `quietly`
 
 **Gap 545** (6 words, fidelity 0.00)
 
 - Actual: `his sister to sit by him.`
-- Predicted: `her`
+- Predicted: `was`
 
 **Gap 546** (1 words, fidelity 0.00)
 
 - Actual: `No,'`
-- Predicted: `said`
+- Predicted: `was`
 
-**Gap 547** (10 words, fidelity 0.00)
+**Gap 547** (10 words, fidelity 0.09)
 
 - Actual: `Gretel, 'that will be too heavy
 for the little duck;`
-- Predicted: `her`
+- Predicted: `There's never sorrow or care on happy white.' As she seated herself, told him replied she had been good once more across and slowly walked the forest seemed to be listening and watching`
 
 **Gap 548** (9 words, fidelity 0.00)
 
 - Actual: `shall take us across, one after the other.' The`
-- Predicted: `did not wish to carry both of you.`
+- Predicted: `that it`
 
-**Gap 549** (8 words, fidelity 0.29)
+**Gap 549** (8 words, fidelity 0.00)
 
 - Actual: `little duck did so, and when they were`
-- Predicted: `duck once safely across and had`
+- Predicted: `peaceful`
 
 **Gap 550** (1 words, fidelity 0.00)
 
 - Actual: `safely`
-- Predicted: `across`
+- Predicted: `told me replied that she felt good once more across and quickly walked through the forest seemed silent and still from the house. Then suddenly rushed`
 
 **Gap 551** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `then`
+- Predicted: `quietly`
 
 **Gap 552** (4 words, fidelity 0.00)
 
 - Actual: `for a short time,`
-- Predicted: `and said, "Father, we are come!"`
+- Predicted: `slowly`
 
 **Gap 553** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `more and more familiar`
+- Predicted: `silent`
 
 **Gap 554** (1 words, fidelity 0.00)
 
 - Actual: `more`
-- Predicted: `familiar`
+- Predicted: `silent`
 
-**Gap 555** (9 words, fidelity 0.14)
+**Gap 555** (9 words, fidelity 0.00)
 
 - Actual: `more familiar
 to them, and at length they saw`
-- Predicted: `far more friendly than before;`
+- Predicted: `free`
 
 **Gap 556** (3 words, fidelity 0.00)
 
 - Actual: `afar their father's`
-- Predicted: `a distance they saw a`
+- Predicted: `seemed`
 
-**Gap 557** (4 words, fidelity 0.40)
+**Gap 557** (4 words, fidelity 0.00)
 
 - Actual: `they began to run,`
-- Predicted: `they`
+- Predicted: `suddenly`
 
-**Gap 558** (3 words, fidelity 0.00)
+**Gap 558** (3 words, fidelity 0.50)
 
 - Actual: `into the parlour,`
-- Predicted: `and threw themselves round`
+- Predicted: `into`
 
 **Gap 559** (2 words, fidelity 0.00)
 
 - Actual: `threw themselves`
-- Predicted: `round`
+- Predicted: `into`
 
-**Gap 560** (3 words, fidelity 0.14)
+**Gap 560** (3 words, fidelity 0.00)
 
 - Actual: `their father's neck.`
-- Predicted: `their father threw himself upon them, embraced them, and kissed them.`
+- Predicted: `to seem peaceful and distant from the strange house. Then she rushed into the room and stood round`
 
 **Gap 561** (1 words, fidelity 0.00)
 
 - Actual: `man`
-- Predicted: `father`
+- Predicted: `to seem like having left the`
 
 **Gap 562** (1 words, fidelity 0.00)
 
 - Actual: `not`
-- Predicted: `had known one happy hour since he had`
+- Predicted: `away from her house. Then she rushed back and ran round the The girl had known one happy hour in the forest; the woman, long dead.`
 
-**Gap 563** (4 words, fidelity 0.24)
+**Gap 563** (4 words, fidelity 0.29)
 
 - Actual: `since he had
 left`
-- Predicted: `since he had not known one happy hour since the children were taken into the forest; the woman, however, was dead.`
+- Predicted: `had never experienced`
 
-**Gap 564** (3 words, fidelity 0.22)
+**Gap 564** (3 words, fidelity 0.00)
 
 - Actual: `children in the`
-- Predicted: `forest; the woman, however, was dead.`
+- Predicted: `she`
 
-**Gap 565** (2 words, fidelity 0.00)
+**Gap 565** (2 words, fidelity 0.67)
 
 - Actual: `however, was`
-- Predicted: `she had not known one happy hour since she had`
+- Predicted: `was`
 
-**Gap 566** (2 words, fidelity 0.22)
+**Gap 566** (2 words, fidelity 0.00)
 
 - Actual: `her pinafore`
-- Predicted: `her purse until it was quite empty`
+- Predicted: `rushed into the house and locked the door round it The clock had struck one happy hour in the deep forest; the woman, long dead. Gretel emptied the purse until it was bare, then one last time to add Then anxiety seized in perfect`
 
 **Gap 567** (7 words, fidelity 0.00)
 
 - Actual: `pearls and precious stones ran about the`
-- Predicted: `out`
+- Predicted: `emptied`
 
 **Gap 568** (3 words, fidelity 0.00)
 
 - Actual: `and Hansel threw`
-- Predicted: `so she filled many a small box with them, taking one handful after another out of his pocket to`
+- Predicted: `she`
 
 **Gap 569** (7 words, fidelity 0.00)
 
 - Actual: `handful after another out of his pocket`
-- Predicted: `in`
+- Predicted: `drank`
 
-**Gap 570** (2 words, fidelity 0.33)
+**Gap 570** (2 words, fidelity 0.00)
 
 - Actual: `to them.`
-- Predicted: `to increase the heap.`
+- Predicted: `a`
 
 **Gap 571** (1 words, fidelity 0.00)
 
 - Actual: `all`
-- Predicted: `the anxiety was at an end, and they lived together`
+- Predicted: `poured into the empty`
 
-**Gap 572** (8 words, fidelity 0.00)
+**Gap 572** (8 words, fidelity 0.22)
 
 - Actual: `was at an end, and they lived together`
-- Predicted: `away`
+- Predicted: `was`
 
-**Gap 573** (1 words, fidelity 1.00)
+**Gap 573** (1 words, fidelity 0.00)
 
 - Actual: `happiness.`
-- Predicted: `happiness,`
+- Predicted: `perfectly`
 
 **Gap 574** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `and when the bread was`
+- Predicted: `before I finish`
 
-**Gap 575** (1 words, fidelity 0.50)
+**Gap 575** (1 words, fidelity 0.67)
 
 - Actual: `a`
-- Predicted: `was a little`
+- Predicted: `a small`
 
 **Gap 576** (3 words, fidelity 0.00)
 
 - Actual: `catches it, may`
-- Predicted: `take this little skin`
+- Predicted: `whoever`
 
-**Gap 577** (1 words, fidelity 0.67)
+**Gap 577** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `him a`
+- Predicted: `pretends`
 
 **Gap 578** (1 words, fidelity 0.00)
 
 - Actual: `fur`
-- Predicted: `felt`
+- Predicted: `with`
 
-**Gap 579** (2 words, fidelity 0.67)
+**Gap 579** (2 words, fidelity 0.00)
 
 - Actual: `out of`
-- Predicted: `out`
+- Predicted: `to shrink`
 
 ## Position 4 — threshold 6.615 bits
 
@@ -10312,808 +10349,790 @@ good <gap 221> from <gap 222>. <gap 223>. <gap 224> forest; <gap 225> dead. <gap
 - Actual: `Hard`
 - Predicted: `lived`
 
-**Gap 2** (1 words, fidelity 0.22)
+**Gap 2** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `Hard by lived a mean and miserly man.`
+- Predicted: `in`
 
-**Gap 3** (8 words, fidelity 0.52)
+**Gap 3** (8 words, fidelity 0.20)
 
 - Actual: `a poor wood-cutter with his wife and his`
-- Predicted: `a poor woodcutter with his wife and two children lived in a little house.`
+- Predicted: `a`
 
 **Gap 4** (1 words, fidelity 0.00)
 
 - Actual: `children.`
-- Predicted: `sons`
+- Predicted: `elk`
 
-**Gap 5** (9 words, fidelity 0.40)
+**Gap 5** (9 words, fidelity 0.00)
 
 - Actual: `The boy was called Hansel and the girl Gretel.`
-- Predicted: `the boy and the girl were poorly clad, and had hardly anything to cover
-their nakedness.`
+- Predicted: `elk`
 
-**Gap 6** (4 words, fidelity 0.19)
+**Gap 6** (4 words, fidelity 0.00)
 
 - Actual: `He had
 little to`
-- Predicted: `they had scarcely enough to put away a little corn for winter; besides,
-whenever there was a short supply of food, the children had to go without`
+- Predicted: `wolf`
 
-**Gap 7** (6 words, fidelity 0.40)
+**Gap 7** (6 words, fidelity 0.00)
 
 - Actual: `and to break, and once when`
-- Predicted: `and little to eat.`
+- Predicted: `wolves`
 
 **Gap 8** (13 words, fidelity 0.00)
 
 - Actual: `dearth fell on the
 land, he could no longer procure even daily bread.`
-- Predicted: `want`
+- Predicted: `bears`
 
 **Gap 9** (2 words, fidelity 0.00)
 
 - Actual: `Now when`
-- Predicted: `one day`
+- Predicted: `enormous`
 
 **Gap 10** (1 words, fidelity 0.00)
 
 - Actual: `thought`
-- Predicted: `provided`
+- Predicted: `growled`
 
-**Gap 11** (9 words, fidelity 0.17)
+**Gap 11** (9 words, fidelity 0.00)
 
 - Actual: `this by night in his bed, and tossed about`
-- Predicted: `over his fate`
+- Predicted: `sank`
 
 **Gap 12** (3 words, fidelity 0.00)
 
 - Actual: `his anxiety, he`
-- Predicted: `restlessly`
+- Predicted: `the ground`
 
-**Gap 13** (11 words, fidelity 0.17)
+**Gap 13** (11 words, fidelity 0.00)
 
 - Actual: `and said to his wife: 'What is to become of us?`
-- Predicted: `and`
+- Predicted: `with`
 
 **Gap 14** (14 words, fidelity 0.00)
 
 - Actual: `How are we
 to feed our poor children, when we no longer have anything`
-- Predicted: `was`
+- Predicted: `he fell`
 
-**Gap 15** (23 words, fidelity 0.27)
+**Gap 15** (23 words, fidelity 0.07)
 
 - Actual: `for
 ourselves?' 'I'll tell you what, husband,' answered the woman, 'early
 tomorrow morning we will take the children out into the forest to`
-- Predicted: `shall we go into the forest on Saturday, and hide ourselves behind`
+- Predicted: `the pain`
 
 **Gap 16** (2 words, fidelity 0.00)
 
 - Actual: `it is`
-- Predicted: `the darkest place`
+- Predicted: `there`
 
-**Gap 17** (31 words, fidelity 0.06)
+**Gap 17** (31 words, fidelity 0.00)
 
 - Actual: `thickest; there we will light a fire for them, and give each
 of them one more piece of bread, and then we will go to our work and
 leave them alone.`
-- Predicted: `dark and lonely.`
+- Predicted: `could`
 
-**Gap 18** (11 words, fidelity 0.37)
+**Gap 18** (11 words, fidelity 0.00)
 
 - Actual: `They will not find the way home again, and we shall`
-- Predicted: `we will make them a bed with twigs and leaves, and they shall stay
-with us until the rain is over.`
+- Predicted: `reside`
 
 **Gap 19** (25 words, fidelity 0.00)
 
 - Actual: `rid of them.' 'No, wife,' said the man, 'I will not do that; how can I
 bear to leave my children alone in the forest?--`
-- Predicted: `so`
+- Predicted: `embarked`
 
-**Gap 20** (25 words, fidelity 0.16)
+**Gap 20** (25 words, fidelity 0.07)
 
 - Actual: `the wild animals would
 soon come and tear them to pieces.' 'O, you fool!' said she, 'then we
 must all four die of hunger, you`
-- Predicted: `The two children had also not slept a wink all night, and were so frightened that they did not dare to shut their eyes.`
+- Predicted: `to bear`
 
 **Gap 21** (2 words, fidelity 0.00)
 
 - Actual: `as well`
-- Predicted: `grind the planks into splinters,`
+- Predicted: `operate`
 
 **Gap 22** (4 words, fidelity 0.00)
 
 - Actual: `the planks for our`
-- Predicted: `out`
+- Predicted: `may ride`
 
 **Gap 23** (9 words, fidelity 0.00)
 
 - Actual: `and she left him no peace until he consented.`
-- Predicted: `said the little girl`
+- Predicted: `mayors`
 
-**Gap 24** (15 words, fidelity 0.12)
+**Gap 24** (15 words, fidelity 0.00)
 
 - Actual: `But I feel very
 sorry for the poor children, all the same,' said the man.`
-- Predicted: `The`
+- Predicted: `mayors`
 
-**Gap 25** (5 words, fidelity 0.05)
+**Gap 25** (5 words, fidelity 0.00)
 
 - Actual: `The two children had also`
-- Predicted: `RIGHT:  not been able to sleep for hunger, and had
-heard what their stepmother had said to their father. Gretel wept
-bitter tears, and said to Hansel: 'Now all is over with us.' 'Be quiet,`
+- Predicted: `may not`
 
-**Gap 26** (17 words, fidelity 0.21)
+**Gap 26** (17 words, fidelity 0.08)
 
 - Actual: `been able to sleep for hunger, and had
 heard what their stepmother had said to their father.`
-- Predicted: `been allowed to go out into the forest to gather food.`
+- Predicted: `may carry planes coffins,' said not`
 
 **Gap 27** (23 words, fidelity 0.00)
 
 - Actual: `Gretel wept
 bitter tears, and said to Hansel: 'Now all is over with us.' 'Be quiet,
 Gretel,' said Hansel, 'do not distress yourself,`
-- Predicted: `so`
+- Predicted: `surprising`
 
-**Gap 28** (32 words, fidelity 0.34)
+**Gap 28** (32 words, fidelity 0.00)
 
 - Actual: `I will soon find a way
 to help us.' And when the old folks had fallen asleep, he got up, put
 on his little coat, opened the door below, and crept outside.`
-- Predicted: `and I will find a way to escape.`
+- Predicted: `saved`
 
-**Gap 29** (19 words, fidelity 0.08)
+**Gap 29** (19 words, fidelity 0.00)
 
 - Actual: `The moon
 shone brightly, and the white pebbles which lay in front of the house
 glittered like real silver`
-- Predicted: `out into the forest with a piece`
+- Predicted: `saved`
 
 **Gap 30** (3 words, fidelity 0.00)
 
 - Actual: `Hansel stooped and`
-- Predicted: `out`
+- Predicted: `pockets`
 
 **Gap 31** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `his`
+- Predicted: `with`
 
-**Gap 32** (12 words, fidelity 0.60)
+**Gap 32** (12 words, fidelity 0.00)
 
 - Actual: `pocket of his coat with as many as he could get in.`
-- Predicted: `pockets with as many as he could find.`
+- Predicted: `pockets`
 
 **Gap 33** (26 words, fidelity 0.00)
 
 - Actual: `Then he went
 back and said to Gretel: 'Be comforted, dear little sister, and sleep in
 peace, God will not forsake us,' and he lay down`
-- Predicted: `soon`
+- Predicted: `purses`
 
-**Gap 34** (3 words, fidelity 0.20)
+**Gap 34** (3 words, fidelity 0.00)
 
 - Actual: `in his bed.`
-- Predicted: `he took his sister by the hand`
+- Predicted: `again and again`
 
 **Gap 35** (1 words, fidelity 0.00)
 
 - Actual: `When`
-- Predicted: `and said to them: 'Take this loaf, but be sure to bring back a full basket
-of firewood. If you don't, you'll get a beating.'`
+- Predicted: `lazy`
 
 **Gap 36** (1 words, fidelity 0.00)
 
 - Actual: `dawned,`
-- Predicted: `break had come`
+- Predicted: `lazy`
 
-**Gap 37** (17 words, fidelity 0.23)
+**Gap 37** (17 words, fidelity 0.00)
 
 - Actual: `before the sun had risen, the woman came and awoke the
 two children, saying: 'Get up, you`
-- Predicted: `it was still very early, and the children were`
+- Predicted: `lazy`
 
-**Gap 38** (32 words, fidelity 0.06)
+**Gap 38** (32 words, fidelity 0.00)
 
 - Actual: `we are going into the
 forest to fetch wood.' She gave each a little piece of bread, and said:
 'There is something for your dinner, but do not eat it up before`
-- Predicted: `said`
+- Predicted: `arise`
 
 **Gap 39** (21 words, fidelity 0.00)
 
 - Actual: `for you will get nothing else.' Gretel took the bread under her apron,
 as Hansel had the pebbles in his pocket.`
-- Predicted: `she warned`
+- Predicted: `then, slothful`
 
-**Gap 40** (12 words, fidelity 0.00)
+**Gap 40** (12 words, fidelity 0.15)
 
 - Actual: `Then they all set out together
 on the way to the forest.`
-- Predicted: `and said: 'We are now far enough from home, that wicked witch
-will not find us again.'`
+- Predicted: `then`
 
-**Gap 41** (8 words, fidelity 0.09)
+**Gap 41** (8 words, fidelity 0.00)
 
 - Actual: `When they had walked a short time, Hansel`
-- Predicted: `Hansel stood still and peeped back at the house, and did so again and again.`
+- Predicted: `then`
 
-**Gap 42** (8 words, fidelity 0.09)
+**Gap 42** (8 words, fidelity 0.00)
 
 - Actual: `still and peeped back at the house, and`
-- Predicted: `standing by the white bread-crust which the baker had forgotten to carry away.`
+- Predicted: `firmly`
 
 **Gap 43** (4 words, fidelity 0.00)
 
 - Actual: `so again and again.`
-- Predicted: `not`
+- Predicted: `firmly`
 
-**Gap 44** (9 words, fidelity 0.29)
+**Gap 44** (9 words, fidelity 0.00)
 
 - Actual: `His father said: 'Hansel, what are you looking at`
-- Predicted: `why are you standing still`
+- Predicted: `firmly`
 
 **Gap 45** (4 words, fidelity 0.00)
 
 - Actual: `and staying
 behind for?`
-- Predicted: `pay close heed`
+- Predicted: `not`
 
 **Gap 46** (6 words, fidelity 0.00)
 
 - Actual: `Pay attention, and do not forget`
-- Predicted: `RIGHT:  go on walking.`
+- Predicted: `firmly`
 
 **Gap 47** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `so carefully`
+- Predicted: `could`
 
-**Gap 48** (32 words, fidelity 0.05)
+**Gap 48** (32 words, fidelity 0.00)
 
 - Actual: `your legs.' 'Ah,
 father,' said Hansel, 'I am looking at my little white cat, which is
 sitting up on the roof, and wants to say goodbye to me.' The wife said:
 'Fool,`
-- Predicted: `that is`
+- Predicted: `was`
 
-**Gap 49** (17 words, fidelity 0.07)
+**Gap 49** (17 words, fidelity 0.00)
 
 - Actual: `that is not your little cat, that is the morning sun which is
 shining on the chimneys.'`
-- Predicted: `she said: "Hansel, don't be such a fool, listen to your mother."`
+- Predicted: `to`
 
 **Gap 50** (5 words, fidelity 0.00)
 
 - Actual: `however, had not been looking`
-- Predicted: `glanced`
+- Predicted: `gathered`
 
-**Gap 51** (12 words, fidelity 0.33)
+**Gap 51** (12 words, fidelity 0.00)
 
 - Actual: `at
 the cat, but had been constantly throwing one of the white`
-- Predicted: `at the cat, but it did not turn round or come back.`
+- Predicted: `gathered`
 
 **Gap 52** (7 words, fidelity 0.00)
 
 - Actual: `out of his pocket on the road.`
-- Predicted: `at into a heap and was carefully placing them.`
+- Predicted: `gathered`
 
 **Gap 53** (18 words, fidelity 0.00)
 
 - Actual: `When they had reached the middle of the forest, the father said: 'Now,
 children, pile up some wood,`
-- Predicted: `so`
+- Predicted: `gathered`
 
-**Gap 54** (22 words, fidelity 0.08)
+**Gap 54** (22 words, fidelity 0.00)
 
 - Actual: `and I will light a fire that you may not
 be cold.' Hansel and Gretel gathered brushwood together, as high as a`
-- Predicted: `build a small`
+- Predicted: `scattered`
 
 **Gap 55** (1 words, fidelity 0.00)
 
 - Actual: `hill.`
-- Predicted: `garden-house`
+- Predicted: `boy`
 
-**Gap 56** (1 words, fidelity 0.18)
+**Gap 56** (1 words, fidelity 0.00)
 
 - Actual: `The`
-- Predicted: `when the brushwood was lighted, and the flames were burning`
+- Predicted: `carefully`
 
-**Gap 57** (8 words, fidelity 0.22)
+**Gap 57** (8 words, fidelity 0.00)
 
 - Actual: `was lighted, and when the flames were burning`
-- Predicted: `was`
+- Predicted: `carefully`
 
-**Gap 58** (6 words, fidelity 0.29)
+**Gap 58** (6 words, fidelity 0.00)
 
 - Actual: `high, the woman said: 'Now, children,`
-- Predicted: `high`
+- Predicted: `carefully`
 
 **Gap 59** (7 words, fidelity 0.00)
 
 - Actual: `yourselves down by the
 fire and rest,`
-- Predicted: `they may not`
+- Predicted: `carefully`
 
 **Gap 60** (9 words, fidelity 0.00)
 
 - Actual: `will go into the forest and cut some wood.`
-- Predicted: `had better slept.`
+- Predicted: `quietly`
 
 **Gap 61** (11 words, fidelity 0.00)
 
 - Actual: `When we
 have done, we will come back and fetch you`
-- Predicted: `so`
+- Predicted: `down`
 
-**Gap 62** (21 words, fidelity 0.13)
+**Gap 62** (21 words, fidelity 0.00)
 
 - Actual: `Hansel and Gretel sat by the fire, and when noon came, each ate a little
 piece of bread, and as they`
-- Predicted: `the children heard the strokes of the wood-axe`
+- Predicted: `clearly`
 
-**Gap 63** (4 words, fidelity 0.35)
+**Gap 63** (4 words, fidelity 0.00)
 
 - Actual: `the strokes of the`
-- Predicted: `they heard the whistling of the ax锯木的声音，他们以为他们的父亲近了。但那不是斧头的声音，而是他把一根枯枝绑在一棵树上，风在吹动那棵树，使得树枝发出呼啸声。而他们`
+- Predicted: `hearing`
 
 **Gap 64** (1 words, fidelity 0.00)
 
 - Actual: `they`
-- Predicted: `fell from the axe, and the children heard it all.`
+- Predicted: `ringing`
 
-**Gap 65** (5 words, fidelity 0.27)
+**Gap 65** (5 words, fidelity 0.00)
 
 - Actual: `that their father was near.`
-- Predicted: `that it was not yet time to go to bed.`
+- Predicted: `had heard him`
 
-**Gap 66** (25 words, fidelity 0.17)
+**Gap 66** (25 words, fidelity 0.07)
 
 - Actual: `It was not the axe, however, but
 a branch which he had fastened to a withered tree which the wind was
 blowing backwards and forwards.`
-- Predicted: `and thought: 'What a lot of noise he is making!`
+- Predicted: `had heard him`
 
-**Gap 67** (20 words, fidelity 0.09)
+**Gap 67** (20 words, fidelity 0.00)
 
 - Actual: `And as they had been sitting such a long
 time, their eyes closed with fatigue, and they fell fast asleep.`
-- Predicted: `they thought`
+- Predicted: `to carve`
 
 **Gap 68** (10 words, fidelity 0.00)
 
 - Actual: `When
 at last they awoke, it was already dark night.`
-- Predicted: `which he had made of bread crumbs`
+- Predicted: `wait`
 
-**Gap 69** (22 words, fidelity 0.08)
+**Gap 69** (22 words, fidelity 0.00)
 
 - Actual: `Gretel began to cry and
 said: 'How are we to get out of the forest now?' But Hansel comforted
 her and said:`
-- Predicted: `the wind was`
+- Predicted: `wait`
 
-**Gap 70** (3 words, fidelity 0.40)
+**Gap 70** (3 words, fidelity 0.50)
 
 - Actual: `wait a little,`
-- Predicted: `shall wait`
+- Predicted: `wait`
 
 **Gap 71** (34 words, fidelity 0.00)
 
 - Actual: `the moon has risen, and then we
 will soon find the way.' And when the full moon had risen, Hansel took
 his little sister by the hand, and followed the pebbles which shone like`
-- Predicted: `they found themselves rich`
+- Predicted: `wait for it to be officially recognized as`
 
 **Gap 72** (7 words, fidelity 0.00)
 
 - Actual: `silver pieces, and showed them the way.`
-- Predicted: `money`
+- Predicted: `terms`
 
 **Gap 73** (7 words, fidelity 0.00)
 
 - Actual: `They walked the whole night long, and`
-- Predicted: `out
-by`
+- Predicted: `introduced`
 
 **Gap 74** (10 words, fidelity 0.00)
 
 - Actual: `break of day came once more
 to their father's house.`
-- Predicted: `morning,`
+- Predicted: `coined`
 
-**Gap 75** (32 words, fidelity 0.10)
+**Gap 75** (32 words, fidelity 0.00)
 
 - Actual: `They knocked at the door, and when the woman
 opened it and saw that it was Hansel and Gretel, she said: 'You naughty
 children, why have you slept so long in the`
-- Predicted: `into the forest?—we thought you were`
+- Predicted: `invented`
 
 **Gap 76** (9 words, fidelity 0.00)
 
 - Actual: `we thought you were
 never coming back at all!'`
-- Predicted: `more`
+- Predicted: `What`
 
-**Gap 77** (6 words, fidelity 0.00)
+**Gap 77** (6 words, fidelity 0.25)
 
 - Actual: `father, however, rejoiced, for it had`
-- Predicted: `mother's`
+- Predicted: `had been`
 
 **Gap 78** (9 words, fidelity 0.00)
 
 - Actual: `him to the heart to leave them behind alone.`
-- Predicted: `that he had come through with his children.`
+- Predicted: `had been`
 
-**Gap 79** (24 words, fidelity 0.10)
+**Gap 79** (24 words, fidelity 0.00)
 
 - Actual: `Not long afterwards, there was once more great dearth throughout the
 land, and the children heard their mother saying at night to their
 father:`
-- Predicted: `'Nothing remains but to go on our way, for everything in the house has been consumed.`
+- Predicted: `had been cleared`
 
 **Gap 80** (2 words, fidelity 0.00)
 
 - Actual: `is eaten`
-- Predicted: `had`
+- Predicted: `happened`
 
 **Gap 81** (2 words, fidelity 0.00)
 
 - Actual: `we have`
-- Predicted: `one half loaf left, and that`
+- Predicted: `glided`
 
 **Gap 82** (8 words, fidelity 0.00)
 
 - Actual: `half loaf left, and that
 is the end.`
-- Predicted: `meat`
+- Predicted: `once`
 
-**Gap 83** (11 words, fidelity 0.28)
+**Gap 83** (11 words, fidelity 0.00)
 
 - Actual: `The children must go, we will take them farther into the`
-- Predicted: `therefore we must hide them in the closet, and cover them up with
-clothes, and then we will cut the loaf in two, and each of us shall have
-a half.'`
+- Predicted: `once`
 
-**Gap 84** (17 words, fidelity 0.11)
+**Gap 84** (17 words, fidelity 0.00)
 
 - Actual: `so that they will not find their way out again; there is no other
 means of saving`
-- Predicted: `so`
+- Predicted: `let's`
 
-**Gap 85** (13 words, fidelity 0.23)
+**Gap 85** (13 words, fidelity 0.00)
 
 - Actual: `The man's heart was heavy, and he thought:
 'It would be better for`
-- Predicted: `said that the children must be given the bread, he must also tell`
+- Predicted: `did we`
 
-**Gap 86** (25 words, fidelity 0.17)
+**Gap 86** (25 words, fidelity 0.00)
 
 - Actual: `to share the last mouthful with your
 children.' The woman, however, would listen to nothing that he had to
 say, but scolded and reproached him.`
-- Predicted: `that
+- Predicted: `let us`
 
-The sentence structure suggests a simple conjunction or pronoun to connect the two thoughts. "That" fits well here as it introduces the reason why it would be better for the man.`
-
-**Gap 87** (7 words, fidelity 0.12)
+**Gap 87** (7 words, fidelity 0.25)
 
 - Actual: `He who says A must say B,`
-- Predicted: `he did not want to obey her any longer,`
+- Predicted: `must`
 
-**Gap 88** (17 words, fidelity 0.08)
+**Gap 88** (17 words, fidelity 0.00)
 
 - Actual: `and as he had yielded the first time, he had to do so a second time
 also.`
-- Predicted: `who says A must say B, likewise,`
+- Predicted: `should`
 
-**Gap 89** (11 words, fidelity 0.16)
+**Gap 89** (11 words, fidelity 0.00)
 
 - Actual: `The children, however, were still awake and had heard the conversation.`
-- Predicted: `When the old folks were asleep, Hansel again got up, and wanted to go
-out and pick up pebbles as he had done before, but the woman had locked
-the door, and Hansel could not get out. Nevertheless he calyzed through the window, and filled his pocket with as many white`
+- Predicted: `are`
 
-**Gap 90** (13 words, fidelity 0.13)
+**Gap 90** (13 words, fidelity 0.00)
 
 - Actual: `When the old folks were asleep, Hansel again got up, and wanted to`
-- Predicted: `were commanded`
+- Predicted: `are`
 
-**Gap 91** (23 words, fidelity 0.08)
+**Gap 91** (23 words, fidelity 0.00)
 
 - Actual: `out and pick up pebbles as he had done before, but the woman had locked
 the door, and Hansel could not get out.`
-- Predicted: `out of bed`
+- Predicted: `on`
 
-**Gap 92** (29 words, fidelity 0.11)
+**Gap 92** (29 words, fidelity 0.00)
 
 - Actual: `Nevertheless he comforted his
 little sister, and said: 'Do not cry, Gretel, go to sleep quietly, the
 good God will help us.'
 
 Early in the morning came the woman,`
-- Predicted: `so he thought to himself`
+- Predicted: `waste`
 
-**Gap 93** (8 words, fidelity 0.08)
+**Gap 93** (8 words, fidelity 0.00)
 
 - Actual: `and took the children out of their
 beds.`
-- Predicted: `and said to her: "Listen, Gretel, be quiet and don't cry, and do as I do."`
+- Predicted: `devoured`
 
-**Gap 94** (15 words, fidelity 0.11)
+**Gap 94** (15 words, fidelity 0.00)
 
 - Actual: `Their piece of bread was given to them, but it was still smaller
 than the`
-- Predicted: `Nevertheless he comforted his little sister, and said: 'Do not cry, Gretel, go to sleep quietly, the good God will help us.'`
+- Predicted: `spent`
 
-**Gap 95** (1 words, fidelity 0.40)
+**Gap 95** (1 words, fidelity 0.00)
 
 - Actual: `before.`
-- Predicted: `than the time before.`
+- Predicted: `took`
 
-**Gap 96** (9 words, fidelity 0.10)
+**Gap 96** (9 words, fidelity 0.00)
 
 - Actual: `On the way into the forest Hansel crumbled his`
-- Predicted: `so that the children might not see how poor we are.'`
+- Predicted: `took`
 
 **Gap 97** (3 words, fidelity 0.00)
 
 - Actual: `his pocket, and`
-- Predicted: `it`
+- Predicted: `left`
 
 **Gap 98** (5 words, fidelity 0.00)
 
 - Actual: `stood still and threw a`
-- Predicted: `so`
+- Predicted: `left`
 
 **Gap 99** (3 words, fidelity 0.00)
 
 - Actual: `on the ground.`
-- Predicted: `so`
+- Predicted: `took`
 
 **Gap 100** (19 words, fidelity 0.00)
 
 - Actual: `why do you stop and look round?' said the father, 'go on.' 'I
 am looking back at my little`
-- Predicted: `"Hansel, listen to me,"`
+- Predicted: `had caught`
 
 **Gap 101** (15 words, fidelity 0.00)
 
 - Actual: `which is sitting on the roof, and
 wants to say goodbye to me,' answered Hansel.`
-- Predicted: `so`
+- Predicted: `ate`
 
-**Gap 102** (23 words, fidelity 0.07)
+**Gap 102** (23 words, fidelity 0.00)
 
 - Actual: `Fool!' said the woman,
 'that is not your little pigeon, that is the morning sun that is shining
 on the chimney.' Hansel, however`
-- Predicted: `so
-little
-by
-little,`
+- Predicted: `gave`
 
 **Gap 103** (9 words, fidelity 0.00)
 
 - Actual: `by little, threw all the crumbs
 on the path.`
-- Predicted: `he knew better than to believe her.`
+- Predicted: `girl`
 
 **Gap 104** (19 words, fidelity 0.00)
 
 - Actual: `The woman led the children still deeper into the forest, where they had
 never in their lives been before.`
-- Predicted: `so`
+- Predicted: `said`
 
-**Gap 105** (11 words, fidelity 0.00)
+**Gap 105** (11 words, fidelity 0.17)
 
 - Actual: `Then a great fire was again made, and
 the mother said:`
-- Predicted: `she`
+- Predicted: `said`
 
 **Gap 106** (2 words, fidelity 0.00)
 
 - Actual: `sit there,`
-- Predicted: `that`
+- Predicted: `say`
 
-**Gap 107** (12 words, fidelity 0.09)
+**Gap 107** (12 words, fidelity 0.00)
 
 - Actual: `children, and when you are tired
 you may sleep a little; we`
-- Predicted: `were going into the forest to cut wood, and in`
+- Predicted: `sincerely`
 
 **Gap 108** (34 words, fidelity 0.00)
 
 - Actual: `going into the forest to cut wood, and in
 the evening when we are done, we will come and fetch you away.' When
 it was noon, Gretel shared her piece of bread with Hansel,`
-- Predicted: `who had`
+- Predicted: `not`
 
-**Gap 109** (7 words, fidelity 0.15)
+**Gap 109** (7 words, fidelity 0.00)
 
 - Actual: `who had
 scattered his by the way.`
-- Predicted: `they had eaten their piece of bread, and then we will go into the forest and
-pick some berries.`
+- Predicted: `enacted`
 
 **Gap 110** (4 words, fidelity 0.00)
 
 - Actual: `Then they fell asleep`
-- Predicted: `the morning and afternoon passed, but`
+- Predicted: `were enacted`
 
 **Gap 111** (1 words, fidelity 0.00)
 
 - Actual: `evening`
-- Predicted: `passed, but no one came to the poor children. They did not awake until it was dark night, and Hansel comforted his little sister and said: 'Just wait,`
+- Predicted: `the bill`
 
-**Gap 112** (8 words, fidelity 0.13)
+**Gap 112** (8 words, fidelity 0.20)
 
 - Actual: `but
 no one came to the poor children.`
-- Predicted: `and morning came without their being able`
+- Predicted: `the law`
 
-**Gap 113** (20 words, fidelity 0.19)
+**Gap 113** (20 words, fidelity 0.00)
 
 - Actual: `They did not awake until it was dark
 night, and Hansel comforted his little sister and said: 'Just wait,
 Gretel,`
-- Predicted: `and when the sun was setting she said to her child`
+- Predicted: `bills`
 
-**Gap 114** (32 words, fidelity 0.15)
+**Gap 114** (32 words, fidelity 0.06)
 
 - Actual: `the moon rises, and then we shall see the crumbs of bread
 which I have strewn about, they will show us our way home again.' When
 the moon came they set out,`
-- Predicted: `but they found no crumbs, for the many`
+- Predicted: `the law`
 
-**Gap 115** (24 words, fidelity 0.11)
+**Gap 115** (24 words, fidelity 0.08)
 
 - Actual: `but they found no crumbs, for the many
 thousands of birds which fly about in the woods and fields had picked
 them all up.`
-- Predicted: `Hansel said to Gretel: 'We shall soon find the way,' but`
+- Predicted: `the end`
 
 **Gap 116** (16 words, fidelity 0.00)
 
 - Actual: `Hansel said to Gretel: 'We shall soon find the way,' but
 they did not find it.`
-- Predicted: `so`
+- Predicted: `was`
 
-**Gap 117** (28 words, fidelity 0.21)
+**Gap 117** (28 words, fidelity 0.00)
 
 - Actual: `They walked the whole night and all the next day
 too from morning till evening, but they did not get out of the forest,
 and were very hungry,`
-- Predicted: `for the sun was already setting, and Hansel said to Gretel: 'Pity us, dear God, and do not let us die of hunger and thirst out here.'`
+- Predicted: `decidedly`
 
-**Gap 118** (16 words, fidelity 0.21)
+**Gap 118** (16 words, fidelity 0.11)
 
 - Actual: `for they had nothing to eat but two or three
 berries, which grew on the ground.`
-- Predicted: `and at last they sat down on a log and began to cry,`
+- Predicted: `and they began`
 
 **Gap 119** (6 words, fidelity 0.00)
 
 - Actual: `as they were so weary that`
-- Predicted: `and`
+- Predicted: `and joined`
 
-**Gap 120** (15 words, fidelity 0.07)
+**Gap 120** (15 words, fidelity 0.00)
 
 - Actual: `legs would carry them no longer, they lay down beneath a tree and fell
 asleep.`
-- Predicted: `morning till evening, but they did not get out of the forest,`
+- Predicted: `hostilities`
 
-**Gap 121** (12 words, fidelity 0.00)
+**Gap 121** (12 words, fidelity 0.11)
 
 - Actual: `It was now three mornings since they had left their father's house.`
-- Predicted: `so`
+- Predicted: `and so their adventure began soon,`
 
 **Gap 122** (1 words, fidelity 0.00)
 
 - Actual: `They`
-- Predicted: `So the children`
+- Predicted: `hostilities`
 
-**Gap 123** (17 words, fidelity 0.15)
+**Gap 123** (17 words, fidelity 0.09)
 
 - Actual: `to walk again, but they always came deeper into the forest, and if
 help did not come`
-- Predicted: `soon, they must needs die of hunger and weariness.`
+- Predicted: `and their arguments began quickly,`
 
-**Gap 124** (7 words, fidelity 0.17)
+**Gap 124** (7 words, fidelity 0.00)
 
 - Actual: `they must die of hunger and weariness.`
-- Predicted: `they would starve to death.`
+- Predicted: `after`
 
-**Gap 125** (26 words, fidelity 0.00)
+**Gap 125** (26 words, fidelity 0.06)
 
 - Actual: `When it
 was mid-day, they saw a beautiful snow-white bird sitting on a bough,
 which sang so delightfully that they stood still and listened to it.`
-- Predicted: `wondered`
+- Predicted: `after a long journey`
 
-**Gap 126** (16 words, fidelity 0.40)
+**Gap 126** (16 words, fidelity 0.00)
 
 - Actual: `And
 when its song was over, it spread its wings and flew away before them,
 and`
-- Predicted: `and when it flew away, they followed it until`
+- Predicted: `quickly`
 
-**Gap 127** (14 words, fidelity 0.13)
+**Gap 127** (14 words, fidelity 0.00)
 
 - Actual: `followed it until they reached a little house, on the roof of
 which it`
-- Predicted: `followed`
+- Predicted: `disembarked`
 
-**Gap 128** (19 words, fidelity 0.32)
+**Gap 128** (19 words, fidelity 0.18)
 
 - Actual: `and when they approached the little house they saw
 that it was built of bread and covered with cakes,`
-- Predicted: `and then it flew into the house and showed them the way.`
+- Predicted: `and they immediately`
 
-**Gap 129** (7 words, fidelity 0.12)
+**Gap 129** (7 words, fidelity 0.13)
 
 - Actual: `that the windows
 were of clear sugar.`
-- Predicted: `and it was quite covered with cakes of all sorts;`
+- Predicted: `they dismounted; but on set the bit above,`
 
 **Gap 130** (2 words, fidelity 0.00)
 
 - Actual: `We will`
-- Predicted: `cherry`
+- Predicted: `the horse`
 
 **Gap 131** (11 words, fidelity 0.00)
 
 - Actual: `to work on that,' said Hansel, 'and
 have a good meal.`
-- Predicted: `we will set`
+- Predicted: `down`
 
 **Gap 132** (4 words, fidelity 0.00)
 
 - Actual: `I will eat a`
-- Predicted: `so Hansel climbed up to the roof`
+- Predicted: `high`
 
 **Gap 133** (19 words, fidelity 0.00)
 
 - Actual: `of the roof, and you Gretel, can eat
 some of the window, it will taste sweet.' Hansel reached up`
-- Predicted: `above,`
+- Predicted: `higher`
 
-**Gap 134** (9 words, fidelity 0.30)
+**Gap 134** (9 words, fidelity 0.20)
 
 - Actual: `and
 broke off a little of the roof to`
-- Predicted: `and pulled down a large piece of it with his teeth.`
+- Predicted: `to`
 
 **Gap 135** (5 words, fidelity 0.00)
 
 - Actual: `how it tasted, and Gretel`
-- Predicted: `off`
+- Predicted: `leaning`
 
-**Gap 136** (8 words, fidelity 0.00)
+**Gap 136** (8 words, fidelity 0.17)
 
 - Actual: `against the window and nibbled at the panes.`
-- Predicted: `up`
+- Predicted: `forward, attempt, and peep`
 
 **Gap 137** (7 words, fidelity 0.00)
 
 - Actual: `Then a soft voice cried
 from the`
-- Predicted: `said to each other,`
+- Predicted: `gently entered`
 
 **Gap 138** (2 words, fidelity 0.00)
 
 - Actual: `Nibble, nibble,`
-- Predicted: `gnaw,`
+- Predicted: `had`
 
-**Gap 139** (24 words, fidelity 0.18)
+**Gap 139** (24 words, fidelity 0.00)
 
 - Actual: `Who is nibbling at my little house?'
 
@@ -11123,443 +11142,437 @@ The children answered:
   The heaven-born wind,'
 
 and went on eating without disturbing themselves.`
-- Predicted: `hark, hark! Who is nibbling there?`
+- Predicted: `caution`
 
 **Gap 140** (15 words, fidelity 0.00)
 
 - Actual: `liked the
 taste of the roof, tore down a great piece of it, and Gretel`
-- Predicted: `pushed out`
+- Predicted: `gently`
 
 **Gap 141** (7 words, fidelity 0.00)
 
 - Actual: `out
 the whole of one round window-pane,`
-- Predicted: `she sat down, and enjoyed herself with`
+- Predicted: `weakly`
 
-**Gap 142** (4 words, fidelity 0.40)
+**Gap 142** (4 words, fidelity 0.00)
 
 - Actual: `down, and enjoyed herself`
-- Predicted: `down`
+- Predicted: `hobbled`
 
-**Gap 143** (1 words, fidelity 1.00)
+**Gap 143** (1 words, fidelity 0.00)
 
 - Actual: `it.`
-- Predicted: `it`
+- Predicted: `limped`
 
 **Gap 144** (7 words, fidelity 0.00)
 
 - Actual: `Suddenly the door opened, and a woman`
-- Predicted: `without`
+- Predicted: `limped`
 
-**Gap 145** (5 words, fidelity 0.25)
+**Gap 145** (5 words, fidelity 0.20)
 
 - Actual: `old as the hills, who`
-- Predicted: `old and bent`
+- Predicted: `who had pushed aside sat down with a as supported himself on crutches, looking terribly`
 
-**Gap 146** (2 words, fidelity 0.67)
+**Gap 146** (2 words, fidelity 0.00)
 
 - Actual: `herself on`
-- Predicted: `on`
+- Predicted: `limped`
 
 **Gap 147** (3 words, fidelity 0.00)
 
 - Actual: `came creeping out.`
-- Predicted: `entered the house, and said: 'Oh children, have you come to me at last? I have been waiting for you a long time.'`
+- Predicted: `limped`
 
 **Gap 148** (5 words, fidelity 0.00)
 
 - Actual: `Hansel and Gretel were
 so`
-- Predicted: `she`
+- Predicted: `pulled`
 
 **Gap 149** (11 words, fidelity 0.00)
 
 - Actual: `frightened that they let fall what they had in their
 hands.`
-- Predicted: `afraid`
+- Predicted: `pained`
 
 **Gap 150** (18 words, fidelity 0.09)
 
 - Actual: `The old woman, however, nodded her head, and said: 'Oh, you dear
 children, who has brought you here?`
-- Predicted: `"Come in, children, come in,"`
+- Predicted: `hobbled into the kitchen with`
 
 **Gap 151** (7 words, fidelity 0.00)
 
 - Actual: `do come in, and stay with me.`
-- Predicted: `did`
+- Predicted: `were`
 
 **Gap 152** (20 words, fidelity 0.00)
 
 - Actual: `No
 harm shall happen to you.' She took them both by the hand, and led them
 into her little house.`
-- Predicted: `so`
+- Predicted: `terribly sweet good pancakes, sugary, Afterwards covered`
 
 **Gap 153** (1 words, fidelity 0.00)
 
 - Actual: `Then`
-- Predicted: `RIGHT:  good food was set before them, milk and pancakes, with sugar, apples, and nuts. Afterwards two pretty little beds were covered with clean white linen, and Hansel and Gretel lay down in them, and thou`
+- Predicted: `were cooked with`
 
-**Gap 154** (7 words, fidelity 0.15)
+**Gap 154** (7 words, fidelity 0.00)
 
 - Actual: `food was set before them, milk and`
-- Predicted: `pancakes, with sugar, apples, and nuts.`
+- Predicted: `fluffy`
 
-**Gap 155** (1 words, fidelity 0.40)
+**Gap 155** (1 words, fidelity 0.67)
 
 - Actual: `with`
-- Predicted: `and cakes, sweetened with`
+- Predicted: `served with`
 
-**Gap 156** (3 words, fidelity 0.40)
+**Gap 156** (3 words, fidelity 0.29)
 
 - Actual: `apples, and nuts.`
-- Predicted: `and sweetmeats,`
+- Predicted: `and plenty of butter`
 
 **Gap 157** (5 words, fidelity 0.00)
 
 - Actual: `two pretty little
 beds were`
-- Predicted: `they lay down`
+- Predicted: `she`
 
-**Gap 158** (18 words, fidelity 0.37)
+**Gap 158** (18 words, fidelity 0.18)
 
 - Actual: `with clean white linen, and Hansel and Gretel lay down
 in them, and thought they were in heaven.`
-- Predicted: `up for them, and they were soft and warm.`
+- Predicted: `with butter and syrup`
 
 **Gap 159** (14 words, fidelity 0.00)
 
 - Actual: `The old woman had only pretended to be so kind; she was in reality`
-- Predicted: `there lived`
+- Predicted: `served`
 
-**Gap 160** (23 words, fidelity 0.08)
+**Gap 160** (23 words, fidelity 0.00)
 
 - Actual: `wicked witch, who lay in wait for children, and had only built the
 little house of bread in order to entice them there.`
-- Predicted: `cruel witch.`
+- Predicted: `trial`
 
-**Gap 161** (22 words, fidelity 0.06)
+**Gap 161** (22 words, fidelity 0.00)
 
 - Actual: `When a child fell
 into her power, she killed it, cooked and ate it, and that was a feast
 day with her.`
-- Predicted: `Witches have red eyes, and cannot see far, but they have`
+- Predicted: `approached`
 
-**Gap 162** (24 words, fidelity 0.12)
+**Gap 162** (24 words, fidelity 0.00)
 
 - Actual: `have red eyes, and cannot see far, but they have
 a keen scent like the beasts, and are aware when human beings draw near.`
-- Predicted: `or had lured unsuspecting children into her clutches with the promise of a simple meal, hoping to trap them in her dark and sinister abode.`
+- Predicted: `castigated`
 
-**Gap 163** (9 words, fidelity 0.20)
+**Gap 163** (9 words, fidelity 0.00)
 
 - Actual: `When Hansel and Gretel came into her neighbourhood, she`
-- Predicted: `she`
+- Predicted: `manically`
 
-**Gap 164** (27 words, fidelity 0.10)
+**Gap 164** (27 words, fidelity 0.00)
 
 - Actual: `with
 malice, and said mockingly: 'I have them, they shall not escape me
 again!' Early in the morning before the children were awake, she was
 already up,`
-- Predicted: `n close to her cabin, and peeped at him through the little window.`
+- Predicted: `merrily`
 
-**Gap 165** (15 words, fidelity 0.12)
+**Gap 165** (15 words, fidelity 0.00)
 
 - Actual: `and when she saw both of them sleeping and looking so
 pretty, with their plump`
-- Predicted: `she crept`
+- Predicted: `manically`
 
 **Gap 166** (2 words, fidelity 0.00)
 
 - Actual: `rosy cheeks`
-- Predicted: `delicious`
+- Predicted: `and whispered she softly behind the grated door Scream`
 
-**Gap 167** (27 words, fidelity 0.07)
+**Gap 167** (27 words, fidelity 0.00)
 
 - Actual: `muttered to herself: 'That
 will be a dainty mouthful!' Then she seized Hansel with her shrivelled
 hand, carried him into a little stable, and locked him in`
-- Predicted: `she thought`
+- Predicted: `hid`
 
 **Gap 168** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `the`
+- Predicted: `and then she darted behind the door and grated the lock loudly before screaming something`
 
-**Gap 169** (1 words, fidelity 1.00)
+**Gap 169** (1 words, fidelity 0.00)
 
 - Actual: `door.`
-- Predicted: `door.`
+- Predicted: `and then she darted behind the grated cage Scream loudly and`
 
 **Gap 170** (8 words, fidelity 0.00)
 
 - Actual: `as he might, it would not help him.`
-- Predicted: `her`
+- Predicted: `echoed`
 
-**Gap 171** (17 words, fidelity 0.25)
+**Gap 171** (17 words, fidelity 0.00)
 
 - Actual: `Then she went to
 Gretel, shook her till she awoke, and cried: 'Get up, lazy thing, fetch`
-- Predicted: `she began to cackle maliciously and said`
+- Predicted: `echoed`
 
 **Gap 172** (20 words, fidelity 0.00)
 
 - Actual: `water, and cook something good for your brother, he is in the
 stable outside, and is to be made fat.`
-- Predicted: `bread`
+- Predicted: `echoes`
 
-**Gap 173** (30 words, fidelity 0.10)
+**Gap 173** (30 words, fidelity 0.00)
 
 - Actual: `When he is fat, I will eat him.'
 Gretel began to weep bitterly, but it was all in vain, for she was
 forced to do what the wicked witch commanded.`
-- Predicted: `and led him by the hand into the cage.`
+- Predicted: `decisions`
 
-**Gap 174** (15 words, fidelity 0.11)
+**Gap 174** (15 words, fidelity 0.09)
 
 - Actual: `now the best food was cooked for poor Hansel, but Gretel got nothing
 but crab-shells.`
-- Predicted: `And the`
+- Predicted: `And this new legislation will reform the`
 
-**Gap 175** (22 words, fidelity 0.09)
+**Gap 175** (22 words, fidelity 0.14)
 
 - Actual: `Every morning the woman crept to the little stable, and
 cried: 'Hansel, stretch out your finger that I may feel if you`
-- Predicted: `And now the best food was cooked for poor Hansel, but Gretel got nothing but crab-shells. So it went on for two whole weeks.`
+- Predicted: `And this will take the longest there`
 
-**Gap 176** (13 words, fidelity 0.12)
+**Gap 176** (13 words, fidelity 0.00)
 
 - Actual: `soon
 be fat.' Hansel, however, stretched out a little bone to her, and`
-- Predicted: `out伸 out`
+- Predicted: `guide`
 
-**Gap 177** (20 words, fidelity 0.08)
+**Gap 177** (20 words, fidelity 0.00)
 
 - Actual: `old woman, who had dim eyes, could not see it, and thought it was
 Hansel's finger, and was astonished that`
-- Predicted: `woman continued to think`
+- Predicted: `will take`
 
-**Gap 178** (2 words, fidelity 0.67)
+**Gap 178** (2 words, fidelity 0.00)
 
 - Actual: `was no`
-- Predicted: `was`
+- Predicted: `will go the natural thereoins way and then`
 
 **Gap 179** (3 words, fidelity 0.00)
 
 - Actual: `of fattening
 him.`
-- Predicted: `was`
+- Predicted: `had been`
 
 **Gap 180** (13 words, fidelity 0.00)
 
 - Actual: `When four weeks had gone by, and Hansel still remained thin, she
 was`
-- Predicted: `so`
+- Predicted: `the only way`
 
-**Gap 181** (8 words, fidelity 0.15)
+**Gap 181** (8 words, fidelity 0.00)
 
 - Actual: `with impatience and would not wait any longer.`
-- Predicted: `with a fit of rage`
+- Predicted: `upon`
 
 **Gap 182** (1 words, fidelity 0.00)
 
 - Actual: `Now,`
-- Predicted: `so`
+- Predicted: `thereafter`
 
-**Gap 183** (12 words, fidelity 0.27)
+**Gap 183** (12 words, fidelity 0.00)
 
 - Actual: `Gretel,' she cried to the girl, 'stir yourself, and bring some water.`
-- Predicted: `she thought, 'what is to become of us?'`
+- Predicted: `there seemed`
 
-**Gap 184** (13 words, fidelity 0.06)
+**Gap 184** (13 words, fidelity 0.00)
 
 - Actual: `Hansel be fat or lean, tomorrow I will kill him, and cook him.'`
-- Predicted: `we must make the oven hot, for father wants to bake some bread out of
-the white bread-corn.'`
+- Predicted: `Let us seize this then, Let`
 
 **Gap 185** (23 words, fidelity 0.00)
 
 - Actual: `how the poor little sister did lament when she had to fetch the water,
 and how her tears did flow down her cheeks!`
-- Predicted: `RIGHT:  'Dear God, do help us,'
-cried.`
+- Predicted: `Let us`
 
-**Gap 186** (7 words, fidelity 0.12)
+**Gap 186** (7 words, fidelity 0.20)
 
 - Actual: `Dear God, do help us,' she
 cried.`
-- Predicted: `'If only we were at home again, and father and mother were hugging and kissing us, and Hansel and Gretel were little babies still!'`
+- Predicted: `Let us`
 
-**Gap 187** (29 words, fidelity 0.11)
+**Gap 187** (29 words, fidelity 0.00)
 
 - Actual: `If the wild beasts in the forest had but devoured us, we should
 at any rate have died together.' 'Just keep your noise to yourself,'
 said the old woman,`
-- Predicted: `'Oh, what shall we do?'`
+- Predicted: `there`
 
-**Gap 188** (27 words, fidelity 0.05)
+**Gap 188** (27 words, fidelity 0.00)
 
 - Actual: `it won't help you at all.'
 
 Early in the morning, Gretel had to go out and hang up the cauldron with
 the water, and light the fire.`
-- Predicted: `she said, 'and see whether our bread is browning properly.'`
+- Predicted: `ran`
 
-**Gap 189** (7 words, fidelity 0.25)
+**Gap 189** (7 words, fidelity 0.00)
 
 - Actual: `will bake first,' said the old woman,`
-- Predicted: `we must wait until the water boils.'`
+- Predicted: `decided`
 
-**Gap 190** (13 words, fidelity 0.31)
+**Gap 190** (13 words, fidelity 0.00)
 
 - Actual: `have already heated the oven, and kneaded the dough.' She pushed poor
 Gretel`
-- Predicted: `said the old woman, 'you must creep in and see if it is properly heated, so that we can put the bread in.' And once Gretel was inside, she intended`
+- Predicted: `had`
 
-**Gap 191** (3 words, fidelity 0.67)
+**Gap 191** (3 words, fidelity 0.00)
 
 - Actual: `to the oven,`
-- Predicted: `into the oven`
+- Predicted: `stepped`
 
 **Gap 192** (7 words, fidelity 0.25)
 
 - Actual: `which flames of fire were already darting.`
-- Predicted: `which`
+- Predicted: `of`
 
 **Gap 193** (21 words, fidelity 0.00)
 
 - Actual: `Creep in,' said the witch, 'and see if it is properly heated, so that
 we can put the bread in.' And`
-- Predicted: `once`
+- Predicted: `stepped`
 
-**Gap 194** (22 words, fidelity 0.15)
+**Gap 194** (22 words, fidelity 0.00)
 
 - Actual: `Gretel was inside, she intended to
 shut the oven and let her bake in it, and then she would eat her, too.`
-- Predicted: `Gretel had disappeared inside.`
+- Predicted: `were`
 
-**Gap 195** (20 words, fidelity 0.10)
+**Gap 195** (20 words, fidelity 0.08)
 
 - Actual: `But Gretel saw what she had in mind, and said: 'I do not know how I am
 to do it;`
-- Predicted: `said`
+- Predicted: `once upon a time how`
 
-**Gap 196** (10 words, fidelity 0.35)
+**Gap 196** (10 words, fidelity 0.00)
 
 - Actual: `do I get in?' 'Silly goose,' said the old woman.`
-- Predicted: `to do it; how shall I manage to get in there?`
+- Predicted: `once upon a time how thrust`
 
-**Gap 197** (17 words, fidelity 0.12)
+**Gap 197** (17 words, fidelity 0.00)
 
 - Actual: `The door
 is big enough; just look, I can get in myself!' and she crept up and`
-- Predicted: `step aside, and said to her mother who was looking out of the window,`
+- Predicted: `forward`
 
-**Gap 198** (5 words, fidelity 0.25)
+**Gap 198** (5 words, fidelity 0.00)
 
 - Actual: `her head into the oven.`
-- Predicted: `through the door.`
+- Predicted: `forward`
 
-**Gap 199** (21 words, fidelity 0.13)
+**Gap 199** (21 words, fidelity 0.00)
 
 - Actual: `Then Gretel gave her a push that drove
 her far into it, and shut the iron door, and fastened the bolt.`
-- Predicted: `she pulled the old woman in by the legs`
+- Predicted: `forward`
 
 **Gap 200** (1 words, fidelity 0.00)
 
 - Actual: `Oh!`
-- Predicted: `the old woman began to bang and beat at the door with her fists and
-her feet, and to scream out that she would cook the children, both of
-them, and eat them.`
+- Predicted: `forward`
 
-**Gap 201** (19 words, fidelity 0.14)
+**Gap 201** (19 words, fidelity 0.00)
 
 - Actual: `she began to howl quite horribly, but Gretel ran away and the godless
 witch was miserably burnt to death.`
-- Predicted: `she cried out loudly, but no one could hear her.`
+- Predicted: `stabbed`
 
-**Gap 202** (3 words, fidelity 0.12)
+**Gap 202** (3 words, fidelity 0.00)
 
 - Actual: `Gretel, however, ran`
-- Predicted: `and ran through the wood as fast as their legs would carry them`
+- Predicted: `jumped`
 
 **Gap 203** (13 words, fidelity 0.00)
 
 - Actual: `lightning to Hansel, opened his little stable,
 and cried: 'Hansel, we are saved!`
-- Predicted: `fast like the wind into the house.`
+- Predicted: `suddenly`
 
 **Gap 204** (8 words, fidelity 0.00)
 
 - Actual: `The old witch is dead!' Then Hansel
 sprang`
-- Predicted: `hastily pulled him out`
+- Predicted: `are`
 
 **Gap 205** (10 words, fidelity 0.00)
 
 - Actual: `a bird from its cage when the door is opened.`
-- Predicted: `free`
+- Predicted: `same`
 
 **Gap 206** (14 words, fidelity 0.00)
 
 - Actual: `How they did
 rejoice and embrace each other, and dance about and kiss each`
-- Predicted: `Hansel exclaimed,`
+- Predicted: `same`
 
 **Gap 207** (29 words, fidelity 0.00)
 
 - Actual: `And
 as they had no longer any need to fear her, they went into the witch's
 house, and in every corner there stood chests full of pearls and jewels.`
-- Predicted: `'But now we must be off again, for our father will be looking for us.'`
+- Predicted: `like many`
 
-**Gap 208** (21 words, fidelity 0.21)
+**Gap 208** (21 words, fidelity 0.00)
 
 - Actual: `These are far better than pebbles!' said Hansel, and thrust into his
 pockets whatever could be got in, and Gretel said:`
-- Predicted: `said to each other, 'We shall soon be home now, for we can see our little
-cottage.' But when they got there, the door was locked, and they had to
-climb in at the window.`
+- Predicted: `excuse`
 
 **Gap 209** (10 words, fidelity 0.00)
 
 - Actual: `too, will take
 something home with me,' and filled her`
-- Predicted: `so my pinafore is full.`
+- Predicted: `wore`
 
 **Gap 210** (1 words, fidelity 0.00)
 
 - Actual: `full.`
-- Predicted: `, and Gretel said: 'I see too.'`
+- Predicted: `dressed`
 
-**Gap 211** (29 words, fidelity 0.32)
+**Gap 211** (29 words, fidelity 0.00)
 
 - Actual: `But now we must
 be off,' said Hansel, 'that we may get out of the witch's forest.'
 
 When they had walked for two hours, they came to a great`
-- Predicted: `and when they had gone a little further, they came to a wide`
+- Predicted: `clambered`
 
-**Gap 212** (2 words, fidelity 0.50)
+**Gap 212** (2 words, fidelity 0.00)
 
 - Actual: `of
 water.`
-- Predicted: `of swamp.`
+- Predicted: `climb`
 
 **Gap 213** (8 words, fidelity 0.00)
 
 - Actual: `We cannot cross,' said Hansel, 'I see no`
-- Predicted: `there`
+- Predicted: `climb`
 
-**Gap 214** (6 words, fidelity 0.40)
+**Gap 214** (6 words, fidelity 0.00)
 
 - Actual: `and no
 bridge.' 'And there is`
-- Predicted: `be no bridge,`
+- Predicted: `thou`
 
 **Gap 215** (27 words, fidelity 0.00)
 
@@ -11568,104 +11581,104 @@ duck is swimming there: if I ask her, she will help us over.' Then she
 cried:
 
  'Little duck, little duck,`
-- Predicted: `dost thou see,`
+- Predicted: `tread`
 
-**Gap 216** (9 words, fidelity 0.12)
+**Gap 216** (9 words, fidelity 0.00)
 
 - Actual: `thou see,
   Hansel and Gretel are waiting for thee?`
-- Predicted: `thou wilt take us across the water!`
+- Predicted: `dost tread`
 
 **Gap 217** (1 words, fidelity 0.00)
 
 - Actual: `There's`
-- Predicted: `little`
+- Predicted: `thou wilt`
 
 **Gap 218** (9 words, fidelity 0.00)
 
 - Actual: `a plank, or bridge in sight,
   Take us across`
-- Predicted: `for`
+- Predicted: `doubt`
 
-**Gap 219** (24 words, fidelity 0.07)
+**Gap 219** (24 words, fidelity 0.00)
 
 - Actual: `thy back so white.'
 
 The duck came to them, and Hansel seated himself on its back, and told
 his sister to sit by him.`
-- Predicted: `the river,`
+- Predicted: `thou wilt prove`
 
 **Gap 220** (22 words, fidelity 0.00)
 
 - Actual: `No,' replied Gretel, 'that will be too heavy
 for the little duck; she shall take us across, one after the other.' The`
-- Predicted: `kindly`
+- Predicted: `to`
 
-**Gap 221** (34 words, fidelity 0.28)
+**Gap 221** (34 words, fidelity 0.00)
 
 - Actual: `little duck did so, and when they were once safely across and had
 walked for a short time, the forest seemed to be more and more familiar
 to them, and at length they saw`
-- Predicted: `duck gladly flew over the stream, and when they were all safely on the other side,`
+- Predicted: `advice`
 
 **Gap 222** (4 words, fidelity 0.00)
 
 - Actual: `afar their father's house.`
-- Predicted: `then`
+- Predicted: `distinguish`
 
-**Gap 223** (16 words, fidelity 0.21)
+**Gap 223** (16 words, fidelity 0.00)
 
 - Actual: `Then
 they began to run, rushed into the parlour, and threw themselves round
 their father's neck.`
-- Predicted: `The little duck did so, and when they were once safely across and had walked for a short time, the forest seemed to be more and more familiar to them, and at length they saw from afar their father's house.`
+- Predicted: `crept out of`
 
-**Gap 224** (16 words, fidelity 0.14)
+**Gap 224** (16 words, fidelity 0.00)
 
 - Actual: `The man had not known one happy hour since he had
 left the children in the`
-- Predicted: `they found their mother lying in the bed, quite cold and stiff.`
+- Predicted: `arose`
 
 **Gap 225** (4 words, fidelity 0.00)
 
 - Actual: `the woman, however, was`
-- Predicted: `he thought they must be dead.`
+- Predicted: `lay`
 
 **Gap 226** (4 words, fidelity 0.00)
 
 - Actual: `Gretel
 emptied her pinafore`
-- Predicted: `The children began to weep and sob`
+- Predicted: `lay`
 
-**Gap 227** (19 words, fidelity 0.10)
+**Gap 227** (19 words, fidelity 0.00)
 
 - Actual: `pearls and precious stones ran about the
 room, and Hansel threw one handful after another out of his pocket`
-- Predicted: `out`
+- Predicted: `it's`
 
-**Gap 228** (3 words, fidelity 0.14)
+**Gap 228** (3 words, fidelity 0.00)
 
 - Actual: `add to them.`
-- Predicted: `Then the children went out into the forest to gather wood`
+- Predicted: `lay quiet`
 
-**Gap 229** (14 words, fidelity 0.11)
+**Gap 229** (14 words, fidelity 0.00)
 
 - Actual: `Then all anxiety was at an end, and they lived together
 in perfect happiness.`
-- Predicted: `Then said the witch`
+- Predicted: `lay`
 
 **Gap 230** (3 words, fidelity 0.00)
 
 - Actual: `tale is done,`
-- Predicted: `mother said`
+- Predicted: `was`
 
 **Gap 231** (10 words, fidelity 0.00)
 
 - Actual: `runs a mouse; whosoever
 catches it, may make himself a`
-- Predicted: `and the grandmother pulled`
+- Predicted: `was`
 
 **Gap 232** (4 words, fidelity 0.00)
 
 - Actual: `fur cap out of`
-- Predicted: `pocket`
+- Predicted: `was`

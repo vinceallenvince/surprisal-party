@@ -221,3 +221,49 @@ The DoD is **both layers of the e2e suite passing** for the Loading epic, the sa
 - **Layer 2 — figma-alignment** (advisory skill, run locally with the Figma MCP): pairs each captured shot above with its frame and writes `e2e/loading-alignment.md`. **DoD requires every pair to read `Aligned` or `Minor differences` — no `Notable differences`** (any genuine drift either fixed in the runtime or, if the frame is stale, noted for frame correction).
 
 **Traceability.** A `Loading` epic is added to `figma-sources.yaml` (`page: "84-4"`, `epic_dir: "loading"`) mapping the two stories and the four ui nodes above, with real `shot` names (the screenshots exist once Layer 1 runs).
+
+## Reconstruction strategy — surviving-placeholder (adopted)
+
+The pipeline reconstructs each removed gap from the **surviving context only** — it never sees the words it is trying to predict. This replaced the original "fixed-width window of the source text on both sides of the gap" approach, which read fluently but earned its fidelity by **copying the removed neighbors verbatim** (the surrounding low-surprisal words at light compression *are* the other removed words). That leakage contradicts the core claim: a removed word is supposed to be *recovered from what remains*, not read back from a window that still contains it.
+
+**How the context is built (per gap, at one slider position).** Within a window the size of the old baseline's, surviving words are shown verbatim, *other* removed spans collapse to a `[...]` marker, and the single target span is marked `<<<FILL>>>`. Keeping the text **contiguous** (rather than deleting words and concatenating survivors) is what stops the model reciting/regenerating the canonical text; the explicit marker makes it a precise fill. The model is asked to output only the `<<<FILL>>>` span.
+
+```
+At a slider position, words with surprisal < threshold are removed:
+
+    the   little   girl   who    was    loved   by    everyone
+     ✗      ✓       ✓      ✗      ✗       ✓      ✗       ✓
+   └gapA┘                └──── gapB ────┘       └gapC┘
+                          (TARGET to reconstruct)
+
+Context built for the TARGET gap — survivors verbatim, holes marked,
+contiguous, drawn ONLY from surviving words:
+
+      [...]  little  girl  <<<FILL>>>  loved  [...]  everyone
+        │                      │                 │
+   other hole              TARGET span       other hole
+   (hidden)                (to fill)         (hidden)
+
+                              │  model sees only this; predicts the span
+                              ▼
+   reconstruction:  ⟦ who was ⟧        ← compared to actual "who was" → fidelity
+
+The removed words ("the", "who was", "by") are NEVER shown to the model,
+so the gap is rebuilt from stored information alone — no leakage.
+```
+
+**Pipeline wiring.** `CPRED_RECON_MODE` (in `cprediction/run.py`) selects the strategy and defaults to `surviving-placeholder`. The context is assembled by `_placeholder_window_context()`; `reconstruct_placeholder()` runs the model against `_SYSTEM_PROMPT_PLACEHOLDER` (generalized — no corpus-specific framing — and forbidding the model from emitting markers or rewriting the surroundings) and `_strip_markers()` scrubs any leaked markers from the reply. The earlier exploratory modes (`baseline`, `surviving-causal`, `surviving-bidirectional`, `surviving-wide`) are retained behind the same env var for A/B comparison via `scripts/compare_reconstructions.py` and `scripts/render_reading.py`.
+
+**How it was chosen (A/B on Little Red Riding Hood, overall mean fidelity).**
+
+| Strategy | Overall fidelity | Verdict |
+|---|---|---|
+| `baseline` (original-text window, both sides) | 0.244 | High — but largely by copying removed neighbors (leakage); reads bloated/repetitive |
+| `surviving-causal` (full surviving left, no right) | 0.073 | Unanchored → rambles; empty-prefix gaps hallucinate |
+| `surviving-bidirectional` (full left + 1–2 word right anchor) | 0.073 | Thin, non-contiguous anchor → echoes / generic filler |
+| `surviving-wide` (baseline span, removed words deleted) | 0.059 | Confirmed it's *contiguity*, not span/leakage, that matters |
+| **`surviving-placeholder`** (contiguous, holes marked) | **0.130** | **Adopted** — reads as a clean, honestly-lossy retelling |
+
+**Accepted trade-off.** Fidelity is *lower* than the baseline and below 1.00 even at light compression — because reconstruction is honest (no peeking) and the removed words at low thresholds are tiny function words the model paraphrases rather than reproduces. Fidelity is therefore presented as a **measure of loss, not a target to maximize**; judged by how the reconstructions *read* (see `render_reading.py`), `surviving-placeholder` is the better artifact. See `abstract.md` "Two Regimes" for the corrected fidelity expectations.
+
+> Open follow-up (parked): the choppiness shared by all strategies is driven by **gap granularity** — hundreds of tiny function-word gaps. Merging gaps into fewer, sentence-scale spans (and/or revisiting the fidelity metric) is the larger lever for matching the "lighter left, lossy right" reading experience, and is tracked separately from this reconstruction-context decision.

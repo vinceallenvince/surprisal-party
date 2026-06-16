@@ -63,7 +63,10 @@ responds before committing to the larger primer rebuild in Batch 2.
 > 3. Don't change layout, colors, or any other copy.
 >
 > Reference values (Little Red Riding Hood) for the five slider stops: avg
-> fidelity reads **—** (uncompressed), then **0.35**, **0.25**, **0.18**, **0.14**.
+> fidelity reads **—** (uncompressed), then **0.22**, **0.14**, **0.09**, **0.02**.
+> (These reflect the adopted **surviving-placeholder** reconstruction strategy —
+> reconstruction from surviving context only — which is honestly lossier than the
+> earlier original-window approach; see `abstract.md` "Two Regimes".)
 >
 > Context: the tiles are the actual words removed from the text; the model's
 > *predictions* live in the middle-column seams — which is why "Removed" is the
