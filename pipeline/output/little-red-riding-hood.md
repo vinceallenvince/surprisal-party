@@ -340,25 +340,25 @@ and no one ever did anything to harm <gap 239> again.
 
 ### Gaps
 
-**Gap 1** (1 words, fidelity 0.67)
+**Gap 1** (1 words, fidelity 0.00)
 
 - Actual: `Once`
-- Predicted: `once upon`
+- Predicted: `loved`
 
-**Gap 2** (2 words, fidelity 0.67)
+**Gap 2** (2 words, fidelity 0.00)
 
 - Actual: `a time`
-- Predicted: `time`
+- Predicted: `upon entering the room`
 
 **Gap 3** (1 words, fidelity 0.00)
 
 - Actual: `all`
-- Predicted: `of`
+- Predicted: `by her`
 
-**Gap 4** (1 words, fidelity 0.00)
+**Gap 4** (1 words, fidelity 1.00)
 
 - Actual: `her`
-- Predicted: `grandmother,`
+- Predicted: `her`
 
 **Gap 5** (1 words, fidelity 0.00)
 
@@ -368,52 +368,52 @@ and no one ever did anything to harm <gap 239> again.
 **Gap 6** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `given`
+- Predicted: `send`
 
-**Gap 7** (1 words, fidelity 0.80)
+**Gap 7** (1 words, fidelity 0.09)
 
 - Actual: `Red-Cap,`
-- Predicted: `Little Red-Cap`
+- Predicted: `Come, Little Red-Cap, here is a piece of cake and some wine; for your grandmother, she is ill and weak, and they are sending you with it before it gets hot, and when you are going, walk nicely and quietly.`
 
-**Gap 8** (2 words, fidelity 0.50)
+**Gap 8** (2 words, fidelity 0.33)
 
 - Actual: `is a`
-- Predicted: `a piece`
+- Predicted: `bring, dear, a, that, is, needs, give, it, cold, so`
 
-**Gap 9** (4 words, fidelity 0.44)
+**Gap 9** (4 words, fidelity 0.22)
 
 - Actual: `and a bottle of`
-- Predicted: `and some little bottles of`
+- Predicted: `mum, come, little, to, a, and, some, for, down, and, and, and, and, and`
 
-**Gap 10** (4 words, fidelity 0.31)
+**Gap 10** (4 words, fidelity 0.00)
 
 - Actual: `take them to your`
-- Predicted: `go to see your grandmother, for she is ill`
+- Predicted: `bring`
 
-**Gap 11** (1 words, fidelity 1.00)
+**Gap 11** (1 words, fidelity 0.00)
 
 - Actual: `is`
-- Predicted: `is`
+- Predicted: `was`
 
-**Gap 12** (1 words, fidelity 0.25)
+**Gap 12** (1 words, fidelity 0.11)
 
 - Actual: `and`
-- Predicted: `go nothing but dry bread and water.`
+- Predicted: `bring, dear, take, a, and, I, is, and, it, and, and, and, and, you, to, easily, the`
 
 **Gap 13** (3 words, fidelity 0.00)
 
 - Actual: `will do her`
-- Predicted: `are`
+- Predicted: `bring`
 
 **Gap 14** (1 words, fidelity 0.00)
 
 - Actual: `out`
-- Predicted: `down`
+- Predicted: `bring, dear, take, a, poor, is, so, that, and, slowly, nor, down, your, the, then, you`
 
 **Gap 15** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so`
+- Predicted: `slowly`
 
 **Gap 16** (1 words, fidelity 1.00)
 
@@ -423,137 +423,137 @@ and no one ever did anything to harm <gap 239> again.
 **Gap 17** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `so`
+- Predicted: `do not take`
 
 **Gap 18** (1 words, fidelity 0.00)
 
 - Actual: `may`
-- Predicted: `will`
+- Predicted: `must`
 
 **Gap 19** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so`
+- Predicted: `not`
 
 **Gap 20** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `your neck`
+- Predicted: `spoil`
 
 **Gap 21** (3 words, fidelity 0.00)
 
 - Actual: `then your grandmother`
-- Predicted: `you`
+- Predicted: `will get nothing`
 
-**Gap 22** (1 words, fidelity 0.00)
+**Gap 22** (1 words, fidelity 0.50)
 
 - Actual: `you`
-- Predicted: `when`
+- Predicted: `when you enter`
 
 **Gap 23** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `grandmother's`
+- Predicted: `before you enter`
 
 **Gap 24** (2 words, fidelity 0.00)
 
 - Actual: `forget to`
-- Predicted: `peek`
+- Predicted: `not`
 
 **Gap 25** (1 words, fidelity 0.00)
 
 - Actual: `Good`
-- Predicted: `goodnight`
+- Predicted: `goodmorning`
 
-**Gap 26** (1 words, fidelity 0.20)
+**Gap 26** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and do not stick your head into the cupboard`
+- Predicted: `say "good morning",`
 
-**Gap 27** (1 words, fidelity 1.00)
+**Gap 27** (1 words, fidelity 0.00)
 
 - Actual: `into`
-- Predicted: `into`
+- Predicted: `not`
 
 **Gap 28** (1 words, fidelity 0.00)
 
 - Actual: `corner`
-- Predicted: `room,'`
+- Predicted: `look`
 
-**Gap 29** (1 words, fidelity 0.00)
+**Gap 29** (1 words, fidelity 0.50)
 
 - Actual: `you`
-- Predicted: `that`
+- Predicted: `before you enter`
 
 **Gap 30** (1 words, fidelity 0.00)
 
 - Actual: `Red-Cap`
-- Predicted: `Assistant`
+- Predicted: `Little`
 
-**Gap 31** (1 words, fidelity 1.00)
+**Gap 31** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `my`
 
 **Gap 32** (2 words, fidelity 0.67)
 
 - Actual: `in the`
 - Predicted: `in`
 
-**Gap 33** (3 words, fidelity 0.00)
+**Gap 33** (3 words, fidelity 0.40)
 
 - Actual: `as Little Red-Cap`
-- Predicted: `far`
+- Predicted: `as`
 
-**Gap 34** (2 words, fidelity 0.00)
+**Gap 34** (2 words, fidelity 0.50)
 
 - Actual: `not know`
-- Predicted: `say`
+- Predicted: `did not`
 
-**Gap 35** (1 words, fidelity 1.00)
+**Gap 35** (1 words, fidelity 0.00)
 
 - Actual: `was,`
-- Predicted: `was`
+- Predicted: `so`
 
-**Gap 36** (1 words, fidelity 0.00)
+**Gap 36** (1 words, fidelity 1.00)
 
 - Actual: `not`
-- Predicted: `afraid`
+- Predicted: `not`
 
 **Gap 37** (1 words, fidelity 0.00)
 
 - Actual: `all`
-- Predicted: `afraid`
+- Predicted: `not`
 
 **Gap 38** (1 words, fidelity 0.00)
 
 - Actual: `Good`
-- Predicted: `said`
+- Predicted: `that`
 
-**Gap 39** (2 words, fidelity 0.40)
+**Gap 39** (2 words, fidelity 0.00)
 
 - Actual: `Red-Cap,' said`
-- Predicted: `Cap`
+- Predicted: `met`
 
-**Gap 40** (1 words, fidelity 1.00)
+**Gap 40** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `you`
+- Predicted: `do`
 
 **Gap 41** (2 words, fidelity 0.00)
 
 - Actual: `so early,`
-- Predicted: `are`
+- Predicted: `did`
 
 **Gap 42** (1 words, fidelity 0.00)
 
 - Actual: `you`
 - Predicted: `had`
 
-**Gap 43** (1 words, fidelity 1.00)
+**Gap 43** (1 words, fidelity 0.00)
 
 - Actual: `in`
-- Predicted: `in`
+- Predicted: `had`
 
 **Gap 44** (1 words, fidelity 0.67)
 
@@ -563,47 +563,47 @@ and no one ever did anything to harm <gap 239> again.
 **Gap 45** (1 words, fidelity 0.00)
 
 - Actual: `grandmother`
-- Predicted: `old woman`
+- Predicted: `grandmother's`
 
 **Gap 46** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `stronger.'`
+- Predicted: `you`
 
-**Gap 47** (3 words, fidelity 0.00)
+**Gap 47** (3 words, fidelity 0.22)
 
 - Actual: `does your grandmother`
-- Predicted: `did you go last time, Little Red-Cap?`
+- Predicted: `have you got on your apron?`
 
 **Gap 48** (1 words, fidelity 0.00)
 
 - Actual: `Little`
-- Predicted: `is`
+- Predicted: `do`
 
 **Gap 49** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `away`
+- Predicted: `was`
 
-**Gap 50** (1 words, fidelity 0.40)
-
-- Actual: `the`
-- Predicted: `into the deep thickest`
-
-**Gap 51** (1 words, fidelity 1.00)
+**Gap 50** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `farther`
+
+**Gap 51** (1 words, fidelity 0.00)
+
+- Actual: `the`
+- Predicted: `stands`
 
 **Gap 52** (1 words, fidelity 0.00)
 
 - Actual: `are`
-- Predicted: `away from the road, close by a brook,`
+- Predicted: `lieutenant`
 
-**Gap 53** (1 words, fidelity 1.00)
+**Gap 53** (1 words, fidelity 0.00)
 
 - Actual: `wolf`
-- Predicted: `Wolf`
+- Predicted: `Wolves`
 
 **Gap 54** (1 words, fidelity 0.00)
 
@@ -613,32 +613,39 @@ and no one ever did anything to harm <gap 239> again.
 **Gap 55** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `delicious`
+- Predicted: `what`
 
 **Gap 56** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `would`
+- Predicted: `would rather feed`
 
-**Gap 57** (4 words, fidelity 0.40)
+**Gap 57** (4 words, fidelity 0.67)
 
 - Actual: `eat than the old`
-- Predicted: `eat`
+- Predicted: `the old`
 
 **Gap 58** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `must`
+- Predicted: `he`
 
 **Gap 59** (1 words, fidelity 0.00)
 
 - Actual: `as`
-- Predicted: `he must deceive her`
+- Predicted: `he thought he must deceive`
 
-**Gap 60** (1 words, fidelity 1.00)
+**Gap 60** (1 words, fidelity 0.22)
 
 - Actual: `a`
-- Predicted: `a`
+- Predicted: `a
+the
+a
+must
+a
+and
+he
+that`
 
 **Gap 61** (1 words, fidelity 0.00)
 
@@ -648,47 +655,47 @@ and no one ever did anything to harm <gap 239> again.
 **Gap 62** (2 words, fidelity 0.00)
 
 - Actual: `side of`
-- Predicted: `path, and then he said: 'See, Little Red-Cap, how pretty the flowers are about here--I believe, too, that you do not hear how sweetly the little birds are singing`
+- Predicted: `Little Red-Cap herself: What a tender young creature! what a nice plump mouthful--she must be better to eat than a woman. I must act craftily, so sly to catch both.'`
 
-**Gap 63** (3 words, fidelity 0.67)
+**Gap 63** (3 words, fidelity 0.00)
 
 - Actual: `Red-Cap, and then`
-- Predicted: `Red-Cap,`
+- Predicted: `So`
 
-**Gap 64** (1 words, fidelity 1.00)
+**Gap 64** (1 words, fidelity 0.00)
 
 - Actual: `Little`
-- Predicted: `Little`
+- Predicted: `you`
 
 **Gap 65** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `bloom so beautifully`
+- Predicted: `blooming`
 
 **Gap 66** (1 words, fidelity 0.00)
 
 - Actual: `are`
-- Predicted: `blooming`
+- Predicted: `better to deceive a woman. She must act craftily, so as to catch both.'`
 
 **Gap 67** (2 words, fidelity 0.67)
 
 - Actual: `you not`
-- Predicted: `not`
+- Predicted: `you`
 
-**Gap 68** (2 words, fidelity 0.18)
+**Gap 68** (2 words, fidelity 0.67)
 
 - Actual: `that you`
-- Predicted: `I believe, too, that you are quite right, and that I ought to take more notice of such pretty things.`
+- Predicted: `you`
 
-**Gap 69** (1 words, fidelity 1.00)
+**Gap 69** (1 words, fidelity 0.00)
 
 - Actual: `not`
-- Predicted: `not`
+- Predicted: `you can`
 
-**Gap 70** (1 words, fidelity 0.09)
+**Gap 70** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `Little Red-Cap raised her eyes, and when she saw the sunbeams dancing among the leaves, she was surprised and looked around.`
+- Predicted: `birds`
 
 **Gap 71** (2 words, fidelity 0.67)
 
@@ -698,57 +705,57 @@ and no one ever did anything to harm <gap 239> again.
 **Gap 72** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `he looked so stern and forbidding that she began to feel afraid, and`
+- Predicted: `Little Red-Cap walked gravely on as if going to school, while everything else was merry.'`
 
 **Gap 73** (1 words, fidelity 0.00)
 
 - Actual: `along`
-- Predicted: `gravely as if you were going to school, while everything else`
+- Predicted: `he walked`
 
-**Gap 74** (2 words, fidelity 0.00)
+**Gap 74** (2 words, fidelity 0.50)
 
 - Actual: `you were`
-- Predicted: `as if`
+- Predicted: `you are`
 
-**Gap 75** (1 words, fidelity 0.00)
+**Gap 75** (1 words, fidelity 1.00)
 
 - Actual: `to`
-- Predicted: `school, while everything else`
+- Predicted: `to`
 
-**Gap 76** (5 words, fidelity 0.13)
+**Gap 76** (5 words, fidelity 0.00)
 
 - Actual: `here in the wood is`
-- Predicted: `about here--why do you not look round? I believe,`
+- Predicted: `were`
 
 **Gap 77** (1 words, fidelity 0.00)
 
 - Actual: `Red-Cap`
-- Predicted: `maid`
+- Predicted: `Little Alice raised her eyes when the sunbeams dancing here through the trees,`
 
-**Gap 78** (3 words, fidelity 0.13)
+**Gap 78** (3 words, fidelity 0.00)
 
 - Actual: `her eyes, and`
-- Predicted: `up, and said joyfully: 'Ah, how pleasant it is out here!'`
+- Predicted: `Little`
 
-**Gap 79** (2 words, fidelity 1.00)
+**Gap 79** (2 words, fidelity 0.80)
 
 - Actual: `she saw`
-- Predicted: `she saw`
+- Predicted: `when she saw`
 
-**Gap 80** (2 words, fidelity 0.50)
+**Gap 80** (2 words, fidelity 0.00)
 
 - Actual: `and there`
-- Predicted: `and saw`
+- Predicted: `filtered`
 
 **Gap 81** (1 words, fidelity 1.00)
 
 - Actual: `the`
 - Predicted: `the`
 
-**Gap 82** (1 words, fidelity 0.33)
+**Gap 82** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `glittering so brightly, and such`
+- Predicted: `she thought: Suppose I take grandmother a fresh nosegay; that would please her too.`
 
 **Gap 83** (1 words, fidelity 1.00)
 
@@ -758,12 +765,12 @@ and no one ever did anything to harm <gap 239> again.
 **Gap 84** (1 words, fidelity 0.67)
 
 - Actual: `I`
-- Predicted: `Suppose I`
+- Predicted: `I will`
 
-**Gap 85** (1 words, fidelity 0.67)
+**Gap 85** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `a little`
+- Predicted: `to pick`
 
 **Gap 86** (1 words, fidelity 1.00)
 
@@ -773,7 +780,7 @@ and no one ever did anything to harm <gap 239> again.
 **Gap 87** (2 words, fidelity 0.00)
 
 - Actual: `the day`
-- Predicted: `morning`
+- Predicted: `spring`
 
 **Gap 88** (1 words, fidelity 1.00)
 
@@ -783,316 +790,308 @@ and no one ever did anything to harm <gap 239> again.
 **Gap 89** (1 words, fidelity 0.00)
 
 - Actual: `path`
-- Predicted: `house`
+- Predicted: `grandmother's`
 
-**Gap 90** (1 words, fidelity 1.00)
+**Gap 90** (1 words, fidelity 0.50)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `into the shady`
 
 **Gap 91** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `off into the thicket`
+- Predicted: `and so ran straight`
 
 **Gap 92** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `and whenever`
+- Predicted: `whenever`
 
-**Gap 93** (1 words, fidelity 0.67)
+**Gap 93** (1 words, fidelity 1.00)
 
 - Actual: `she`
-- Predicted: `she thought`
+- Predicted: `she`
 
-**Gap 94** (1 words, fidelity 1.00)
+**Gap 94** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `that`
+- Predicted: `she thought`
 
 **Gap 95** (1 words, fidelity 0.00)
 
 - Actual: `one`
 - Predicted: `bush`
 
-**Gap 96** (1 words, fidelity 0.09)
+**Gap 96** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and so she kept
+- Predicted: `ran`
 
-Meanwhile the wolf ran straight to the grandmother's house and knocked
-at the door.
-
-'Who is there?'`
-
-**Gap 97** (3 words, fidelity 0.38)
+**Gap 97** (3 words, fidelity 0.67)
 
 - Actual: `deeper into the`
-- Predicted: `deeper and deeper into the forest, until at last she was quite lost.`
+- Predicted: `deeper and further into the darker`
 
-**Gap 98** (1 words, fidelity 1.00)
+**Gap 98** (1 words, fidelity 0.00)
 
 - Actual: `wolf`
-- Predicted: `wolf`
+- Predicted: `grandmother's`
 
-**Gap 99** (2 words, fidelity 0.67)
+**Gap 99** (2 words, fidelity 0.40)
 
 - Actual: `to the`
-- Predicted: `to`
+- Predicted: `straight to my`
 
-**Gap 100** (1 words, fidelity 0.00)
+**Gap 100** (1 words, fidelity 0.67)
 
 - Actual: `house`
-- Predicted: `door.`
+- Predicted: `grandmother's house`
 
-**Gap 101** (2 words, fidelity 0.67)
+**Gap 101** (2 words, fidelity 0.00)
 
 - Actual: `at the`
-- Predicted: `at`
+- Predicted: `loudly`
 
 **Gap 102** (1 words, fidelity 0.00)
 
 - Actual: `Little`
-- Predicted: `was`
+- Predicted: `into`
 
-**Gap 103** (1 words, fidelity 0.67)
-
-- Actual: `the`
-- Predicted: `said the`
-
-**Gap 104** (1 words, fidelity 1.00)
-
-- Actual: `and`
-- Predicted: `and`
-
-**Gap 105** (1 words, fidelity 0.00)
-
-- Actual: `open`
-- Predicted: `and`
-
-**Gap 106** (1 words, fidelity 0.50)
-
-- Actual: `the`
-- Predicted: `Lift the latch,`
-
-**Gap 107** (2 words, fidelity 0.67)
-
-- Actual: `wolf lifted`
-- Predicted: `Lifted`
-
-**Gap 108** (1 words, fidelity 1.00)
-
-- Actual: `latch,`
-- Predicted: `latch,`
-
-**Gap 109** (1 words, fidelity 1.00)
-
-- Actual: `door`
-- Predicted: `door`
-
-**Gap 110** (2 words, fidelity 0.67)
-
-- Actual: `open, and`
-- Predicted: `open`
-
-**Gap 111** (1 words, fidelity 1.00)
-
-- Actual: `word`
-- Predicted: `word`
-
-**Gap 112** (1 words, fidelity 0.00)
-
-- Actual: `straight`
-- Predicted: `in`
-
-**Gap 113** (1 words, fidelity 0.00)
-
-- Actual: `the`
-- Predicted: `grandmother's bed, and devoured her.`
-
-**Gap 114** (4 words, fidelity 0.20)
-
-- Actual: `Then
-he put on`
-- Predicted: `then ran into the kitchen, put on the old woman's bonnet and clothes, 
-dressed herself in her cap laid herself in bed and drew the curtains.`
-
-**Gap 115** (3 words, fidelity 0.00)
-
-- Actual: `himself in her`
-- Predicted: `him, and drew the curtains.`
-
-**Gap 116** (1 words, fidelity 0.00)
-
-- Actual: `in`
-- Predicted: `him`
-
-**Gap 117** (4 words, fidelity 0.67)
-
-- Actual: `many that she could`
-- Predicted: `far that she could not`
-
-**Gap 118** (3 words, fidelity 0.12)
-
-- Actual: `no more, she`
-- Predicted: `that she had better go home again, for her grandmother must be
-asleep.`
-
-**Gap 119** (1 words, fidelity 0.00)
-
-- Actual: `and`
-- Predicted: `that her grandmother was ill in bed.`
-
-**Gap 120** (1 words, fidelity 0.00)
-
-- Actual: `out`
-- Predicted: `off`
-
-**Gap 121** (1 words, fidelity 1.00)
-
-- Actual: `way`
-- Predicted: `way`
-
-**Gap 122** (1 words, fidelity 0.09)
-
-- Actual: `she`
-- Predicted: `she saw nobody, but thought perhaps the grandmother was in the
-kitchen, and went in there, but she was not there either.`
-
-**Gap 123** (1 words, fidelity 1.00)
+**Gap 103** (1 words, fidelity 1.00)
 
 - Actual: `the`
 - Predicted: `the`
 
+**Gap 104** (1 words, fidelity 0.67)
+
+- Actual: `and`
+- Predicted: `and bottles`
+
+**Gap 105** (1 words, fidelity 1.00)
+
+- Actual: `open`
+- Predicted: `open`
+
+**Gap 106** (1 words, fidelity 0.67)
+
+- Actual: `the`
+- Predicted: `the wolf`
+
+**Gap 107** (2 words, fidelity 0.40)
+
+- Actual: `wolf lifted`
+- Predicted: `The wolf, quicker`
+
+**Gap 108** (1 words, fidelity 0.00)
+
+- Actual: `latch,`
+- Predicted: `Red-Cap,' replied the bigwolf. She is bringing cake and wine; at the door.'`
+
+**Gap 109** (1 words, fidelity 0.00)
+
+- Actual: `door`
+- Predicted: `Red-Cap`
+
+**Gap 110** (2 words, fidelity 0.00)
+
+- Actual: `open, and`
+- Predicted: `sprang`
+
+**Gap 111** (1 words, fidelity 0.00)
+
+- Actual: `word`
+- Predicted: `without`
+
+**Gap 112** (1 words, fidelity 0.00)
+
+- Actual: `straight`
+- Predicted: `straightaway`
+
+**Gap 113** (1 words, fidelity 0.00)
+
+- Actual: `the`
+- Predicted: `into`
+
+**Gap 114** (4 words, fidelity 0.00)
+
+- Actual: `Then
+he put on`
+- Predicted: `kissed`
+
+**Gap 115** (3 words, fidelity 0.00)
+
+- Actual: `himself in her`
+- Predicted: `into`
+
+**Gap 116** (1 words, fidelity 0.00)
+
+- Actual: `in`
+- Predicted: `into`
+
+**Gap 117** (4 words, fidelity 0.00)
+
+- Actual: `many that she could`
+- Predicted: `had been able to`
+
+**Gap 118** (3 words, fidelity 0.50)
+
+- Actual: `no more, she`
+- Predicted: `she`
+
+**Gap 119** (1 words, fidelity 0.00)
+
+- Actual: `and`
+- Predicted: `hastily`
+
+**Gap 120** (1 words, fidelity 0.00)
+
+- Actual: `out`
+- Predicted: `to go`
+
+**Gap 121** (1 words, fidelity 0.00)
+
+- Actual: `way`
+- Predicted: `to carry`
+
+**Gap 122** (1 words, fidelity 0.50)
+
+- Actual: `she`
+- Predicted: `she had so`
+
+**Gap 123** (1 words, fidelity 0.00)
+
+- Actual: `the`
+- Predicted: `dust to clean`
+
 **Gap 124** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `strange`
+- Predicted: `strange feelings`
 
 **Gap 125** (1 words, fidelity 0.00)
 
 - Actual: `feeling`
-- Predicted: `sight`
+- Predicted: `feelings`
 
-**Gap 126** (1 words, fidelity 0.00)
+**Gap 126** (1 words, fidelity 1.00)
 
 - Actual: `I`
-- Predicted: `it seemed`
+- Predicted: `I`
 
 **Gap 127** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `though`
+- Predicted: `so`
 
 **Gap 128** (3 words, fidelity 0.00)
 
 - Actual: `other times I`
-- Predicted: `it`
+- Predicted: `so strange`
 
-**Gap 129** (1 words, fidelity 0.67)
+**Gap 129** (1 words, fidelity 0.00)
 
 - Actual: `grandmother`
-- Predicted: `her grandmother`
+- Predicted: `uncomfortable`
 
 **Gap 130** (1 words, fidelity 1.00)
 
 - Actual: `no`
 - Predicted: `no`
 
-**Gap 131** (1 words, fidelity 0.67)
+**Gap 131** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `she went`
+- Predicted: `shefelt`
 
 **Gap 132** (1 words, fidelity 0.00)
 
 - Actual: `bed`
-- Predicted: `window`
+- Predicted: `dining room`
 
-**Gap 133** (1 words, fidelity 1.00)
+**Gap 133** (1 words, fidelity 0.10)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `back the green curtains. There lay her grandmother with her cap pulled far over her eyes, and looking very strange.`
 
 **Gap 134** (2 words, fidelity 0.67)
 
 - Actual: `over her`
-- Predicted: `over`
+- Predicted: `over her mouth and`
 
-**Gap 135** (2 words, fidelity 0.67)
+**Gap 135** (2 words, fidelity 0.00)
 
 - Actual: `ears you`
-- Predicted: `ears`
+- Predicted: `eyes`
 
 **Gap 136** (2 words, fidelity 0.00)
 
 - Actual: `better to`
-- Predicted: `have`
+- Predicted: `had`
 
 **Gap 137** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `with, my child,'`
+- Predicted: `eyes`
 
 **Gap 138** (1 words, fidelity 0.00)
 
 - Actual: `my`
-- Predicted: `said`
+- Predicted: `Oh!`
 
 **Gap 139** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `was her grandmother's`
+- Predicted: `Oh! grandmother,' was`
 
 **Gap 140** (3 words, fidelity 0.00)
 
 - Actual: `grandmother, what big`
-- Predicted: `said,`
+- Predicted: `her grandmother's`
 
 **Gap 141** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `have!`
+- Predicted: `eyes`
 
 **Gap 142** (7 words, fidelity 0.00)
 
 - Actual: `The better to see you with, my`
-- Predicted: `have`
+- Predicted: `eyes`
 
-**Gap 143** (2 words, fidelity 0.44)
+**Gap 143** (2 words, fidelity 0.67)
 
 - Actual: `grandmother, what`
-- Predicted: `But, grandmother, what big teeth you have!`
+- Predicted: `what`
 
 **Gap 144** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `have!`
+- Predicted: `had`
 
-**Gap 145** (3 words, fidelity 1.00)
+**Gap 145** (3 words, fidelity 0.03)
 
 - Actual: `The better to`
-- Predicted: `The better to`
+- Predicted: `The children hear stories with, little child,' was her reply. But, your eyes have!' she said. Your dear.' But, your large hands have!' The children with.' Oh! but, your terrible big mouth have!' Kiss with!' And scarcely had the wolf said this, than with one bound was out and`
 
-**Gap 146** (1 words, fidelity 1.00)
+**Gap 146** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `you`
+- Predicted: `and give`
 
 **Gap 147** (3 words, fidelity 0.00)
 
 - Actual: `grandmother, what a`
-- Predicted: `Oh! but,`
+- Predicted: `such`
 
 **Gap 148** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `have!`
+- Predicted: `had`
 
 **Gap 149** (5 words, fidelity 0.00)
 
 - Actual: `The better to eat you`
-- Predicted: `have!`
+- Predicted: `'have!'`
 
 **Gap 150** (1 words, fidelity 1.00)
 
@@ -1102,153 +1101,153 @@ kitchen, and went in there, but she was not there either.`
 **Gap 151** (1 words, fidelity 0.00)
 
 - Actual: `one`
-- Predicted: `when`
+- Predicted: `leaped`
 
 **Gap 152** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `she`
+- Predicted: `leaped`
 
 **Gap 153** (2 words, fidelity 0.00)
 
 - Actual: `of
 bed`
-- Predicted: `into`
+- Predicted: `leaped`
 
-**Gap 154** (1 words, fidelity 0.17)
+**Gap 154** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `had appeased his appetite, he lay down again in the bed,`
+- Predicted: `then satisfied his`
 
-**Gap 155** (1 words, fidelity 1.00)
+**Gap 155** (1 words, fidelity 0.50)
 
 - Actual: `his`
-- Predicted: `his`
+- Predicted: `he satisfied his`
 
-**Gap 156** (1 words, fidelity 0.18)
+**Gap 156** (1 words, fidelity 0.67)
 
 - Actual: `he`
-- Predicted: `he crept into the room and looked at Red-Cap,`
+- Predicted: `he lay`
 
 **Gap 157** (1 words, fidelity 0.00)
 
 - Actual: `down`
-- Predicted: `himself in at the window.`
+- Predicted: `she`
 
-**Gap 158** (1 words, fidelity 1.00)
+**Gap 158** (1 words, fidelity 0.00)
 
 - Actual: `in`
-- Predicted: `in`
+- Predicted: `he lay down`
 
-**Gap 159** (2 words, fidelity 1.00)
+**Gap 159** (2 words, fidelity 0.00)
 
 - Actual: `to snore`
-- Predicted: `to snore`
+- Predicted: `he began snoring`
 
 **Gap 160** (1 words, fidelity 0.00)
 
 - Actual: `himself:`
-- Predicted: `'How the old woman is snoring! I must`
+- Predicted: `How the woman is snoring!`
 
 **Gap 161** (2 words, fidelity 0.00)
 
 - Actual: `old woman`
-- Predicted: `is snoring! I must`
+- Predicted: `heard`
 
-**Gap 162** (1 words, fidelity 0.29)
+**Gap 162** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `so he quietly opened the door`
+- Predicted: `crept`
 
-**Gap 163** (1 words, fidelity 1.00)
+**Gap 163** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `peek into`
 
-**Gap 164** (1 words, fidelity 0.33)
+**Gap 164** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he found her fast asleep.`
+- Predicted: `quietly`
 
 **Gap 165** (2 words, fidelity 0.00)
 
 - Actual: `to the`
-- Predicted: `into`
+- Predicted: `into her`
 
-**Gap 166** (1 words, fidelity 1.00)
+**Gap 166** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `was`
+- Predicted: `there found`
 
 **Gap 167** (1 words, fidelity 0.00)
 
 - Actual: `here,`
-- Predicted: `"Ah, you old rascal!" said he.`
+- Predicted: `have found`
 
-**Gap 168** (1 words, fidelity 0.29)
+**Gap 168** (1 words, fidelity 0.50)
 
 - Actual: `as`
-- Predicted: `as he drew near, he thought`
+- Predicted: `then just as`
 
-**Gap 169** (1 words, fidelity 0.29)
+**Gap 169** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `as he was going to shoot`
+- Predicted: `just`
 
-**Gap 170** (2 words, fidelity 0.80)
+**Gap 170** (2 words, fidelity 0.67)
 
 - Actual: `to him`
-- Predicted: `to him that`
+- Predicted: `it occurred to him`
 
-**Gap 171** (1 words, fidelity 0.50)
+**Gap 171** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `and he thought`
+- Predicted: `and realized`
 
 **Gap 172** (1 words, fidelity 0.00)
 
 - Actual: `might`
 - Predicted: `that`
 
-**Gap 173** (1 words, fidelity 0.67)
+**Gap 173** (1 words, fidelity 0.00)
 
 - Actual: `be`
-- Predicted: `to be`
+- Predicted: `had been`
 
-**Gap 174** (1 words, fidelity 1.00)
+**Gap 174** (1 words, fidelity 0.00)
 
 - Actual: `not`
-- Predicted: `not`
+- Predicted: `hesitated`
 
-**Gap 175** (1 words, fidelity 1.00)
+**Gap 175** (1 words, fidelity 0.00)
 
 - Actual: `of`
-- Predicted: `of`
+- Predicted: `with`
 
-**Gap 176** (1 words, fidelity 0.00)
+**Gap 176** (1 words, fidelity 0.50)
 
 - Actual: `cut`
-- Predicted: `open the stomach`
+- Predicted: `cut open the`
 
-**Gap 177** (1 words, fidelity 0.67)
+**Gap 177** (1 words, fidelity 0.33)
 
 - Actual: `the`
-- Predicted: `the stomach`
+- Predicted: `open the stomach of the`
 
-**Gap 178** (2 words, fidelity 0.67)
+**Gap 178** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `of`
+- Predicted: `and found`
 
-**Gap 179** (2 words, fidelity 0.00)
+**Gap 179** (2 words, fidelity 0.67)
 
 - Actual: `he had`
-- Predicted: `when`
+- Predicted: `he`
 
-**Gap 180** (1 words, fidelity 0.67)
+**Gap 180** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and when`
+- Predicted: `out`
 
 **Gap 181** (1 words, fidelity 0.67)
 
@@ -1263,273 +1262,273 @@ bed`
 **Gap 183** (1 words, fidelity 0.00)
 
 - Actual: `out`
-- Predicted: `and found her also`
+- Predicted: `she sprang`
 
-**Gap 184** (1 words, fidelity 1.00)
+**Gap 184** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to`
+- Predicted: `could not`
 
 **Gap 185** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `and laid them down in front of the wolf's den.`
+- Predicted: `with`
 
-**Gap 186** (1 words, fidelity 0.50)
+**Gap 186** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the wolf's stomach;`
+- Predicted: `with`
 
-**Gap 187** (1 words, fidelity 0.29)
+**Gap 187** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `but his body was so heavy`
+- Predicted: `with which`
 
-**Gap 188** (3 words, fidelity 0.67)
+**Gap 188** (3 words, fidelity 0.00)
 
 - Actual: `were so heavy`
-- Predicted: `so heavy were they to him`
+- Predicted: `made`
 
-**Gap 189** (1 words, fidelity 0.40)
+**Gap 189** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he could not move`
+- Predicted: `the stones so`
 
 **Gap 190** (1 words, fidelity 0.00)
 
 - Actual: `grandmother`
-- Predicted: `king's son took the cake and the wine, and ate and drank them, and came to life again.`
+- Predicted: `she`
 
 **Gap 191** (6 words, fidelity 0.00)
 
 - Actual: `the cake and drank the wine`
-- Predicted: `which`
+- Predicted: `which Red-Cap`
 
 **Gap 192** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `brought, and revived, but Red-Cap thought to herself: 'As`
+- Predicted: `ate what`
 
-**Gap 193** (1 words, fidelity 0.40)
+**Gap 193** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and the little girl`
+- Predicted: `ate it which Red-Cap brought,`
 
 **Gap 194** (1 words, fidelity 0.67)
 
 - Actual: `as`
-- Predicted: `as long`
+- Predicted: `As long`
 
-**Gap 195** (2 words, fidelity 1.00)
+**Gap 195** (2 words, fidelity 0.00)
 
 - Actual: `I will`
-- Predicted: `will I`
+- Predicted: `As long`
 
-**Gap 196** (1 words, fidelity 1.00)
+**Gap 196** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `never take`
 
 **Gap 197** (3 words, fidelity 0.00)
 
 - Actual: `my mother has`
-- Predicted: `forbidden`
+- Predicted: `was`
 
-**Gap 198** (1 words, fidelity 1.00)
+**Gap 198** (1 words, fidelity 0.00)
 
 - Actual: `do`
-- Predicted: `do`
+- Predicted: `should`
 
 **Gap 199** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `off`
+- Predicted: `away`
 
 **Gap 200** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `was wary`
+- Predicted: `did not`
 
-**Gap 201** (1 words, fidelity 1.00)
+**Gap 201** (1 words, fidelity 0.15)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `had not been on her guard, she would certainly have been frightened.`
 
 **Gap 202** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so`
+- Predicted: `did not`
 
-**Gap 203** (1 words, fidelity 0.00)
+**Gap 203** (1 words, fidelity 0.67)
 
 - Actual: `to`
-- Predicted: `and although he besought her`
+- Predicted: `to speak`
 
 **Gap 204** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `that if they had not been on the public road`
+- Predicted: `that`
 
 **Gap 205** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `public`
+- Predicted: `a`
 
-**Gap 206** (2 words, fidelity 0.67)
+**Gap 206** (2 words, fidelity 0.80)
 
 - Actual: `would
 have`
-- Predicted: `would`
+- Predicted: `would have been`
 
 **Gap 207** (1 words, fidelity 1.00)
 
 - Actual: `her`
 - Predicted: `her`
 
-**Gap 208** (2 words, fidelity 0.29)
+**Gap 208** (2 words, fidelity 0.67)
 
 - Actual: `said the`
-- Predicted: `she said to her grandmother,`
+- Predicted: `said`
 
 **Gap 209** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `it`
+- Predicted: `said`
 
-**Gap 210** (4 words, fidelity 0.33)
+**Gap 210** (4 words, fidelity 0.00)
 
 - Actual: `he may not come`
-- Predicted: `that we may not be seen by him.`
+- Predicted: `eat`
 
-**Gap 211** (2 words, fidelity 0.00)
+**Gap 211** (2 words, fidelity 1.00)
 
 - Actual: `the wolf`
-- Predicted: `there came a knock, and cried:`
+- Predicted: `the wolf`
 
-**Gap 212** (1 words, fidelity 0.05)
+**Gap 212** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and if he had not been on the public road she was certain he would have eaten her up. 'Well,' said the grandmother, 'we will shut the door, that he may not come in.' Soon afterwards the wolf knocked,`
+- Predicted: `had not been`
 
-**Gap 213** (3 words, fidelity 0.67)
+**Gap 213** (3 words, fidelity 0.40)
 
 - Actual: `Open the door,`
-- Predicted: `"Open the door, dear little grandmother!"`
+- Predicted: `"Open, Open,"`
 
 **Gap 214** (1 words, fidelity 0.00)
 
 - Actual: `am`
-- Predicted: `have come home from the woods.`
+- Predicted: `had`
 
 **Gap 215** (1 words, fidelity 0.00)
 
 - Actual: `bringing`
-- Predicted: `so`
+- Predicted: `to bring`
 
-**Gap 216** (1 words, fidelity 1.00)
+**Gap 216** (1 words, fidelity 0.18)
 
 - Actual: `not`
-- Predicted: `not`
+- Predicted: `did not, the, and, and, said, was, to, and, before`
 
-**Gap 217** (1 words, fidelity 0.33)
+**Gap 217** (1 words, fidelity 0.67)
 
 - Actual: `the`
-- Predicted: `it, so the grey-beard`
+- Predicted: `open the`
 
 **Gap 218** (1 words, fidelity 0.00)
 
 - Actual: `thrice`
-- Predicted: `over`
+- Predicted: `three`
 
-**Gap 219** (1 words, fidelity 0.22)
+**Gap 219** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the house, and at last jumped on theroof,`
+- Predicted: `around`
 
 **Gap 220** (1 words, fidelity 0.00)
 
 - Actual: `last`
-- Predicted: `which`
+- Predicted: `they`
 
-**Gap 221** (1 words, fidelity 0.67)
+**Gap 221** (1 words, fidelity 0.50)
 
 - Actual: `to`
-- Predicted: `to see`
+- Predicted: `to wait until`
 
-**Gap 222** (1 words, fidelity 0.00)
+**Gap 222** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `after`
+- Predicted: `the`
 
-**Gap 223** (1 words, fidelity 0.00)
+**Gap 223** (1 words, fidelity 1.00)
 
 - Actual: `her`
-- Predicted: `the house`
+- Predicted: `her`
 
 **Gap 224** (1 words, fidelity 1.00)
 
 - Actual: `her`
 - Predicted: `her`
 
-**Gap 225** (2 words, fidelity 0.80)
+**Gap 225** (2 words, fidelity 0.31)
 
 - Actual: `of the`
-- Predicted: `of the house`
+- Predicted: `in front of the house was a great stone trough, so`
 
 **Gap 226** (1 words, fidelity 0.00)
 
 - Actual: `a`
 - Predicted: `lay`
 
-**Gap 227** (1 words, fidelity 0.00)
+**Gap 227** (1 words, fidelity 1.00)
 
 - Actual: `she`
-- Predicted: `big so`
+- Predicted: `she`
 
-**Gap 228** (1 words, fidelity 0.14)
+**Gap 228** (1 words, fidelity 0.08)
 
 - Actual: `to`
-- Predicted: `she said to the wolf: 'Take the pail, Red-Cap; I made some`
+- Predicted: `the child: Take the pail, Red-Cap; I made some sausages yesterday, so carry the water in which I boiled them to the trough.`
 
-**Gap 229** (2 words, fidelity 0.00)
+**Gap 229** (2 words, fidelity 0.33)
 
 - Actual: `boiled them`
-- Predicted: `to the`
+- Predicted: `I put them in`
 
-**Gap 230** (1 words, fidelity 0.12)
+**Gap 230** (1 words, fidelity 0.33)
 
 - Actual: `the`
-- Predicted: `the trough. Take it to the garden and pour it on the young plants there.`
+- Predicted: `to fill the trough.'`
 
-**Gap 231** (2 words, fidelity 0.00)
+**Gap 231** (2 words, fidelity 0.67)
 
 - Actual: `trough was`
-- Predicted: `pail`
+- Predicted: `was`
 
-**Gap 232** (1 words, fidelity 0.00)
-
-- Actual: `the`
-- Predicted: `sausages`
-
-**Gap 233** (1 words, fidelity 0.00)
+**Gap 232** (1 words, fidelity 0.50)
 
 - Actual: `the`
-- Predicted: `Red-Cap, and she said to him, "Good morning, wolf; what big ears you have!"`
+- Predicted: `boiled into the`
 
-**Gap 234** (1 words, fidelity 1.00)
+**Gap 233** (1 words, fidelity 0.20)
+
+- Actual: `the`
+- Predicted: `to feed on, the, the, his, so, to, into`
+
+**Gap 234** (1 words, fidelity 0.00)
 
 - Actual: `far`
-- Predicted: `far`
+- Predicted: `that`
 
 **Gap 235** (1 words, fidelity 0.00)
 
 - Actual: `longer`
-- Predicted: `that`
+- Predicted: `could`
 
 **Gap 236** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `he began`
+- Predicted: `almost`
 
 **Gap 237** (1 words, fidelity 1.00)
 
@@ -1698,611 +1697,610 @@ his footing and began <gap 318> slip, <gap 319> slipped down from <gap 320> stra
 
 ### Gaps
 
-**Gap 1** (1 words, fidelity 0.67)
+**Gap 1** (1 words, fidelity 0.00)
 
 - Actual: `Once`
-- Predicted: `once upon`
+- Predicted: `did`
 
-**Gap 2** (2 words, fidelity 0.67)
+**Gap 2** (2 words, fidelity 0.00)
 
 - Actual: `a time`
-- Predicted: `time`
+- Predicted: `upon which there lived`
 
-**Gap 3** (2 words, fidelity 0.09)
+**Gap 3** (2 words, fidelity 0.00)
 
 - Actual: `was a`
-- Predicted: `was a dear little girl who was loved by everyone who looked at her, but most of all by her grandmother, and there was nothing that she would not have given to the child. Once she gave her a little cap of r`
+- Predicted: `dwelt`
 
 **Gap 4** (2 words, fidelity 0.00)
 
 - Actual: `by everyone`
-- Predicted: `loved`
+- Predicted: `so well`
 
-**Gap 5** (1 words, fidelity 1.00)
+**Gap 5** (1 words, fidelity 0.00)
 
 - Actual: `at`
-- Predicted: `at`
+- Predicted: `into`
 
-**Gap 6** (4 words, fidelity 0.36)
+**Gap 6** (4 words, fidelity 0.00)
 
 - Actual: `of all by her`
-- Predicted: `of her own grandmother, and there was`
+- Predicted: `dearly`
 
-**Gap 7** (1 words, fidelity 0.00)
+**Gap 7** (1 words, fidelity 0.40)
 
 - Actual: `was`
-- Predicted: `did`
+- Predicted: `was willing to do`
 
 **Gap 8** (1 words, fidelity 0.00)
 
 - Actual: `not`
-- Predicted: `would`
+- Predicted: `do anything`
 
 **Gap 9** (2 words, fidelity 0.00)
 
 - Actual: `given to`
-- Predicted: `do`
+- Predicted: `would do anything for`
 
-**Gap 10** (1 words, fidelity 1.00)
+**Gap 10** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `once she gave Red-Cap`
 
 **Gap 11** (4 words, fidelity 0.40)
 
 - Actual: `her so well that`
 - Predicted: `her`
 
-**Gap 12** (1 words, fidelity 0.00)
+**Gap 12** (1 words, fidelity 1.00)
 
 - Actual: `anything`
-- Predicted: `away`
+- Predicted: `anything`
 
-**Gap 13** (4 words, fidelity 0.00)
+**Gap 13** (4 words, fidelity 0.40)
 
 - Actual: `was always called 'Little`
-- Predicted: `did`
+- Predicted: `called`
 
-**Gap 14** (1 words, fidelity 1.00)
+**Gap 14** (1 words, fidelity 0.00)
 
 - Actual: `One`
-- Predicted: `one`
+- Predicted: `day came when her mother said to her: Come, Little Red-Cap, here is a piece of cake and a bottle of wine for Grandmother; set them before her.`
 
-**Gap 15** (1 words, fidelity 0.06)
+**Gap 15** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her mother said to her: 'Dear child, take this nice little pie, and that
-loaf of bread, for your grandmother. She is sick and weak, and will be
-delighted to see you.'`
+- Predicted: `took`
 
-**Gap 16** (2 words, fidelity 0.17)
+**Gap 16** (2 words, fidelity 0.00)
 
 - Actual: `said to`
-- Predicted: `had given to the child. Once she gave her a`
+- Predicted: `called`
 
-**Gap 17** (1 words, fidelity 0.80)
+**Gap 17** (1 words, fidelity 1.00)
 
 - Actual: `Red-Cap,`
-- Predicted: `Little Red-Cap`
+- Predicted: `Red-Cap`
 
-**Gap 18** (2 words, fidelity 0.50)
+**Gap 18** (2 words, fidelity 0.00)
 
 - Actual: `is a`
-- Predicted: `a piece`
+- Predicted: `put on`
 
-**Gap 19** (12 words, fidelity 0.12)
+**Gap 19** (12 words, fidelity 0.00)
 
 - Actual: `of cake and a bottle of wine; take them to your grandmother,`
-- Predicted: `here is a piece`
+- Predicted: `Red-Cap`
 
 **Gap 20** (2 words, fidelity 0.00)
 
 - Actual: `is ill`
-- Predicted: `go, my child, and may you have a safe journey!`
+- Predicted: `brought`
 
-**Gap 21** (2 words, fidelity 0.00)
+**Gap 21** (2 words, fidelity 0.25)
 
 - Actual: `weak, and`
-- Predicted: `go not into the woods, where anything might happen to you.`
+- Predicted: `sit by the fire and eat`
 
-**Gap 22** (4 words, fidelity 0.18)
+**Gap 22** (4 words, fidelity 0.00)
 
 - Actual: `will do her good.`
-- Predicted: `will get there, give her the cake and the wine, and say to her: 'Good
-morning, grandmother.'`
+- Predicted: `sit down`
 
-**Gap 23** (1 words, fidelity 0.00)
+**Gap 23** (1 words, fidelity 0.40)
 
 - Actual: `out`
-- Predicted: `down`
+- Predicted: `Set out before it`
 
 **Gap 24** (1 words, fidelity 0.00)
 
 - Actual: `gets`
-- Predicted: `while`
+- Predicted: `Set it before it hot, as when`
 
-**Gap 25** (1 words, fidelity 0.15)
+**Gap 25** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and go straight to her room, and don't talk to anyone else,`
+- Predicted: `quickly`
 
-**Gap 26** (1 words, fidelity 0.50)
+**Gap 26** (1 words, fidelity 1.00)
 
 - Actual: `you`
-- Predicted: `when you go`
+- Predicted: `you`
 
 **Gap 27** (2 words, fidelity 0.00)
 
 - Actual: `and quietly`
-- Predicted: `so`
+- Predicted: `settle`
 
 **Gap 28** (3 words, fidelity 0.00)
 
 - Actual: `do not run`
-- Predicted: `so`
+- Predicted: `settle`
 
-**Gap 29** (15 words, fidelity 0.00)
+**Gap 29** (15 words, fidelity 0.12)
 
 - Actual: `the path,
 or you may fall and break the bottle, and then your grandmother will`
-- Predicted: `that`
+- Predicted: `if you`
 
-**Gap 30** (1 words, fidelity 0.00)
+**Gap 30** (1 words, fidelity 1.00)
 
 - Actual: `you`
-- Predicted: `when`
+- Predicted: `you`
 
 **Gap 31** (2 words, fidelity 0.00)
 
 - Actual: `her room,`
-- Predicted: `the forest,`
+- Predicted: `before it gets hot, if when you are going, walk nicely on and off get nothing; and when you go into bed don't say, "good morning", and don't do it before you do it. I make great efforts to give it. The grandmother`
 
 **Gap 32** (2 words, fidelity 0.00)
 
 - Actual: `forget to`
-- Predicted: `peek`
+- Predicted: `say`
 
-**Gap 33** (1 words, fidelity 0.00)
+**Gap 33** (1 words, fidelity 0.67)
 
 - Actual: `Good`
-- Predicted: `goodnight`
+- Predicted: `say "Good"`
 
-**Gap 34** (1 words, fidelity 0.20)
+**Gap 34** (1 words, fidelity 0.18)
 
 - Actual: `and`
-- Predicted: `and do not stick your head into the cupboard`
+- Predicted: `and when you go into town don't say, "Good morning",`
 
 **Gap 35** (2 words, fidelity 0.00)
 
 - Actual: `peep into`
-- Predicted: `glance`
+- Predicted: `mention`
 
 **Gap 36** (1 words, fidelity 0.00)
 
 - Actual: `corner`
-- Predicted: `room,'`
+- Predicted: `think`
 
 **Gap 37** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `that`
+- Predicted: `never`
 
-**Gap 38** (1 words, fidelity 0.10)
+**Gap 38** (1 words, fidelity 0.00)
 
 - Actual: `will`
-- Predicted: `I will take great care, ' said Little Red-Cap to her mother, and gave her hand on it.`
+- Predicted: `I never take great pains to give it a thought. The grandmother stepped out of her house, just as the first light of dawn entered the room.`
 
-**Gap 39** (4 words, fidelity 0.29)
+**Gap 39** (4 words, fidelity 0.00)
 
 - Actual: `care,' said Little Red-Cap`
-- Predicted: `care`
+- Predicted: `pains`
 
-**Gap 40** (3 words, fidelity 0.50)
+**Gap 40** (3 words, fidelity 0.00)
 
 - Actual: `her mother, and`
-- Predicted: `her`
+- Predicted: `did`
 
 **Gap 41** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `hand`
+- Predicted: `did`
 
 **Gap 42** (1 words, fidelity 0.00)
 
 - Actual: `lived`
-- Predicted: `was`
+- Predicted: `did`
 
 **Gap 43** (3 words, fidelity 0.00)
 
 - Actual: `in the wood,`
-- Predicted: `at`
+- Predicted: `didn't`
 
 **Gap 44** (1 words, fidelity 0.00)
 
 - Actual: `league`
-- Predicted: `mile`
+- Predicted: `pound`
 
-**Gap 45** (1 words, fidelity 0.00)
+**Gap 45** (1 words, fidelity 0.40)
 
 - Actual: `the`
-- Predicted: `from`
+- Predicted: `stepped
+into
+the
+nearest`
 
-**Gap 46** (1 words, fidelity 0.67)
+**Gap 46** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `and promised`
+- Predicted: `had`
 
 **Gap 47** (3 words, fidelity 0.00)
 
 - Actual: `as Little Red-Cap`
-- Predicted: `far`
+- Predicted: `did`
 
 **Gap 48** (4 words, fidelity 0.00)
 
 - Actual: `the wood, a wolf`
-- Predicted: `forest`
+- Predicted: `met her.`
 
-**Gap 49** (3 words, fidelity 0.17)
+**Gap 49** (3 words, fidelity 0.00)
 
 - Actual: `not know what`
-- Predicted: `did he know better than to show any fear`
+- Predicted: `gave`
 
 **Gap 50** (1 words, fidelity 0.00)
 
 - Actual: `creature`
-- Predicted: `was`
+- Predicted: `glance`
 
-**Gap 51** (2 words, fidelity 0.67)
+**Gap 51** (2 words, fidelity 0.14)
 
 - Actual: `was, and`
-- Predicted: `was`
+- Predicted: `gave the wolf a wicked glance he thought was a kind one.`
 
-**Gap 52** (4 words, fidelity 0.40)
+**Gap 52** (4 words, fidelity 0.33)
 
 - Actual: `not at all afraid`
-- Predicted: `afraid`
+- Predicted: `was afraid`
 
 **Gap 53** (1 words, fidelity 0.00)
 
 - Actual: `Good`
 - Predicted: `said`
 
-**Gap 54** (3 words, fidelity 0.00)
+**Gap 54** (3 words, fidelity 0.33)
 
 - Actual: `Little Red-Cap,' said`
-- Predicted: `are`
+- Predicted: `said`
 
-**Gap 55** (1 words, fidelity 1.00)
+**Gap 55** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `you`
+- Predicted: `Thank the wolf kindly, Little Red-Cap.`
 
 **Gap 56** (3 words, fidelity 0.00)
 
 - Actual: `away so early,`
-- Predicted: `are you going,`
+- Predicted: `went`
 
-**Gap 57** (1 words, fidelity 0.80)
+**Gap 57** (1 words, fidelity 0.00)
 
 - Actual: `Red-Cap?'`
-- Predicted: `Red-Cap`
+- Predicted: `went`
 
-**Gap 58** (5 words, fidelity 0.46)
+**Gap 58** (5 words, fidelity 0.25)
 
 - Actual: `have you got in your`
-- Predicted: `did you say you are carrying in your`
+- Predicted: `did you wear`
 
 **Gap 59** (2 words, fidelity 0.00)
 
 - Actual: `Cake and`
-- Predicted: `are some plums,`
+- Predicted: `said`
 
-**Gap 60** (1 words, fidelity 0.00)
+**Gap 60** (1 words, fidelity 1.00)
 
 - Actual: `was`
-- Predicted: `did`
+- Predicted: `was`
 
 **Gap 61** (1 words, fidelity 0.00)
 
 - Actual: `grandmother`
-- Predicted: `old woman`
+- Predicted: `she`
 
 **Gap 62** (1 words, fidelity 0.00)
 
 - Actual: `have`
-- Predicted: `baked goods are`
+- Predicted: `eat`
 
-**Gap 63** (1 words, fidelity 0.00)
+**Gap 63** (1 words, fidelity 0.67)
 
 - Actual: `her`
-- Predicted: `stronger.'`
+- Predicted: `her constitution`
 
 **Gap 64** (6 words, fidelity 0.00)
 
 - Actual: `does your grandmother live, Little Red-Cap?'`
-- Predicted: `is`
+- Predicted: `did she go; a good quarter mile`
 
 **Gap 65** (3 words, fidelity 0.00)
 
 - Actual: `of a league`
-- Predicted: `away`
+- Predicted: `baker's`
 
-**Gap 66** (3 words, fidelity 0.18)
+**Gap 66** (3 words, fidelity 0.00)
 
 - Actual: `on in the`
-- Predicted: `into the forest, where the wild thyme grows.`
+- Predicted: `walked into`
 
 **Gap 67** (2 words, fidelity 0.00)
 
 - Actual: `house stands`
-- Predicted: `does`
+- Predicted: `sits`
 
-**Gap 68** (1 words, fidelity 1.00)
+**Gap 68** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `to find`
 
-**Gap 69** (1 words, fidelity 0.50)
+**Gap 69** (1 words, fidelity 0.00)
 
 - Actual: `oak-trees,`
-- Predicted: `oak-tree,`
+- Predicted: `beneath`
 
 **Gap 70** (2 words, fidelity 0.00)
 
 - Actual: `are just`
-- Predicted: `and the cherry-trees,`
+- Predicted: `she`
 
 **Gap 71** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `'I know the way very well,' answered Little Red-Cap.`
+- Predicted: `she thought`
 
 **Gap 72** (1 words, fidelity 0.00)
 
 - Actual: `know`
-- Predicted: `see`
+- Predicted: `must hide`
 
 **Gap 73** (2 words, fidelity 0.00)
 
 - Actual: `Little Red-Cap.`
-- Predicted: `the girl`
+- Predicted: `she`
 
-**Gap 74** (4 words, fidelity 0.40)
+**Gap 74** (4 words, fidelity 0.00)
 
 - Actual: `wolf thought to himself:`
-- Predicted: `Wolf,`
+- Predicted: `giraffe`
 
 **Gap 75** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `good`
+- Predicted: `poor`
 
 **Gap 76** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `delicious`
+- Predicted: `delightful`
 
 **Gap 77** (2 words, fidelity 0.00)
 
 - Actual: `will be`
-- Predicted: `would`
+- Predicted: `would have preferred`
 
-**Gap 78** (4 words, fidelity 0.40)
+**Gap 78** (4 words, fidelity 0.22)
 
 - Actual: `eat than the old`
-- Predicted: `eat`
+- Predicted: `better to deceive the woman.`
 
 **Gap 79** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `must`
+- Predicted: `must act cunningly, so cleverly to catch both.'`
 
 **Gap 80** (1 words, fidelity 0.00)
 
 - Actual: `as`
-- Predicted: `he must deceive her`
+- Predicted: `surely must manage it,' replied cunningly The wicked What a tender young creature! what a nice plump mouthful--she would better to deceive both.' So slyly walked for a short time by the hedge Little Alice See, she might be about here--why not look round? I believe, too,`
 
-**Gap 81** (1 words, fidelity 0.25)
+**Gap 81** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he walked for a short time by`
+- Predicted: `replied with delight The very`
 
-**Gap 82** (1 words, fidelity 1.00)
+**Gap 82** (1 words, fidelity 0.25)
 
 - Actual: `a`
-- Predicted: `a`
+- Predicted: `so she walked for a short time`
 
 **Gap 83** (1 words, fidelity 0.00)
 
 - Actual: `time`
-- Predicted: `while`
+- Predicted: `must she`
 
 **Gap 84** (2 words, fidelity 0.00)
 
 - Actual: `side of`
-- Predicted: `path, and then he said: 'See, Little Red-Cap, how pretty the flowers are about here--I believe, too, that you do not hear how sweetly the little birds are singing`
+- Predicted: `So she walked for a short time by the`
 
-**Gap 85** (5 words, fidelity 0.50)
+**Gap 85** (5 words, fidelity 0.00)
 
 - Actual: `Red-Cap, and then he said:`
-- Predicted: `Red-Cap,`
+- Predicted: `What innocent young creature! what dainty plump mouthful—she would better suit a man. She must act craftily, so slyly to catch both.' So stealthily she walked for a short time by the riverbank.`
 
 **Gap 86** (3 words, fidelity 0.00)
 
 - Actual: `Little Red-Cap, how`
-- Predicted: `pretty the flowers are about here—why do you not look round?`
+- Predicted: `she must go better to win the woman.`
 
 **Gap 87** (3 words, fidelity 0.00)
 
 - Actual: `the flowers are`
-- Predicted: `blossom`
+- Predicted: `garden`
 
-**Gap 88** (3 words, fidelity 0.50)
+**Gap 88** (3 words, fidelity 0.40)
 
 - Actual: `do you not`
-- Predicted: `not`
+- Predicted: `must not`
 
-**Gap 89** (6 words, fidelity 0.29)
+**Gap 89** (6 words, fidelity 0.00)
 
 - Actual: `that you do not hear how`
-- Predicted: `that`
+- Predicted: `she`
 
-**Gap 90** (1 words, fidelity 0.09)
+**Gap 90** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `Little Red-Cap raised her eyes, and when she saw the sunbeams dancing among the leaves, she was surprised and looked around.`
+- Predicted: `sang`
 
-**Gap 91** (2 words, fidelity 0.67)
+**Gap 91** (2 words, fidelity 0.00)
 
 - Actual: `birds are`
-- Predicted: `birds`
+- Predicted: `ladybirds`
 
 **Gap 92** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `he looked so stern and forbidding that she began to feel afraid, and`
+- Predicted: `little maid walked gravely like`
 
 **Gap 93** (1 words, fidelity 0.00)
 
 - Actual: `along`
-- Predicted: `gravely as if you were going to school, while everything else`
+- Predicted: `strolled`
 
 **Gap 94** (5 words, fidelity 0.00)
 
 - Actual: `if you were going to`
-- Predicted: `so solemnly`
+- Predicted: `walked silently like`
 
-**Gap 95** (5 words, fidelity 0.13)
+**Gap 95** (5 words, fidelity 0.00)
 
 - Actual: `here in the wood is`
-- Predicted: `about here--why do you not look round? I believe,`
+- Predicted: `were`
 
 **Gap 96** (2 words, fidelity 0.00)
 
 - Actual: `Little Red-Cap`
-- Predicted: `she`
+- Predicted: `raised her eyes when the sunbeams filtered here through the trees,`
 
-**Gap 97** (3 words, fidelity 0.13)
+**Gap 97** (3 words, fidelity 0.00)
 
 - Actual: `her eyes, and`
-- Predicted: `up, and said joyfully: 'Ah, how pleasant it is out here!'`
+- Predicted: `she`
 
-**Gap 98** (2 words, fidelity 1.00)
+**Gap 98** (2 words, fidelity 0.50)
 
 - Actual: `she saw`
-- Predicted: `she saw`
+- Predicted: `she lifted`
 
 **Gap 99** (1 words, fidelity 0.00)
 
 - Actual: `dancing`
-- Predicted: `FILTERED`
+- Predicted: `filtered`
 
-**Gap 100** (2 words, fidelity 0.50)
+**Gap 100** (2 words, fidelity 0.00)
 
 - Actual: `and there`
-- Predicted: `and saw`
+- Predicted: `filtered`
 
 **Gap 101** (1 words, fidelity 1.00)
 
 - Actual: `the`
 - Predicted: `the`
 
-**Gap 102** (1 words, fidelity 0.33)
+**Gap 102** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `glittering so brightly, and such`
+- Predicted: `growing`
 
-**Gap 103** (1 words, fidelity 1.00)
+**Gap 103** (1 words, fidelity 0.00)
 
 - Actual: `flowers`
-- Predicted: `flowers`
+- Predicted: `violet`
 
-**Gap 104** (1 words, fidelity 0.17)
-
-- Actual: `she`
-- Predicted: `she thought: 'Suppose I take grandmother a fresh nosegay; that would`
-
-**Gap 105** (1 words, fidelity 0.67)
-
-- Actual: `I`
-- Predicted: `Suppose I`
-
-**Gap 106** (1 words, fidelity 0.67)
-
-- Actual: `a`
-- Predicted: `a little`
-
-**Gap 107** (2 words, fidelity 0.00)
-
-- Actual: `please her`
-- Predicted: `would make`
-
-**Gap 108** (1 words, fidelity 0.00)
-
-- Actual: `is`
-- Predicted: `so`
-
-**Gap 109** (1 words, fidelity 0.00)
-
-- Actual: `early`
-- Predicted: `far`
-
-**Gap 110** (2 words, fidelity 0.00)
-
-- Actual: `the day`
-- Predicted: `morning`
-
-**Gap 111** (2 words, fidelity 0.00)
-
-- Actual: `I shall`
-- Predicted: `that she might`
-
-**Gap 112** (1 words, fidelity 0.00)
-
-- Actual: `there`
-- Predicted: `so`
-
-**Gap 113** (1 words, fidelity 0.00)
-
-- Actual: `and`
-- Predicted: `so she ran from the path into the wood to look for`
-
-**Gap 114** (1 words, fidelity 1.00)
+**Gap 104** (1 words, fidelity 1.00)
 
 - Actual: `she`
 - Predicted: `she`
 
+**Gap 105** (1 words, fidelity 0.67)
+
+- Actual: `I`
+- Predicted: `I will`
+
+**Gap 106** (1 words, fidelity 0.00)
+
+- Actual: `a`
+- Predicted: `to`
+
+**Gap 107** (2 words, fidelity 0.00)
+
+- Actual: `please her`
+- Predicted: `make`
+
+**Gap 108** (1 words, fidelity 0.00)
+
+- Actual: `is`
+- Predicted: `seemed`
+
+**Gap 109** (1 words, fidelity 0.00)
+
+- Actual: `early`
+- Predicted: `dark`
+
+**Gap 110** (2 words, fidelity 0.00)
+
+- Actual: `the day`
+- Predicted: `that it would be pleasant`
+
+**Gap 111** (2 words, fidelity 0.00)
+
+- Actual: `I shall`
+- Predicted: `picking flowers`
+
+**Gap 112** (1 words, fidelity 0.00)
+
+- Actual: `there`
+- Predicted: `a bouquet`
+
+**Gap 113** (1 words, fidelity 0.00)
+
+- Actual: `and`
+- Predicted: `she`
+
+**Gap 114** (1 words, fidelity 0.00)
+
+- Actual: `she`
+- Predicted: `ran`
+
 **Gap 115** (1 words, fidelity 0.00)
 
 - Actual: `path`
-- Predicted: `house`
+- Predicted: `growing everywhere, thought: Suppose I take grandmother's fresh nosegay; that would please her too. It was so nice in the garden that we still got there in good time'; so we ran from the garden into the meadow to look for more flowers. And whenever we had one, we fancied we`
 
-**Gap 116** (3 words, fidelity 0.40)
+**Gap 116** (3 words, fidelity 0.50)
 
 - Actual: `the wood to`
-- Predicted: `the forest`
+- Predicted: `the`
 
-**Gap 117** (2 words, fidelity 0.17)
+**Gap 117** (2 words, fidelity 0.00)
 
 - Actual: `for
 flowers.`
-- Predicted: `for a nosegay of sweet flowers; but she did not find any blossoms
-yet, for it was very early in the spring.`
+- Predicted: `out`
 
-**Gap 118** (1 words, fidelity 0.00)
+**Gap 118** (1 words, fidelity 1.00)
 
 - Actual: `she`
-- Predicted: `and whenever`
+- Predicted: `she`
 
 **Gap 119** (1 words, fidelity 0.00)
 
 - Actual: `picked`
-- Predicted: `a`
+- Predicted: `pursued`
 
-**Gap 120** (1 words, fidelity 0.67)
+**Gap 120** (1 words, fidelity 1.00)
 
 - Actual: `she`
-- Predicted: `she thought`
+- Predicted: `she`
 
 **Gap 121** (2 words, fidelity 0.67)
 
@@ -2312,164 +2310,161 @@ yet, for it was very early in the spring.`
 **Gap 122** (1 words, fidelity 0.00)
 
 - Actual: `one`
-- Predicted: `bush`
+- Predicted: `into the thicket`
 
 **Gap 123** (2 words, fidelity 0.00)
 
 - Actual: `on, and`
-- Predicted: `off`
+- Predicted: `off into`
 
 **Gap 124** (1 words, fidelity 0.00)
 
 - Actual: `so`
-- Predicted: `got deeper and`
+- Predicted: `further`
 
-**Gap 125** (4 words, fidelity 0.40)
+**Gap 125** (4 words, fidelity 0.50)
 
 - Actual: `and
 deeper into the`
-- Predicted: `into`
+- Predicted: `deeper into the darkest part of the wood.`
 
-**Gap 126** (2 words, fidelity 0.50)
+**Gap 126** (2 words, fidelity 1.00)
 
 - Actual: `the wolf`
-- Predicted: `the girl`
+- Predicted: `the wolf`
 
 **Gap 127** (4 words, fidelity 0.00)
 
 - Actual: `to the grandmother's house`
-- Predicted: `and knocked`
+- Predicted: `into`
 
-**Gap 128** (2 words, fidelity 0.67)
+**Gap 128** (2 words, fidelity 0.00)
 
 - Actual: `at the`
-- Predicted: `at`
+- Predicted: `old woman's`
 
-**Gap 129** (2 words, fidelity 0.00)
+**Gap 129** (2 words, fidelity 0.05)
 
 - Actual: `Who is`
-- Predicted: `cided that she was not at home, and then ran up to the grandmother's bed
-and threw her over to make room for himself.`
+- Predicted: `fancied saw a still prettier farther ran after it, and got deeper wood. Meanwhile she ran straight and knocked door. Is my there?' Red-Cap,' replied the wolf. She is wine; open the door.' Lift latch,' called out`
 
 **Gap 130** (1 words, fidelity 0.00)
 
 - Actual: `Little`
-- Predicted: `was`
+- Predicted: `into`
 
-**Gap 131** (1 words, fidelity 0.67)
+**Gap 131** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `said the`
+- Predicted: `said`
 
-**Gap 132** (3 words, fidelity 0.25)
+**Gap 132** (3 words, fidelity 0.00)
 
 - Actual: `bringing cake and`
-- Predicted: `had brought some meat and`
+- Predicted: `had stolen`
 
-**Gap 133** (2 words, fidelity 0.00)
+**Gap 133** (2 words, fidelity 1.00)
 
 - Actual: `open
 the`
-- Predicted: `and`
+- Predicted: `open the`
 
 **Gap 134** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `up`
+- Predicted: `her`
 
-**Gap 135** (1 words, fidelity 0.50)
+**Gap 135** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `Lift the latch,`
+- Predicted: `Open`
 
 **Gap 136** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `will you`
+- Predicted: `I'm`
 
-**Gap 137** (4 words, fidelity 0.00)
+**Gap 137** (4 words, fidelity 0.40)
 
 - Actual: `wolf lifted the latch,`
-- Predicted: `door`
+- Predicted: `wolf`
 
-**Gap 138** (1 words, fidelity 1.00)
+**Gap 138** (1 words, fidelity 0.00)
 
 - Actual: `door`
-- Predicted: `door`
+- Predicted: `Red-Cap`
 
-**Gap 139** (2 words, fidelity 0.67)
+**Gap 139** (2 words, fidelity 0.00)
 
 - Actual: `open, and`
-- Predicted: `open`
+- Predicted: `sprang`
 
 **Gap 140** (2 words, fidelity 0.00)
 
 - Actual: `a
 word`
-- Predicted: `anything`
+- Predicted: `without thinking`
 
 **Gap 141** (3 words, fidelity 0.00)
 
 - Actual: `straight to the`
 - Predicted: `into`
 
-**Gap 142** (1 words, fidelity 1.00)
+**Gap 142** (1 words, fidelity 0.00)
 
 - Actual: `bed,`
-- Predicted: `bed`
+- Predicted: `into`
 
-**Gap 143** (6 words, fidelity 0.29)
+**Gap 143** (6 words, fidelity 0.00)
 
 - Actual: `Then
 he put on her clothes,`
-- Predicted: `then`
+- Predicted: `Little Red-Cap`
 
 **Gap 144** (3 words, fidelity 0.00)
 
 - Actual: `himself in her`
-- Predicted: `him, and drew the curtains.`
+- Predicted: `back`
 
 **Gap 145** (3 words, fidelity 0.00)
 
 - Actual: `himself in bed`
-- Predicted: `him up`
+- Predicted: `off`
 
-**Gap 146** (2 words, fidelity 0.22)
+**Gap 146** (2 words, fidelity 0.00)
 
 - Actual: `the curtains.`
-- Predicted: `up the grandmother's feet under the coverlets.`
+- Predicted: `off`
 
 **Gap 147** (1 words, fidelity 0.00)
 
 - Actual: `about`
-- Predicted: `so open, and thought to herself, "That is strange! Grandmother must be ill
-and have opened the door that I may find her."`
+- Predicted: `had been running`
 
-**Gap 148** (1 words, fidelity 1.00)
+**Gap 148** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `she`
+- Predicted: `had been running`
 
-**Gap 149** (4 words, fidelity 0.67)
+**Gap 149** (4 words, fidelity 0.00)
 
 - Actual: `many that she could`
-- Predicted: `far that she could not`
+- Predicted: `to`
 
-**Gap 150** (3 words, fidelity 0.12)
+**Gap 150** (3 words, fidelity 0.00)
 
 - Actual: `no more, she`
-- Predicted: `that she had better go home again, for her grandmother must be
-asleep.`
+- Predicted: `to`
 
-**Gap 151** (1 words, fidelity 0.18)
+**Gap 151** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her grandmother, and set out on the way to her.`
+- Predicted: `to find`
 
-**Gap 152** (1 words, fidelity 0.00)
+**Gap 152** (1 words, fidelity 0.67)
 
 - Actual: `and`
-- Predicted: `that her grandmother was ill in bed.`
+- Predicted: `and hurried`
 
 **Gap 153** (1 words, fidelity 0.00)
 
@@ -2479,156 +2474,153 @@ asleep.`
 **Gap 154** (2 words, fidelity 0.00)
 
 - Actual: `the way`
-- Predicted: `her usual time nothing is ever amiss.'`
+- Predicted: `off`
 
-**Gap 155** (2 words, fidelity 0.50)
+**Gap 155** (2 words, fidelity 0.00)
 
 - Actual: `find the`
-- Predicted: `to find`
+- Predicted: `she found`
 
 **Gap 156** (2 words, fidelity 0.67)
 
 - Actual: `open, and`
-- Predicted: `open.`
+- Predicted: `open`
 
-**Gap 157** (1 words, fidelity 0.09)
+**Gap 157** (1 words, fidelity 0.25)
 
 - Actual: `she`
-- Predicted: `she saw nobody, but thought perhaps the grandmother was in the
-kitchen, and went in there, but she was not there either.`
+- Predicted: `had gone into she had such strange`
 
-**Gap 158** (2 words, fidelity 0.50)
+**Gap 158** (2 words, fidelity 0.00)
 
 - Actual: `the room,`
-- Predicted: `it, and went into the room.`
+- Predicted: `open`
 
 **Gap 159** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `strange`
+- Predicted: `open`
 
-**Gap 160** (6 words, fidelity 0.15)
+**Gap 160** (6 words, fidelity 0.00)
 
 - Actual: `feeling that she said to
 herself:`
-- Predicted: `feeling as if something were not right.`
+- Predicted: `old`
 
 **Gap 161** (1 words, fidelity 0.00)
 
 - Actual: `how`
-- Predicted: `and felt`
+- Predicted: `found`
 
 **Gap 162** (2 words, fidelity 0.00)
 
 - Actual: `I feel`
-- Predicted: `it felt as if something were not right`
+- Predicted: `felt`
 
 **Gap 163** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `though`
+- Predicted: `found`
 
 **Gap 164** (3 words, fidelity 0.00)
 
 - Actual: `other times I`
-- Predicted: `it`
+- Predicted: `seemed`
 
 **Gap 165** (2 words, fidelity 0.00)
 
 - Actual: `grandmother so`
-- Predicted: `him`
+- Predicted: `mad tea-party`
 
 **Gap 166** (5 words, fidelity 0.00)
 
 - Actual: `called out: 'Good morning,' but`
-- Predicted: `felt`
+- Predicted: `stood`
 
 **Gap 167** (1 words, fidelity 1.00)
 
 - Actual: `no`
 - Predicted: `no`
 
-**Gap 168** (9 words, fidelity 0.67)
+**Gap 168** (9 words, fidelity 0.33)
 
 - Actual: `she went to the bed and drew back the`
-- Predicted: `she went to pull back the`
+- Predicted: `pulled back the`
 
 **Gap 169** (1 words, fidelity 0.00)
 
 - Actual: `lay`
-- Predicted: `there`
+- Predicted: `sat`
 
 **Gap 170** (3 words, fidelity 0.00)
 
 - Actual: `grandmother with her`
-- Predicted: `cap`
+- Predicted: `sat`
 
-**Gap 171** (4 words, fidelity 0.00)
+**Gap 171** (4 words, fidelity 0.20)
 
 - Actual: `pulled far over her`
-- Predicted: `face, and`
+- Predicted: `placed her hand on her forehead,`
 
 **Gap 172** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `looking very strange.`
+- Predicted: `sat`
 
-**Gap 173** (2 words, fidelity 0.67)
+**Gap 173** (2 words, fidelity 0.00)
 
 - Actual: `said, 'what`
-- Predicted: `said`
+- Predicted: `had`
 
-**Gap 174** (2 words, fidelity 0.67)
+**Gap 174** (2 words, fidelity 0.00)
 
 - Actual: `ears you`
-- Predicted: `ears`
+- Predicted: `eyes`
 
 **Gap 175** (6 words, fidelity 0.00)
 
 - Actual: `better to hear you with, my`
 - Predicted: `child,`
 
-**Gap 176** (2 words, fidelity 0.33)
+**Gap 176** (2 words, fidelity 0.00)
 
 - Actual: `the reply.`
-- Predicted: `the old woman answered.`
+- Predicted: `cried`
 
-**Gap 177** (3 words, fidelity 0.00)
+**Gap 177** (3 words, fidelity 0.08)
 
 - Actual: `grandmother, what big`
-- Predicted: `said,`
+- Predicted: `her tiny cap on her face, quite looking very strange. Oh! grandmother,' she exclaimed big ones! The little child,' was surprised But, eyes so huge!' she said. Oh dear.' And those large ones!' And with. Oh! but, that terrible big mouth`
 
 **Gap 178** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `have!`
+- Predicted: `had`
 
 **Gap 179** (7 words, fidelity 0.00)
 
 - Actual: `The better to see you with, my`
-- Predicted: `have`
+- Predicted: `eyes`
 
 **Gap 180** (3 words, fidelity 0.00)
 
 - Actual: `But, grandmother, what`
-- Predicted: `'The better to eat you with!'
-
-And scarcely had the wolf said this, than with one bound he sprang upon Little Red Riding Hood.`
+- Predicted: `she exclaimed, 'How`
 
 **Gap 181** (2 words, fidelity 0.00)
 
 - Actual: `hands you`
-- Predicted: `teeth`
+- Predicted: `eyes`
 
-**Gap 182** (5 words, fidelity 0.73)
+**Gap 182** (5 words, fidelity 0.00)
 
 - Actual: `The better to hug you`
-- Predicted: `The better to eat you with!`
+- Predicted: `had`
 
 **Gap 183** (3 words, fidelity 0.00)
 
 - Actual: `grandmother, what a`
-- Predicted: `Oh! but,`
+- Predicted: `terrible`
 
 **Gap 184** (1 words, fidelity 0.00)
 
@@ -2638,7 +2630,7 @@ And scarcely had the wolf said this, than with one bound he sprang upon Little R
 **Gap 185** (5 words, fidelity 0.00)
 
 - Actual: `The better to eat you`
-- Predicted: `have!`
+- Predicted: `"do!"`
 
 **Gap 186** (1 words, fidelity 1.00)
 
@@ -2648,256 +2640,255 @@ And scarcely had the wolf said this, than with one bound he sprang upon Little R
 **Gap 187** (1 words, fidelity 0.00)
 
 - Actual: `wolf`
-- Predicted: `had`
+- Predicted: `said`
 
 **Gap 188** (1 words, fidelity 0.00)
 
 - Actual: `than`
-- Predicted: `when the little girl came running into the room`
+- Predicted: `and`
 
 **Gap 189** (3 words, fidelity 0.00)
 
 - Actual: `one bound he`
-- Predicted: `when`
+- Predicted: `and`
 
 **Gap 190** (3 words, fidelity 0.00)
 
 - Actual: `out of
 bed`
-- Predicted: `upon Red-Cap.`
+- Predicted: `scared`
 
-**Gap 191** (3 words, fidelity 0.25)
+**Gap 191** (3 words, fidelity 0.10)
 
 - Actual: `the wolf had`
-- Predicted: `when he had appeased his appetite, he lay down again in the bed,`
+- Predicted: `When Red-Cap appeased her mother again and went to bed, fell asleep and began to snore very loudly. The huntsman was just passing the cottage thought to himself How the child had grown I must just`
 
-**Gap 192** (5 words, fidelity 0.29)
+**Gap 192** (5 words, fidelity 0.00)
 
 - Actual: `his appetite, he lay down`
-- Predicted: `his hunger`
+- Predicted: `calmly`
 
 **Gap 193** (2 words, fidelity 0.00)
 
 - Actual: `in the`
-- Predicted: `into`
+- Predicted: `she hurried him to her own`
 
-**Gap 194** (2 words, fidelity 1.00)
+**Gap 194** (2 words, fidelity 0.00)
 
 - Actual: `to snore`
-- Predicted: `to snore`
+- Predicted: `snored`
 
 **Gap 195** (2 words, fidelity 0.00)
 
 - Actual: `house, and`
-- Predicted: `room`
+- Predicted: `entered the room`
 
 **Gap 196** (1 words, fidelity 0.00)
 
 - Actual: `himself:`
-- Predicted: `'How the old woman is snoring! I must`
+- Predicted: `to think how the child is sleeping I must just see if it wants something So he went into the room came in saw that the wolf had got in it Do I wake you old sinner!`
 
 **Gap 197** (2 words, fidelity 0.00)
 
 - Actual: `old woman`
-- Predicted: `is snoring! I must`
+- Predicted: `slept`
 
 **Gap 198** (1 words, fidelity 0.00)
 
 - Actual: `snoring!`
-- Predicted: `LEFT: WHEN THE WOLF IS SURELY SLEEPING`
+- Predicted: `to enter the room and find`
 
 **Gap 199** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `he went in`
+- Predicted: `peeked inside`
 
 **Gap 200** (1 words, fidelity 0.00)
 
 - Actual: `anything.'`
-- Predicted: `it`
+- Predicted: `peek out`
 
-**Gap 201** (1 words, fidelity 0.29)
+**Gap 201** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `so he quietly opened the door`
+- Predicted: `crept silently`
 
-**Gap 202** (5 words, fidelity 0.57)
+**Gap 202** (5 words, fidelity 0.29)
 
 - Actual: `the room, and when he`
-- Predicted: `the room,`
+- Predicted: `peeked into the cabin and saw that the wolf`
 
-**Gap 203** (4 words, fidelity 0.00)
+**Gap 203** (4 words, fidelity 0.17)
 
 - Actual: `to the bed, he`
-- Predicted: `in and found`
+- Predicted: `stepped into the hut, saw that the wolf was lying asleep on the bed. Do I not know you old sinner!' said he. I have long sought you!' Then just as he was going to fire at him, it would have devoured`
 
-**Gap 204** (2 words, fidelity 0.00)
+**Gap 204** (2 words, fidelity 0.50)
 
 - Actual: `was lying`
-- Predicted: `lay`
+- Predicted: `was lurking`
 
-**Gap 205** (3 words, fidelity 0.20)
+**Gap 205** (3 words, fidelity 0.00)
 
 - Actual: `find you
 here,`
-- Predicted: `will I shoot you, you old rascal!`
+- Predicted: `do I frighten`
 
-**Gap 206** (1 words, fidelity 0.00)
+**Gap 206** (1 words, fidelity 1.00)
 
 - Actual: `said`
-- Predicted: `'Well, what do we have here?'`
+- Predicted: `said`
 
 **Gap 207** (1 words, fidelity 0.00)
 
 - Actual: `sought`
-- Predicted: `shoot`
+- Predicted: `waited for`
 
-**Gap 208** (3 words, fidelity 0.15)
+**Gap 208** (3 words, fidelity 0.10)
 
 - Actual: `as
 he was`
-- Predicted: `he took a knife and began to cut open t`
+- Predicted: `if she wants So she went into came saw that the wolf had been in it. Do I see you old sinner!' he said. I have long missed you!' Then just as she was going to fire at him, it was the wolf that had devoured her she had saved, and so did the fire,`
 
-**Gap 209** (1 words, fidelity 0.29)
+**Gap 209** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `as he was going to shoot`
+- Predicted: `leaped`
 
 **Gap 210** (4 words, fidelity 0.00)
 
 - Actual: `occurred to him that`
-- Predicted: `as he drew near, the wolf awoke, and sprang up, saying, "Ah, thou hast
-found me!"`
+- Predicted: `realized`
 
 **Gap 211** (1 words, fidelity 0.00)
 
 - Actual: `might`
-- Predicted: `that`
+- Predicted: `had`
 
 **Gap 212** (4 words, fidelity 0.00)
 
 - Actual: `the grandmother, and that`
-- Predicted: `her`
+- Predicted: `had`
 
-**Gap 213** (3 words, fidelity 0.57)
+**Gap 213** (3 words, fidelity 0.00)
 
 - Actual: `might still be`
-- Predicted: `that he might still`
+- Predicted: `had`
 
-**Gap 214** (2 words, fidelity 0.67)
+**Gap 214** (2 words, fidelity 0.00)
 
 - Actual: `so he`
-- Predicted: `so`
+- Predicted: `did the fire take a pair of scissors and cut to pieces the wolf's stomach when`
 
-**Gap 215** (1 words, fidelity 1.00)
+**Gap 215** (1 words, fidelity 0.00)
 
 - Actual: `not`
-- Predicted: `not`
+- Predicted: `leaped into`
 
 **Gap 216** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `he therefore decided to investigate further,`
+- Predicted: `sewn`
 
 **Gap 217** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `out`
+- Predicted: `sewn`
 
-**Gap 218** (2 words, fidelity 1.00)
+**Gap 218** (2 words, fidelity 0.00)
 
 - Actual: `of scissors,`
-- Predicted: `of scissors`
+- Predicted: `shears`
 
 **Gap 219** (1 words, fidelity 0.00)
 
 - Actual: `began`
-- Predicted: `and cut open the belly`
+- Predicted: `sewn up his`
 
-**Gap 220** (3 words, fidelity 0.86)
+**Gap 220** (3 words, fidelity 0.57)
 
 - Actual: `cut open the`
-- Predicted: `cut open the belly`
+- Predicted: `cut open his stomach`
 
-**Gap 221** (2 words, fidelity 0.67)
+**Gap 221** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `of`
+- Predicted: `and had cut open his stomach`
 
-**Gap 222** (1 words, fidelity 1.00)
+**Gap 222** (1 words, fidelity 0.00)
 
 - Actual: `wolf.`
-- Predicted: `wolf`
+- Predicted: `she did cut`
 
 **Gap 223** (2 words, fidelity 0.00)
 
 - Actual: `he had`
-- Predicted: `when`
+- Predicted: `snips`
 
-**Gap 224** (3 words, fidelity 0.80)
+**Gap 224** (3 words, fidelity 0.09)
 
 - Actual: `he saw the`
-- Predicted: `he saw`
+- Predicted: `she had sewed, the, did not, took off, a, and put, a, to her, stomach, sleeping; When he made two snips, she let little Red-Cap shining, then he made two snips, the little girl sprang out, crying: Ah, how I have been`
 
 **Gap 225** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `that he might release them`
+- Predicted: `she cut`
 
 **Gap 226** (1 words, fidelity 1.00)
 
 - Actual: `two`
 - Predicted: `two`
 
-**Gap 227** (2 words, fidelity 0.50)
+**Gap 227** (2 words, fidelity 0.00)
 
 - Actual: `more, and`
-- Predicted: `and when`
+- Predicted: `out`
 
 **Gap 228** (1 words, fidelity 0.00)
 
 - Actual: `girl`
-- Predicted: `Red-Cap`
+- Predicted: `sprang out, crying: Ah, how`
 
-**Gap 229** (2 words, fidelity 0.50)
+**Gap 229** (2 words, fidelity 0.00)
 
 - Actual: `frightened I`
-- Predicted: `had I`
+- Predicted: `you have betrayed me`
 
 **Gap 230** (1 words, fidelity 0.00)
 
 - Actual: `been!`
-- Predicted: `was`
+- Predicted: `How I have frightened`
 
 **Gap 231** (3 words, fidelity 0.00)
 
 - Actual: `dark it was`
-- Predicted: `did`
+- Predicted: `were`
 
-**Gap 232** (1 words, fidelity 0.15)
+**Gap 232** (1 words, fidelity 0.29)
 
 - Actual: `the`
-- Predicted: `inside the wolf's body, he howled so terribly that the forest resounded.`
+- Predicted: `out of the wolf's stomach came`
 
-**Gap 233** (1 words, fidelity 0.17)
+**Gap 233** (1 words, fidelity 0.04)
 
 - Actual: `and`
-- Predicted: `and then he had eaten both the grandmother and Red-Cap`
+- Predicted: `When he made two snips, the little Red-Cap shining, then he made two snips and the little girl sprang out, crying: Ah, how scared I was; how scared I was inside the wolf's belly; after that the aged grandmother came in, but scarcely dared to breathe. Red-Cap`
 
 **Gap 234** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `which`
+- Predicted: `two`
 
-**Gap 235** (1 words, fidelity 0.00)
+**Gap 235** (1 words, fidelity 1.00)
 
 - Actual: `grandmother`
-- Predicted: `woman`
+- Predicted: `grandmother`
 
-**Gap 236** (2 words, fidelity 0.18)
+**Gap 236** (2 words, fidelity 0.00)
 
 - Actual: `out alive`
-- Predicted: `she came out, also, but scarcely able to breathe.`
+- Predicted: `he snips and snails and sayings`
 
 **Gap 237** (2 words, fidelity 0.00)
 
@@ -2907,113 +2898,113 @@ found me!"`
 **Gap 238** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `hastened inside, and found the wolf lying there full of blood.`
+- Predicted: `ran into`
 
 **Gap 239** (1 words, fidelity 0.00)
 
 - Actual: `which`
-- Predicted: `and laid them down in front of the wolf's den.`
+- Predicted: `he could not`
 
 **Gap 240** (3 words, fidelity 0.40)
 
 - Actual: `filled the wolf's`
-- Predicted: `filled up the hole in the roof`
+- Predicted: `filled their`
 
 **Gap 241** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `she cut open his belly`
+- Predicted: `Red-Cap`
 
-**Gap 242** (1 words, fidelity 0.13)
+**Gap 242** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he found the wolf sitting on top of his grandmother, who was still unconscious.`
+- Predicted: `Red-Cap wanted`
 
-**Gap 243** (1 words, fidelity 0.67)
+**Gap 243** (1 words, fidelity 0.04)
 
 - Actual: `to`
-- Predicted: `to run`
+- Predicted: `Red-Cap, quickly fetched great stones with which they placed under his head, and when he awoke, he wanted to run but collapsed at once fell dead. Then all the others were delighted. The huntsman drew off his skin and went home with it; the children ate it.`
 
 **Gap 244** (9 words, fidelity 0.00)
 
 - Actual: `away, but the stones were so heavy that he`
-- Predicted: `down`
+- Predicted: `and died`
 
-**Gap 245** (2 words, fidelity 0.00)
+**Gap 245** (2 words, fidelity 0.04)
 
 - Actual: `once, and`
-- Predicted: `there`
+- Predicted: `scarcely dared to breathe. Red-Cap, quickly fetched great stones with which they belly, and when he awoke, he wanted to run but collapsed at fell dead. Then all the huntsmen were delighted. The huntsman drew off his skin and went home with it; the children ate them which revived,`
 
 **Gap 246** (1 words, fidelity 0.00)
 
 - Actual: `three`
-- Predicted: `the little maiden was`
+- Predicted: `the children`
 
-**Gap 247** (1 words, fidelity 0.18)
+**Gap 247** (1 words, fidelity 0.07)
 
 - Actual: `The`
-- Predicted: `they cut open his belly and took out the stones.`
+- Predicted: `the huntsman drew off its skin and went home with it; the wolf ate it which made Red-Cap think tovenge As long as she lived,`
 
-**Gap 248** (2 words, fidelity 0.00)
+**Gap 248** (2 words, fidelity 0.80)
 
 - Actual: `the wolf's`
-- Predicted: `off his coat`
+- Predicted: `off the wolf's`
 
-**Gap 249** (1 words, fidelity 1.00)
+**Gap 249** (1 words, fidelity 0.00)
 
 - Actual: `with`
-- Predicted: `with`
+- Predicted: `to find`
 
 **Gap 250** (1 words, fidelity 0.00)
 
 - Actual: `grandmother`
-- Predicted: `king's son took the cake and the wine, and ate and drank them, and came to life again.`
+- Predicted: `wolf`
 
 **Gap 251** (6 words, fidelity 0.00)
 
 - Actual: `the cake and drank the wine`
-- Predicted: `which`
+- Predicted: `it`
 
-**Gap 252** (4 words, fidelity 0.15)
+**Gap 252** (4 words, fidelity 0.00)
 
 - Actual: `Red-Cap had brought, and`
-- Predicted: `the meat and set out for home again.`
+- Predicted: `it`
 
-**Gap 253** (1 words, fidelity 0.50)
+**Gap 253** (1 words, fidelity 0.00)
 
 - Actual: `herself:`
-- Predicted: `think to herself`
+- Predicted: `As long as I live, I will by myself leave the path, to run into the woods when I meet such a huntsman.'`
 
-**Gap 254** (2 words, fidelity 0.50)
+**Gap 254** (2 words, fidelity 0.19)
 
 - Actual: `as I`
-- Predicted: `as long`
+- Predicted: `As long I live, I by myself leave the path, to run into danger when I am so.'`
 
-**Gap 255** (3 words, fidelity 0.80)
+**Gap 255** (3 words, fidelity 0.50)
 
 - Actual: `I will never`
-- Predicted: `will I`
+- Predicted: `never`
 
-**Gap 256** (1 words, fidelity 1.00)
+**Gap 256** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `not to stray from`
 
 **Gap 257** (2 words, fidelity 0.50)
 
 - Actual: `the
 wood,`
-- Predicted: `the forest`
+- Predicted: `off the`
 
 **Gap 258** (4 words, fidelity 0.00)
 
 - Actual: `my mother has forbidden`
-- Predicted: `the`
+- Predicted: `hurt`
 
 **Gap 259** (2 words, fidelity 0.00)
 
 - Actual: `to do`
-- Predicted: `so.`
+- Predicted: `happened`
 
 **Gap 260** (1 words, fidelity 1.00)
 
@@ -3025,10 +3016,10 @@ wood,`
 - Actual: `to`
 - Predicted: `to`
 
-**Gap 262** (1 words, fidelity 0.40)
+**Gap 262** (1 words, fidelity 1.00)
 
 - Actual: `to`
-- Predicted: `to entice her from`
+- Predicted: `to`
 
 **Gap 263** (1 words, fidelity 0.00)
 
@@ -3038,321 +3029,319 @@ wood,`
 **Gap 264** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `was wary`
+- Predicted: `did not see`
 
-**Gap 265** (3 words, fidelity 0.20)
+**Gap 265** (3 words, fidelity 0.00)
 
 - Actual: `her guard, and`
-- Predicted: `her way, she would have run away.`
+- Predicted: `heedlessly`
 
-**Gap 266** (1 words, fidelity 0.00)
+**Gap 266** (1 words, fidelity 1.00)
 
 - Actual: `straight`
-- Predicted: `forward`
+- Predicted: `straight`
 
-**Gap 267** (1 words, fidelity 1.00)
+**Gap 267** (1 words, fidelity 0.06)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `the same way, and told her grandmother that she had met the wolf who said good morning' with such wicked intentions in his eyes, and if he were on the public road she was certain`
 
-**Gap 268** (2 words, fidelity 0.29)
+**Gap 268** (2 words, fidelity 0.40)
 
 - Actual: `had met`
-- Predicted: `told her grandmother that she had met the wolf, and that he`
+- Predicted: `had seen someone`
 
-**Gap 269** (2 words, fidelity 0.67)
+**Gap 269** (2 words, fidelity 0.00)
 
 - Actual: `wolf, and`
-- Predicted: `wolf`
+- Predicted: `stranger`
 
-**Gap 270** (2 words, fidelity 0.67)
+**Gap 270** (2 words, fidelity 0.00)
 
 - Actual: `he
 had`
-- Predicted: `he`
+- Predicted: `she heard`
 
-**Gap 271** (3 words, fidelity 0.00)
+**Gap 271** (3 words, fidelity 0.09)
 
 - Actual: `to her, but`
-- Predicted: `and had a very evil`
+- Predicted: `to entice her from the path, Red-Cap, who was on her way, and told her grandmother that she saw the wolf with such wicked glances in his eyes, as if they would lead her to the public road she was certain`
 
-**Gap 272** (1 words, fidelity 1.00)
+**Gap 272** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `a`
+- Predicted: `with such wicked glances,`
 
-**Gap 273** (1 words, fidelity 1.00)
+**Gap 273** (1 words, fidelity 0.00)
 
 - Actual: `look`
-- Predicted: `look`
+- Predicted: `sneered`
 
 **Gap 274** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `that if they had not been on the public road`
+- Predicted: `glared`
 
-**Gap 275** (1 words, fidelity 0.00)
+**Gap 275** (1 words, fidelity 1.00)
 
 - Actual: `that`
-- Predicted: `she thought`
+- Predicted: `that`
 
 **Gap 276** (5 words, fidelity 0.00)
 
 - Actual: `had not been on the`
-- Predicted: `if they`
+- Predicted: `would take her`
 
-**Gap 277** (6 words, fidelity 0.21)
+**Gap 277** (6 words, fidelity 0.07)
 
 - Actual: `he would
 have eaten her up.`
-- Predicted: `, and told her grandmother that she had met the wolf, and that he`
+- Predicted: `had seen someone staring at her with such wickedness in their eyes, as if they intended to follow her down the public road.`
 
-**Gap 278** (3 words, fidelity 0.40)
+**Gap 278** (3 words, fidelity 0.50)
 
 - Actual: `said the grandmother,`
-- Predicted: `she said`
+- Predicted: `said`
 
 **Gap 279** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `it`
+- Predicted: `said`
 
-**Gap 280** (4 words, fidelity 0.33)
+**Gap 280** (4 words, fidelity 0.00)
 
 - Actual: `he may not come`
-- Predicted: `that we may not be seen by him.`
+- Predicted: `sneaked`
 
-**Gap 281** (2 words, fidelity 0.00)
+**Gap 281** (2 words, fidelity 0.50)
 
 - Actual: `the wolf`
-- Predicted: `there came a knock, and cried:`
+- Predicted: `the old`
 
-**Gap 282** (1 words, fidelity 0.05)
+**Gap 282** (1 words, fidelity 0.40)
 
 - Actual: `and`
-- Predicted: `and if he had not been on the public road she was certain he would have eaten her up. 'Well,' said the grandmother, 'we will shut the door, that he may not come in.' Soon afterwards the wolf knocked,`
+- Predicted: `knocked loudly and persistently`
 
-**Gap 283** (3 words, fidelity 0.67)
+**Gap 283** (3 words, fidelity 0.00)
 
 - Actual: `Open the door,`
-- Predicted: `"Open the door, dear little grandmother!"`
+- Predicted: `grandmother, I'm afraid`
 
 **Gap 284** (1 words, fidelity 0.00)
 
 - Actual: `am`
-- Predicted: `have come home from the woods.`
+- Predicted: `to see`
 
-**Gap 285** (5 words, fidelity 0.50)
+**Gap 285** (5 words, fidelity 0.00)
 
 - Actual: `Red-Cap, and am bringing you`
-- Predicted: `Red-Cap.`
+- Predicted: `certainly`
 
 **Gap 286** (1 words, fidelity 0.00)
 
 - Actual: `cakes.'`
-- Predicted: `meat.`
+- Predicted: `But nobody speak, or open the door, so the old grey-beard stole twice or more`
 
-**Gap 287** (3 words, fidelity 0.00)
+**Gap 287** (3 words, fidelity 0.33)
 
 - Actual: `they did not`
-- Predicted: `the grandmother, 'I am too weak to get up; go away, my dear, and come
-another time when I am better.'`
+- Predicted: `we will not`
 
-**Gap 288** (1 words, fidelity 0.33)
-
-- Actual: `the`
-- Predicted: `it, so the grey-beard`
-
-**Gap 289** (1 words, fidelity 0.67)
+**Gap 288** (1 words, fidelity 0.04)
 
 - Actual: `the`
-- Predicted: `the wolf`
+- Predicted: `shut the door, that the wolf in.' Soon afterwards he knocked, she cried: "grandmother, I cannot come, or open the door, so the grey-beard stole twice or thrice jumped on the roof, intending to wait until Red-Cap went home in peace to steal after her and devour her`
+
+**Gap 289** (1 words, fidelity 0.04)
+
+- Actual: `the`
+- Predicted: `that wolf' in.' Soon afterwards he knocked, three times cried: granny, I am Little Red Riding Hood some come But if she speak, or open the door, so the grey-beard stole twice or more jumped on the roof, intending to wait until Red-Cap went home in the evening to steal after her`
 
 **Gap 290** (7 words, fidelity 0.00)
 
 - Actual: `thrice round the house, and at last`
-- Predicted: `afterwards`
+- Predicted: `twice or`
 
-**Gap 291** (1 words, fidelity 0.67)
+**Gap 291** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to see`
+- Predicted: `waited until`
 
-**Gap 292** (4 words, fidelity 0.00)
+**Gap 292** (4 words, fidelity 0.33)
 
 - Actual: `the evening, and then`
-- Predicted: `darkness.`
+- Predicted: `the night`
 
 **Gap 293** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `the house`
+- Predicted: `the child`
 
-**Gap 294** (1 words, fidelity 1.00)
+**Gap 294** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `Red-Cap`
 
 **Gap 295** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `darkness.`
+- Predicted: `pitch-black`
 
 **Gap 296** (1 words, fidelity 0.00)
 
 - Actual: `But`
-- Predicted: `he
-stayed`
+- Predicted: `and`
 
 **Gap 297** (1 words, fidelity 0.00)
 
 - Actual: `his`
-- Predicted: `her`
+- Predicted: `her grandchildren's`
 
-**Gap 298** (2 words, fidelity 0.80)
+**Gap 298** (2 words, fidelity 0.00)
 
 - Actual: `of the`
-- Predicted: `of the house`
+- Predicted: `before`
 
 **Gap 299** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `lay`
+- Predicted: `stood`
 
 **Gap 300** (1 words, fidelity 0.00)
 
 - Actual: `she`
-- Predicted: `big so`
+- Predicted: `Red-Cap`
 
-**Gap 301** (1 words, fidelity 0.14)
+**Gap 301** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `she said to the wolf: 'Take the pail, Red-Cap; I made some`
+- Predicted: `the`
 
 **Gap 302** (1 words, fidelity 0.00)
 
 - Actual: `child:`
-- Predicted: `girl`
+- Predicted: `Take`
 
-**Gap 303** (1 words, fidelity 1.00)
+**Gap 303** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `Take`
 
 **Gap 304** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `and said to her: 'What big hands you have, Red-Cap!'`
+- Predicted: `she knew`
 
-**Gap 305** (1 words, fidelity 0.33)
+**Gap 305** (1 words, fidelity 0.00)
 
 - Actual: `some`
-- Predicted: `me some of the sausages.`
+- Predicted: `stole after them and devoured them in secret darkness.`
 
 **Gap 306** (1 words, fidelity 0.00)
 
 - Actual: `yesterday,`
-- Predicted: `that I baked in the oven, and now they are cold, so carry the water in which I boiled them to the trough.`
+- Predicted: `were made`
 
-**Gap 307** (5 words, fidelity 0.08)
+**Gap 307** (5 words, fidelity 0.29)
 
 - Actual: `I boiled them to the`
-- Predicted: `the sausages, and he sniffed and peeped down, and at last stretched out his neck so far that he could`
+- Predicted: `from the`
 
-**Gap 308** (1 words, fidelity 0.67)
+**Gap 308** (1 words, fidelity 1.00)
 
 - Actual: `the`
-- Predicted: `until the`
+- Predicted: `the`
 
-**Gap 309** (2 words, fidelity 0.00)
+**Gap 309** (2 words, fidelity 0.29)
 
 - Actual: `trough was`
-- Predicted: `pail`
+- Predicted: `was so said the Take`
 
-**Gap 310** (1 words, fidelity 0.40)
+**Gap 310** (1 words, fidelity 0.00)
 
 - Actual: `Then`
-- Predicted: `Then went her mother`
+- Predicted: `Red-Cap`
 
-**Gap 311** (3 words, fidelity 0.86)
+**Gap 311** (3 words, fidelity 0.75)
 
 - Actual: `of the sausages`
-- Predicted: `of the sausages reached`
+- Predicted: `the smell of the sausages`
 
-**Gap 312** (4 words, fidelity 0.36)
+**Gap 312** (4 words, fidelity 0.67)
 
 - Actual: `the wolf, and he`
-- Predicted: `the chimney, and peeped through the opening`
+- Predicted: `the wolf`
 
 **Gap 313** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `he thought to himself`
+- Predicted: `he looked`
 
 **Gap 314** (1 words, fidelity 0.00)
 
 - Actual: `last`
-- Predicted: `that`
+- Predicted: `Red-Cap stretched his neck so far that no one could keep his footing and began to slip,`
 
-**Gap 315** (2 words, fidelity 0.67)
+**Gap 315** (2 words, fidelity 0.10)
 
 - Actual: `out his`
-- Predicted: `out`
+- Predicted: `he stretched his long neck so far that no one could keep his footing and began to slip,`
 
-**Gap 316** (4 words, fidelity 0.40)
+**Gap 316** (4 words, fidelity 0.38)
 
 - Actual: `far that he could`
-- Predicted: `that`
+- Predicted: `he stretched his neck so far that he could not keep his footing and began to slip,`
 
 **Gap 317** (1 words, fidelity 0.00)
 
 - Actual: `longer`
-- Predicted: `that`
+- Predicted: `he could`
 
 **Gap 318** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `he began`
+- Predicted: `slightly`
 
 **Gap 319** (1 words, fidelity 0.00)
 
 - Actual: `and`
 - Predicted: `he`
 
-**Gap 320** (2 words, fidelity 0.00)
+**Gap 320** (2 words, fidelity 0.40)
 
 - Actual: `the roof`
-- Predicted: `straight`
+- Predicted: `down the chimney`
 
-**Gap 321** (2 words, fidelity 0.67)
+**Gap 321** (2 words, fidelity 0.44)
 
 - Actual: `into the`
-- Predicted: `into`
+- Predicted: `down the chute into the pool below.`
 
 **Gap 322** (2 words, fidelity 0.00)
 
 - Actual: `trough, and`
-- Predicted: `bass' mouth`
+- Predicted: `elephant`
 
 **Gap 323** (2 words, fidelity 0.00)
 
 - Actual: `Red-Cap went`
-- Predicted: `the girl danced`
+- Predicted: `scrambled up, with a whoop, and`
 
-**Gap 324** (1 words, fidelity 0.12)
+**Gap 324** (1 words, fidelity 1.00)
 
 - Actual: `and`
-- Predicted: `and the wolf skinned him, put on his fur, and lay down in his skin.`
+- Predicted: `and`
 
 **Gap 325** (2 words, fidelity 0.00)
 
 - Actual: `one ever`
-- Predicted: `happened`
+- Predicted: `But joyously home, not a thing to harm him again.`
 
-**Gap 326** (1 words, fidelity 1.00)
+**Gap 326** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `her`
+- Predicted: `did anything to harm him`
 
 ## Position 3 — threshold 3.174 bits
 
@@ -3470,356 +3459,351 @@ smell <gap 248> sniffed <gap 249> peeped down,
 
 ### Gaps
 
-**Gap 1** (4 words, fidelity 0.29)
+**Gap 1** (4 words, fidelity 0.00)
 
 - Actual: `Once upon a time`
-- Predicted: `once there was`
+- Predicted: `was there dear loved one who looked after her, her most beloved grandmother, and there was nothing`
 
-**Gap 2** (2 words, fidelity 0.09)
+**Gap 2** (2 words, fidelity 0.40)
 
 - Actual: `was a`
-- Predicted: `was a dear little girl who was loved by everyone who looked at her, but most of all by her grandmother, and there was nothing that she would not have given to the child. Once she gave her a little cap of r`
+- Predicted: `was seated beside`
 
-**Gap 3** (4 words, fidelity 0.67)
+**Gap 3** (4 words, fidelity 0.00)
 
 - Actual: `little girl who was`
-- Predicted: `little girl`
+- Predicted: `dear departed`
 
 **Gap 4** (2 words, fidelity 0.00)
 
 - Actual: `by everyone`
-- Predicted: `loved`
+- Predicted: `dear`
 
-**Gap 5** (1 words, fidelity 1.00)
+**Gap 5** (1 words, fidelity 0.00)
 
 - Actual: `at`
-- Predicted: `at`
+- Predicted: `into`
 
 **Gap 6** (1 words, fidelity 0.00)
 
 - Actual: `but`
-- Predicted: `and`
+- Predicted: `sat beside`
 
-**Gap 7** (4 words, fidelity 0.36)
+**Gap 7** (4 words, fidelity 0.00)
 
 - Actual: `of all by her`
-- Predicted: `of her own grandmother, and there was`
+- Predicted: `dear`
 
-**Gap 8** (1 words, fidelity 0.00)
+**Gap 8** (1 words, fidelity 1.00)
 
 - Actual: `was`
-- Predicted: `did`
+- Predicted: `was`
 
 **Gap 9** (9 words, fidelity 0.00)
 
 - Actual: `that she would not have given to the child.`
 - Predicted: `was`
 
-**Gap 10** (3 words, fidelity 0.50)
+**Gap 10** (3 words, fidelity 0.25)
 
 - Actual: `gave her a`
-- Predicted: `gave`
+- Predicted: `there lived a little girl`
 
-**Gap 11** (8 words, fidelity 0.08)
+**Gap 11** (8 words, fidelity 0.00)
 
 - Actual: `velvet, which suited her so well that she`
-- Predicted: `cap of red cloth, and said to her, "Oh, how pretty it is! You shall
-never`
+- Predicted: `had`
 
 **Gap 12** (1 words, fidelity 0.00)
 
 - Actual: `never`
-- Predicted: `that`
+- Predicted: `did`
 
 **Gap 13** (2 words, fidelity 0.00)
 
 - Actual: `anything else;`
-- Predicted: `away`
+- Predicted: `that`
 
-**Gap 14** (5 words, fidelity 0.00)
+**Gap 14** (5 words, fidelity 0.25)
 
 - Actual: `she was always called 'Little`
-- Predicted: `did`
+- Predicted: `once she wore`
 
-**Gap 15** (7 words, fidelity 0.83)
+**Gap 15** (7 words, fidelity 0.11)
 
 - Actual: `One day her mother said to her:`
-- Predicted: `her mother said to her`
+- Predicted: `Once she would often wear her little cap of red soote.`
 
-**Gap 16** (2 words, fidelity 0.00)
+**Gap 16** (2 words, fidelity 0.50)
 
 - Actual: `Little Red-Cap,`
-- Predicted: `go, my dear, and be careful on the way.`
+- Predicted: `Come, Red-Cap, here they`
 
-**Gap 17** (21 words, fidelity 0.07)
+**Gap 17** (21 words, fidelity 0.00)
 
 - Actual: `is a piece
 of cake and a bottle of wine; take them to your grandmother, she is ill
 and weak, and`
-- Predicted: `go, my child, and mind what I tell you.`
+- Predicted: `Red-Cap.`
 
-**Gap 18** (4 words, fidelity 0.18)
+**Gap 18** (4 words, fidelity 0.00)
 
 - Actual: `will do her good.`
-- Predicted: `will get there, give her the cake and the wine, and say to her: 'Good
-morning, grandmother.'`
+- Predicted: `Set off`
 
 **Gap 19** (4 words, fidelity 0.00)
 
 - Actual: `out before it gets`
-- Predicted: `th`
+- Predicted: `Set off hot, trotting, walking nicely`
 
-**Gap 20** (4 words, fidelity 0.21)
+**Gap 20** (4 words, fidelity 0.00)
 
 - Actual: `and
 when you are`
-- Predicted: `set out before it gets dark, and be sure to mind what I tell you.`
+- Predicted: `run`
 
-**Gap 21** (2 words, fidelity 0.00)
+**Gap 21** (2 words, fidelity 0.40)
 
 - Actual: `and quietly`
-- Predicted: `so`
+- Predicted: `and stop there`
 
 **Gap 22** (19 words, fidelity 0.00)
 
 - Actual: `do not run off the path,
 or you may fall and break the bottle, and then your grandmother will`
-- Predicted: `so`
+- Predicted: `should`
 
-**Gap 23** (4 words, fidelity 0.00)
+**Gap 23** (4 words, fidelity 0.07)
 
 - Actual: `nothing; and when you`
-- Predicted: `sick`
+- Predicted: `they set hot, going, walk nicely and get up go say, "morning", don't every before do it. I took to gave her hand on The`
 
 **Gap 24** (6 words, fidelity 0.00)
 
 - Actual: `into her room, don't forget to`
-- Predicted: `when you go out say,`
+- Predicted: `let us`
 
-**Gap 25** (1 words, fidelity 0.00)
+**Gap 25** (1 words, fidelity 1.00)
 
 - Actual: `Good`
-- Predicted: `goodnight`
+- Predicted: `good`
 
-**Gap 26** (1 words, fidelity 0.20)
+**Gap 26** (1 words, fidelity 0.29)
 
 - Actual: `and`
-- Predicted: `and do not stick your head into the cupboard`
+- Predicted: `and get up go say, "Morning",`
 
 **Gap 27** (2 words, fidelity 0.00)
 
 - Actual: `peep into`
-- Predicted: `glance`
+- Predicted: `mention`
 
 **Gap 28** (1 words, fidelity 0.00)
 
 - Actual: `corner`
-- Predicted: `room,'`
+- Predicted: `get up and go say, "Good morning", don't do it.' I took his hand on the The went out half just`
 
 **Gap 29** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `that`
+- Predicted: `never`
 
-**Gap 30** (1 words, fidelity 0.10)
+**Gap 30** (1 words, fidelity 0.08)
 
 - Actual: `will`
-- Predicted: `I will take great care, ' said Little Red-Cap to her mother, and gave her hand on it.`
+- Predicted: `I will take the liberty to give him a hand on the door. The rest of the guests had already entered the room by then.`
 
-**Gap 31** (5 words, fidelity 0.10)
+**Gap 31** (5 words, fidelity 0.00)
 
 - Actual: `great care,' said Little Red-Cap`
-- Predicted: `I will take 
-a nice little cake and a nice little
-roast fowl 
-RIGHT:`
+- Predicted: `me`
 
-**Gap 32** (3 words, fidelity 0.50)
+**Gap 32** (3 words, fidelity 0.00)
 
 - Actual: `her mother, and`
-- Predicted: `her`
+- Predicted: `I took the liberty to give Red-Cap a hand on the door as he entered the room just half an hour before morning.`
 
 **Gap 33** (1 words, fidelity 0.00)
 
 - Actual: `her`
-- Predicted: `hand`
+- Predicted: `I took the liberty to give you my hand on entering the room. The Red-Cap did`
 
 **Gap 34** (1 words, fidelity 0.00)
 
 - Actual: `it.`
-- Predicted: `her promise,`
+- Predicted: `I took the liberty to give my hand on the gloved one. The moment out of place half a minute after just the door had entered the Red-Cap did notice the gesture was unusual.`
 
 **Gap 35** (2 words, fidelity 0.00)
 
 - Actual: `grandmother lived`
-- Predicted: `The`
+- Predicted: `go into say, "Good morning", and don't do it every time before you do it. I took to giving her hand on The`
 
 **Gap 36** (3 words, fidelity 0.00)
 
 - Actual: `in the wood,`
-- Predicted: `at`
+- Predicted: `good`
 
 **Gap 37** (6 words, fidelity 0.00)
 
 - Actual: `a league from the village,
 and`
-- Predicted: `way`
+- Predicted: `did`
 
 **Gap 38** (3 words, fidelity 0.00)
 
 - Actual: `as Little Red-Cap`
-- Predicted: `far`
+- Predicted: `had`
 
-**Gap 39** (6 words, fidelity 0.00)
+**Gap 39** (6 words, fidelity 0.10)
 
 - Actual: `the wood, a wolf met her.`
-- Predicted: `forest`
+- Predicted: `I will take time to give my hand on your behalf. The moment out of the blue just as he entered Red-Cap did so was the day, when he. Thank you kindly, wolf.'`
 
-**Gap 40** (9 words, fidelity 0.20)
+**Gap 40** (9 words, fidelity 0.00)
 
 - Actual: `not know what a wicked creature he was, and`
-- Predicted: `not`
+- Predicted: `did give me his`
 
-**Gap 41** (6 words, fidelity 0.22)
+**Gap 41** (6 words, fidelity 0.00)
 
 - Actual: `not at all afraid of
 him.`
-- Predicted: `did not know`
+- Predicted: `wasn't`
 
 **Gap 42** (1 words, fidelity 0.00)
 
 - Actual: `Good`
-- Predicted: `said`
+- Predicted: `hadn't`
 
 **Gap 43** (3 words, fidelity 0.00)
 
 - Actual: `Little Red-Cap,' said`
-- Predicted: `are`
+- Predicted: `had`
 
-**Gap 44** (1 words, fidelity 1.00)
+**Gap 44** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `you`
+- Predicted: `gratefully`
 
 **Gap 45** (8 words, fidelity 0.00)
 
 - Actual: `Whither away so early, Little Red-Cap?'
 
 'To my`
-- Predicted: `did you go?`
+- Predicted: `said to his`
 
-**Gap 46** (9 words, fidelity 0.17)
+**Gap 46** (9 words, fidelity 0.00)
 
 - Actual: `What have you got in your apron?'
 
 'Cake and`
-- Predicted: `do tell me, wolf, or I shan't go with you any more.'`
+- Predicted: `drank`
 
 **Gap 47** (2 words, fidelity 0.00)
 
 - Actual: `was baking-day,`
-- Predicted: `did`
+- Predicted: `had been`
 
-**Gap 48** (4 words, fidelity 0.22)
+**Gap 48** (4 words, fidelity 0.00)
 
 - Actual: `grandmother is to
 have`
-- Predicted: `old woman is very feeble.`
+- Predicted: `had been`
 
-**Gap 49** (2 words, fidelity 0.00)
+**Gap 49** (2 words, fidelity 0.67)
 
 - Actual: `make her`
-- Predicted: `stronger.'`
+- Predicted: `make`
 
 **Gap 50** (6 words, fidelity 0.00)
 
 - Actual: `does your grandmother live, Little Red-Cap?'`
-- Predicted: `is`
+- Predicted: `Where could I find it, among the green`
 
 **Gap 51** (9 words, fidelity 0.00)
 
 - Actual: `good quarter of a league farther on in the`
-- Predicted: `far`
+- Predicted: `drank`
 
 **Gap 52** (3 words, fidelity 0.00)
 
 - Actual: `her house stands`
-- Predicted: `does she live, Little Red-Cap?'`
+- Predicted: `sitting`
 
-**Gap 53** (5 words, fidelity 0.17)
+**Gap 53** (5 words, fidelity 0.14)
 
 - Actual: `the three large oak-trees, the`
-- Predicted: `nut-trees are just below; you`
+- Predicted: `something good, to make her stronger.' Where in a shady wood; beneath the nut-trees, below; for surely she,' replied Alice, The poor sick little creature! for a plump mouthful--she preferred it, better`
 
 **Gap 54** (2 words, fidelity 0.00)
 
 - Actual: `are just`
-- Predicted: `and the cherry-trees,`
+- Predicted: `beneath`
 
 **Gap 55** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `'I know the way very well,' answered Little Red-Cap.`
+- Predicted: `there`
 
 **Gap 56** (2 words, fidelity 0.00)
 
 - Actual: `must know`
-- Predicted: `can see`
+- Predicted: `could`
 
-**Gap 57** (2 words, fidelity 0.00)
+**Gap 57** (2 words, fidelity 0.40)
 
 - Actual: `Little Red-Cap.`
-- Predicted: `the girl`
+- Predicted: `a little`
 
-**Gap 58** (4 words, fidelity 0.40)
+**Gap 58** (4 words, fidelity 0.00)
 
 - Actual: `wolf thought to himself:`
-- Predicted: `Wolf,`
+- Predicted: `What delicate`
 
 **Gap 59** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `good`
+- Predicted: `delicate`
 
 **Gap 60** (1 words, fidelity 0.00)
 
 - Actual: `young`
-- Predicted: `lady!`
+- Predicted: `delicate`
 
 **Gap 61** (3 words, fidelity 0.00)
 
 - Actual: `what a nice`
-- Predicted: `delicious`
+- Predicted: `delighted`
 
 **Gap 62** (2 words, fidelity 0.00)
 
 - Actual: `will be`
-- Predicted: `would`
+- Predicted: `ought`
 
-**Gap 63** (6 words, fidelity 0.22)
+**Gap 63** (6 words, fidelity 0.00)
 
 - Actual: `to eat than the old woman.`
-- Predicted: `to eat, my child? You will soon be at your grandmother's.'`
+- Predicted: `deserved`
 
 **Gap 64** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `must`
+- Predicted: `must act wisely and quickly`
 
 **Gap 65** (5 words, fidelity 0.00)
 
 - Actual: `craftily, so as to catch`
-- Predicted: `my`
+- Predicted: `must act wisely and kindly.`
 
-**Gap 66** (1 words, fidelity 0.25)
+**Gap 66** (1 words, fidelity 0.00)
 
 - Actual: `he`
-- Predicted: `he walked for a short time by`
+- Predicted: `replied with delight over such a`
 
-**Gap 67** (1 words, fidelity 1.00)
+**Gap 67** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `a`
+- Predicted: `so tenderly`
 
 **Gap 68** (2 words, fidelity 0.00)
 
@@ -3829,174 +3813,174 @@ have`
 **Gap 69** (8 words, fidelity 0.00)
 
 - Actual: `side of Little Red-Cap, and then he said:`
-- Predicted: `path`
+- Predicted: `What tender morsel--she must act both.`
 
 **Gap 70** (3 words, fidelity 0.00)
 
 - Actual: `Little Red-Cap, how`
-- Predicted: `pretty the flowers are about here—why do you not look round?`
+- Predicted: `she must act cleverly' So she walked for a short while the`
 
 **Gap 71** (4 words, fidelity 0.00)
 
 - Actual: `the flowers are about`
-- Predicted: `blooms`
+- Predicted: `dine`
 
-**Gap 72** (5 words, fidelity 0.22)
+**Gap 72** (5 words, fidelity 0.00)
 
 - Actual: `do you not look round?`
-- Predicted: `did you not hear how the brook is babbling on the smooth pebbles?`
+- Predicted: `must take`
 
-**Gap 73** (8 words, fidelity 0.44)
+**Gap 73** (8 words, fidelity 0.00)
 
 - Actual: `that you do not hear how sweetly the`
-- Predicted: `that the sun is shining so brightly, and how sweetly`
+- Predicted: `took`
 
 **Gap 74** (4 words, fidelity 0.00)
 
 - Actual: `birds are singing; you`
-- Predicted: `butterflies`
+- Predicted: `dainty`
 
-**Gap 75** (9 words, fidelity 0.07)
+**Gap 75** (9 words, fidelity 0.00)
 
 - Actual: `along as if you were going to school, while`
-- Predicted: `at him and said: 'Grandfather, why are you so grim? You usually tell me such nice stories.'`
+- Predicted: `took care of`
 
-**Gap 76** (5 words, fidelity 0.13)
+**Gap 76** (5 words, fidelity 0.00)
 
 - Actual: `here in the wood is`
-- Predicted: `about here--why do you not look round? I believe,`
+- Predicted: `I daresay`
 
-**Gap 77** (10 words, fidelity 0.10)
+**Gap 77** (10 words, fidelity 0.13)
 
 - Actual: `Little Red-Cap raised her eyes, and when she saw the`
-- Predicted: `LEFT: ook round? I believe,
-too, that you do not hear how sweetly the little birds are singing; you
-walk gravely along as if you were going to school, while everything else
-out here in the wood is merry.'
-
-RIGHT:  sunbeams dancing
-here and there through the trees`
+- Predicted: `I believe, too, in a little grave walk to count everything else out and find the merry sunbeams shining here among the trees, so pretty and fresh that it seems too good to be true. It`
 
 **Gap 78** (1 words, fidelity 0.00)
 
 - Actual: `dancing`
-- Predicted: `FILTERED`
+- Predicted: `shone`
 
-**Gap 79** (4 words, fidelity 0.27)
+**Gap 79** (4 words, fidelity 0.57)
 
 - Actual: `and there through the`
-- Predicted: `among the branches of the trees, and pretty flowers growing everywhere,`
+- Predicted: `through the shady`
 
-**Gap 80** (1 words, fidelity 0.33)
+**Gap 80** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `glittering so brightly, and such`
+- Predicted: `brightly`
 
-**Gap 81** (2 words, fidelity 0.67)
+**Gap 81** (2 words, fidelity 0.00)
 
 - Actual: `flowers growing`
-- Predicted: `flowers`
+- Predicted: `glittering`
 
-**Gap 82** (2 words, fidelity 1.00)
+**Gap 82** (2 words, fidelity 0.00)
 
 - Actual: `she thought:`
-- Predicted: `she thought`
+- Predicted: `sparkled`
 
 **Gap 83** (2 words, fidelity 0.00)
 
 - Actual: `I take`
-- Predicted: `Suppose`
+- Predicted: `Suppose your grandmother were fresh and lively that very too. It was in that time';`
 
-**Gap 84** (1 words, fidelity 0.67)
+**Gap 84** (1 words, fidelity 0.00)
 
 - Actual: `a`
-- Predicted: `a little`
+- Predicted: `was`
 
 **Gap 85** (1 words, fidelity 0.00)
 
 - Actual: `nosegay;`
-- Predicted: `bunch`
+- Predicted: `smell`
 
-**Gap 86** (3 words, fidelity 0.38)
+**Gap 86** (3 words, fidelity 0.00)
 
 - Actual: `would
 please her`
-- Predicted: `she thought: 'Suppose I take grandmother a fresh nosegay; that would please her`
+- Predicted: `she`
 
 **Gap 87** (3 words, fidelity 0.00)
 
 - Actual: `is so early`
-- Predicted: `would`
+- Predicted: `seemed`
 
 **Gap 88** (2 words, fidelity 0.00)
 
 - Actual: `the day`
-- Predicted: `morning`
+- Predicted: `she was young`
 
 **Gap 89** (7 words, fidelity 0.00)
 
 - Actual: `I shall still get there
 in good`
-- Predicted: `that it is never too early to please grandmother`
+- Predicted: `shone`
 
 **Gap 90** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `so she ran from the path into the wood to look for`
+- Predicted: `she`
 
-**Gap 91** (2 words, fidelity 0.25)
+**Gap 91** (2 words, fidelity 0.67)
 
 - Actual: `she ran`
-- Predicted: `she set out at once along`
+- Predicted: `she`
 
 **Gap 92** (9 words, fidelity 0.00)
 
 - Actual: `the path into the wood to look for
 flowers.`
-- Predicted: `home`
+- Predicted: `she`
 
-**Gap 93** (1 words, fidelity 0.00)
+**Gap 93** (1 words, fidelity 1.00)
 
 - Actual: `she`
-- Predicted: `and whenever`
+- Predicted: `she`
 
-**Gap 94** (3 words, fidelity 0.00)
+**Gap 94** (3 words, fidelity 0.50)
 
 - Actual: `picked one, she`
-- Predicted: `before`
+- Predicted: `she`
 
-**Gap 95** (11 words, fidelity 0.00)
+**Gap 95** (11 words, fidelity 0.17)
 
 - Actual: `that she saw a
 still prettier one farther on, and ran`
-- Predicted: `at`
+- Predicted: `she`
 
-**Gap 96** (3 words, fidelity 0.50)
+**Gap 96** (3 words, fidelity 0.00)
 
 - Actual: `it, and so`
-- Predicted: `it`
+- Predicted: `the sun`
 
-**Gap 97** (4 words, fidelity 0.40)
+**Gap 97** (4 words, fidelity 0.25)
 
 - Actual: `and
 deeper into the`
-- Predicted: `into`
+- Predicted: `she entered the dark`
 
-**Gap 98** (4 words, fidelity 0.00)
+**Gap 98** (4 words, fidelity 0.18)
 
 - Actual: `Meanwhile the wolf ran`
-- Predicted: `straight`
+- Predicted: `she
+walked
+into
+the
+deeper
+and
+thicker`
 
 **Gap 99** (4 words, fidelity 0.00)
 
 - Actual: `to the grandmother's house`
-- Predicted: `and knocked`
+- Predicted: `she walked`
 
-**Gap 100** (4 words, fidelity 0.00)
+**Gap 100** (4 words, fidelity 0.07)
 
 - Actual: `knocked
 at the door.`
-- Predicted: `lifted`
+- Predicted: `had not fancied after she got deeper into the wood. She straightened and the wolf. She lifted the latch, called out, and get inside.`
 
 **Gap 101** (7 words, fidelity 0.00)
 
@@ -4005,38 +3989,38 @@ at the door.`
 'Little Red-Cap,' replied the`
 - Predicted: `she`
 
-**Gap 102** (7 words, fidelity 0.43)
+**Gap 102** (7 words, fidelity 0.20)
 
 - Actual: `is bringing cake and wine; open
 the`
-- Predicted: `had brought me some cake and wine.`
+- Predicted: `opened the door.`
 
-**Gap 103** (1 words, fidelity 0.00)
+**Gap 103** (1 words, fidelity 0.18)
 
 - Actual: `the`
-- Predicted: `up`
+- Predicted: `Lift the latch, called she and went the door.'`
 
-**Gap 104** (7 words, fidelity 0.17)
+**Gap 104** (7 words, fidelity 0.00)
 
 - Actual: `out the grandmother, 'I am too weak,`
-- Predicted: `the woman at the door`
+- Predicted: `Lift it`
 
 **Gap 105** (1 words, fidelity 0.00)
 
 - Actual: `cannot`
-- Predicted: `said the wolf.`
+- Predicted: `Open`
 
-**Gap 106** (6 words, fidelity 0.25)
+**Gap 106** (6 words, fidelity 0.00)
 
 - Actual: `up.'
 
 The wolf lifted the latch,`
-- Predicted: `up`
+- Predicted: `open`
 
-**Gap 107** (1 words, fidelity 1.00)
+**Gap 107** (1 words, fidelity 0.00)
 
 - Actual: `door`
-- Predicted: `door`
+- Predicted: `open`
 
 **Gap 108** (2 words, fidelity 0.67)
 
@@ -4047,826 +4031,808 @@ The wolf lifted the latch,`
 
 - Actual: `a
 word he`
-- Predicted: `anything`
+- Predicted: `open`
 
 **Gap 110** (6 words, fidelity 0.00)
 
 - Actual: `straight to the grandmother's bed, and`
-- Predicted: `in`
+- Predicted: `into her cap`
 
-**Gap 111** (1 words, fidelity 0.67)
+**Gap 111** (1 words, fidelity 0.00)
 
 - Actual: `her.`
-- Predicted: `her up`
+- Predicted: `and quickly get the latch without saying anything went straight to the devil's house devoured little red-cap however`
 
-**Gap 112** (6 words, fidelity 0.29)
+**Gap 112** (6 words, fidelity 0.21)
 
 - Actual: `Then
 he put on her clothes,`
-- Predicted: `then`
+- Predicted: `to, quickly, the, up, out, anything, straight, it, then, off, into, her, back`
 
-**Gap 113** (4 words, fidelity 0.40)
+**Gap 113** (4 words, fidelity 0.00)
 
 - Actual: `himself in her cap`
-- Predicted: `himself`
+- Predicted: `to bed`
 
-**Gap 114** (7 words, fidelity 0.00)
+**Gap 114** (7 words, fidelity 0.22)
 
 - Actual: `himself in bed
 and drew the curtains.`
-- Predicted: `him`
+- Predicted: `into bed`
 
 **Gap 115** (2 words, fidelity 0.00)
 
 - Actual: `had been`
-- Predicted: `came home`
+- Predicted: `went out`
 
 **Gap 116** (1 words, fidelity 0.00)
 
 - Actual: `about`
-- Predicted: `so open, and thought to herself, "That is strange! Grandmother must be ill
-and have opened the door that I may find her."`
+- Predicted: `out`
 
-**Gap 117** (2 words, fidelity 0.19)
+**Gap 117** (2 words, fidelity 0.67)
 
 - Actual: `she had`
-- Predicted: `she came to the place where she had left her cap, and there she found
-a large wolf sitting.`
+- Predicted: `had`
 
-**Gap 118** (4 words, fidelity 0.67)
+**Gap 118** (4 words, fidelity 0.00)
 
 - Actual: `many that she could`
-- Predicted: `far that she could not`
+- Predicted: `to`
 
-**Gap 119** (3 words, fidelity 0.12)
+**Gap 119** (3 words, fidelity 0.00)
 
 - Actual: `no more, she`
-- Predicted: `that she had better go home again, for her grandmother must be
-asleep.`
+- Predicted: `some flowers`
 
 **Gap 120** (5 words, fidelity 0.00)
 
 - Actual: `her grandmother, and set out`
-- Predicted: `so`
+- Predicted: `mother`
 
-**Gap 121** (3 words, fidelity 0.00)
+**Gap 121** (3 words, fidelity 0.29)
 
 - Actual: `the way to`
-- Predicted: `her`
+- Predicted: `on her way home`
 
-**Gap 122** (1 words, fidelity 0.00)
+**Gap 122** (1 words, fidelity 1.00)
 
 - Actual: `She`
-- Predicted: `was`
+- Predicted: `she`
 
-**Gap 123** (2 words, fidelity 0.50)
+**Gap 123** (2 words, fidelity 0.00)
 
 - Actual: `find the`
-- Predicted: `to find`
+- Predicted: `found`
 
-**Gap 124** (2 words, fidelity 0.67)
+**Gap 124** (2 words, fidelity 0.00)
 
 - Actual: `open, and`
-- Predicted: `open.`
+- Predicted: `she`
 
-**Gap 125** (6 words, fidelity 0.20)
+**Gap 125** (6 words, fidelity 0.29)
 
 - Actual: `she
 went into the room, she`
-- Predicted: `she stepped in cautiously,`
+- Predicted: `she`
 
-**Gap 126** (8 words, fidelity 0.22)
+**Gap 126** (8 words, fidelity 0.00)
 
 - Actual: `a strange feeling that she said to
 herself:`
-- Predicted: `that`
+- Predicted: `unexpectedly`
 
 **Gap 127** (1 words, fidelity 0.00)
 
 - Actual: `dear!`
-- Predicted: `Oh how uneasy I feel today, and at other times I like`
+- Predicted: `found`
 
 **Gap 128** (1 words, fidelity 0.00)
 
 - Actual: `how`
-- Predicted: `and felt`
+- Predicted: `found`
 
 **Gap 129** (2 words, fidelity 0.00)
 
 - Actual: `I feel`
-- Predicted: `it felt as if something were not right`
+- Predicted: `so`
 
 **Gap 130** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `though`
+- Predicted: `found itajarid`
 
 **Gap 131** (4 words, fidelity 0.00)
 
 - Actual: `other times I like`
-- Predicted: `GRIEF`
+- Predicted: `discovered`
 
-**Gap 132** (4 words, fidelity 0.15)
+**Gap 132** (4 words, fidelity 0.00)
 
 - Actual: `with grandmother so much.'`
-- Predicted: `at other times I like being alone.'`
+- Predicted: `surprised to find the cottage-door standing open when she had such expectations Oh how uneasy she felt today, thinking at once of being discovered She`
 
 **Gap 133** (19 words, fidelity 0.00)
 
 - Actual: `called out: 'Good morning,' but
 received no answer; so she went to the bed and drew back the curtains.`
-- Predicted: `found`
+- Predicted: `stood`
 
 **Gap 134** (11 words, fidelity 0.00)
 
 - Actual: `There lay her grandmother with her cap pulled far over her`
-- Predicted: `face, and`
+- Predicted: `Oh such uneasy feelings today, at the thought of being alone, She sighed face, Oh! I must!' The room was silent, But, suddenly she`
 
 **Gap 135** (4 words, fidelity 0.00)
 
 - Actual: `and
 looking very strange.`
-- Predicted: `'Oh! grandmother,' she said, 'what big ears you have!'`
+- Predicted: `She turned face, ah! how pale!' The lady was shocked. But, suddenly she`
 
-**Gap 136** (7 words, fidelity 0.22)
+**Gap 136** (7 words, fidelity 0.00)
 
 - Actual: `grandmother,' she said, 'what big ears you`
-- Predicted: `said`
+- Predicted: `startled`
 
-**Gap 137** (7 words, fidelity 0.18)
+**Gap 137** (7 words, fidelity 0.00)
 
 - Actual: `better to hear you with, my child,'`
-- Predicted: `bigger the better`
+- Predicted: `could`
 
-**Gap 138** (2 words, fidelity 0.33)
+**Gap 138** (2 words, fidelity 0.00)
 
 - Actual: `the reply.`
-- Predicted: `the old woman answered.`
+- Predicted: `could`
 
 **Gap 139** (6 words, fidelity 0.00)
 
 - Actual: `grandmother, what big eyes you have!'`
-- Predicted: `said`
+- Predicted: `could`
 
-**Gap 140** (1 words, fidelity 1.00)
+**Gap 140** (1 words, fidelity 0.00)
 
 - Actual: `said.`
-- Predicted: `said`
+- Predicted: `must`
 
-**Gap 141** (14 words, fidelity 0.12)
+**Gap 141** (14 words, fidelity 0.00)
 
 - Actual: `The better to see you with, my dear.'
 
 'But, grandmother, what large hands you`
-- Predicted: `you`
+- Predicted: `must`
 
-**Gap 142** (5 words, fidelity 0.73)
+**Gap 142** (5 words, fidelity 0.00)
 
 - Actual: `The better to hug you`
-- Predicted: `The better to eat you with!`
+- Predicted: `could`
 
 **Gap 143** (3 words, fidelity 0.00)
 
 - Actual: `grandmother, what a`
-- Predicted: `Oh! but,`
+- Predicted: `could not`
 
 **Gap 144** (9 words, fidelity 0.00)
 
 - Actual: `big mouth you have!'
 
 'The better to eat you`
-- Predicted: `fangs`
+- Predicted: `could`
 
 **Gap 145** (1 words, fidelity 0.00)
 
 - Actual: `And`
-- Predicted: `said the grandmother, 'the better to gobble you up!`
+- Predicted: `"Be quiet!"`
 
-**Gap 146** (1 words, fidelity 1.00)
+**Gap 146** (1 words, fidelity 0.00)
 
 - Actual: `had`
-- Predicted: `had`
+- Predicted: `could`
 
 **Gap 147** (13 words, fidelity 0.00)
 
 - Actual: `wolf said this, than with one bound he was out of
 bed and`
-- Predicted: `had swallowed up Red-Cap.`
+- Predicted: `growling`
 
 **Gap 148** (1 words, fidelity 0.00)
 
 - Actual: `up`
-- Predicted: `Red-Cap.`
+- Predicted: `asleep`
 
 **Gap 149** (4 words, fidelity 0.00)
 
 - Actual: `When the wolf had`
-- Predicted: `then satisfied`
+- Predicted: `she was`
 
-**Gap 150** (9 words, fidelity 0.18)
+**Gap 150** (9 words, fidelity 0.00)
 
 - Actual: `his appetite, he lay down again in the bed,`
-- Predicted: `his hunger`
+- Predicted: `it was`
 
-**Gap 151** (5 words, fidelity 0.07)
+**Gap 151** (5 words, fidelity 0.00)
 
 - Actual: `asleep and began to snore`
-- Predicted: `very loud. The huntsman was just passing
-the house, and thought to himself: 'How the old woman is snoring! I must
-just see if she wants anything.' So he went into the room, and when he
-came to the bed, he found Red-Cap and the wolf inside.`
+- Predicted: `growling`
 
-**Gap 152** (1 words, fidelity 0.29)
+**Gap 152** (1 words, fidelity 0.14)
 
 - Actual: `The`
-- Predicted: `When the huntsman was just passing`
+- Predicted: `The huntsman thought the Red-Cap must just wants to go and saw`
 
-**Gap 153** (6 words, fidelity 0.11)
+**Gap 153** (6 words, fidelity 0.10)
 
 - Actual: `was just passing
 the house, and`
-- Predicted: `LEFT: thought to himself: 'How the old woman is snoring! I must`
+- Predicted: `he huntsman thought he must just wants to go see if it went right`
 
-**Gap 154** (3 words, fidelity 0.04)
+**Gap 154** (3 words, fidelity 0.10)
 
 - Actual: `to himself: 'How`
-- Predicted: `LEFT: of
-bed and swallowed up Red-Cap.
-
-When the wolf had appeased his appetite, he lay down again in the bed,
-fell asleep and began to snore very loud. The huntsman was just passing
-the house, and thought 
-the old woman is snoring! I must
-RIGHT:`
+- Predicted: `he huntsman thought he must just wants to go see if the Red-Cap has fallen very loud.`
 
 **Gap 155** (4 words, fidelity 0.00)
 
 - Actual: `old woman is snoring!`
-- Predicted: `I must`
+- Predicted: `Red-Cap must just wants`
 
 **Gap 156** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `LEFT: and thought to himself: 'That is a strange noise!`
+- Predicted: `rode`
 
-**Gap 157** (3 words, fidelity 0.17)
+**Gap 157** (3 words, fidelity 0.00)
 
 - Actual: `see if she`
-- Predicted: `peek in to see what was making the noise,`
+- Predicted: `needs`
 
 **Gap 158** (3 words, fidelity 0.00)
 
 - Actual: `anything.' So he`
-- Predicted: `it, whether she wants some more wood.`
+- Predicted: `out`
 
 **Gap 159** (11 words, fidelity 0.00)
 
 - Actual: `into the room, and when he
 came to the bed, he`
-- Predicted: `in`
+- Predicted: `saw it first`
 
-**Gap 160** (7 words, fidelity 0.33)
+**Gap 160** (7 words, fidelity 0.20)
 
 - Actual: `that the wolf was lying in it.`
-- Predicted: `she was lying there dead.`
+- Predicted: `saw the beast`
 
-**Gap 161** (7 words, fidelity 0.04)
+**Gap 161** (7 words, fidelity 0.00)
 
 - Actual: `find you
 here, you old sinner!' said`
-- Predicted: `did not dare to wake her up, and thought to himself: 'If I touch her, she will surely wake up, and then she will see me and cry out, and the wolf will devour us both.'`
+- Predicted: `believe`
 
-**Gap 162** (4 words, fidelity 0.18)
+**Gap 162** (4 words, fidelity 0.33)
 
 - Actual: `I have long sought`
-- Predicted: `'What do I see here, you rascal!`
+- Predicted: `must have`
 
 **Gap 163** (1 words, fidelity 0.00)
 
 - Actual: `Then`
-- Predicted: `'But first I must see whether the old woman is still alive,' said he`
+- Predicted: `wants to went and saw if I he said just stood at it and have devoured but saved took`
 
-**Gap 164** (6 words, fidelity 0.17)
+**Gap 164** (6 words, fidelity 0.25)
 
 - Actual: `as
 he was going to fire`
-- Predicted: `he took a fir-tree branch, and set it on fire, and threw it into the
-wolf's mouth;`
+- Predicted: `wants to go see if I he you! Did just`
 
-**Gap 165** (1 words, fidelity 1.00)
+**Gap 165** (1 words, fidelity 0.00)
 
 - Actual: `him,`
-- Predicted: `him`
+- Predicted: `wondered`
 
 **Gap 166** (7 words, fidelity 0.00)
 
 - Actual: `occurred to him that the wolf might`
-- Predicted: `did`
+- Predicted: `had I not`
 
-**Gap 167** (8 words, fidelity 0.50)
+**Gap 167** (8 words, fidelity 0.22)
 
 - Actual: `the grandmother, and that she might still be`
-- Predicted: `him, that the wolf might have devoured you and your grandmother, and`
+- Predicted: `and`
 
-**Gap 168** (6 words, fidelity 0.20)
+**Gap 168** (6 words, fidelity 0.00)
 
 - Actual: `so he did
 not fire, but`
-- Predicted: `so he took a knife, and carefully cut open the belly of the wolf.`
+- Predicted: `and`
 
-**Gap 169** (13 words, fidelity 0.00)
+**Gap 169** (13 words, fidelity 0.11)
 
 - Actual: `a pair of scissors, and began to cut open the stomach
 of the`
-- Predicted: `off his coat`
+- Predicted: `you! Just at it, have devoured or saved, took me by surprise, sleeping there. When two snips, shining, the scissor sprang and have...`
 
-**Gap 170** (1 words, fidelity 1.00)
+**Gap 170** (1 words, fidelity 0.00)
 
 - Actual: `wolf.`
-- Predicted: `wolf`
+- Predicted: `had saved, took, when`
 
-**Gap 171** (3 words, fidelity 0.67)
+**Gap 171** (3 words, fidelity 0.25)
 
 - Actual: `he had made`
-- Predicted: `he had given`
+- Predicted: `had saved, took sleeping dogs'`
 
-**Gap 172** (5 words, fidelity 0.18)
+**Gap 172** (5 words, fidelity 0.17)
 
 - Actual: `he saw the little
 Red-Cap`
-- Predicted: `and the inside was still`
+- Predicted: `had saved, then took from the sleeping When two snips, the shining, red-coated wolf'; the aged`
 
-**Gap 173** (8 words, fidelity 0.22)
+**Gap 173** (8 words, fidelity 0.00)
 
 - Actual: `and then he made two snips more, and`
-- Predicted: `then`
+- Predicted: `awoke`
 
 **Gap 174** (2 words, fidelity 0.00)
 
 - Actual: `little girl`
-- Predicted: `he made two snips more, and the`
+- Predicted: `out`
 
-**Gap 175** (6 words, fidelity 0.22)
+**Gap 175** (6 words, fidelity 0.00)
 
 - Actual: `out, crying: 'Ah, how frightened I`
-- Predicted: `out were she`
+- Predicted: `up`
 
 **Gap 176** (1 words, fidelity 0.00)
 
 - Actual: `been!`
-- Predicted: `was`
+- Predicted: `awakened`
 
 **Gap 177** (4 words, fidelity 0.00)
 
 - Actual: `How dark it was`
-- Predicted: `he had eaten up`
+- Predicted: `leaped out`
 
-**Gap 178** (1 words, fidelity 0.15)
+**Gap 178** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `inside the wolf's body, he howled so terribly that the forest resounded.`
+- Predicted: `awoke a`
 
-**Gap 179** (3 words, fidelity 0.17)
+**Gap 179** (3 words, fidelity 0.00)
 
 - Actual: `and after that`
-- Predicted: `and then he made two snips, and out jumped`
+- Predicted: `when`
 
 **Gap 180** (4 words, fidelity 0.00)
 
 - Actual: `grandmother came out alive`
-- Predicted: `RIGHT: 
-also, but scarcely able to breathe. Red-Cap, however, quickly fetched
-great stones with which they filled the wolf's belly, and when he awoke,`
+- Predicted: `eyes`
 
 **Gap 181** (2 words, fidelity 0.00)
 
 - Actual: `able to`
-- Predicted: `could`
+- Predicted: `could not`
 
 **Gap 182** (1 words, fidelity 0.00)
 
 - Actual: `however,`
-- Predicted: `hastened inside, and found the wolf lying there full of blood.`
+- Predicted: `ran`
 
 **Gap 183** (1 words, fidelity 0.00)
 
 - Actual: `stones`
-- Predicted: `with which they filled the wolf's belly,`
+- Predicted: `alarm`
 
-**Gap 184** (11 words, fidelity 0.15)
+**Gap 184** (11 words, fidelity 0.00)
 
 - Actual: `which they filled the wolf's belly, and when he awoke,
 he`
-- Predicted: `and laid them down in front of the door; then she ran back to fetch more.`
+- Predicted: `a knife`
 
-**Gap 185** (11 words, fidelity 0.24)
+**Gap 185** (11 words, fidelity 0.00)
 
 - Actual: `to run away, but the stones were so heavy that he`
-- Predicted: `to see how he was doing`
+- Predicted: `fainted`
 
-**Gap 186** (3 words, fidelity 0.00)
+**Gap 186** (3 words, fidelity 0.06)
 
 - Actual: `once, and fell`
-- Predicted: `dead.`
+- Predicted: `Red-Cap quickly fetched great haste with which they wanted to collapse at Red-Cap dead. All were delighted. He drew near and went to it; he ate hastily revived, but`
 
-**Gap 187** (1 words, fidelity 1.00)
+**Gap 187** (1 words, fidelity 0.00)
 
 - Actual: `Then`
-- Predicted: `then`
+- Predicted: `hastily brought medicine`
 
 **Gap 188** (2 words, fidelity 0.00)
 
 - Actual: `three were`
-- Predicted: `did`
+- Predicted: `attention`
 
 **Gap 189** (2 words, fidelity 0.00)
 
 - Actual: `The huntsman`
-- Predicted: `they cut open his belly and`
+- Predicted: `great deal with everyone wanted to collapse at midnight dead. Everyone all delighted. He drew near and went to it; he ate and revived, but did not think to`
 
-**Gap 190** (4 words, fidelity 0.12)
+**Gap 190** (4 words, fidelity 0.00)
 
 - Actual: `off the wolf's skin`
-- Predicted: `his sword from his belt and cut open the wolf's belly, took out the three
-chicken, and the three geese, and the little girl, and set them all free.`
+- Predicted: `wanted it collapsed at midnight. All seemed delighted. It drew near and went straight to it; it ate and revived, but thought to itself As if by magic path,`
 
 **Gap 191** (2 words, fidelity 0.00)
 
 - Actual: `home with`
-- Predicted: `off`
+- Predicted: `into`
 
-**Gap 192** (2 words, fidelity 0.11)
+**Gap 192** (2 words, fidelity 0.00)
 
 - Actual: `the grandmother`
-- Predicted: `and put on the skin and went out into the wood to look for the wolf.`
+- Predicted: `wolves`
 
-**Gap 193** (11 words, fidelity 0.17)
+**Gap 193** (11 words, fidelity 0.13)
 
 - Actual: `the cake and drank the wine which
 Red-Cap had brought, and`
-- Predicted: `it and went to bed, thinking she had done nothing wrong.`
+- Predicted: `ate the mushroom`
 
-**Gap 194** (1 words, fidelity 0.00)
+**Gap 194** (1 words, fidelity 1.00)
 
 - Actual: `Red-Cap`
-- Predicted: `and said to her daughter:`
+- Predicted: `Red-Cap`
 
-**Gap 195** (1 words, fidelity 0.50)
+**Gap 195** (1 words, fidelity 0.00)
 
 - Actual: `herself:`
-- Predicted: `think to herself`
+- Predicted: `return to`
 
-**Gap 196** (7 words, fidelity 0.25)
+**Gap 196** (7 words, fidelity 0.00)
 
 - Actual: `long as I live, I will never`
-- Predicted: `as`
+- Predicted: `took`
 
 **Gap 197** (3 words, fidelity 0.00)
 
 - Actual: `myself leave the`
-- Predicted: `such`
+- Predicted: `took`
 
-**Gap 198** (4 words, fidelity 0.29)
+**Gap 198** (4 words, fidelity 0.00)
 
 - Actual: `run into the
 wood,`
-- Predicted: `go the way`
+- Predicted: `she`
 
 **Gap 199** (8 words, fidelity 0.00)
 
 - Actual: `my mother has forbidden me to do so.'`
-- Predicted: `the wood, when`
+- Predicted: `she`
 
 **Gap 200** (2 words, fidelity 0.00)
 
 - Actual: `that once`
-- Predicted: `it also related how`
+- Predicted: `happened on`
 
 **Gap 201** (1 words, fidelity 0.00)
 
 - Actual: `was`
-- Predicted: `had`
+- Predicted: `believed to take`
 
 **Gap 202** (1 words, fidelity 0.00)
 
 - Actual: `taking`
-- Predicted: `on her way she had met`
+- Predicted: `thought to take`
 
-**Gap 203** (1 words, fidelity 0.12)
+**Gap 203** (1 words, fidelity 0.06)
 
 - Actual: `to`
-- Predicted: `out, she had met a wolf who tried to persuade her to take a different route.`
+- Predicted: `to follow As she by the straight path, to meet when she came again to the house, the old grandmother, another wolf spoke trying to entice Red-Cap, on which went forward on telling her`
 
-**Gap 204** (1 words, fidelity 1.00)
+**Gap 204** (1 words, fidelity 0.67)
 
 - Actual: `wolf`
-- Predicted: `wolf`
+- Predicted: `a wolf`
 
-**Gap 205** (3 words, fidelity 0.40)
+**Gap 205** (3 words, fidelity 0.00)
 
 - Actual: `to her, and`
-- Predicted: `to try`
+- Predicted: `the wolf`
 
-**Gap 206** (1 words, fidelity 0.40)
+**Gap 206** (1 words, fidelity 0.67)
 
 - Actual: `to`
-- Predicted: `to entice her from`
+- Predicted: `to try`
 
-**Gap 207** (4 words, fidelity 0.09)
+**Gap 207** (4 words, fidelity 0.08)
 
 - Actual: `her from the
 path.`
-- Predicted: `Red-Cap, however, was on her guard, and went straight forward on her way, and told her grandmother that she had met the wolf, and that he had said "good morning" to her, but with such a wicked look`
+- Predicted: `to follow when once It also related to when Red-Cap followed again into the forest to get the old grandmother, another voice spoke trying to entice Red-Cap, but on she went forward on hearing her tell her it was good to go with her`
 
 **Gap 208** (2 words, fidelity 0.00)
 
 - Actual: `however, was`
-- Predicted: `on`
+- Predicted: `caution`
 
-**Gap 209** (3 words, fidelity 0.20)
+**Gap 209** (3 words, fidelity 0.00)
 
 - Actual: `her guard, and`
-- Predicted: `her way, she would have run away.`
+- Predicted: `she`
 
 **Gap 210** (1 words, fidelity 0.00)
 
 - Actual: `straight`
-- Predicted: `forward`
+- Predicted: `she`
 
-**Gap 211** (3 words, fidelity 0.40)
+**Gap 211** (3 words, fidelity 0.00)
 
 - Actual: `her way, and`
-- Predicted: `her way, without listening to his flattery.`
+- Predicted: `she`
 
 **Gap 212** (12 words, fidelity 0.00)
 
 - Actual: `grandmother that she had met the wolf, and that he
 had said`
-- Predicted: `her`
+- Predicted: `to come`
 
 **Gap 213** (4 words, fidelity 0.00)
 
 - Actual: `morning' to her, but`
-- Predicted: `morning`
+- Predicted: `news`
 
-**Gap 214** (6 words, fidelity 0.29)
+**Gap 214** (6 words, fidelity 0.00)
 
 - Actual: `such a wicked look in his`
-- Predicted: `such`
+- Predicted: `gently`
 
 **Gap 215** (1 words, fidelity 0.00)
 
 - Actual: `that`
-- Predicted: `she thought`
+- Predicted: `she`
 
 **Gap 216** (5 words, fidelity 0.00)
 
 - Actual: `had not been on the`
-- Predicted: `if they`
+- Predicted: `were`
 
 **Gap 217** (2 words, fidelity 0.00)
 
 - Actual: `road she`
-- Predicted: `path`
+- Predicted: `news`
 
 **Gap 218** (7 words, fidelity 0.00)
 
 - Actual: `certain he would
 have eaten her up.`
-- Predicted: `afraid`
+- Predicted: `everything is fine`
 
-**Gap 219** (3 words, fidelity 0.40)
+**Gap 219** (3 words, fidelity 0.00)
 
 - Actual: `said the grandmother,`
-- Predicted: `she said`
+- Predicted: `and`
 
-**Gap 220** (4 words, fidelity 0.08)
+**Gap 220** (4 words, fidelity 0.00)
 
 - Actual: `will shut the door,`
-- Predicted: `had said 'good morning' to her, but with such a wicked look in his eyes, that if they had not been on the public road she was certain he would have eaten her up. 'Well,' said the grandmother, 'we had better not open the door to him, '`
+- Predicted: `could`
 
-**Gap 221** (4 words, fidelity 0.33)
+**Gap 221** (4 words, fidelity 0.00)
 
 - Actual: `he may not come`
-- Predicted: `that we may not be seen by him.`
+- Predicted: `did`
 
 **Gap 222** (3 words, fidelity 0.00)
 
 - Actual: `afterwards the wolf`
-- Predicted: `after a little while`
+- Predicted: `knocked, and`
 
-**Gap 223** (1 words, fidelity 0.05)
+**Gap 223** (1 words, fidelity 1.00)
 
 - Actual: `and`
-- Predicted: `and if he had not been on the public road she was certain he would have eaten her up. 'Well,' said the grandmother, 'we will shut the door, that he may not come in.' Soon afterwards the wolf knocked,`
+- Predicted: `and`
 
 **Gap 224** (12 words, fidelity 0.00)
 
 - Actual: `Open the door, grandmother, I am Little Red-Cap, and am bringing you`
-- Predicted: `would not`
+- Predicted: `"Knock, knock,"`
 
 **Gap 225** (5 words, fidelity 0.00)
 
 - Actual: `cakes.' But they did not`
-- Predicted: `speckled dumplings.`
+- Predicted: `and`
 
-**Gap 226** (4 words, fidelity 0.22)
+**Gap 226** (4 words, fidelity 0.09)
 
 - Actual: `or open the door,`
-- Predicted: `and listened through the keyhole.`
+- Predicted: `we believed that once in.' Soon someone knocked, someone cried: if some stranger speak, so the grey-beard stole twice or more jumped on the stairs intending to wait and went to steal after him in the darkness.`
 
-**Gap 227** (1 words, fidelity 0.67)
+**Gap 227** (1 words, fidelity 0.05)
 
 - Actual: `the`
-- Predicted: `the wolf`
+- Predicted: `that trick in.' Soon someone knocked, someone cried: if some stranger speak, so the grey-beard stole twice or more jumped on the roof intending not to wait but to go and steal after him in the darkness.`
 
-**Gap 228** (7 words, fidelity 0.00)
+**Gap 228** (7 words, fidelity 0.15)
 
 - Actual: `thrice round the house, and at last`
-- Predicted: `afterwards`
+- Predicted: `twice or jumped on the roof`
 
-**Gap 229** (1 words, fidelity 0.17)
+**Gap 229** (1 words, fidelity 0.00)
 
 - Actual: `roof,`
-- Predicted: `roof, grandmother, I am Little Red-Cap, and am bringing you`
+- Predicted: `leaped`
 
-**Gap 230** (1 words, fidelity 0.67)
+**Gap 230** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `to see`
+- Predicted: `and waited`
 
-**Gap 231** (2 words, fidelity 0.86)
+**Gap 231** (2 words, fidelity 0.00)
 
 - Actual: `until Red-Cap`
-- Predicted: `until Little Red-Cap`
+- Predicted: `and then`
 
-**Gap 232** (7 words, fidelity 0.22)
+**Gap 232** (7 words, fidelity 0.44)
 
 - Actual: `home in the evening, and then to`
-- Predicted: `by and put some hot water in the trough, that the wolf may think you
-are taking your bath, and not venture to come down from the roof.'`
+- Predicted: `and then`
 
-**Gap 233** (4 words, fidelity 0.00)
+**Gap 233** (4 words, fidelity 0.40)
 
 - Actual: `her and devour her`
-- Predicted: `the house`
+- Predicted: `and`
 
-**Gap 234** (1 words, fidelity 0.00)
+**Gap 234** (1 words, fidelity 0.67)
 
 - Actual: `the`
-- Predicted: `darkness.`
+- Predicted: `the night`
 
-**Gap 235** (3 words, fidelity 0.00)
+**Gap 235** (3 words, fidelity 0.29)
 
 - Actual: `But the grandmother`
-- Predicted: `grey-beard`
+- Predicted: `saw the opportunity and`
 
 **Gap 236** (4 words, fidelity 0.00)
 
 - Actual: `what was in his`
-- Predicted: `her and eat her up`
+- Predicted: `Red-Cap`
 
 **Gap 237** (7 words, fidelity 0.25)
 
 - Actual: `front of the house was a great`
-- Predicted: `the`
+- Predicted: `a`
 
 **Gap 238** (5 words, fidelity 0.00)
 
 - Actual: `she said to the child:`
-- Predicted: `big`
+- Predicted: `he took`
 
-**Gap 239** (1 words, fidelity 1.00)
+**Gap 239** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `the`
+- Predicted: `Take pail, Red-Cap; made sausages so carry`
 
 **Gap 240** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `and said to her: 'What big hands you have, Red-Cap!'`
+- Predicted: `Red-Cap`
 
-**Gap 241** (1 words, fidelity 0.33)
+**Gap 241** (1 words, fidelity 0.00)
 
 - Actual: `some`
-- Predicted: `me some of the sausages.`
+- Predicted: `smoke from`
 
 **Gap 242** (1 words, fidelity 0.00)
 
 - Actual: `yesterday,`
-- Predicted: `that I baked in the oven, and now they are cold, so carry the water in which I boiled them to the trough.`
+- Predicted: `smelled so strong the wolf`
 
-**Gap 243** (9 words, fidelity 0.29)
+**Gap 243** (9 words, fidelity 0.00)
 
 - Actual: `the water in which I boiled them to the`
-- Predicted: `the pail with the sausages`
+- Predicted: `Red-Cap`
 
 **Gap 244** (1 words, fidelity 1.00)
 
 - Actual: `Red-Cap`
 - Predicted: `Red-Cap`
 
-**Gap 245** (1 words, fidelity 0.67)
+**Gap 245** (1 words, fidelity 0.00)
 
 - Actual: `the`
-- Predicted: `until the`
+- Predicted: `she`
 
 **Gap 246** (4 words, fidelity 0.00)
 
 - Actual: `trough was quite full.`
-- Predicted: `stone`
+- Predicted: `long`
 
-**Gap 247** (2 words, fidelity 0.25)
+**Gap 247** (2 words, fidelity 0.14)
 
 - Actual: `Then the`
-- Predicted: `Then the wolf followed her, and when she had gone a little way, the`
+- Predicted: `Take Red-Cap, so made sausages, so carry to the trough.'`
 
-**Gap 248** (8 words, fidelity 0.50)
+**Gap 248** (8 words, fidelity 0.00)
 
 - Actual: `of the sausages reached the wolf, and he`
-- Predicted: `of the sausages filled the air so strongly that the old wolf`
+- Predicted: `out`
 
 **Gap 249** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `he peeped down,`
+- Predicted: `out`
 
 **Gap 250** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `he thought to himself`
+- Predicted: `down into`
 
 **Gap 251** (1 words, fidelity 0.00)
 
 - Actual: `last`
-- Predicted: `that`
-
-**Gap 252** (2 words, fidelity 0.67)
-
-- Actual: `out his`
 - Predicted: `out`
 
-**Gap 253** (5 words, fidelity 0.57)
+**Gap 252** (2 words, fidelity 0.40)
+
+- Actual: `out his`
+- Predicted: `out through the`
+
+**Gap 253** (5 words, fidelity 0.00)
 
 - Actual: `so far that he could`
-- Predicted: `so that`
+- Predicted: `over`
 
 **Gap 254** (4 words, fidelity 0.00)
 
 - Actual: `longer keep
 his footing`
-- Predicted: `that`
+- Predicted: `scent`
 
 **Gap 255** (1 words, fidelity 0.00)
 
 - Actual: `to`
-- Predicted: `he began`
+- Predicted: `out`
 
 **Gap 256** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `he`
+- Predicted: `slightly`
 
-**Gap 257** (1 words, fidelity 1.00)
+**Gap 257** (1 words, fidelity 0.00)
 
 - Actual: `down`
-- Predicted: `down`
+- Predicted: `out`
 
-**Gap 258** (2 words, fidelity 0.00)
+**Gap 258** (2 words, fidelity 0.50)
 
 - Actual: `the roof`
-- Predicted: `straight`
+- Predicted: `down the`
 
-**Gap 259** (2 words, fidelity 0.67)
+**Gap 259** (2 words, fidelity 0.00)
 
 - Actual: `into the`
-- Predicted: `into`
+- Predicted: `out of`
 
 **Gap 260** (4 words, fidelity 0.00)
 
 - Actual: `trough, and was drowned.`
-- Predicted: `forest`
+- Predicted: `away`
 
 **Gap 261** (2 words, fidelity 0.00)
 
 - Actual: `Red-Cap went`
-- Predicted: `the girl danced`
+- Predicted: `gazed upon`
 
-**Gap 262** (2 words, fidelity 0.67)
+**Gap 262** (2 words, fidelity 0.00)
 
 - Actual: `home,
 and`
-- Predicted: `home and home.IsNullOrWhiteSpace() ? "" : " ";`
+- Predicted: `leaped`
 
 **Gap 263** (2 words, fidelity 0.00)
 
 - Actual: `one ever`
-- Predicted: `happened`
+- Predicted: `manner`
 
-**Gap 264** (4 words, fidelity 0.86)
+**Gap 264** (4 words, fidelity 0.00)
 
 - Actual: `to harm her again.`
-- Predicted: `to her again.`
+- Predicted: `mattered`
 
 ## Position 4 — threshold 8.254 bits
 
@@ -4930,122 +4896,118 @@ smell <gap 105> peeped <gap 106> began <gap 107>. <gap 108>.
 
 ### Gaps
 
-**Gap 1** (7 words, fidelity 0.20)
+**Gap 1** (7 words, fidelity 0.00)
 
 - Actual: `Once upon a time there was a`
-- Predicted: `there was a dear little girl who was loved by everyone who looked at her, but most of all by her grandmother, and there was nothing that she would not have given to the child. Once she gave her a little cap of r`
+- Predicted: `dear reader who`
 
-**Gap 2** (7 words, fidelity 0.44)
+**Gap 2** (7 words, fidelity 0.00)
 
 - Actual: `little girl who was loved by everyone`
-- Predicted: `little girl`
+- Predicted: `dear friend`
 
 **Gap 3** (23 words, fidelity 0.00)
 
 - Actual: `looked at her, but most of all by her grandmother, and there was
 nothing that she would not have given to the child.`
-- Predicted: `who`
+- Predicted: `visited us last summer`
 
-**Gap 4** (22 words, fidelity 0.26)
+**Gap 4** (22 words, fidelity 0.00)
 
 - Actual: `Once she gave her a
 little cap of red velvet, which suited her so well that she would never
 wear anything else;`
-- Predicted: `so she was always called 'Little Red-Cap.'`
+- Predicted: `beloved`
 
-**Gap 5** (33 words, fidelity 0.12)
+**Gap 5** (33 words, fidelity 0.00)
 
 - Actual: `so she was always called 'Little Red-Cap.'
 
 One day her mother said to her: 'Come, Little Red-Cap, here is a piece
 of cake and a bottle of wine; take them to your grandmother,`
-- Predicted: `so when the grandmother saw that the child loved the cap so much`
+- Predicted: `slowly`
 
 **Gap 6** (6 words, fidelity 0.00)
 
 - Actual: `she is ill
 and weak, and`
-- Predicted: `go nothing but water.`
+- Predicted: `slowly`
 
-**Gap 7** (4 words, fidelity 0.18)
+**Gap 7** (4 words, fidelity 0.00)
 
 - Actual: `will do her good.`
-- Predicted: `will get there, give her the cake and the wine, and say to her: 'Good
-morning, grandmother.'`
+- Predicted: `slowly`
 
 **Gap 8** (11 words, fidelity 0.00)
 
 - Actual: `Set out before it gets hot, and
 when you are going,`
-- Predicted: `go`
+- Predicted: `strolled through the peaceful`
 
-**Gap 9** (32 words, fidelity 0.00)
+**Gap 9** (32 words, fidelity 0.10)
 
 - Actual: `nicely and quietly and do not run off the path,
 or you may fall and break the bottle, and then your grandmother will
 get nothing; and when you go into her room,`
-- Predicted: `before`
+- Predicted: `they stroll through the park in the cool`
 
-**Gap 10** (5 words, fidelity 0.12)
+**Gap 10** (5 words, fidelity 0.00)
 
 - Actual: `don't forget to say, "Good`
-- Predicted: `knock softly at the door three times, and say "Little Red-Cap`
+- Predicted: `briskly`
 
 **Gap 11** (4 words, fidelity 0.00)
 
 - Actual: `and don't peep into`
-- Predicted: `that you must look carefully`
+- Predicted: `I walk alone in the morning", every day before taking the usual path just`
 
 **Gap 12** (1 words, fidelity 0.00)
 
 - Actual: `corner`
-- Predicted: `room,'`
+- Predicted: `rise`
 
-**Gap 13** (5 words, fidelity 0.22)
+**Gap 13** (5 words, fidelity 0.00)
 
 - Actual: `you do it.'
 
 'I will`
-- Predicted: `promise,' said`
+- Predicted: `brush their teeth`
 
-**Gap 14** (5 words, fidelity 0.10)
+**Gap 14** (5 words, fidelity 0.00)
 
 - Actual: `great care,' said Little Red-Cap`
-- Predicted: `I will take 
-a nice little cake and a nice little
-roast fowl 
-RIGHT:`
+- Predicted: `brush my teeth`
 
-**Gap 15** (8 words, fidelity 0.22)
+**Gap 15** (8 words, fidelity 0.00)
 
 - Actual: `her mother, and gave
 her hand on it.`
-- Predicted: `her`
+- Predicted: `brush`
 
 **Gap 16** (14 words, fidelity 0.00)
 
 - Actual: `The grandmother lived out in the wood, half a league from the village,
 and`
-- Predicted: `that`
+- Predicted: `brush`
 
-**Gap 17** (10 words, fidelity 0.16)
+**Gap 17** (10 words, fidelity 0.00)
 
 - Actual: `as Little Red-Cap entered the wood, a wolf met her.`
-- Predicted: `far off she had never been before, for the way was new to her.`
+- Predicted: `fully`
 
 **Gap 18** (18 words, fidelity 0.00)
 
 - Actual: `Red-Cap
 did not know what a wicked creature he was, and was not at all afraid of
 him.`
-- Predicted: `"Ah, but let me accompany you," said the wolf.`
+- Predicted: `decided`
 
-**Gap 19** (6 words, fidelity 0.17)
+**Gap 19** (6 words, fidelity 0.00)
 
 - Actual: `Good day, Little Red-Cap,' said he.`
-- Predicted: `he wolf met her.`
+- Predicted: `had been`
 
-**Gap 20** (23 words, fidelity 0.17)
+**Gap 20** (23 words, fidelity 0.00)
 
 - Actual: `Thank you kindly, wolf.'
 
@@ -5056,14 +5018,12 @@ him.`
 'What have you got in your apron?'
 
 'Cake and wine;`
-- Predicted: `said the wolf, 'I am going to grandmother's too. My godmother sent me a nice little
-chicken, and I am going to take it to grandmother. But first I must drink some milk;
-there is a dairy just a little way from here.'`
+- Predicted: `was`
 
 **Gap 21** (3 words, fidelity 0.00)
 
 - Actual: `was baking-day, so`
-- Predicted: `did`
+- Predicted: `I visited`
 
 **Gap 22** (28 words, fidelity 0.00)
 
@@ -5073,140 +5033,139 @@ have something good, to make her stronger.'
 'Where does your grandmother live, Little Red-Cap?'
 
 'A good quarter of a league farther on in the wood;`
-- Predicted: `grandmother's house stands`
+- Predicted: `sickly`
 
-**Gap 23** (9 words, fidelity 0.32)
+**Gap 23** (9 words, fidelity 0.00)
 
 - Actual: `her house stands
 under the three large oak-trees, the`
-- Predicted: `the path goes straight on, and at the end of it stands a little house.`
+- Predicted: `bent`
 
 **Gap 24** (2 words, fidelity 0.00)
 
 - Actual: `are just`
-- Predicted: `and the cherry-trees,`
+- Predicted: `overhung`
 
 **Gap 25** (1 words, fidelity 0.00)
 
 - Actual: `you`
-- Predicted: `'I know the way very well,' answered Little Red-Cap.`
+- Predicted: `she stuffed`
 
-**Gap 26** (6 words, fidelity 0.13)
+**Gap 26** (6 words, fidelity 0.00)
 
 - Actual: `must know it,' replied Little Red-Cap.`
-- Predicted: `can you surely find it without me?`
+- Predicted: `a single`
 
-**Gap 27** (10 words, fidelity 0.09)
+**Gap 27** (10 words, fidelity 0.00)
 
 - Actual: `The wolf thought to himself: 'What a tender young creature!`
-- Predicted: `ittle Red-Cap, where are you going so early in the morning?'`
+- Predicted: `plucked`
 
-**Gap 28** (4 words, fidelity 0.00)
+**Gap 28** (4 words, fidelity 0.33)
 
 - Actual: `what a nice
 plump`
-- Predicted: `I am very hungry, and I see some fine plums yonder. Would you like to
-eat some?'`
+- Predicted: `a single`
 
 **Gap 29** (9 words, fidelity 0.00)
 
 - Actual: `will be better to eat than the old woman.`
-- Predicted: `must`
+- Predicted: `enjoyed`
 
-**Gap 30** (2 words, fidelity 0.40)
+**Gap 30** (2 words, fidelity 0.00)
 
 - Actual: `I must`
-- Predicted: `I will deceive`
+- Predicted: `could not`
 
-**Gap 31** (8 words, fidelity 0.18)
+**Gap 31** (8 words, fidelity 0.00)
 
 - Actual: `craftily, so as to catch both.' So he`
-- Predicted: `so that`
+- Predicted: `could`
 
-**Gap 32** (29 words, fidelity 0.24)
+**Gap 32** (29 words, fidelity 0.00)
 
 - Actual: `for a short time by
 the side of Little Red-Cap, and then he said: 'See, Little Red-Cap, how
 pretty the flowers are about here--why do you not look round?`
-- Predicted: `himself up, and then went on behind Little Red-Cap.`
+- Predicted: `she had no choice but to`
 
 **Gap 33** (1 words, fidelity 0.00)
 
 - Actual: `I`
-- Predicted: `said`
+- Predicted: `determined`
 
 **Gap 34** (25 words, fidelity 0.00)
 
 - Actual: `too, that you do not hear how sweetly the little birds are singing; you
 walk gravely along as if you were going to school, while`
-- Predicted: `he must be a good man`
+- Predicted: `doubtlessly`
 
 **Gap 35** (1 words, fidelity 0.00)
 
 - Actual: `else`
-- Predicted: `is so cheerful`
+- Predicted: `falls`
 
 **Gap 36** (18 words, fidelity 0.00)
 
 - Actual: `here in the wood is merry.'
 
 Little Red-Cap raised her eyes, and when she saw the sunbeams dancing`
-- Predicted: `in开花的树下欢快地跳跃，小鸟们也在枝头婉转歌唱，她心想：‘我要给祖母采一束新鲜的花束，她一定会喜欢的。现在还很早，我再去采一些。’`
+- Predicted: `that`
 
-**Gap 37** (15 words, fidelity 0.27)
+**Gap 37** (15 words, fidelity 0.00)
 
 - Actual: `and there through the trees, and pretty flowers growing everywhere,
 she thought: 'Suppose I take`
-- Predicted: `and saw the flowers nodding their heads`
+- Predicted: `told`
 
 **Gap 38** (7 words, fidelity 0.00)
 
 - Actual: `a fresh nosegay; that would
 please her`
-- Predicted: `along`
+- Predicted: `was`
 
-**Gap 39** (15 words, fidelity 0.13)
+**Gap 39** (15 words, fidelity 0.00)
 
 - Actual: `It is so early in the day that I shall still get there
 in good`
-- Predicted: `So she said to herself: "I will not go until I have a whole nosegay. "`
+- Predicted: `visiting`
 
-**Gap 40** (14 words, fidelity 0.57)
+**Gap 40** (14 words, fidelity 0.00)
 
 - Actual: `and so she ran from the path into the wood to look for
 flowers.`
-- Predicted: `So she ran quickly into the wood, gathering the loveliest flowers she could find.`
+- Predicted: `hadn't`
 
-**Gap 41** (3 words, fidelity 0.14)
+**Gap 41** (3 words, fidelity 0.00)
 
 - Actual: `And whenever she`
-- Predicted: `When she had picked one, she fancied that she saw a`
+- Predicted: `passed`
 
-**Gap 42** (26 words, fidelity 0.18)
+**Gap 42** (26 words, fidelity 0.00)
 
 - Actual: `picked one, she fancied that she saw a
 still prettier one farther on, and ran after it, and so got deeper and
 deeper into the wood.`
-- Predicted: `farther on until she found some beautiful flowers;`
+- Predicted: `to lift`
 
 **Gap 43** (14 words, fidelity 0.00)
 
 - Actual: `Meanwhile the wolf ran straight to the grandmother's house and knocked
 at the door.`
-- Predicted: `into`
+- Predicted: `had been Lift`
 
 **Gap 44** (8 words, fidelity 0.00)
 
 - Actual: `Who is there?'
 
 'Little Red-Cap,' replied the wolf.`
-- Predicted: `she`
+- Predicted: `lift up`
 
 **Gap 45** (9 words, fidelity 0.00)
 
 - Actual: `She is bringing cake and wine; open
 the door.'`
-- Predicted: `here`
+- Predicted: `raises`
 
 **Gap 46** (19 words, fidelity 0.09)
 
@@ -5216,95 +5175,90 @@ get up.'
 The wolf lifted the latch,`
 - Predicted: `up`
 
-**Gap 47** (18 words, fidelity 0.10)
+**Gap 47** (18 words, fidelity 0.09)
 
 - Actual: `door sprang open, and without saying a
 word he went straight to the grandmother's bed, and devoured her.`
-- Predicted: `door opened.`
+- Predicted: `Lift high the curtain`
 
-**Gap 48** (6 words, fidelity 0.29)
+**Gap 48** (6 words, fidelity 0.00)
 
 - Actual: `Then
 he put on her clothes,`
-- Predicted: `then`
+- Predicted: `elegantly`
 
-**Gap 49** (4 words, fidelity 0.40)
+**Gap 49** (4 words, fidelity 0.00)
 
 - Actual: `himself in her cap`
-- Predicted: `himself`
+- Predicted: `the carpet`
 
 **Gap 50** (7 words, fidelity 0.00)
 
 - Actual: `himself in bed
 and drew the curtains.`
-- Predicted: `him`
+- Predicted: `out`
 
-**Gap 51** (34 words, fidelity 0.15)
+**Gap 51** (34 words, fidelity 0.00)
 
 - Actual: `Little Red-Cap, however, had been running about picking flowers,
 and when she had gathered so many that she could carry no more, she
 remembered her grandmother, and set out on the way to her.`
-- Predicted: `she found the grandmother missing`
+- Predicted: `gently`
 
-**Gap 52** (6 words, fidelity 0.13)
+**Gap 52** (6 words, fidelity 0.00)
 
 - Actual: `She was surprised to find the`
-- Predicted: `she found the cottage-door standing open, and when she went into the room, she had such a strange feeling that she said to herself: 'Oh dear! how uneasy I feel today, and at other times I like being with grandmoth`
+- Predicted: `knock on`
 
 **Gap 53** (22 words, fidelity 0.00)
 
 - Actual: `standing open, and when she
 went into the room, she had such a strange feeling that she said to
 herself: 'Oh dear!`
-- Predicted: `ajar`
+- Predicted: `stood`
 
 **Gap 54** (4 words, fidelity 0.00)
 
 - Actual: `how uneasy I feel`
-- Predicted: `as if she were dead`
+- Predicted: `I'll`
 
 **Gap 55** (1 words, fidelity 0.00)
 
 - Actual: `and`
-- Predicted: `though`
+- Predicted: `knocked`
 
-**Gap 56** (29 words, fidelity 0.12)
+**Gap 56** (29 words, fidelity 0.00)
 
 - Actual: `other times I like
 being with grandmother so much.' She called out: 'Good morning,' but
 received no answer; so she went to the bed and drew back the curtains.`
-- Predicted: `GAP: 
+- Predicted: `stood`
 
-very
-
-There lay her grandmother with her cap pulled far over her face, and
-looking very strange.`
-
-**Gap 57** (16 words, fidelity 0.07)
+**Gap 57** (16 words, fidelity 0.00)
 
 - Actual: `There lay her grandmother with her cap pulled far over her face, and
 looking very strange.`
-- Predicted: `'Oh! grandmother,' she said, 'what big teeth you have!'`
+- Predicted: `was`
 
 **Gap 58** (1 words, fidelity 0.00)
 
 - Actual: `Oh!`
-- Predicted: `'Grandmother,`
+- Predicted: `was`
 
-**Gap 59** (8 words, fidelity 0.18)
+**Gap 59** (8 words, fidelity 0.00)
 
 - Actual: `grandmother,' she said, 'what big ears you have!'`
-- Predicted: `said`
+- Predicted: `announced`
 
-**Gap 60** (10 words, fidelity 0.13)
+**Gap 60** (10 words, fidelity 0.00)
 
 - Actual: `better to hear you with, my child,' was the reply.`
-- Predicted: `bigger teeth you have!`
+- Predicted: `keynotes`
 
-**Gap 61** (9 words, fidelity 0.43)
+**Gap 61** (9 words, fidelity 0.00)
 
 - Actual: `But, grandmother, what big eyes you have!' she said.`
-- Predicted: `have you with.'`
+- Predicted: `were`
 
 **Gap 62** (22 words, fidelity 0.00)
 
@@ -5315,9 +5269,9 @@ looking very strange.`
 'The better to hug you with.'
 
 'Oh!`
-- Predicted: `said`
+- Predicted: `wore`
 
-**Gap 63** (34 words, fidelity 0.30)
+**Gap 63** (34 words, fidelity 0.00)
 
 - Actual: `but, grandmother, what a terrible big mouth you have!'
 
@@ -5325,265 +5279,262 @@ looking very strange.`
 
 And scarcely had the wolf said this, than with one bound he was out of
 bed and swallowed up`
-- Predicted: `But, grandmother, what long teeth you have!' she said.`
+- Predicted: `warned`
 
-**Gap 64** (22 words, fidelity 0.08)
+**Gap 64** (22 words, fidelity 0.00)
 
 - Actual: `When the wolf had appeased his appetite, he lay down again in the bed,
 fell asleep and began to snore very loud.`
-- Predicted: `and Red-Cap inside.`
+- Predicted: `followed`
 
-**Gap 65** (17 words, fidelity 0.15)
+**Gap 65** (17 words, fidelity 0.00)
 
 - Actual: `The huntsman was just passing
 the house, and thought to himself: 'How the old woman is snoring!`
-- Predicted: `When the grandmother heard this, she said to herself,`
+- Predicted: `followed him`
 
-**Gap 66** (30 words, fidelity 0.35)
+**Gap 66** (30 words, fidelity 0.00)
 
 - Actual: `I must
 just see if she wants anything.' So he went into the room, and when he
 came to the bed, he saw that the wolf was lying in it.`
-- Predicted: `and went into the room to see about her.`
+- Predicted: `annoyed`
 
-**Gap 67** (10 words, fidelity 0.08)
+**Gap 67** (10 words, fidelity 0.00)
 
 - Actual: `Do I find you
 here, you old sinner!' said he.`
-- Predicted: `he crept quietly out of the room again and looked for the grandmother.`
+- Predicted: `if`
 
-**Gap 68** (6 words, fidelity 0.24)
+**Gap 68** (6 words, fidelity 0.00)
 
 - Actual: `I have long sought you!' Then`
-- Predicted: `'What do you think you're doing, you cunning creature!'`
+- Predicted: `if`
 
-**Gap 69** (8 words, fidelity 0.20)
+**Gap 69** (8 words, fidelity 0.00)
 
 - Actual: `as
 he was going to fire at him,`
-- Predicted: `he thought`
+- Predicted: `archive`
 
-**Gap 70** (17 words, fidelity 0.00)
+**Gap 70** (17 words, fidelity 0.11)
 
 - Actual: `occurred to him that the wolf might have
 devoured the grandmother, and that she might still be`
-- Predicted: `as he thought`
+- Predicted: `that`
 
-**Gap 71** (20 words, fidelity 0.27)
+**Gap 71** (20 words, fidelity 0.10)
 
 - Actual: `so he did
 not fire, but took a pair of scissors, and began to cut open the stomach
 of the`
-- Predicted: `so he cut off the wolf's head with one snip`
+- Predicted: `the`
 
-**Gap 72** (1 words, fidelity 1.00)
+**Gap 72** (1 words, fidelity 0.00)
 
 - Actual: `wolf.`
-- Predicted: `wolf`
+- Predicted: `safe`
 
-**Gap 73** (5 words, fidelity 0.14)
+**Gap 73** (5 words, fidelity 0.00)
 
 - Actual: `When he had made two`
-- Predicted: `With every snip, he heard a gurgling sound inside,`
+- Predicted: `gently`
 
-**Gap 74** (5 words, fidelity 0.18)
+**Gap 74** (5 words, fidelity 0.00)
 
 - Actual: `he saw the little
 Red-Cap`
-- Predicted: `and the inside was still`
+- Predicted: `glowing`
 
-**Gap 75** (20 words, fidelity 0.17)
+**Gap 75** (20 words, fidelity 0.00)
 
 - Actual: `and then he made two snips more, and the little girl
 sprang out, crying: 'Ah, how frightened I have been!`
-- Predicted: `and there lay the red cap and shoes, which the wolf had torn off her.`
+- Predicted: `sly`
 
-**Gap 76** (6 words, fidelity 0.11)
+**Gap 76** (6 words, fidelity 0.00)
 
 - Actual: `How dark it was
 inside the`
-- Predicted: `he ran away into the thicket, and the children could not overtake him.`
+- Predicted: `sleeping-gray`
 
-**Gap 77** (4 words, fidelity 0.27)
+**Gap 77** (4 words, fidelity 0.00)
 
 - Actual: `and after that the`
-- Predicted: `and then he made two snips more, and the little girl`
+- Predicted: `gray`
 
 **Gap 78** (4 words, fidelity 0.00)
 
 - Actual: `grandmother came out alive`
-- Predicted: `RIGHT: 
-also, but scarcely able to breathe. Red-Cap, however, quickly fetched
-great stones with which they filled the wolf's belly, and when he awoke,`
+- Predicted: `once`
 
 **Gap 79** (5 words, fidelity 0.00)
 
 - Actual: `but scarcely able to breathe.`
-- Predicted: `and the grandmother said: 'Oh, my dear child, what has become of thy
-cap?'`
+- Predicted: `appeared`
 
 **Gap 80** (3 words, fidelity 0.00)
 
 - Actual: `however, quickly fetched`
-- Predicted: `said`
+- Predicted: `met`
 
-**Gap 81** (25 words, fidelity 0.13)
+**Gap 81** (25 words, fidelity 0.00)
 
 - Actual: `stones with which they filled the wolf's belly, and when he awoke,
 he wanted to run away, but the stones were so heavy that he`
-- Predicted: `and great sorrow filled their hearts.`
+- Predicted: `slept`
 
 **Gap 82** (4 words, fidelity 0.00)
 
 - Actual: `once, and fell dead.`
-- Predicted: `there`
+- Predicted: `suddenly`
 
 **Gap 83** (5 words, fidelity 0.00)
 
 - Actual: `Then all three were delighted.`
-- Predicted: `and have a mother and father, this wolf shall never eat me!'`
+- Predicted: `suddenly`
 
 **Gap 84** (2 words, fidelity 0.00)
 
 - Actual: `The huntsman`
-- Predicted: `they cut open his belly and`
+- Predicted: `miraculously`
 
-**Gap 85** (23 words, fidelity 0.20)
+**Gap 85** (23 words, fidelity 0.00)
 
 - Actual: `off the wolf's skin and
 went home with it; the grandmother ate the cake and drank the wine which
 Red-Cap had brought, and`
-- Predicted: `forth the knife, cut open the wolf, and took out the children, who were still alive.`
+- Predicted: `quickly`
 
-**Gap 86** (13 words, fidelity 0.20)
+**Gap 86** (13 words, fidelity 0.00)
 
 - Actual: `but Red-Cap thought to herself: 'As
 long as I live, I will never`
-- Predicted: `and said to her, 'Why go so slowly? I will carry the basket for you.'`
+- Predicted: `back`
 
-**Gap 87** (18 words, fidelity 0.09)
+**Gap 87** (18 words, fidelity 0.00)
 
 - Actual: `myself leave the path, to run into the
 wood, when my mother has forbidden me to do so.'`
-- Predicted: `myself be deceived again.`
+- Predicted: `restored`
 
-**Gap 88** (14 words, fidelity 0.23)
+**Gap 88** (14 words, fidelity 0.00)
 
 - Actual: `that once when Red-Cap was again taking cakes to the old
 grandmother, another wolf`
-- Predicted: `it also related how the wolf had deceived her once before`
+- Predicted: `eloquently`
 
-**Gap 89** (10 words, fidelity 0.18)
+**Gap 89** (10 words, fidelity 0.00)
 
 - Actual: `to her, and tried to entice her from the
 path.`
-- Predicted: `to`
+- Predicted: `about`
 
-**Gap 90** (33 words, fidelity 0.10)
+**Gap 90** (33 words, fidelity 0.00)
 
 - Actual: `Red-Cap, however, was on her guard, and went straight forward on
 her way, and told her grandmother that she had met the wolf, and that he
 had said 'good morning' to her, but`
-- Predicted: `forbidden me to go into the wood alone,`
+- Predicted: `briefly`
 
 **Gap 91** (26 words, fidelity 0.07)
 
 - Actual: `such a wicked look in his eyes,
 that if they had not been on the public road she was certain he would
 have eaten her up.`
-- Predicted: `a`
+- Predicted: `a sense`
 
-**Gap 92** (30 words, fidelity 0.38)
+**Gap 92** (30 words, fidelity 0.05)
 
 - Actual: `Well,' said the grandmother, 'we will shut the door,
 that he may not come in.' Soon afterwards the wolf knocked, and cried:
 'Open the door, grandmother, I am Little Red-Cap,`
-- Predicted: `and said, "I am your grandmother, little Red-Cap,`
+- Predicted: `with wisdom and experience speak,`
 
-**Gap 93** (10 words, fidelity 0.12)
+**Gap 93** (10 words, fidelity 0.00)
 
 - Actual: `and am bringing you
 some cakes.' But they did not`
-- Predicted: `and I have lost my way.`
+- Predicted: `to`
 
-**Gap 94** (6 words, fidelity 0.20)
+**Gap 94** (6 words, fidelity 0.29)
 
 - Actual: `or open the door, so the`
-- Predicted: `the wolf listened carefully`
+- Predicted: `the`
 
 **Gap 95** (1 words, fidelity 0.00)
 
 - Actual: `stole`
-- Predicted: `he crept`
+- Predicted: `spoke`
 
-**Gap 96** (12 words, fidelity 0.13)
+**Gap 96** (12 words, fidelity 0.00)
 
 - Actual: `or thrice round the house, and at last jumped on the roof,`
-- Predicted: `and listened twice`
+- Predicted: `to`
 
-**Gap 97** (12 words, fidelity 0.19)
+**Gap 97** (12 words, fidelity 0.13)
 
 - Actual: `to wait until Red-Cap went home in the evening, and then to`
-- Predicted: `to see if I cannot catch the wolf.`
+- Predicted: `to attempt`
 
 **Gap 98** (8 words, fidelity 0.00)
 
 - Actual: `after her and devour her in the darkness.`
-- Predicted: `away`
+- Predicted: `to`
 
-**Gap 99** (9 words, fidelity 0.12)
+**Gap 99** (9 words, fidelity 0.00)
 
 - Actual: `But the grandmother
 saw what was in his thoughts.`
-- Predicted: `he then crept stealthily up the chimney,`
+- Predicted: `tried`
 
-**Gap 100** (9 words, fidelity 0.17)
+**Gap 100** (9 words, fidelity 0.00)
 
 - Actual: `In front of the house was a great stone`
-- Predicted: `the wolf thought`
+- Predicted: `to`
 
-**Gap 101** (8 words, fidelity 0.30)
+**Gap 101** (8 words, fidelity 0.00)
 
 - Actual: `so she said to the child: 'Take the`
-- Predicted: `she said to her grandson, "Go now, my child, and fetch me a pail, Red-Cap; I made some`
+- Predicted: `carry`
 
-**Gap 102** (19 words, fidelity 0.21)
+**Gap 102** (19 words, fidelity 0.00)
 
 - Actual: `I made some
 sausages yesterday, so carry the water in which I boiled them to the
 trough.' Red-Cap carried`
-- Predicted: `fill it with water from the trough`
+- Predicted: `sneak`
 
-**Gap 103** (6 words, fidelity 0.40)
+**Gap 103** (6 words, fidelity 0.00)
 
 - Actual: `the great trough was quite full.`
-- Predicted: `the pail was empty`
+- Predicted: `he noticed`
 
-**Gap 104** (2 words, fidelity 0.25)
+**Gap 104** (2 words, fidelity 0.29)
 
 - Actual: `Then the`
-- Predicted: `Then the wolf followed her, and when she had gone a little way, the`
+- Predicted: `Red-Cap; until the smell`
 
-**Gap 105** (10 words, fidelity 0.46)
+**Gap 105** (10 words, fidelity 0.00)
 
 - Actual: `of the sausages reached the wolf, and he sniffed and`
-- Predicted: `of the sausages`
+- Predicted: `did`
 
-**Gap 106** (19 words, fidelity 0.14)
+**Gap 106** (19 words, fidelity 0.00)
 
 - Actual: `down,
 and at last stretched out his neck so far that he could no longer keep
 his footing and`
-- Predicted: `out through the chimney-opening, and peeped into the room.`
+- Predicted: `forth`
 
-**Gap 107** (16 words, fidelity 0.40)
+**Gap 107** (16 words, fidelity 0.00)
 
 - Actual: `to slip, and slipped down from the roof straight
 into the great trough, and was drowned.`
-- Predicted: `down into the trough.`
+- Predicted: `out`
 
 **Gap 108** (15 words, fidelity 0.00)
 
 - Actual: `But Red-Cap went joyously home,
 and no one ever did anything to harm her again.`
-- Predicted: `then ran the farmer's boy up into the loft`
+- Predicted: `out`
