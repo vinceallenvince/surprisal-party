@@ -117,7 +117,7 @@ export function AboutModal({ onDismiss }: { onDismiss: () => void }) {
           Predictable words carry little information, surprising words carry a lot.
           The text algorithm demonstrated here preserves words at varying levels of compression
           based on their surprisal value. Hidden
-          in between the compression seams are predictions of neighboring words. The higher
+          in between the compression seams are LLM predictions of neighboring words. The higher
           the compression, the more lossy the predictions become.
         </p>
         <p className="pt-4 text-[18px] leading-[29.25px] tracking-[-0.44px] text-muted">

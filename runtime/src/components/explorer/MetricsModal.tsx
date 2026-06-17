@@ -28,11 +28,11 @@ const METRICS: readonly Metric[] = [
   },
   {
     term: 'removed',
-    def: 'The share carried by the words taken out with text compression. They must be predicted to rebuild the text. (stored + removed always total 100%)',
+    def: 'The share of the words removed with text compression. They must be predicted to rebuild the text. (stored + removed always total 100%)',
   },
   {
     term: 'avg fidelity',
-    def: "How closely the model's predictions of the removed words match the originals (1.00 = exact). It decreases with compression, since removed words become harder to predict.",
+    def: "How closely the LLM's predictions of the removed words match the originals (1.00 = exact). It decreases with compression, since removed words become harder to predict.",
   },
 ];
 
