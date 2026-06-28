@@ -133,6 +133,9 @@ export function AboutModal({ onDismiss }: { onDismiss: () => void }) {
           </a>
           .
         </p>
+        <p className="pt-4 text-[18px] leading-[29.25px] tracking-[-0.44px] text-muted">
+          This is a placeholder line for a new section on the About modal.
+        </p>
         <div className="pt-12">
           <button
             ref={buttonRef}
