@@ -81,10 +81,11 @@
   /* Slider thumb */
   --color-thumb: #e0e0e0;
 
-  /* Slider track gradient stops (cool lossless -> warm lossy) */
-  --slider-track-from: #2a4a5a;
-  --slider-track-mid: #3a3a3a;
-  --slider-track-to: #5a2a2a;
+  /* Slider track section colors (cool lossless -> warm lossy) */
+  --slider-track-s1: #2a4a5a;
+  --slider-track-s2: #32424a;
+  --slider-track-s3: #3a3a3a;
+  --slider-track-s4: #4a3232;
 
   /* Prose measure + reading rhythm */
   --prose-measure: 672px;
@@ -114,12 +115,17 @@
   text-wrap: balance;
 }
 @utility slider-track {
-  /* Cool (lossless) -> neutral -> warm (lossy) gradient, per frame 28-163 */
+  /* Four solid bands (cool lossless -> warm lossy), one per slider section */
   background-image: linear-gradient(
     90deg,
-    var(--slider-track-from) 0%,
-    var(--slider-track-mid) 50%,
-    var(--slider-track-to) 100%
+    var(--slider-track-s1) 0%,
+    var(--slider-track-s1) 25%,
+    var(--slider-track-s2) 25%,
+    var(--slider-track-s2) 50%,
+    var(--slider-track-s3) 50%,
+    var(--slider-track-s3) 75%,
+    var(--slider-track-s4) 75%,
+    var(--slider-track-s4) 100%
   );
 }
 @utility container-padded {
